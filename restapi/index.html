@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="IN-CORE RESTAPI Swagger Documentation - Data, Hazard & Fragility Services">
+        <meta name="author" content="NCSA">
+        <title>IN-CORE RESTAPI Documentation - Data, Hazard & Fragility Services</title>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css">
+        <link rel="shortcut icon" type="image/png" href="../home/img/favicon.ico">
+    </head>
+
+    <body>
+        <div id="swagger-ui"></div>
+        <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
+        <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
+
+        <script>
+          window.onload = function() {
+            // Build a system
+            const ui = SwaggerUIBundle({
+              urls: [
+                {url: "hazard.json", name: "Hazard"},
+                {url: "data.json", name: "Data"},
+                {url: "fragility.json", name: "Fragility"}
+              ],
+              dom_id: '#swagger-ui',
+              deepLinking: true,
+              validatorUrl : null,
+              presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+              ],
+              plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl,
+                DisableTryItOutPlugin
+              ],
+              layout: "StandaloneLayout",
+            });
+            window.ui = ui
+          };
+
+          const DisableTryItOutPlugin = function() {
+            return {
+              statePlugins: {
+                spec: {
+                  wrapSelectors: {
+                    allowTryItOutFor: () => () => false
+                  }
+                }
+              }
+            }
+          };
+
+        </script>
+    </body>
+</html>
