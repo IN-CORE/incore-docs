@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "Incore Service For Fragilities and fragility mappings",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "",
     "contact": {
       "name": "Jong S. Lee",
@@ -240,6 +240,43 @@
         }
       }
     },
+    "/mappings/{mappingSetId}": {
+      "get": {
+        "tags": [
+          "mappings"
+        ],
+        "summary": "Gets a fragility mapping set by Id",
+        "description": "Get a particular fragility mapping set based on the id provided",
+        "operationId": "getMappingSetById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappingSetId",
+            "in": "path",
+            "description": "hexadecimal fragility mapping id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b47b2d9337d4a36187c7563"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MappingSet"
+            }
+          }
+        }
+      }
+    },
     "/mappings": {
       "get": {
         "tags": [
@@ -339,43 +376,6 @@
             "schema": {
               "$ref": "#/definitions/MappingSet"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/MappingSet"
-            }
-          }
-        }
-      }
-    },
-    "/mappings/{mappingSetId}": {
-      "get": {
-        "tags": [
-          "mappings"
-        ],
-        "summary": "Gets a fragility mapping set by Id",
-        "description": "Get a particular fragility mapping set based on the id provided",
-        "operationId": "getMappingSetById",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "mappingSetId",
-            "in": "path",
-            "description": "hexadecimal fragility mapping id",
-            "required": true,
-            "type": "string",
-            "x-example": "5b47b2d9337d4a36187c7563"
           }
         ],
         "responses": {
