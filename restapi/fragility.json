@@ -1,0 +1,882 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Incore Service For Fragilities and fragility mappings",
+    "version": "0.2.0",
+    "title": "",
+    "contact": {
+      "name": "Jong S. Lee",
+      "url": "http://resilience.colostate.edu",
+      "email": "jonglee@illinois.edu"
+    },
+    "license": {
+      "name": "Mozilla Public License 2.0 (MPL 2.0)",
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/"
+    }
+  },
+  "host": "incore2-services.ncsa.illinois.edu",
+  "basePath": "/fragility/api",
+  "tags": [
+    {
+      "name": "fragilities"
+    },
+    {
+      "name": "mappings"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/fragilities": {
+      "get": {
+        "tags": [
+          "fragilities"
+        ],
+        "summary": "Gets list of fragilities",
+        "description": "Apply filters to get the desired set of fragilities",
+        "operationId": "getFragilities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "demand",
+            "in": "query",
+            "description": "demand type filter",
+            "required": false,
+            "type": "string",
+            "x-example": "PGA"
+          },
+          {
+            "name": "hazard",
+            "in": "query",
+            "description": "hazard type  filter",
+            "required": false,
+            "type": "string",
+            "x-example": "earthquake"
+          },
+          {
+            "name": "inventory",
+            "in": "query",
+            "description": "Inventory type",
+            "required": false,
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "legacy_id",
+            "in": "query",
+            "description": "Legacy fragility Id from v1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "description": "Fragility creator's username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FragilitySet"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "fragilities"
+        ],
+        "summary": "Create a fragility set",
+        "description": "Post a fragility set to the fragility service",
+        "operationId": "uploadFragilitySet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "json representing the fragility set",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/FragilitySet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/FragilitySet"
+            }
+          }
+        }
+      }
+    },
+    "/fragilities/{fragilityId}": {
+      "get": {
+        "tags": [
+          "fragilities"
+        ],
+        "summary": "Gets a fragility by Id",
+        "description": "Get a particular fragility based on the id provided",
+        "operationId": "getFragilityById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fragilityId",
+            "in": "path",
+            "description": "hexadecimal fragility id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b47b2d8337d4a36187c6727"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/FragilitySet"
+            }
+          }
+        }
+      }
+    },
+    "/fragilities/search": {
+      "get": {
+        "tags": [
+          "fragilities"
+        ],
+        "summary": "Search for a text in all fragilities",
+        "description": "Gets all fragilities that contain a specific text",
+        "operationId": "findFragilities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "Text to search by",
+            "required": false,
+            "type": "string",
+            "x-example": "steel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FragilitySet"
+              }
+            }
+          },
+          "404": {
+            "description": "No fragilities found with the searched text"
+          }
+        }
+      }
+    },
+    "/mappings/{mappingSetId}": {
+      "get": {
+        "tags": [
+          "mappings"
+        ],
+        "summary": "Gets a fragility mapping set by Id",
+        "description": "Get a particular fragility mapping set based on the id provided",
+        "operationId": "getMappingSetById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappingSetId",
+            "in": "path",
+            "description": "hexadecimal fragility mapping id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b47b2d9337d4a36187c7563"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MappingSet"
+            }
+          }
+        }
+      }
+    },
+    "/mappings": {
+      "get": {
+        "tags": [
+          "mappings"
+        ],
+        "summary": "Gets list of fragility mappings",
+        "description": "Apply filters to get the desired set of fragility mappings",
+        "operationId": "getMappings",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hazard",
+            "in": "query",
+            "description": "hazard type  filter",
+            "required": false,
+            "type": "string",
+            "x-example": "earthquake"
+          },
+          {
+            "name": "inventory",
+            "in": "query",
+            "description": "Inventory type",
+            "required": false,
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "description": "Fragility creator's username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MappingSet"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "mappings"
+        ],
+        "summary": "Create a fragility Mapping",
+        "description": "Post a fragility mapping set that maps a fragility to an inventory's attributes",
+        "operationId": "uploadMapping",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "json representing the fragility mapping",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MappingSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MappingSet"
+            }
+          }
+        }
+      }
+    },
+    "/mappings/{mappingSetId}/matched": {
+      "post": {
+        "tags": [
+          "mappings"
+        ],
+        "summary": "Map each inventory to a fragility set Id based on the input mapping Id",
+        "description": "Returns a json where key is the inventory id that is mapped to a fragility set id based on the input mapping id",
+        "operationId": "mapFragilities",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappingSetId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MappingRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MappingResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "FragilityCurve": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "FragilitySet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "legacyId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "paperReference": {
+          "$ref": "#/definitions/PaperReference"
+        },
+        "resultUnit": {
+          "type": "string"
+        },
+        "resultType": {
+          "type": "string"
+        },
+        "demandType": {
+          "type": "string"
+        },
+        "demandUnits": {
+          "type": "string"
+        },
+        "hazardType": {
+          "type": "string"
+        },
+        "inventoryType": {
+          "type": "string"
+        },
+        "fragilityCurves": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FragilityCurve"
+          }
+        },
+        "privileges": {
+          "$ref": "#/definitions/Privileges"
+        },
+        "creator": {
+          "type": "string"
+        }
+      }
+    },
+    "PaperReference": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "yearPublished": {
+          "type": "string"
+        }
+      }
+    },
+    "Privileges": {
+      "type": "object",
+      "properties": {
+        "userPrivileges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "WRITE",
+              "ADMIN"
+            ]
+          }
+        },
+        "groupPrivileges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "WRITE",
+              "ADMIN"
+            ]
+          }
+        }
+      }
+    },
+    "Mapping": {
+      "type": "object",
+      "properties": {
+        "legacyEntry": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "entry": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MappingSet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "hazardType": {
+          "type": "string"
+        },
+        "inventoryType": {
+          "type": "string"
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Mapping"
+          }
+        },
+        "privileges": {
+          "$ref": "#/definitions/Privileges"
+        },
+        "creator": {
+          "type": "string"
+        }
+      }
+    },
+    "MappingResponse": {
+      "type": "object",
+      "properties": {
+        "sets": {
+          "type": "object",
+          "readOnly": true,
+          "additionalProperties": {
+            "$ref": "#/definitions/FragilitySet"
+          }
+        },
+        "mapping": {
+          "type": "object",
+          "readOnly": true,
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Crs": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "name",
+            "link"
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "Feature": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            },
+            "geometry": {
+              "$ref": "#/definitions/GeoJsonObject"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "FeatureCollection": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "features": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Feature"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "GeoJsonObject": {
+      "type": "object",
+      "discriminator": "type",
+      "properties": {
+        "crs": {
+          "$ref": "#/definitions/Crs"
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    },
+    "GeometryCollection": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geometries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeoJsonObject"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LineString": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LngLatAlt"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LngLatAlt": {
+      "type": "object",
+      "properties": {
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "altitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "additionalElements": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    },
+    "MappingRequest": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MappingSubject"
+        }
+      }
+    },
+    "MappingSubject": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Building",
+            "Bridge",
+            "Roadway",
+            "Railway"
+          ]
+        },
+        "inventory": {
+          "$ref": "#/definitions/GeoJsonObject"
+        }
+      }
+    },
+    "MultiLineString": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/LngLatAlt"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MultiPoint": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LngLatAlt"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MultiPolygon": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LngLatAlt"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Point": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "$ref": "#/definitions/LngLatAlt"
+            }
+          }
+        }
+      ]
+    },
+    "Polygon": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/GeoJsonObject"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/LngLatAlt"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
