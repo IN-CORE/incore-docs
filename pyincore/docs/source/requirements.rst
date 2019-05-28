@@ -49,4 +49,4 @@ Windows
 
 ----
 
-:doc:`pyIncore home <index>`
+`IN-CORE home <index.html>`_

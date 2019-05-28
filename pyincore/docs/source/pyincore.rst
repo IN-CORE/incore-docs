@@ -1,5 +1,5 @@
-Package
-=======
+pyincore package
+================
 
 ..  toctree::
     :titlesonly:
@@ -10,4 +10,4 @@ Package
 
 ----
 
-:doc:`pyIncore home <index>`
+`IN-CORE home <index.html>`_

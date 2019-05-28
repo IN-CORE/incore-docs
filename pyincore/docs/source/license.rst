@@ -5,4 +5,4 @@ The package is released under `Mozilla Public License v2.0 <https://www.mozilla.
 
 ----
 
-:doc:`pyIncore home <index>`
+`IN-CORE home <index.html>`_

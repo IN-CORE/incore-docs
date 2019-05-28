@@ -1,5 +1,5 @@
-Analyses
-========
+pyIncore analyses
+=================
 
 Bridge damage analysis
 ______________________
@@ -318,4 +318,4 @@ and complete) and creates  an output CSV file.
 
 ----
 
-:doc:`pyIncore home <index>`
+`IN-CORE home <index.html>`_
