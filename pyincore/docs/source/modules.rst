@@ -80,11 +80,6 @@ buildingdamage
 ..  autoclass:: buildingdamage.buildingutil.BuildingUtil
     :members:
 
-cumulative_building_damage
-==========================
-..  autoclass:: cumulative_building_damage.cumulativebuildingdamage.CumulativeBuildingDamage
-    :members:
-
 epnrecoverymodel
 ================
 ..  autoclass:: epnrecoverymodel.epnrecoverymodel.EpnRecoveryModel
@@ -131,20 +126,6 @@ waterfacilitydamage
 ..  autoclass:: waterfacilitydamage.waterfacilitydamage.WaterFacilityDamage
     :members:
 
-waternetworkdamage
-==================
-..  autoclass:: waternetworkdamage.waternetworkdamage.WaterNetworkDamage
-    :members:
-..  autoclass:: waternetworkdamage.waternetworkutil.WaterNetworkUtil
-    :members:
-
-waternetworkrecovery
-====================
-..  autoclass:: waternetworkrecovery.waternetworkrecovery.WaterNetworkRecovery
-    :members:
-..  autoclass:: waternetworkrecovery.waternetworkrecoveryutil.WaterNetworkRecoveryUtil
-    :members:
-
 ..
     example docstrings
 ..
@@ -156,4 +137,4 @@ waternetworkrecovery
 
 ----
 
-:doc:`Pyincore home <index>`
+:doc:`pyIncore home <index>`

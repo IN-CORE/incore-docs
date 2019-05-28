@@ -1,50 +1,118 @@
 Prerequisites
 =============
 
-A user must have an account recognized by the **Incore** service. Please `register <https://identity.ncsa.illinois.edu/register/UUMK36FU2M>`_ and use your credentials later on.
+IN-CORE account
 
-`Python 3.5 <https://www.python.org/>`_ or greater
+    * A user must have an account recognized by the **IN-CORE** service. Please `register <https://identity.ncsa.illinois.edu/register/UUMK36FU2M>`_, your credentials (Username and Password) will be required in later steps.
 
-`GDAL <www.gdal.org/>`_ - Geospatial Data Abstraction Library
+`Python 3.5+ <https://www.python.org/>`_
 
-* Linux
+    * If you are on Windows, go to Windows 64 bit section under GDAL section.
 
-    **Pyincore** uses GDAL library which has to be installed separately for example by using ``apt-get`` package utility
-    on Debian, Ubuntu, and related Linux distributions.
+    * It is common to have more than one Python version installed on your computer. Make sure you are running the correct version of Python (you can check by running ``python --version``) with corresponding path added to the PATH system variable. The following links will help you navigate through various installations guides:
 
-    .. code-block:: bash
+        - https://realpython.com/installing-python/
+        - https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python
+        - OS specific downloads: https://www.python.org/downloads/
 
-        apt-get gdal
+    * We recommend that users get familiar with `virtual environments <https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv/>`_ or `environment manager <https://www.anaconda.com/distribution/>`_:
+
+        - These are tools that help keep dependencies separate for different projects. If you decide, however, to use a virtual environment or manager you must do it now, in this prerequisite step.
+        - Note that GDAL installation is global on Windows and Linux, even if you use virtual environments (see next step).
+
+`GDAL <https://www.gdal.org/>`_ - Geospatial Data Abstraction Library
+
+    **pyIncore** uses ``GDAL`` library which has to be installed separately. The followings are instruction for each operating system.
+
+    * Linux
+        Additional information can be found at the wiki page `How to install GDAL <https://github.com/domlysz/BlenderGIS/wiki/How-to-install-GDAL>`_.
+
+        - Install **gdal-bin**
+
+            .. code-block:: bash
+
+                sudo apt-get install gdal-bin
+
+        - Install **libspatialindex-dev**
+
+            .. code-block:: bash
+
+                apt-get install libspatialindex-dev
+
+        - Also, update your Pip Python package manager
+
+            .. code-block:: bash
+
+                pip3 install --upgrade pip
 
 
-    Additonal information can be found  at the wiki page `How to install GDAL <https://github.com/domlysz/BlenderGIS/wiki/How-to-install-GDAL>`_.
+    * Windows 64bit
 
-* Windows
+        We provide installation instructions for `Anaconda <https://www.anaconda.com/distribution/>`_ environment manager using `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_. **Python 3.x** and **GDAL** library will be installed with Anaconda/Miniconda. The following instructions were tested for Win 64bit:
 
-    GDAL for Windows can be difficult to build, requiring a number of prerequisite software, libraries, and header files.
-    If you are comfortable building Windows software then building GDAL from source as a develop build is preferred.
+        - Download the latest Miniconda3 installer for Windows from `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_ web page.
 
-    If you are not comfortable building GDAL then you may want to download the ``gdal`` binaries
-    from `Windows Binaries for Python <https://www.lfd.uci.edu/~gohlke/pythonlibs/>`_.
-    The problem with this is that GDAL header files
-    are not included, so you cannot do a ``pip install`` of packages that want to utilize
-    the GDAL headers. Fiona and Rasterio will need binaries installed from this page as well,
-    and if you run into failed dependancies during the setup process you may want to revisit
-    the page and install the binaries for the Python extensions that are causing problems.
-    Additional information can be found at the wiki page `How to install GDAL <https://github.com/domlysz/BlenderGIS/wiki/How-to-install-GDAL>`_.
+        - Run the installer setup locally (select the *Just Me* choice) to avoid the need for administrator privileges.
+
+        - Leave the default folder path (``C:\Users\<user>\..\miniconda3``).
+
+        - Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+
+        - Open up an Anaconda prompt from the Windows Start menu.
+
+        - Create Python environment (required for the ``pyincore`` example) and activate it.
+
+            .. code-block:: bash
+
+                conda create -n pyincore python=3
+                conda activate pyincore
+
+        - Install dependency packages in the following order:
+
+            .. code-block:: bash
+
+                conda install rasterio
+                conda install fiona
+                conda install rtree
 
 
-**Optional**: A `virtual environment <[virtual environment](https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv/)>`_, a tool that helps to keep dependencies required by different projects separate
-by creating isolated Python virtual environments for them. A module named ``virtualenv`` is available by running ``pip3 install virtualenv``
-(``pip3`` command is pip for Python3, you could also run ``pip3 install --upgrade pip`` first), or an environment manager called `Anaconda <https://www.anaconda.com/distribution/>`_ by downloading OS specific `installer <https://docs.anaconda.com/anaconda/install/>`_.
-Note that a full Anaconda distribution will include Python (and a collection of over 1,500+ open source packages), so installing Python first isn't needed if you use Anaconda.
+    * MacOS
 
-`Jupyter <https://jupyter.org/>`_ notebook
+        Use `Homebrew <https://brew.sh/>`_, a MacOS package manager. If you don’t have Homebrew, please install it. Additional information about installing GDAL can be found at an `Install link <https://medium.com/@vascofernandes_13322/how-to-install-gdal-on-macos-6a76fb5e24a4>`_.
 
-We recommend using Jupyter notebook for running the **pyincore** projects. It as an open-source application that allows you to create projects (documents) that contain live Python code, visualizations and documentation.
-`Installing Jupyter <https://jupyter.org/install.html>`_ can be done again with pip by running ``pip3 install jupyter``.
-With **Anaconda** you already have installed Jupyter notebook.
+        - Install **gdal**
+
+            .. code-block:: bash
+
+                brew install gdal
+
+        - Install **spatialindex** library
+
+            .. code-block:: bash
+
+                brew install spatialindex
+
+        - Also, update the ``pip`` Python package manager
+
+            .. code-block:: bash
+
+                pip3 install --upgrade pip
+
+
+`Jupyter <https://jupyter.org/>`_
+
+    We recommend using Jupyter Notebook for running the **pyIncore** projects. It as an open-source application that allows you to create projects (documents) that contain live Python code, visualizations and documentation.
+
+        - `Installing Jupyter <https://jupyter.org/install.html>`_ can be done again with ``pip`` (on Miniconda; in your virtual environment) or ``pip3`` as indicated below:
+
+            .. code-block:: bash
+
+                pip3 install jupyter
+
+**Optional**: We recommend to use `virtual <https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv/>`_ environment
+or environment `manager <https://www.anaconda.com/distribution/>`_; tools that help keep dependencies separate for different projects.
+
 
 ----
 
-:doc:`Pyincore home <index>`
+:doc:`pyIncore home <index>`

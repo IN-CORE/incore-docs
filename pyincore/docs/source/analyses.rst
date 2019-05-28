@@ -67,33 +67,6 @@ and complete) and creates an output CSV file.
 2. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
 
 
-Cumulative building damage analysis
-___________________________________
-
-This analysis computes the damage to buildings based on two hazards, an earthquake and tsunami by calling fragility and hazard services.
-The process combines two structural damages.
-
-The code covers Normal and LogNormal fragilities with 4 limit states (slight, moderate, extensive
-and complete) and creates an output CSV file.
-
-**Required Parameters**
-
-1. **Result name** A name for the result dataset, usually in CSV format which contains the cumulative damage information.
-2. **Building Dataset ID** A building dataset you want to calculate damage for.
-3. **Earthquake Hazard Type** A hazard type for calculating building damage. Used for consistency, set to Earthquake.
-4. **Earthquake Hazard ID** An earthquake ID for calculating building damage.
-5. **Earthquake Mapping ID** Earthquake building fragility mapping on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-6. **Earthquake Damage Ratios** A dataset that contains the damage ratios for buildings. It includes weights to compute mean damage.
-7. **Tsunami Hazard Type** A hazard type for calculating building damage. Used for consistency, set to Tsunami.
-8. **Tsunami Hazard ID** A tsunami ID for calculating building damage.
-9. **Tsunami Mapping ID** Tsunami building fragility mapping on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-
-
-**Optional Parameters**
-
-1. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
-
-
 Electric power network recovery model analysis
 ______________________________________________
 
@@ -278,7 +251,6 @@ The code creates an output CSV file.
 2. **Tornado ID** A tornado ID for calculating power network damage. The tornado is defined by its shape file.
 3. **Electric Power Network Node ID** A power nodes shapefile dataset you want to calculate damage for.
 4. **Electric Power Network Link ID** A power network link shapefile dataset you want to calculate damage for.
-5. **Mapping ID** Tower and pole fragility mapping on Incore-service. It should implicitly define the fragilities (tower and pole) to be used in the calculation.
 
 
 Transportation recovery analysis
@@ -344,68 +316,6 @@ and complete) and creates  an output CSV file.
 2. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
 
 
-Water network damage analysis
-_____________________________
-
-This analysis computes the complex damage to water network which includes pipelines, tanks and pumping stations based on a particular
-hazard such as earthquake, tsunami and tornado by calling fragility and hazard services.
-
-The probabilities for water facilities and pipeline damage states are obtained using fragility curves
-and a hazard definition, each water facility and pipeline will have a specific PGA (Peak Ground Acceleration),
-a measurement of an earthquake hazard. Some fragilites namely Potable Water Facility Fragility Mapping for INA contain
-Peak Ground Displacement (PGD) which have to be taken into account as well.
-Liquefaction effect, which is defined as a change in stress condition, in which material that is ordinarily
-a solid behaves like a liquid can be considered as well. The LMF (Liquefaction Modification Factor)
-values are implemented as multiplication factors to the median fragility values and they must be present
-in the dataset such as geology dataset.
-
-The code covers Normal and LogNormal fragilities with 4 limit states (slight, moderate, extensive
-and complete) and creates  an output CSV file.
-
-**Required Parameters**
-
-1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
-2. **Water facility Dataset ID** A water facility dataset you want to calculate damage for.
-3. **Pipeline Dataset ID** A water pipeline dataset you want to calculate damage for.
-4. **Hazard Type** A hazard type for calculating water facility damage. E.g Earthquake
-5. **Hazard ID** A hazard ID for calculating water facility damage.  Generally, hazards with PGA values are used to calculate damages.
-6. **Water Facility Mapping ID** Default water facility fragility mapping on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-7. **Pipeline Mapping ID** Default water pipeline fragility mapping on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-
-
-**Optional Parameters**
-
-1. **Liquefaction** Use liquefaction to modify fragility curve. Default False. If True provide liquefaction geology dataset ID.
-2. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
-
-
-Water network recovery analysis
-_______________________________
-
-This analysis calculates water network recovery after the hazard event, defined by calling fragility
-and hazard services. determine the damage to water infrastructure which would be the input
-for the dislocation calculation.
-The water demand by dislocated population and infrastructure recovery time based on the damagae
-and repair of pipes, pumps and water tanks are evaluated. Then the change in population dislocation is assessed
-and the recovery process is repeated again.
-
-The analysis can be used in stochastic calculations with an integer value being imported to seed
-the random number generator.
-
-The code creates an output CSV file with recovery trajectory timelines and data.
-
-**Required Parameters**
-
-1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
-2. **Critical Infrastructure Inventory ID** A dataset with water network inventory with corresponding infrastructure nodes.
-3. **Population Dislocation ID** A dataset with results of Population Dislocation analysis.
-
-
-**Optional Parameters**
-
-1. **Seed** An integer value being imported to seed the random number generator.
-
-
 ----
 
-:doc:`Pyincore home <index>`
+:doc:`pyIncore home <index>`

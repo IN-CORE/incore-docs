@@ -10,4 +10,4 @@ Package
 
 ----
 
-:doc:`Pyincore home <index>`
+:doc:`pyIncore home <index>`
