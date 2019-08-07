@@ -1,0 +1,340 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "IN-CORE Space Service for creating and accessing spaces",
+    "version": "0.4.1",
+    "title": "",
+    "contact": {
+      "name": "IN-CORE Dev Team",
+      "url": "https://incore2.ncsa.illinois.edu",
+      "email": "incore-dev@lists.illinois.edu"
+    },
+    "license": {
+      "name": "Mozilla Public License 2.0 (MPL 2.0)",
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/"
+    }
+  },
+  "host": "incore2-services.ncsa.illinois.edu",
+  "basePath": "/space/api",
+  "tags": [
+    {
+      "name": "spaces"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/spaces": {
+      "get": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Gets the list of all available spaces",
+        "description": "Return spaces that the user has privileges to read. If a datasetId is passed, it will return all spaces that contains it.",
+        "operationId": "getSpacesList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Space"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Ingest space object as json",
+        "description": "",
+        "operationId": "ingestSpace",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "formData",
+            "description": "JSON representing an input space",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      }
+    },
+    "/spaces/{id}": {
+      "get": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Gets a space.",
+        "description": "",
+        "operationId": "getSpaceById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Space id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Updates a space.",
+        "description": "",
+        "operationId": "updateSpace",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SpaceOld Id from data service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "formData",
+            "description": "JSON representing an input space",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      }
+    },
+    "/spaces/{id}/grant": {
+      "post": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Grants new privileges to a space",
+        "description": "",
+        "operationId": "grantPrivilegesToSpace",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SpaceOld Id from data service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "grant",
+            "in": "formData",
+            "description": "JSON representing a privilege block",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      }
+    },
+    "/spaces/{id}/datasets/{datasetId}": {
+      "post": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Adds a dataset to a space",
+        "description": "",
+        "operationId": "addDatasetsToSpace",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SpaceOld Id from data service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "datasetId",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Privileges": {
+      "type": "object",
+      "properties": {
+        "userPrivileges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "WRITE",
+              "ADMIN"
+            ]
+          }
+        },
+        "groupPrivileges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "WRITE",
+              "ADMIN"
+            ]
+          }
+        }
+      }
+    },
+    "Space": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "privileges": {
+          "$ref": "#/definitions/Privileges"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/SpaceMetadata"
+        }
+      }
+    },
+    "SpaceMetadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

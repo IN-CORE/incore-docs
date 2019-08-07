@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "IN-CORE Data Service for creating and accessing spaces",
-    "version": "0.2.0",
+    "description": "IN-CORE Data Service for creating and accessing datasets",
+    "version": "0.4.1",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -19,9 +19,6 @@
   "tags": [
     {
       "name": "datasets"
-    },
-    {
-      "name": "spaces"
     }
   ],
   "schemes": [
@@ -34,14 +31,14 @@
     "application/json"
   ],
   "paths": {
-    "/datasets/{id}/files": {
+    "/datasets": {
       "get": {
         "tags": [
           "datasets"
         ],
-        "summary": "Gets the list of files associated with the dataset and their metadata",
-        "description": "",
-        "operationId": "getDatasetsFiles",
+        "summary": "Gets a list of datasets",
+        "description": "Can filter by type, title, creator etc.",
+        "operationId": "getDatasets",
         "produces": [
           "application/json"
         ],
@@ -53,11 +50,49 @@
             "type": "string"
           },
           {
-            "name": "id",
-            "in": "path",
-            "description": "Dataset Id from data service",
-            "required": true,
+            "name": "type",
+            "in": "query",
+            "description": "DataType of IN-CORE datasets. Can filter by partial datatype strings. ex: ergo:buildingInventoryVer5, ergo:census",
+            "required": false,
             "type": "string"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title of dataset. Can filter by partial title strings",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "description": "Username of the creator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "query",
+            "description": "Name of space",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
           }
         ],
         "responses": {
@@ -66,7 +101,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/FileDescriptor"
+                "$ref": "#/definitions/Dataset"
               }
             }
           }
@@ -76,9 +111,9 @@
         "tags": [
           "datasets"
         ],
-        "summary": "Upload file(s) to attach to a dataset",
-        "description": "GIS files like shp, tif etc. are also uploaded to IN-CORE geoserver",
-        "operationId": "uploadFiles",
+        "summary": "Ingest dataset object as json",
+        "description": "Files have to uploaded to the dataset separately using {id}/files endpoint",
+        "operationId": "ingestDataset",
         "consumes": [
           "multipart/form-data"
         ],
@@ -93,20 +128,11 @@
             "type": "string"
           },
           {
-            "name": "id",
-            "in": "path",
-            "description": "Dataset Id from data service",
+            "name": "dataset",
+            "in": "formData",
+            "description": "JSON representing an input dataset",
             "required": true,
             "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Form inputs representing the file(s). The id/key of each input file has to be 'file'",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/FormDataMultiPart"
-            }
           }
         ],
         "responses": {
@@ -236,14 +262,47 @@
         }
       }
     },
-    "/datasets": {
+    "/datasets/{id}/blob": {
       "get": {
         "tags": [
           "datasets"
         ],
-        "summary": "Gets a list of datasets",
-        "description": "Can filter by type, title, creator etc.",
-        "operationId": "getDatasets",
+        "summary": "Returns a zip file that contains all the files attached to a dataset specified by {id}",
+        "description": "",
+        "operationId": "getFileByDataset",
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/datasets/{id}/files": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Gets the list of files associated with the dataset and their metadata",
+        "description": "",
+        "operationId": "getDatasetsFiles",
         "produces": [
           "application/json"
         ],
@@ -255,31 +314,10 @@
             "type": "string"
           },
           {
-            "name": "type",
-            "in": "query",
-            "description": "DataType of IN-CORE datasets. Can filter by partial datatype strings. ex: ergo:buildingInventoryVer5, ergo:census",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "title",
-            "in": "query",
-            "description": "Title of dataset. Can filter by partial title strings",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "creator",
-            "in": "query",
-            "description": "Username of the creator",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "space",
-            "in": "query",
-            "description": "IN-CORE space the datasets belong to. ex: ergo, incore etc.",
-            "required": false,
+            "name": "id",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
             "type": "string"
           }
         ],
@@ -289,7 +327,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Dataset"
+                "$ref": "#/definitions/FileDescriptor"
               }
             }
           }
@@ -299,9 +337,9 @@
         "tags": [
           "datasets"
         ],
-        "summary": "Ingest dataset object as json",
-        "description": "Files have to uploaded to the dataset separately using {id}/files endpoint",
-        "operationId": "ingestDataset",
+        "summary": "Upload file(s) to attach to a dataset",
+        "description": "GIS files like shp, tif etc. are also uploaded to IN-CORE geoserver",
+        "operationId": "uploadFiles",
         "consumes": [
           "multipart/form-data"
         ],
@@ -316,11 +354,20 @@
             "type": "string"
           },
           {
-            "name": "dataset",
-            "in": "formData",
-            "description": "JSON representing an input dataset",
+            "name": "id",
+            "in": "path",
+            "description": "Dataset Id from data service",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Form inputs representing the file(s). The id/key of each input file has to be 'file'",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FormDataMultiPart"
+            }
           }
         ],
         "responses": {
@@ -376,39 +423,6 @@
         }
       }
     },
-    "/datasets/{id}/blob": {
-      "get": {
-        "tags": [
-          "datasets"
-        ],
-        "summary": "Returns a zip file that contains all the files attached to a dataset specified by {id}",
-        "description": "",
-        "operationId": "getFileByDataset",
-        "produces": [
-          "application/octet-stream"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Dataset Id from data service",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
     "/datasets/{id}/files/{file_id}/blob": {
       "get": {
         "tags": [
@@ -449,60 +463,14 @@
         }
       }
     },
-    "/spaces/{id}/grant": {
-      "post": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Grants new privileges to a space",
-        "description": "",
-        "operationId": "grantPrivilegesToSpace",
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Space Id from data service",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "dataset",
-            "in": "formData",
-            "description": "JSON representing a privilege block",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
-          }
-        }
-      }
-    },
-    "/spaces/{id}": {
+    "/datasets/search": {
       "get": {
         "tags": [
-          "spaces"
+          "datasets"
         ],
-        "summary": "Gets the spaces of a dataset from the Dataset collection",
-        "description": "",
-        "operationId": "getSpaceById",
+        "summary": "Search for a text in all datasets",
+        "description": "Gets all datasets that contain a specific text",
+        "operationId": "findDatasets",
         "produces": [
           "application/json"
         ],
@@ -514,91 +482,29 @@
             "type": "string"
           },
           {
-            "name": "id",
-            "in": "path",
-            "description": "Space Id from data service",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Updates a space from the Dataset collection",
-        "description": "",
-        "operationId": "updateSpace",
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Space Id from data service",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "dataset",
-            "in": "formData",
-            "description": "JSON representing an input space",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
-          }
-        }
-      }
-    },
-    "/spaces": {
-      "get": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Gets the list of all available INCORE Dataset spaces",
-        "description": "Return spaces that the user has privileges to read",
-        "operationId": "getSpacesList",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "dataset",
+            "name": "text",
             "in": "query",
-            "description": "Dataset Id",
+            "description": "Text to search by",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
           }
         ],
         "responses": {
@@ -607,122 +513,20 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Space"
+                "$ref": "#/definitions/Dataset"
               }
             }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Ingest space object as json",
-        "description": "",
-        "operationId": "ingestSpace",
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
           },
-          {
-            "name": "dataset",
-            "in": "formData",
-            "description": "JSON representing an input space",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
-          }
-        }
-      }
-    },
-    "/spaces/{id}/datasets/{datasetId}": {
-      "post": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Adds a dataset to a space",
-        "description": "",
-        "operationId": "addDatasetsToSpace",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Space Id from data service",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "datasetId",
-            "in": "path",
-            "description": "Dataset Id from data service",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
+          "404": {
+            "description": "No datasets found with the searched text"
           }
         }
       }
     }
+
+
   },
   "definitions": {
-    "FileDescriptor": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "deleted": {
-          "type": "boolean"
-        },
-        "filename": {
-          "type": "string"
-        },
-        "mimeType": {
-          "type": "string"
-        },
-        "size": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "dataURL": {
-          "type": "string"
-        },
-        "md5sum": {
-          "type": "string"
-        }
-      }
-    },
     "Dataset": {
       "type": "object",
       "properties": {
@@ -782,8 +586,63 @@
             "format": "double"
           }
         },
+        "networkDataset": {
+          "$ref": "#/definitions/NetworkDataset"
+        },
         "privileges": {
           "$ref": "#/definitions/Privileges"
+        }
+      }
+    },
+    "FileDescriptor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dataURL": {
+          "type": "string"
+        },
+        "md5sum": {
+          "type": "string"
+        }
+      }
+    },
+    "NetworkData": {
+      "type": "object",
+      "properties": {
+        "networkType": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        }
+      }
+    },
+    "NetworkDataset": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "$ref": "#/definitions/NetworkData"
+        },
+        "node": {
+          "$ref": "#/definitions/NetworkData"
+        },
+        "graph": {
+          "$ref": "#/definitions/NetworkData"
         }
       }
     },
@@ -918,17 +777,17 @@
         "providers": {
           "$ref": "#/definitions/Providers"
         },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
         "formDataContentDisposition": {
           "$ref": "#/definitions/FormDataContentDisposition"
         },
         "simple": {
           "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
         },
         "parameterizedHeaders": {
           "type": "object",
@@ -1122,32 +981,6 @@
     },
     "Providers": {
       "type": "object"
-    },
-    "Space": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "metadata": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
-        },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
-        },
-        "members": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "name": {
-          "type": "string"
-        }
-      }
     }
   }
 }
