@@ -1,15 +1,13 @@
-Running locally
-===============
-
 Testing pyIncore Installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=============================
 
 - For these instructions we assume that users develop their python script by using pyIncore in their own **project folder** (create folder if you don’t have one).
 
-- Download the Jupyter Notebook file for **Building damage analysis** (`<https://incore2.ncsa.illinois.edu/doc/examples/buildingdamage.ipynb>`_) to your **project folder**. We will verify your installation of pyIncore by running this file.
+- Download the `buildingdamage.ipynb <https://incore2.ncsa.illinois.edu/doc/examples/buildingdamage.ipynb>`_  Jupyter Notebook file (right-click and choose "save link as") to your **project folder**. We will verify your installation of pyIncore by running **Building damage analysis**.
 
-Running Jupyter Notebook
-^^^^^^^^^^^^^^^^^^^^^^^^
+Running a Building Damage Analysis locally
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 1. Start a local **Jupyter notebook** by running the following command in the terminal or command prompt from your **project folder** (change directories to the particular project folder at the command prompt):
 

@@ -46,7 +46,7 @@ Create a credential file with IN-CORE username/password (same information you us
     :alt: Nano text editor.
     :align: right
 
-4. Create a hidden credential file in the folder you just created (``cd .incore`` followed by ``nano .incorepw``) and type IN-CORE username and password using `Nano <https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/>`_, the Linux command-line text editor:
+4. Create a hidden credential file in the folder you just created (``cd .incore`` followed by ``nano .incorepw``) and type IN-CORE username and password using `Nano <https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/>`_, the Linux command-line text editor. nano text editor. Write your username in the first line and the password in the second:
 
 5. Save the file with ``Ctrl+O`` and ``Enter`` commands
 

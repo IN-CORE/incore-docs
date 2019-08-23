@@ -35,9 +35,9 @@ copyright = 'Mozilla Public License v2.0'
 author = 'ISDA NCSA'
 
 # The short X.Y version
-version = 'pyincore v0.3'
+version = 'pyincore v0.4.1'
 # The full version, including alpha/beta/rc tags
-release = 'pyincore v0.3.0'
+release = 'pyincore v0.4.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -51,10 +51,12 @@ release = 'pyincore v0.3.0'
 # ones.
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.intersphinx',
-              'sphinx.ext.viewcode',
+              #'sphinx.ext.viewcode',
               'sphinx.ext.ifconfig',
               'sphinx.ext.napoleon',
-              'sphinx.ext.todo']
+              'sphinx.ext.todo',
+              'sphinxcontrib.swaggerdoc'
+              ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -91,7 +93,7 @@ pygments_style = 'sphinx'
 # See also:
 # http://www.sphinx-doc.org/en/stable/ext/autodoc.html#confval-autodoc_mock_importshttps://github.com/sphinx-doc/sphinx/issues/4182
 
-autodoc_mock_imports = ['pytest', 'wikidata', 'rasterstats']
+autodoc_mock_imports = ['pytest', 'rasterstats']
 
 # This value selects what content will be inserted into the main body of an autoclass directive.
 # The possible values are:
@@ -124,7 +126,7 @@ html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
-    #'vcs_pageview_mode': '',
+    'vcs_pageview_mode': '',
     # Toc options
     'collapse_navigation': True,
     'sticky_navigation': True,
