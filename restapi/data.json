@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",

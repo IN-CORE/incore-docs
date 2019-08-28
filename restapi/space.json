@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Space Service for creating and accessing spaces",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -37,7 +37,7 @@
           "spaces"
         ],
         "summary": "Gets the list of all available spaces",
-        "description": "Return spaces that the user has privileges to read. If a datasetId is passed, it will return all spaces that contains it.",
+        "description": "Return spaces that the user has read/write/admin privileges on. If a member Id is passed, it will return all spaces that contains the member.",
         "operationId": "getSpacesList",
         "produces": [
           "application/json"
@@ -50,9 +50,9 @@
             "type": "string"
           },
           {
-            "name": "dataset",
+            "name": "member",
             "in": "query",
-            "description": "Dataset Id",
+            "description": "Member Id",
             "required": false,
             "type": "string"
           }
@@ -165,15 +165,22 @@
           {
             "name": "id",
             "in": "path",
-            "description": "SpaceOld Id from data service",
+            "description": "Space id.",
             "required": true,
             "type": "string"
           },
           {
             "name": "space",
             "in": "formData",
-            "description": "JSON representing an input space",
-            "required": true,
+            "description": "JSON representing a space",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "remove",
+            "in": "formData",
+            "description": "JSON representing a members list for removing from space",
+            "required": false,
             "type": "string"
           }
         ],
@@ -211,7 +218,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "SpaceOld Id from data service",
+            "description": "Space Id",
             "required": true,
             "type": "string"
           },
@@ -233,14 +240,14 @@
         }
       }
     },
-    "/spaces/{id}/datasets/{datasetId}": {
+    "/spaces/{id}/members/{memberId}": {
       "post": {
         "tags": [
           "spaces"
         ],
-        "summary": "Adds a dataset to a space",
+        "summary": "Adds a member to a space",
         "description": "",
-        "operationId": "addDatasetsToSpace",
+        "operationId": "addMembersToSpace",
         "produces": [
           "application/json"
         ],
@@ -254,14 +261,55 @@
           {
             "name": "id",
             "in": "path",
-            "description": "SpaceOld Id from data service",
+            "description": "Space Id",
             "required": true,
             "type": "string"
           },
           {
-            "name": "datasetId",
+            "name": "memberId",
             "in": "path",
-            "description": "Dataset Id from data service",
+            "description": "Member Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "spaces"
+        ],
+        "summary": "Removes a member from a space",
+        "description": "",
+        "operationId": "removeMemberFromSpace",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Credential-Username",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Space id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "memberId",
+            "in": "path",
+            "description": "Member id",
             "required": true,
             "type": "string"
           }
