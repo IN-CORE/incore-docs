@@ -34,6 +34,7 @@ and complete) and creates an output CSV file.
 1. **Liquefaction** Use liquefaction to modify fragility curve. Default False.
 2. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
 
+
 Building damage analysis
 ________________________
 
@@ -67,6 +68,26 @@ and complete) and creates an output CSV file.
 2. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
 
 
+Cummulative building damage analysis
+____________________________________
+
+This analysis computes the damage to buildings based on two hazards, an earthquake and a tsunami.
+
+The process of evaluating structural damages is done externally and the results for earthquake and tsunami
+are imported to the analysis. The damage intervals are then calculated from combined limit states.
+
+**Required Parameters**
+
+1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
+2. **Earthquake Building Damage** A building dataset with calculated damages caused by the earthquake.
+2. **Tornado Building Damage** A building dataset with calculated damages caused by the tsunami.
+3. **Damage Ratios** A dataset that contains the damage ratios for buildings. It includes weights to compute mean damage.
+
+**Optional Parameters**
+
+1. **Number of CPUs** Number of CPUs used for parallel computations. Default 1.
+
+
 Electric power network recovery model analysis
 ______________________________________________
 
@@ -94,6 +115,70 @@ The code creates an output CSV file.
 
 * Systems-Based Approach to Interdependent Electric Power Delivery and Telecommunications Infrastructure Resilience Subject to Weather-Related Hazards, D.A. Reed, S. Wang, K.C. Kapur and C. Zheng, *Journal of Structural Engineering* **142(8)** C4015011, 2015, doi: `10.1061/(ASCE)ST.1943-541X.0001395 <https://opensource.ncsa.illinois.edu/confluence/display/INCORE2/Reed\_Wang\_Kapur\_Zheng2015.pdf>`_
 * Vulnerability and Robustness of Civil Infrastructure Systems to Hurricanes, S. Wang, D.A. Reed, *Frontiers in Built Environment* **3** 60, 2017, doi: `10.3389/fbuil.2017.00060 <https://opensource.ncsa.illinois.edu/confluence/display/INCORE2/Vulnerability\_and\_Robustness\_of\_Civil\_Infrastructu.pdf>`_
+
+
+Housing unit allocation analysis
+________________________________
+
+This analysis sets up a detailed critical infrastructure inventory with housing unit level characteristics.
+The process aligns the housing unit inventory with physical systems, such as the inventory of buildings
+and the demand nodes of a potable water network. The allocation of housing units to the address points
+(buildings) provides a framework to account for uncertainty in community structure that allows
+for the hazard impacts to be analyzed statistically.
+
+Additionally, the code can be used as a MCS analysis with n runs  or as a single allocation run with an integer
+value being used as a random number generator seed and passed to the other analyses. Output is a tabulated
+Housing Unit Allocation dataset.
+
+**Required Parameters**
+
+1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
+2. **Address Point Inventory ID** A dataset with the four probabilities of damage states from which the building value losses are calculated.
+3. **Building Inventory ID** A building dataset with housing units.
+4. **Critical Infrastructure Inventory ID** A dataset with water network inventory with corresponding infrastructure nodes.
+5. **Housing Unit Inventory ID** A dataset with housing unit characteristics data based on 2010 Census.
+
+
+**Optional Parameters**
+
+1. **Seed** An integer value being imported to seed the random number generator.
+
+
+**Related publications**
+
+* Integration of Detailed Household Characteristic Data with Critical Infrastructure and Its Implementation to Post-Hazard Resilience Modeling, N. Rosenheim, R. Guidotti and P. Gardoni, `pdf <https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/Stochastic+Population+Allocation?preview=/131104825/131104832/Rosenheim%20Integration%20of%20Detailed%20Household%20Characteristic%20Data%20with%20Critical%20Infrastructure%202018-06-07.pdf>`_
+* Integration of Physical Infrastructure and Social Systems in Communities Reliability and Resilience Analysis, R. Guidotti, P. Gardoni and N. Rosenheim, *Reliability Engineering & System Safety*, 2019, doi: `10.1016/j.ress.2019.01.008 <https://app.dimensions.ai/details/publication/pub.1111322263?and_facet_journal=jour.1158471>`_
+
+
+Joplin CGE Analysis
+___________________
+
+This analysis sets up an estimate of economic impact of Joplin tornado using Computable general equilibrium (CGE)
+models. A detailed analysis shows how an economy might react to economic shocks, such as changes in policy, technology,
+or natural disasters. A CGE model consists of equations describing model variables and a detailed database consistent
+with the model equations.
+
+The resulting datasets are 1) Domestic Supply, 2) employment and 3) household income.
+
+**Required Parameters**
+
+1. **Solver path** A system path to ipopt solver executable.
+2. **Model iterations** A number of dynamic model iterations.
+3. **SAM** Social accounting matrix.
+4. **BB** Capital comp.
+5. **IOUT** Government parameters and initial values.
+6. **MISC** Parameters and initial values.
+7. **MISCH** Household parameters and initial values.
+8. **LANDCAP** Land capital.
+9. **EMPLOY** Employment.
+10. **IGTD** Exogenous Transfer PMT.
+11. **TAUFF** Tax rates.
+12. **TPC** Factor taxes.
+13. **JOBCR** Labor.
+14. **OUTCR** Commuter Labor Groups.
+
+
+**Related publications**
 
 
 Nonstructural building damage analysis
@@ -168,26 +253,17 @@ and complete) and creates an output CSV file.
 Population dislocation analysis
 _______________________________
 
-This analysis computes the population dislocation based on a particular hazard such as earthquake.
-First, the population (housing units) are allocated to the address points (buildings). This is done by calling
-Population Allocation analysis.
+This analysis computes the population dislocation based on a particular hazard such as earthquake. First, Housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing Unit Allocation analysis.
 
-After the population is allocated, the hazard event defined by calling fragility
-and hazard services would determine the value loss for each structure which would be the input
-for the dislocation calculation. The dislocation is calculated from four probabilites of dislocation based
-on a random normal distribution of the four damage factors presented by Bai et al. 2009. These four
-damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities
-of damage states was used as the probability for dislocation. Since the process to determine which households
-are dislocated is stochastic an integer value being imported to seed the random number generator.
+After the housing units are allocated, the hazard event defined by calling fragility and hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
 
-Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken
-into account. The output is a CSV file with dislocated households and related variables.
+Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. The output is a CSV file with dislocated households and related variables.
 
 **Required Parameters**
 
 1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
 2. **Building Damage Dataset ID** A dataset with the four probabilities of damage states from which the building value losses are calculated.
-3. **Population Allocation ID** A dataset with results of Stochastic Population Allocation analysis.
+3. **Housing Unit Allocation ID** A dataset with results of Housing Unit Allocation analysis.
 4. **Block Group ID** A dataset ID with block group characteristics, percentages of African-American and Hispanic population.
 
 
@@ -200,39 +276,6 @@ into account. The output is a CSV file with dislocated households and related va
 
 * Probabilistic Assessment of Structural Damage due to Earthquakes for Buildings in Mid-America, J. Bai; M.B.D. Hueste and P. Gardoni, *Journal of Structural Engineering* **135(10)** 2009, doi: `10.1061/(ASCE)0733-9445(2009)135%3A10(1155) <https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9445%282009%29135%3A10%281155%29>`_
 * Integration of Physical Infrastructure and Social Systems in Communities Reliability and Resilience Analysis, R. Guidotti, P. Gardoni and N. Rosenheim, *Reliability Engineering & System Safety*, 2019: DOI `10.1016/j.ress.2019.01.008 <https://app.dimensions.ai/details/publication/pub.1111322263?and_facet_journal=jour.1158471>`_
-
-
-Stochastic population analysis
-______________________________
-
-This analysis sets up a detailed critical infrastructure inventory with household level characteristics.
-The process aligns the population inventory with physical systems, such as the inventory of buildings
-and the demand nodes of a potable water network. The  stochastic population allocation at the housing units
-to the address points (buildings) provides a framework to account for uncertainty in community structure that allows
-for the hazard impacts to be analyzed statistically.
-
-Additionally, the code can be used as a stochastic analysis with n interations or as a single allocation run with
-an integer value being used as a random number generator seed and passed to the other analyses. Output is
-a tabulated Population Allocation dataset.
-
-**Required Parameters**
-
-1. **Result name** A name for the result dataset, usually in CSV format which contains the damage information.
-2. **Address Point Inventory ID** A dataset with the four probabilities of damage states from which the building value losses are calculated.
-3. **Building Inventory ID** A building dataset with housing units.
-4. **Critical Infrastructure Inventory ID** A dataset with water network inventory with corresponding infrastructure nodes.
-5. **Population Inventory ID** A dataset with population data based on 2010 Census.
-
-
-**Optional Parameters**
-
-1. **Seed** An integer value being imported to seed the random number generator.
-
-
-**Related publications**
-
-* Integration of Detailed Household Characteristic Data with Critical Infrastructure and Its Implementation to Post-Hazard Resilience Modeling, N. Rosenheim, R. Guidotti and P. Gardoni, `pdf <https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/Stochastic+Population+Allocation?preview=/131104825/131104832/Rosenheim%20Integration%20of%20Detailed%20Household%20Characteristic%20Data%20with%20Critical%20Infrastructure%202018-06-07.pdf>`_
-* Integration of Physical Infrastructure and Social Systems in Communities Reliability and Resilience Analysis, R. Guidotti, P. Gardoni and N. Rosenheim, *Reliability Engineering & System Safety*, 2019, doi: `10.1016/j.ress.2019.01.008 <https://app.dimensions.ai/details/publication/pub.1111322263?and_facet_journal=jour.1158471>`_
 
 
 Tornado epn damage analysis

@@ -33,8 +33,6 @@ view the metadata and visualizations, and download the datasets.
    account
    installation
    running
-   incore_lab
-   incore_webtools
    Analyses <analyses>
    documentation
    pyincore package <pyincore>

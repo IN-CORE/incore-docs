@@ -80,9 +80,24 @@ buildingdamage
 ..  autoclass:: buildingdamage.buildingutil.BuildingUtil
     :members:
 
+cumulativebuildingdamage
+========================
+..  autoclass:: cumulativebuildingdamage.cumulativebuildingdamage.CumulativeBuildingDamage
+    :members:
+
 epnrecoverymodel
 ================
 ..  autoclass:: epnrecoverymodel.epnrecoverymodel.EpnRecoveryModel
+    :members:
+
+housingunitallocation
+=====================
+..  autoclass:: housingunitallocation.housingunitallocation.HousingUnitAllocation
+    :members:
+
+joplincgeanalysis
+=================
+..  autoclass:: joplincgeanalysis.joplincgeanalysis.JoplinCGEModel
     :members:
 
 nonstructbuildingdamage
@@ -102,11 +117,6 @@ pipelinedamage
 populationdislocation
 =====================
 ..  autoclass:: populationdislocation.populationdislocation.PopulationDislocation
-    :members:
-
-stochastic_population
-=====================
-..  autoclass:: stochasticpopulation.stochastic_population_allocation.StochasticPopulationAllocation
     :members:
 
 tornadoepndamage
