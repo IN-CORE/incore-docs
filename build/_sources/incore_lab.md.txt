@@ -89,3 +89,4 @@ The second IN-CORE menu, `INCORE docs` allows user to see **pyIncore** documenta
 
 ![API viewer on the IN-CORE Lab with endpoint definitions.](images/juplab8_swagger.jpg "API viewer on the IN-CORE Lab with endpoint definitions.")
 
+`bu`

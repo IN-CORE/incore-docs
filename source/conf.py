@@ -52,6 +52,7 @@ release = 'INCORE documentation v0.5.0'
 # ones.
 extensions = ['sphinx.ext.intersphinx',
               #'sphinx.ext.viewcode',
+              'sphinx-docxbuilder',
               'sphinx.ext.ifconfig',
               'sphinx.ext.napoleon',
               'sphinx.ext.todo'
@@ -81,7 +82,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['notebooks/*.ipynb']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -243,3 +244,11 @@ napoleon_use_rtype = True
 
 # Example configuration for inter sphinx: refer to the Python standard library.
 # intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+
+# ----------------- Nitpicky mode ---------------------------------------
+
+# Enable nitpicky mode - which ensures that all references in the docs
+# resolve.
+
+nitpicky = True
+nitpick_ignore = [('py:class', 'type')]

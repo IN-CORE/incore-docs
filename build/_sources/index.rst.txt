@@ -7,8 +7,8 @@
 
     introduction
     account
-    pyIncore <pyincore>
-    Analyses <analyses>
+    pyincore
+    analyses
     incore_lab
     webtools
     documentation
