@@ -1,3 +1,5 @@
+IN-CORE
+=======
 
 ..  toctree::
     :maxdepth: 2
@@ -5,16 +7,16 @@
     :caption: Table of Contents
     :name: mastertoc
 
-    introduction
+    Introduction <introduction>
     account
-    pyincore
-    analyses
+    pyIncore <pyincore>
     incore_lab
     webtools
     documentation
     tutorials
     FAQ <faq>
     notebooks
+    acknowledgement
 
 ----
 
