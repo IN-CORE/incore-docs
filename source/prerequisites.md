@@ -25,3 +25,69 @@
 
 In the next section we provide installation instructions for environment manager using [Miniconda](https://docs.conda.io/en/latest/miniconda.html/). Similar instructions apply to full [Anaconda](https://docs.anaconda.com/anaconda/install/) manager. Python 3.x will be installed with both distributions. The following instructions were tested for Mac, Windows and Linux 64-bit OS (The 32-bit has not been tested yet).
 
+### Windows 64-bit
+
+1. Download the latest Miniconda3 installer for Windows from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
+
+2. Run the installer setup locally (select the *Just Me* choice) to avoid the need for administrator privileges.
+
+3. Leave the default folder path (`C:\Users\<user>\..\miniconda3`).
+
+4. Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+
+5. Open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
+
+    ![Windows Menu.](images/win_prompt1.jpg)
+
+6. Create the python environment (`pyincore` for example) and activate it (or stay in the `base`):
+    ```
+    conda create -n pyincore python=3
+    conda activate pyincore
+    ```
+
+7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
+    ```
+        conda config --add channels conda-forge
+    ```
+
+8. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+    ```
+        conda install jupyter
+    ```
+
+### Mac and Linux OS
+
+1. Download the latest Miniconda3 installer from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
+
+2. Run the installer setup locally (select the *Install for me only* on Mac/Linux) to avoid the need for administrator privileges.
+
+3. Leave the default folder path (`/Users/<username>/miniconda3` or `/home/<username>/miniconda3`).
+
+4. Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+
+5. Open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
+
+6. Create the python environment (`pyincore` for example) and activate it (or stay in the `base`):
+    ```
+    conda create -n pyincore python=3
+    conda activate pyincore
+    ```
+
+7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
+    ```
+        conda config --add channels conda-forge
+      ```
+
+8. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+    ```
+        conda install jupyter
+    ```
+   
+Mac OS specific notes: We use `matplotlib` library to create graphs. There is a Mac specific installation issue addressed at StackOverflow [link 1](https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx) and [link 2](https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python). In a nutshell, insert line:
+    ```
+        backend : Agg
+    ```
+    
+into `~/.matplotlib/matplotlibrc` file. You must create the file (`matplotlibrc`) if it does not exist.
+
+

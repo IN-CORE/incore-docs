@@ -16,9 +16,10 @@ IN-CORE
     tutorials
     FAQ <faq>
     notebooks
+    refs
     acknowledgement
 
 ----
 
-`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
+`IN-CORE NCSA ../index.html`_
 

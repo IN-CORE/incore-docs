@@ -52,7 +52,7 @@ release = 'INCORE documentation v0.5.0'
 # ones.
 extensions = ['sphinx.ext.intersphinx',
               #'sphinx.ext.viewcode',
-              'sphinx-docxbuilder',
+              'docxbuilder',
               'sphinx.ext.ifconfig',
               'sphinx.ext.napoleon',
               'sphinx.ext.todo'
