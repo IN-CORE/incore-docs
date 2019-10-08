@@ -1,10 +1,6 @@
-## pyIncore installation
-
-- **pyIncore package**
-
-### All Platforms
+## Installation
  
-These steps will guide you on how to install both pyIncore and Jupyter notebook so you can develop your code.
+These steps will guide you on how to install both pyIncore and Jupyter notebook on **All platforms** so you can develop your code.
 
 1. From the Terminal (Mac/Linux) or Command Prompt (Windows) add [conda-forge](https://conda-forge.org/) package repository/channel to your environment:
     ```
