@@ -1,5 +1,3 @@
-## Introduction
-
 ![IN-CORE name and logo](images/incore0.png)
 
 **IN-CORE** is an acronym of Interdependent Networked Community Resilience Modeling Environment, a scientific platform for running scientific analyses that model the impact of natural hazards and resiliency against
@@ -19,4 +17,10 @@ various analyses as Jupyter Notebooks.
 The viewers enable users to browse and search the **Datasets**, **Hazards** and **Fragilities**,
 view the metadata and visualizations, and download the datasets.
 
+## Acknowledgement
+
+This work was performed under financial assistance award 70NANB15H044 from
+the National Institute of Standards and Technology ([NIST](https://www.nist.gov/)) as part of
+the Interdependent Networked Community Resilience Modeling
+Environment [IN-CORE](http://resilience.colostate.edu/in_core.shtml).
 

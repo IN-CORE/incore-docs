@@ -1,5 +1,3 @@
-IN-CORE
-=======
 
 ..  toctree::
     :maxdepth: 2
@@ -7,19 +5,18 @@ IN-CORE
     :caption: Table of Contents
     :name: mastertoc
 
-    Introduction <introduction>
+    introduction
     account
     pyIncore <pyincore>
+    Analyses <analyses>
     incore_lab
     webtools
     documentation
     tutorials
     FAQ <faq>
     notebooks
-    refs
-    acknowledgement
 
 ----
 
-`IN-CORE NCSA ../index.html`_
+`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 

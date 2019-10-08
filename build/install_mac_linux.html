@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13. Technical documentation &mdash; IN-CORE INCORE documentation v0.5.0 documentation</title>
+  <title>6. Mac and Linux OS installation &mdash; IN-CORE INCORE documentation v0.5.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14. Tutorials" href="tutorials.html" />
-    <link rel="prev" title="12. IN-CORE Web Tools" href="webtools.html" /> 
+    <link rel="next" title="7. pyIncore installation" href="install_pyincore.html" />
+    <link rel="prev" title="5. Windows 64-bit installation" href="install_win.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,14 +91,14 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">3. Installing pyIncore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prerequisites.html">4. Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_win.html">5. Windows 64-bit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mac_linux.html">6. Mac and Linux OS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Mac and Linux OS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_pyincore.html">7. pyIncore Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="running.html">8. Testing pyIncore Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="running.html#running">9. Running</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analyses.html">10. Analyses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="incore_lab.html">11. IN-CORE Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webtools.html">12. IN-CORE Web Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">13. Technical documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">13. Technical documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">14. Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">15. FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">16. pyIncore Notebooks</a></li>
@@ -147,13 +147,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>13. Technical documentation</li>
+          <li><a href="pyincore.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>6. Mac and Linux OS installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/documentation.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/install_mac_linux.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,20 +168,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="technical-documentation">
-<h1>13. Technical documentation<a class="headerlink" href="#technical-documentation" title="Permalink to this headline">¶</a></h1>
-<p>From the IN-CORE landing page at <a class="reference external" href="https://incore2.ncsa.illinois.edu/">https://incore2.ncsa.illinois.edu/</a> a user can access other services and documentations.</p>
-<p><img alt="IN-CORE landing page." src="_images/incore0_landing_page.jpg" /></p>
-<p>Documentation of IN-CORE’s Application programming interface
-<a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a> is
-at https://incore2.ncsa.illinois.edu/doc/api/. The API endpoints definitions can be used for accessing <strong>Fragility</strong>,
-<strong>Data</strong> and <strong>Hazard</strong> server(s) in development of new analyses.</p>
-<p><img alt="Swagger API viewer with endpoint definitions." src="_images/incore2_swagger.jpg" /></p>
-<p>** Contact NCSA</p>
-<ul class="simple">
-<li><p>Contact an individual programmer developer by email and copy <a class="reference external" href="mailto:incore-dev&#37;&#52;&#48;lists&#46;illinois&#46;edu">incore-dev<span>&#64;</span>lists<span>&#46;</span>illinois<span>&#46;</span>edu</a> if you work closely with NCSA on a code conversion and/or improvement of your hazard analysis.</p></li>
-<li><p>Contact the <a class="reference external" href="mailto:incore-dev&#37;&#52;&#48;lists&#46;illinois&#46;edu">incore-dev<span>&#64;</span>lists<span>&#46;</span>illinois<span>&#46;</span>edu</a> email list if you do not work directly with NCSA.</p></li>
-</ul>
+  <div class="section" id="mac-and-linux-os-installation">
+<h1>6. Mac and Linux OS installation<a class="headerlink" href="#mac-and-linux-os-installation" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Download the latest Miniconda3 installer from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> web page.</p></li>
+<li><p>Run the installer setup locally (select the <em>Install for me only</em> on Mac/Linux) to avoid the need for administrator privileges.</p></li>
+<li><p>Leave the default folder path (<code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;/miniconda3</span></code> or <code class="docutils literal notranslate"><span class="pre">/home/&lt;username&gt;/miniconda3</span></code>).</p></li>
+<li><p>Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.</p></li>
+<li><p>Open up a Terminal. The <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is being activated and the prompt changes to: <code class="docutils literal notranslate"><span class="pre">(base)/Users/&lt;username&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">(base)/home/&lt;username&gt;</span></code>:</p></li>
+<li><p>Create the python environment (<code class="docutils literal notranslate"><span class="pre">pyincore</span></code> for example) and activate it (or stay in the <code class="docutils literal notranslate"><span class="pre">base</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyincore</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pyincore</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add <a class="reference external" href="https://conda-forge.org/">conda-forge</a> package repository to your environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">install</span> <span class="n">jupyter</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Mac OS specific notes: We use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library to create graphs. There is a Mac specific installation issue addressed at StackOverflow <a class="reference external" href="https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx">link 1</a> and <a class="reference external" href="https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python">link 2</a>. In a nutshell, insert line:
+<code class="docutils literal notranslate"><span class="pre">backend</span> <span class="pre">:</span> <span class="pre">Agg</span></code></p>
+<p>into <code class="docutils literal notranslate"><span class="pre">~/.matplotlib/matplotlibrc</span></code> file. You must create the file (<code class="docutils literal notranslate"><span class="pre">matplotlibrc</span></code>) if it does not exist.</p>
 </div>
 
 
@@ -190,10 +206,10 @@ at https://incore2.ncsa.illinois.edu/doc/api/. The API endpoints definitions can
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorials.html" class="btn btn-neutral float-right" title="14. Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install_pyincore.html" class="btn btn-neutral float-right" title="7. pyIncore installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="webtools.html" class="btn btn-neutral float-left" title="12. IN-CORE Web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install_win.html" class="btn btn-neutral float-left" title="5. Windows 64-bit installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

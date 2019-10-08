@@ -14,7 +14,7 @@
 
 ### pyIncore
 
-- *What is pyIncore? How is it different from pyincore?*
+- *What is pyIncore? How does to differ from pyincore?*
 
     **pyIncore** is a Python module that can be used to develop scientific hazard analysis and algorithm. 
     We recommend using Jupyter notebook for running the pyIncore projects, either locally or in 
@@ -34,11 +34,8 @@
 
 - *I have Python 3 installed but pip3 command does not work.*
 
-    Try installing additional packages via `conda`, use `pip` only if conda installer is not avilable. 
-    All required Python packages should be installed or updated using `conda install pyincore` or `conda update pyincore`.
-    If you still need `pip3` command make sure you are running the correct version of Python (you can check 
-    by running `python3 --version`) with corresponding path added to the PATH system variable. 
-    Following links will help you navigate 
+    Make sure you are running the correct version of Python (you can check by running `python3 --version`) 
+    with corresponding path added to the PATH system variable. Following links will help you navigate 
     through various installations; [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/), 
     [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python), 
     OS specific [downloads](https://www.python.org/downloads/).
