@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Space Service for creating and accessing spaces",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -19,6 +19,9 @@
   "tags": [
     {
       "name": "spaces"
+    },
+    {
+      "name": "status"
     }
   ],
   "schemes": [
@@ -320,6 +323,31 @@
             "schema": {
               "$ref": "#/definitions/Space"
             }
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

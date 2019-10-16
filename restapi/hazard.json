@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami and Hurricane",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -28,6 +28,9 @@
     },
     {
       "name": "tsunamis"
+    },
+    {
+      "name": "status"
     }
   ],
   "schemes": [
@@ -1671,6 +1674,31 @@
           },
           "500": {
             "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
