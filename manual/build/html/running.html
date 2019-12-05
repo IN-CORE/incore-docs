@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3. Testing and Running &mdash; IN-CORE Manual 0.5.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.4. Analyses" href="analyses.html" />
+    <link rel="prev" title="3.2. Installation" href="install_pyincore.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> IN-CORE Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">2. IN-CORE account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pyincore.html">3. pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">3.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_pyincore.html">3.2. Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Testing and Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyses.html">3.4. Analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">4. IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webtools.html">5. IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">6. Technical documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">7. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">8. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">9. Example pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">10. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">11. Acknowledgement</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IN-CORE Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="pyincore.html">3. pyIncore</a> &raquo;</li>
+        
+      <li>3.3. Testing and Running</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/running.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-and-running">
+<h1>3.3. Testing and Running<a class="headerlink" href="#testing-and-running" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>We assume that users develop python script by using pyIncore in their own <strong>Project folder</strong>.</p></li>
+<li><p>Locate a file called <code class="docutils literal notranslate"><span class="pre">.incorepw</span></code> in your HOME directory and write your credentials in it; the first line contains your username and the second password.
+The information is used for communicating with <strong>IN-CORE</strong> services such as hazard, data and fragility.
+The file is located in the <code class="docutils literal notranslate"><span class="pre">.incore</span></code> folder created during installation in your HOME directory.</p></li>
+<li><p>Download the <strong>Building damage analysis</strong> Jupyter notebook (<a class="reference external" href="https://incore2.ncsa.illinois.edu/doc/examples/buildingdamage.ipynb">https://incore2.ncsa.illinois.edu/doc/examples/buildingdamage.ipynb</a>) (right-click and choose “save link as”)
+and verify the installation by running it from your project folder. For details of running and manipulating <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> files refer
+to <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html#running">Jupyter documentation</a>. If you have problems running notebooks, contact us at <a class="reference external" href="mailto:incore-dev&#37;&#52;&#48;lists&#46;illinois&#46;edu">incore-dev<span>&#64;</span>lists<span>&#46;</span>illinois<span>&#46;</span>edu</a>.</p></li>
+<li><p>Start local <strong>Jupyter notebook</strong> by running the following command at the terminal or command prompt from a <strong>Project folder</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>or if Jupyter Notebook is not recognized in Anaconda</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="o">-</span><span class="n">m</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>A message <em>The Jupyter Notebook is running</em> appears in the terminal/prompt
+and you should see the notebook open in your browser.
+You will be asked to copy/paste a token into your browser when you connect
+for the first time.</p>
+<p><img alt="Jupyter Notebook token, running for the first time." src="_images/jupyter_token2.jpg" /></p>
+<p><strong>Note</strong> that the notebook is already installed with Anaconda
+distribution however it has to be installed separately in your virtual environment
+on Miniconda by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">jupyter</span></code>.</p>
+</li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">buildingdamage.ipynb</span></code> in the Jupyter Notebook browser.</p>
+<p><img alt="Jupyter Notebook dashboard." src="_images/juplocal1_file.jpg" /></p>
+</li>
+<li><p>Your web page should now show multiple cells of code. Right now you are not actually running a notebook yet. Running
+a cell means that you will execute the cellâ€™s contents. To execute cells in order you can just select the first
+cell and click the <strong>Run</strong> button at the top.</p>
+<p><img alt="Building damage Jupyter notebook cells." src="_images/juplocal2_notebook.jpg" /></p>
+<p>The <strong>Building damage</strong> is a long running analysis and there is little indication that it’s running except
+by either looking at the Jupyter Notebook file and seeing the [*] for the notebook cell where that block
+of code is being executed or by looking at the Task Manager in the Notebook dashboard to see there is
+a python process running. Alternatively, you can look at the Jupyter Notebook dashboard to see if the <code class="docutils literal notranslate"><span class="pre">csv</span></code> file
+with results has been created yet.</p>
+</li>
+</ul>
+<p>For details of running and manipulating ipynb files refer to <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html#running">Jupyter documentation</a>.</p>
+<ul class="simple">
+<li><p>Additionally, a user can run Jupyter notebook interactively in NCSA’s <a class="reference external" href="https://incore.ncsa.illinois.edu/lab">IN-CORE Lab</a>.</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analyses.html" class="btn btn-neutral float-right" title="3.4. Analyses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install_pyincore.html" class="btn btn-neutral float-left" title="3.2. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Mozilla Public License v2.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

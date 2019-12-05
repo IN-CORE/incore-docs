@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.4.13. Tornado epn damage &mdash; IN-CORE Manual 0.5.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.4.14. Transportation recovery" href="transportation_recovery.html" />
+    <link rel="prev" title="3.4.12. Portfolio recovery" href="portfolio_recovery.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IN-CORE Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account.html">2. IN-CORE account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyincore.html">3. pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites.html">3.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install_pyincore.html">3.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running.html">3.3. Testing and Running</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">3.4. Analyses</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">3.4.1. Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">3.4.2. Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.7. Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.8. Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">3.4.9. Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.10. Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.11. Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.12. Portfolio recovery</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.13. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.14. Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.15. Water facility damage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">4. IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webtools.html">5. IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">6. Technical documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">7. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">8. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">9. Example pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refs.html">10. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">11. Acknowledgement</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IN-CORE Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyincore.html">3. pyIncore</a> &raquo;</li>
+        
+          <li><a href="../analyses.html">3.4. Analyses</a> &raquo;</li>
+        
+      <li>3.4.13. Tornado epn damage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/analyses/tornadoepndamage.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tornado-epn-damage">
+<h1>3.4.13. Tornado epn damage<a class="headerlink" href="#tornado-epn-damage" title="Permalink to this headline">¶</a></h1>
+<p>This analysis computes the damage to electric power network (EPN) caused by tornado hazard by calling fragility
+and hazard services.  The probabilities for EPN damage state are obtained using network tower and network pole
+fragility curves. Depending on the input data the analysis also provide information about the number of damaged
+poles for each node, repair cost for each node, total repair cost for the network and total repair time for the network.</p>
+<p>The code creates an output CSV file.</p>
+<p><strong>Input Parameters</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result_name</code> <sup>*</sup></td>
+<td><code>str</code></td>
+<td>Result name</td>
+<td>Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.</td>
+</tr>
+<tr>
+<td><code>tornado_id</code> <sup>*</sup></td>
+<td><code>str</code></td>
+<td>Tornado ID</td>
+<td>Tornado ID for calculating EPN damage.</td>
+</tr>
+</tbody>
+</table><p><strong>Input Datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>epn_node</code> <sup>*</sup></td>
+<td><code>incore:epnNodeVer1</code></td>
+<td>EPN node</td>
+<td>Nodes for the electric power network.</td>
+</tr>
+<tr>
+<td><code>epn_link</code> <sup>*</sup></td>
+<td><code>incore:epnLinkeVer1</code></td>
+<td>EPN link</td>
+<td>Links for the electric power network.</td>
+</tr>
+<tr>
+<td><code>tornado</code></td>
+<td><code>tornadowindfield</code></td>
+<td>Tornado dataset</td>
+<td>Winds for the tornado.</td>
+</tr>
+</tbody>
+</table><p><strong>Output Datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code> <sup>*</sup></td>
+<td><code>incore:tornadoEPNDamageVer1</code></td>
+<td>Results</td>
+<td>A CSV file of EPN damage and repair costs.</td>
+</tr>
+</tbody>
+</table><p><small>(* required)</small></p>
+<p><strong>Execution</strong></p>
+<p>code snipet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create instance</span>
+    <span class="n">ted</span> <span class="o">=</span> <span class="n">TornadoEpnDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="c1"># Load datasets</span>
+    <span class="n">ted</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epn_node&quot;</span><span class="p">,</span> <span class="n">epn_node_id</span><span class="p">)</span>
+    <span class="n">ted</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epn_link&quot;</span><span class="p">,</span> <span class="n">epn_link_id</span><span class="p">)</span>
+
+    <span class="c1"># Set analysis parameters</span>
+    <span class="n">ted</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;tornadoEPNresults.csv&quot;</span><span class="p">)</span>
+    <span class="n">ted</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;tornado_id&quot;</span><span class="p">,</span> <span class="n">tornado_id</span><span class="p">)</span>
+
+    <span class="n">ted</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>full analysis: <a class="reference external" href="https://incore2.ncsa.illinois.edu/doc/examples/TornadoEpnDamage.ipynb">TornadoEpnDamage.ipynb</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transportation_recovery.html" class="btn btn-neutral float-right" title="3.4.14. Transportation recovery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="portfolio_recovery.html" class="btn btn-neutral float-left" title="3.4.12. Portfolio recovery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Mozilla Public License v2.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

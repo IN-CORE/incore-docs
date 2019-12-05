@@ -1,2 +1,24 @@
-.DS_Store
-.idea
+# python binaries
+*.pyc
+bin/
+/*/bin
+.cache/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# vim swap files
+*.swp
+
+# IDEA:
+.idea/
+**.iml
+
+# VSCODE
+.vscode
+
+# IDEA - generated artifacts
+**/out/
+
+# Apple metadata
+**/.DS_Store
