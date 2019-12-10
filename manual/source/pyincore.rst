@@ -1,12 +1,12 @@
 pyIncore
 ========
 
-Please read through the instructions at least once completely before actually following them to avoid any installation problems!
+It is highly recommended that you read through the instructions at least once completely before actually following them to avoid any installation problems!
 
-**pyIncore** uses the Geospatial Data Abstraction Library (`GDAL <https://www.gdal.org/>`_), which will be installed with **pyincore** package.Â The GDAL installation is global on Windows and Linux, even if you use virtual environments.
+**pyIncore** uses the Geospatial Data Abstraction Library (`GDAL <https://www.gdal.org/>`_), which will be installed with **pyIncore** package. The GDAL installation is global on Windows and Linux, even if you use virtual environments.
 
 
-The following are installation instructions as well as steps on how to edit and store user credentials file.
+The following are requirements, installation instructions including steps on how to edit and store user credentials file and run the initial test, and analyses descriptions.
 
 ..  toctree::
     :maxdepth: 2

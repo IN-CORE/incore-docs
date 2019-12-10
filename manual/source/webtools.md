@@ -1,25 +1,25 @@
 ## IN-CORE Web Tools
 
-**IN-CORE Web Tools** are for interacting with the service layer. They enable users to browse and search the [Datasets](https://incore2.ncsa.illinois.edu/DataViewer), [Hazards](https://incore2.ncsa.illinois.edu/HazardViewer) and [Fragilities](https://incore2.ncsa.illinois.edu/FragilityViewer), view the metadata and visualizations, and download the datasets.
+**IN-CORE Web Tools** are used for interacting with the service layer. They enable users to browse and search the **Datasets**, **Hazards** and **Damages**, **Fragilities**, **Repairs**, **Restorations** and **Recoveries** (collectively referred to as **DFR3**), view the metadata and visualizations, and download the datasets.
 
-The In-Core Web Tools are a dashboard with viewers for various services. Currently these are **Fragility**, **Data** and **Hazard** services. The dashboard can be accessed directly from the [IN-CORE page](https://incore2.ncsa.illinois.edu/).
-This section shows how to access IN-CORE Web Tools and documentations on IN-CORE Lab.
+The **In-Core Web Tools** is a dashboard with viewers and explorers for various services. Currently these are [Datasets](https://incore2.ncsa.illinois.edu/DataViewer), [Hazards](https://incore2.ncsa.illinois.edu/HazardViewer) and [DFR3](https://incore2.ncsa.illinois.edu/FragilityViewer) services covering the processing, visualization and manipulation of data (objects). The dashboard can be accessed directly from the [IN-CORE page](https://incore2.ncsa.illinois.edu/).
+This section shows how to access IN-CORE Web Tools and documentation on IN-CORE Lab.
 
-A user must login with IN-CORE username and password in order to access the viewers:
+A user must login with her or his IN-CORE username and password in order to access the viewers:
 
 ![IN-CORE Web Tools login page.](images/wt0_login.jpg "IN-CORE Web Tools login page.")
 
 This section shows how to access IN-CORE Web Tools and documentations on IN-CORE Lab.
 
-### Fragility service
+### DFR3 service
 
-[Fragility service](https://incore2.ncsa.illinois.edu/FragilityViewer) is an example of a viewer showing a selection list (left) of Fragility curves.
+[DFR3 service](https://incore2.ncsa.illinois.edu/FragilityViewer) is an example of a viewer showing a selection list (left) of Fragility and Restoration curves. The service is intended for handling information and objects related to **Damages**, **Fragilities**, **Repairs**, **Restorations** and **Recoveries**.
 
-![IN-CORE Web Tools fragility menu.](images/wt1_fragility_menu.jpg "IN-CORE Web Tools fragility menu.")
+![IN-CORE Web Tools DFR3 menu.](images/wt1_fragility_menu.jpg "IN-CORE Web Tools fragility menu.")
 
-Hazards and types of structures are selected in the pull down menus. The data can be viewed and downloaded in json format.
+Hazards and types of structures are selected in the pull down menus. The data can be viewed and downloaded in **JSON** format, a standard data-interchange format with name(key)/value pairs.
 
-![IN-CORE Web Tools fragility viewer.](images/wt1_fragility.jpg "IN-CORE Web Tools fragility viewer.")
+![IN-CORE Web Tools DFR3 viewer.](images/wt1_fragility.jpg "IN-CORE Web Tools fragility viewer.")
 
 ### Hazard service
 
