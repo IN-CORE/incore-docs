@@ -20,5 +20,4 @@ various analyses as Jupyter Notebooks.
 
 **IN-CORE Web Tools** is a set of web viewers and explorers for interacting with the IN-CORE servicea, data access layers on 
 the shared server. The viewers enable users to browse and search **Datasets**, **Hazards** and **Damages**, **Fragilities**, 
-**Repairs**, **Restorations**, **Recoveries**, view the metadata and visualizations, and download the datasets.
-
+**Repairs**, **Restorations**, **Recoveries** (referred to as **DFR3**), view the metadata and visualizations, and download the datasets.

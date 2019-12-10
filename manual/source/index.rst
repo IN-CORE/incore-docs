@@ -12,12 +12,12 @@ IN-CORE
     pyIncore <pyincore>
     incore_lab
     webtools
-    documentation
     tutorials
     FAQ <faq>
     notebooks
     refs
     acknowledgement
+    contact
 
 ----
 
