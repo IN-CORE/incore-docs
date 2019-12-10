@@ -123,8 +123,3 @@
     Boto3 is a package for connectivity with Amazon AWS. **pyIncore** does not use it however the warning comes 
     from the package build. We beleive that certain combination of conda channels causes the warning to appear. 
     A user can ignore the warning or additionally install **boto3**.
- 
- ### Contact NCSA
-
-* Contact an individual programmer developer by email and copy <incore-dev@lists.illinois.edu> if you work closely with NCSA on a code conversion and/or improvement of your hazard analysis.
-* Contact the <incore-dev@lists.illinois.edu> email list if you do not work directly with NCSA.

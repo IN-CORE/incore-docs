@@ -2,13 +2,13 @@
 
 From the IN-CORE landing page at <https://incore2.ncsa.illinois.edu/> a user can access other services and documentation.
 
-![IN-CORE landing page.](images/incore0_landing_page.jpg "IN-CORE landing page.")
-
 We provide documentation on three components of IN_CORE framework: 
 
-* this overview of the system, services and tools
+* This overview of the system, services and tools
 
-* documentation of IN-CORE’s Application programming interface intended mainly for IN-CORE developers.
+
+
+* Documentation of IN-CORE’s Application programming interface intended mainly for IN-CORE developers.
 Application programming interface ([API](https://en.wikipedia.org/wiki/Application_programming_interface)) of Incore is
 at <https://incore2.ncsa.illinois.edu/doc/api/>). The API endpoints definitions can be used for accessing 
 [Datasets](https://incore2.ncsa.illinois.edu/DataViewer), [Hazards](https://incore2.ncsa.illinois.edu/HazardViewer) and 
@@ -16,6 +16,8 @@ at <https://incore2.ncsa.illinois.edu/doc/api/>). The API endpoints definitions 
 
     ![Swagger API viewer with endpoint definitions.](images/incore2_swagger.jpg "Swagger API viewer with endpoint definitions.")
 
-* description of [pyIncore Python modules](../../pyincore), also intended for IN-CORE developers. It is referenced from the main Table of Contents.
+
+
+* Description of [pyIncore Python modules](../../pyincore), also intended for IN-CORE developers. It is referenced from the main Table of Contents.
 
     ![PyIncore Python modules.](images/pyincore_mod.jpg "pyIncore Python modules.")
