@@ -5,32 +5,15 @@
 - *I want to try your IN-CORE services. Do I need to register?*
 
     A user must have an account [registered](https://identity.ncsa.illinois.edu/register/UUMK36FU2M) with NCSA IN-CORE service. User credentials are required 
-    in accessing repositories with hazard, fragility, restoration, geographic and other data sets. 
-    They are also used for accessing documentation server and Jupyter notebook files.
+    in accessing repositories such as hazard, fragility, restoration, geographic and other data sets. 
+    They are also used for accessing documentation server and Jupyter Notebook files.
 
-    The username/password you chose during registration process in NCSA IN-CORE system is called 
+    The username/password you chose during registration process in IN-CORE system is called 
     LDAP password, based on specific Lightweight Directory Access Protocol authentication. 
     You can test your registration credentials by accessing the [documentation server](http://incore2.ncsa.illinois.edu/).
 
 ### pyIncore
 
-- *What is pyIncore? How does to differ from pyincore?*
-
-    **pyIncore** is a Python module that can be used to develop scientific hazard analysis and algorithm. 
-    We recommend using Jupyter notebook for running the pyIncore projects, either locally or in 
-    NCSA's [IN-CORE Lab](https://incore.ncsa.illinois.edu/lab).
-
-    **Insatalling pyincore**
-    
-- *Should I use virtual environment for running the pyIncore?*
-
-    We recommend using environment manager [Anaconda](https://www.anaconda.com/distribution/) 
-    or [Miniconda](https://docs.conda.io/en/latest/miniconda.html); tools that help keep dependencies 
-    separate for different Python projects. If you decide to use virtual environment or manager you must do it 
-    at the beginning of the installation, in the prerequisite step. Some of the underlying libraries, 
-    however have to be present globally (e.g. gdal on Windows OS). Therefore pyIncore installation 
-    slightly differs for virtual environments and we will be happy to help you. Contact us at 
-    <incore-dev@lists.illinois.edu>.
 
 - *What’s the difference between Anaconda, conda, and Miniconda?*
     
@@ -45,16 +28,37 @@
     
     In a nutshell, *conda* is a package manager, *Miniconda* is the conda installer, and *Anaconda* is a Python 
     distribution that also includes conda and 150+ automatically installed, open source packages and their 
-    dependencies that have been tested to work well together.   
+    dependencies that have been tested to work well together.  
+    
+- *How do I check what version of Python and Anaconda are installed?*
 
-- *I have Python 3 installed but pip3 command does not work.*
+    The versions can be checked by running `python --version` and/or `import sys;sys.executable` in Python console.
 
-    We prefer **conda** installation over **pip**. Conda is a packaging tool and installer that handles library 
-    dependencies as well as the Python packages themselves. In any case make sure you are running the correct 
-    version of Python (you can check by running `python3 --version`). Following links will help you navigate 
+- *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
+
+    We prefer **conda** installation over **pip** mainly because it handles Python packages dependencies and even library outside of 
+    the Python. Conda is a packaging tool and installer that handles library dependencies as well as the Python packages themselves. 
+    User can install **pyIncore** with pip however some of the underlying libraries have to be installed separatelly and present globally (GDAL).
+    In any case make sure you are running the correct version of Python (you can check by running `python3 --version`). Following links will help you navigate 
     through various installations; [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/), 
     [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python), 
     OS specific [downloads](https://www.python.org/downloads/).
+
+    **Installing pyincore**
+
+- *How do I check the installed version of **pyIncore**?*
+
+    In your conda virtual environment type `conda list` and the output is a list of all installed Python packages including **pyIncore**.
+    
+- *Should I use virtual environment for running the pyIncore?*
+
+    We recommend using environment manager [Anaconda](https://www.anaconda.com/distribution/) 
+    or [Miniconda](https://docs.conda.io/en/latest/miniconda.html); tools that help keep dependencies 
+    separate for different Python projects. If you decide to use virtual environment or manager you must do it 
+    at the beginning of the installation, in the prerequisite step. Some of the underlying libraries, 
+    however have to be present globally (e.g. gdal on Windows OS). Therefore pyIncore installation 
+    slightly differs for virtual environments and we will be happy to help you. Contact us at 
+    <incore-dev@lists.illinois.edu>. 
 
     **Running pyincore**
 
@@ -120,3 +124,7 @@
     from the package build. We beleive that certain combination of conda channels causes the warning to appear. 
     A user can ignore the warning or additionally install **boto3**.
  
+ ### Contact NCSA
+
+* Contact an individual programmer developer by email and copy <incore-dev@lists.illinois.edu> if you work closely with NCSA on a code conversion and/or improvement of your hazard analysis.
+* Contact the <incore-dev@lists.illinois.edu> email list if you do not work directly with NCSA.

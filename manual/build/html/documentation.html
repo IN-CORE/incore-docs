@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Technical documentation &mdash; IN-CORE Manual 0.5.2 documentation</title>
+  <title>6.1. Documentation &mdash; IN-CORE Manual 0.5.2 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Tutorials" href="tutorials.html" />
-    <link rel="prev" title="5. IN-CORE Web Tools" href="webtools.html" /> 
+    <link rel="next" title="7. Frequently asked questions" href="faq.html" />
+    <link rel="prev" title="6. Tutorials and Tips" href="tutorials.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,19 +87,19 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account.html">2. IN-CORE account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">2. IN-CORE Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyincore.html">3. pyIncore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="incore_lab.html">4. IN-CORE Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webtools.html">5. IN-CORE Web Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Technical documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#contact-ncsa">6.1. Contact NCSA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">6. Tutorials and Tips</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Documentation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">7. Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">8. FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">9. Example pyIncore Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="refs.html">10. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">11. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">7. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">8. Example pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">9. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">11. Contact NCSA</a></li>
 </ul>
 
             
@@ -145,7 +145,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>6. Technical documentation</li>
+          <li><a href="tutorials.html">6. Tutorials and Tips</a> &raquo;</li>
+        
+      <li>6.1. Documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,26 +166,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="technical-documentation">
-<h1>6. Technical documentation<a class="headerlink" href="#technical-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="documentation">
+<h1>6.1. Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
 <p>From the IN-CORE landing page at <a class="reference external" href="https://incore2.ncsa.illinois.edu/">https://incore2.ncsa.illinois.edu/</a> a user can access other services and documentation.</p>
 <p><img alt="IN-CORE landing page." src="_images/incore0_landing_page.jpg" /></p>
-<p>We provide documentation on three components of IN_CORE framework; this overview of the system, services and tools,
-documentation of IN-CORE’s Application programming interface and description of pyIncore Python modules. The last two
-are intended mainly for IN-CORE developers.</p>
-<p>Application programming interface (<a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a>) of Incore is
-at <a class="reference external" href="https://incore2.ncsa.illinois.edu/doc/api/">https://incore2.ncsa.illinois.edu/doc/api/</a>). The API endpoints definitions can be used for accessing <strong>Fragility</strong>,
-<strong>Data</strong> and <strong>Hazard</strong> services in development of new analyses.</p>
+<p>We provide documentation on three components of IN_CORE framework:</p>
+<ul>
+<li><p>this overview of the system, services and tools</p></li>
+<li><p>documentation of IN-CORE’s Application programming interface intended mainly for IN-CORE developers.
+Application programming interface (<a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a>) of Incore is
+at <a class="reference external" href="https://incore2.ncsa.illinois.edu/doc/api/">https://incore2.ncsa.illinois.edu/doc/api/</a>). The API endpoints definitions can be used for accessing
+<a class="reference external" href="https://incore2.ncsa.illinois.edu/DataViewer">Datasets</a>, <a class="reference external" href="https://incore2.ncsa.illinois.edu/HazardViewer">Hazards</a> and
+<a class="reference external" href="https://incore2.ncsa.illinois.edu/FragilityViewer">DFR3</a> services in development of new analyses.</p>
 <p><img alt="Swagger API viewer with endpoint definitions." src="_images/incore2_swagger.jpg" /></p>
-<p>Description of <a class="reference internal" href="pyincore.html"><span class="doc">pyIncore modules</span></a> is referenced from the main Table of Contents.</p>
+</li>
+<li><p>description of <a class="reference internal" href="pyincore.html"><span class="doc">pyIncore Python modules</span></a>, also intended for IN-CORE developers. It is referenced from the main Table of Contents.</p>
 <p><img alt="PyIncore Python modules." src="_images/pyincore_mod.jpg" /></p>
-<div class="section" id="contact-ncsa">
-<h2>6.1. Contact NCSA<a class="headerlink" href="#contact-ncsa" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Contact an individual programmer developer by email and copy <a class="reference external" href="mailto:incore-dev&#37;&#52;&#48;lists&#46;illinois&#46;edu">incore-dev<span>&#64;</span>lists<span>&#46;</span>illinois<span>&#46;</span>edu</a> if you work closely with NCSA on a code conversion and/or improvement of your hazard analysis.</p></li>
-<li><p>Contact the <a class="reference external" href="mailto:incore-dev&#37;&#52;&#48;lists&#46;illinois&#46;edu">incore-dev<span>&#64;</span>lists<span>&#46;</span>illinois<span>&#46;</span>edu</a> email list if you do not work directly with NCSA.</p></li>
+</li>
 </ul>
-</div>
 </div>
 
 
@@ -194,10 +194,10 @@ at <a class="reference external" href="https://incore2.ncsa.illinois.edu/doc/api
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorials.html" class="btn btn-neutral float-right" title="7. Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="7. Frequently asked questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="webtools.html" class="btn btn-neutral float-left" title="5. IN-CORE Web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorials.html" class="btn btn-neutral float-left" title="6. Tutorials and Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

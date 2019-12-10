@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Technical documentation" href="documentation.html" />
+    <link rel="next" title="6. Tutorials and Tips" href="tutorials.html" />
     <link rel="prev" title="4. IN-CORE Lab" href="incore_lab.html" /> 
 </head>
 
@@ -87,21 +87,21 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account.html">2. IN-CORE account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">2. IN-CORE Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyincore.html">3. pyIncore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="incore_lab.html">4. IN-CORE Lab</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. IN-CORE Web Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fragility-service">5.1. Fragility service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dfr3-service">5.1. DFR3 service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hazard-service">5.2. Hazard service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-service">5.3. Data service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="documentation.html">6. Technical documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">7. Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">8. FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">9. Example pyIncore Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="refs.html">10. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">11. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">6. Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">7. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">8. Example pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">9. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">11. Contact NCSA</a></li>
 </ul>
 
             
@@ -168,18 +168,18 @@
             
   <div class="section" id="in-core-web-tools">
 <h1>5. IN-CORE Web Tools<a class="headerlink" href="#in-core-web-tools" title="Permalink to this headline">¶</a></h1>
-<p><strong>IN-CORE Web Tools</strong> are for interacting with the service layer. They enable users to browse and search the <a class="reference external" href="https://incore2.ncsa.illinois.edu/DataViewer">Datasets</a>, <a class="reference external" href="https://incore2.ncsa.illinois.edu/HazardViewer">Hazards</a> and <a class="reference external" href="https://incore2.ncsa.illinois.edu/FragilityViewer">Fragilities</a>, view the metadata and visualizations, and download the datasets.</p>
-<p>The In-Core Web Tools are a dashboard with viewers for various services. Currently these are <strong>Fragility</strong>, <strong>Data</strong> and <strong>Hazard</strong> services. The dashboard can be accessed directly from the <a class="reference external" href="https://incore2.ncsa.illinois.edu/">IN-CORE page</a>.
-This section shows how to access IN-CORE Web Tools and documentations on IN-CORE Lab.</p>
-<p>A user must login with IN-CORE username and password in order to access the viewers:</p>
+<p><strong>IN-CORE Web Tools</strong> are used for interacting with the service layer. They enable users to browse and search the <strong>Datasets</strong>, <strong>Hazards</strong> and <strong>Damages</strong>, <strong>Fragilities</strong>, <strong>Repairs</strong>, <strong>Restorations</strong> and <strong>Recoveries</strong> (collectively referred to as <strong>DFR3</strong>), view the metadata and visualizations, and download the datasets.</p>
+<p>The <strong>In-Core Web Tools</strong> is a dashboard with viewers and explorers for various services. Currently these are <a class="reference external" href="https://incore2.ncsa.illinois.edu/DataViewer">Datasets</a>, <a class="reference external" href="https://incore2.ncsa.illinois.edu/HazardViewer">Hazards</a> and <a class="reference external" href="https://incore2.ncsa.illinois.edu/FragilityViewer">DFR3</a> services covering the processing, visualization and manipulation of data (objects). The dashboard can be accessed directly from the <a class="reference external" href="https://incore2.ncsa.illinois.edu/">IN-CORE page</a>.
+This section shows how to access IN-CORE Web Tools and documentation on IN-CORE Lab.</p>
+<p>A user must login with her or his IN-CORE username and password in order to access the viewers:</p>
 <p><img alt="IN-CORE Web Tools login page." src="_images/wt0_login.jpg" /></p>
 <p>This section shows how to access IN-CORE Web Tools and documentations on IN-CORE Lab.</p>
-<div class="section" id="fragility-service">
-<h2>5.1. Fragility service<a class="headerlink" href="#fragility-service" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://incore2.ncsa.illinois.edu/FragilityViewer">Fragility service</a> is an example of a viewer showing a selection list (left) of Fragility curves.</p>
-<p><img alt="IN-CORE Web Tools fragility menu." src="_images/wt1_fragility_menu.jpg" /></p>
-<p>Hazards and types of structures are selected in the pull down menus. The data can be viewed and downloaded in json format.</p>
-<p><img alt="IN-CORE Web Tools fragility viewer." src="_images/wt1_fragility.jpg" /></p>
+<div class="section" id="dfr3-service">
+<h2>5.1. DFR3 service<a class="headerlink" href="#dfr3-service" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://incore2.ncsa.illinois.edu/FragilityViewer">DFR3 service</a> is an example of a viewer showing a selection list (left) of Fragility and Restoration curves. The service is intended for handling information and objects related to <strong>Damages</strong>, <strong>Fragilities</strong>, <strong>Repairs</strong>, <strong>Restorations</strong> and <strong>Recoveries</strong>.</p>
+<p><img alt="IN-CORE Web Tools DFR3 menu." src="_images/wt1_fragility_menu.jpg" /></p>
+<p>Hazards and types of structures are selected in the pull down menus. The data can be viewed and downloaded in <strong>JSON</strong> format, a standard data-interchange format with name(key)/value pairs.</p>
+<p><img alt="IN-CORE Web Tools DFR3 viewer." src="_images/wt1_fragility.jpg" /></p>
 </div>
 <div class="section" id="hazard-service">
 <h2>5.2. Hazard service<a class="headerlink" href="#hazard-service" title="Permalink to this headline">¶</a></h2>
@@ -204,7 +204,7 @@ This section shows how to access IN-CORE Web Tools and documentations on IN-CORE
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="documentation.html" class="btn btn-neutral float-right" title="6. Technical documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tutorials.html" class="btn btn-neutral float-right" title="6. Tutorials and Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="incore_lab.html" class="btn btn-neutral float-left" title="4. IN-CORE Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
