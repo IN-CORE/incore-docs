@@ -1,7 +1,7 @@
 ## IN-CORE Account
 
 * A user must have an account recognized by the **IN-CORE** service. Please register at [https://identity.ncsa.illinois.edu/register/UUMK36FU2M](https://identity.ncsa.illinois.edu/register/UUMK36FU2M). 
-**NOTE**: Use your institutional email if possible.
+**NOTE**: IN-CORE account is provided and operated by [NCSA](http://www.ncsa.illinois.edu/) identity management system. Use your institutional email if possible.
 
 ![IN-CORE login window](images/register.jpg)
 

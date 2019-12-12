@@ -8,6 +8,7 @@ IN-CORE
     :name: mastertoc
 
     Introduction <introduction>
+    contact
     account
     pyIncore <pyincore>
     incore_lab
@@ -17,9 +18,8 @@ IN-CORE
     notebooks
     refs
     acknowledgement
-    contact
 
 ----
 
-`IN-CORE NCSA <https://https://incore2.ncsa.illinois.edu/>`_
+`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 

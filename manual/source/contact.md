@@ -1,4 +1,5 @@
-### Contact NCSA
+### Contact Information
 
-* Contact an individual programmer developer by email and copy <incore-dev@lists.illinois.edu> if you work closely with [NCSA](http://www.ncsa.illinois.edu/) on a code conversion and/or improvement of your hazard analysis.
-* Contact the <incore-dev@lists.illinois.edu> email list if you do not work directly with NCSA.
+* Contact [NCSA](http://www.ncsa.illinois.edu/) team via <incore-dev@lists.illinois.edu> regarding use of IN-CORE. The team will try to response within 24 hours during business days.
+* Please review [FAQ section](faq) before contacting the team.
+
