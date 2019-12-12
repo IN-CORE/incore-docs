@@ -24,5 +24,5 @@ To **update** pyIncore run the following command:
 
 ----
 
-`IN-CORE NCSA <https://https://incore2.ncsa.illinois.edu/>`_
+`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 

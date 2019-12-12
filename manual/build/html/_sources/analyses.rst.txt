@@ -22,7 +22,7 @@ Analyses
 
 ----
 
-`IN-CORE NCSA <https://https://incore2.ncsa.illinois.edu/>`_
+`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 
 
 
