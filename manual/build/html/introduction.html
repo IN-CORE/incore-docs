@@ -163,23 +163,33 @@
             
   <div class="section" id="introduction">
 <h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p><img alt="IN-CORE name and logo" src="_images/incore0.png" /></p>
-<p><strong>IN-CORE</strong> is an acronym which stands for the <strong>I</strong>nterdependent <strong>N</strong>etworked <strong>Co</strong>mmunity
-<strong>R</strong>esilience Modeling <strong>E</strong>nvironment, a scientific platform for programming and running analyses
-that model the impact of natural hazards on communities and their resilience considering interacting physical
-infrastructure, social, and economic systems. Funding for the development and maintenance of <a class="reference external" href="http://resilience.colostate.edu/in_core.shtml">IN-CORE</a> was provided
-as part of Cooperative Agreement 70NANB15H044 between the National Institute of Standards and Technology (<a class="reference external" href="https://www.nist.gov/">NIST</a>)
-and Colorado State University (<a class="reference external" href="https://www.colostate.edu/">CSU</a>).</p>
-<p><strong>pyIncore</strong> is a Python package to analyze and visualize various hazard scenarios (earthquake, tornado, hurricane etc.)
-developed in the Center for Risk-Based Community Resilence Planning, which can be modified by users.
-pyIncore allows users to apply hazards to infrastructure in selected areas, propagating the effect of physical
-infrastructure damage and loss of functionality to social and economic impacts.  The Python framework obtains
-underlying data through local or remote services, processes them and facilitates sharing of results.</p>
-<p><strong>IN-CORE Lab</strong> is a customized Jupyter Lab with <strong>pyIncore</strong> installed on a server at the National Center for Supercomputing Applications (<a class="reference external" href="http://www.ncsa.illinois.edu/">NCSA</a>) for running and editing
-various analyses as Jupyter Notebooks.</p>
-<p><strong>IN-CORE Web Tools</strong> is a set of web viewers and explorers for interacting with the IN-CORE servicea, data access layers on
-the shared server. The viewers enable users to browse and search <strong>Datasets</strong>, <strong>Hazards</strong> and <strong>Damages</strong>, <strong>Fragilities</strong>,
-<strong>Repairs</strong>, <strong>Restorations</strong>, <strong>Recoveries</strong> (referred to as <strong>DFR3</strong>), view the metadata and visualizations, and download the datasets.</p>
+<p>The National Institute of Standards and Technology (NIST) funded the Center of Excellence for Risk-Based Community
+Resilience Planning (CoE) (Cooperative Agreement 70NANB15H044), to develop the measurement science to support
+community resilience assessment. The measurement science is implemented on a platform called <strong>I</strong>nterdependent
+<strong>N</strong>etworked <strong>Co</strong>mmunity <strong>R</strong>esilience Modeling <strong>E</strong>nvironment (<a class="reference external" href="http://resilience.colostate.edu/in_core.shtml">IN-CORE</a>). It incorporates a risk-based approach
+to decision-making that enables quantitative comparisons of alternative resilience strategies.
+On the IN-CORE platform, data from the community can be seamlessly integrated which allows users to optimize
+community disaster resilience planning and post-disaster recovery strategies intelligently using physics-based
+models of inter-dependent physical systems combined with socio-economic systems.</p>
+<p>IN-CORE consists of multiple components as shown below:</p>
+<p><img alt="IN-CORE name and logo" src="_images/incore1.jpg" /></p>
+<p><strong>pyIncore</strong>  is a Python package consisting of three primary components: 1) a set of service classes to interact
+with the IN-CORE web services described below, 2) IN-CORE analyses and 3) visualization. The pyIncore allows users
+to apply various hazards to infrastructure in selected areas, propagating the effect of physical infrastructure
+damage and loss of functionality to social and economic impacts. Refer to <a class="reference internal" href="pyincore.html"><span class="doc">pyIncore section</span></a> for detailed information.</p>
+<p><strong>IN-CORE Web Services</strong> are written in Java with JAX-RS specification and are comprised of a Hazard Service,
+DFR3 (Damage, Functionality, Repair, Recovery, Restoration) Service, Data Service, Geospatial Visualization
+Service, Semantic Service, and Space Service. These services allow users to create and access hazards, fragilities
+and data. Users can access and utilize these services via pyIncore and IN-CORE Web Tools. For detailed information,
+please refer to the <a class="reference internal" href="documentation.html"><span class="doc">technical reference document</span></a>.</p>
+<p><strong>IN-CORE Web Tools</strong> is a set of web viewers for interacting with the different IN-CORE web services.
+The viewers enable users to browse, search <strong>Datasets</strong>, <strong>Hazards</strong>, <strong>Fragility curves</strong>, <strong>Repair curves</strong>, etc.,
+view the metadata and visualizations, and download items allowed.  For detailed information, please refer
+to the <a class="reference internal" href="webtools.html"><span class="doc">IN-CORE Web Tools section</span></a>.</p>
+<p><strong>IN-CORE Lab</strong> is a customized Jupyter Lab with <strong>pyIncore</strong> installed and hosted on a NCSA cloud system.
+It allows users to develop/run/test their scientific model with pyIncore in their own workspace.
+Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
+understand how to use the pyIncore.  For detailed information, please refer to the <a class="reference internal" href="incore_lab.html"><span class="doc">IN-CORE Lab section</span></a>.</p>
 </div>
 
 
