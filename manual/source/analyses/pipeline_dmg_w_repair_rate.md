@@ -1,33 +1,39 @@
 ### Pipeline damage with repair rate
 
-Memphis water buried pipeline with topology dataset, the Ergo repository
+This analysis computes water pipeline (with topology dataset) damage for Memphis based on earthquake.
+
+The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
+is obtained based on the hazard type and attributes of the pipeline. Based on the fragility, the hazard intensity at the 
+location of the pipeline is computed. Using this information, the probability of exceeding each limit state is computed, 
+along with the probability of damage. If the pipeline dataset contains soil information, the median value of the associated 
+fragility can be modified to account for liquefaction in the damage. 
+
+The output of this analysis is a CSV file with probabilities of damage.
     
 **Input Parameters**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in a CSV format which contains <br>the infrastructure damage and repair information.
-`mapping_id` <sup>*</sup> | `str` | Fragility mapping dataset | Fragility mapping on Incore-service. It defines the fragilities to be used in the calculation.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type for calculating damage (earthquake, tornado, tsunami, etc.).
-`hazard_id` <sup>*</sup> | `str` | Hazard ID | Hazard ID for calculating damage.
-`fragility_key` | `str` | Fragility key | The key to use in the mapping dataset. Default depends on the hazard type specified.
-`use_liquefaction` | `bool` | Liquefaction | Whether to use liquefaction or not. Default is *False*.
-`liquefaction_fragility_key` | `str` | Liquefaction Fragility key | Fragility key to use in liquefaction.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
-`liquefaction_geology_dataset_id` | `str` | Liquefaction geology dataset | Liquefaction geology/susceptibility dataset id. <br>If not provided, liquefaction will be ignored.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
+`hazard_type` <sup>*</sup> | `str` | Hazard type | Earthquake hazard type.
+`hazard_id` <sup>*</sup> | `str` | Hazard ID | ID of the hazard from the Hazard service.
+`fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
+`use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard.<br>Default is *False*.
+`liquefaction_fragility_key` | `str` | Liquefaction key | Fragility key used in mapping dataset.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations.<br>Default *1*.
 
 **Input Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline Inventory | An infrastructure dataset, usually a shape file for which the damage is calculated.
+`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `ergo:pipelineDamage` | Pipeline damage | A CSV file of pipeline damage.
-
+`result` | `ergo:pipelineDamage` | Results | A dataset containing results (format: CSV).
 <small>(* required)</small>
 
 **Execution** 

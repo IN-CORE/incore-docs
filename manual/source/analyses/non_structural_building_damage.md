@@ -18,28 +18,27 @@ and complete) and creates an output CSV file.
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`mapping_id` <sup>*</sup> | `str` | Mapping ID | Fragility mapping on Incore-service. It implicitly <br>defines the fragilities to be used in the calculation.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type for calculating bridge damage (earthquake, tornado, tsunami, etc.).
-`hazard_id` <sup>*</sup> | `str` | Hazard ID | Hazard ID for calculating damage.
-`fragility_key_as` | `str` | AS Fragility | AS fragility key to use in mapping dataset.
-`fragility_key_ds` | `str` | DS Fragility | DS Fragility key to use in mapping dataset.
-`use_liquefation` | `bool` | Liquefaction | Use liquefaction to modify fragility curve. Default *False*.
-`liq_geology_dataset_id` | `str` | Liquefaction dataset ID | Liquefaction geology/susceptibility dataset ID. <br>If not provided, liquefaction will be ignored.
-`use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty for computing damage. Default *False*.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
+`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).
+`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
+`fragility_key_as` | `str` | AS fragility | Fragility key used in mapping dataset.
+`fragility_key_ds` | `str` | DS fragility | Fragility key used in mapping dataset.
+`use_liquefation` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default *False*.
+`liq_geology_dataset_id` | `str` | Liquefaction id | A liquefaction susceptibility dataset.
+`use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. Default is <br>*False*.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4` | Building inventory | Building dataset, usually a shape file for which the damage is calculated.
-
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4` | Building dataset |  A building dataset.
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `ergo:nsBuildingInventoryDamage` | Results | A CSV file of building non-structural damage.
+`result` | `ergo:nsBuildingInventoryDamage` | Results | A dataset containing results <br>(format: CSV).
 
 **Execution**
 

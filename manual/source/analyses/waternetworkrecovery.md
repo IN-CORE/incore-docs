@@ -4,10 +4,10 @@
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`n_days` <sup>*</sup> | `int` | Recovery days | n days of recovery simulation.
-`seed` <sup>*</sup> | `int` | Seed | Initial seed for the probabilistic model. <br>An integer value imported to seed the random <br>number generator.
-`work_hour_day` | `int` | Work time | Hours a day that crew works on the water network.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`n_days` <sup>*</sup> | `int` | Recovery days | Number of days in recovery simulation.
+`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
+`work_hour_day` | `int` | Work time | Daily hours that crew works on the water network.
 `tzero` | `int` | Starting hour | Starting hour.
 `prod_param` | `tuple` | Parameters | Analysis parameters.
 `crew` | `list` | Crew | Crew.
@@ -18,23 +18,23 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`wn_inp_file` <sup>*</sup> | `incore:waterNetworkEpanetInp` | EPAnet dataset id | EPAnet input dataset.
-`demand_initial` <sup>*</sup> | `incore:waterNetworkDemand` | Water demand id | Dataset with intial demand for water network.
-`pipe_dmg` <sup>*</sup> | `ergo:pipelineDamage` | Pipeline damage id | Pipeline damage probability.
-`pump_dmg` <sup>*</sup> | `ergo:pumpDamage` | Pump damage id | Pump damage probability.
-`tank_dmg` <sup>*</sup> | `ergo:lifelineWaterTankInventoryDamage` | Tank damage id | Tank damage probability.
+`wn_inp_file` <sup>*</sup> | `incore:waterNetworkEpanetInp` | EPAnet dataset | EPAnet input dataset.
+`demand_initial` <sup>*</sup> | `incore:waterNetworkDemand` | Water demand | Initial water demand Dataset.
+`pipe_dmg` <sup>*</sup> | `ergo:pipelineDamage` | Pipeline damage | A pipeline damage probability.
+`pump_dmg` <sup>*</sup> | `ergo:pumpDamage` | Pump damage | A pump damage probability.
+`tank_dmg` <sup>*</sup> | `ergo:lifelineWaterTankInventoryDamage` | Tank damage | A tank damage probability.
 `demand` <sup>*</sup> | `incore:waterNetworkDemand` | Demand id | Demand after dislocation.
-`pipe_zone` <sup>*</sup> | `incore:pipeZoning` | Pipe zone id | Pipezone to decide repair order.
-`demand_additional` | `incore:waterNetworkDemand` | Dislocation demand id | Water network demand after additional dislocation.
+`pipe_zone` <sup>*</sup> | `incore:pipeZoning` | Pipe zone | Pipezone to decide repair order.
+`demand_additional` | `incore:waterNetworkDemand` | Dislocation demand | A water network demand after additional dislocation.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`pressure` <sup>*</sup> | `csv` | Results | A csv file of bridge structural damage.
 `initial_water_network` <sup>*</sup> | `pickle` | Results | Initial water network.
 `recovery_water_network` <sup>*</sup> | `pickle` | Results | Recovery water network.
-`recovery_water_network_add` <sup>*</sup> | `pickle` | Results | Recovery water network additional.
+`recovery_water_network_add` <sup>*</sup> | `pickle` | Results | Additionaly recovery water network.
+`pressure` <sup>*</sup> | `csv` | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

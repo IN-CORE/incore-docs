@@ -1,29 +1,31 @@
 ### Cummulative building damage
 
-This analysis computes the damage to buildings based on two hazards, an earthquake and a tsunami.
+This analysis computes building damage based on two hazards, an earthquake and a tsunami.
 
-The process of evaluating structural damages is done externally and the results for earthquake and tsunami
+The process for computing the structural damage is done externally and the results for earthquake and tsunami
 are imported to the analysis. The damage intervals are then calculated from combined limit states.
+
+The output of this analysis is a CSV file with probabilities of damage.
 
 **Input parameters**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`eq_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset id | A dataset that contains the building damage <br>results caused by an earthquake.
-`tsunami_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset id | A dataset that contains the building damage <br>results caused by a tsunami.
+`eq_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset | A building dataset with earthquake damage.
+`tsunami_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset | A building dataset with tsunami damage.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`combined-result` <sup>*</sup> | `ergo:buildingDamageVer4` | Cummulative esults | A csv file of cumulative building damage bridge.
+`combined-result` <sup>*</sup> | `ergo:buildingDamageVer4` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

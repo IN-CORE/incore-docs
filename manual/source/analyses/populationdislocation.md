@@ -1,8 +1,8 @@
 ### Population dislocation
 
-This analysis computes the population dislocation based on a particular hazard such as earthquake. First, Housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing Unit Allocation analysis.
+This analysis computes the population dislocation based on a particular hazard such as earthquake, tsunami, or tornado. First, housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing unit allocation analysis.
 
-After the housing units are allocated, the hazard event defined by calling fragility and hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
+After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
 
 Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. The output is a CSV file with dislocated households and related variables.
 
@@ -15,22 +15,22 @@ Additionally, the Block Group characteristics, percentages of African-American a
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information. Default *population-dislocation-result.csv*
-`seed` <sup>*</sup> | `int` | Seed | Seed to ensure replication if run as part of a probabilistic analysis.
+`result_name` | `str` | Result name |  Name of the result dataset.
+`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 
 **Input Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building damage | Building damage results CSV file from hazard service.
-`housing_unit_allocation` <sup>*</sup> | `incore:housingUnitAllocation` | Housing unit allocation | Merged dataset, as a CSV file, of the inputs such as Probabilistic House Unit Allocation.
-`block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | Racial distribution census CSV data.
+`building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building damage | A building damage dataset.
+`housing_unit_allocation` <sup>*</sup> | `incore:housingUnitAllocation` | Housing allocation | A housing unit allocation dataset.
+`block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A racial distribution dataset.
 
 **Output Datasets** 
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:popDislocation` | Results | A CSV file of population dislocation.
+`result` | `incore:popDislocation` | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

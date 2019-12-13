@@ -6,30 +6,30 @@ The code creates two output files *building-recovery.csv* and *portfolio-recover
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`uncertainty` <sup>*</sup> | `bool` | Uncertainty | True if you want to use some randomness, false otherwise.
-`sample_size` | `int` | Sample Size | Number of buildings to be considered from input buildings.
-`random_sample_size` <sup>*</sup> | `int` | Random sample size | Number of iterations for the Monte Carlo Simulation.
-`no_of_weeks` <sup>*</sup> | `int` | Number of weeks | Number of weeks to run the recovery model.
+`result_name` | `str` | Result name | Name of the result dataset.
+`uncertainty` <sup>*</sup> | `bool` | Uncertainty | Additional randomness.
+`sample_size` | `int` | Sample size | Number of buildings to be considered from buildings dataset.
+`random_sample_size` <sup>*</sup> | `int` | Sample size | Number of iterations for the Monte Carlo simulation.
+`no_of_weeks` <sup>*</sup> | `int` | Number weeks | Number of weeks to run the recovery model.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
 
 **Input Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_data` <sup>*</sup> | `incore:portfolioBuildingInventory` | Building data | Building dataset.
-`occupancy_mapping` <sup>*</sup> | `incore:portfolioOccupancyMapping` | Occupancy code mapping | Dataset of occupancy of buildings.
-`building_damage` <sup>*</sup> | `incore:portfolioBuildingDamage` | Building damage | Results of damage done to buildings.
-`dmg_ratios` <sup>*</sup> | `incore:portfolioDamageRatios` | Damage ratios | Percentage of mean repair by occupancy / building type.
-`utility` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility availability | Full utility availability at each utility service area - joint area of <br>power and water (row), at each week (column).
-`utility_partial` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility partial availability | Partial utility availability at each utility service area.
-`coefFL` <sup>*</sup> | `incore:portfolioCoefficients` | Coefficients of initial functionality | Correlation coefficient of initial functionality states.
+`building_data` <sup>*</sup> | `incore:portfolioBuildingInventory` | Building dataset | A building dataset.
+`occupancy_mapping` <sup>*</sup> | `incore:portfolioOccupancyMapping` | Occupancy mapping | An occupancy of buildings dataset.
+`building_damage` <sup>*</sup> | `incore:portfolioBuildingDamage` | Building damage | A building damage.
+`dmg_ratios` <sup>*</sup> | `incore:portfolioDamageRatios` | Damage ratios | Mean repair by occupancy and building type.
+`utility` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility availability | Utility availability at utility service area.
+`utility_partial` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility availability | Partial utility availability at utility service area.
+`coefFL` <sup>*</sup> | `incore:portfolioCoefficients` | Initial coefficients | Correlation coefficient of initial functionality.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:portfolioRecovery` | Results | A CSV file of the building portfolio recovery.
+`result` | `incore:portfolioRecovery` | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 
