@@ -6,6 +6,3 @@ Tutorials and Tips
 
     documentation
 
-----
-
-`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_

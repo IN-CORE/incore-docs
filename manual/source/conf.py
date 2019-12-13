@@ -32,8 +32,8 @@ sys.path.insert(0, os.path.abspath('../web-tools'))
 # -- Project information -----------------------------------------------------
 
 project = 'IN-CORE Manual'
-# copyright = 'Mozilla Public License v2.0'
-author = 'ISDA NCSA'
+# copyright = ''
+author = ''
 
 # The short X.Y version
 version = '0.5.2'

@@ -1,9 +1,9 @@
 ## Introduction
 
 The National Institute of Standards and Technology (NIST) funded the Center of Excellence for Risk-Based Community 
-Resilience Planning (CoE) (Cooperative Agreement 70NANB15H044), to develop the measurement science to support 
+Resilience Planning ([CoE]( http://resilience.colostate.edu/)) (Cooperative Agreement 70NANB15H044), to develop the measurement science to support 
 community resilience assessment. The measurement science is implemented on a platform called **I**nterdependent 
-**N**etworked **Co**mmunity **R**esilience Modeling **E**nvironment ([IN-CORE](http://resilience.colostate.edu/in_core.shtml)). It incorporates a risk-based approach 
+**N**etworked **Co**mmunity **R**esilience Modeling **E**nvironment (**INCORE**). It incorporates a risk-based approach 
 to decision-making that enables quantitative comparisons of alternative resilience strategies. 
 On the IN-CORE platform, data from the community can be seamlessly integrated which allows users to optimize 
 community disaster resilience planning and post-disaster recovery strategies intelligently using physics-based 
@@ -22,7 +22,7 @@ damage and loss of functionality to social and economic impacts. Refer to [pyInc
 DFR3 (Damage, Functionality, Repair, Recovery, Restoration) Service, Data Service, Geospatial Visualization 
 Service, Semantic Service, and Space Service. These services allow users to create and access hazards, fragilities 
 and data. Users can access and utilize these services via pyIncore and IN-CORE Web Tools. For detailed information, 
-please refer to the [technical reference document](documentation). 
+please refer to the [technical reference document](https://incore2.ncsa.illinois.edu/doc/api/). 
 
 **IN-CORE Web Tools** is a set of web viewers for interacting with the different IN-CORE web services. 
 The viewers enable users to browse, search **Datasets**, **Hazards**, **Fragility curves**, **Repair curves**, etc., 

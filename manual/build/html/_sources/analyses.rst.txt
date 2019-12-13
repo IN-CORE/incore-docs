@@ -21,9 +21,8 @@ Analyses
     analyses/transportation_recovery
     analyses/waterfacilitydamagev1
 
-----
 
-`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
+
 
 
 

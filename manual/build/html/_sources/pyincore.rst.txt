@@ -20,9 +20,6 @@ To **update** pyIncore run the following command:
 
 .. code-block:: bash
 
-    conda update -c https://inconda:CHANNEL_PWD_HERE@incore2.ncsa.illinois.edu/conda/pyincore/ pyincore
+    conda update pyincore
 
-----
-
-`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 

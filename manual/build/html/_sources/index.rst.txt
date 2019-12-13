@@ -19,7 +19,4 @@ IN-CORE
     contact
     acknowledgement
 
-----
-
-`IN-CORE NCSA <https://incore2.ncsa.illinois.edu/>`_
 
