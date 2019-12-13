@@ -10,6 +10,7 @@ Analyses
     analyses/epfdamage.md
     analyses/housingunitallocation
     analyses/joplin_cge
+    analyses/meandamage
     analyses/montecarlofailureprobability
     analyses/non_structural_building_damage
     analyses/pipeline_dmg
