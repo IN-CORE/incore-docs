@@ -8,7 +8,6 @@ IN-CORE
     :name: mastertoc
 
     Introduction <introduction>
-    contact
     account
     pyIncore <pyincore>
     incore_lab
@@ -17,6 +16,7 @@ IN-CORE
     FAQ <faq>
     notebooks
     refs
+    contact
     acknowledgement
 
 ----
