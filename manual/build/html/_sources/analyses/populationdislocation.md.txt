@@ -4,7 +4,9 @@ This analysis computes the population dislocation based on a particular hazard s
 
 After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
 
-Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. The output is a CSV file with dislocated households and related variables.
+Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. 
+
+The output is a CSV file with dislocated households and related variables.
 
 **Related publications**
 
@@ -25,7 +27,8 @@ key name | type | name | description
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building damage | A building damage dataset.
 `housing_unit_allocation` <sup>*</sup> | `incore:housingUnitAllocation` | Housing allocation | A housing unit allocation dataset.
 `block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A racial distribution dataset.
-
+`value_poss_param` <sup>*</sup> | `incore:valuLossParam` | Loss parameters | A table with value loss beta distribution parameters.
+                    
 **Output Datasets** 
 
 key name | type | name | description
@@ -46,6 +49,7 @@ code snipet:
     pop_dis.load_remote_input_dataset("building_dmg", building_dmg)
     pop_dis.load_remote_input_dataset("housing_unit_allocation", housing_unit_allocation)
     pop_dis.load_remote_input_dataset("block_group_data", bg_data)
+    pop_dis.load_remote_input_dataset("value_poss_param", val_loss)
 
     # Set analysis parameters
     pop_dis.set_parameter("seed", 1111)
