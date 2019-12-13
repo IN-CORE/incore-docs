@@ -6,9 +6,7 @@ and the demand nodes of a potable water network. The allocation of housing units
 (buildings) provides a framework to account for uncertainty in community structure that allows
 for the hazard impacts to be analyzed statistically.
 
-Additionally, the code can be used as a MCS analysis with n runs  or as a single allocation run with an integer
-value being used as a random number generator seed and passed to the other analyses. Output is a tabulated
-Housing Unit Allocation dataset.
+The output of this analysis is a CSV file with allocated house units.
 
 **Related publications**
 
@@ -19,23 +17,23 @@ Housing Unit Allocation dataset.
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the allocation information.
-`seed` <sup>*</sup> | `int` | Seed | Initial seed for the probabilistic model. <br>An integer value imported to seed the random <br>number generator.
-`iterations` <sup>*</sup> | `int` | Iterations | Number of iterations of running <br>the probabilistic model.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
+`iterations` <sup>*</sup> | `int` | Iterations | Number of iterations of running the probabilistic model.
 
 **Input datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`housing_unit_inventory` <sup>*</sup> | `incore:housingUnitInventory` | Housing unit inventory id | A housing unit inventory dataset, <br>aka Census block data. Corresponds to a possible <br>occupied housing unit, vacant housing unit, <br>or a group quarters.
-`address_point_inventory` <sup>*</sup> | `incore:addressPoints` | Address inventory id | An address locations dataset. Corresponds <br>to a specific address where a housing unit or group quarters <br>could be assigned.
-`building_inventory` <sup>*</sup> | `ergo:buildingInventory` | Building inventory id | A building Inventory csv dataset for each <br>building/structure. A structure can have multiple <br>addresses.
+`housing_unit_inventory` <sup>*</sup> | `incore:housingUnitInventory` | Housing inventory | A housing unit inventory dataset.
+`address_point_inventory` <sup>*</sup> | `incore:addressPoints` | Address inventory | An address locations dataset.
+`building_inventory` <sup>*</sup> | `ergo:buildingInventory` | Building inventory | A building inventory dataset.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:housingUnitAllocation` | Results | A csv file with the merged dataset of the inputs,<br>aka Probabilistic Housing Unit Allocation.
+`result` <sup>*</sup> | `incore:housingUnitAllocation` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

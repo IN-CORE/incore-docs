@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -206,31 +206,31 @@
 <td><code>result_name</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Result name</td>
-<td>Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.</td>
-</tr>
-<tr>
-<td><code>num_cpu</code></td>
-<td><code>int</code></td>
-<td>Number of CPUs</td>
-<td>Number of CPUs used for parallel computations. Default <em>1</em>.</td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>num_samples</code> <sup>*</sup></td>
 <td><code>int</code></td>
-<td>Number of MC samples</td>
+<td>Samples</td>
 <td>Number of Monte Carlo samples.</td>
 </tr>
 <tr>
 <td><code>damage_interval_keys</code> <sup>*</sup></td>
 <td><code>list</code></td>
-<td>Damage interval keys</td>
+<td>Damage keys</td>
 <td>Column names of the damage intervals.</td>
 </tr>
 <tr>
 <td><code>failure_state_keys</code> <sup>*</sup></td>
 <td><code>list</code></td>
-<td>Failure state keys</td>
-<td>Column names of damager intervals that are considered damaged.</td>
+<td>Failure keys</td>
+<td>Column names of damage intervals.</td>
+</tr>
+<tr>
+<td><code>num_cpu</code></td>
+<td><code>int</code></td>
+<td>Number of CPUs</td>
+<td>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</td>
 </tr>
 </tbody>
 </table><p><strong>Input Datasets</strong></p>
@@ -247,8 +247,8 @@
 <tr>
 <td><code>damage</code> <sup>*</sup></td>
 <td><code>ergo:buildingDamageVer4</code>, <br><code>bridge-damage</code>, <br><code>ergo:waterFacilityDamageVer4</code></td>
-<td>Damage</td>
-<td>Damage results that has damage intervals in it.</td>
+<td>Infrastructure damage</td>
+<td>A file with infrastructure damage intervals.</td>
 </tr>
 </tbody>
 </table><p><strong>Output Datasets</strong></p>
@@ -266,7 +266,7 @@
 <td><code>result</code></td>
 <td><code>incore:failureProbability</code></td>
 <td>Results</td>
-<td>A CSV file of failure probability.</td>
+<td>A dataset containing results <br>(format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -338,7 +338,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

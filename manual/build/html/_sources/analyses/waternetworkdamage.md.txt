@@ -4,24 +4,24 @@
 
 key name | type | name | description
 --- | --- | --- | ---
-`water_facility_mapping_id` <sup>*</sup> | `str` | Water mapping id | Default water facility fragility mapping <br>on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-`water_pipeline_mapping_id` <sup>*</sup> | `str` | Pipeline mapping id | Default pipeline fragility mapping <br>on Incore-service. It implicitly defines the fragilities to be used in the calculation.
-`earthquake_id` <sup>*</sup> | `str` | Hazard id | Hazard ID for calculating water network damage.
+`water_facility_mapping_id` <sup>*</sup> | `str` | Water facility id | ID of the mapping dataset from the DFR3 service.
+`water_pipeline_mapping_id` <sup>*</sup> | `str` | Pipeline mapping id | ID of the mapping dataset from the DFR3 service.
+`earthquake_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
 
 **Input datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`water_network` <sup>*</sup> | `incore:waternetwork` | Water dataset id | Water network dataset.
+`water_network` <sup>*</sup> | `incore:waternetwork` | Water dataset | A water network dataset.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline_dmg` <sup>*</sup> | `ergo:pipelineDamage` | Pipeline results | A csv file of pipeline structural damage.
-`tank_dmg` <sup>*</sup> | `ergo:pumpDamage` | Tank results | A csv file of tank structural damage.
-`pump_dmg` <sup>*</sup> | `ergo:lifelineWaterTankInventoryDamage` | Pump results | A csv file of pump structural damage.
+`pipeline_dmg` <sup>*</sup> | `ergo:pipelineDamage` | Pipeline results | A dataset containing results (format: CSV).
+`tank_dmg` <sup>*</sup> | `ergo:pumpDamage` | Tank results | A dataset containing results (format: CSV).
+`pump_dmg` <sup>*</sup> | `ergo:lifelineWaterTankInventoryDamage` | Pump results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

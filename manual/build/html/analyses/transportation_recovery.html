@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.4.16. Water facility damage" href="waterfacilitydamagev1.html" />
-    <link rel="prev" title="3.4.14. Tornado epn damage" href="tornadoepndamage.html" /> 
+    <link rel="prev" title="3.4.14. Tornado Electric Power Network (EPN) damage" href="tornadoepndamage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -191,11 +191,11 @@
             
   <div class="section" id="transportation-recovery">
 <h1>3.4.15. Transportation recovery<a class="headerlink" href="#transportation-recovery" title="Permalink to this headline">¶</a></h1>
-<p>This analysis computes the damage to bridges, first calling the bridge damage analysis. It then uses nodes and
-links in transportation path and average daily traffic (ADT) data of bridges to calculate a Transportation
-network post-disaster recovery.</p>
-<p>Additionally, the analysis can be used in stochastic calculations with an integer value being imported to seed the random number generator.</p>
-<p>The code creates an output CSV file with recovery trajectory timelines and data.</p>
+<p>This analysis computes the damage to bridges, first calling the bridge damage analysis. It then uses nodes and links
+in transportation path and Average Daily Traffic (ADT) data of bridges to calculate a transportation network post-disaster recovery.
+Additionally, the analysis can be used in stochastic calculations with an integer value being imported
+to seed the random number generator.</p>
+<p>The output of this analysis is a CSV file with recovery trajectory timelines and data.</p>
 <p><strong>Input Parameters</strong></p>
 <table border="1" class="docutils">
 <thead>
@@ -208,97 +208,57 @@ network post-disaster recovery.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>num_cpu</code></td>
-<td><code>int</code></td>
-<td>Number of CPUs</td>
-<td>Number of CPUs used for parallel computations. Default <em>1</em>.</td>
-</tr>
-<tr>
 <td><code>pm</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Performance metrics</td>
-<td>Transportation performance metrics: <br>0: Weighted independent pathways <br>1: Free flow travel time.</td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>ini_num_population</code> <sup>*</sup></td>
 <td><code>int</code></td>
-<td>Initial population number</td>
-<td>The initial population number.</td>
+<td>Population number</td>
+<td>An initial population number.</td>
 </tr>
 <tr>
 <td><code>population_size</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Population size</td>
-<td>The population size.</td>
+<td>A population size.</td>
 </tr>
 <tr>
 <td><code>num_generation</code> <sup*</sup></td>
 <td><code>int</code></td>
-<td>Number Generation</td>
-<td>Iterations per scenario.</td>
+<td>Number generation</td>
+<td>Number of iterations per scenario.</td>
 </tr>
 <tr>
 <td><code>mutation_rate</code> <sup>*</sup></td>
 <td><code>float</code></td>
 <td>Mutation rate</td>
-<td>Mutation rate for the NSGA-II algorithm used to determine optimal recovery rate.</td>
+<td>Mutation rate for the NSGA-II algorithm used for recovery rate.</td>
 </tr>
 <tr>
 <td><code>crossover_rate</code> <sup>*</sup></td>
 <td><code>float</code></td>
 <td>Crossover rate</td>
-<td>Crossover rate for the NSGA-II algorithm used to determine optimal recovery rate.</td>
+<td>Crossover rate for the NSGA-II algorithm used for recovery rate.</td>
+</tr>
+<tr>
+<td><code>num_cpu</code></td>
+<td><code>int</code></td>
+<td>Number of CPUs</td>
+<td>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</td>
 </tr>
 </tbody>
 </table><p><strong>Input Datasets</strong></p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>key name</th>
-<th>type</th>
-<th>name</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>nodes</code> <sup>*</sup></td>
-<td><code>ergo:roadNetwork</code></td>
-<td>Road nodes network</td>
-<td>A road network dataset, a CSV <br>file for which recovery is calculated.</td>
-</tr>
-<tr>
-<td><code>links</code> <sup>*</sup></td>
-<td><code>ergo:roadNetwork</code></td>
-<td>Road links network</td>
-<td>A road network dataset, a CSV <br>file for which recovery is calculated.</td>
-</tr>
-<tr>
-<td><code>bridges</code> <sup>*</sup></td>
-<td><code>ergo:bridges</code></td>
-<td>Bridges network</td>
-<td>A bridges dataset, usually a shape <br>file for which recovery is calculated.</td>
-</tr>
-<tr>
-<td><code>bridge_damage_value</code> <sup>*</sup></td>
-<td><code>incore:bridgeDamageValue</code></td>
-<td>Bridge damages</td>
-<td>A dataset of damages to bridges, a CSV <br>file for which recovery can be calculated.</td>
-</tr>
-<tr>
-<td><code>unrepaired_bridge</code> <sup>*</sup></td>
-<td><code>incore:unrepairedBridge</code></td>
-<td>Unrepaired bridges</td>
-<td>A dataset of unrepaired bridges, a CSV <br>file for which recovery can be calculated.</td>
-</tr>
-<tr>
-<td><code>ADT</code> <sup>*</sup></td>
-<td><code>incore:ADT</code></td>
-<td>Average daily traffic</td>
-<td>A dataset of the average daily traffic of bridges, with the assumption that <br>attached roads have the same average daily traffic.</td>
-</tr>
-</tbody>
-</table><p><strong>Output Datasets</strong></p>
+<p>| Building dataset id |  A building dataset to compute damage for.</p>
+<p><code class="docutils literal notranslate"><span class="pre">nodes</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:roadNetwork</span></code> | Rad nodes | A road network dataset.
+<code class="docutils literal notranslate"><span class="pre">links</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:roadNetwork</span></code> | Road links | A road network dataset.
+<code class="docutils literal notranslate"><span class="pre">bridges</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:bridges</span></code> | Bridge dataset | A bridge dataset.
+<code class="docutils literal notranslate"><span class="pre">bridge_damage_value</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:bridgeDamageValue</span></code> | Bridge damages | A bridge dataset.
+<code class="docutils literal notranslate"><span class="pre">unrepaired_bridge</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:unrepairedBridge</span></code> | Unrepaired bridges | An unrepaired bridge dataset.
+<code class="docutils literal notranslate"><span class="pre">ADT</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:ADT</span></code> | Bridge traffic | A dataset of daily traffic.</p>
+<p><strong>Output Datasets</strong></p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -312,14 +272,14 @@ network post-disaster recovery.</p>
 <tr>
 <td><code>optimal_solution_of_bridge_repair_schedule</code></td>
 <td><code>incore:transportationRepairSchedule</code></td>
-<td>Optimal bridge repair schedule</td>
-<td>A CSV that lists each bridge and its ending repair time.</td>
+<td>Repair schedule</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 <tr>
 <td><code>overall_transportation_recovery_trajectory</code></td>
 <td><code>incore:transportationRecovery</code></td>
 <td>Recovery trajectory</td>
-<td>A CSV that lists the ending time and travel efficiency for the whole network.</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -364,7 +324,7 @@ full analysis: <a class="reference external" href="https://incore2.ncsa.illinois
         <a href="waterfacilitydamagev1.html" class="btn btn-neutral float-right" title="3.4.16. Water facility damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tornadoepndamage.html" class="btn btn-neutral float-left" title="3.4.14. Tornado epn damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tornadoepndamage.html" class="btn btn-neutral float-left" title="3.4.14. Tornado Electric Power Network (EPN) damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -373,7 +333,7 @@ full analysis: <a class="reference external" href="https://incore2.ncsa.illinois
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

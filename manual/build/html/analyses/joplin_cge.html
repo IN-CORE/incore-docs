@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4.6. Joplin CGE &mdash; IN-CORE Manual 0.5.2 documentation</title>
+  <title>3.4.6. Joplin Computable General Equilibrium (CGE) &mdash; IN-CORE Manual 0.5.2 documentation</title>
   
 
   
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -170,7 +170,7 @@
         
           <li><a href="../analyses.html">3.4. Analyses</a> &raquo;</li>
         
-      <li>3.4.6. Joplin CGE</li>
+      <li>3.4.6. Joplin Computable General Equilibrium (CGE)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,13 +189,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="joplin-cge">
-<h1>3.4.6. Joplin CGE<a class="headerlink" href="#joplin-cge" title="Permalink to this headline">¶</a></h1>
-<p>This analysis sets up an estimate of economic impact of Joplin tornado using Computable general equilibrium (CGE)
-models. A detailed analysis shows how an economy might react to economic shocks, such as changes in policy, technology,
-or natural disasters. A CGE model consists of equations describing model variables and a detailed database consistent
-with the model equations.</p>
-<p>The resulting datasets are 1) Domestic Supply, 2) employment and 3) household income.</p>
+  <div class="section" id="joplin-computable-general-equilibrium-cge">
+<h1>3.4.6. Joplin Computable General Equilibrium (CGE)<a class="headerlink" href="#joplin-computable-general-equilibrium-cge" title="Permalink to this headline">¶</a></h1>
+<p>A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple
+data sources to reflect the interactions of households, firms and relevant government entities as they contribute
+to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital,
+using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production
+sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land and labor
+to produce goods and services for both domestic consumption and export; (3) the government sector that collects
+taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world.</p>
+<p>The output of this analysis are CSV files with domestic supply, employment and household income.</p>
 <p><strong>Related publications</strong></p>
 <p><strong>Input parameters</strong></p>
 <table border="1" class="docutils">
@@ -218,7 +221,7 @@ with the model equations.</p>
 <td><code>solver_path</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Solver path</td>
-<td>A filesystem path to ipopt executable.</td>
+<td>Path to <strong>ipopt</strong> package.</td>
 </tr>
 </tbody>
 </table><p><strong>Input datasets</strong></p>
@@ -234,75 +237,75 @@ with the model equations.</p>
 <tbody>
 <tr>
 <td><code>SAM</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEsam</code></td>
-<td>Social accounting matrix</td>
-<td>Social accounting matrix.</td>
+<td><code>incore:joplinCGEsam</code></td>
+<td>Social matrix</td>
+<td>A social accounting matrix.</td>
 </tr>
 <tr>
 <td><code>BB</code> <sup>*</sup></td>
-<td><code>incore:joplinCGEKc</code></td>
-<td>Capital comp</td>
-<td>Capital comp.</td>
+<td><code>incore:JoplinCGEbb</code></td>
+<td>Capital composition</td>
+<td>A matrix of functioning capital.</td>
 </tr>
 <tr>
 <td><code>IOUT</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEiout</code></td>
+<td><code>incore:JoplinCGEiout</code></td>
 <td>Government parameters</td>
-<td>Government parameters and initial values.</td>
+<td>A matrix tax revenue transfer.</td>
 </tr>
 <tr>
 <td><code>MISC</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEmisc</code></td>
+<td><code>incore:joplinCGEmisc</code></td>
 <td>Parameters</td>
-<td>Parameters and initial values.</td>
+<td>Data of employment, capital and households <br>in the economy.</td>
 </tr>
 <tr>
 <td><code>MISCH</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEmisch</code></td>
-<td>Household parameters</td>
-<td>Household parameters and initial values.</td>
+<td><code>incore:joplinCGEmisch</code></td>
+<td>Supply elasticity</td>
+<td>Elasticities for the supply of labor.</td>
 </tr>
 <tr>
 <td><code>LANDCAP</code> <sup>*</sup></td>
-<td><code>incore:joplingCGElandK</code></td>
+<td><code>incore:JoplinCGElandcap</code></td>
 <td>Land capital</td>
-<td>Land capital.</td>
+<td>Changes in the price of physical capital.</td>
 </tr>
 <tr>
 <td><code>EMPLOY</code> <sup>*</sup></td>
-<td><code>incore:joplinCGEemployment</code></td>
+<td><code>incore:JoplinCGEemploy</code></td>
 <td>Employment</td>
-<td>Employment.</td>
+<td>Commercial sector employment data</td>
 </tr>
 <tr>
 <td><code>IGTD</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEigtd</code></td>
-<td>Exogenous Transfer PMT</td>
-<td>Exogenous Transfer PMT.</td>
+<td><code>incore:JoplinCGEigtd</code></td>
+<td>Exogenous payment</td>
+<td>A matrix of exogenous transfer payment.</td>
 </tr>
 <tr>
 <td><code>TAUFF</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEtauff</code></td>
+<td><code>incore:joplinCGEtauff</code></td>
 <td>Tax rates</td>
-<td>Tax rates.</td>
+<td>Social security tax rates.</td>
 </tr>
 <tr>
 <td><code>JOBCR</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEjobcr</code></td>
+<td><code>incore:JoplinCGEjobcr</code></td>
 <td>Labor</td>
-<td>Labor.</td>
+<td>A matrix of workers groups in the economy.</td>
 </tr>
 <tr>
 <td><code>OUTCR</code> <sup>*</sup></td>
-<td><code>incore:joplingCGEoutcr</code></td>
-<td>Commuter Labor Groups</td>
-<td>Commuter Labor Groups.</td>
+<td><code>incore:JoplinCGEoutcr</code></td>
+<td>Commuter laborers</td>
+<td>A matrix of Joplin commuting workers.</td>
 </tr>
 <tr>
-<td><code>TPC</code></td>
-<td><code>incore:joplingCGEtpc</code></td>
-<td>Factor taxes</td>
-<td>Factor taxes.</td>
+<td><code>sector_shocks</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEshocks</code></td>
+<td>Capital shocks</td>
+<td>Building states to capital <br>shocks per sector.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -320,19 +323,19 @@ with the model equations.</p>
 <td><code>domestic-supply</code> <sup>*</sup></td>
 <td><code>joplincgeanalysis</code></td>
 <td>Supply results</td>
-<td>A csv file of domestic supply.</td>
+<td>A dataset containing domestic <br>supply results (format: CSV).</td>
 </tr>
 <tr>
 <td><code>employment</code> <sup>*</sup></td>
 <td><code>joplincgeanalysis</code></td>
 <td>Employment results</td>
-<td>A csv file of employment.</td>
+<td>A dataset  of employment. <br>(format: CSV).</td>
 </tr>
 <tr>
 <td><code>household-income</code> <sup>*</sup></td>
 <td><code>joplincgeanalysis</code></td>
 <td>Income results</td>
-<td>A csv file of household income.</td>
+<td>A dataset of household income. <br>(format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -354,6 +357,7 @@ with the model equations.</p>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;TPC&quot;</span><span class="p">,</span> <span class="n">TPC</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;JOBCR&quot;</span><span class="p">,</span> <span class="n">JOBCR</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;OUTCR&quot;</span><span class="p">,</span> <span class="n">OUTCR</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;sector_shocks&quot;</span><span class="p">,</span> <span class="n">sector_shocks</span><span class="p">)</span>
 
     <span class="c1"># Set analysis parameters</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_path&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -386,7 +390,7 @@ with the model equations.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

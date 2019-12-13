@@ -98,7 +98,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -191,9 +191,10 @@
             
   <div class="section" id="cummulative-building-damage">
 <h1>3.4.3. Cummulative building damage<a class="headerlink" href="#cummulative-building-damage" title="Permalink to this headline">¶</a></h1>
-<p>This analysis computes the damage to buildings based on two hazards, an earthquake and a tsunami.</p>
-<p>The process of evaluating structural damages is done externally and the results for earthquake and tsunami
+<p>This analysis computes building damage based on two hazards, an earthquake and a tsunami.</p>
+<p>The process for computing the structural damage is done externally and the results for earthquake and tsunami
 are imported to the analysis. The damage intervals are then calculated from combined limit states.</p>
+<p>The output of this analysis is a CSV file with probabilities of damage.</p>
 <p><strong>Input parameters</strong></p>
 <table border="1" class="docutils">
 <thead>
@@ -209,13 +210,13 @@ are imported to the analysis. The damage intervals are then calculated from comb
 <td><code>result_name</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Result name</td>
-<td>Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.</td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>num_cpu</code></td>
 <td><code>int</code></td>
 <td>Number of CPUs</td>
-<td>Number of CPUs used for parallel computations. Default <em>1</em>.</td>
+<td>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</td>
 </tr>
 </tbody>
 </table><p><strong>Input datasets</strong></p>
@@ -232,14 +233,14 @@ are imported to the analysis. The damage intervals are then calculated from comb
 <tr>
 <td><code>eq_bldg_dmg</code> <sup>*</sup></td>
 <td><code>ergo:buildingDamageVer4</code></td>
-<td>Building dataset id</td>
-<td>A dataset that contains the building damage <br>results caused by an earthquake.</td>
+<td>Building dataset</td>
+<td>A building dataset with earthquake damage.</td>
 </tr>
 <tr>
 <td><code>tsunami_bldg_dmg</code> <sup>*</sup></td>
 <td><code>ergo:buildingDamageVer4</code></td>
-<td>Building dataset id</td>
-<td>A dataset that contains the building damage <br>results caused by a tsunami.</td>
+<td>Building dataset</td>
+<td>A building dataset with tsunami damage.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -256,8 +257,8 @@ are imported to the analysis. The damage intervals are then calculated from comb
 <tr>
 <td><code>combined-result</code> <sup>*</sup></td>
 <td><code>ergo:buildingDamageVer4</code></td>
-<td>Cummulative esults</td>
-<td>A csv file of cumulative building damage bridge.</td>
+<td>Results</td>
+<td>A dataset containing results <br>(format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -304,7 +305,7 @@ are imported to the analysis. The damage intervals are then calculated from comb
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

@@ -11,6 +11,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [EpnRecoveryModel.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/EpnRecoveryModel.ipynb)<br />
 [housingunitallocation.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/housingunitallocation.ipynb)<br />
 [joplin_cge.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/joplin_cge.ipynb)<br />
+[meandamage.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/test_mean_damage.ipynb)<br />
 [montecarlofailureprobability.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/montecarlofailureprobability.ipynb)<br />
 [non_structural_building_damage.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/non_structural_building_damage.ipynb)<br />
 [pipeline_dmg.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/pipeline_dmg.ipynb)<br />

@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -191,8 +191,8 @@
             
   <div class="section" id="population-dislocation">
 <h1>3.4.12. Population dislocation<a class="headerlink" href="#population-dislocation" title="Permalink to this headline">¶</a></h1>
-<p>This analysis computes the population dislocation based on a particular hazard such as earthquake. First, Housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing Unit Allocation analysis.</p>
-<p>After the housing units are allocated, the hazard event defined by calling fragility and hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.</p>
+<p>This analysis computes the population dislocation based on a particular hazard such as earthquake, tsunami, or tornado. First, housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing unit allocation analysis.</p>
+<p>After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.</p>
 <p>Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. The output is a CSV file with dislocated households and related variables.</p>
 <p><strong>Related publications</strong></p>
 <ul class="simple">
@@ -214,13 +214,13 @@
 <td><code>result_name</code></td>
 <td><code>str</code></td>
 <td>Result name</td>
-<td>Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information. Default <em>population-dislocation-result.csv</em></td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>seed</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Seed</td>
-<td>Seed to ensure replication if run as part of a probabilistic analysis.</td>
+<td>Initial value to seed the random number generator.</td>
 </tr>
 </tbody>
 </table><p><strong>Input Datasets</strong></p>
@@ -238,19 +238,19 @@
 <td><code>building_dmg</code> <sup>*</sup></td>
 <td><code>ergo:buildingDamageVer4</code></td>
 <td>Building damage</td>
-<td>Building damage results CSV file from hazard service.</td>
+<td>A building damage dataset.</td>
 </tr>
 <tr>
 <td><code>housing_unit_allocation</code> <sup>*</sup></td>
 <td><code>incore:housingUnitAllocation</code></td>
-<td>Housing unit allocation</td>
-<td>Merged dataset, as a CSV file, of the inputs such as Probabilistic House Unit Allocation.</td>
+<td>Housing allocation</td>
+<td>A housing unit allocation dataset.</td>
 </tr>
 <tr>
 <td><code>block_group_data</code> <sup>*</sup></td>
 <td><code>incore:blockGroupData</code></td>
 <td>Block group data</td>
-<td>Racial distribution census CSV data.</td>
+<td>A racial distribution dataset.</td>
 </tr>
 </tbody>
 </table><p><strong>Output Datasets</strong></p>
@@ -268,7 +268,7 @@
 <td><code>result</code></td>
 <td><code>incore:popDislocation</code></td>
 <td>Results</td>
-<td>A CSV file of population dislocation.</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -311,7 +311,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

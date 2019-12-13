@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.4.6. Joplin CGE" href="joplin_cge.html" />
+    <link rel="next" title="3.4.6. Joplin Computable General Equilibrium (CGE)" href="joplin_cge.html" />
     <link rel="prev" title="3.4.4. Electric power facility damage" href="epfdamage.html" /> 
 </head>
 
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">3.4.3. Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">3.4.4. Electric power facility damage</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin CGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">3.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meandamage.html">3.4.7. Mean damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">3.4.8. Monte Carlo failure probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">3.4.9. Nonstructural building damage</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">3.4.11. Pipeline damage with repair rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">3.4.12. Population dislocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">3.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado epn damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">3.4.14. Tornado Electric Power Network (EPN) damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">3.4.15. Transportation recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">3.4.16. Water facility damage</a></li>
 </ul>
@@ -196,9 +196,7 @@ The process aligns the housing unit inventory with physical systems, such as the
 and the demand nodes of a potable water network. The allocation of housing units to the address points
 (buildings) provides a framework to account for uncertainty in community structure that allows
 for the hazard impacts to be analyzed statistically.</p>
-<p>Additionally, the code can be used as a MCS analysis with n runs  or as a single allocation run with an integer
-value being used as a random number generator seed and passed to the other analyses. Output is a tabulated
-Housing Unit Allocation dataset.</p>
+<p>The output of this analysis is a CSV file with allocated house units.</p>
 <p><strong>Related publications</strong></p>
 <ul class="simple">
 <li><p>Integration of Detailed Household Characteristic Data with Critical Infrastructure and Its Implementation to Post-Hazard Resilience Modeling, N. Rosenheim, R. Guidotti and P. Gardoni, <a class="reference external" href="https://www.researchgate.net/profile/Jose_Rodriguez-Llanes/publication/328233484_Food_security_resilience_to_shocks_in_Niger_preliminary_findings_on_potential_measurement_and_challenges_from_LSMS-ISA_data/links/5bc07b2fa6fdcc2c91f72ca2/Food-security-resilience-to-shocks-in-Niger-preliminary-findings-on-potential-measurement-and-challenges-from-LSMS-ISA-data.pdf#page=166">pdf</a></p></li>
@@ -219,19 +217,19 @@ Housing Unit Allocation dataset.</p>
 <td><code>result_name</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Result name</td>
-<td>Name of the result dataset, usually in CSV format which contains <br>the allocation information.</td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>seed</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Seed</td>
-<td>Initial seed for the probabilistic model. <br>An integer value imported to seed the random <br>number generator.</td>
+<td>Initial value to seed the random number generator.</td>
 </tr>
 <tr>
 <td><code>iterations</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Iterations</td>
-<td>Number of iterations of running <br>the probabilistic model.</td>
+<td>Number of iterations of running the probabilistic model.</td>
 </tr>
 </tbody>
 </table><p><strong>Input datasets</strong></p>
@@ -248,20 +246,20 @@ Housing Unit Allocation dataset.</p>
 <tr>
 <td><code>housing_unit_inventory</code> <sup>*</sup></td>
 <td><code>incore:housingUnitInventory</code></td>
-<td>Housing unit inventory id</td>
-<td>A housing unit inventory dataset, <br>aka Census block data. Corresponds to a possible <br>occupied housing unit, vacant housing unit, <br>or a group quarters.</td>
+<td>Housing inventory</td>
+<td>A housing unit inventory dataset.</td>
 </tr>
 <tr>
 <td><code>address_point_inventory</code> <sup>*</sup></td>
 <td><code>incore:addressPoints</code></td>
-<td>Address inventory id</td>
-<td>An address locations dataset. Corresponds <br>to a specific address where a housing unit or group quarters <br>could be assigned.</td>
+<td>Address inventory</td>
+<td>An address locations dataset.</td>
 </tr>
 <tr>
 <td><code>building_inventory</code> <sup>*</sup></td>
 <td><code>ergo:buildingInventory</code></td>
-<td>Building inventory id</td>
-<td>A building Inventory csv dataset for each <br>building/structure. A structure can have multiple <br>addresses.</td>
+<td>Building inventory</td>
+<td>A building inventory dataset.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -279,7 +277,7 @@ Housing Unit Allocation dataset.</p>
 <td><code>result</code> <sup>*</sup></td>
 <td><code>incore:housingUnitAllocation</code></td>
 <td>Results</td>
-<td>A csv file with the merged dataset of the inputs,<br>aka Probabilistic Housing Unit Allocation.</td>
+<td>A dataset containing results <br>(format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -316,7 +314,7 @@ Housing Unit Allocation dataset.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="joplin_cge.html" class="btn btn-neutral float-right" title="3.4.6. Joplin CGE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="joplin_cge.html" class="btn btn-neutral float-right" title="3.4.6. Joplin Computable General Equilibrium (CGE)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="epfdamage.html" class="btn btn-neutral float-left" title="3.4.4. Electric power facility damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -328,7 +326,7 @@ Housing Unit Allocation dataset.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

@@ -175,20 +175,20 @@
 <tr>
 <td><code>water_facility_mapping_id</code> <sup>*</sup></td>
 <td><code>str</code></td>
-<td>Water mapping id</td>
-<td>Default water facility fragility mapping <br>on Incore-service. It implicitly defines the fragilities to be used in the calculation.</td>
+<td>Water facility id</td>
+<td>ID of the mapping dataset from the DFR3 service.</td>
 </tr>
 <tr>
 <td><code>water_pipeline_mapping_id</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Pipeline mapping id</td>
-<td>Default pipeline fragility mapping <br>on Incore-service. It implicitly defines the fragilities to be used in the calculation.</td>
+<td>ID of the mapping dataset from the DFR3 service.</td>
 </tr>
 <tr>
 <td><code>earthquake_id</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Hazard id</td>
-<td>Hazard ID for calculating water network damage.</td>
+<td>ID of the hazard from the Hazard service.</td>
 </tr>
 <tr>
 <td><code>num_cpu</code></td>
@@ -211,8 +211,8 @@
 <tr>
 <td><code>water_network</code> <sup>*</sup></td>
 <td><code>incore:waternetwork</code></td>
-<td>Water dataset id</td>
-<td>Water network dataset.</td>
+<td>Water dataset</td>
+<td>A water network dataset.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -230,19 +230,19 @@
 <td><code>pipeline_dmg</code> <sup>*</sup></td>
 <td><code>ergo:pipelineDamage</code></td>
 <td>Pipeline results</td>
-<td>A csv file of pipeline structural damage.</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 <tr>
 <td><code>tank_dmg</code> <sup>*</sup></td>
 <td><code>ergo:pumpDamage</code></td>
 <td>Tank results</td>
-<td>A csv file of tank structural damage.</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 <tr>
 <td><code>pump_dmg</code> <sup>*</sup></td>
 <td><code>ergo:lifelineWaterTankInventoryDamage</code></td>
 <td>Pump results</td>
-<td>A csv file of pump structural damage.</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -279,7 +279,7 @@ full analysis: <a class="reference external" href="https://incore2.ncsa.illinois
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

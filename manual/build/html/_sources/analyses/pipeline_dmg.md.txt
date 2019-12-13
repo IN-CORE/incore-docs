@@ -1,42 +1,38 @@
 ### Pipeline damage
 
-This analysis computes the damage to pipelines based on a particular hazard such as earthquake, tsunami
-and tornado by calling fragility and hazard services.
+This analysis computes pipeline damage based on earthquake hazard.
 
-The process is similar to evaluating other structural damages. The probabilities for pipeline damage
-state are obtained using fragility curves and a hazard definition, each pipeline will have
-a specific PGA (Peak Ground Acceleration), a measurement of an earthquake hazard for each scenario.
-Liquefaction effect, which is defined as a change in stress condition, in which material that is ordinarily
-a solid behaves like a liquid can be considered as well. The LMF (Liquefaction Modification Factor)
-values are implemented as multiplication factors to the median fragility values and they must be present
-in the dataset.
+The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
+is obtained based on the hazard type and attributes of the pipeline. Based on the fragility, the hazard intensity at the 
+location of the pipeline is computed. Using this information, the probability of exceeding each limit state is computed, 
+along with the probability of damage. If the pipeline dataset contains soil information, the median value of the associated 
+fragility can be modified to account for liquefaction in the damage. 
 
-The code covers Normal and LogNormal fragilities with 4 limit states (slight, moderate, extensive
-and complete) and creates an output CSV file.
+The output of this analysis is a CSV file with probabilities of damage.
 
 **Input Parameters**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`mapping_id` <sup>*</sup> | `str` | Mapping ID | Fragility mapping on Incore-service. It defines the fragilities to be used in the calculation.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type for calculating pipeline damage (earthquake, tornado, tsunami, etc.).
-`hazard_id` <sup>*</sup> | `str` | Hazard ID | Hazard ID for calculating pipeline damage.
-`fragility_key` | `str` | Fragility key | Fragility key to use in mapping dataset. Default **.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
-`liquefaction_geology_dataset_id` | `str` | Geology dataset ID | Liquefaction geology/susceptibility dataset ID. <br>If not provided, liquefaction will be ignored.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
+`hazard_type` <sup>*</sup> | `str` | Hazard type | Eearthquake hazard type.
+`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the earthquake hazard from the Hazard service
+`fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
+`liquefaction_geology_dataset_id` | `str` | Geology id | A geology dataset for liquefaction adjustment.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input Datasets** 
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline inventory | A pipeline dataset, usually a shape file <br>for which the damage is calculated.
+`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:pipelineDamage` | Results | A CSV file of bridge structural damage.
+`result` | `incore:pipelineDamage` | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

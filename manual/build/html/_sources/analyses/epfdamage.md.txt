@@ -1,29 +1,39 @@
 ### Electric power facility damage
 
+This analysis computes electric power facilities damage based on a particular hazard such as earthquake, tsunami, tornado, etc.
+
+The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
+is obtained based on the hazard type and attributes of the electric power facility. Based on the fragility, the hazard intensity at the 
+location of the electric power facility is computed. Using this information, the probability of exceeding each limit state is computed, 
+along with the probability of damage. For the case of an earthquake hazard, soil information can be used to
+modify the damage probabilities to include damage due to liquefaction.  
+
+The output of this analysis is a CSV file with probabilities of damage.
+
 **Input parameters**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | Default electric power facility fragility mapping on Incore-service. <br>It implicitly <br>defines the fragilities to be used in the calculation.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type for calculating epf damage, e.g earthquake, <br>tornado etc.
-`hazard_id` <sup>*</sup> | `str` | Hazard id | Hazard ID for calculating epf damage.  Generally, hazards <br>with PGA values are used to calculate epf damages.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
+`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
+`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
-`use_liquefaction` | `bool` | Liquefaction | Use liquefaction to modify fragility curve. Default *False*.
-`use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty for computing damage.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
+`use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*.
+`use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. <br>Default is *False*.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`epfs` <sup>*</sup> | `incore:epf`<br>`ergo:epf` | Epf dataset id | An Electric power facility (infrastructure) dataset, usually <br>a shape file for which the damage is calculated.
+`epfs` <sup>*</sup> | `incore:epf`<br>`ergo:epf` | Electric power dataset | An electric power facility dataset.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:epfVer1` | Results | A csv file of bridge structural damage.
+`result` <sup>*</sup> | `incore:epfVer1` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

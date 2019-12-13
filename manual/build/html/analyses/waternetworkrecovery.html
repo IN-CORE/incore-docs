@@ -176,25 +176,25 @@
 <td><code>result_name</code> <sup>*</sup></td>
 <td><code>str</code></td>
 <td>Result name</td>
-<td>Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.</td>
+<td>Name of the result dataset.</td>
 </tr>
 <tr>
 <td><code>n_days</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Recovery days</td>
-<td>n days of recovery simulation.</td>
+<td>Number of days in recovery simulation.</td>
 </tr>
 <tr>
 <td><code>seed</code> <sup>*</sup></td>
 <td><code>int</code></td>
 <td>Seed</td>
-<td>Initial seed for the probabilistic model. <br>An integer value imported to seed the random <br>number generator.</td>
+<td>Initial value to seed the random number generator.</td>
 </tr>
 <tr>
 <td><code>work_hour_day</code></td>
 <td><code>int</code></td>
 <td>Work time</td>
-<td>Hours a day that crew works on the water network.</td>
+<td>Daily hours that crew works on the water network.</td>
 </tr>
 <tr>
 <td><code>tzero</code></td>
@@ -241,32 +241,32 @@
 <tr>
 <td><code>wn_inp_file</code> <sup>*</sup></td>
 <td><code>incore:waterNetworkEpanetInp</code></td>
-<td>EPAnet dataset id</td>
+<td>EPAnet dataset</td>
 <td>EPAnet input dataset.</td>
 </tr>
 <tr>
 <td><code>demand_initial</code> <sup>*</sup></td>
 <td><code>incore:waterNetworkDemand</code></td>
-<td>Water demand id</td>
-<td>Dataset with intial demand for water network.</td>
+<td>Water demand</td>
+<td>Initial water demand Dataset.</td>
 </tr>
 <tr>
 <td><code>pipe_dmg</code> <sup>*</sup></td>
 <td><code>ergo:pipelineDamage</code></td>
-<td>Pipeline damage id</td>
-<td>Pipeline damage probability.</td>
+<td>Pipeline damage</td>
+<td>A pipeline damage probability.</td>
 </tr>
 <tr>
 <td><code>pump_dmg</code> <sup>*</sup></td>
 <td><code>ergo:pumpDamage</code></td>
-<td>Pump damage id</td>
-<td>Pump damage probability.</td>
+<td>Pump damage</td>
+<td>A pump damage probability.</td>
 </tr>
 <tr>
 <td><code>tank_dmg</code> <sup>*</sup></td>
 <td><code>ergo:lifelineWaterTankInventoryDamage</code></td>
-<td>Tank damage id</td>
-<td>Tank damage probability.</td>
+<td>Tank damage</td>
+<td>A tank damage probability.</td>
 </tr>
 <tr>
 <td><code>demand</code> <sup>*</sup></td>
@@ -277,14 +277,14 @@
 <tr>
 <td><code>pipe_zone</code> <sup>*</sup></td>
 <td><code>incore:pipeZoning</code></td>
-<td>Pipe zone id</td>
+<td>Pipe zone</td>
 <td>Pipezone to decide repair order.</td>
 </tr>
 <tr>
 <td><code>demand_additional</code></td>
 <td><code>incore:waterNetworkDemand</code></td>
-<td>Dislocation demand id</td>
-<td>Water network demand after additional dislocation.</td>
+<td>Dislocation demand</td>
+<td>A water network demand after additional dislocation.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -298,12 +298,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>pressure</code> <sup>*</sup></td>
-<td><code>csv</code></td>
-<td>Results</td>
-<td>A csv file of bridge structural damage.</td>
-</tr>
 <tr>
 <td><code>initial_water_network</code> <sup>*</sup></td>
 <td><code>pickle</code></td>
@@ -320,7 +314,13 @@
 <td><code>recovery_water_network_add</code> <sup>*</sup></td>
 <td><code>pickle</code></td>
 <td>Results</td>
-<td>Recovery water network additional.</td>
+<td>Additionaly recovery water network.</td>
+</tr>
+<tr>
+<td><code>pressure</code> <sup>*</sup></td>
+<td><code>csv</code></td>
+<td>Results</td>
+<td>A dataset containing results (format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
@@ -365,7 +365,7 @@ full analysis: <a class="reference external" href="https://incore2.ncsa.illinois
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Mozilla Public License v2.0
+        &copy; Copyright 
 
     </p>
   </div>

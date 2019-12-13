@@ -4,23 +4,23 @@
 
 key name | type | name | description
 --- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset, usually in CSV format which contains <br>the infrastructure damage information.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. Default *1*.
-`num_samples` <sup>*</sup> | `int` | Number of MC samples | Number of Monte Carlo samples.
-`damage_interval_keys` <sup>*</sup> | `list` | Damage interval keys | Column names of the damage intervals.
-`failure_state_keys` <sup>*</sup> | `list` | Failure state keys | Column names of damager intervals that are considered damaged.
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`num_samples` <sup>*</sup> | `int` | Samples | Number of Monte Carlo samples.
+`damage_interval_keys` <sup>*</sup> | `list` | Damage keys | Column names of the damage intervals.
+`failure_state_keys` <sup>*</sup> | `list` | Failure keys | Column names of damage intervals.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`bridge-damage`, <br>`ergo:waterFacilityDamageVer4` | Damage | Damage results that has damage intervals in it.
+`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`bridge-damage`, <br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:failureProbability` | Results | A CSV file of failure probability.
+`result` | `incore:failureProbability` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 
