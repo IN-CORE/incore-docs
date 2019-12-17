@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Version [Unreleased]
 
+## [1.0.0] - 2019-12-17
+
 ## [0.5.2] - 2019-11-27
 
 ### Added
+- Resolved comments from the CoE.
 - New structure of analyses.md, split into individual files.
 - more FAQ.
 
@@ -16,4 +19,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Folder structure.
 
 ### Fixed
-- Typos.
+- Typos, errors
