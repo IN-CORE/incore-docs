@@ -34,7 +34,7 @@ for Jupyter Notebook **ipynb files**:
     conda install recommonmark
     pip install sphinx-markdown-tables
     conda install -c conda-forge nbsphinx
-    conda install -c conda-forge ipython
+    conda install -c conda-forge ipythony
     ```
     or (global install for all users drop the --user flag)
     ```

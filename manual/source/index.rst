@@ -3,8 +3,12 @@ Introduction
 
 ..  toctree::
     :hidden:
+    :maxdepth: 2
+    :numbered:
+    :caption: Table of Contents
+    :name: mastertoc
 
-    Introduction <introduction>
+    self
     account
     pyIncore <pyincore>
     incore_lab
