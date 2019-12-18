@@ -6,7 +6,7 @@
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
-      "url": "https://incore2.ncsa.illinois.edu",
+      "url": "https://incore.ncsa.illinois.edu",
       "email": "incore-dev@lists.illinois.edu"
     },
     "license": {
@@ -14,7 +14,7 @@
       "url": "https://www.mozilla.org/en-US/MPL/2.0/"
     }
   },
-  "host": "incore2-services.ncsa.illinois.edu",
+  "host": "incore-services.ncsa.illinois.edu",
   "basePath": "/space/api",
   "tags": [
     {
