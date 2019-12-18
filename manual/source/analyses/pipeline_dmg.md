@@ -57,4 +57,4 @@ code snipet:
     result = pipeline_dmg.run_analysis()
 ```
 
-full analysis: [pipeline_dmg.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/pipeline_dmg.ipynb)
+full analysis: [pipeline_dmg.ipynb](https://incore.ncsa.illinois.edu/doc/examples/pipeline_dmg.ipynb)

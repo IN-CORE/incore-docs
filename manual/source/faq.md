@@ -10,7 +10,7 @@
 
     The username/password you chose during registration process in IN-CORE system is called 
     LDAP password, based on specific Lightweight Directory Access Protocol authentication. 
-    You can test your registration credentials by accessing the [documentation server](http://incore2.ncsa.illinois.edu/).
+    You can test your registration credentials by accessing the [documentation server](http://incore.ncsa.illinois.edu/).
 
 ### pyIncore
 

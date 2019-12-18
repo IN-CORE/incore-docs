@@ -62,4 +62,4 @@ code snipet:
     hua.run_analysis()
 ```
 
-full analysis: [housingunitallocation.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/housingunitallocation.ipynb)
+full analysis: [housingunitallocation.ipynb](https://incore.ncsa.illinois.edu/doc/examples/housingunitallocation.ipynb)

@@ -20,6 +20,6 @@ To **update** pyIncore run the following command:
 
 .. code-block:: bash
 
-    conda update pyincore
+    codna update -c in-core pyincore
 
 

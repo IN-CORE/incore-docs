@@ -9,7 +9,7 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
 
 2. To install pyIncore, navigate to the directory you want to use for running Jupyter Notebooks and run the following command:
     ```
-    conda install pyincore
+    codna install -c in-core pyincore
     ```
 
 The installation installs pyIncore and creates a `.incore` folder in your HOME directory to store cached files. 

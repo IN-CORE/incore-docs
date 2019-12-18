@@ -63,4 +63,4 @@ code snipet:
     bridge_dmg.run_analysis()
 ```
 
-full analysis: [bridgedamage.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/bridge_dmg.ipynb)
+full analysis: [bridgedamage.ipynb](https://incore.ncsa.illinois.edu/doc/examples/bridge_dmg.ipynb)

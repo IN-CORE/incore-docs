@@ -1,4 +1,4 @@
 ## Technical References
 
 - <a href="../pyincore" target="_blank">pyIncore</a> Reference
-- <a href="https://incore2.ncsa.illinois.edu/doc/api/" target="_blank">IN-CORE Web Services API</a> specifications
+- <a href="https://incore.ncsa.illinois.edu/doc/api/" target="_blank">IN-CORE Web Services API</a> specifications

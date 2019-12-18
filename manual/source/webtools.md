@@ -7,13 +7,13 @@ A future version of Web Tools will enable those information.
 There are three web tools: 1) **Data viewer**, 2) **Hazard viewer**, and 3) **Fragility viewer**. 
 Each viewer interacts with IN-CORE web services respectively: 1) Data service, 2) Hazard service, 
 and 3) DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service. These viewers can be accessed 
-directly from the [IN-CORE](https://incore2.ncsa.illinois.edu/) page
+directly from the [IN-CORE](https://incore.ncsa.illinois.edu/) page
 
-![IN-CORE Web Tools.](images/incore0_landing_page1.jpg "IN-CORE Web Tools menu.") 
+![IN-CORE Web Tools.](images/incore_landing_page1.jpg "IN-CORE Web Tools menu.") 
  
  or from the [IN-CORE Lab](https://incore.ncsa.illinois.edu/lab).
  
-<!-- ![Web Tools in Incore Lab.](images/incore0_landing_page2.jpg "IN-CORE Web Tools menu in IN-CORE Lab.")-->
+<!-- ![Web Tools in Incore Lab.](images/incore_landing_page2.jpg "IN-CORE Web Tools menu in IN-CORE Lab.")-->
  
 This section shows how to access and use IN-CORE Web Tools.
 
@@ -25,7 +25,7 @@ This section shows how to access IN-CORE Web Tools and documentations on IN-CORE
 
 ### Fragility Viewer
 
-The [Fragility Viewer](https://incore2.ncsa.illinois.edu/FragilityViewer) shows a list of 
+The [Fragility Viewer](https://incore.ncsa.illinois.edu/FragilityViewer) shows a list of 
 Fragility curves in the left panel. The list comes from **DFR3 service**.
 
 ![IN-CORE Web Tools DFR3 menu.](images/wt1_fragility_menu.jpg "IN-CORE Web Tools fragility menu.")
@@ -37,7 +37,7 @@ The curve can be viewed and the metadata of the curve can be downloaded in JSON 
 
 ### Data Viewer
 
-In [Data viewer](https://incore2.ncsa.illinois.edu/DataViewer) users can navigate datasets 
+In [Data viewer](https://incore.ncsa.illinois.edu/DataViewer) users can navigate datasets 
 along with their metadata and preview (visualization) such as building inventory, bridge 
 inventory, etc. 
 
@@ -47,7 +47,7 @@ inventory, etc.
 
 ### Hazard Viewer
 
-In [Hazard viewer](https://incore2.ncsa.illinois.edu/HazardViewer) users can navigate 
+In [Hazard viewer](https://incore.ncsa.illinois.edu/HazardViewer) users can navigate 
 pre-defined Hazards with a user interface similar to what has been shown for the other 
 viewers. Users can filter the list of hazards by selecting them from the drop down lists.
 

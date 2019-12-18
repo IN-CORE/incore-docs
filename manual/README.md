@@ -24,25 +24,31 @@ folder (called `incore_docs` here) and activate it:
     source venv/bin/activate
     ```
 4. Install required packages individually if necessary. use `conda` again or  
-you can also use `pip` for installing packages:
+you can also use `pip` for installing packages. Packages 2) and 3) are for correct 
+rendering of the tables and 4) and 5) installs extension that provides a source parser 
+for Jupyter Notebook **ipynb files**:
 
     ```
     conda install sphinx
     conda install sphinx_rtd_theme
     conda install recommonmark
     pip install sphinx-markdown-tables
+    conda install -c conda-forge nbsphinx
+    conda install -c conda-forge ipython
     ```
-    or
+    or (global install for all users drop the --user flag)
     ```
-    pip install sphinx
-    pip install sphinx_rtd_theme
-    pip install recommonmark
-    pip install sphinx-markdown-tables
+    python3 -m pip install sphinx --user
+    python3 -m pip install sphinx_rtd_theme --user
+    python3 -m pip install recommonmark --user
+    python3 -m pip install sphinx-markdown-tables --user
+    python3 -m pip install nbsphinx --user
+    python3 -m pip install IPython --user
     ```   
 
 # Running
 
-From the terminal at the project folder (incore-docs/incore-docs) run: 
+From the terminal at the project folder (incore-docs/manual) run: 
 
 ```
 sphinx-build -b html source build

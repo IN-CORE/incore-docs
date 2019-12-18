@@ -57,4 +57,4 @@ code snipet:
     ted.run_analysis()
 ```
 
-full analysis: [TornadoEpnDamage.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/TornadoEpnDamage.ipynb)
+full analysis: [TornadoEpnDamage.ipynb](https://incore.ncsa.illinois.edu/doc/examples/TornadoEpnDamage.ipynb)

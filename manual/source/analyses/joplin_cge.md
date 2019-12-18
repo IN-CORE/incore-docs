@@ -77,4 +77,4 @@ code snipet:
     joplin_cge.run_analysis()
 ```
 
-full analysis: [joplin_cge.ipynb](https://incore2.ncsa.illinois.edu/doc/examples/joplin_cge.ipynb)
+full analysis: [joplin_cge.ipynb](https://incore.ncsa.illinois.edu/doc/examples/joplin_cge.ipynb)
