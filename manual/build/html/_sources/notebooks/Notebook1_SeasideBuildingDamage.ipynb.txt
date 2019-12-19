@@ -1,0 +1,675 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "source": [
+    "## Seaside Example Notebook 1: Multi-Hazard Building Damage"
+   ],
+   "metadata": {
+    "collapsed": false
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "This notebook uses the pyIncore modeling framework to compute multi-hazard damages to buildings in Seaside, Oregon. \n",
+    "pyIncore's **BuildingDamage** and **MonteCarloFailureProbability** modules are implemented to compute damages resulting \n",
+    "from both an earthquake and tsunami. pyIncore's **cumulativebuildingdamage** module is used to compute cumulative damages."
+   ],
+   "metadata": {
+    "collapsed": false
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Notebook created by Dylan R. Sanderson (OSU - sanderdy@oregonstate.edu) and Gowtham Naraharisetty (NCSA)"
+   ],
+   "metadata": {
+    "collapsed": false
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "***\n",
+    "### Background\n",
+    "\n",
+    "Communities around the world are subject to multiple natural hazards that often occur near simultaneously. For example, hurricanes often result in high wind speeds, as well as flooding from both rainfall and storm surge. Similarly, seismic events can result in earthquakes, tsunamis, and landslides. When considering multi-hazards, there is a consensus that the total expected damages are not the sum of the underlying single hazards. For example, in the case of seismic-tsunami events, a building completely destroyed by an earthquake cannot sustain any more damage from the tsunami. Subsequently, it is essential to consider this when performing a multi-hazard damage analysis. \n",
+    "\n",
+    "In this notebook, the seismic-tsunami hazard posed by the Cascadia Subduction Zone (CSZ) is considered to demonstrate the multi-hazard capabilities in pyIncore. The CSZ is an approximately 1,000 km long fault located between Cape Mendocino California and Vancouver Island, Canada, which separates the Juan de Fuca and North America plates. Rupture of the CSZ will result in a megathrust earthquake and lead to a subsequent tsunami. The city of Seaside is located along the northern Oregon coast, and has been selected as a testbed community for this analysis.\n",
+    "\n",
+    "![title](images/seaside.png)<br>\n",
+    "\n",
+    "#### Hazards, Infrastructure, and Damage Analysis\n",
+    "The results of a Probabilistic Seismic-Tsunami Hazard Analysis (PSTHA; Park *et. al.* 2017) are utilized in this notebook. The PSTHA resulted in both earthquake and tsunami hazard maps for 7 recurrence intervals (100-, 250-, 500-, 1,000-, 2,500-, 5,000-, and 10,000-year). The damages to buildings are computed in pyIncore by overlaying the hazard maps on the buildings, and determining site-specific intensity measures. Intensity measures of spectral displacement and momentum flux are used for the earthquake and tsunami respectively. MAEVIS fragilities are then implemented to determine the probability that each building sustains: (1) insignificant, (2) moderate, (3) heavy, or (4) complete damage. These probabilities are then used to inform a Monte-Carlo simulation in which the probability of building failure is computed.\n",
+    "\n",
+    "\n",
+    "<img src=\"images/hazards.png\" style=\"width: 1000px;\"/>\n",
+    "\n",
+    "<img src=\"images/Buildings.png\" style=\"width: 500px;\"/>\n",
+    "\n",
+    "\n"
+   ],
+   "metadata": {
+    "collapsed": false
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "***\n",
+    "### pyIncore\n",
+    "The remainder of this notebook uses pyIncore to compute multi-hazard damages to buildings in Seaside, Oregon.\n",
+    "\n",
+    "##### Prerequisites\n",
+    "The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through conda-forge. \n",
+    "\n",
+    "| Module | Version | Notes |\n",
+    "| --- | --- | --- |\n",
+    "| pyIncore | 0.5.2 | see: https://incore2.ncsa.illinois.edu/doc/incore/install_pyincore.html |\n",
+    "| pandas | 0.25.3 | used for data organization | \n",
+    "| geopandas | 0.6.2 | used for working with geospatial data | \n",
+    "| matplotlib | 3.1.2 | used for plotting results |\n",
+    "| IPython | 7.10.2 | used for displaying results in table |\n",
+    "| ipyleaflet | 0.10.5 | used for geospatial visualization |\n",
+    "| ipywidgets | 7.5.1 | used for interacting with geospatial results |\n",
+    "| branca | 0.3.1 | used in geospatial visualization | \n",
+    "| map_creation_backend.py* | - | backend code used for geospatial visualization |\n",
+    "\n",
+    "\\*map_creation_backend.py is used to geospatially visualize the results of pyIncore within the notebook. The geospatial results are interactive. The above modules need to be installed for map_creation_backend.py to run. \n",
+    "\n",
+    "The directory structure of this notebook should be as follows:\n",
+    "\n",
+    "\n",
+    "20191214_Seaside_Dist/  \n",
+    "|  \n",
+    "└Notebook1_SeasideBuildingDamage.ipynb  \n",
+    "|  \n",
+    "└-backend/  \n",
+    "└----map_creation_backend.py  \n",
+    "|  \n",
+    "└-images/  \n",
+    "└----images used in notebook  \n",
+    "\n",
+    "\n",
+    "#### Importing pyIncore Modules\n",
+    "All of the necessary pyIncore modules are being imported. In this analysis, the following pyIncore modules are utilized:\n",
+    "+ **BuildingDamage**: Computes probability of each building being in a damage state for both the earthquake and tsunami hazard.\n",
+    "+ **CumulativeBuildingDamage**: Combines the results of earthquake and tsunami building damage analysis to compute the multi-hazard damages\n",
+    "+ **MonteCarloFailureProbability**: Computes the failure probability of each building."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pyincore import IncoreClient, Dataset\n",
+    "from pyincore.analyses.buildingdamage import BuildingDamage\n",
+    "from pyincore.analyses.cumulativebuildingdamage import CumulativeBuildingDamage\n",
+    "from pyincore.analyses.montecarlofailureprobability import MonteCarloFailureProbability\n",
+    "\n",
+    "import os\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "from IPython.display import display\n",
+    "from backend.map_creation_backend import map_creation_backend\n",
+    "\n",
+    "client = IncoreClient()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Performing Earthquake and Tsunami Building Damage\n",
+    "This section of the code computes both the earthquake and tsunami building damages using pyIncore's **BuildingDamage** module. The earthquake damage for events corresponding to return periods of 100-2,500-year is first computed followed by the tsunami damage for the same recurrence intervals. pyIncore uses IDs to identify hazard datasets, infrastructure datasets, fragilities, *etc.*. The hazard IDs for these 5 recurrence intervals of both the earthquake and tsunami are:\n",
+    "\n",
+    "| Recurrence Interval | Earthquake | Tsunami |\n",
+    "| --- | --- | --- |\n",
+    "| 100-yr | 5dfa4058b9219c934b64d495 | 5bc9e25ef7b08533c7e610dc |\n",
+    "| 250-yr | 5dfa41aab9219c934b64d4b2 | 5df910abb9219cd00cf5f0a5 |\n",
+    "| 500-yr | 5dfa4300b9219c934b64d4d0 | 5df90e07b9219cd00ce971e7 |\n",
+    "| 1,000-yr | 5dfa3e36b9219c934b64c231 | 5df90137b9219cd00cb774ec |\n",
+    "| 2,500-yr | 5dfa4417b9219c934b64d4d3 | 5df90761b9219cd00ccff258 |\n",
+    "| 5,000-yr | 5dfbca0cb9219c101fd8a58d | 5df90871b9219cd00ccff273 |\n",
+    "| 10,000-yr | 5dfa51bfb9219c934b68e6c2 | 5d27b986b9219c3c55ad37d0 |\n",
+    "\n",
+    "\n",
+    "###### Earthquake building damage\n",
+    "Defining earthquake hazard IDs:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "hazard_type = \"earthquake\"\n",
+    "rt = [100, 250, 500, 1000, 2500, 5000, 10000]\n",
+    "rt_hazard_dict = {100: \"5dfa4058b9219c934b64d495\", \n",
+    "                  250: \"5dfa41aab9219c934b64d4b2\",\n",
+    "                  500: \"5dfa4300b9219c934b64d4d0\",\n",
+    "                  1000: \"5dfa3e36b9219c934b64c231\",\n",
+    "                  2500: \"5dfa4417b9219c934b64d4d3\", \n",
+    "                  5000: \"5dfbca0cb9219c101fd8a58d\",\n",
+    "                 10000: \"5dfa51bfb9219c934b68e6c2\"}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Looping through each recurrence interval to determine the probability of being in each damage state using pyIncore's **BuildingDamage** module."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# checking if output path exists, and creating if it doesn't\n",
+    "output_path = os.path.join('output', 'damage_output')\n",
+    "if not os.path.exists(output_path):\n",
+    "    os.makedirs(output_path)\n",
+    "    \n",
+    "for rt_val in rt:                                       # loop through recurrence interval\n",
+    "    bldg_dmg = BuildingDamage(client)                   # initializing pyincore\n",
+    "    bldg_dataset_id = \"5df40388b9219c06cf8b0c80\"        # defining building dataset (GIS point layer)\n",
+    "    bldg_dmg.load_remote_input_dataset(\"buildings\", bldg_dataset_id) # loading in the above\n",
+    "    mapping_id = \"5d2789dbb9219c3c553c7977\"             # specifiying mapping id from fragilites to building types\n",
+    "    \n",
+    "    result_name = os.path.join(output_path, 'buildings_eq_{}yr_dmg_result' .format(rt_val)) # defining output name\n",
+    "    bldg_dmg.set_parameter(\"hazard_type\", hazard_type)  # defining hazard type (e.g. earthquake vs. tsunami)\n",
+    "    hazard_id = rt_hazard_dict[rt_val]                  # specifying hazard id for specific recurrence interval\n",
+    "    bldg_dmg.set_parameter(\"hazard_id\", hazard_id)      # loading above into pyincore\n",
+    "    bldg_dmg.set_parameter(\"mapping_id\", mapping_id)    # loading mapping id into pyincore\n",
+    "    bldg_dmg.set_parameter(\"num_cpu\", 4)                # number of CPUs to use for parallel processing\n",
+    "    bldg_dmg.set_parameter(\"result_name\", result_name)  # specifying output name in pyincore\n",
+    "\n",
+    "    bldg_dmg.run_analysis()                             # running the analysis with the above parameters"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "###### Tsunami Building Damage\n",
+    "Repeating the above analysis for the tsunami"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "hazard_type = \"tsunami\"\n",
+    "rt = [100, 250, 500, 1000, 2500, 5000, 10000]\n",
+    "rt_hazard_dict = {100: \"5bc9e25ef7b08533c7e610dc\", \n",
+    "                  250: \"5df910abb9219cd00cf5f0a5\",\n",
+    "                  500: \"5df90e07b9219cd00ce971e7\",\n",
+    "                  1000: \"5df90137b9219cd00cb774ec\",\n",
+    "                  2500: \"5df90761b9219cd00ccff258\",\n",
+    "                  5000: \"5df90871b9219cd00ccff273\",\n",
+    "                  10000: \"5d27b986b9219c3c55ad37d0\"}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "output_path = os.path.join('output', 'damage_output')\n",
+    "if not os.path.exists(output_path):\n",
+    "    os.makedirs(output_path)\n",
+    "\n",
+    "for rt_val in rt:\n",
+    "    bldg_dmg = BuildingDamage(client)\n",
+    "    bldg_dataset_id = \"5df40388b9219c06cf8b0c80\"\n",
+    "    bldg_dmg.load_remote_input_dataset(\"buildings\", bldg_dataset_id)\n",
+    "    mapping_id = \"5d279bb9b9219c3c553c7fba\"\n",
+    "    \n",
+    "    result_name = os.path.join(output_path, 'buildings_tsu_{}yr_dmg_result' .format(rt_val))\n",
+    "    bldg_dmg.set_parameter(\"hazard_type\", hazard_type)\n",
+    "    hazard_id = rt_hazard_dict[rt_val]\n",
+    "    bldg_dmg.set_parameter(\"hazard_id\", hazard_id)\n",
+    "    bldg_dmg.set_parameter(\"mapping_id\", mapping_id)\n",
+    "    bldg_dmg.set_parameter(\"num_cpu\", 4)\n",
+    "    bldg_dmg.set_parameter(\"result_name\", result_name)\n",
+    "\n",
+    "    bldg_dmg.run_analysis()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Multi-hazard Building Damage\n",
+    "This part of the notebook uses the output from the above earthquake and tsunami building damages to compute the multi-hazard building damages. The pyIncore module **CumulativeBuildingDamage** is utilized."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# checking if output path exists, and creating if it doesn't\n",
+    "output_path = os.path.join('output', 'damage_output')\n",
+    "if not os.path.exists(output_path):\n",
+    "    os.makedirs(output_path)\n",
+    "\n",
+    "for rt_val in rt:                                           # looping through recurrence interval\n",
+    "    cumulative_bldg_dmg = CumulativeBuildingDamage(client)  # initializing pyincore\n",
+    "    \n",
+    "    # reading in damage results from above analysis\n",
+    "    eq_damage_results_csv = os.path.join(output_path, \n",
+    "                                         'buildings_eq_{}yr_dmg_result.csv' .format(rt_val))\n",
+    "    tsu_damage_results_csv = os.path.join(output_path, \n",
+    "                                          'buildings_tsu_{}yr_dmg_result.csv' .format(rt_val))\n",
+    "    \n",
+    "    # loading datasets from CSV files into pyincore\n",
+    "    eq_damage_dataset = Dataset.from_file(eq_damage_results_csv, \"ergo:buildingDamageVer4\")\n",
+    "    tsu_damage_dataset = Dataset.from_file(tsu_damage_results_csv, \"ergo:buildingDamageVer4\")\n",
+    "    \n",
+    "    cumulative_bldg_dmg.set_input_dataset(\"eq_bldg_dmg\", eq_damage_dataset)\n",
+    "    cumulative_bldg_dmg.set_input_dataset(\"tsunami_bldg_dmg\", tsu_damage_dataset)\n",
+    "    \n",
+    "    # defining path to output \n",
+    "    result_name = os.path.join(output_path, 'buildings_cumulative_{}yr_dmg_result' .format(rt_val))\n",
+    "    cumulative_bldg_dmg.set_parameter(\"result_name\", result_name)\n",
+    "\n",
+    "    # setting number of cpus for parallel processing\n",
+    "    cumulative_bldg_dmg.set_parameter(\"num_cpu\", 4)\n",
+    "\n",
+    "    # running analysis\n",
+    "    cumulative_bldg_dmg.run_analysis()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Monte Carlo Building Failure\n",
+    "This part of the notebook uses the output from the: (1) earthquake, (2) tsunami, and (3) multi-hazard damage analysis to determine building failure. Monte Carlo sampling of the damage state probabilities are implemented to determine the probability of failure. Here, a building is considered failed if it has a damage state of moderate, heavy, or complete. The pyIncore module **MonteCarloFailureProbability** is utilized. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# checking if output path exists, and creating if it doesn't\n",
+    "mc_output_path = os.path.join('output', 'mc_output')\n",
+    "if not os.path.exists(mc_output_path):\n",
+    "    os.makedirs(mc_output_path)\n",
+    "\n",
+    "mc = MonteCarloFailureProbability(client)     # initializing pyincore\n",
+    "for rt_val in rt:\n",
+    "    print('Recurrence Interval: {}' .format(rt_val))\n",
+    "    # --- earthquake MC failure ---\n",
+    "    # path to earthquake damage dataset and where to write MC output\n",
+    "    path_to_eq_damage = os.path.join('output', 'damage_output', \n",
+    "                                     'buildings_eq_{}yr_dmg_result.csv' .format(rt_val))\n",
+    "    path_to_output = os.path.join(mc_output_path, \n",
+    "                                  'mc_failure_probability_buildings_eq_{}yr' .format(rt_val))\n",
+    "    \n",
+    "    # running mc sampling in pyincore\n",
+    "    damage_dataset = Dataset.from_file(path_to_eq_damage, \"ergo:buildingDamageVer4\")           # loading csv file\n",
+    "    mc.set_input_dataset(\"damage\", damage_dataset)           # importing csv to pyincore\n",
+    "    mc.set_parameter(\"result_name\", path_to_output)          # defining path to ouptut\n",
+    "    mc.set_parameter(\"num_cpu\", 1)                           # number of CPUs for parallel processing\n",
+    "    mc.set_parameter(\"num_samples\", 1000)                     # number of MC samples\n",
+    "    mc.set_parameter(\"damage_interval_keys\", [\"insignific\", \"moderate\", \"heavy\", \"complete\"])  # damage interval keys\n",
+    "    mc.set_parameter(\"failure_state_keys\", [\"moderate\", \"heavy\", \"complete\"])   # damage keys classified as \"failure\"\n",
+    "    mc.run_analysis()                                        # running MC analysis\n",
+    "    \n",
+    "    # --- tsunami MC failure ---\n",
+    "    # repeating above analysis, but for tsunami\n",
+    "    # path to tsunami damage dataset and where to write output\n",
+    "    path_to_tsu_damage = os.path.join('output', 'damage_output', \n",
+    "                                      'buildings_tsu_{}yr_dmg_result.csv' .format(rt_val))\n",
+    "    path_to_output = os.path.join(mc_output_path, \n",
+    "                                  'mc_failure_probability_buildings_tsu_{}yr' .format(rt_val))\n",
+    "\n",
+    "    # running mc sampling in pyincore\n",
+    "    damage_dataset = Dataset.from_file(path_to_tsu_damage, \"ergo:buildingDamageVer4\")\n",
+    "    mc.set_input_dataset(\"damage\", damage_dataset)\n",
+    "    mc.set_parameter(\"result_name\", path_to_output)\n",
+    "    mc.set_parameter(\"num_cpu\", 1)\n",
+    "    mc.set_parameter(\"num_samples\", 1000)\n",
+    "    mc.set_parameter(\"damage_interval_keys\", [\"insignific\", \"moderate\", \"heavy\", \"complete\"])\n",
+    "    mc.set_parameter(\"failure_state_keys\", [\"moderate\", \"heavy\", \"complete\"])\n",
+    "    mc.run_analysis()\n",
+    "    \n",
+    "    # --- multi-hazard MC failure ---\n",
+    "    # repeating above analysis, but for multi-hazard results\n",
+    "    # path to damage dataset and where to write output\n",
+    "    path_to_cumulative_damage = os.path.join('output', 'damage_output', \n",
+    "                                             'buildings_cumulative_{}yr_dmg_result.csv' .format(rt_val))\n",
+    "    path_to_output = os.path.join(mc_output_path, \n",
+    "                                  'mc_failure_probability_buildings_cumulative_{}yr' .format(rt_val))\n",
+    "\n",
+    "    # running mc sampling in pyincore\n",
+    "    damage_dataset = Dataset.from_file(path_to_cumulative_damage, \"ergo:buildingDamageVer4\")\n",
+    "    mc.set_input_dataset(\"damage\", damage_dataset)\n",
+    "    mc.set_parameter(\"result_name\", path_to_output)\n",
+    "    mc.set_parameter(\"num_cpu\", 1)\n",
+    "    mc.set_parameter(\"num_samples\", 1000)\n",
+    "    mc.set_parameter(\"damage_interval_keys\", [\"insignific\", \"moderate\", \"heavy\", \"complete\"])\n",
+    "    mc.set_parameter(\"failure_state_keys\", [\"moderate\", \"heavy\", \"complete\"])\n",
+    "    mc.run_analysis()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Viewing results\n",
+    "\n",
+    "The results of the above analysis are presented in the following cells. \n",
+    "\n",
+    "**Reading in data to a pandas DataFrame**\n",
+    "\n",
+    "Each row corresponds to a building. The column \"guid\" is a unique identifier. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data_eq_store = pd.DataFrame()\n",
+    "data_tsu_store = pd.DataFrame()\n",
+    "data_cumulative_store =pd.DataFrame()\n",
+    "count = 0\n",
+    "rt = [100, 250, 500, 1000, 2500, 5000, 10000]\n",
+    "for rt_val in rt:\n",
+    "    path_to_eq_mc_data = os.path.join('output', 'mc_output', \n",
+    "                                      'mc_failure_probability_buildings_eq_{}yr.csv' .format(rt_val))\n",
+    "    path_to_tsu_mc_data = os.path.join('output', 'mc_output', \n",
+    "                                       'mc_failure_probability_buildings_tsu_{}yr.csv' .format(rt_val))\n",
+    "    path_to_cumulative_mc_data = os.path.join('output', 'mc_output', \n",
+    "                                        'mc_failure_probability_buildings_cumulative_{}yr.csv' .format(rt_val))\n",
+    "\n",
+    "    data_eq = pd.read_csv(path_to_eq_mc_data)\n",
+    "    data_tsu = pd.read_csv(path_to_tsu_mc_data)\n",
+    "    data_cumulative = pd.read_csv(path_to_cumulative_mc_data)\n",
+    "    \n",
+    "    if count == 0:\n",
+    "        data_eq_store['guid'] = data_eq['guid']\n",
+    "        data_tsu_store['guid'] = data_tsu['guid']\n",
+    "        data_cumulative_store['guid'] = data_cumulative['guid']\n",
+    "        \n",
+    "    data_eq_store['failure_prob_{}' .format(rt_val)] = data_eq['failure_probability']\n",
+    "    data_eq_store['insignific_{}' .format(rt_val)] = data_eq['insignific']\n",
+    "    data_eq_store['moderate_{}' .format(rt_val)] = data_eq['moderate']\n",
+    "    data_eq_store['heavy_{}' .format(rt_val)] = data_eq['heavy']\n",
+    "    data_eq_store['complete_{}' .format(rt_val)] = data_eq['complete']\n",
+    "\n",
+    "    data_tsu_store['failure_prob_{}' .format(rt_val)] = data_tsu['failure_probability']\n",
+    "    data_tsu_store['insignific_{}' .format(rt_val)] = data_tsu['insignific']\n",
+    "    data_tsu_store['moderate_{}' .format(rt_val)] = data_tsu['moderate']\n",
+    "    data_tsu_store['heavy_{}' .format(rt_val)] = data_tsu['heavy']\n",
+    "    data_tsu_store['complete_{}' .format(rt_val)] = data_tsu['complete']\n",
+    "\n",
+    "    data_cumulative_store['failure_prob_{}' .format(rt_val)] = data_cumulative['failure_probability']\n",
+    "    data_cumulative_store['insignific_{}' .format(rt_val)] = data_cumulative['insignific']\n",
+    "    data_cumulative_store['moderate_{}' .format(rt_val)] = data_cumulative['moderate']\n",
+    "    data_cumulative_store['heavy_{}' .format(rt_val)] = data_cumulative['heavy']\n",
+    "    data_cumulative_store['complete_{}' .format(rt_val)] = data_cumulative['complete']\n",
+    "\n",
+    "    count += 1\n",
+    "\n",
+    "data_eq_store.set_index('guid', inplace=True)\n",
+    "data_tsu_store.set_index('guid', inplace=True)\n",
+    "data_cumulative_store.set_index('guid', inplace=True)\n",
+    "\n",
+    "# --- printing sample of failure probability results ---\n",
+    "failure_keys = ['failure_prob_100', 'failure_prob_250', \n",
+    "                'failure_prob_500', 'failure_prob_1000', \n",
+    "                'failure_prob_2500']\n",
+    "print('Multi-hazard MC failure probabilities:')\n",
+    "display(data_cumulative_store[failure_keys].head())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Plotting histograms of failure probabilities"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, ax = plt.subplots(3, 3, figsize=(12, 8))\n",
+    "rt = [500, 1000, 2500]\n",
+    "for i, rt_val in enumerate(rt):\n",
+    "    ax[0, i].hist(data_eq_store['failure_prob_{}' .format(rt_val)], density=False, zorder=2)\n",
+    "    ax[1, i].hist(data_tsu_store['failure_prob_{}' .format(rt_val)], density=False, zorder=2)\n",
+    "    ax[2, i].hist(data_cumulative_store['failure_prob_{}' .format(rt_val)], density=False, zorder=2, bins=10)\n",
+    "    ax[0,i].set_xlim([-0.01,1])\n",
+    "    ax[1,i].set_xlim([-0.01,1])\n",
+    "    ax[2,i].set_xlim([-0.01,1])\n",
+    "    ax[0,i].set_ylim([0,4500])\n",
+    "    ax[1,i].set_ylim([0,4500])\n",
+    "    ax[2,i].set_ylim([0,4500])\n",
+    "\n",
+    "    ax[0,i].grid(zorder=0)\n",
+    "    ax[1,i].grid(zorder=0)\n",
+    "    ax[2,i].grid(zorder=0)\n",
+    "    \n",
+    "fig.text(-0.05, 0.75, 'Earthquake', va='center', weight='bold')\n",
+    "fig.text(-0.05, 0.5, 'Tsunami', va='center', weight='bold')\n",
+    "fig.text(-0.05, 0.25, 'Multi-Hazard', va='center', weight='bold')\n",
+    "\n",
+    "ax[0,0].set_title('{}-year' .format(rt[0]), weight='bold')\n",
+    "ax[0,1].set_title('{}-year' .format(rt[1]), weight='bold')\n",
+    "ax[0,2].set_title('{}-year' .format(rt[2]), weight='bold')\n",
+    "\n",
+    "ax[0,0].set_ylabel('Count')\n",
+    "ax[1,0].set_ylabel('Count')\n",
+    "ax[2,0].set_ylabel('Count')\n",
+    "\n",
+    "ax[2,0].set_xlabel('Failure Probability')\n",
+    "ax[2,1].set_xlabel('Failure Probability')\n",
+    "ax[2,2].set_xlabel('Failure Probability')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Computing expected economic losses"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "damage_factor_mean = [0.005, 0.155, 0.55, 0.90]  # from MAEVIS documentation\n",
+    "rt = [100, 250, 500, 1000, 2500, 5000, 10000]\n",
+    "\n",
+    "# reading in rmv values of each building\n",
+    "bldg_dmg = BuildingDamage(client)                   # initializing pyincore\n",
+    "bldg_dataset_id = \"5df40388b9219c06cf8b0c80\"\n",
+    "bldg_dmg.load_remote_input_dataset(\"buildings\", bldg_dataset_id)\n",
+    "dataset = bldg_dmg.input_datasets['buildings']['value']\n",
+    "rd = dataset.get_inventory_reader()\n",
+    "\n",
+    "rmv = []\n",
+    "for row in rd:\n",
+    "    rmv.append(row['properties']['rmv_improv'])\n",
+    "\n",
+    "# storing rmv data in each dataframe\n",
+    "data_eq_store['rmv'] = rmv\n",
+    "data_tsu_store['rmv'] = rmv\n",
+    "data_cumulative_store['rmv'] = rmv\n",
+    "\n",
+    "loss_eq_tot = []\n",
+    "loss_tsu_tot = []\n",
+    "loss_cumulative_tot = []\n",
+    "\n",
+    "for rt_val in rt:\n",
+    "    loss_insg = data_eq_store['rmv']*data_eq_store['insignific_{}' .format(rt_val)]*damage_factor_mean[0]\n",
+    "    loss_modr = data_eq_store['rmv']*data_eq_store['moderate_{}' .format(rt_val)]*damage_factor_mean[1]\n",
+    "    loss_heav = data_eq_store['rmv']*data_eq_store['heavy_{}' .format(rt_val)]*damage_factor_mean[2]\n",
+    "    loss_comp = data_eq_store['rmv']*data_eq_store['complete_{}' .format(rt_val)]*damage_factor_mean[3]\n",
+    "    loss_eq = loss_insg + loss_modr + loss_heav + loss_comp\n",
+    "    \n",
+    "    loss_insg = data_tsu_store['rmv']*data_tsu_store['insignific_{}' .format(rt_val)]*damage_factor_mean[0]\n",
+    "    loss_modr = data_tsu_store['rmv']*data_tsu_store['moderate_{}' .format(rt_val)]*damage_factor_mean[1]\n",
+    "    loss_heav = data_tsu_store['rmv']*data_tsu_store['heavy_{}' .format(rt_val)]*damage_factor_mean[2]\n",
+    "    loss_comp = data_tsu_store['rmv']*data_tsu_store['complete_{}' .format(rt_val)]*damage_factor_mean[3]\n",
+    "    loss_tsu = loss_insg + loss_modr + loss_heav + loss_comp\n",
+    "    \n",
+    "    loss_insg = data_cumulative_store['rmv']*data_cumulative_store['insignific_{}' .format(rt_val)]*damage_factor_mean[0]\n",
+    "    loss_modr = data_cumulative_store['rmv']*data_cumulative_store['moderate_{}' .format(rt_val)]*damage_factor_mean[1]\n",
+    "    loss_heav = data_cumulative_store['rmv']*data_cumulative_store['heavy_{}' .format(rt_val)]*damage_factor_mean[2]\n",
+    "    loss_comp = data_cumulative_store['rmv']*data_cumulative_store['complete_{}' .format(rt_val)]*damage_factor_mean[3]\n",
+    "    loss_cumulative = (loss_insg + loss_modr + loss_heav + loss_comp)\n",
+    "    \n",
+    "    loss_eq_tot.append(loss_eq.sum())\n",
+    "    loss_tsu_tot.append(loss_tsu.sum())\n",
+    "    loss_cumulative_tot.append(loss_cumulative.sum())\n",
+    "\n",
+    "fig, ax = plt.subplots(1,1, figsize=(12,8))\n",
+    "ax.plot(rt, loss_eq_tot, 'b', ls='-')\n",
+    "ax.plot(rt, loss_tsu_tot, 'r', ls='-')\n",
+    "ax.plot(rt, loss_cumulative_tot, 'k', ls='-')\n",
+    "\n",
+    "ax.set_xlabel('Return Period (years)')\n",
+    "ax.set_ylabel('Economic Losses ($)')\n",
+    "ax.set_title(\"Economic Losses\")\n",
+    "\n",
+    "ax.set_xscale('log')\n",
+    "ax.grid(which='minor', alpha=0.25, color = 'k', ls = ':')\n",
+    "ax.grid(which='major', alpha=0.40, color = 'k', ls = '--')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Computing expected economic risks\n",
+    "Risks are defined as losses times probability of occurrence (or the inverserse of the return period). With economic risks, one can isolate events that result in both large economic losses, as well as have a high probability of occurrence. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, ax = plt.subplots(1,1, figsize=(12,8))\n",
+    "\n",
+    "risk_eq = [l/r for l,r in zip(loss_eq_tot, rt)]\n",
+    "risk_tsu = [l/r for l,r in zip(loss_tsu_tot, rt)]\n",
+    "risk_cumulative = [l/r for l,r in zip(loss_cumulative_tot, rt)]\n",
+    "\n",
+    "ax.plot(rt, risk_eq, 'b', ls='-')\n",
+    "ax.plot(rt, risk_tsu, 'r', ls='-')\n",
+    "ax.plot(rt, risk_cumulative, 'k', ls='-')\n",
+    "\n",
+    "ax.set_xlabel('Return Period (years)')\n",
+    "ax.set_ylabel('Risk')\n",
+    "ax.set_title(\"Economic Risks\")\n",
+    "\n",
+    "ax.set_xscale('log')\n",
+    "ax.grid(which='minor', alpha=0.25, color = 'k', ls = ':')\n",
+    "ax.grid(which='major', alpha=0.40, color = 'k', ls = '--')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Plotting Geospatial Results\n",
+    "<span style=\"color:red\"> __Use ipyleaflet v0.10.5 for best rendering of maps__\n",
+    "    \n",
+    "The below shows the results of the failure probabilities geospatially. The user selects the output file that is viewed, then selects \"Generate Map\". Each building is then color coded according to the failure probabilities from the MC results. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "path_to_output_data = os.path.join(os.getcwd(), 'output', 'mc_output')\n",
+    "damage_ratio_dict = {'None': 0, \n",
+    "                'Slight': 0.005, \n",
+    "                'Moderate': 0.155, \n",
+    "                'Extensive': 0.555, \n",
+    "                'Complete': 0.9}\n",
+    "\n",
+    "m = map_creation_backend(client)\n",
+    "\n",
+    "bldg_inventory_id = '5d927ab2b9219c06ae8d313c' # polygons\n",
+    "m.load_remote_input_dataset(\"buildings\", bldg_inventory_id)\n",
+    "\n",
+    "m.set_parameter(\"path_to_data\", path_to_output_data)\n",
+    "m.set_parameter(\"column_name\", 'failure_probability')\n",
+    "\n",
+    "m = m.run()  # generating maps\n",
+    "m            # showing maps in notebook"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  },
+  "pycharm": {
+   "stem_cell": {
+    "cell_type": "raw",
+    "source": [],
+    "metadata": {
+     "collapsed": false
+    }
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
