@@ -62,4 +62,4 @@ code snipet:
     epf_dmg.run_analysis()
 ```
 
-full analysis: [epfdamage.ipynb](https://incore.ncsa.illinois.edu/doc/examples/epfdamage.ipynb)
+full analysis: [epfdamage.ipynb](../notebooks/epfdamage)

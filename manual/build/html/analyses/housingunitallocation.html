@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.4.5. Housing unit allocation &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  <title>Housing unit allocation &mdash; IN-CORE Manual 1.0.0 documentation</title>
   
 
   
@@ -26,6 +26,8 @@
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -36,8 +38,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4.6. Joplin Computable General Equilibrium (CGE)" href="joplin_cge.html" />
-    <link rel="prev" title="2.4.4. Electric power facility damage" href="epfdamage.html" /> 
+    <link rel="next" title="Joplin Computable General Equilibrium (CGE)" href="joplin_cge.html" />
+    <link rel="prev" title="Electric power facility damage" href="epfdamage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,40 +90,40 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../account.html">1. IN-CORE Account</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../pyincore.html">2. pyIncore</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../prerequisites.html">2.1. Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../install_pyincore.html">2.2. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../running.html">2.3. Testing and Running</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">2.4. Analyses</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">2.4.1. Bridge damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">2.4.2. Building damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">2.4.3. Cummulative building damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="epfdamage.html">2.4.4. Electric power facility damage</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.5. Housing unit allocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">2.4.6. Joplin Computable General Equilibrium (CGE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="meandamage.html">2.4.7. Mean damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">2.4.8. Monte Carlo failure probability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">2.4.9. Nonstructural building damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">2.4.10. Pipeline damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">2.4.11. Pipeline damage with repair rate</a></li>
-<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">2.4.12. Population dislocation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">2.4.13. Portfolio recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">2.4.14. Tornado Electric Power Network (EPN) damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">2.4.15. Transportation recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">2.4.16. Water facility damage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyincore.html">pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running.html">Testing and Running</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">Analyses</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">Cummulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epfdamage.html">Electric power facility damage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meandamage.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">Tornado Electric Power Network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">Water facility damage</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">3. IN-CORE Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webtools.html">4. IN-CORE Web Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">5. Tutorials and Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">6. FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">7. pyIncore Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../refs.html">8. Technical References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contact.html">9. Contact Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
 </ul>
 
             
@@ -167,11 +169,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../pyincore.html">2. pyIncore</a> &raquo;</li>
+          <li><a href="../pyincore.html">pyIncore</a> &raquo;</li>
         
-          <li><a href="../analyses.html">2.4. Analyses</a> &raquo;</li>
+          <li><a href="../analyses.html">Analyses</a> &raquo;</li>
         
-      <li>2.4.5. Housing unit allocation</li>
+      <li>Housing unit allocation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,7 +217,7 @@
 }
 </style>
 <div class="section" id="housing-unit-allocation">
-<h1>2.4.5. Housing unit allocation<a class="headerlink" href="#housing-unit-allocation" title="Permalink to this headline">¶</a></h1>
+<h1>Housing unit allocation<a class="headerlink" href="#housing-unit-allocation" title="Permalink to this headline">¶</a></h1>
 <p>This analysis sets up a detailed critical infrastructure inventory with housing unit level characteristics.
 The process aligns the housing unit inventory with physical systems, such as the inventory of buildings
 and the demand nodes of a potable water network. The allocation of housing units to the address points
@@ -328,7 +330,7 @@ for the hazard impacts to be analyzed statistically.</p>
     <span class="n">hua</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://incore.ncsa.illinois.edu/doc/examples/housingunitallocation.ipynb">housingunitallocation.ipynb</a></p>
+<p>full analysis: <a class="reference internal" href="../notebooks/housingunitallocation.html"><span class="doc">housingunitallocation.ipynb</span></a></p>
 </div>
 
 
@@ -339,10 +341,10 @@ for the hazard impacts to be analyzed statistically.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="joplin_cge.html" class="btn btn-neutral float-right" title="2.4.6. Joplin Computable General Equilibrium (CGE)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="joplin_cge.html" class="btn btn-neutral float-right" title="Joplin Computable General Equilibrium (CGE)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="epfdamage.html" class="btn btn-neutral float-left" title="2.4.4. Electric power facility damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="epfdamage.html" class="btn btn-neutral float-left" title="Electric power facility damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

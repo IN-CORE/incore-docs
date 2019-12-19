@@ -56,4 +56,4 @@ code snipet:
     md.run_analysis()
 ```
 
-full analysis: [meandamage.ipynb](https://incore.ncsa.illinois.edu/doc/examples/test_mean_damage.ipynb)
+full analysis: [meandamage.ipynb](../notebooks/mean_damage)

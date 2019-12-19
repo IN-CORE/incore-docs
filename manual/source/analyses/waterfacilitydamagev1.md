@@ -61,4 +61,4 @@ code snipet:
     waterfac_dmg.run_analysis()
 ```
 
-full analysis: [waterfacilitydamagev1.ipynb](https://incore.ncsa.illinois.edu/doc/examples/waterfacilitydamagev1.ipynb)
+full analysis: [waterfacilitydamagev1.ipynb](../notebooks/waterfacilitydamagev1)

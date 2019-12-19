@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.2. Installation &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  <title>Installation &mdash; IN-CORE Manual 1.0.0 documentation</title>
   
 
   
@@ -26,6 +26,8 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,8 +38,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.3. Testing and Running" href="running.html" />
-    <link rel="prev" title="2.1. Prerequisites" href="prerequisites.html" /> 
+    <link rel="next" title="Testing and Running" href="running.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,22 +90,22 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account.html">1. IN-CORE Account</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="pyincore.html">2. pyIncore</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">2.1. Prerequisites</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="running.html">2.3. Testing and Running</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyses.html">2.4. Analyses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">IN-CORE Account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pyincore.html">pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running.html">Testing and Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyses.html">Analyses</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">3. IN-CORE Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webtools.html">4. IN-CORE Web Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">5. Tutorials and Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">6. FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">7. pyIncore Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="refs.html">8. Technical References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">9. Contact Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
 </ul>
 
             
@@ -149,9 +151,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="pyincore.html">2. pyIncore</a> &raquo;</li>
+          <li><a href="pyincore.html">pyIncore</a> &raquo;</li>
         
-      <li>2.2. Installation</li>
+      <li>Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,7 +197,7 @@
 }
 </style>
 <div class="section" id="installation">
-<h1>2.2. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>These steps guides you on how to install both pyIncore and Jupyter Notebooks on <strong>All platforms</strong> so you can develop your code.</p>
 <ol>
 <li><p>From the Terminal (Mac/Linux) or Command Prompt (Windows) add <a class="reference external" href="https://conda-forge.org/">conda-forge</a> package repository/channel to your environment:</p>
@@ -225,10 +227,10 @@ and <code class="docutils literal notranslate"><span class="pre">/home/&lt;usern
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="running.html" class="btn btn-neutral float-right" title="2.3. Testing and Running" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running.html" class="btn btn-neutral float-right" title="Testing and Running" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="prerequisites.html" class="btn btn-neutral float-left" title="2.1. Prerequisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="prerequisites.html" class="btn btn-neutral float-left" title="Prerequisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

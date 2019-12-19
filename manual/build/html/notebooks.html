@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. pyIncore Notebooks &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  <title>pyIncore Notebooks &mdash; IN-CORE Manual 1.0.0 documentation</title>
   
 
   
@@ -26,6 +26,8 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,8 +38,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7.1. Seaside testbed" href="Seaside.html" />
-    <link rel="prev" title="6. Frequently asked questions" href="faq.html" /> 
+    <link rel="next" title="Joplin Example Notebook" href="notebooks/Joplin_20191212.html" />
+    <link rel="prev" title="Frequently asked questions" href="faq.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,21 +90,21 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account.html">1. IN-CORE Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyincore.html">2. pyIncore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">3. IN-CORE Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webtools.html">4. IN-CORE Web Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">5. Tutorials and Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">6. FAQ</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. pyIncore Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Seaside.html">7.1. Seaside testbed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin.html">7.2. Joplin testbed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_other.html">7.3. Other examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyincore.html">pyIncore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyIncore Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html">Joplin testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html">Seaside testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks_other.html">Other examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="refs.html">8. Technical References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">9. Contact Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
 </ul>
 
             
@@ -148,7 +150,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>7. pyIncore Notebooks</li>
+      <li>pyIncore Notebooks</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,24 +194,34 @@
 }
 </style>
 <div class="section" id="pyincore-notebooks">
-<h1>7. pyIncore Notebooks<a class="headerlink" href="#pyincore-notebooks" title="Permalink to this headline">¶</a></h1>
+<h1>pyIncore Notebooks<a class="headerlink" href="#pyincore-notebooks" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Seaside.html">7.1. Seaside testbed</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Seaside.html#Run-analysis">7.1.1. Run analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Seaside.html#Visualize">7.1.2. Visualize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Joplin_20191212.html">Joplin testbed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#1.-Hazard,-Data,-and-Fragility">1. Hazard, Data, and Fragility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#2.-Infrastructure-Damage-Analysis">2. Infrastructure Damage Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#3.-Monte-Carlo-Simulation">3. Monte Carlo Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#4.-Infrastructure-Functionality-Analysis">4. Infrastructure Functionality Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#5.-Economic-analysis">5. Economic analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#6.-Sociological-Analysis">6. Sociological Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Joplin_20191212.html#7.-References">7. References</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Joplin.html">7.2. Joplin testbed</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Joplin.html#set-input-parameters-and-input-datasets">7.2.1. set input parameters and input datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin.html#set-object-and-fetch-datasets-based-on-parameters">7.2.2. set object and fetch datasets based on parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin.html#Run-analysis">7.2.3. Run analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin.html#Visualize">7.2.4. Visualize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html">Seaside testbed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html#Background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html#pyIncore">pyIncore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html#Viewing-results">Viewing results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Notebook1_SeasideBuildingDamage.html#Plotting-Geospatial-Results">Plotting Geospatial Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks_other.html">7.3. Other examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks_other.html">Other examples</a></li>
 </ul>
 </div>
+<p>Download the full directory of the Notebooks above:</p>
+<ul class="simple">
+<li><p>Joplin Notebook <a class="reference download internal" download="" href="_downloads/3d5bb45404735677048297f792a8668b/Joplin_20191212.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a></p></li>
+<li><p>Seaside building damage Notebook <a class="reference download internal" download="" href="_downloads/0b21ae3ebd83f155985398c000ccd93a/Seaside_20191219.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a></p></li>
+</ul>
 </div>
 
 
@@ -220,10 +232,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Seaside.html" class="btn btn-neutral float-right" title="7.1. Seaside testbed" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="notebooks/Joplin_20191212.html" class="btn btn-neutral float-right" title="Joplin Example Notebook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="faq.html" class="btn btn-neutral float-left" title="6. Frequently asked questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently asked questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

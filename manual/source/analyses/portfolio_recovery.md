@@ -59,4 +59,4 @@ code snipet:
     bldg_portfolio_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](https://incore.ncsa.illinois.edu/doc/examples/portfolio_recovery.ipynb)
+full analysis: [portfolio_recovery.ipynb](../notebooks/portfolio_recovery)

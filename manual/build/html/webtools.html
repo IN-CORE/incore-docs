@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. IN-CORE Web Tools &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  <title>IN-CORE Web Tools &mdash; IN-CORE Manual 1.0.0 documentation</title>
   
 
   
@@ -26,6 +26,8 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,8 +38,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Tutorials and Tips" href="tutorials.html" />
-    <link rel="prev" title="3. IN-CORE Lab" href="incore_lab.html" /> 
+    <link rel="next" title="Tutorials and Tips" href="tutorials.html" />
+    <link rel="prev" title="IN-CORE Lab" href="incore_lab.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,21 +90,21 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account.html">1. IN-CORE Account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyincore.html">2. pyIncore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">3. IN-CORE Lab</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. IN-CORE Web Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fragility-viewer">4.1. Fragility Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-viewer">4.2. Data Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hazard-viewer">4.3. Hazard Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyincore.html">pyIncore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IN-CORE Web Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fragility-viewer">Fragility Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-viewer">Data Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hazard-viewer">Hazard Viewer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">5. Tutorials and Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">6. FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">7. pyIncore Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="refs.html">8. Technical References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">9. Contact Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">10. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
 </ul>
 
             
@@ -148,7 +150,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>4. IN-CORE Web Tools</li>
+      <li>IN-CORE Web Tools</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,7 +194,7 @@
 }
 </style>
 <div class="section" id="in-core-web-tools">
-<h1>4. IN-CORE Web Tools<a class="headerlink" href="#in-core-web-tools" title="Permalink to this headline">¶</a></h1>
+<h1>IN-CORE Web Tools<a class="headerlink" href="#in-core-web-tools" title="Permalink to this headline">¶</a></h1>
 <p><strong>IN-CORE Web Tools</strong> is a set of web viewers for interacting with the different IN-CORE web services.
 The viewers enable users to browse, search, preview, and download items, such as <strong>Datasets</strong>, <strong>Hazards</strong>,
 and <strong>Fragility</strong> curves. Note that curves of Repairs, Restorations and Recoveries currently are not searchable.
@@ -208,7 +210,7 @@ directly from the <a class="reference external" href="https://incore.ncsa.illino
 <p><img alt="IN-CORE Web Tools login page." src="_images/wt0_login.jpg" /></p>
 <p>This section shows how to access IN-CORE Web Tools and documentations on IN-CORE Lab.</p>
 <div class="section" id="fragility-viewer">
-<h2>4.1. Fragility Viewer<a class="headerlink" href="#fragility-viewer" title="Permalink to this headline">¶</a></h2>
+<h2>Fragility Viewer<a class="headerlink" href="#fragility-viewer" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://incore.ncsa.illinois.edu/FragilityViewer">Fragility Viewer</a> shows a list of
 Fragility curves in the left panel. The list comes from <strong>DFR3 service</strong>.</p>
 <p><img alt="IN-CORE Web Tools DFR3 menu." src="_images/wt1_fragility_menu.jpg" /></p>
@@ -217,7 +219,7 @@ The curve can be viewed and the metadata of the curve can be downloaded in JSON 
 <p><img alt="IN-CORE Web Tools DFR3 viewer." src="_images/wt1_fragility.jpg" /></p>
 </div>
 <div class="section" id="data-viewer">
-<h2>4.2. Data Viewer<a class="headerlink" href="#data-viewer" title="Permalink to this headline">¶</a></h2>
+<h2>Data Viewer<a class="headerlink" href="#data-viewer" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference external" href="https://incore.ncsa.illinois.edu/DataViewer">Data viewer</a> users can navigate datasets
 along with their metadata and preview (visualization) such as building inventory, bridge
 inventory, etc.</p>
@@ -225,7 +227,7 @@ inventory, etc.</p>
 <p><img alt="IN-CORE Web Tools data viewer." src="_images/wt4c_data.jpg" /></p>
 </div>
 <div class="section" id="hazard-viewer">
-<h2>4.3. Hazard Viewer<a class="headerlink" href="#hazard-viewer" title="Permalink to this headline">¶</a></h2>
+<h2>Hazard Viewer<a class="headerlink" href="#hazard-viewer" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference external" href="https://incore.ncsa.illinois.edu/HazardViewer">Hazard viewer</a> users can navigate
 pre-defined Hazards with a user interface similar to what has been shown for the other
 viewers. Users can filter the list of hazards by selecting them from the drop down lists.</p>
@@ -244,10 +246,10 @@ The following shows an example of a preview of a Joplin tornado path.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorials.html" class="btn btn-neutral float-right" title="5. Tutorials and Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tutorials.html" class="btn btn-neutral float-right" title="Tutorials and Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="incore_lab.html" class="btn btn-neutral float-left" title="3. IN-CORE Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="incore_lab.html" class="btn btn-neutral float-left" title="IN-CORE Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

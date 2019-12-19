@@ -4,7 +4,6 @@ Introduction
 ..  toctree::
     :hidden:
     :maxdepth: 2
-    :numbered:
     :caption: Table of Contents
     :name: mastertoc
 

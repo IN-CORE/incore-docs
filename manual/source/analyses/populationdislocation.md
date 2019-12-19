@@ -57,4 +57,4 @@ code snipet:
     pop_dis.run_analysis()
 ```
 
-Jupyter notebook: [populationdislocation.ipynb](https://incore.ncsa.illinois.edu/doc/examples/populationdislocation.ipynb)
+Jupyter notebook: [populationdislocation.ipynb](../notebooks/populationdislocation)
