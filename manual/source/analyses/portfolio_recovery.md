@@ -59,4 +59,4 @@ code snipet:
     bldg_portfolio_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](../notebooks/portfolio_recovery)
+full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/buildingportfolio/recovery/portfolio_recovery.ipynb)

@@ -60,4 +60,4 @@ code snipet:
     non_structural_building_dmg.run_analysis()
 ```
 
-full analysis: [non_structural_building_damage.ipynb](../notebooks/non_structural_building_damage)
+full analysis: [non_structural_building_damage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/nonstructbuildingdamage/non_structural_building_damage.ipynb)
