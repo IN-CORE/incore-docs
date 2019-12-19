@@ -56,4 +56,4 @@ code snipet:
     md.run_analysis()
 ```
 
-full analysis: [meandamage.ipynb](../notebooks/mean_damage)
+full analysis: [test_meandamage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/meandamage/test_mean_damage.ipynb)

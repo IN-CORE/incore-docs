@@ -57,4 +57,4 @@ code snipet:
     result = pipeline_dmg.run_analysis()
 ```
 
-full analysis: [pipeline_dmg.ipynb](../notebooks/pipeline_dmg)
+full analysis: [pipeline_dmg.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/pipelinedamage/pipeline_dmg.ipynb)
