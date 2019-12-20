@@ -19,6 +19,10 @@ Introduction
     contact
     acknowledgement
 
+.. image:: images/1912CSUINC_logo-F.jpg
+   :scale: 100 %
+   :alt: IN-CORE logo
+   :align: right
 
 The National Institute of Standards and Technology (NIST) funded the Center of Excellence for Risk-Based Community
 Resilience Planning (`CoE <http://resilience.colostate.edu/>`_) (Cooperative Agreement 70NANB15H044), to develop the measurement science to support
