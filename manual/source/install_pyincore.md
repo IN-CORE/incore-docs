@@ -4,7 +4,7 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
 
 1. From the Terminal (Mac/Linux) or Command Prompt (Windows) add [conda-forge](https://conda-forge.org/) package repository/channel to your environment:
     ```
-    conda config -add channels conda-forge
+    conda config --add channels conda-forge
     ```
 
 2. To install pyIncore, navigate to the directory you want to use for running Jupyter Notebooks and run the following command:
