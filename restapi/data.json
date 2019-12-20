@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "title": "",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -14,7 +14,7 @@
       "url": "https://www.mozilla.org/en-US/MPL/2.0/"
     }
   },
-  "host": "incore-services.ncsa.illinois.edu",
+  "host": "incore.ncsa.illinois.edu",
   "basePath": "/data/api",
   "tags": [
     {
