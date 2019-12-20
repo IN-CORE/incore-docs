@@ -12,35 +12,7 @@ Main Incore Lab's dashboard tab:
 
 ![IN-CORE Lab dashboard tab.](images/juplab0.jpg "IN-CORE Lab dashboard tab.")
 
-### Authentication
 
-Create a credential file with IN-CORE username/password (same information you used to login to IN-CORE Lab) in order to use IN-CORE services. This is similar to the local authentication step except the authentication file `.incorepw` is being created on the server:
-
-1. Open the terminal on IN-CORE lab Launcher page (arrow):
-
-![IN-CORE Lab launcher page.](images/juplab0_terminal.jpg "IN-CORE Lab launcher page.")
-
-2. In the terminal, make sure you are in your HOME directory. Type `pwd` to see the current path and `cd ~` to get into your home directory (`/home/<username>`).
-
-3. Create a hidden (therefore dot prefix) folder using `mkdir .incore` command.
-
-![Nano text editor.](images/nano_usr_pswd.jpg "Nano text editor.")
-
-4. Create a hidden credential file in the folder you just created (`cd .incore` followed by `nano .incorepw`) and type IN-CORE username and password using [Nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/), the Linux command-line text editor. nano text editor. Write your username in the first line and the password in the second.
-
-5. Save the file with `Ctrl+O` and `Enter` commands
-
-6. Close the text editor and return to your shell with `Ctrl+X` command
-
-A chain of terminal commands 2) through 4) above.
-```  
-    pwd
-    cd ~
-    ($/home/<username>)
-    mkdir .incore
-    cd .incore
-    nano .incorepw
-```
 ### Running a Notebook in the Lab
 
 In the [Running Notebook locally](../running) section we described how to run a Building Damage Notebook locally as an example, but you can develop and run all sorts of notebooks as you explore. 

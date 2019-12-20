@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Example pyIncore Notebooks" href="../notebooks_other.html" />
-    <link rel="prev" title="1. Hazard, Data, and Fragility" href="Joplin Tornado Juypter Notebook Example.html" /> 
+    <link rel="prev" title="Joplin Tornado Example" href="Joplin Tornado Juypter Notebook Example.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,31 +95,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../notebooks.html">Example Notebooks</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html">1. Hazard, Data, and Fragility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html#2.-Infrastructure-Damage-Analysis">2. Infrastructure Damage Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html#4.-Infrastructure-Functionality-Analysis">4. Infrastructure Functionality Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html#5.-Economic-analysis">5. Economic analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html#6.-Sociological-Analysis">6. Sociological Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html#7.-References">7. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Joplin Tornado Juypter Notebook Example.html">Joplin testbed</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Seaside testbed</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Background">Background</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Hazards,-Infrastructure,-and-Damage-Analysis">Hazards, Infrastructure, and Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#1.-Background">1. Background</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#1.1.-Hazards,-Infrastructure,-and-Damage-Analysis">1.1. Hazards, Infrastructure, and Damage Analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#pyIncore">pyIncore</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Importing-pyIncore-Modules">Importing pyIncore Modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Performing-Earthquake-and-Tsunami-Building-Damage">Performing Earthquake and Tsunami Building Damage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Multi-hazard-Building-Damage">Multi-hazard Building Damage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Monte-Carlo-Building-Failure">Monte Carlo Building Failure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.-pyIncore">2. pyIncore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#2.1.-Prerequisites">2.1. Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#2.2.-Importing-pyIncore-Modules">2.2. Importing pyIncore Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#2.3.-Performing-Earthquake-and-Tsunami-Building-Damage">2.3. Performing Earthquake and Tsunami Building Damage</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Viewing-results">Viewing results</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Plotting-histograms-of-failure-probabilities">Plotting histograms of failure probabilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Computing-expected-economic-losses">Computing expected economic losses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Computing-expected-economic-risks">Computing expected economic risks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.-Viewing-results">3. Viewing results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#3.1.-Plotting-histograms-of-failure-probabilities">3.1. Plotting histograms of failure probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#3.2.-Computing-expected-economic-losses">3.2. Computing expected economic losses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#3.3.-Computing-expected-economic-risks">3.3. Computing expected economic risks</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Plotting-Geospatial-Results">Plotting Geospatial Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#4.-Plotting-Geospatial-Results">4. Plotting Geospatial Results</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks_other.html">Other examples</a></li>
@@ -421,23 +415,25 @@ div.rendered_html tbody tr:hover {
 <p>This notebook uses the pyIncore modeling framework to compute multi-hazard damages to buildings in Seaside, Oregon. pyIncore’s <strong>BuildingDamage</strong> and <strong>MonteCarloFailureProbability</strong> modules are implemented to compute damages resulting from both an earthquake and tsunami. pyIncore’s <strong>cumulativebuildingdamage</strong> module is used to compute cumulative damages.</p>
 <p>Notebook created by Dylan R. Sanderson (OSU - <a class="reference external" href="mailto:sanderdy&#37;&#52;&#48;oregonstate&#46;edu">sanderdy<span>&#64;</span>oregonstate<span>&#46;</span>edu</a>) and Gowtham Naraharisetty (NCSA)</p>
 <hr class="docutils" />
-<div class="section" id="Background">
-<h2>Background<a class="headerlink" href="#Background" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="1.-Background">
+<h2>1. Background<a class="headerlink" href="#1.-Background" title="Permalink to this headline">¶</a></h2>
 <p>Communities around the world are subject to multiple natural hazards that often occur near simultaneously. For example, hurricanes often result in high wind speeds, as well as flooding from both rainfall and storm surge. Similarly, seismic events can result in earthquakes, tsunamis, and landslides. When considering multi-hazards, there is a consensus that the total expected damages are not the sum of the underlying single hazards. For example, in the case of seismic-tsunami events, a building
 completely destroyed by an earthquake cannot sustain any more damage from the tsunami. Subsequently, it is essential to consider this when performing a multi-hazard damage analysis.</p>
 <p>In this notebook, the seismic-tsunami hazard posed by the Cascadia Subduction Zone (CSZ) is considered to demonstrate the multi-hazard capabilities in pyIncore. The CSZ is an approximately 1,000 km long fault located between Cape Mendocino California and Vancouver Island, Canada, which separates the Juan de Fuca and North America plates. Rupture of the CSZ will result in a megathrust earthquake and lead to a subsequent tsunami. The city of Seaside is located along the northern Oregon coast, and
 has been selected as a testbed community for this analysis.</p>
 <p><img alt="title" src="../_images/seaside.png" /></p>
-<div class="section" id="Hazards,-Infrastructure,-and-Damage-Analysis">
-<h3>Hazards, Infrastructure, and Damage Analysis<a class="headerlink" href="#Hazards,-Infrastructure,-and-Damage-Analysis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.1.-Hazards,-Infrastructure,-and-Damage-Analysis">
+<h3>1.1. Hazards, Infrastructure, and Damage Analysis<a class="headerlink" href="#1.1.-Hazards,-Infrastructure,-and-Damage-Analysis" title="Permalink to this headline">¶</a></h3>
 <p>The results of a Probabilistic Seismic-Tsunami Hazard Analysis (PSTHA; Park <em>et. al.</em> 2017) are utilized in this notebook. The PSTHA resulted in both earthquake and tsunami hazard maps for 7 recurrence intervals (100-, 250-, 500-, 1,000-, 2,500-, 5,000-, and 10,000-year). The damages to buildings are computed in pyIncore by overlaying the hazard maps on the buildings, and determining site-specific intensity measures. Intensity measures of spectral displacement and momentum flux are used for the
 earthquake and tsunami respectively. MAEVIS fragilities are then implemented to determine the probability that each building sustains: (1) insignificant, (2) moderate, (3) heavy, or (4) complete damage. These probabilities are then used to inform a Monte-Carlo simulation in which the probability of building failure is computed.</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="pyIncore">
-<h2>pyIncore<a class="headerlink" href="#pyIncore" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="2.-pyIncore">
+<h2>2. pyIncore<a class="headerlink" href="#2.-pyIncore" title="Permalink to this headline">¶</a></h2>
 <p>The remainder of this notebook uses pyIncore to compute multi-hazard damages to buildings in Seaside, Oregon.</p>
+<div class="section" id="2.1.-Prerequisites">
+<h3>2.1. Prerequisites<a class="headerlink" href="#2.1.-Prerequisites" title="Permalink to this headline">¶</a></h3>
 <p>The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through conda-forge.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -506,8 +502,9 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 <div class="line">└-images/</div>
 <div class="line">└—-images used in notebook</div>
 </div>
-<div class="section" id="Importing-pyIncore-Modules">
-<h3>Importing pyIncore Modules<a class="headerlink" href="#Importing-pyIncore-Modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="2.2.-Importing-pyIncore-Modules">
+<h3>2.2. Importing pyIncore Modules<a class="headerlink" href="#2.2.-Importing-pyIncore-Modules" title="Permalink to this headline">¶</a></h3>
 <p>All of the necessary pyIncore modules are being imported. In this analysis, the following pyIncore modules are utilized: + <strong>BuildingDamage</strong>: Computes probability of each building being in a damage state for both the earthquake and tsunami hazard. + <strong>CumulativeBuildingDamage</strong>: Combines the results of earthquake and tsunami building damage analysis to compute the multi-hazard damages + <strong>MonteCarloFailureProbability</strong>: Computes the failure probability of each building.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -530,8 +527,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Performing-Earthquake-and-Tsunami-Building-Damage">
-<h3>Performing Earthquake and Tsunami Building Damage<a class="headerlink" href="#Performing-Earthquake-and-Tsunami-Building-Damage" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="2.3.-Performing-Earthquake-and-Tsunami-Building-Damage">
+<h3>2.3. Performing Earthquake and Tsunami Building Damage<a class="headerlink" href="#2.3.-Performing-Earthquake-and-Tsunami-Building-Damage" title="Permalink to this headline">¶</a></h3>
 <p>This section of the code computes both the earthquake and tsunami building damages using pyIncore’s <strong>BuildingDamage</strong> module. The earthquake damage for events corresponding to return periods of 100-2,500-year is first computed followed by the tsunami damage for the same recurrence intervals. pyIncore uses IDs to identify hazard datasets, infrastructure datasets, fragilities, <em>etc.</em>. The hazard IDs for these 5 recurrence intervals of both the earthquake and tsunami are:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -576,7 +573,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </tr>
 </tbody>
 </table>
-<p>Earthquake building damage</p>
+<div class="section" id="2.3.1.-Earthquake-building-damage">
+<h4>2.3.1. Earthquake building damage<a class="headerlink" href="#2.3.1.-Earthquake-building-damage" title="Permalink to this headline">¶</a></h4>
 <p>Defining earthquake hazard IDs:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -624,7 +622,9 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </pre></div>
 </div>
 </div>
-<p>Tsunami Building Damage</p>
+</div>
+<div class="section" id="2.3.2.-Tsunami-Building-Damage">
+<h4>2.3.2. Tsunami Building Damage<a class="headerlink" href="#2.3.2.-Tsunami-Building-Damage" title="Permalink to this headline">¶</a></h4>
 <p>Repeating the above analysis for the tsunami</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -671,8 +671,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Multi-hazard-Building-Damage">
-<h3>Multi-hazard Building Damage<a class="headerlink" href="#Multi-hazard-Building-Damage" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="2.4.-Multi-hazard-Building-Damage">
+<h4>2.4. Multi-hazard Building Damage<a class="headerlink" href="#2.4.-Multi-hazard-Building-Damage" title="Permalink to this headline">¶</a></h4>
 <p>This part of the notebook uses the output from the above earthquake and tsunami building damages to compute the multi-hazard building damages. The pyIncore module <strong>CumulativeBuildingDamage</strong> is utilized.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -713,8 +713,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Monte-Carlo-Building-Failure">
-<h3>Monte Carlo Building Failure<a class="headerlink" href="#Monte-Carlo-Building-Failure" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="2.5.-Monte-Carlo-Building-Failure">
+<h4>2.5. Monte Carlo Building Failure<a class="headerlink" href="#2.5.-Monte-Carlo-Building-Failure" title="Permalink to this headline">¶</a></h4>
 <p>This part of the notebook uses the output from the: (1) earthquake, (2) tsunami, and (3) multi-hazard damage analysis to determine building failure. Monte Carlo sampling of the damage state probabilities are implemented to determine the probability of failure. Here, a building is considered failed if it has a damage state of moderate, heavy, or complete. The pyIncore module <strong>MonteCarloFailureProbability</strong> is utilized.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -786,8 +786,9 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Viewing-results">
-<h2>Viewing results<a class="headerlink" href="#Viewing-results" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="3.-Viewing-results">
+<h2>3. Viewing results<a class="headerlink" href="#3.-Viewing-results" title="Permalink to this headline">¶</a></h2>
 <p>The results of the above analysis are presented in the following cells.</p>
 <p><strong>Reading in data to a pandas DataFrame</strong></p>
 <p>Each row corresponds to a building. The column “guid” is a unique identifier.</p>
@@ -851,8 +852,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </pre></div>
 </div>
 </div>
-<div class="section" id="Plotting-histograms-of-failure-probabilities">
-<h3>Plotting histograms of failure probabilities<a class="headerlink" href="#Plotting-histograms-of-failure-probabilities" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="3.1.-Plotting-histograms-of-failure-probabilities">
+<h3>3.1. Plotting histograms of failure probabilities<a class="headerlink" href="#3.1.-Plotting-histograms-of-failure-probabilities" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -894,8 +895,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Computing-expected-economic-losses">
-<h3>Computing expected economic losses<a class="headerlink" href="#Computing-expected-economic-losses" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="3.2.-Computing-expected-economic-losses">
+<h3>3.2. Computing expected economic losses<a class="headerlink" href="#3.2.-Computing-expected-economic-losses" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -963,8 +964,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Computing-expected-economic-risks">
-<h3>Computing expected economic risks<a class="headerlink" href="#Computing-expected-economic-risks" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="3.3.-Computing-expected-economic-risks">
+<h3>3.3. Computing expected economic risks<a class="headerlink" href="#3.3.-Computing-expected-economic-risks" title="Permalink to this headline">¶</a></h3>
 <p>Risks are defined as losses times probability of occurrence (or the inverserse of the return period). With economic risks, one can isolate events that result in both large economic losses, as well as have a high probability of occurrence.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -993,8 +994,8 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
 </div>
 </div>
 </div>
-<div class="section" id="Plotting-Geospatial-Results">
-<h2>Plotting Geospatial Results<a class="headerlink" href="#Plotting-Geospatial-Results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="4.-Plotting-Geospatial-Results">
+<h2>4. Plotting Geospatial Results<a class="headerlink" href="#4.-Plotting-Geospatial-Results" title="Permalink to this headline">¶</a></h2>
 <p><strong>Use ipyleaflet v0.10.5 for best rendering of maps</strong></p>
 <p>The below shows the results of the failure probabilities geospatially. The user selects the output file that is viewed, then selects “Generate Map”. Each building is then color coded according to the failure probabilities from the MC results.</p>
 <div class="nbinput nblast docutils container">
@@ -1045,7 +1046,7 @@ earthquake and tsunami respectively. MAEVIS fragilities are then implemented to 
         <a href="../notebooks_other.html" class="btn btn-neutral float-right" title="Example pyIncore Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Joplin Tornado Juypter Notebook Example.html" class="btn btn-neutral float-left" title="1. Hazard, Data, and Fragility" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Joplin Tornado Juypter Notebook Example.html" class="btn btn-neutral float-left" title="Joplin Tornado Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

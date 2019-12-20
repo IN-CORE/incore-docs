@@ -91,7 +91,6 @@
 <li class="toctree-l1"><a class="reference internal" href="account.html">IN-CORE Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyincore.html">pyIncore</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IN-CORE Lab</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-a-notebook-in-the-lab">Running a Notebook in the Lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-in-core-web-tools">Accessing IN-CORE Web Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-core-documentation">IN-CORE documentation</a></li>
@@ -200,33 +199,6 @@
 <p><img alt="IN-CORE Lab progress bar." src="_images/juplab0_start.jpg" /></p>
 <p>Main Incore Lab’s dashboard tab:</p>
 <p><img alt="IN-CORE Lab dashboard tab." src="_images/juplab0.jpg" /></p>
-<div class="section" id="authentication">
-<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
-<p>Create a credential file with IN-CORE username/password (same information you used to login to IN-CORE Lab) in order to use IN-CORE services. This is similar to the local authentication step except the authentication file <code class="docutils literal notranslate"><span class="pre">.incorepw</span></code> is being created on the server:</p>
-<ol class="simple">
-<li><p>Open the terminal on IN-CORE lab Launcher page (arrow):</p></li>
-</ol>
-<p><img alt="IN-CORE Lab launcher page." src="_images/juplab0_terminal.jpg" /></p>
-<ol class="simple">
-<li><p>In the terminal, make sure you are in your HOME directory. Type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to see the current path and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to get into your home directory (<code class="docutils literal notranslate"><span class="pre">/home/&lt;username&gt;</span></code>).</p></li>
-<li><p>Create a hidden (therefore dot prefix) folder using <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">.incore</span></code> command.</p></li>
-</ol>
-<p><img alt="Nano text editor." src="_images/nano_usr_pswd.jpg" /></p>
-<ol class="simple">
-<li><p>Create a hidden credential file in the folder you just created (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">.incore</span></code> followed by <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">.incorepw</span></code>) and type IN-CORE username and password using <a class="reference external" href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">Nano</a>, the Linux command-line text editor. nano text editor. Write your username in the first line and the password in the second.</p></li>
-<li><p>Save the file with <code class="docutils literal notranslate"><span class="pre">Ctrl+O</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code> commands</p></li>
-<li><p>Close the text editor and return to your shell with <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code> command</p></li>
-</ol>
-<p>A chain of terminal commands 2) through 4) above.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    pwd
-    cd ~
-    ($/home/&lt;username&gt;)
-    mkdir .incore
-    cd .incore
-    nano .incorepw
-</pre></div>
-</div>
-</div>
 <div class="section" id="running-a-notebook-in-the-lab">
 <h2>Running a Notebook in the Lab<a class="headerlink" href="#running-a-notebook-in-the-lab" title="Permalink to this headline">¶</a></h2>
 <p>In the <a class="reference internal" href="running.html"><span class="doc">Running Notebook locally</span></a> section we described how to run a Building Damage Notebook locally as an example, but you can develop and run all sorts of notebooks as you explore.
