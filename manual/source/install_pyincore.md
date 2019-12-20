@@ -11,7 +11,14 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
     ```
     conda install -c in-core pyincore
     ```
+To check that the package is installed.  run 
+```
+conda list
+```
+It will list all packages currently installed. You can check if pyincore exists in the list.
 
-To check that the package is installed run `conda list` command.
+To update pyIncore run 
+```
+conda update -c in-core pyincore
+```
 
-Replace `install` command above with `update` to update pyIncore to the latest version that is compatible with all other packages in the environment.
