@@ -1,3 +1,8 @@
+.. image:: images/incore_logo.jpg
+   :scale: 60 %
+   :alt: IN-CORE logo
+   :align: right
+
 Introduction
 ============
 
@@ -19,10 +24,6 @@ Introduction
     contact
     acknowledgement
 
-.. image:: images/1912CSUINC_logo-F.jpg
-   :scale: 100 %
-   :alt: IN-CORE logo
-   :align: right
 
 The National Institute of Standards and Technology (NIST) funded the Center of Excellence for Risk-Based Community
 Resilience Planning (`CoE <http://resilience.colostate.edu/>`_) (Cooperative Agreement 70NANB15H044), to develop the measurement science to support
@@ -35,7 +36,6 @@ models of inter-dependent physical systems combined with socio-economic systems.
 IN-CORE consists of multiple components as shown below:
 
 .. image:: images/incore.jpg
-   :scale: 100 %
    :alt: IN-CORE name and logo
    :align: center
 
@@ -60,6 +60,8 @@ It allows users to develop/run/test their scientific model with pyIncore in thei
 Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
 understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
 
+Two Jupyter Notebook `research examples <notebooks>`_ demonstrate how IN-CORE  is utilized:
+1) `Joplin testbed <notebooks/Joplin Tornado Juypter Notebook Example>`_, 2) `Seaside testbed <notebooks/Notebook1_SeasideBuildingDamage>`_.
 
 .. |INCORE| raw:: html
 

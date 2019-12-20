@@ -1,5 +1,5 @@
-pyIncore Notebooks
-==================
+Example Notebooks
+=================
 
 ..  toctree::
     :maxdepth: 2

@@ -50,11 +50,6 @@ In the Installation section we provide instructions for environment manager usin
         conda config --add channels conda-forge
     ```
 
-8. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
-    ```
-        conda install jupyter
-    ```
-
 ### Mac and Linux OS
 
 1. Download the latest Miniconda3 installer from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
