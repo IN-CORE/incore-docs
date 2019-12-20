@@ -8,7 +8,7 @@
         conda install jupyter
     ```
   
-- Download the **Building damage analysis** Jupyter Notebook (<https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/buildingdamage/buildingdamage.ipynb>) 
+- Download the **Building damage analysis** Jupyter Notebook (<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb>)
 and verify the installation by running it from your project folder. For details on running and manipulating `ipynb` files refer 
 to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 

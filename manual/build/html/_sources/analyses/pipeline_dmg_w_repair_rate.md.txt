@@ -57,4 +57,4 @@ code snipet:
     result = pipeline_dmg.run_analysis()
 ```
 
-full analysis: [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/pipelinedamagerepairrate/pipeline_dmg_w_repair_rate.ipynb)
+full analysis: [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg_w_repair_rate.ipynb)

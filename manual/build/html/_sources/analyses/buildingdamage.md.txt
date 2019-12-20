@@ -62,4 +62,4 @@ code snipet:
     bldg_dmg.run_analysis()
 ```
 
-full analysis: [buildingdamage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/buildingdamage/buildingdamage.ipynb)
+full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb)

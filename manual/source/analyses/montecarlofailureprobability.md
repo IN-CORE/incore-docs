@@ -75,4 +75,4 @@ code snipet:
     mc.run_analysis()
 ```
 
-full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/montecarlofailureprobability/montecarlofailureprobability.ipynb)
+full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/montecarlofailureprobability.ipynb)

@@ -68,4 +68,4 @@ code snipet:
     transportation_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/transportationrecovery/transportation_recovery.ipynb)
+full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb)

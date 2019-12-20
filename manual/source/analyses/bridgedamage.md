@@ -63,4 +63,4 @@ code snipet:
     bridge_dmg.run_analysis()
 ```
 
-full analysis: [bridgedamage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/bridgedamage/bridge_dmg.ipynb)
+full analysis: [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb)

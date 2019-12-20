@@ -62,4 +62,4 @@ code snipet:
     hua.run_analysis()
 ```
 
-full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/housingunitallocation/housingunitallocation.ipynb)
+full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb)
