@@ -1,8 +1,3 @@
-.. image:: images/incore_logo.jpg
-   :scale: 60 %
-   :alt: IN-CORE logo
-   :align: right
-
 Introduction
 ============
 

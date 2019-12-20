@@ -104,10 +104,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#2.-Infrastructure-Damage-Analysis">2. Infrastructure Damage Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#2.1.-Buildings-Damage">2.1. Buildings Damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#2.2.-Electrical-Power-Facility---Substations-Damage">2.2. Electrical Power Facility - Substations Damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#2.3.-Electrical-Power-Facility---Poles-Damage">2.3. Electrical Power Facility - Poles Damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.3.-Electrical-Power-Facility---Poles-Damage">2.3. Electrical Power Facility - Poles Damage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#3.-Monte-Carlo-Simulation">3. Monte Carlo Simulation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#3.-Monte-Carlo-Simulation">3. Monte Carlo Simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#3.1.-Building-Failure-Probability">3.1. Building Failure Probability</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#3.2.-Building-Damage-Spatial-Distribution-Results">3.2. Building Damage Spatial Distribution Results</a></li>
 </ul>
@@ -428,9 +428,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<p>##</p>
+<p>###</p>
 <center><p>Joplin Tornado Example</p>
-</center><ul class="simple">
+</center><p>Please note that you might need additional dependencies to run this notebook, such as <a class="reference external" href="https://anaconda.org/conda-forge/geopandas">geopandas</a> and <a class="reference external" href="https://anaconda.org/conda-forge/contextily">contextily</a></p>
+<ul class="simple">
 <li><p>Tornadoes occur at a high frequency in the United States compared with other natural hazards such as earthquakes and tsunamis but have a substantially smaller footprint. Even a single high-intensity tornado can result in high casualty rates and catastrophic economic losses and social consequences, particularly for small to medium communities.</p></li>
 <li><p>The city of Joplin, Missouri, USA, was hit by an EF-5 tornado on May 22, 2011. The National Institute of Standards and Technology (NIST) conducted a technical investigation of this devastating event which can be found at: <a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/NCSTAR/NIST.NCSTAR.3.pdf">https://nvlpubs.nist.gov/nistpubs/NCSTAR/NIST.NCSTAR.3.pdf</a> . The Center for Risk-Based Community Resilience Planning simulated this event for buildings and the electrical power network of Joplin in IN-CORE. This Juypter Notebook provides an example of how to use IN-CORE.</p></li>
 <li><p>The initial damage prediction utilized the tornado path, tornado fragility curves representative of a 19- archetype building dataset, and EPN datasets. Generic tornado paths are also available in IN-CORE, or a user defined tornado path is possible.</p></li>
@@ -493,7 +494,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_12_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_12_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_13_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_13_1.png" />
 </div>
 </div>
 </div>
@@ -525,7 +526,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_15_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_15_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_16_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_16_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -562,7 +563,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_16_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_16_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_17_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_17_1.png" />
 </div>
 </div>
 </div>
@@ -594,7 +595,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_19_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_19_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_20_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_20_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -622,7 +623,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_20_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_20_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_21_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_21_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -650,7 +651,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_21_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_21_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_22_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_22_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -678,7 +679,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_22_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_22_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_23_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_23_1.png" />
 </div>
 </div>
 </div>
@@ -940,11 +941,11 @@ True
 True
 </pre></div></div>
 </div>
-</div>
-</div>
 <div class="section" id="3.-Monte-Carlo-Simulation">
-<h1>3. Monte Carlo Simulation<a class="headerlink" href="#3.-Monte-Carlo-Simulation" title="Permalink to this headline">¶</a></h1>
+<h3>3. Monte Carlo Simulation<a class="headerlink" href="#3.-Monte-Carlo-Simulation" title="Permalink to this headline">¶</a></h3>
 <p>Researchers can use Monte Carlo Simulation to estimate the probability of each building being in a particular damage state. This example uses 500 iterations to determine the failure probability of buildings reaching damage state 2, damage state 3, and damage state 4. Users can run 10000 samples or even more for a more accurate Monte Carlo Simulation to determine the building failure probabilities. Note that this takes several minutes and we are working on developing a more efficient algorithm.</p>
+</div>
+</div>
 <div class="section" id="3.1.-Building-Failure-Probability">
 <h2>3.1. Building Failure Probability<a class="headerlink" href="#3.1.-Building-Failure-Probability" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
@@ -1046,7 +1047,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_48_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_48_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_49_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_49_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1082,7 +1083,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_49_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_49_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_50_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_50_1.png" />
 </div>
 </div>
 </div>
@@ -1211,7 +1212,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_59_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_59_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_60_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_60_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1246,7 +1247,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_60_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_60_1.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_61_1.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_61_1.png" />
 </div>
 </div>
 </div>
@@ -1288,7 +1289,7 @@ area cannot be available to access the electric power even though some buildings
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_63_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_63_0.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_64_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_64_0.png" />
 </div>
 </div>
 </div>
@@ -1712,7 +1713,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_77_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_77_0.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_78_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_78_0.png" />
 </div>
 </div>
 </div>
@@ -1750,7 +1751,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_79_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_79_0.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_80_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_80_0.png" />
 </div>
 </div>
 </div>
@@ -1788,7 +1789,7 @@ True
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_81_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_81_0.png" />
+<img alt="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_82_0.png" src="../_images/notebooks_Joplin_Tornado_Juypter_Notebook_Example_82_0.png" />
 </div>
 </div>
 </div>
