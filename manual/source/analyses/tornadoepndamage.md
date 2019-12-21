@@ -46,15 +46,18 @@ code snipet:
     # Create instance
     ted = TornadoEpnDamage(client)
 
+    # Specify the result name
+    result_name = "tornado_dmg_result"
+
     # Load datasets
     ted.load_remote_input_dataset("epn_node", epn_node_id)
     ted.load_remote_input_dataset("epn_link", epn_link_id)
 
     # Set analysis parameters
-    ted.set_parameter("result_name", "tornadoEPNresults.csv")
-    ted.set_parameter("tornado_id", tornado_id)
+    ted.set_parameter("result_name", result_name)
+    ted.set_parameter('tornado_id', tornado_id)
 
     ted.run_analysis()
 ```
 
-full analysis: [TornadoEpnDamage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/tornadoepndamage/TornadoEpnDamage.ipynb)
+full analysis: [TornadoEpnDamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/TornadoEpnDamage.ipynb)

@@ -62,4 +62,4 @@ code snipet:
     epf_dmg.run_analysis()
 ```
 
-full analysis: [epfdamage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/epfdamage/epfdamage.ipynb)
+full analysis: [epfdamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/epfdamage.ipynb)

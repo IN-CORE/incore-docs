@@ -44,21 +44,29 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create water facility damage instance
-    waterfac_dmg = WaterFacilityDamage(client)
+    # Create water facility damage analysis
+    wf_dmg = WaterFacilityDamage(client)
 
-    # Load input dataset
-    waterfac_dmg.load_remote_input_dataset("water_facilities", water_facilities_id)
+    # Load water facility inventory dataset
+    wf_dmg.load_remote_input_dataset("water_facilities", facility_dataset_id)
+
+    # Specify result name
+    result_name = "wf-dmg-results"
 
     # Set analysis parameters
-    waterfac_dmg.set_parameter("result_name", "Results.csv")
-    waterfac_dmg.set_parameter("mapping_id", mapping_id)
-    waterfac_dmg.set_parameter("hazard_type", "earthquake")
-    waterfac_dmg.set_parameter("hazard_id", hazard_id)
-    waterfac_dmg.set_parameter("num_cpu", 4)
+    wf_dmg.set_parameter("result_name", result_name)
+    wf_dmg.set_parameter("hazard_type", hazard_type)
+    wf_dmg.set_parameter("hazard_id", hazard_id)
+    wf_dmg.set_parameter("mapping_id", mapping_id)
+    wf_dmg.set_parameter("fragility_key", fragility_key)
+    wf_dmg.set_parameter("use_liquefaction", liquefaction)
+    wf_dmg.set_parameter("liquefaction_geology_dataset_id", liq_geology_dataset_id)
+    wf_dmg.set_parameter("liquefaction_fragility_key", liq_fragility_key)
+    wf_dmg.set_parameter("use_hazard_uncertainty", uncertainty)
+    wf_dmg.set_parameter("num_cpu", 4)
 
     # Run water facility damage analysis
-    waterfac_dmg.run_analysis()
+    wf_dmg.run_analysis()
 ```
 
-full analysis: [waterfacilitydamagev1.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/waterfacilitydamage/waterfacilitydamagev1.ipynb)
+full analysis: [waterfacilitydamagev1.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/waterfacilitydamagev1.ipynb)

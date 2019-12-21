@@ -19,13 +19,13 @@ key name | type | name | description
 `crossover_rate` <sup>*</sup> | `float` | Crossover rate | Crossover rate for the NSGA-II algorithm used for recovery rate.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
-**Input Datasets** 
+**Input Datasets**
 
-| Building dataset id |  A building dataset to compute damage for.
-
+key name | type | name | description
+--- | --- | --- | ---
+`bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
 `nodes` <sup>*</sup> | `ergo:roadNetwork` | Rad nodes | A road network dataset.
 `links` <sup>*</sup> | `ergo:roadNetwork` | Road links | A road network dataset.
-`bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
 `bridge_damage_value` <sup>*</sup> | `incore:bridgeDamageValue` | Bridge damages | A bridge dataset.
 `unrepaired_bridge` <sup>*</sup> | `incore:unrepairedBridge` | Unrepaired bridges | An unrepaired bridge dataset.
 `ADT` <sup>*</sup> | `incore:ADT` | Bridge traffic | A dataset of daily traffic.
@@ -52,7 +52,7 @@ code snipet:
     transportation_recovery.load_remote_input_dataset("links", links)
     transportation_recovery.load_remote_input_dataset('bridges', bridges)
     transportation_recovery.load_remote_input_dataset('bridge_damage_value', bridge_damage)
-    transportation_recovery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
+    transportation_recovsery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
     transportation_recovery.load_remote_input_dataset('ADT', ADT_data)
 
     # Set analysis parameters
@@ -68,5 +68,4 @@ code snipet:
     transportation_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/transportationrecovery/transportation_recovery.ipynb)<br />
-full analysis: [complete_transportation_recovery.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/transportationrecovery/complete_transportation_recovery.ipynb)
+full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/transportation_recovery.ipynb)

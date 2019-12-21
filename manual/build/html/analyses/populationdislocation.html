@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -306,22 +306,29 @@
 </table><p><small>(* required)</small></p>
 <p><strong>Execution</strong></p>
 <p>code snipet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create instance</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create population dislocatin</span>
     <span class="n">pop_dis</span> <span class="o">=</span> <span class="n">PopulationDislocation</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 
-    <span class="c1"># Load input datasets</span>
+    <span class="c1"># Load input dataset</span>
     <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_dmg&quot;</span><span class="p">,</span> <span class="n">building_dmg</span><span class="p">)</span>
-    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;housing_unit_allocation&quot;</span><span class="p">,</span> <span class="n">housing_unit_allocation</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;housing_unit_allocation&quot;</span><span class="p">,</span> <span class="n">housing_unit_alloc</span><span class="p">)</span>
     <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;block_group_data&quot;</span><span class="p">,</span> <span class="n">bg_data</span><span class="p">)</span>
-    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;value_poss_param&quot;</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;value_poss_param&quot;</span><span class="p">,</span> <span class="n">value_loss</span><span class="p">)</span>
+
+    <span class="c1"># Specify the result name</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;IN-CORE_1bv6_population_dislocation&quot;</span>
+
+    <span class="n">seed</span> <span class="o">=</span> <span class="mi">1111</span>
 
     <span class="c1"># Set analysis parameters</span>
-    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="mi">1111</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
 
+    <span class="c1"># Run Population dislocation analysis</span>
     <span class="n">pop_dis</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Jupyter notebook: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/populationdislocation/populationdislocation.ipynb">populationdislocation.ipynb</a></p>
+<p>Jupyter notebook: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/populationdislocation.ipynb">populationdislocation.ipynb</a></p>
 </div>
 
 

@@ -36,20 +36,20 @@ code snipet:
 ```
     # Create cumulative Building Damage
     cumulative_bldg_dmg = CumulativeBuildingDamage(client)
-    
+
     # Load input datasets
     cumulative_bldg_dmg.load_remote_input_dataset("eq_bldg_dmg", eq_bldg_dmg_id)
     cumulative_bldg_dmg.load_remote_input_dataset("tsunami_bldg_dmg", tsunami_bldg_dmg_id)
-    
+
     # Specify the result name
-    result_name = "Cumulative_Bldg_Dmg_Result"
-    
+    result_name = "cumulative_bldg_dmg_result"
+
     # Set analysis parameters
-    cumulative_bldg_dmg.set_parameter("num_cpu", 4)
     cumulative_bldg_dmg.set_parameter("result_name", result_name)
-    
+    cumulative_bldg_dmg.set_parameter("num_cpu", 4)
+
     # Run Cumulative Building Damage Analysis
     cumulative_bldg_dmg.run_analysis()
 ```
 
-full analysis: [cumulative_building_damage.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/cumulativebuildingdamage/cumulative_building_damage.ipynb)
+full analysis: [cumulative_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/cumulative_building_damage.ipynb)

@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -322,27 +322,27 @@ modify the damage probabilities to include damage due to liquefaction.</p>
 </table><p><small>(* required)</small></p>
 <p><strong>Execution</strong></p>
 <p>code snipet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create building damage instance</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create building damage</span>
     <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 
-    <span class="c1"># Load input datasets</span>
+    <span class="c1"># Load input dataset</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset_id</span><span class="p">)</span>
 
     <span class="c1"># Specify the result name</span>
-    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;result_name&quot;</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;memphis_bldg_dmg_result&quot;</span>
 
     <span class="c1"># Set analysis parameters</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mapping_id&quot;</span><span class="p">,</span> <span class="n">mapping_id</span><span class="p">)</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="n">num_cpu</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
     <span class="c1"># Run building damage analysis</span>
     <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/buildingdamage/buildingdamage.ipynb">buildingdamage.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/building_dmg.ipynb">building_dmg.ipynb</a></p>
 </div>
 
 

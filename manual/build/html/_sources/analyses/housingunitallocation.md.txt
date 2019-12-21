@@ -42,24 +42,27 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create bridge damage instance
-    hua = HousingUnitAllocation(client)
+    # Create housing allocation
+    spa = HousingUnitAllocation(client)
 
-    # Load input datasets
-    hua.load_remote_input_dataset("housing_unit_inventory", housing_unit_inv)
-    hua.load_remote_input_dataset("address_point_inv", address_point_inv)
-    hua.load_remote_input_dataset("building_inventory", building_inv)
+    # Load input dataset
+    spa.load_remote_input_dataset("housing_unit_inventory", housing_unit_inv)
+    spa.load_remote_input_dataset("address_point_inventory", address_point_inv)
+    spa.load_remote_input_dataset("building_inventory", building_inv)
 
     # Specify the result name
-    result_name = "housing_unit_allocation"
+    result_name = "IN-CORE_1bv6_housingunitallocation"
+
+    seed = 1238
+    iterations = 1
 
     # Set analysis parameters
-    hua.set_parameter("result_name", result_name)
-    hua.set_parameter("seed", seed)
-    hua.set_parameter("iterations", iterations)
+    spa.set_parameter("result_name", result_name)
+    spa.set_parameter("seed", seed)
+    spa.set_parameter("iterations", iterations)
 
-    # Run bridge damage analysis
-    hua.run_analysis()
+    # Run Housing unit allocation analysis
+    spa.run_analysis()
 ```
 
-full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/housingunitallocation/housingunitallocation.ipynb)
+full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/housingunitallocation.ipynb)

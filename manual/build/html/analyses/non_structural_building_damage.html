@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -348,16 +348,27 @@ and complete) and creates an output CSV file.</p>
     <span class="c1"># Load input datasets</span>
     <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">building_dataset_id</span><span class="p">)</span>
 
+    <span class="c1"># Specify the result name</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;non_structural_building_dmg_result&quot;</span>
+
     <span class="c1"># Set analysis parameters</span>
-    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;non_structural_building_dmg_result&quot;</span><span class="p">)</span>
+    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
     <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mapping_id&quot;</span><span class="p">,</span> <span class="n">mapping_id</span><span class="p">)</span>
-    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="s2">&quot;earthquake&quot;</span><span class="p">)</span>
+    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
     <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
-    
+    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># Shelby County Liquefaction Susceptibility</span>
+    <span class="n">use_liquefaction</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">liq_geology_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f55c7d30d13bc0824ba&quot;</span>
+
+    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">use_liquefaction</span><span class="p">)</span>
+    <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liq_geology_dataset_id&quot;</span><span class="p">,</span> <span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+
     <span class="n">non_structural_building_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/nonstructbuildingdamage/non_structural_building_damage.ipynb">non_structural_building_damage.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/non_structural_building_damage.ipynb">non_structural_building_damage.ipynb</a></p>
 </div>
 
 

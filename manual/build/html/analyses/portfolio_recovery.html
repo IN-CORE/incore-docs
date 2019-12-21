@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -344,24 +344,25 @@
     <span class="n">bldg_portfolio_recovery</span> <span class="o">=</span> <span class="n">BuildingPortfolioRecoveryAnalysis</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 
     <span class="c1"># Load input datasets</span>
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_data&quot;</span><span class="p">,</span> <span class="n">bldg_data_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;occupancy_mapping&quot;</span><span class="p">,</span> <span class="n">occupancy_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_damage&quot;</span><span class="p">,</span> <span class="n">bldg_damage_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;dmg_ratios&quot;</span><span class="p">,</span> <span class="n">mean_repair_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;utility&quot;</span><span class="p">,</span> <span class="n">utility_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;utility_partial&quot;</span><span class="p">,</span> <span class="n">utility_partial_dataset</span><span class="p">)</span> 
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;coefFL&quot;</span><span class="p">,</span> <span class="n">coefFL_dataset</span><span class="p">)</span> 
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_data&quot;</span><span class="p">,</span> <span class="n">bldg_data_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;occupancy_mapping&quot;</span><span class="p">,</span> <span class="n">occupancy_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_damage&quot;</span><span class="p">,</span> <span class="n">bldg_damage_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;dmg_ratios&quot;</span><span class="p">,</span> <span class="n">mean_repair_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;utility&quot;</span><span class="p">,</span> <span class="n">utility_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;utility_partial&quot;</span><span class="p">,</span> <span class="n">utility_partial_dataset</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;coefFL&quot;</span><span class="p">,</span> <span class="n">coefFL_dataset</span><span class="p">)</span>
 
     <span class="c1"># Set parameters</span>
     <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;uncertainty&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;random_sample_size&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;no_of_weeks&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>  <span class="c1"># default none. Gets size form input dataset</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;random_sample_size&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># default 10000</span>
+    <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;no_of_weeks&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># default 250</span>
 
+    <span class="c1"># Creates two output files building-recovery.csv and portfolio-recovery.csv</span>
     <span class="n">bldg_portfolio_recovery</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/buildingportfolio/recovery/portfolio_recovery.ipynb">portfolio_recovery.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/portfolio_recovery.ipynb">portfolio_recovery.ipynb</a></p>
 </div>
 
 

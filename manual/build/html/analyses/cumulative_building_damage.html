@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -291,23 +291,23 @@ are imported to the analysis. The damage intervals are then calculated from comb
 <p>code snipet:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create cumulative Building Damage</span>
     <span class="n">cumulative_bldg_dmg</span> <span class="o">=</span> <span class="n">CumulativeBuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-    
+
     <span class="c1"># Load input datasets</span>
     <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;eq_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">eq_bldg_dmg_id</span><span class="p">)</span>
     <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;tsunami_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">tsunami_bldg_dmg_id</span><span class="p">)</span>
-    
+
     <span class="c1"># Specify the result name</span>
-    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;Cumulative_Bldg_Dmg_Result&quot;</span>
-    
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;cumulative_bldg_dmg_result&quot;</span>
+
     <span class="c1"># Set analysis parameters</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
     <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
-    
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
     <span class="c1"># Run Cumulative Building Damage Analysis</span>
     <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/cumulativebuildingdamage/cumulative_building_damage.ipynb">cumulative_building_damage.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/cumulative_building_damage.ipynb">cumulative_building_damage.ipynb</a></p>
 </div>
 
 

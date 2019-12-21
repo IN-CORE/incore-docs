@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -379,20 +379,19 @@ taxes and uses tax revenues in order to finance the provision of public services
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;EMPLOY&quot;</span><span class="p">,</span> <span class="n">EMPLOY</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;IGTD&quot;</span><span class="p">,</span> <span class="n">IGTD</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;TAUFF&quot;</span><span class="p">,</span> <span class="n">TAUFF</span><span class="p">)</span>
-    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;TPC&quot;</span><span class="p">,</span> <span class="n">TPC</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;JOBCR&quot;</span><span class="p">,</span> <span class="n">JOBCR</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;OUTCR&quot;</span><span class="p">,</span> <span class="n">OUTCR</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;sector_shocks&quot;</span><span class="p">,</span> <span class="n">sector_shocks</span><span class="p">)</span>
 
     <span class="c1"># Set analysis parameters</span>
-    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_path&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_path&quot;</span><span class="p">,</span> <span class="s2">&quot;ipopt&quot;</span><span class="p">)</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;model_iterations&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Run Joplin CGE model analysis</span>
     <span class="n">joplin_cge</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/joplincgeanalysis/joplin_cge.ipynb">joplin_cge.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/joplin_cge.ipynb">joplin_cge.ipynb</a></p>
 </div>
 
 

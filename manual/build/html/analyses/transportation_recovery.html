@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -276,14 +276,54 @@ to seed the random number generator.</p>
 </tr>
 </tbody>
 </table><p><strong>Input Datasets</strong></p>
-<p>| Building dataset id |  A building dataset to compute damage for.</p>
-<p><code class="docutils literal notranslate"><span class="pre">nodes</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:roadNetwork</span></code> | Rad nodes | A road network dataset.
-<code class="docutils literal notranslate"><span class="pre">links</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:roadNetwork</span></code> | Road links | A road network dataset.
-<code class="docutils literal notranslate"><span class="pre">bridges</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">ergo:bridges</span></code> | Bridge dataset | A bridge dataset.
-<code class="docutils literal notranslate"><span class="pre">bridge_damage_value</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:bridgeDamageValue</span></code> | Bridge damages | A bridge dataset.
-<code class="docutils literal notranslate"><span class="pre">unrepaired_bridge</span></code> <sup><em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:unrepairedBridge</span></code> | Unrepaired bridges | An unrepaired bridge dataset.
-<code class="docutils literal notranslate"><span class="pre">ADT</span></code> <sup></em></sup> | <code class="docutils literal notranslate"><span class="pre">incore:ADT</span></code> | Bridge traffic | A dataset of daily traffic.</p>
-<p><strong>Output Datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridges</code> <sup>*</sup></td>
+<td><code>ergo:bridges</code></td>
+<td>Bridge dataset</td>
+<td>A bridge dataset.</td>
+</tr>
+<tr>
+<td><code>nodes</code> <sup>*</sup></td>
+<td><code>ergo:roadNetwork</code></td>
+<td>Rad nodes</td>
+<td>A road network dataset.</td>
+</tr>
+<tr>
+<td><code>links</code> <sup>*</sup></td>
+<td><code>ergo:roadNetwork</code></td>
+<td>Road links</td>
+<td>A road network dataset.</td>
+</tr>
+<tr>
+<td><code>bridge_damage_value</code> <sup>*</sup></td>
+<td><code>incore:bridgeDamageValue</code></td>
+<td>Bridge damages</td>
+<td>A bridge dataset.</td>
+</tr>
+<tr>
+<td><code>unrepaired_bridge</code> <sup>*</sup></td>
+<td><code>incore:unrepairedBridge</code></td>
+<td>Unrepaired bridges</td>
+<td>An unrepaired bridge dataset.</td>
+</tr>
+<tr>
+<td><code>ADT</code> <sup>*</sup></td>
+<td><code>incore:ADT</code></td>
+<td>Bridge traffic</td>
+<td>A dataset of daily traffic.</td>
+</tr>
+</tbody>
+</table><p><strong>Output Datasets</strong></p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -318,7 +358,7 @@ to seed the random number generator.</p>
     <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;links&quot;</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
     <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;bridges&#39;</span><span class="p">,</span> <span class="n">bridges</span><span class="p">)</span>
     <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;bridge_damage_value&#39;</span><span class="p">,</span> <span class="n">bridge_damage</span><span class="p">)</span>
-    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;unrepaired_bridge&#39;</span><span class="p">,</span> <span class="n">unrepaired</span><span class="p">)</span>
+    <span class="n">transportation_recovsery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;unrepaired_bridge&#39;</span><span class="p">,</span> <span class="n">unrepaired</span><span class="p">)</span>
     <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;ADT&#39;</span><span class="p">,</span> <span class="n">ADT_data</span><span class="p">)</span>
 
     <span class="c1"># Set analysis parameters</span>
@@ -334,8 +374,7 @@ to seed the random number generator.</p>
     <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/transportationrecovery/transportation_recovery.ipynb">transportation_recovery.ipynb</a><br />
-full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/transportationrecovery/complete_transportation_recovery.ipynb">complete_transportation_recovery.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/transportation_recovery.ipynb">transportation_recovery.ipynb</a></p>
 </div>
 
 

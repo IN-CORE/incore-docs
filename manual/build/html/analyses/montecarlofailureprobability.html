@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">pyIncore Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -305,42 +305,16 @@
 
     <span class="c1"># Set analysis parameters</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;mc_failure_probability&quot;</span><span class="p">)</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;insignific&quot;</span><span class="p">,</span> <span class="s2">&quot;moderate&quot;</span><span class="p">,</span> <span class="s2">&quot;heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;complete&quot;</span><span class="p">])</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;moderate&quot;</span><span class="p">,</span> <span class="s2">&quot;heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;complete&quot;</span><span class="p">])</span>
-
-    <span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><strong>Chaining</strong></p>
-<p>code snipet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># chaining with building damage</span>
-    <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">building_inventory_id</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mapping_id&quot;</span><span class="p">,</span> <span class="n">mapping_id</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;building_damage&quot;</span><span class="p">)</span>
-
-    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
-
-    <span class="n">mc</span> <span class="o">=</span> <span class="n">MonteCarloFailureProbability</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-
-    <span class="c1"># This loads a local dataset from a file</span>
-    <span class="n">damage</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;building_damage.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;ergo:buildingDamageVer4&quot;</span><span class="p">)</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">damage</span><span class="p">)</span>
-    <span class="c1"># If your data has been uploaded to the service, you can still use the load_remote_input_dataset with a damage id</span>
-
-    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;bldg_mc_failure_probability&quot;</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;insignific&quot;</span><span class="p">,</span> <span class="s2">&quot;moderate&quot;</span><span class="p">,</span> <span class="s2">&quot;heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;complete&quot;</span><span class="p">])</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;moderate&quot;</span><span class="p">,</span> <span class="s2">&quot;heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;complete&quot;</span><span class="p">])</span>
 
+    <span class="c1"># Run Monte Carlo failure</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/pyincore/blob/master/pyincore/analyses/montecarlofailureprobability/montecarlofailureprobability.ipynb">montecarlofailureprobability.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/montecarlofailureprobability.ipynb">montecarlofailureprobability.ipynb</a></p>
 </div>
 
 

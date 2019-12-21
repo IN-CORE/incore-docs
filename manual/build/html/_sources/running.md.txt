@@ -3,12 +3,12 @@
 - We assume that users develop Python script by using pyIncore in their own **Project folder**.
 
 
-- To do this, locate a file called `.incorepw` in your HOME directory and write your credentials in it; the first line contains your username and the second your password. 
-The information is used for communicating with **IN-CORE** services such as hazard, data and fragility. 
-The file is located in the `.incore` folder created during installation in your HOME directory.
-
-
-- Download the **Building damage analysis** Jupyter Notebook (<https://incore.ncsa.illinois.edu/doc/examples/buildingdamage.ipynb>) (right-click and choose "save link as") 
+- Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+    ```
+        conda install jupyter
+    ```
+  
+- Download the **Building damage analysis** Jupyter Notebook (<https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/building_dmg.ipynb>)
 and verify the installation by running it from your project folder. For details on running and manipulating `ipynb` files refer 
 to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 
@@ -35,7 +35,7 @@ to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html
     on Miniconda by running `conda install jupyter`.
     
     
-- Click on the `buildingdamage.ipynb` in the Jupyter Notebook browser.
+- Click on the `building_dmg.ipynb` in the Jupyter Notebook browser.
 
     ![Jupyter Notebook dashboard.](images/juplocal1_file.jpg "Jupyter Notebook dashboard.")
 
