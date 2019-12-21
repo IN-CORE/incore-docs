@@ -69,4 +69,4 @@ code snipet:
     wf_dmg.run_analysis()
 ```
 
-full analysis: [waterfacilitydamagev1.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/waterfacilitydamagev1.ipynb)
+full analysis: [waterfacilitydamagev1.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/waterfacilitydamagev1.ipynb)

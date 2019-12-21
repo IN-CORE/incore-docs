@@ -62,4 +62,4 @@ code snipet:
     bldg_dmg.run_analysis()
 ```
 
-full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/building_dmg.ipynb)
+full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb)

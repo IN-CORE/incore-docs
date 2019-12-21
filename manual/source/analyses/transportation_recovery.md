@@ -14,7 +14,7 @@ key name | type | name | description
 `pm` <sup>*</sup> | `int` | Performance metrics | Name of the result dataset.
 `ini_num_population` <sup>*</sup> | `int` | Population number | An initial population number.
 `population_size` <sup>*</sup> | `int` | Population size | A population size.
-`num_generation` <sup*</sup> | `int` | Number generation | Number of iterations per scenario.
+`num_generation` <sup>*</sup> | `int` | Number generation | Number of iterations per scenario.
 `mutation_rate` <sup>*</sup> | `float` | Mutation rate | Mutation rate for the NSGA-II algorithm used for recovery rate.
 `crossover_rate` <sup>*</sup> | `float` | Crossover rate | Crossover rate for the NSGA-II algorithm used for recovery rate.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
@@ -68,4 +68,4 @@ code snipet:
     transportation_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/transportation_recovery.ipynb)
+full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb)

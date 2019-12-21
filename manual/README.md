@@ -7,7 +7,7 @@ Main IN-Core documentation which is built using Python [Sphinx](http://www.sphin
 1. Clone the code from INCORE docs [git](https://opensource.ncsa.illinois.edu/bitbucket/scm/incore1/incore-docs.git) 
 repository.
 2. Install required packages. Currently `sphinx`, a Python package for building documentation and `sphinx_rtd_theme`, 
-a theme used in this documentation. 
+a theme used in this documentation and other packages. See section 4. for the full list.
 3. We recommend using virtual environments, `conda` (preferred) or `virtualenv` for Python 3.6+. 
 for managing Python environments.  
 In case of `conda`, the package management and deployment tool 

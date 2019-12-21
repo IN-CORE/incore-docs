@@ -60,4 +60,4 @@ code snipet:
     bldg_portfolio_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/portfolio_recovery.ipynb)
+full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb)

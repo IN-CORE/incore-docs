@@ -65,4 +65,4 @@ code snipet:
     spa.run_analysis()
 ```
 
-full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/housingunitallocation.ipynb)
+full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb)

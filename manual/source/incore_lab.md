@@ -16,7 +16,7 @@ Main Incore Lab's dashboard tab:
 In the [Running Notebook locally](../running) section we described how to run a Building Damage Notebook locally as an example, but you can develop and run all sorts of notebooks as you explore. 
 The following section focuses on **step-by-step instructions** of running Notebooks on the IN-CORE Lab.
 
-1. Upload the Building Damage Analysis notebook from your local machine to IN-CORE lab by clicking the `Upload` icon in the left panel and select **buildingdamage.ipybn**.
+1. Upload the Building Damage Analysis notebook from your local machine to IN-CORE lab by clicking the `Upload` icon in the left panel and select **building_dmg.ipybn**.
 
 ![IN-CORE Lab upload panel.](images/juplab9_nbook.jpg "IN-CORE Lab upload panel.")
 
