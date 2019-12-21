@@ -41,19 +41,18 @@ code snipet:
 
     # Load input datasets
     md.set_input_dataset("damage", bridge_damage_result)
-    bldg_dmg.load_remote_input_dataset("bridges", bridge_dataset_id)
-    md.load_remote_input_dataset("dmg_ratios", dmg_ratios_id)
+    md.load_remote_input_dataset("dmg_ratios", "5a284f2cc7d30d13bc081f96")
 
     # Specify the result name
     result_name = "result_name"
 
     # Set analysis parameters
     md.set_parameter("result_name", "bridge_mean_damage")
-    md.set_parameter("damage_interval_keys",["none", "ds-slight", "ds-moderat", "ds-extensi","ds-complet"])
+    md.set_parameter("damage_interval_keys",["none", "ds-slight", "ds-moderat", "ds-extensi", "ds-complet"])
     md.set_parameter("num_cpu", 1)
 
     # Run mean damage analysis
     md.run_analysis()
 ```
 
-full analysis: [test_meandamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/test_mean_damage.ipynb)
+full analysis: [test_meandamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/test_mean_damage.ipynb)

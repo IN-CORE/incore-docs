@@ -42,24 +42,24 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create building damage instance
+    # Create building damage
     bldg_dmg = BuildingDamage(client)
 
-    # Load input datasets
+    # Load input dataset
     bldg_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
 
     # Specify the result name
-    result_name = "result_name"
+    result_name = "memphis_bldg_dmg_result"
 
     # Set analysis parameters
     bldg_dmg.set_parameter("result_name", result_name)
     bldg_dmg.set_parameter("mapping_id", mapping_id)
     bldg_dmg.set_parameter("hazard_type", hazard_type)
     bldg_dmg.set_parameter("hazard_id", hazard_id)
-    bldg_dmg.set_parameter("num_cpu", num_cpu)
+    bldg_dmg.set_parameter("num_cpu", 10)
 
     # Run building damage analysis
     bldg_dmg.run_analysis()
 ```
 
-full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb)
+full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/building_dmg.ipynb)

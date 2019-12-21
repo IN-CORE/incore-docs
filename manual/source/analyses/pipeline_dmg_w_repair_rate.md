@@ -41,20 +41,27 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create instance
-    pipeline_dmg = PipelineDamageRepairRate(client)
+    # Create pipeline damage with repair rate
+    pipeline_dmg_w_rr = PipelineDamageRepairRate(client)
 
-    # Load input datasets
-    pipeline_dmg.load_remote_input_dataset("pipeline", pipeline_dataset_id)
+    # Load pipeline inventory as input datasets
+    pipeline_dmg_w_rr.load_remote_input_dataset("pipeline", pipeline_dataset_id)
+
+    # Specify the result name
+    result_name = "pipeline_result"
 
     # Set analysis parameters
-    pipeline_dmg.set_parameter("result_name", "pipeline_result")
-    pipeline_dmg.set_parameter("mapping_id", mapping_id)
-    pipeline_dmg.set_parameter("hazard_type", "earthquake")
-    pipeline_dmg.set_parameter("hazard_id", hazard_id)
-    pipeline_dmg.set_parameter("num_cpu", 4)
+    pipeline_dmg_w_rr.set_parameter("result_name", result_name)
+    pipeline_dmg_w_rr.set_parameter("mapping_id", mapping_id)
+    pipeline_dmg_w_rr.set_parameter("hazard_type", hazard_type)
+    pipeline_dmg_w_rr.set_parameter("hazard_id", hazard_id)
+    pipeline_dmg_w_rr.set_parameter("liquefaction_fragility_key", liq_fragility_key)
+    pipeline_dmg_w_rr.set_parameter("liquefaction_geology_dataset_id",liq_geology_dataset_id)
+    pipeline_dmg_w_rr.set_parameter("use_liquefaction", use_liq)
+    pipeline_dmg_w_rr.set_parameter("num_cpu", 4)
 
-    result = pipeline_dmg.run_analysis()
+    # Run pipeline  damage analysis
+    result = pipeline_dmg_w_rr.run_analysis()
 ```
 
-full analysis: [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg_w_repair_rate.ipynb)
+full analysis: [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/pipeline_dmg_w_repair_rate.ipynb)

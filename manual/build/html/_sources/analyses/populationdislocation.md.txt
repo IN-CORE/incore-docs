@@ -42,19 +42,26 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create instance
+    # Create population dislocatin
     pop_dis = PopulationDislocation(client)
 
-    # Load input datasets
+    # Load input dataset
     pop_dis.load_remote_input_dataset("building_dmg", building_dmg)
-    pop_dis.load_remote_input_dataset("housing_unit_allocation", housing_unit_allocation)
+    pop_dis.load_remote_input_dataset("housing_unit_allocation", housing_unit_alloc)
     pop_dis.load_remote_input_dataset("block_group_data", bg_data)
-    pop_dis.load_remote_input_dataset("value_poss_param", val_loss)
+    pop_dis.load_remote_input_dataset("value_poss_param", value_loss)
+
+    # Specify the result name
+    result_name = "IN-CORE_1bv6_population_dislocation"
+
+    seed = 1111
 
     # Set analysis parameters
-    pop_dis.set_parameter("seed", 1111)
+    pop_dis.set_parameter("result_name", result_name)
+    pop_dis.set_parameter("seed", seed)
 
+    # Run Population dislocation analysis
     pop_dis.run_analysis()
 ```
 
-Jupyter notebook: [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb)
+Jupyter notebook: [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/populationdislocation.ipynb)

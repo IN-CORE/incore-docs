@@ -41,20 +41,28 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create instance
+    # Create Pipeline damage analysis
     pipeline_dmg = PipelineDamage(client)
 
-    # Load input datasets
+    # Load pipeline inventory for Seaside, OR
     pipeline_dmg.load_remote_input_dataset("pipeline", pipeline_id)
 
-    # Set analysis parameters
-    pipeline_dmg.set_parameter("result_name", "pipeline_damage_result")
+    # Set result name
+    pipeline_dmg.set_parameter("result_name", "seaside_tsunami_pipeline_result")
+
+    # Set pipeline fragility mapping & fragility key
     pipeline_dmg.set_parameter("mapping_id", mapping_id)
-    pipeline_dmg.set_parameter("hazard_type", "earthquake")
     pipeline_dmg.set_parameter("fragility_key", "Non-Retrofit inundationDepth Fragility ID Code")
+
+    # Set a hzard: Seaside Tsunami
+    pipeline_dmg.set_parameter("hazard_type", "tsunami")
     pipeline_dmg.set_parameter("hazard_id", hazard_id)
 
+    # Set number of CPU for computation
+    pipeline_dmg.set_parameter("num_cpu", 4)
+
+    # Run pipeline damage analysis
     result = pipeline_dmg.run_analysis()
 ```
 
-full analysis: [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipelinedamage/pipeline_dmg.ipynb)
+full analysis: [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/pipelinedamage/pipeline_dmg.ipynb)

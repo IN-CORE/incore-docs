@@ -37,42 +37,13 @@ code snipet:
 
     # Set analysis parameters
     mc.set_parameter("result_name", "mc_failure_probability")
-    mc.set_parameter("num_samples", 10)
-    mc.set_parameter("damage_interval_keys", ["insignific", "moderate", "heavy", "complete"])
-    mc.set_parameter("failure_state_keys", ["moderate", "heavy", "complete"])
-
-    mc.run_analysis()
-```
-
-**Chaining**
-
-code snipet:
-
-```
-    # chaining with building damage
-    bldg_dmg = BuildingDamage(client)
-    bldg_dmg.load_remote_input_dataset("buildings", building_inventory_id)
-    bldg_dmg.set_parameter("mapping_id", mapping_id)
-    bldg_dmg.set_parameter("hazard_type", hazard_type)
-    bldg_dmg.set_parameter("hazard_id", hazard_id)
-    bldg_dmg.set_parameter("result_name", "building_damage")
-
-    bldg_dmg.run_analysis()
-
-    mc = MonteCarloFailureProbability(client)
-
-    # This loads a local dataset from a file
-    damage = Dataset.from_file("building_damage.csv", "ergo:buildingDamageVer4")
-    mc.set_input_dataset("damage", damage)
-    # If your data has been uploaded to the service, you can still use the load_remote_input_dataset with a damage id
-
-    mc.set_parameter("result_name", "bldg_mc_failure_probability")
     mc.set_parameter("num_cpu", 8)
     mc.set_parameter("num_samples", 10)
     mc.set_parameter("damage_interval_keys", ["insignific", "moderate", "heavy", "complete"])
     mc.set_parameter("failure_state_keys", ["moderate", "heavy", "complete"])
 
+    # Run Monte Carlo failure
     mc.run_analysis()
 ```
 
-full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/montecarlofailureprobability.ipynb)
+full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/montecarlofailureprobability.ipynb)

@@ -42,25 +42,24 @@ key name | type | name | description
 code snipet:
 
 ```
-    # Create bridge damage instance
+    # Create bridge damage
     bridge_dmg = BridgeDamage(client)
 
-    # Load input datasets
+    # Load input dataset
     bridge_dmg.load_remote_input_dataset("bridges", bridge_dataset_id)
-    bridge_dmg.load_remote_input_dataset("dmg_ratios", dmg_ratio_id)
 
     # Specify the result name
-    result_name = "result_name"
+    result_name = "bridge_result"
 
     # Set analysis parameters
     bridge_dmg.set_parameter("result_name", result_name)
     bridge_dmg.set_parameter("mapping_id", mapping_id)
     bridge_dmg.set_parameter("hazard_type", hazard_type)
     bridge_dmg.set_parameter("hazard_id", hazard_id)
-    bridge_dmg.set_parameter("num_cpu", num_cpu)
+    bridge_dmg.set_parameter("num_cpu", 4)
 
     # Run bridge damage analysis
     bridge_dmg.run_analysis()
 ```
 
-full analysis: [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb)
+full analysis: [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/bridge_dmg.ipynb)

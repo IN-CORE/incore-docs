@@ -51,13 +51,24 @@ code snipet:
     # Load input datasets
     non_structural_building_dmg.load_remote_input_dataset("buildings", building_dataset_id)
 
+    # Specify the result name
+    result_name = "non_structural_building_dmg_result"
+
     # Set analysis parameters
-    non_structural_building_dmg.set_parameter("result_name", "non_structural_building_dmg_result")
+    non_structural_building_dmg.set_parameter("result_name", result_name)
     non_structural_building_dmg.set_parameter("mapping_id", mapping_id)
-    non_structural_building_dmg.set_parameter("hazard_type", "earthquake")
+    non_structural_building_dmg.set_parameter("hazard_type", hazard_type)
     non_structural_building_dmg.set_parameter("hazard_id", hazard_id)
-    
+    non_structural_building_dmg.set_parameter("num_cpu", 4)
+
+    # Shelby County Liquefaction Susceptibility
+    use_liquefaction = True
+    liq_geology_dataset_id = "5a284f55c7d30d13bc0824ba"
+
+    non_structural_building_dmg.set_parameter("use_liquefaction", use_liquefaction)
+    non_structural_building_dmg.set_parameter("liq_geology_dataset_id", liq_geology_dataset_id)
+
     non_structural_building_dmg.run_analysis()
 ```
 
-full analysis: [non_structural_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_damage.ipynb)
+full analysis: [non_structural_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/non_structural_building_damage.ipynb)

@@ -52,7 +52,7 @@ code snipet:
     transportation_recovery.load_remote_input_dataset("links", links)
     transportation_recovery.load_remote_input_dataset('bridges', bridges)
     transportation_recovery.load_remote_input_dataset('bridge_damage_value', bridge_damage)
-    transportation_recovery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
+    transportation_recovsery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
     transportation_recovery.load_remote_input_dataset('ADT', ADT_data)
 
     # Set analysis parameters
@@ -68,4 +68,4 @@ code snipet:
     transportation_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb)
+full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/transportation_recovery.ipynb)

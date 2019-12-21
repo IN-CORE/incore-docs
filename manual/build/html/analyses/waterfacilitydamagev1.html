@@ -334,24 +334,32 @@ modify the damage probabilities to include damage due to liquefaction.</p>
 </table><p><small>(* required)</small></p>
 <p><strong>Execution</strong></p>
 <p>code snipet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create water facility damage instance</span>
-    <span class="n">waterfac_dmg</span> <span class="o">=</span> <span class="n">WaterFacilityDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create water facility damage analysis</span>
+    <span class="n">wf_dmg</span> <span class="o">=</span> <span class="n">WaterFacilityDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 
-    <span class="c1"># Load input dataset</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;water_facilities&quot;</span><span class="p">,</span> <span class="n">water_facilities_id</span><span class="p">)</span>
+    <span class="c1"># Load water facility inventory dataset</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;water_facilities&quot;</span><span class="p">,</span> <span class="n">facility_dataset_id</span><span class="p">)</span>
+
+    <span class="c1"># Specify result name</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;wf-dmg-results&quot;</span>
 
     <span class="c1"># Set analysis parameters</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;Results.csv&quot;</span><span class="p">)</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mapping_id&quot;</span><span class="p">,</span> <span class="n">mapping_id</span><span class="p">)</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="s2">&quot;earthquake&quot;</span><span class="p">)</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mapping_id&quot;</span><span class="p">,</span> <span class="n">mapping_id</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="n">fragility_key</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">liquefaction</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_geology_dataset_id&quot;</span><span class="p">,</span> <span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_fragility_key&quot;</span><span class="p">,</span> <span class="n">liq_fragility_key</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_hazard_uncertainty&quot;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="p">)</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
     <span class="c1"># Run water facility damage analysis</span>
-    <span class="n">waterfac_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+    <span class="n">wf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/master/notebooks/waterfacilitydamagev1.ipynb">waterfacilitydamagev1.ipynb</a></p>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/waterfacilitydamagev1.ipynb">waterfacilitydamagev1.ipynb</a></p>
 </div>
 
 

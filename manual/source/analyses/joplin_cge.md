@@ -64,17 +64,16 @@ code snipet:
     joplin_cge.load_remote_input_dataset("EMPLOY", EMPLOY)
     joplin_cge.load_remote_input_dataset("IGTD", IGTD)
     joplin_cge.load_remote_input_dataset("TAUFF", TAUFF)
-    joplin_cge.load_remote_input_dataset("TPC", TPC)
     joplin_cge.load_remote_input_dataset("JOBCR", JOBCR)
     joplin_cge.load_remote_input_dataset("OUTCR", OUTCR)
     joplin_cge.load_remote_input_dataset("sector_shocks", sector_shocks)
 
     # Set analysis parameters
-    joplin_cge.set_parameter("solver_path", "")
+    joplin_cge.set_parameter("solver_path", "ipopt")
     joplin_cge.set_parameter("model_iterations", 1)
 
     # Run Joplin CGE model analysis
     joplin_cge.run_analysis()
 ```
 
-full analysis: [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb)
+full analysis: [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/joplin_cge.ipynb)

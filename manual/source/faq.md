@@ -67,7 +67,7 @@
     This can be caused by many factors. You need to make sure the module is installed for your versions of Python.
     Run ``conda list`` to obtain the packages installed using conda in the active environment.
 
-- *I am trying to run buildingdamage.ipynb on my computer but nothing happens.*
+- *I am trying to run building_dmg.ipynb on my computer but nothing happens.*
 
     We assume that you are running Jupyter Notebook in your browser. Run each individual cell 
     by clicking >|Run. The cursor (box) will highlight the next cell. The actual calculation is called 

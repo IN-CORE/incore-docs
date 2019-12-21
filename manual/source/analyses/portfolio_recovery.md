@@ -42,21 +42,22 @@ code snipet:
     bldg_portfolio_recovery = BuildingPortfolioRecoveryAnalysis(client)
 
     # Load input datasets
-    bldg_portfolio_recovery.load_remote_input_dataset("building_data", bldg_data_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("occupancy_mapping", occupancy_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("building_damage", bldg_damage_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("dmg_ratios", mean_repair_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("utility", utility_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("utility_partial", utility_partial_dataset) 
-    bldg_portfolio_recovery.load_remote_input_dataset("coefFL", coefFL_dataset) 
+    bldg_portfolio_recovery.load_remote_input_dataset("building_data", bldg_data_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("occupancy_mapping", occupancy_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("building_damage", bldg_damage_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("dmg_ratios", mean_repair_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("utility", utility_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("utility_partial", utility_partial_dataset)
+    bldg_portfolio_recovery.load_remote_input_dataset("coefFL", coefFL_dataset)
 
     # Set parameters
     bldg_portfolio_recovery.set_parameter("uncertainty", True)
-    bldg_portfolio_recovery.set_parameter("sample_size", 35)
-    bldg_portfolio_recovery.set_parameter("random_sample_size", 50)
-    bldg_portfolio_recovery.set_parameter("no_of_weeks", 100)
+    bldg_portfolio_recovery.set_parameter("sample_size", 35)  # default none. Gets size form input dataset
+    bldg_portfolio_recovery.set_parameter("random_sample_size", 50)  # default 10000
+    bldg_portfolio_recovery.set_parameter("no_of_weeks", 100)  # default 250
 
+    # Creates two output files building-recovery.csv and portfolio-recovery.csv
     bldg_portfolio_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb)
+full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/develop/notebooks/portfolio_recovery.ipynb)
