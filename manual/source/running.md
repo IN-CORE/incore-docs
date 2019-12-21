@@ -5,7 +5,7 @@
 
 - Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
     ```
-        conda install jupyter
+    conda install jupyter
     ```
   
 - Download the **Building damage analysis** Jupyter Notebook (<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb>)

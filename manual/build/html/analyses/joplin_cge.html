@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Joplin Computable General Equilibrium (CGE) &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mean damage" href="meandamage.html" />
+    <link rel="prev" title="Housing unit allocation" href="housingunitallocation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IN-CORE Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyincore.html">pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running.html">Testing and Running</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">Analyses</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">Cummulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epfdamage.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meandamage.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">Tornado Electric Power Network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">Water facility damage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IN-CORE Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyincore.html">pyIncore</a> &raquo;</li>
+        
+          <li><a href="../analyses.html">Analyses</a> &raquo;</li>
+        
+      <li>Joplin Computable General Equilibrium (CGE)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/analyses/joplin_cge.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="joplin-computable-general-equilibrium-cge">
+<h1>Joplin Computable General Equilibrium (CGE)<a class="headerlink" href="#joplin-computable-general-equilibrium-cge" title="Permalink to this headline">¶</a></h1>
+<p>A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple
+data sources to reflect the interactions of households, firms and relevant government entities as they contribute
+to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital,
+using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production
+sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land and labor
+to produce goods and services for both domestic consumption and export; (3) the government sector that collects
+taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world.</p>
+<p>The output of this analysis are CSV files with domestic supply, employment and household income.</p>
+<p><strong>Related publications</strong></p>
+<p><strong>Input parameters</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model_iterations</code> <sup>*</sup></td>
+<td><code>int</code></td>
+<td>Iterations</td>
+<td>Number of dynamic model iterations.</td>
+</tr>
+<tr>
+<td><code>solver_path</code> <sup>*</sup></td>
+<td><code>str</code></td>
+<td>Solver path</td>
+<td>Path to <strong>ipopt</strong> package.</td>
+</tr>
+</tbody>
+</table><p><strong>Input datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SAM</code> <sup>*</sup></td>
+<td><code>incore:joplinCGEsam</code></td>
+<td>Social matrix</td>
+<td>A social accounting matrix.</td>
+</tr>
+<tr>
+<td><code>BB</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEbb</code></td>
+<td>Capital composition</td>
+<td>A matrix of functioning capital.</td>
+</tr>
+<tr>
+<td><code>IOUT</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEiout</code></td>
+<td>Government parameters</td>
+<td>A matrix tax revenue transfer.</td>
+</tr>
+<tr>
+<td><code>MISC</code> <sup>*</sup></td>
+<td><code>incore:joplinCGEmisc</code></td>
+<td>Parameters</td>
+<td>Data of employment, capital and households <br>in the economy.</td>
+</tr>
+<tr>
+<td><code>MISCH</code> <sup>*</sup></td>
+<td><code>incore:joplinCGEmisch</code></td>
+<td>Supply elasticity</td>
+<td>Elasticities for the supply of labor.</td>
+</tr>
+<tr>
+<td><code>LANDCAP</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGElandcap</code></td>
+<td>Land capital</td>
+<td>Changes in the price of physical capital.</td>
+</tr>
+<tr>
+<td><code>EMPLOY</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEemploy</code></td>
+<td>Employment</td>
+<td>Commercial sector employment data</td>
+</tr>
+<tr>
+<td><code>IGTD</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEigtd</code></td>
+<td>Exogenous payment</td>
+<td>A matrix of exogenous transfer payment.</td>
+</tr>
+<tr>
+<td><code>TAUFF</code> <sup>*</sup></td>
+<td><code>incore:joplinCGEtauff</code></td>
+<td>Tax rates</td>
+<td>Social security tax rates.</td>
+</tr>
+<tr>
+<td><code>JOBCR</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEjobcr</code></td>
+<td>Labor</td>
+<td>A matrix of workers groups in the economy.</td>
+</tr>
+<tr>
+<td><code>OUTCR</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEoutcr</code></td>
+<td>Commuter laborers</td>
+<td>A matrix of Joplin commuting workers.</td>
+</tr>
+<tr>
+<td><code>sector_shocks</code> <sup>*</sup></td>
+<td><code>incore:JoplinCGEshocks</code></td>
+<td>Capital shocks</td>
+<td>Building states to capital <br>shocks per sector.</td>
+</tr>
+</tbody>
+</table><p><strong>Output datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domestic-supply</code> <sup>*</sup></td>
+<td><code>joplincgeanalysis</code></td>
+<td>Supply results</td>
+<td>A dataset containing domestic <br>supply results (format: CSV).</td>
+</tr>
+<tr>
+<td><code>employment</code> <sup>*</sup></td>
+<td><code>joplincgeanalysis</code></td>
+<td>Employment results</td>
+<td>A dataset  of employment. <br>(format: CSV).</td>
+</tr>
+<tr>
+<td><code>household-income</code> <sup>*</sup></td>
+<td><code>joplincgeanalysis</code></td>
+<td>Income results</td>
+<td>A dataset of household income. <br>(format: CSV).</td>
+</tr>
+</tbody>
+</table><p><small>(* required)</small></p>
+<p><strong>Execution</strong></p>
+<p>code snipet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create Joplin CGE Model</span>
+    <span class="n">joplin_cge</span> <span class="o">=</span> <span class="n">JoplinCGEModel</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="c1"># Set analysis input datasets</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;SAM&quot;</span><span class="p">,</span> <span class="n">SAM</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;BB&quot;</span><span class="p">,</span> <span class="n">BB</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;IOUT&quot;</span><span class="p">,</span> <span class="n">IOUT</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;MISC&quot;</span><span class="p">,</span> <span class="n">MISC</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;MISCH&quot;</span><span class="p">,</span> <span class="n">MISCH</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;LANDCAP&quot;</span><span class="p">,</span> <span class="n">LANDCAP</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;EMPLOY&quot;</span><span class="p">,</span> <span class="n">EMPLOY</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;IGTD&quot;</span><span class="p">,</span> <span class="n">IGTD</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;TAUFF&quot;</span><span class="p">,</span> <span class="n">TAUFF</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;JOBCR&quot;</span><span class="p">,</span> <span class="n">JOBCR</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;OUTCR&quot;</span><span class="p">,</span> <span class="n">OUTCR</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;sector_shocks&quot;</span><span class="p">,</span> <span class="n">sector_shocks</span><span class="p">)</span>
+
+    <span class="c1"># Set analysis parameters</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_path&quot;</span><span class="p">,</span> <span class="s2">&quot;ipopt&quot;</span><span class="p">)</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;model_iterations&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Run Joplin CGE model analysis</span>
+    <span class="n">joplin_cge</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb">joplin_cge.ipynb</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="meandamage.html" class="btn btn-neutral float-right" title="Mean damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="housingunitallocation.html" class="btn btn-neutral float-left" title="Housing unit allocation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

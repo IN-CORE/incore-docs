@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Transportation recovery &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Water facility damage" href="waterfacilitydamagev1.html" />
+    <link rel="prev" title="Tornado Electric Power Network (EPN) damage" href="tornadoepndamage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IN-CORE Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyincore.html">pyIncore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running.html">Testing and Running</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">Analyses</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">Cummulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epfdamage.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meandamage.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="montecarlofailureprobability.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non_structural_building_damage.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepndamage.html">Tornado Electric Power Network (EPN) damage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="waterfacilitydamagev1.html">Water facility damage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Example Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IN-CORE Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyincore.html">pyIncore</a> &raquo;</li>
+        
+          <li><a href="../analyses.html">Analyses</a> &raquo;</li>
+        
+      <li>Transportation recovery</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/analyses/transportation_recovery.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="transportation-recovery">
+<h1>Transportation recovery<a class="headerlink" href="#transportation-recovery" title="Permalink to this headline">¶</a></h1>
+<p>This analysis computes the damage to bridges, first calling the bridge damage analysis. It then uses nodes and links
+in transportation path and Average Daily Traffic (ADT) data of bridges to calculate a transportation network post-disaster recovery.
+Additionally, the analysis can be used in stochastic calculations with an integer value being imported
+to seed the random number generator.</p>
+<p>The output of this analysis is a CSV file with recovery trajectory timelines and data.</p>
+<p><strong>Input Parameters</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pm</code> <sup>*</sup></td>
+<td><code>int</code></td>
+<td>Performance metrics</td>
+<td>Name of the result dataset.</td>
+</tr>
+<tr>
+<td><code>ini_num_population</code> <sup>*</sup></td>
+<td><code>int</code></td>
+<td>Population number</td>
+<td>An initial population number.</td>
+</tr>
+<tr>
+<td><code>population_size</code> <sup>*</sup></td>
+<td><code>int</code></td>
+<td>Population size</td>
+<td>A population size.</td>
+</tr>
+<tr>
+<td><code>num_generation</code> <sup>*</sup></td>
+<td><code>int</code></td>
+<td>Number generation</td>
+<td>Number of iterations per scenario.</td>
+</tr>
+<tr>
+<td><code>mutation_rate</code> <sup>*</sup></td>
+<td><code>float</code></td>
+<td>Mutation rate</td>
+<td>Mutation rate for the NSGA-II algorithm used for recovery rate.</td>
+</tr>
+<tr>
+<td><code>crossover_rate</code> <sup>*</sup></td>
+<td><code>float</code></td>
+<td>Crossover rate</td>
+<td>Crossover rate for the NSGA-II algorithm used for recovery rate.</td>
+</tr>
+<tr>
+<td><code>num_cpu</code></td>
+<td><code>int</code></td>
+<td>Number of CPUs</td>
+<td>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</td>
+</tr>
+</tbody>
+</table><p><strong>Input Datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridges</code> <sup>*</sup></td>
+<td><code>ergo:bridges</code></td>
+<td>Bridge dataset</td>
+<td>A bridge dataset.</td>
+</tr>
+<tr>
+<td><code>nodes</code> <sup>*</sup></td>
+<td><code>ergo:roadNetwork</code></td>
+<td>Rad nodes</td>
+<td>A road network dataset.</td>
+</tr>
+<tr>
+<td><code>links</code> <sup>*</sup></td>
+<td><code>ergo:roadNetwork</code></td>
+<td>Road links</td>
+<td>A road network dataset.</td>
+</tr>
+<tr>
+<td><code>bridge_damage_value</code> <sup>*</sup></td>
+<td><code>incore:bridgeDamageValue</code></td>
+<td>Bridge damages</td>
+<td>A bridge dataset.</td>
+</tr>
+<tr>
+<td><code>unrepaired_bridge</code> <sup>*</sup></td>
+<td><code>incore:unrepairedBridge</code></td>
+<td>Unrepaired bridges</td>
+<td>An unrepaired bridge dataset.</td>
+</tr>
+<tr>
+<td><code>ADT</code> <sup>*</sup></td>
+<td><code>incore:ADT</code></td>
+<td>Bridge traffic</td>
+<td>A dataset of daily traffic.</td>
+</tr>
+</tbody>
+</table><p><strong>Output Datasets</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>key name</th>
+<th>type</th>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>optimal_solution_of_bridge_repair_schedule</code></td>
+<td><code>incore:transportationRepairSchedule</code></td>
+<td>Repair schedule</td>
+<td>A dataset containing results (format: CSV).</td>
+</tr>
+<tr>
+<td><code>overall_transportation_recovery_trajectory</code></td>
+<td><code>incore:transportationRecovery</code></td>
+<td>Recovery trajectory</td>
+<td>A dataset containing results (format: CSV).</td>
+</tr>
+</tbody>
+</table><p><small>(* required)</small></p>
+<p><strong>Execution</strong></p>
+<p>code snipet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create transportation recovery instance</span>
+    <span class="n">transportation_recovery</span> <span class="o">=</span> <span class="n">TransportationRecovery</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="c1"># Load input datasets</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;links&quot;</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;bridges&#39;</span><span class="p">,</span> <span class="n">bridges</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;bridge_damage_value&#39;</span><span class="p">,</span> <span class="n">bridge_damage</span><span class="p">)</span>
+    <span class="n">transportation_recovsery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;unrepaired_bridge&#39;</span><span class="p">,</span> <span class="n">unrepaired</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s1">&#39;ADT&#39;</span><span class="p">,</span> <span class="n">ADT_data</span><span class="p">)</span>
+
+    <span class="c1"># Set analysis parameters</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;pm&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s1">&#39;ini_num_population&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;population_size&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_generation&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;mutation_rate&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;crossover_rate&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="c1"># Run transportation recovery analysis</span>
+    <span class="n">transportation_recovery</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb">transportation_recovery.ipynb</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="waterfacilitydamagev1.html" class="btn btn-neutral float-right" title="Water facility damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tornadoepndamage.html" class="btn btn-neutral float-left" title="Tornado Electric Power Network (EPN) damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
