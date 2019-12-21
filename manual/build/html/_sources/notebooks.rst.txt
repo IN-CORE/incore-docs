@@ -11,4 +11,4 @@ Example Notebooks
 Download the full directory of the Notebooks above:
 
 - Joplin Notebook :download:`zip <notebooks/Joplin_20191220.zip>`
-- Seaside building damage Notebook :download:`zip <notebooks/Seaside_20191219.zip>`
+- Seaside building damage Notebook :download:`zip <notebooks/Seaside_20191220.zip>`
