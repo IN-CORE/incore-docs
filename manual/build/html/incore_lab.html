@@ -193,9 +193,8 @@
 </style>
 <div class="section" id="in-core-lab">
 <h1>IN-CORE Lab<a class="headerlink" href="#in-core-lab" title="Permalink to this headline">¶</a></h1>
-<p><img alt="IN-CORE Lab login." src="_images/juplab_login.jpg" /></p>
-<p>A user can run and edit Jupyter Notebooks interactively in NCSA’s IN-CORE Lab running at <a class="reference external" href="https://incore.ncsa.illinois.edu/lab">https://incore.ncsa.illinois.edu/lab</a>. The IN-CORE Lab is a customized <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/#">Jupyter Lab</a> with <strong>pyIncore</strong> installed on the server running Linux OS.</p>
-<p>Login to IN-CORE Lab with your IN-CORE account info. You might see a button to <strong>Start Server</strong> followed by a progress bar.</p>
+<p>A user can run and edit Jupyter Notebooks interactively in IN-CORE Lab. You can access IN-CORE Lab at https://incore.ncsa.illinois.edu. The IN-CORE Lab is a customized <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/#">Jupyter Lab</a> with <strong>pyIncore</strong> installed on the Linux server.</p>
+<p>When you access it, you might see a button to <strong>Start Server</strong> followed by a progress bar.</p>
 <p><img alt="IN-CORE Lab progress bar." src="_images/juplab0_start.jpg" /></p>
 <p>Main Incore Lab’s dashboard tab:</p>
 <p><img alt="IN-CORE Lab dashboard tab." src="_images/juplab0.jpg" /></p>
@@ -204,7 +203,6 @@
 <p>In the <a class="reference internal" href="running.html"><span class="doc">Running Notebook locally</span></a> section we described how to run a Building Damage Notebook locally as an example, but you can develop and run all sorts of notebooks as you explore.
 The following section focuses on <strong>step-by-step instructions</strong> of running Notebooks on the IN-CORE Lab.</p>
 <ol class="simple">
-<li><p>Create a credential file with IN-CORE username/password if you haven’t done it yet. See [IN-CORE Lab](incore_lab.md#IN-CORE Lab) section.</p></li>
 <li><p>Upload the Building Damage Analysis notebook from your local machine to IN-CORE lab by clicking the <code class="docutils literal notranslate"><span class="pre">Upload</span></code> icon in the left panel and select <strong>buildingdamage.ipybn</strong>.</p></li>
 </ol>
 <p><img alt="IN-CORE Lab upload panel." src="_images/juplab9_nbook.jpg" /></p>
@@ -219,18 +217,9 @@ The following section focuses on <strong>step-by-step instructions</strong> of r
 <p>This section shows user how to access <a class="reference internal" href="webtools.html"><span class="doc">IN-CORE Web Tools</span></a> on IN-CORE Lab. The IN-CORE Lab is a customized Jupyter Lab with <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">Login</span></code> button in the main window and two IN-CORE-related menus, <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">apps</span></code> and <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">docs</span></code>.</p>
 <p><img alt="IN-CORE Lab with custom icon and menus." src="_images/juplab0_arrows.jpg" /></p>
 <ol class="simple">
-<li><p>Click on <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">Login</span></code> button in the main window. For login use the same username and password.</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">Authenticator</span></code> button in the main window.</p></li>
+<li><p>The Fragility, Data and Hazard Explorers under <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">apps</span></code> menu become enabled after pressing the <code class="docutils literal notranslate"><span class="pre">LOGIN</span></code> button</p></li>
 </ol>
-<p><img alt="Web Tools on the IN-CORE Lab login." src="_images/juplab1.jpg" /></p>
-<ol class="simple">
-<li><p>This login process generates a file named <strong>user.json</strong>. It appears in the <strong>File list manager</strong> on the left side. The file contains an authentication token required for development of new analyses using IN-CORE’s Application Programming Interface (<a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a>).</p></li>
-</ol>
-<p><img alt="Web Tools on the IN-CORE Lab token file." src="_images/juplab2.jpg" /></p>
-<p><img alt="Web Tools on the IN-CORE Lab, details of the token file." src="_images/juplab2_json.jpg" /></p>
-<ol class="simple">
-<li><p>The Fragility, Data and Hazard Explorers under <code class="docutils literal notranslate"><span class="pre">INCORE</span> <span class="pre">apps</span></code> menu become enabled after pressing the <code class="docutils literal notranslate"><span class="pre">LOGIN</span></code> button AND reloading the current page in the browser. <strong>NOTE</strong>: A user must reload the whole Jupyter dashboard page (above) using the <code class="docutils literal notranslate"><span class="pre">Reload</span></code> button of the browser, not the Refresh File List (part of Jupyter’s file navigation) otherwise the following Failure Warning appears:</p></li>
-</ol>
-<p><img alt="Web Tools on the IN-CORE Lab warning." src="_images/juplab3_no_reload.jpg" /></p>
 <p>The <a class="reference internal" href="webtools.html"><span class="doc">IN-CORE Web Tools</span></a> Viewers become part of INCORE Lab as shown below for the Fragility viewer.</p>
 <p><img alt="Fragility viewer on the IN-CORE Lab." src="_images/juplab4_fragility.jpg" /></p>
 </div>
