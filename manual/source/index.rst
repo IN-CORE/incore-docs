@@ -55,8 +55,9 @@ It allows users to develop/run/test their scientific model with pyIncore in thei
 Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
 understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
 
-Below you can find two Jupyter notebook `research examples <notebooks>`_ that demonstrate IN-CORE:
-1) Joplin testbed :download:`zip <notebooks/Joplin_20191220.zip>`, 2) Seaside testbed :download:`zip <notebooks/Seaside_20191219.zip>`.
+Below you can find two Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
+1) `Joplin testbed <notebooks/Joplin%20Tornado%20Juypter%20Notebook%20Example.html>`_ :download:`zip <notebooks/Joplin_20191220.zip>`,
+2) `Seaside testbed <notebooks/Notebook1_SeasideBuildingDamage.html>`_ :download:`zip <notebooks/Seaside_20191219.zip>`.
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
 .. |INCORE| raw:: html
