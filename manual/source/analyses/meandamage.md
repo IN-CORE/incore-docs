@@ -41,7 +41,7 @@ code snipet:
 
     # Load input datasets
     md.set_input_dataset("damage", bridge_damage_result)
-    md.load_remote_input_dataset("dmg_ratios", "5a284f2cc7d30d13bc081f96")
+    md.load_remote_input_dataset("dmg_ratios", dmg_ratios_id)
 
     # Specify the result name
     result_name = "result_name"
@@ -55,4 +55,4 @@ code snipet:
     md.run_analysis()
 ```
 
-full analysis: [test_meandamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/test_mean_damage.ipynb)
+full analysis: [mean_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_damage.ipynb)

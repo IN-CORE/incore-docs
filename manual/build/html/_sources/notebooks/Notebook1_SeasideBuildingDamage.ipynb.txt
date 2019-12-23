@@ -49,30 +49,16 @@
     "\n",
     "| Module | Version | Notes |\n",
     "| --- | --- | --- |\n",
-    "| pyIncore | 0.5.3 | see: https://incore.ncsa.illinois.edu/doc/incore/install_pyincore.html |\n",
-    "| pandas | 0.25.3 | used for data organization | \n",
+    "| pyIncore | =>0.5.3 | see: https://incore.ncsa.illinois.edu/doc/incore/install_pyincore.html |\n",
     "| geopandas | 0.6.2 | used for working with geospatial data | \n",
     "| matplotlib | 3.1.2 | used for plotting results |\n",
     "| IPython | 7.10.2 | used for displaying results in table |\n",
     "| ipyleaflet | 0.10.5 | used for geospatial visualization |\n",
     "| ipywidgets | 7.5.1 | used for interacting with geospatial results |\n",
     "| branca | 0.3.1 | used in geospatial visualization | \n",
-    "| map_creation_backend.py* | - | backend code used for geospatial visualization |\n",
+    "| map_creation_backend.py* | - | backend code used for geospatial visualization already included in the zip file |\n",
     "\n",
     "\\*map_creation_backend.py is used to geospatially visualize the results of pyincore within the notebook. The geospatial results are interactive. The above modules need to be installed for map_creation_backend.py to run. \n",
-    "\n",
-    "The directory structure of this notebook should be as follows:\n",
-    "\n",
-    "\n",
-    "20191214_Seaside_Dist/  \n",
-    "|  \n",
-    "└Notebook1_SeasideBuildingDamage.ipynb  \n",
-    "|  \n",
-    "└-backend/  \n",
-    "└----map_creation_backend.py  \n",
-    "|  \n",
-    "└-images/  \n",
-    "└----images used in notebook  \n",
     "\n",
     "\n",
     "#### 2.2. Importing pyIncore Modules\n",
@@ -892,6 +878,15 @@
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
    "version": "3.7.5"
+  },
+  "pycharm": {
+   "stem_cell": {
+    "cell_type": "raw",
+    "source": [],
+    "metadata": {
+     "collapsed": false
+    }
+   }
   }
  },
  "nbformat": 4,

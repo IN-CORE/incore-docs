@@ -9,7 +9,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [epfdamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epfdamage.ipynb)<br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb)<br />
 [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb)<br />
-[test_meandamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/test_mean_damage.ipynb)<br />
+[mean_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_damage.ipynb)<br />
 [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/montecarlofailureprobability.ipynb)<br />
 [non_structural_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_damage.ipynb)<br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg.ipynb)<br />
