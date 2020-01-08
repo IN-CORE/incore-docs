@@ -47,7 +47,7 @@ In the Installation section we provide instructions for environment manager usin
 
 7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```
-        conda config --add channels conda-forge
+    conda config --add channels conda-forge
     ```
 
 ### Mac and Linux OS
@@ -70,19 +70,9 @@ In the Installation section we provide instructions for environment manager usin
 
 7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```
-        conda config --add channels conda-forge
-      ```
-
-8. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
-    ```
-        conda install jupyter
+    conda config --add channels conda-forge
     ```
    
-Mac OS specific notes: We use `matplotlib` library to create graphs. There is a Mac specific installation issue addressed at StackOverflow [link 1](https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx) and [link 2](https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python). In a nutshell, insert line:
-    ```
-        backend : Agg
-    ```
-    
-into `~/.matplotlib/matplotlibrc` file. You must create the file (`matplotlibrc`) if it does not exist.
+   
 
 
