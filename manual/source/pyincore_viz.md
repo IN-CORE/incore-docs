@@ -2,17 +2,15 @@
 
 Visualization package associated with pyIncore is called **pyIncore-viz**. It contains Python packages 
 required for visualizing and disseminating the IN-CORE results, mainly via the Jupyter Notebooks. The major 
-components of visualization package are 1) **matplotlib** for plotting the data, 2) **** for 
+components of visualization package are 1) `matplotlib` for plotting the data, 2) **** for 
  
 ### Prerequisites
 
-- **pyIncore**
-    A user must have a **pyIncore** package installed.
+- **pyIncore**: A user must have a pyIncore package installed. See [pyIncore section](https://incore.ncsa.illinois.edu/pyincore.html) for details.
 
-- **Virtual environment**
-    We recommend that users work with virtual environment managers called [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+- **Virtual environment**: We recommend that users work with virtual environment managers called [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-- Mac OS specific notes: We use `matplotlib` library to create graphs. There is a Mac specific installation issue addressed 
+- Mac OS specific notes: There is a Mac specific `matplotlib` installation issue addressed 
   at StackOverflow [link 1](https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx) and [link 2](https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python). In a nutshell, insert line:
     ```
         backend : Agg
