@@ -6,6 +6,7 @@ Analyses
 
     analyses/bridgedamage
     analyses/buildingdamage
+    analyses/buildingfunctionality
     analyses/cumulative_building_damage
     analyses/epfdamage.md
     analyses/housingunitallocation

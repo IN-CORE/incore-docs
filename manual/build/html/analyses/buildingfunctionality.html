@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cummulative building damage &mdash; IN-CORE Manual 1.0.0 documentation</title>
+  <title>Building functionality &mdash; IN-CORE Manual 1.0.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Electric power facility damage" href="epfdamage.html" />
-    <link rel="prev" title="Building functionality" href="buildingfunctionality.html" /> 
+    <link rel="next" title="Cummulative building damage" href="cumulative_building_damage.html" />
+    <link rel="prev" title="Building damage" href="buildingdamage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,8 +96,8 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../analyses.html">Analyses</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="bridgedamage.html">Bridge damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="buildingdamage.html">Building damage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="buildingfunctionality.html">Building functionality</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Cummulative building damage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_damage.html">Cummulative building damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="epfdamage.html">Electric power facility damage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">Housing unit allocation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
@@ -173,13 +173,13 @@
         
           <li><a href="../analyses.html">Analyses</a> &raquo;</li>
         
-      <li>Cummulative building damage</li>
+      <li>Building functionality</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/analyses/cumulative_building_damage.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/analyses/buildingfunctionality.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -216,12 +216,15 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="cummulative-building-damage">
-<h1>Cummulative building damage<a class="headerlink" href="#cummulative-building-damage" title="Permalink to this headline">¶</a></h1>
-<p>This analysis computes building damage based on two hazards, an earthquake and a tsunami.</p>
-<p>The process for computing the structural damage is done externally and the results for earthquake and tsunami
-are imported to the analysis. The damage intervals are then calculated from combined limit states.</p>
-<p>The output of this analysis is a CSV file with probabilities of damage.</p>
+<div class="section" id="building-functionality">
+<h1>Building functionality<a class="headerlink" href="#building-functionality" title="Permalink to this headline">¶</a></h1>
+<p>The building functionality analysis can be used to calculate building functionality probabilities considering
+two situations: buildings are in at least a damage state 2 or greater or buildings are not damaged but electric
+power is not available to the building. Whether buildings can receive electrical power is assumed to depend on
+the interdependency between buildings and substations, and between buildings and poles in close proximity.</p>
+<p>If both the nearest pole to the building and the substation where buildings belong to its service area are
+functional, buildings are considered to be able to receive electric power.</p>
+<p>The output of this analysis is a CSV file with probabilities of functionality.</p>
 <p><strong>Input parameters</strong></p>
 <table border="1" class="docutils">
 <thead>
@@ -243,7 +246,13 @@ are imported to the analysis. The damage intervals are then calculated from comb
 <td><code>num_cpu</code></td>
 <td><code>int</code></td>
 <td>Number of CPUs</td>
-<td>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</td>
+<td>Number of CPUs used for parallel computation. <br>Default is <em>1</em>.</td>
+</tr>
+<tr>
+<td><code>num_samples</code></td>
+<td><code>int</code></td>
+<td>Number of CPUs</td>
+<td>Number of iterations of running the probabilistic model.</td>
 </tr>
 </tbody>
 </table><p><strong>Input datasets</strong></p>
@@ -258,16 +267,28 @@ are imported to the analysis. The damage intervals are then calculated from comb
 </thead>
 <tbody>
 <tr>
-<td><code>eq_bldg_dmg</code> <sup>*</sup></td>
-<td><code>ergo:buildingDamageVer4</code></td>
+<td><code>building_damage_mcs_samples</code> <sup>*</sup></td>
+<td><code>incore:buildingDamageMcSamples</code></td>
 <td>Building dataset</td>
-<td>A building dataset with earthquake damage.</td>
+<td>Buildings damage dataset.</td>
 </tr>
 <tr>
-<td><code>tsunami_bldg_dmg</code> <sup>*</sup></td>
-<td><code>ergo:buildingDamageVer4</code></td>
-<td>Building dataset</td>
-<td>A building dataset with tsunami damage.</td>
+<td><code>substations_damage_mcs_samples</code> <sup>*</sup></td>
+<td><code>incore:substationsDamageMcSamples</code></td>
+<td>Substation dataset</td>
+<td>Substations damage dataset.</td>
+</tr>
+<tr>
+<td><code>poles_damage_mcs_samples</code> <sup>*</sup></td>
+<td><code>incore:polesDamageMcSamples</code></td>
+<td>Pole dataset</td>
+<td>Electric poles dataset.</td>
+</tr>
+<tr>
+<td><code>interdependency_dictionary</code> <sup>*</sup></td>
+<td><code>incore:buildingInterdependencyDict</code></td>
+<td>Interdependency dataset</td>
+<td>A dataset of interdependency between buildings and substations and poles.</td>
 </tr>
 </tbody>
 </table><p><strong>Output datasets</strong></p>
@@ -282,34 +303,13 @@ are imported to the analysis. The damage intervals are then calculated from comb
 </thead>
 <tbody>
 <tr>
-<td><code>combined-result</code> <sup>*</sup></td>
-<td><code>ergo:buildingDamageVer4</code></td>
+<td><code>result</code> <sup>*</sup></td>
+<td><code>incore:epfVer1</code></td>
 <td>Results</td>
 <td>A dataset containing results <br>(format: CSV).</td>
 </tr>
 </tbody>
 </table><p><small>(* required)</small></p>
-<p><strong>Execution</strong></p>
-<p>code snipet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create cumulative Building Damage</span>
-    <span class="n">cumulative_bldg_dmg</span> <span class="o">=</span> <span class="n">CumulativeBuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-
-    <span class="c1"># Load input datasets</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;eq_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">eq_bldg_dmg_id</span><span class="p">)</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;tsunami_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">tsunami_bldg_dmg_id</span><span class="p">)</span>
-
-    <span class="c1"># Specify the result name</span>
-    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;cumulative_bldg_dmg_result&quot;</span>
-
-    <span class="c1"># Set analysis parameters</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-
-    <span class="c1"># Run Cumulative Building Damage Analysis</span>
-    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_damage.ipynb">cumulative_building_damage.ipynb</a></p>
 </div>
 
 
@@ -320,10 +320,10 @@ are imported to the analysis. The damage intervals are then calculated from comb
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="epfdamage.html" class="btn btn-neutral float-right" title="Electric power facility damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cumulative_building_damage.html" class="btn btn-neutral float-right" title="Cummulative building damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="buildingfunctionality.html" class="btn btn-neutral float-left" title="Building functionality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="buildingdamage.html" class="btn btn-neutral float-left" title="Building damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
