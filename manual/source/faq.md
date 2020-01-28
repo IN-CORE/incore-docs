@@ -74,12 +74,19 @@
     in the last cell with the `bldg_dmg.run_analysis()` command. When successful a Comma delimited 
     file (csv) appears in the Notebook and in the Jupyter tree under Files tab.
     
+- *Can I run files locally?*
+
+    Yes. Users can run datasets stored on their local computers. It is, however not possible to use certain resources  such as fragility locally. 
+    These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
+    section of this documentation.
+
 ### Creating and running analyses
 
 - *What is a mapping and how do I create one?*
 
     We use mapping to associate each element of a given set such as Building inventory with one or more 
-    elements of a second set of Fragility curves.
+    elements of a second set of Fragility curves. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
+    section of this documentation.
 
 - *Is mapping related to a map?*
 
