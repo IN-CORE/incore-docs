@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Version [Unreleased]
 
-## [1.1.0] - 2020-02-07
+### Fixed
+- Broken links to GitHub notebooks
 
 ## [1.0.0] - 2019-12-17
 
@@ -21,5 +22,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Folder structure.
 
 ### Fixed
-- Broken links to GitHub notebooks
 - Typos, errors
