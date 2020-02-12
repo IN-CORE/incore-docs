@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed.
 - Removed notebook installation from Prerequisites.
 
+### Fixed
+- Broken links to GitHub notebooks
+
 ## [1.0.0] - 2019-12-17
 
 ## [0.5.2] - 2019-11-27
