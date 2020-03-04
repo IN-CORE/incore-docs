@@ -1,3 +1,10 @@
+##Getting Started with pyIncore - An Overview and the first walkthrough Tutorial
+
+This page is an overview of the **IN-CORE** and **pyIncore** documentation and related resources.
+
+Learn what pyIncore is all about on our homepage or in the tutorial.
+
+
 ###Installing an official release
 
 **pyIncore** and its dependency, **pyincore-viz** are available as conda packages for macOS, 
