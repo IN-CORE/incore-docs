@@ -100,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="analyses.html">Analyses</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="pyincore_viz.html">pyIncore-viz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="incore_lab.html">IN-CORE Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webtools.html">IN-CORE Web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials and Tips</a></li>
@@ -239,7 +240,7 @@ in your virtual environment on Miniconda distribution.</p></li>
 </div>
 </li>
 <li><p>Add <a class="reference external" href="https://conda-forge.org/">conda-forge</a> package repository to your environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
 </li>
@@ -260,19 +261,11 @@ in your virtual environment on Miniconda distribution.</p></li>
 </div>
 </li>
 <li><p>Add <a class="reference external" href="https://conda-forge.org/">conda-forge</a> package repository to your environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-</pre></div>
-</div>
-</li>
-<li><p>Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">install</span> <span class="n">jupyter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
 </li>
 </ol>
-<p>Mac OS specific notes: We use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library to create graphs. There is a Mac specific installation issue addressed at StackOverflow <a class="reference external" href="https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx">link 1</a> and <a class="reference external" href="https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python">link 2</a>. In a nutshell, insert line:
-<code class="docutils literal notranslate"><span class="pre">backend</span> <span class="pre">:</span> <span class="pre">Agg</span></code></p>
-<p>into <code class="docutils literal notranslate"><span class="pre">~/.matplotlib/matplotlibrc</span></code> file. You must create the file (<code class="docutils literal notranslate"><span class="pre">matplotlibrc</span></code>) if it does not exist.</p>
 </div>
 </div>
 

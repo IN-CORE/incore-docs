@@ -10,6 +10,7 @@ Introduction
     self
     account
     pyIncore <pyincore>
+    pyIncore-viz <pyincore_viz>
     incore_lab
     webtools
     tutorials

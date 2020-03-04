@@ -6,6 +6,7 @@ Analyses
 
     analyses/bridgedamage
     analyses/buildingdamage
+    analyses/buildingfunctionality
     analyses/cumulative_building_damage
     analyses/epfdamage.md
     analyses/housingunitallocation
@@ -19,14 +20,7 @@ Analyses
     analyses/portfolio_recovery
     analyses/tornadoepndamage
     analyses/transportation_recovery
-    analyses/waterfacilitydamagev1
-
-
-
-
-
-
-
+    analyses/waterfacilitydamage
 
 
 
