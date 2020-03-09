@@ -125,17 +125,15 @@
 
 - *How do I import datasets to IN-CORE service?*
 
-    Have we decided where to answer it? 
-    1) Notebook example with other Notebooks, linked from FAQ, 
-    2) Start editing Technical documentation page (we have it ready but no content yet), 
-    3) Somewhere else? (edited) 
+    Coming soon.
     
-    @Gowtham @Chris Navarro I added Milad’s question and your answer here: https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/can-i-simulate-and-upload-earthquakes-to-incore
-opensource.ncsa.illinois.eduopensource.ncsa.illinois.edu
-Can I simulate and upload earthquakes to incore? - IN-CORE - Confluence
-I used an earthquake from hazard service for my analysis. The magnitude of this earthquake is large (magnitude = 7.9) and we got issues in econ. anal
+- *Can I create and use my own earthquakes? I used an earthquake from hazard service for my analysis but I need different intensities. 
+Do I need to upload simulated earthquakes to hazard service and then use it?
 
-Right now, I have flood fragility curves and surfaces developed for 15 building archetypes. Also, Hazard Model (Raster Map) for Lumberton, NC is already developed. Building Exposure data are fully included in a shapefile. So, the three-stage model (Hazard, Exposure, and vulnerability) is ready to be integrated into IN-CORE. Also, I learned some Python basics and I keep learning. I wonder if you could tell me how to start to integrate all of these data and do the analysis into IN CORE. If you have templates to read and analyze data it would be helpful. Also, is there a way to read 3D fragility. FYI, my fragility functions are based on raw data and not lognormally fitted.
+    Yes, you can define your own earthquake by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
+    similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
+    Currently you do need to upload your file to hazard service. For additional information 
+    see IN-CORE [wiki]((https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/answers/160863042?flashId=-1769862417)) page.
 
 - *Is Geopandas (package x) part of pyIncore?*
 
