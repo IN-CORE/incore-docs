@@ -44,11 +44,20 @@
     [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python), 
     OS specific [downloads](https://www.python.org/downloads/).
 
-    **Installing pyincore**
+    **Installing pyIncore**
 
-- *How do I check the installed version of **pyIncore**?*
+- *How do I check the installed version of pyIncore?*
 
     In your conda virtual environment type `conda list` and the output is a list of all installed Python packages including **pyIncore**.
+    
+- *How do I update pyIncore?*
+
+    - Open a terminal window
+    - Activate the environment where you installed pyIncore (for example, `conda activate pyincore`)
+    - Run the following command: 
+      ```
+        conda update -c in-core pyincore
+      ```
     
 - *Should I use virtual environment for running the pyIncore?*
 
@@ -60,7 +69,7 @@
     slightly differs for virtual environments and we will be happy to help you. Contact us at 
     <incore-dev@lists.illinois.edu>. 
 
-    **Running pyincore**
+    **Running pyIncore**
 
 - *I am getting “Module not Found" when I run pyIncore* 
 
@@ -79,6 +88,19 @@
     Yes. Users can run datasets stored on their local computers. It is, however not possible to use certain resources  such as fragility locally. 
     These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
+    
+- *I cannot install/update Jypyter Notebook. I encountered a* **EnvironmentNotWritableError** *while installing Jypyter Notebook.*
+
+- *I do not have full administrative privileges to my School/Company issued computer. The pyIncore or Jupyter Notebook does not work.*
+
+    Users may encounter issues depending on the administrative privileges they have on their computer. 
+    I downloaded [Miniconda](https://docs.conda.io/en/latest/miniconda.html) not having any reason to download [Anaconda](https://www.anaconda.com/distribution/) or miniconda. 
+    When needing to install/update jupyter notebook I encountered a EnvironmentNotWritableError. I tried to continue using 
+    the older version of conda. When I launched jupyter notebook and tried to run the building_dmg.ipynb file, I was unsuccessful. 
+    The second try, after the recommendation of a colleague, I installed Anaconda3 rather than miniconda and proceeded through the steps 
+    as instructed and had success.
+    
+- *How do I empty pyIncore's cache?*
 
 ### Creating and running analyses
 
@@ -100,6 +122,20 @@
     has assigned ID, an identifier, which uniquely identifies it for the services and *pyIncore*. The unique ID 
     is assigned when the set is uploaded to the IN-CORE services. For details how to do it see technical 
     documentation or contact us at <incore-dev@lists.illinois.edu>.
+
+- *How do I import datasets to IN-CORE service?*
+
+    Have we decided where to answer it? 
+    1) Notebook example with other Notebooks, linked from FAQ, 
+    2) Start editing Technical documentation page (we have it ready but no content yet), 
+    3) Somewhere else? (edited) 
+    
+    @Gowtham @Chris Navarro I added Milad’s question and your answer here: https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/can-i-simulate-and-upload-earthquakes-to-incore
+opensource.ncsa.illinois.eduopensource.ncsa.illinois.edu
+Can I simulate and upload earthquakes to incore? - IN-CORE - Confluence
+I used an earthquake from hazard service for my analysis. The magnitude of this earthquake is large (magnitude = 7.9) and we got issues in econ. anal
+
+Right now, I have flood fragility curves and surfaces developed for 15 building archetypes. Also, Hazard Model (Raster Map) for Lumberton, NC is already developed. Building Exposure data are fully included in a shapefile. So, the three-stage model (Hazard, Exposure, and vulnerability) is ready to be integrated into IN-CORE. Also, I learned some Python basics and I keep learning. I wonder if you could tell me how to start to integrate all of these data and do the analysis into IN CORE. If you have templates to read and analyze data it would be helpful. Also, is there a way to read 3D fragility. FYI, my fragility functions are based on raw data and not lognormally fitted.
 
 - *Is Geopandas (package x) part of pyIncore?*
 
@@ -130,3 +166,35 @@
     Boto3 is a package for connectivity with Amazon AWS. **pyIncore** does not use it however the warning comes 
     from the package build. We beleive that certain combination of conda channels causes the warning to appear. 
     A user can ignore the warning or additionally install **boto3**.
+ 
+### INCORE Lab and running analyses  
+    
+- *How do I empty cache in INCORE Lab?*
+
+    Downloaded datasets in INCORE Lab are being cached for faster access later on. The data is stored in user's home 
+    directory in folder `~/.incore/cache_data`. To delete content of the cache folder add following command in your Notebook:
+    ```
+        client = IncoreClient()
+        client.clear_cache()
+    ```
+
+### Working with Jupyter Notebooks
+
+-*How to access metadata of the loaded shapefiles inside the Jupyter Notebook?*
+   
+   A user can display all matadata associated with a shapefile by invoking inventory reader and running a loop 
+   through **properties** key:
+   ```
+        # load shapefile dataset with building inventory
+        bldg_dmg.load_remote_input_dataset("buildings", "5a284f0bc7d30d13bc081a28")
+        bldg_dataset = bldg_dmg.input_datasets['buildings']['value']
+
+        rdr = bldg_dataset.get_inventory_reader()
+        for row in rdr:
+            print(row['properties']['year_built'])
+   ```
+
+
+
+You can also post your questions at [https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)
+
