@@ -68,6 +68,9 @@
     however have to be present globally (e.g. gdal on Windows OS). Therefore pyIncore installation 
     slightly differs for virtual environments and we will be happy to help you. Contact us at 
     <incore-dev@lists.illinois.edu>. 
+    Note: Use Anaconda if you do not have full administrative privileges on your computer. It has been reported that 
+    Jupyter Notebook can't be subsequently installed in Miniconda environment. With Anaconda the Notebook is already 
+    pre-installed. 
 
     **Running pyIncore**
 
@@ -91,16 +94,24 @@
     
 - *I cannot install/update Jypyter Notebook. I encountered a* **EnvironmentNotWritableError** *while installing Jypyter Notebook.*
 
+    This error has been reported if you 1) use Miniconda and 2) do not have full administrative privileges on your computer. 
+    Jupyter Notebook is not part of Miniconda and it has to be installed separately. The Environment error reflects lack of installation 
+    privileges causes. Remove Miniconda and install **Anaconda** instead. The latter comes with pre-installed Jupyter Notebook.
+
 - *I do not have full administrative privileges to my School/Company issued computer. The pyIncore or Jupyter Notebook does not work.*
 
-    Users may encounter issues depending on the administrative privileges they have on their computer. 
-    I downloaded [Miniconda](https://docs.conda.io/en/latest/miniconda.html) not having any reason to download [Anaconda](https://www.anaconda.com/distribution/) or miniconda. 
-    When needing to install/update jupyter notebook I encountered a EnvironmentNotWritableError. I tried to continue using 
-    the older version of conda. When I launched jupyter notebook and tried to run the building_dmg.ipynb file, I was unsuccessful. 
-    The second try, after the recommendation of a colleague, I installed Anaconda3 rather than miniconda and proceeded through the steps 
-    as instructed and had success.
+    Check what version of Python (3.5+) and Miniconda/Anaconda are installed. Try to install Anaconda rather than Miniconda. 
+    If none of the above helps contact your System administrator and Contact us at <incore-dev@lists.illinois.edu>.
     
-- *How do I empty pyIncore's cache?*
+- *How do I empty pyIncore's local cache?*
+
+    The installation of pyIncore creates an **.incore** folder in your HOME directory to store cached files. The typical location 
+    of a HOME directory is `C:\Users\<username>` on WindowsOS, `/Users/<username>` on MacOS and `/home/<username>` on Linux based 
+    machines. Locate the folder in your HOME directory and delete the content of `cache_data` sub-folder.
+    
+    **Note**: The folders and files starting with "." (dot prefix) are hidden in Operating systems with Unix roots. 
+    There are few ways ([link1](https://nektony.com/how-to/show-hidden-files-on-mac) 
+    and [link2](https://macpaw.com/how-to/show-hidden-files-on-mac)) to view hidden files on your Mac.
 
 ### Creating and running analyses
 
