@@ -134,9 +134,11 @@
     is assigned when the set is uploaded to the IN-CORE services. For details how to do it see technical 
     documentation or contact us at <incore-dev@lists.illinois.edu>.
 
-- *How do I import datasets to IN-CORE service?*
+- *How do I import files to IN-CORE datasets service?*
 
-    Coming soon.
+    There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
+    **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
+    request with "attached" files directly to the service. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials).
     
 - *Can I create and use my own earthquakes? I used an earthquake from hazard service for my analysis but I need different intensities. 
 Do I need to upload simulated earthquakes to hazard service and then use it?
