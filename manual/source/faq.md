@@ -28,11 +28,13 @@
     
     In a nutshell, *conda* is a package manager, *Miniconda* is the conda installer, and *Anaconda* is a Python 
     distribution that also includes conda and 150+ automatically installed, open source packages and their 
-    dependencies that have been tested to work well together.  
+    dependencies that have been tested to work well together. 
+     
     
 - *How do I check what version of Python and Anaconda are installed?*
 
     The versions can be checked by running `python --version` and/or `import sys;sys.executable` in Python console.
+    
 
 - *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
 
@@ -43,12 +45,13 @@
     through various installations; [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/), 
     [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python), 
     OS specific [downloads](https://www.python.org/downloads/).
-
-    **Installing pyIncore**
+    
+####Installing pyIncore
 
 - *How do I check the installed version of pyIncore?*
 
     In your conda virtual environment type `conda list` and the output is a list of all installed Python packages including **pyIncore**.
+    
     
 - *How do I update pyIncore?*
 
@@ -58,6 +61,7 @@
       ```
         conda update -c in-core pyincore
       ```
+    
     
 - *Should I use virtual environment for running the pyIncore?*
 
@@ -70,14 +74,16 @@
     <incore-dev@lists.illinois.edu>. 
     Note: Use Anaconda if you do not have full administrative privileges on your computer. It has been reported that 
     Jupyter Notebook can't be subsequently installed in Miniconda environment. With Anaconda the Notebook is already 
-    pre-installed. 
+    pre-installed.
+    
 
-    **Running pyIncore**
+####Running pyIncore
 
 - *I am getting “Module not Found" when I run pyIncore* 
 
     This can be caused by many factors. You need to make sure the module is installed for your versions of Python.
     Run ``conda list`` to obtain the packages installed using conda in the active environment.
+    
 
 - *I am trying to run building_dmg.ipynb on my computer but nothing happens.*
 
@@ -86,11 +92,13 @@
     in the last cell with the `bldg_dmg.run_analysis()` command. When successful a Comma delimited 
     file (csv) appears in the Notebook and in the Jupyter tree under Files tab.
     
+    
 - *Can I run files locally?*
 
     Yes. Users can run datasets stored on their local computers. It is, however not possible to use certain resources  such as fragility locally. 
     These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
+    
     
 - *I cannot install/update Jypyter Notebook. I encountered a* **EnvironmentNotWritableError** *while installing Jypyter Notebook.*
 
@@ -98,10 +106,12 @@
     Jupyter Notebook is not part of Miniconda and it has to be installed separately. The Environment error reflects lack of installation 
     privileges causes. Remove Miniconda and install **Anaconda** instead. The latter comes with pre-installed Jupyter Notebook.
 
+
 - *I do not have full administrative privileges to my School/Company issued computer. The pyIncore or Jupyter Notebook does not work.*
 
     Check what version of Python (3.5+) and Miniconda/Anaconda are installed. Try to install Anaconda rather than Miniconda. 
     If none of the above helps contact your System administrator and Contact us at <incore-dev@lists.illinois.edu>.
+    
     
 - *How do I empty pyIncore's local cache?*
 
@@ -113,6 +123,7 @@
     There are few ways ([link1](https://nektony.com/how-to/show-hidden-files-on-mac) 
     and [link2](https://macpaw.com/how-to/show-hidden-files-on-mac)) to view hidden files on your Mac.
 
+
 ### Creating and running analyses
 
 - *What is a mapping and how do I create one?*
@@ -121,11 +132,13 @@
     elements of a second set of Fragility curves. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
 
+
 - *Is mapping related to a map?*
 
     We use noun mapping for *operation that associates each element of a given set with one or more elements 
     of a second set*. In *IN-CORE* and *pyIncore* specifically, for example a Building inventory (given set) 
     is mapped to a (second) set of Fragility curves.
+
 
 - *What is dataset_id and how do I create it?*
 
@@ -134,19 +147,22 @@
     is assigned when the set is uploaded to the IN-CORE services. For details how to do it see technical 
     documentation or contact us at <incore-dev@lists.illinois.edu>.
 
+
 - *How do I import files to IN-CORE datasets service?*
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
     request with "attached" files directly to the service. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials).
     
+    
 - *Can I create and use my own earthquakes? I used an earthquake from hazard service for my analysis but I need different intensities. 
 Do I need to upload simulated earthquakes to hazard service and then use it?
 
     Yes, you can define your own earthquake by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
     similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
-    Currently you do need to upload your file to hazard service. For additional information 
+    Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
     see IN-CORE [wiki]((https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/answers/160863042?flashId=-1769862417)) page.
+
 
 - *Is Geopandas (package x) part of pyIncore?*
 
@@ -157,6 +173,7 @@ Do I need to upload simulated earthquakes to hazard service and then use it?
     `folium`, `matplotlib`, `plotly` will be removed from future version of **pyIncore** core and they will 
     be moved to **pyIncore viz**.
     
+    
 - *What is the best Image processing library for Python.*
 
     The most common Image manipulation and processing packages are [Pillow](https://pillow.readthedocs.io/en/stable/) 
@@ -166,17 +183,20 @@ Do I need to upload simulated earthquakes to hazard service and then use it?
     of *pyIncore* and which provides a various image processing functions that can be operated with arrays 
     of any dimensionality.   
 
+
 - *My tornado analysis is returning 0 for each inventory. When I put them together in QGIS, I can see that 
    the inventories fall within the tornado’s path.*
 
     The dataset is probably using different projection than WGS84. QGIS converts the projections behind the scene 
     putting the inventory and tornado paths in the same place.  
     
+    
 - *Warning: Boto3 is not present.*
 
     Boto3 is a package for connectivity with Amazon AWS. **pyIncore** does not use it however the warning comes 
     from the package build. We beleive that certain combination of conda channels causes the warning to appear. 
     A user can ignore the warning or additionally install **boto3**.
+ 
  
 ### INCORE Lab and running analyses  
     
@@ -189,23 +209,26 @@ Do I need to upload simulated earthquakes to hazard service and then use it?
         client.clear_cache()
     ```
 
+
 ### Working with Jupyter Notebooks
 
--*How to access metadata of the loaded shapefiles inside the Jupyter Notebook?*
+-*Can I see information, tags, columns associated with an infrastructure inventory file? How do I access metadata of the loaded shapefiles inside the Jupyter Notebook?*
    
-   A user can display all matadata associated with a shapefile by invoking inventory reader and running a loop 
-   through **properties** key:
+   A user can display information data (matadata) columns associated with a shapefile by invoking Python inventory reader 
+   to show what columns are available in the **properties**, and running a loop through a key (`year_built` here):
    ```
         # load shapefile dataset with building inventory
         bldg_dmg.load_remote_input_dataset("buildings", "5a284f0bc7d30d13bc081a28")
         bldg_dataset = bldg_dmg.input_datasets['buildings']['value']
 
         rdr = bldg_dataset.get_inventory_reader()
+
+        print(rdr[0]['properties'].keys())
         for row in rdr:
             print(row['properties']['year_built'])
    ```
 
 
-
-You can also post your questions at [https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)
+**You can also post your questions 
+at [https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)**
 
