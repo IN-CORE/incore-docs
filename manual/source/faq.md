@@ -1,6 +1,6 @@
 ##  Frequently asked questions
 
-### IN-CORE account
+### IN-CORE
 
 - *I want to try your IN-CORE services. Do I need to register?*
 
@@ -11,6 +11,12 @@
     The username/password you chose during registration process in IN-CORE system is called 
     LDAP password, based on specific Lightweight Directory Access Protocol authentication. 
     You can test your registration credentials by accessing the [documentation server](http://incore.ncsa.illinois.edu/).
+    
+- *What does **dfr3** (**DFR3 service**) refer to?
+
+    The acronym **dfr3** (DFR3) stands for **D**amage, **F**unctionality, **R**epair, **R**estoration and **R**ecovery. For example 
+    fragility curves can be viewed in a Viewer which interacts with DFR3 service.
+    
 
 ### pyIncore
 
@@ -33,7 +39,8 @@
     
 - *How do I check what version of Python and Anaconda are installed?*
 
-    The versions can be checked by running `python --version` and/or `import sys;sys.executable` in Python console.
+    The versions can be checked by running `python --version` and/or `import sys;sys.executable` in Python console. If you have 
+    already installed Anaconda you need to use conda, Anaconda’s package manager to check the version by running `conda list anaconda`.
     
 
 - *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
@@ -73,7 +80,7 @@
     slightly differs for virtual environments and we will be happy to help you. Contact us at 
     <incore-dev@lists.illinois.edu>. 
     Note: Use Anaconda if you do not have full administrative privileges on your computer. It has been reported that 
-    Jupyter Notebook can't be subsequently installed in Miniconda environment. With Anaconda the Notebook is already 
+    Jupyter Notebook can't be subsequently installed in Miniconda environment. With Anaconda **Jupyter Notebook** is already 
     pre-installed.
     
 
@@ -85,7 +92,7 @@
     Run ``conda list`` to obtain the packages installed using conda in the active environment.
     
 
-- *I am trying to run building_dmg.ipynb on my computer but nothing happens.*
+- *I am trying to use building_dmg.ipynb on my computer but nothing happens.*
 
     We assume that you are running Jupyter Notebook in your browser. Run each individual cell 
     by clicking >|Run. The cursor (box) will highlight the next cell. The actual calculation is called 
@@ -93,9 +100,9 @@
     file (csv) appears in the Notebook and in the Jupyter tree under Files tab.
     
     
-- *Can I run files locally?*
+- *Can I use files locally?*
 
-    Yes. Users can run datasets stored on their local computers. It is, however not possible to use certain resources  such as fragility locally. 
+    Yes. Users can use datasets stored on their local computers. It is, however not possible to use certain resources such as dfr3 curves locally.
     These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
     
@@ -103,7 +110,7 @@
 - *I cannot install/update Jypyter Notebook. I encountered a* **EnvironmentNotWritableError** *while installing Jypyter Notebook.*
 
     This error has been reported if you 1) use Miniconda and 2) do not have full administrative privileges on your computer. 
-    Jupyter Notebook is not part of Miniconda and it has to be installed separately. The Environment error reflects lack of installation 
+    Jupyter Notebook is not included in Miniconda and it has to be installed separately. The Environment error reflects lack of installation 
     privileges causes. Remove Miniconda and install **Anaconda** instead. The latter comes with pre-installed Jupyter Notebook.
 
 
@@ -121,7 +128,15 @@
     
     **Note**: The folders and files starting with "." (dot prefix) are hidden in Operating systems with Unix roots. 
     There are few ways ([link1](https://nektony.com/how-to/show-hidden-files-on-mac) 
-    and [link2](https://macpaw.com/how-to/show-hidden-files-on-mac)) to view hidden files on your Mac.
+    and [link2](https://macpaw.com/how-to/show-hidden-files-on-mac)) to view hidden files on your Mac. 
+    You can also use a command line tool to locate home directory and hidden files:
+    Open the Terminal application from Launchpad and use following commands 1) to change the current working directory to your **home** directory,
+    2) get the full path of Present Working Directory (pwd) on your OS and 3) list all files including the hidden ones.
+    ```
+        1) cd ~
+        2) pwd
+        3) ls -a
+    ```
 
 
 ### Creating and running analyses
@@ -148,7 +163,7 @@
     documentation or contact us at <incore-dev@lists.illinois.edu>.
 
 
-- *How do I import files to IN-CORE datasets service?*
+- *How do I upload files to IN-CORE datasets service?*
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
@@ -156,9 +171,11 @@
     
     
 - *Can I create and use my own earthquakes? I used an earthquake from hazard service for my analysis but I need different intensities. 
-Do I need to upload simulated earthquakes to hazard service and then use it?
+Do I need to upload simulated earthquakes to hazard service and then use it?*
 
-    Yes, you can define your own earthquake by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
+    Earthquakes and other hazards can be defined in various ways, there are data based earthquakes that actually require user to 
+    provide the shapefiles in order to create an earthquake or tehre are simulated earthquakes. Yes, you can define your own simulated earthquake 
+    by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
     similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
     Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
     see IN-CORE [wiki]((https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/answers/160863042?flashId=-1769862417)) page.
