@@ -15,7 +15,7 @@ is called `anaconda`. Create the environment from the terminal at the project
 folder (called `incore_docs` here) and activate it:
 
     ```
-    conda create -n incore_docs python=3.6 anaconda
+    conda create -n incore_docs python=3.7 anaconda
     source activate incore_docs
     ```
     or  
