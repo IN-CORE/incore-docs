@@ -180,7 +180,7 @@ Do I need to upload simulated earthquakes to hazard service and then use it?*
     by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
     similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
     Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
-    see IN-CORE [wiki]((https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/160860190/answers/160863042?flashId=-1769862417)) page.
+    see IN-CORE [wiki](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) page.
 
 
 - *Is Geopandas (package x) part of pyIncore?*
