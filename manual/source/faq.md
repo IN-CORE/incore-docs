@@ -12,7 +12,8 @@
     LDAP password, based on specific Lightweight Directory Access Protocol authentication. 
     You can test your registration credentials by accessing the [documentation server](http://incore.ncsa.illinois.edu/).
     
-- *What does **dfr3** (**DFR3 service**) refer to?
+    
+- *What does **dfr3** (**DFR3 service**) refer to?*
 
     The acronym **dfr3** (DFR3) stands for **D**amage, **F**unctionality, **R**epair, **R**estoration and **R**ecovery. For example 
     fragility curves can be viewed in a Viewer which interacts with DFR3 service.
@@ -53,7 +54,7 @@
     [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/#the-hitchhiker-s-guide-to-python), 
     OS specific [downloads](https://www.python.org/downloads/).
     
-####Installing pyIncore
+#### Installing pyIncore
 
 - *How do I check the installed version of pyIncore?*
 
@@ -84,7 +85,7 @@
     pre-installed.
     
 
-####Running pyIncore
+#### Running pyIncore
 
 - *I am getting “Module not Found" when I run pyIncore* 
 
@@ -246,6 +247,6 @@ Do I need to upload simulated earthquakes to hazard service and then use it?*
    ```
 
 
-**You can also post your questions 
-at [https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)**
+You can also post your questions 
+at [https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)
 
