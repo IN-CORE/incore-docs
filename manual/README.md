@@ -13,16 +13,13 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and chande directo
 
 1. Build container
     ```
-    docker build --tag doc_test:1.0 .
+    docker build -t doc-test .
     ```
     The container's name is **doc_test** in this example.
-    
 2. Run docker
     ```
-    docker run --rm -p 80:80 --detach --name dt1 doc_test:1.0
+    docker run --rm -p doc-test:latest
     ```
-   Command `--name` specifies a name with which you can refer to your container in subsequent commands, in this case dt1.
-
 3. Run html pages in your local browser (you might see the nginx main page firs)
     ```
     http://localhost//doc/incore/   
