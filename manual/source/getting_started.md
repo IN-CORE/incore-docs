@@ -1,4 +1,4 @@
-##Getting Started with pyIncore - An Overview and the first walk through Tutorial
+## Getting Started with pyIncore
 
 This page is an overview of the **IN-CORE** and **pyIncore** documentation and related resources.
 
@@ -14,7 +14,7 @@ and synthesizing results, it can also be used to develop scientific analysis and
 - [Try pyIncore](#trypyincore)
 - [Learn pyIncore](#learnpyincore)
 
-###<a name="trypyincore"></a>Try pyIncore
+### <a name="trypyincore"></a>Try pyIncore
 
 A user must have an IN-CORE account recognized by the IN-CORE service. This account gives you access to all of the public data on
 the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for setting one.
@@ -37,7 +37,7 @@ Main Incore Lab's dashboard tab appears shortly:
 We added IN-CORE specific top menus, **INCORE apps** and **INCORE docs** as well as **INCORE Authenticator** tile under 
 the Launcher pane.
 
-###<a name="learnpyincore"></a>Learn pyIncore
+### <a name="learnpyincore"></a>Learn pyIncore
 
 In this section we will create our first Notebook using **pyIncore** library. We will re-create Building Damage analysis and Run it.
 The result will be a csv file with Building inventory and Damage states for each individual building.
