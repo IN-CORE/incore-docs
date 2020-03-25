@@ -11,9 +11,10 @@
     The username/password you chose during registration process in IN-CORE system is called 
     LDAP password, based on specific Lightweight Directory Access Protocol authentication. 
     You can test your registration credentials by accessing the [documentation server](http://incore.ncsa.illinois.edu/).
+    <br />
+    <br />
     
-    
-*   *What does **dfr3** (**DFR3 service**) refer to?*
+*   *What does dfr3 (DFR3 service) refer to?*
 
     The acronym **dfr3** (DFR3) stands for **D**amage, **F**unctionality, **R**epair, **R**estoration and **R**ecovery. For example 
     fragility curves can be viewed in a Viewer which interacts with DFR3 service.
@@ -36,14 +37,16 @@
     In a nutshell, *conda* is a package manager, *Miniconda* is the conda installer, and *Anaconda* is a Python 
     distribution that also includes conda and 150+ automatically installed, open source packages and their 
     dependencies that have been tested to work well together. 
-     
+    <br />
+    <br />
     
 *   *How do I check what version of Python and Anaconda are installed?*
 
     The versions can be checked by running `python --version` and/or `import sys;sys.executable` in Python console. If you have 
     already installed Anaconda you need to use conda, Anaconda’s package manager to check the version by running `conda list anaconda`.
+    <br />
+    <br />
     
-
 *   *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
 
     We prefer **conda** installation over **pip** mainly because it handles Python packages dependencies and even library outside of 
@@ -60,7 +63,8 @@
 *   *How do I check the installed version of pyIncore?*
 
     In your conda virtual environment type `conda list` and the output is a list of all installed Python packages including **pyIncore**.
-    
+    <br />
+    <br />
     
 *   *How do I update pyIncore?*
 
@@ -70,7 +74,8 @@
         ```
         conda update -c in-core pyincore
         ```
-    
+    <br />
+    <br />
     
 *   *Should I use virtual environment for running the pyIncore?*
 
@@ -92,35 +97,40 @@
 
     This can be caused by many factors. You need to make sure the module is installed for your versions of Python.
     Run ``conda list`` to obtain the packages installed using conda in the active environment.
+    <br />
+    <br />
     
-
 *   *I am trying to use building_dmg.ipynb on my computer but nothing happens.*
 
     We assume that you are running Jupyter Notebook in your browser. Run each individual cell 
     by clicking >|Run. The cursor (box) will highlight the next cell. The actual calculation is called 
     in the last cell with the `bldg_dmg.run_analysis()` command. When successful a Comma delimited 
     file (csv) appears in the Notebook and in the Jupyter tree under Files tab.
-    
+    <br />
+    <br />
     
 *   *Can I use files locally?*
 
     Yes. Users can use datasets stored on their local computers. It is, however not possible to use certain resources such as dfr3 curves locally.
     These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
-    
+    <br />
+    <br />
     
 *   *I cannot install/update Jypyter Notebook. I encountered a* **EnvironmentNotWritableError** *while installing Jypyter Notebook.*
 
     This error has been reported if you 1) use Miniconda and 2) do not have full administrative privileges on your computer. 
     Jupyter Notebook is not included in Miniconda and it has to be installed separately. The Environment error reflects lack of installation 
     privileges causes. Remove Miniconda and install **Anaconda** instead. The latter comes with pre-installed Jupyter Notebook.
-
-
+    <br />
+    <br />
+    
 *   *I do not have full administrative privileges to my School/Company issued computer. The pyIncore or Jupyter Notebook does not work.*
 
     Check what version of Python (3.5+) and Miniconda/Anaconda are installed. Try to install Anaconda rather than Miniconda. 
     If none of the above helps contact your System administrator and Contact us at <incore-dev@lists.illinois.edu>.
-    
+    <br />
+    <br />
     
 *   *How do I empty pyIncore's local cache?*
 
@@ -148,29 +158,33 @@
     We use mapping to associate each element of a given set such as Building inventory with one or more 
     elements of a second set of Fragility curves. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
     section of this documentation.
-
+    <br />
+    <br />
 
 *   *Is mapping related to a map?*
 
     We use noun mapping for *operation that associates each element of a given set with one or more elements 
     of a second set*. In *IN-CORE* and *pyIncore* specifically, for example a Building inventory (given set) 
     is mapped to a (second) set of Fragility curves.
-
-
+    <br />
+    <br />
+    
 *   *What is dataset_id and how do I create it?*
 
     Each set being it a data, mapping, inventory, fragility or restoration set in IN-CORE system 
     has assigned ID, an identifier, which uniquely identifies it for the services and *pyIncore*. The unique ID 
     is assigned when the set is uploaded to the IN-CORE services. For details how to do it see technical 
     documentation or contact us at <incore-dev@lists.illinois.edu>.
-
+    <br />
+    <br />
 
 *   *How do I upload files to IN-CORE datasets service?*
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
     request with "attached" files directly to the service. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials).
-    
+    <br />
+    <br />   
     
 *   *Can I create and use my own earthquakes? I used an earthquake from hazard service for my analysis but I need different intensities. Do I need to upload simulated earthquakes to hazard service and then use it?*
 
@@ -180,7 +194,8 @@
     similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
     Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
     see IN-CORE [wiki](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) page.
-
+    <br />
+    <br />
 
 *   *Is Geopandas (package x) part of pyIncore?*
 
@@ -190,7 +205,8 @@
     `seaborn`, `pyomo`. We are currently working on creating visualization package so some packages such as 
     `folium`, `matplotlib`, `plotly` will be removed from future version of **pyIncore** core and they will 
     be moved to **pyIncore viz**.
-    
+    <br />
+    <br />    
     
 *   *What is the best Image processing library for Python.*
 
@@ -200,14 +216,16 @@
     [scipy](https://docs.scipy.org/doc/scipy-0.14.0/reference/ndimage.html) which is already a dependency 
     of *pyIncore* and which provides a various image processing functions that can be operated with arrays 
     of any dimensionality.   
-
+    <br />
+    <br />
 
 *   *My tornado analysis is returning 0 for each inventory. When I put them together in QGIS, I can see that 
    the inventories fall within the tornado’s path.*
 
     The dataset is probably using different projection than WGS84. QGIS converts the projections behind the scene 
     putting the inventory and tornado paths in the same place.  
-    
+    <br />
+    <br />   
     
 *   *Warning: Boto3 is not present.*
 
@@ -226,7 +244,6 @@
     client = IncoreClient()
     client.clear_cache()
     ```
-
 
 ### Working with Jupyter Notebooks
 
