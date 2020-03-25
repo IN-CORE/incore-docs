@@ -75,7 +75,6 @@
         conda update -c in-core pyincore
         ```
     <br />
-    <br />
     
 *   *Should I use virtual environment for running the pyIncore?*
 
@@ -217,7 +216,6 @@
     of *pyIncore* and which provides a various image processing functions that can be operated with arrays 
     of any dimensionality.   
     <br />
-    <br />
 
 *   *My tornado analysis is returning 0 for each inventory. When I put them together in QGIS, I can see that 
    the inventories fall within the tornado’s path.*
@@ -225,7 +223,6 @@
     The dataset is probably using different projection than WGS84. QGIS converts the projections behind the scene 
     putting the inventory and tornado paths in the same place.  
     <br />
-    <br />   
     
 *   *Warning: Boto3 is not present.*
 
