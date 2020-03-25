@@ -60,6 +60,11 @@ after that you should be able to run (`clean` deletes content of the `build` fol
 make clean
 make html
 ```
-            
+   
+# Running Docker
+
+```
+docker run --rm -p 80:80 docker_image_name   
+```      
 # Testing
     NA
