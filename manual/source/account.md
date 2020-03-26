@@ -5,7 +5,7 @@ Registering for an account is free and open to everyone. This account gives you 
 the system and allows you to create data that is only accessible by you. If applicable, it is recommended
 that you sign up with your institutional email. To register for an account, please go to:
 
-[https://identity.ncsa.illinois.edu/register/UUMK36FU2M](https://identity.ncsa.illinois.edu/register/UUMK36FU2M)
+[https://identity.ncsa.illinois.edu/register/BSKC2UKQPU](https://identity.ncsa.illinois.edu/register/BSKC2UKQPU)
 
 ![IN-CORE login window](images/register.jpg)
 
