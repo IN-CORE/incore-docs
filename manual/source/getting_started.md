@@ -1,4 +1,4 @@
-## Getting Started with pyIncore
+## Getting Started with IN-CORE and pyIncore
 
 This page is an overview of the **IN-CORE** and **pyIncore** documentation and related resources.
 
@@ -11,10 +11,12 @@ models of inter-dependent physical systems combined with socio-economic systems.
 scenarios. Python framework accesses underlying data through remote services and facilitates moving 
 and synthesizing results, it can also be used to develop scientific analysis and algorithm.
 
-- [Try pyIncore](#trypyincore)
-- [Learn pyIncore](#learnpyincore)
+- [Introduction to IN-CORE platform and its Lab](#tryincore)
+- [Using pyIncore in IN-CORE Lab](#pyincorelab)
+- [Using pyIncore locally](#pyincorelocal)
+- [Useful links](#usefullinks)
 
-### <a name="trypyincore"></a>Try pyIncore
+### <a name="tryincore"></a>Introduction to IN-CORE platform and its Lab
 
 A user must have an IN-CORE account recognized by the IN-CORE service. This account gives you access to all of the public data on
 the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for setting one.
@@ -37,10 +39,19 @@ Main Incore Lab's dashboard tab appears shortly:
 We added IN-CORE specific top menus, **INCORE apps** and **INCORE docs** as well as **INCORE Authenticator** tile under 
 the Launcher pane.
 
-### <a name="learnpyincore"></a>Learn pyIncore
+Use of IN-CORE platform for modeling Hazard scenarios. (More text)
 
-In this section we will create our first Notebook using **pyIncore** library. We will re-create Building Damage analysis and Run it.
-The result will be a csv file with Building inventory and Damage states for each individual building.
+
+
+
+
+### <a name="pyincorelab"></a>Using pyIncore in IN-CORE Lab
+
+In this section we will create and run our first analysis using Jupyter Notebook and **pyIncore** library, both running on remote server. 
+We will re-create Building Damage analysis and Run it in IN-CORE Lab. A user needs only IN-CORE account and Internet browser to finish 
+the analysis
+
+The result will be a comma-delimited (csv) text file with Building inventory and Damage states for each individual building.
 
 1. Create an empty Jupyter Notebook by clicking on the `Notebook > Python 3` tile. A new `.ipynb` file appears in the in the left panel. Rename it (Rigth Mouse click and Rename) to 
 for example **Tutorial_1.ipynb**  
@@ -78,7 +89,6 @@ for example **Tutorial_1.ipynb**
    The files are referenced by their ID numbers and they are being accessed from IN-CORE services; Hazard service, 
    Data service, and 3) DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service located on the IN-CORE servers.
    
-   We refer user to Documentation and Frequently Asked Questions ([FAQ](faq) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
     
 5. Create an instance of Building damage object specific to this Tutorial (your Notebook code), load dataset and 
     files and specify parameters necessary for running the analysis.
@@ -110,8 +120,15 @@ for example **Tutorial_1.ipynb**
     [Building damage Jupyter notebook cells in IN-CORE Lab.](images/juplab9_run_nbook.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
 
 
-7. Save your Tutorial notebook by clicking `Save` button in the top bar and Run the analyses by using command 
-`Run > Run All Cells command`. A **memphis_bldg_dmg_result.csv** file will appear after a short time in the left pane. 
+7. Save your Tutorial notebook by clicking `Save` button in the top bar. Your web page now shows multiple cells of code. 
+    However, you are not actually running a notebook yet. Running a cell means that you will execute the cell's contents. 
+    To execute cells in order you can just select the first cell and click the **Run** button/command at the top or from the menu 
+    `Run > Run All Cells command`.
+    
+    A **memphis_bldg_dmg_result.csv** file will appear after a short time in the left pane.
+
+    There is little indication that analysis is running except by either looking at the Jupyter Notebook file and seeing the [*] for the notebook 
+    cell where that block of code is being executed.
 
 8. You can view the resulting csv datataset directly in your Notebook by converting it into Pandas DataFrame:
     ```
@@ -125,4 +142,97 @@ for example **Tutorial_1.ipynb**
     df.head()
     ```
 
-The Building analysis Jupyter Notebook is also available at IN-CORE's [GitHub](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb).
+### <a name="pyincorelocal"></a>Using pyIncore locally
+
+In this section we use the same Building Damage analysis but this time we run it locally, on user's computer. 
+There is one more pre-requisit in order to do so, apart from already set **IN-CORE Account**:
+
+* Python virtual environment called **Anaconda**
+
+and finally
+
+* **pyIncore** library
+
+Please note that for this **Getting started** example we recommend Python environment manager Anaconda because it  
+includes Python and Jypyter Notebook (and many other open source packages), both needed locally. For details see [pre-requisits](prerequisites.md)] 
+page. 
+
+#### Install Anaconda environment manager and pyIncore package
+
+1. Download the latest Anaconda3 installer for your Operating system from the [Anaconda](https://www.anaconda.com/distribution/) web page. 
+Choose Python 3.7 version.
+
+2. Run the installer setup locally (select the *Just Me* choice on **Windows** or *Install for me only* on **Mac/Linux**) 
+to avoid the need for administrator privileges.
+
+3. Leave the default folder path on:
+    * **Windows** - `C:\Users\<user>\..\miniconda3`
+    * **Mac** - `/Users/<username>/miniconda3`
+    * **Linux** -  `/home/<username>/miniconda3`.
+
+4. Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+
+5. Activate the environment:
+    * **Windows** -  Open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
+
+        ![Windows Menu.](images/win_prompt1.jpg)
+
+    * **Mac/Linux** - Open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
+
+6. Create the python environment (`mypyincore` for example) and activate it:
+    ```
+    conda create -n mypyincore python=3.7
+    conda activate mypyincore
+    ```
+    You should see `mypyincore` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
+
+7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
+    ```
+    conda config --add channels conda-forge
+    ```
+
+Navigate to the directory you want to use for developing your code in Jupyter Notebooks and run the following command:
+```
+conda install -c in-core pyincore
+```
+
+You can view a list of your virtual environments using the `conda info --envs` or `conda env list` command.
+
+To check that the package is installed, run
+```
+conda list
+```
+and check if pyincore exists. You should also see `jupyter` library in the list. Jupyter Notebook is already installed 
+with Anaconda distribution. 
+
+
+Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**:
+```
+jupyter notebook
+```
+    
+or if Jupyter Notebook is not recognized in Anaconda
+```
+jupyter -m notebook
+```     
+   
+A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
+You will be asked to copy/paste a token into your browser when you connect for the first time.
+    
+![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
+
+
+Follow the steps **1 through 8** in previous section [Using pyIncore in IN-CORE Lab](#pyincorelab) for writing the analysis. Again, your 
+web page should show multiple cells of code. To execute cells in order select the first cell and click the **Run** button at the top.
+
+![Building damage Jupyter notebook cells.](images/juplocal2_notebook.jpg "Building damage Jupyter notebook cells.")
+
+
+### <a name="usefullinks"></a>Useful links
+
+* For details on running and manipulating `ipynb` files refer to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). 
+If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
+
+* IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
+
+* The Building analysis Jupyter Notebook is also available at IN-CORE's [GitHub](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb).
