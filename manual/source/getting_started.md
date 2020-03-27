@@ -16,15 +16,25 @@ and synthesizing results, it can also be used to develop scientific analysis and
 - [Using pyIncore locally](#pyincorelocal)
 - [Useful links](#usefullinks)
 
-### <a name="tryincore"></a>Introduction to IN-CORE platform and its Lab
+### <a name="tryincore"></a>Introduction to IN-CORE platform
+
+On the IN-CORE platform, users can run physics-based analysis combined with socio-economic systems that model the impact 
+of natural hazards and community resilience and recovery. Resources such as Inventory datasets, Fragilities, 
+Hazard files etc. provided by the research community are stored on NCSA's IN-CORE 
+servers, and they can be seamlessly integrated to allow users to optimize community disaster resilience planning and 
+post-disaster recovery strategies.
+
+IN-CORE platform utilizes the Jupyter Notebook as a workspace to allow users to develop script in Python, 
+allowing them to call hazard and community resilience analyses modules embedded in **pyIncore library**. We provide IN-CORE Lab, 
+an interactive environment with tabbed work area for working with code and data which is based on 
+[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#), and with pyIncore pre-installed on the server.
+
+In this Tutorial we will create a script for Building damage of specific testbed by calling pyIncore's 
+core analysis module **BuildingDamage**. We will be running the Notebook interactively, first in NCSA's [IN-CORE Lab](incore_lab)
+and then on user's local computer.
 
 A user must have an IN-CORE account recognized by the IN-CORE service. This account gives you access to all of the public data on
 the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for setting one.
-
-We will be running a tutorial Jupyter notebook interactively in NCSA's [IN-CORE Lab](incore_lab). 
-The IN-CORE Lab is a customized [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#) with **pyIncore** pre-installed on the server.
-
-Let us explore the IN-CORE Lab first.
 
 IN-CORE Lab can be accessed from [https://incore.ncsa.illinois.edu](https://incore.ncsa.illinois.edu) home page. 
 Log in with your new credentials and click on IN-CORE Lab link in the **upper left** pull down menu. 
@@ -35,15 +45,6 @@ A new tab with `Start My Server` button appears followed by a progress bar.
 Main Incore Lab's dashboard tab appears shortly:
 
 ![IN-CORE Lab dashboard tab.](images/juplab0.jpg "IN-CORE Lab dashboard tab.").
-
-We added IN-CORE specific top menus, **INCORE apps** and **INCORE docs** as well as **INCORE Authenticator** tile under 
-the Launcher pane.
-
-Use of IN-CORE platform for modeling Hazard scenarios. (More text)
-
-
-
-
 
 ### <a name="pyincorelab"></a>Using pyIncore in IN-CORE Lab
 
@@ -232,6 +233,8 @@ web page should show multiple cells of code. To execute cells in order select th
 
 * For details on running and manipulating `ipynb` files refer to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). 
 If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
+
+* IN-CORE Lab extends Jupyter Lab. See [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and [blog](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) for more information.
 
 * IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
 
