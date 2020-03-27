@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.3.0] - [Unreleased]
 
 ### Added
-- Getting started page, Jira INCORE1-441.
+- Getting started page, Jira [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
 
 ## [1.2.0] - 2020-03-02
 
