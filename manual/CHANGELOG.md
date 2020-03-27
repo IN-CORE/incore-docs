@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.3.0] - [Unreleased]
 
 ### Added
-- more FAQ questions.
+- more FAQ questions, Jira INCORE1-376.
 
 ### Changed.
 - NCSA account link.
