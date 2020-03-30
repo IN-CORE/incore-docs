@@ -9,7 +9,7 @@ repository.
 
 ### Building and running Sphinx in Docker container
 
-Install [Docker Desktop](https://www.docker.com/) for your OS and chande directory to your local branch incore-docs/manual folder (one with Dockerfile).
+Install [Docker Desktop](https://www.docker.com/) for your OS and change directory to your local branch incore-docs/manual folder (one with Dockerfile).
 
 1. Build container
     ```
@@ -22,7 +22,7 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and chande directo
     ```
     Optional flag, `-name` sets container's name to **doctest** under which it appears in Docker Desktop.
    
-3. Run html pages in your local browser (you might see the nginx main page firs)
+3. Run html pages in your local browser (you might see the nginx main page first)
     ```
     http://localhost//doc/incore/   
     ```  

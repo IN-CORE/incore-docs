@@ -40,11 +40,11 @@ IN-CORE Lab can be accessed from [https://incore.ncsa.illinois.edu](https://inco
 Log in with your new credentials and click on IN-CORE Lab link in the **upper left** pull down menu. 
 A new tab with `Start My Server` button appears followed by a progress bar.
 
-![IN-CORE Lab progress bar.](images/juplab0_start.jpg "IN-CORE Server progress bar.")
+![IN-CORE Lab progress bar.](images/tutorials/tut1_1_start.jpg "IN-CORE Server progress bar.")
 
 Main Incore Lab's dashboard tab appears shortly:
 
-![IN-CORE Lab dashboard tab.](images/juplab0.jpg "IN-CORE Lab dashboard tab.").
+![IN-CORE Lab dashboard tab.](images/tutorials/tut1_2_dash.jpg "IN-CORE Lab dashboard tab.").
 
 ### <a name="pyincorelab"></a>Using pyIncore in IN-CORE Lab
 
@@ -119,7 +119,7 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     ```
     bldg_dmg.run_analysis()
     ```
-    ![uilding damage Jupyter notebook cells in IN-CORE Lab..](images/juplab9_run_nbook.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
+    ![uilding damage Jupyter notebook cells in IN-CORE Lab..](images/tutorials/tut1_3_juplab_build_dmg.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
 
 
 7. Save your Tutorial notebook by clicking `Save` button in the top bar. Your web page now shows multiple cells of code. 
@@ -173,7 +173,7 @@ to avoid the need for administrator privileges.
 5. Activate the environment:
     * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
-        ![Windows Menu.](images/win_prompt1.jpg)
+        ![Windows Menu.](images/tutorials/tut1_4_win_prompt.jpg)
 
 
     * On Mac/Linux, open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
@@ -213,11 +213,11 @@ jupyter notebook
 A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
 You will be asked to copy/paste a token into your browser when you connect for the first time.
     
-![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
+![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_5_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
 
 Create the codebase of the analysis by follow steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
 
-![Building damage Jupyter notebook cells.](images/juplocal2_notebook.jpg "Building damage Jupyter notebook cells.")
+![Building damage Jupyter notebook cells.](images/tutorials/tut1_6_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
 
 Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
 
