@@ -31,16 +31,6 @@ and then on user's local computer.
 A user must have an IN-CORE account recognized by the IN-CORE service. This account gives you access to all of the public data on
 the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for setting one.
 
-IN-CORE Lab can be accessed from [https://incore.ncsa.illinois.edu](https://incore.ncsa.illinois.edu) home page. 
-Log in with your new credentials and click on IN-CORE Lab link in the **upper left** pull down menu. 
-A new tab with `Start My Server` button appears followed by a progress bar.
-
-![IN-CORE Lab progress bar.](images/tutorials/tut1_1_start.jpg "IN-CORE Server progress bar.")
-
-Main Incore Lab's dashboard tab appears shortly:
-
-![IN-CORE Lab dashboard tab.](images/tutorials/tut1_2_dash.jpg "IN-CORE Lab dashboard tab.").
-
 ### Using pyIncore in IN-CORE Lab
 
 In this section we will create and run our first analysis using Jupyter Notebook and pyIncore library, both running on remote server. 
@@ -49,8 +39,19 @@ We will re-create Building Damage analysis and run it in IN-CORE Lab.
 A user needs only IN-CORE account and Internet browser to finish 
 the analysis. The result will be a comma-delimited (csv) text file with Building inventory and Damage states for each individual building.
 
-1. Create an empty Jupyter Notebook by clicking the `Notebook > Python 3` tile. A new `.ipynb` file appears in the left panel. Rename it 
-(Rigth Mouse click and Rename) to, for example **Tutorial_1.ipynb**  
+IN-CORE Lab can be accessed from [https://incore.ncsa.illinois.edu](https://incore.ncsa.illinois.edu) home page. 
+Log in with your new credentials and click on IN-CORE Lab link in the **upper left** pull down menu. 
+A new tab with `Start My Server` button appears followed by a progress bar.
+
+![IN-CORE Lab progress bar](images/tutorials/tut1_1_start.jpg "IN-CORE Server progress bar.")
+
+Main Incore Lab's dashboard tab appears shortly:
+
+![IN-CORE Lab dashboard tab](images/tutorials/tut1_2_dash.jpg "IN-CORE Lab dashboard tab.").
+
+1. Create an empty Jupyter Notebook by clicking the `Notebook > Python 3` tile. A new `.ipynb` file appears in the left panel. Rename it (Rigth Mouse click and Rename) to, for example **Tutorial_1.ipynb**  
+
+    ![IN-CORE Lab save notebook](images/tutorials/tut1_3_juplab_save.jpg "IN-CORE Lab save notebook.").
 
 2. In the Notebook's upper cell type, or copy and paste following code:
     ```
@@ -63,6 +64,9 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     Otherwise <span style="color:red">ImportError</span> error message is shown.
 
 3. Connect to IN-CORE services by typing in the empty cell (or insert a new one by clicking the `+` button first):
+    
+    ![IN-CORE Lab add cell](images/tutorials/tut1_4_juplab_add_cell.jpg "IN-CORE Lab add cells.").
+
     ```
     client = IncoreClient()
     ```
@@ -113,7 +117,7 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     ```
     bldg_dmg.run_analysis()
     ```
-    ![uilding damage Jupyter notebook cells in IN-CORE Lab..](images/tutorials/tut1_3_juplab_build_dmg.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
+    ![uilding damage Jupyter notebook cells in IN-CORE Lab..](images/tutorials/tut1_5_juplab_build_dmg.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
 
 
 7. Save your Tutorial notebook by clicking `Save` button in the top bar. Your web page now shows multiple cells of code. 
@@ -173,11 +177,11 @@ to avoid the need for administrator privileges.
 5. Activate the environment:
     * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
-        ![Windows Menu.](images/tutorials/tut1_4_win_prompt.jpg)
+        ![Windows Menu.](images/tutorials/tut1_6_win_prompt.jpg)
 
     * On Mac/Linux, open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
 
-        ![Environment prompt.](images/tutorials/tut1_5_env_prompt.jpg "Environment prompt")
+        ![Environment prompt.](images/tutorials/tut1_7_env_prompt.jpg "Environment prompt")
 
 6. Create the Python environment (for this example we choose `mypyincore`) and activate it:
     ```
@@ -212,7 +216,7 @@ with Anaconda distribution:
 	A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
 	If a web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
-	![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_6_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
+	![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_8_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
 
 	If you see an error message *jupyter: command not found** launch Notebook through **Anaconda Navigator**, a desktop graphical user interface (GUI) 
 	which lets you launch Anaconda applications.
@@ -221,15 +225,15 @@ with Anaconda distribution:
 	Choose your environment (**mypyincore** in this example) from the `Applications On` pull down menu in the Navigator's dashboard, install 
     Jupyter Notebook and start it by clicking a **Launch** button.
     
- 	![Anaconda Navigator dashboard.](images/tutorials/tut1_7_anaconda_nav.jpg "Anaconda Navigator dashboard.")
+ 	![Anaconda Navigator dashboard.](images/tutorials/tut1_9_anaconda_nav.jpg "Anaconda Navigator dashboard.")
    
 3. Create an new Jupyter Notebook (with Python 3), name it **Tutorial_1.ipynb** 
 
-	![A new Jupyter Notebook.](images/tutorials/tut1_8_juploc_start.jpg "A new Jupyter Notebook..")
+	![A new Jupyter Notebook.](images/tutorials/tut1_10_juploc_start.jpg "A new Jupyter Notebook..")
 
 4. Add codebase of the analysis by following steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
 
-	![Building damage Jupyter notebook cells.](images/tutorials/tut1_9_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
+	![Building damage Jupyter notebook cells.](images/tutorials/tut1_11_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
 
 5. Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
 
@@ -237,7 +241,7 @@ with Anaconda distribution:
 
     A **memphis_bldg_dmg_result.csv** file will appear after a short time in the file tab.	
 
-	![Building damage files.](images/tutorials/tut1_10_juploc_build_files.jpg "Building damage files.")
+	![Building damage files.](images/tutorials/tut1_12_juploc_build_files.jpg "Building damage files.")
 
 	
 ### Useful links
