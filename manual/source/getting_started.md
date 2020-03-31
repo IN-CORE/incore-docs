@@ -43,11 +43,11 @@ IN-CORE Lab can be accessed from [https://incore.ncsa.illinois.edu](https://inco
 Log in with your new credentials and click on IN-CORE Lab link in the **upper left** pull down menu. 
 A new tab with `Start My Server` button appears followed by a progress bar.
 
-![IN-CORE Lab progress bar](images/tutorials/tut1_1_start.jpg "IN-CORE Server progress bar.")
+![IN-CORE Lab progress bar](images/tutorials/tut1_1_juplab_start.jpg "IN-CORE Server progress bar.")
 
 Main Incore Lab's dashboard tab appears shortly:
 
-![IN-CORE Lab dashboard tab](images/tutorials/tut1_2_dash.jpg "IN-CORE Lab dashboard tab.").
+![IN-CORE Lab dashboard tab](images/tutorials/tut1_2_juplab_dash.jpg "IN-CORE Lab dashboard tab.").
 
 1. Create an empty Jupyter Notebook by clicking the `Notebook > Python 3` tile. A new `.ipynb` file appears in the left panel. Rename it (Rigth Mouse click and Rename) to, for example **Tutorial_1.ipynb**  
 
@@ -113,7 +113,7 @@ Main Incore Lab's dashboard tab appears shortly:
    Note that the `load_remote_input_dataset` and `set_parameter` are functions of pyIncore's module. The parameter 
    Number of central processing units (num_cpu) is used for paralel computations.
 
-6. Call your Building damage analysis run function.
+6. Call run function.
     ```
     bldg_dmg.run_analysis()
     ```
