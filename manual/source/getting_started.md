@@ -62,7 +62,8 @@ Main Incore Lab's dashboard tab appears shortly:
     
     You can already run the Notebook by clicking `Run the selected cells` arrow button. If pyIncore imports correctly a second, empty cell appears. 
     Otherwise <span style="color:red">ImportError</span> error message is shown.
-
+    <br />
+    <br />
 3. Connect to IN-CORE services by typing in the empty cell (or insert a new one by clicking the `+` button first):
     
     ![IN-CORE Lab add cell](images/tutorials/tut1_4_juplab_add_cell.jpg "IN-CORE Lab add cells.").
@@ -71,7 +72,8 @@ Main Incore Lab's dashboard tab appears shortly:
     client = IncoreClient()
     ```
     Prompts `Enter username` and `Enter password` appear. Enter your account credentials for service authentication.
-    
+    <br />
+    <br />
 4. In the next cell we are going to select Hazard, Building inventory and Fragility curves for the buildings.
     ```
     # New madrid earthquake using Atkinson Boore 1995
@@ -90,8 +92,8 @@ Main Incore Lab's dashboard tab appears shortly:
    The files are referenced by their ID numbers and they are being accessed from IN-CORE services; Hazard service, 
    Data service, and DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service located on the IN-CORE servers.
    Users can see the files in [IN-CORE Web Tools](webtools) or in IN-CORE Lab under `INCORE Apps menu`.
-   
-    
+   <br />
+   <br />
 5. Create an instance of Building damage object specific to this Tutorial; your Notebook code. Load datasets and specify parameters necessary for running the analysis.
     ```
     # Create building damage
@@ -112,14 +114,15 @@ Main Incore Lab's dashboard tab appears shortly:
     ```
    Note that the `load_remote_input_dataset` and `set_parameter` are functions of pyIncore's module. The parameter 
    Number of central processing units (num_cpu) is used for paralel computations.
-
-6. Call run function.
+   <br />
+   <br />
+6. Call **run** function.
     ```
     bldg_dmg.run_analysis()
     ```
     ![uilding damage Jupyter notebook cells in IN-CORE Lab..](images/tutorials/tut1_5_juplab_build_dmg.jpg "Building damage Jupyter notebook cells in IN-CORE Lab.")
-
-
+    <br />
+    <br />
 7. Save your Tutorial notebook by clicking `Save` button in the top bar. Your web page now shows multiple cells of code. 
     
     You are not actually running a notebook yet. Running a cell means that you will execute the cells' content. 
@@ -130,7 +133,8 @@ Main Incore Lab's dashboard tab appears shortly:
 
     There is little indication that analysis is running except by either looking at the Notebook file and seeing the [*] for the  
     cell where that block of code is being executed.
-
+    <br />
+    <br />
 8. You can view the resulting datataset directly in IN-CORE Lab by double clicking the csv file in the left panel 
     or by converting csv to Pandas DataFrame in the Notebook itself:
     ```
@@ -166,7 +170,8 @@ conda update conda
 ```
 
 1. Download the latest Miniconda3 installer for your operating system from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
-
+    <br />
+    <br />
 2. Run the installer setup.
 
     Depending on the installation you might be asked to choose from different setups. 
@@ -179,10 +184,12 @@ conda update conda
     * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
         ![Windows Menu.](images/tutorials/tut1_6_win_prompt.jpg)
-
+    <br />
+    
     * On Mac/Linux, open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
 
         ![Environment prompt.](images/tutorials/tut1_7_env_prompt.jpg "Environment prompt")
+    <br />
 
 4. Create the Python environment (for this example we choose `mypyincore`) and activate it:
     ```
@@ -190,7 +197,8 @@ conda update conda
     conda activate mypyincore
     ```
     You should see `mypyincore` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
-
+    <br />
+    <br />
 5. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```
     conda config --add channels conda-forge
@@ -207,7 +215,7 @@ conda update conda
 	```
 	conda list pyincore
 	```
- 
+
 2. Jupyter Notebook has to be installed separately in your virtual environment (activated by `conda activate mypyincore`) on Miniconda:
     ```
     conda install jupyter
@@ -222,15 +230,18 @@ conda update conda
 	If a web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
 	![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_8_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
-   
+    <br />
+    <br />
 3. Create an new Jupyter Notebook (with Python 3), name it **Tutorial_1.ipynb** 
 
 	![A new Jupyter Notebook.](images/tutorials/tut1_10_juploc_start.jpg "A new Jupyter Notebook..")
-
+    <br />
+    <br />
 4. Add codebase of the analysis by following steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
 
 	![Building damage Jupyter notebook cells.](images/tutorials/tut1_11_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
-
+    <br />
+    <br />
 5. Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
 
 	Please note, you might get warning *Matplotlib is building the font cache using fc-list. This may take a moment.*
@@ -242,7 +253,9 @@ conda update conda
 	
 ### Useful links
 
-* Miniconda: [Installing Miniconda](https://docs.conda.io/en/latest/miniconda.html), [Anaconda or Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda)
+* Miniconda: [Installing Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
+* Anaconda or Miniconda? [Conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda) and [differences](https://stackoverflow.com/questions/45421163/anaconda-vs-miniconda).
 
 * Anaconda: [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
 [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/), and [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)
