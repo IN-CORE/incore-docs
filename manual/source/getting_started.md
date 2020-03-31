@@ -8,8 +8,8 @@ community disaster resilience planning and post-disaster recovery strategies int
 models of inter-dependent physical systems combined with socio-economic systems.
 
 **pyIncore** is a Python project and module to analyze and visualize various hazard (earthquake, tornado, hurricane etc.) 
-scenarios. Python framework accesses underlying data through remote services and facilitates moving 
-and synthesizing results, it can also be used to develop scientific analysis and algorithm.
+scenarios. Python framework accesses underlying data and interacts with them through remote services and facilitates 
+moving and synthesizing results, it can also be used to develop scientific analysis and algorithm.
 
 - [Introduction to IN-CORE platform and its Lab](#tryincore)
 - [Using pyIncore in IN-CORE Lab](#pyincorelab)
@@ -18,16 +18,16 @@ and synthesizing results, it can also be used to develop scientific analysis and
 
 ### <a name="tryincore"></a>Introduction to IN-CORE platform
 
-On the IN-CORE platform, users can run physics-based analysis combined with socio-economic systems that model the impact 
-of natural hazards and community resilience and recovery. Resources such as Inventory datasets, Fragilities, 
+On the IN-CORE platform, users can run analysis that model the impact of natural hazards and community resilience 
+and recovery. The platform includes among others IN-CORE Lab, pyIncore, Web tools and services. Resources such as Inventory datasets, Fragilities, 
 Hazard files etc. provided by the research community are stored on NCSA's IN-CORE 
 servers, and they can be seamlessly integrated to allow users to optimize community disaster resilience planning and 
 post-disaster recovery strategies.
 
 IN-CORE platform utilizes the Jupyter Notebook as a workspace to allow users to develop scripts in Python and  
-allowing them to call hazard and community resilience analyses modules embedded in **pyIncore** library. Available is a common 
-workspace called **IN-CORE Lab**, an interactive environment with tabbed work area for working with code and data which is based on 
-[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#), and with pyIncore pre-installed on the server.
+allowing them to call hazard and community resilience analyses modules embedded in **pyIncore** library. Available is **IN-CORE Lab**, 
+an interactive environment with tabbed work area for working with code and data which is based on 
+[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#), and with pyIncore pre-installed on the IN-CORE Lab.
 
 In this Tutorial we will create a script for Building damage of specific testbed by calling pyIncore's 
 core analysis module **BuildingDamage**. We will be running the Notebook interactively, first in NCSA's [IN-CORE Lab](incore_lab)
@@ -89,12 +89,11 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
    **Building inventory in Shelby county, TN** and **Default Building Fragility mapping**
    
    The files are referenced by their ID numbers and they are being accessed from IN-CORE services; Hazard service, 
-   Data service, and 3) DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service located on the IN-CORE servers.
-   Users can see the files in [IN-CORE Web Tools](webtools) Explorers/Viewers accesible in `INCORE Apps menu`.
+   Data service, and DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service located on the IN-CORE servers.
+   Users can see the files in [IN-CORE Web Tools](webtools) or in IN-CORE Lab under `INCORE Apps menu`.
    
     
-5. Create an instance of Building damage object specific to this Tutorial; your Notebook code). Load dataset and 
-    files and specify parameters necessary for running the analysis.
+5. Create an instance of Building damage object specific to this Tutorial; your Notebook code. Load datasets and specify parameters necessary for running the analysis.
     ```
     # Create building damage
     bldg_dmg = BuildingDamage(client)
@@ -112,8 +111,8 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     bldg_dmg.set_parameter("hazard_id", hazard_id)
     bldg_dmg.set_parameter("num_cpu", 4)
     ```
-   Note that the `load_remote_input_dataset` and `set_parameter` are functions of pyIncore's module. The only Runtime parameter 
-   here is Number of central processing units (num_cpu) for invoking paralel computations.
+   Note that the `load_remote_input_dataset` and `set_parameter` are functions of pyIncore's module. The parameter 
+   Number of central processing units (num_cpu) is used for paralel computations.
 
 6. Call your Building damage analysis run function.
     ```
@@ -128,12 +127,13 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     To execute cells one by one you can just select the first cell and click the **Run** button/command at the top, or from the menu 
     `Run > Run All Cells command`.
     
-    A **memphis_bldg_dmg_result.csv** file will appear after a short time in the left pane.
+    A **memphis_bldg_dmg_result.csv** file will appear after a short time in the left panel.
 
     There is little indication that analysis is running except by either looking at the Notebook file and seeing the [*] for the  
     cell where that block of code is being executed.
 
-8. You can view the resulting csv datataset directly by converting it into Pandas DataFrame:
+8. You can view the resulting datataset directly in IN-CORE Lab by double clicking the csv file in the left panel 
+    or by converting csv to Pandas DataFrame in the Notebook itself:
     ```
     # Retrieve result dataset
     result = bldg_dmg.get_output_dataset("result")
@@ -154,7 +154,7 @@ Apart from already set IN-CORE Account we need
 * **pyIncore** library
 
 Please note that for this **Getting started** example we recommend Python environment manager Anaconda because it  
-includes Python and Jypyter Notebook (and many other open source packages), both needed locally. For details see [pre-requisits](prerequisites.md) 
+includes Python and Jypyter Notebook (and many other open source packages), both needed locally. For details see [prerequisits](prerequisites.md) 
 page. 
 
 #### Install Anaconda environment manager
@@ -182,7 +182,9 @@ to avoid the need for administrator privileges.
 
     * On Mac/Linux, open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
 
-6. Create the python environment (`mypyincore` for example) and activate it:
+        ![Environment prompt.](images/tutorials/tut1_5_env_prompt.jpg "Environment prompt")
+
+6. Create the Python environment (for this example we choose `mypyincore`) and activate it:
     ```
     conda create -n mypyincore python=3.7
     conda activate mypyincore
@@ -196,7 +198,7 @@ to avoid the need for administrator privileges.
 
 #### Install pyIncore package
 
-1. Navigate to the directory you want to use for developing your code in Jupyter Notebooks and run the following command:
+1. Navigate to the directory you want to use for developing your code in Jupyter Notebooks and run the following command in your **activated** environment:
 	```
 	conda install -c in-core pyincore
 	```
@@ -215,7 +217,7 @@ with Anaconda distribution:
 	A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
 	If a web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
-	![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
+	![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_6_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
 
 	If you see an error message *jupyter: command not found** launch Notebook through **Anaconda Navigator**, a desktop graphical user interface (GUI) 
 	which lets you launch Anaconda applications.
@@ -224,15 +226,15 @@ with Anaconda distribution:
 	Choose your environment (**mypyincore** in this example) from the `Applications On` pull down menu in the Navigator's dashboard, install 
     Jupyter Notebook and start it by clicking a **Launch** button.
     
- 	![Anaconda Navigator dashboard.](images/tutorials/tut1_6_anaconda_nav.jpg "Anaconda Navigator dashboard.")
+ 	![Anaconda Navigator dashboard.](images/tutorials/tut1_7_anaconda_nav.jpg "Anaconda Navigator dashboard.")
    
 3. Create an new Jupyter Notebook (with Python 3), name it **Tutorial_1.ipynb** 
 
-	![A new Jupyter Notebook.](images/tutorials/tut1_7_juploc_start.jpg "A new Jupyter Notebook..")
+	![A new Jupyter Notebook.](images/tutorials/tut1_8_juploc_start.jpg "A new Jupyter Notebook..")
 
 4. Add codebase of the analysis by following steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
 
-	![Building damage Jupyter notebook cells.](images/tutorials/tut1_8_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
+	![Building damage Jupyter notebook cells.](images/tutorials/tut1_9_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
 
 5. Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
 
@@ -240,7 +242,7 @@ with Anaconda distribution:
 
     A **memphis_bldg_dmg_result.csv** file will appear after a short time in the file tab.	
 
-	![Building damage files.](images/tutorials/tut1_9_juploc_build_files.jpg "Building damage files.")
+	![Building damage files.](images/tutorials/tut1_10_juploc_build_files.jpg "Building damage files.")
 
 	
 ### <a name="usefullinks"></a>Useful links
@@ -252,10 +254,10 @@ with Anaconda distribution:
 Opening a Jupyter [Notebook on Windows](https://problemsolvingwithpython.com/02-Jupyter-Notebooks/02.04-Opening-a-Jupyter-Notebook/).
 
 * For details on running and manipulating `ipynb` files refer to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). 
-If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
+If you have problems running Notebooks, check our [WIKI questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) page or contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 
 * IN-CORE Lab extends Jupyter Lab. See [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and [blog](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) for more information.
 
 * IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
 
-* The Building analysis Jupyter Notebook is also available at IN-CORE's [GitHub](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb).
+* The Building analysis Jupyter Notebook is also available at [IN-CORE project](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb) on GitHub.
