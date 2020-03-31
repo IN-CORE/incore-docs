@@ -162,11 +162,16 @@ page.
 1. Download the latest Anaconda3 installer for your operating system from the [Anaconda](https://www.anaconda.com/distribution/) web page. 
 Choose Python 3.7 version.
 
-2. Run the installer setup locally (select *Just Me* choice on Windows OS or *Install for me only* on Mac/Linux OS) 
-to avoid the need for administrator privileges.
+    Following three steps might differ slightly on your system. For up-to-date installation follow 
+    Anaconda's documentation, chapters [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
+    [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/).
+    Various installation options are summarized in Anaconda's [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder).
 
-3. Leave the **default** folder path. For your information, the default path is `C:\Users\<user>\..\miniconda3` on Windows, 
-`/Users/<username>/miniconda3` on Mac and `/home/<username>/miniconda3` on Linux.
+2. Run the installer setup locally if asked (select *Just Me* choice on Windows OS or *Install for me only* on Mac/Linux OS) 
+to avoid the need for administrator privileges. 
+
+3. Leave the **default** folder path. For your information, the default path is `C:\Users\<username>\anaconda3` on Windows, 
+`/Users/<username>/opt/anaconda3` on Mac (or `~/opt` for the graphical install) and `/home/<username>/anaconda3` on Linux.
 
 4. Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
 
@@ -174,7 +179,6 @@ to avoid the need for administrator privileges.
     * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
         ![Windows Menu.](images/tutorials/tut1_4_win_prompt.jpg)
-
 
     * On Mac/Linux, open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
 
@@ -192,36 +196,60 @@ to avoid the need for administrator privileges.
 
 #### Install pyIncore package
 
-Navigate to the directory you want to use for developing your code in Jupyter Notebooks and run the following command:
-```
-conda install -c in-core pyincore
-```
+1. Navigate to the directory you want to use for developing your code in Jupyter Notebooks and run the following command:
+	```
+	conda install -c in-core pyincore
+	```
 
-To check that the package is installed, run
-```
-conda list
-```
-and check if pyincore exists. You should also see `jupyter` library in the list. Jupyter Notebook is already installed 
-with Anaconda distribution. 
-
-
-Start local Jupyter Notebook by running the following command at the terminal or command prompt, from your **Project folder**:
-```
-jupyter notebook
-```
+	To check that the package is installed, run
+	```
+	conda list pyincore
+	```
+ 
+2. Start local Jupyter Notebook by running the following command in the terminal or command prompt, from your **Project folder**. Jupyter Notebook is already installed 
+with Anaconda distribution:
+	```
+	jupyter notebook
+	```
    
-A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
-You will be asked to copy/paste a token into your browser when you connect for the first time.
+	A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
+	If a web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
-![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_5_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
+	![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
 
-Create the codebase of the analysis by follow steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
+	If you see an error message *jupyter: command not found** launch Notebook through **Anaconda Navigator**, a desktop graphical user interface (GUI) 
+	which lets you launch Anaconda applications.
+	
+	Find Anaconda Navigator using `Start Menu - Anaconda Navigator` or Search bar on Windows, or directly in the Applications folder on Mac. 
+	Choose your environment (**mypyincore** in this example) from the `Applications On` pull down menu in the Navigator's dashboard, install 
+    Jupyter Notebook and start it by clicking a **Launch** button.
+    
+ 	![Anaconda Navigator dashboard.](images/tutorials/tut1_6_anaconda_nav.jpg "Anaconda Navigator dashboard.")
+   
+3. Create an new Jupyter Notebook (with Python 3), name it **Tutorial_1.ipynb** 
 
-![Building damage Jupyter notebook cells.](images/tutorials/tut1_6_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
+	![A new Jupyter Notebook.](images/tutorials/tut1_7_juploc_start.jpg "A new Jupyter Notebook..")
 
-Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
+4. Add codebase of the analysis by following steps **1 through 8** from previous section [Using pyIncore in IN-CORE Lab](#pyincorelab).
 
+	![Building damage Jupyter notebook cells.](images/tutorials/tut1_8_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
+
+5. Again, your web page should show multiple cells of code. To execute cells one by one select the first cell and click the **Run** button at the top.
+
+	Please note, you might get warning *Matplotlib is building the font cache using fc-list. This may take a moment.*
+
+    A **memphis_bldg_dmg_result.csv** file will appear after a short time in the file tab.	
+
+	![Building damage files.](images/tutorials/tut1_9_juploc_build_files.jpg "Building damage files.")
+
+	
 ### <a name="usefullinks"></a>Useful links
+
+* Anaconda: [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
+[Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/), and [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)
+
+* A [Beginner’s Guide](https://medium.com/@neuralnets/beginners-quick-guide-for-handling-issues-launching-jupyter-notebook-for-python-using-anaconda-8be3d57a209b) to installing Jupyter Notebook using Anaconda distribution. 
+Opening a Jupyter [Notebook on Windows](https://problemsolvingwithpython.com/02-Jupyter-Notebooks/02.04-Opening-a-Jupyter-Notebook/).
 
 * For details on running and manipulating `ipynb` files refer to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). 
 If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
