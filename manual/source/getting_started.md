@@ -11,12 +11,7 @@ models of inter-dependent physical systems combined with socio-economic systems.
 scenarios. Python framework accesses underlying data and interacts with them through remote services and facilitates 
 moving and synthesizing results, it can also be used to develop scientific analysis and algorithm.
 
-- [Introduction to IN-CORE platform and its Lab](#tryincore)
-- [Using pyIncore in IN-CORE Lab](#pyincorelab)
-- [Using pyIncore locally](#pyincorelocal)
-- [Useful links](#usefullinks)
-
-### <a name="tryincore"></a>Introduction to IN-CORE platform
+### Introduction to IN-CORE platform
 
 On the IN-CORE platform, users can run analysis that model the impact of natural hazards and community resilience 
 and recovery. The platform includes among others IN-CORE Lab, pyIncore, Web tools and services. Resources such as Inventory datasets, Fragilities, 
@@ -46,7 +41,7 @@ Main Incore Lab's dashboard tab appears shortly:
 
 ![IN-CORE Lab dashboard tab.](images/tutorials/tut1_2_dash.jpg "IN-CORE Lab dashboard tab.").
 
-### <a name="pyincorelab"></a>Using pyIncore in IN-CORE Lab
+### Using pyIncore in IN-CORE Lab
 
 In this section we will create and run our first analysis using Jupyter Notebook and pyIncore library, both running on remote server. 
 We will re-create Building Damage analysis and run it in IN-CORE Lab. 
@@ -145,7 +140,7 @@ the analysis. The result will be a comma-delimited (csv) text file with Building
     df.head()
     ```
 
-### <a name="pyincorelocal"></a>Using pyIncore locally
+### Using pyIncore locally
 
 In this section we use the same Building Damage analysis but this time we run it locally, on user's computer. 
 Apart from already set IN-CORE Account we need
@@ -157,7 +152,7 @@ Please note that for this **Getting started** example we recommend Python enviro
 includes Python and Jypyter Notebook (and many other open source packages), both needed locally. For details see [prerequisits](prerequisites.md) 
 page. 
 
-#### Install Anaconda environment manager
+#### Install Anaconda manager
 
 1. Download the latest Anaconda3 installer for your operating system from the [Anaconda](https://www.anaconda.com/distribution/) web page. 
 Choose Python 3.7 version.
@@ -245,7 +240,7 @@ with Anaconda distribution:
 	![Building damage files.](images/tutorials/tut1_10_juploc_build_files.jpg "Building damage files.")
 
 	
-### <a name="usefullinks"></a>Useful links
+### Useful links
 
 * Anaconda: [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
 [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/), and [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)
