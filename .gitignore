@@ -22,3 +22,6 @@ hs_err_pid*
 
 # Apple metadata
 **/.DS_Store
+
+# Sphinx
+manual/build/
