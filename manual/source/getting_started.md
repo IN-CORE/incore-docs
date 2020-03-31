@@ -149,32 +149,33 @@ Main Incore Lab's dashboard tab appears shortly:
 In this section we use the same Building Damage analysis but this time we run it locally, on user's computer. 
 Apart from already set IN-CORE Account we need
 
-* Python virtual environment called **Anaconda** and
+* Python virtual environment called **Miniconda**
+* **Jypyter Notebook** and
 * **pyIncore** library
 
-Please note that for this **Getting started** example we recommend Python environment manager Anaconda because it  
-includes Python and Jypyter Notebook (and many other open source packages), both needed locally. For details see [prerequisits](prerequisites.md) 
-page. 
+Please note that for this **Getting started** example we use small Python environment manager Miniconda which
+includes just Python, conda, and a small number of other packages. We will install Jypyter Notebook separately. 
+For additional installation details see [prerequisits](prerequisites.md) page.
 
-#### Install Anaconda manager
+#### Install Miniconda manager
 
-1. Download the latest Anaconda3 installer for your operating system from the [Anaconda](https://www.anaconda.com/distribution/) web page. 
-Choose Python 3.7 version.
+If you already have Miniconda (or Anaconda) installed, you should not use the installer. Update `conda`, an interface for managing installations and virtual environments shared by 
+ both Miniconda and Anaconda, and continue with step 3:
+```
+conda update conda
+```
 
-    Following three steps might differ slightly on your system. For up-to-date installation follow 
-    Anaconda's documentation, chapters [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
-    [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/).
-    Various installation options are summarized in Anaconda's [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder).
+1. Download the latest Miniconda3 installer for your operating system from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
 
-2. Run the installer setup locally if asked (select *Just Me* choice on Windows OS or *Install for me only* on Mac/Linux OS) 
-to avoid the need for administrator privileges. 
+2. Run the installer setup.
 
-3. Leave the **default** folder path. For your information, the default path is `C:\Users\<username>\anaconda3` on Windows, 
-`/Users/<username>/opt/anaconda3` on Mac (or `~/opt` for the graphical install) and `/home/<username>/anaconda3` on Linux.
+    Depending on the installation you might be asked to choose from different setups. 
+    * Run the installer setup locally; select *Just Me* choice on Windows OS or *Install for me only* on Mac/Linux OS to avoid the need for administrator privileges. 
+    * Leave the **default** folder path. For your information, the default path is `C:\Users\<username>\miniconda3` on Windows, 
+    `/Users/<username>/miniconda3` or `~/opt/miniconda3` on Mac and `/home/<username>/anaconda3` on Linux.
+    * Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
 
-4. Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
-
-5. Activate the environment:
+3. Activate the environment:
     * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
         ![Windows Menu.](images/tutorials/tut1_6_win_prompt.jpg)
@@ -183,14 +184,14 @@ to avoid the need for administrator privileges.
 
         ![Environment prompt.](images/tutorials/tut1_7_env_prompt.jpg "Environment prompt")
 
-6. Create the Python environment (for this example we choose `mypyincore`) and activate it:
+4. Create the Python environment (for this example we choose `mypyincore`) and activate it:
     ```
     conda create -n mypyincore python=3.7
     conda activate mypyincore
     ```
     You should see `mypyincore` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
 
-7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
+5. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```
     conda config --add channels conda-forge
     ```
@@ -207,8 +208,12 @@ to avoid the need for administrator privileges.
 	conda list pyincore
 	```
  
-2. Start local Jupyter Notebook by running the following command in the terminal or command prompt, from your **Project folder**. Jupyter Notebook is already installed 
-with Anaconda distribution:
+2. Jupyter Notebook has to be installed separately in your virtual environment (activated by `conda activate mypyincore`) on Miniconda:
+    ```
+    conda install jupyter
+    ```
+   
+3. Start local Jupyter Notebook by running the following command in the terminal or command prompt, from your **Project folder**:
 	```
 	jupyter notebook
 	```
@@ -217,15 +222,6 @@ with Anaconda distribution:
 	If a web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
 	![Jupyter Notebook token, running for the first time.](images/tutorials/tut1_8_juploc_token.jpg "Jupyter Notebook token, running for the first time.")
-
-	If you see an error message *jupyter: command not found** launch Notebook through **Anaconda Navigator**, a desktop graphical user interface (GUI) 
-	which lets you launch Anaconda applications.
-	
-	Find Anaconda Navigator using `Start Menu - Anaconda Navigator` or Search bar on Windows, or directly in the Applications folder on Mac. 
-	Choose your environment (**mypyincore** in this example) from the `Applications On` pull down menu in the Navigator's dashboard, install 
-    Jupyter Notebook and start it by clicking a **Launch** button.
-    
- 	![Anaconda Navigator dashboard.](images/tutorials/tut1_9_anaconda_nav.jpg "Anaconda Navigator dashboard.")
    
 3. Create an new Jupyter Notebook (with Python 3), name it **Tutorial_1.ipynb** 
 
@@ -245,6 +241,8 @@ with Anaconda distribution:
 
 	
 ### Useful links
+
+* Miniconda: [Installing Miniconda](https://docs.conda.io/en/latest/miniconda.html), [Anaconda or Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda)
 
 * Anaconda: [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
 [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/), and [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)
