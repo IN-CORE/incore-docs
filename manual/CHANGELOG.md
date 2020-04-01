@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed.
 - Removed notebook installation from Prerequisites.
 
-### Fixed
+### Fixed oh OK so it has three parts they didn't change and whatever OK the same thing edit fixed and changed
 - Broken links to GitHub notebooks
 
 ## [1.0.0] - 2019-12-17

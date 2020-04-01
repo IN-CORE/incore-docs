@@ -12,8 +12,8 @@
 and verify the installation by running it from your project folder. For details on running and manipulating `ipynb` files refer 
 to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 
-
-- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**:
+- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**. Jupyter Notebook is already installed 
+with Anaconda:
     ```
     jupyter notebook
     ```
@@ -22,19 +22,21 @@ to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html
     ```
     jupyter -m notebook
     ```     
-   
-    A message *The Jupyter Notebook is running* appears in the terminal/prompt 
-    and you should see the notebook open in your browser. 
-    You will be asked to copy/paste a token into your browser when you connect 
-    for the first time.
+    A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
+    If the web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
     
     ![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
+
+	If you use Anaconda and see an error message *jupyter: command not found** launch Notebook through **Anaconda Navigator**, a desktop graphical user interface (GUI) 
+	which lets you launch Anaconda applications.
+	
+	Find Anaconda Navigator using `Start Menu - Anaconda Navigator` or Search bar on Windows, or directly in the Applications folder on Mac. 
+	Choose your environment (**mypyincore** in this example) from the `Applications On` pull down menu in the Navigator's dashboard, install 
+    Jupyter Notebook and start it by clicking a **Launch** button.
     
-    **Note** that the notebook is already installed with the Anaconda 
-    distribution; however, it has to be installed separately in your virtual environment 
-    on Miniconda by running `conda install jupyter`.
-    
-    
+ 	![Anaconda Navigator dashboard.](images/tutorials/tut1_9_anaconda_nav.jpg "Anaconda Navigator dashboard.")
+
+
 - Click on the `building_dmg.ipynb` in the Jupyter Notebook browser.
 
     ![Jupyter Notebook dashboard.](images/juplocal1_file.jpg "Jupyter Notebook dashboard.")
