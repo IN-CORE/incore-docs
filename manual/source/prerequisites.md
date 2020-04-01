@@ -49,12 +49,14 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
 
 1. Download the latest Miniconda3 installer for Windows from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page 
     or Anaconda3 installer from [Anaconda](https://www.anaconda.com/distribution/) page
+    <br />
+    <br />
+2. Run the installer setup.
 
-2. Run the installer setup locally (select the *Just Me* choice) to avoid the need for administrator privileges. 
-    
-    Leave the default folder path. The path is `C:\Users\<username>\..\miniconda3`.
-    
-    Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+    Depending on the installation you might be asked to choose from different setups. 
+    * Run the installer setup locally; select *Just Me* choice to avoid the need for administrator privileges. 
+    * Leave the **default** folder path. For your information, the default path is `C:\Users\<username>\..\miniconda3` (`anaconda3`).
+    * Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
 
 3. Open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
@@ -76,26 +78,28 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
 
 1. Download the latest Miniconda3 installer from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page 
     or Anaconda3 installer from [Anaconda](https://www.anaconda.com/distribution/) page.
+    <br />
+    <br />
+2. Run the installer setup.
 
-    Run the installer setup locally (select the *Install for me only* on Mac/Linux) to avoid the need for administrator privileges.
-    
-    Leave the default folder path. The path is `/Users/<username>/opt/anaconda3` or `~/opt` 
-    for the graphical install on Mac, and `/home/<username>/anaconda3` on Linux.
-    
-    Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+    Depending on the installation you might be asked to choose from different setups. 
+    * Run the installer setup locally (select the *Install for me only* on Mac/Linux) to avoid the need for administrator privileges.
+    * Leave the default folder path. The path is `/Users/<username>/miniconda3` or `anaconda3` (`~/opt/` for the graphical install) on Mac, 
+    and `/home/<username>/miniconda3` (`anaconda3`) on Linux.
+    * Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
 
-5. Open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
+3. Open up a Terminal. The `base` environment is being activated and the prompt changes to: `(base)/Users/<username>` or `(base)/home/<username>`:
 
     ![Environment prompt.](images/tutorials/tut1_7_env_prompt.jpg "Environment prompt")
     
-6. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
+4. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
     ```
     conda create -n pyincoreEnv python=3
     conda activate pyincoreEnv
     ```
     You should see `pyincoreEnv` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
 
-7. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
+5. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```
     conda config --add channels conda-forge
     ```
