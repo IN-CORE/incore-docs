@@ -163,11 +163,9 @@ For additional installation details see [prerequisits](prerequisites.md) page.
 
 #### Install Miniconda manager
 
-If you already have Miniconda (or Anaconda) installed, you should not use the installer. Update `conda`, an interface for managing installations and virtual environments shared by 
- both Miniconda and Anaconda, and continue with step 3:
-```
-conda update conda
-```
+If you don't have Miniconda installed, do the following steps. If you already have Miniconda (or Anaconda) installed 
+pdate `conda`, an interface for managing installations and virtual environments shared by 
+both Miniconda and Anaconda, using `conda update conda` command and continue with step 3:
 
 1. Download the latest Miniconda3 installer for your operating system from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page.
     <br />
@@ -178,10 +176,10 @@ conda update conda
     * Run the installer setup locally; select *Just Me* choice on Windows OS or *Install for me only* on Mac/Linux OS to avoid the need for administrator privileges. 
     * Leave the **default** folder path. For your information, the default path is `C:\Users\<username>\miniconda3` on Windows, 
     `/Users/<username>/miniconda3` or `~/opt/miniconda3` on Mac and `/home/<username>/anaconda3` on Linux.
-    * Do not add Anaconda to the PATH. Do, however, register Anaconda as the default Python environment.
+    * Do not add Miniconda to the PATH. Do, however, register Miniconda as the default Python environment.
 
 3. Activate the environment:
-    * On Windows, open up an Anaconda prompt from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
+    * On Windows, open up an **Anaconda Prompt** from the Windows Start menu. The `base` environment is being activated and the prompt changes to: `(base) C:\Users\<user>`:
 
         ![Windows Menu.](images/tutorials/tut1_6_win_prompt.jpg)
     <br />
