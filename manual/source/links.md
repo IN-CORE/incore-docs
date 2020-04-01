@@ -2,6 +2,10 @@
 
 ### Python and Virtual environment
 
+* Miniconda: [Installing Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
+* Anaconda or Miniconda? [Conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda) and [differences](https://stackoverflow.com/questions/45421163/anaconda-vs-miniconda).
+
 * Anaconda: [Installing on Windows](https://docs.anaconda.com/anaconda/install/windows/), [Installing on macOS](https://docs.anaconda.com/anaconda/install/mac-os/) and 
 [Installing on Linux](https://docs.anaconda.com/anaconda/install/linux/), and [Frequently asked questions](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)
 
