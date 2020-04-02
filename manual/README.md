@@ -25,7 +25,7 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and change directo
    
 3. Run html pages in your local browser (you might see the nginx main page first)
     ```
-    http://localhost/doc/incore/   
+    http://localhost/doc/incore/
     ```  
 
 ### Running Sphinx directly in your environment

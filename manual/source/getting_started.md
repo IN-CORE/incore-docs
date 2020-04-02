@@ -55,7 +55,7 @@ Main Incore Lab's dashboard tab appears shortly:
     from pyincore import IncoreClient
     from pyincore.analyses.buildingdamage import BuildingDamage
     ```
-    With these two lines you just get to these two classes from the **pyIncore** module. 
+    With these two lines you just get to two classes from the **pyIncore** module.
     
     You can already run the Notebook by clicking `Run the selected cells` arrow button. If pyIncore imports correctly a second, empty cell appears. 
     Otherwise <span style="color:red">ImportError</span> error message is shown.
