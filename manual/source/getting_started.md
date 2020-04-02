@@ -13,23 +13,20 @@ moving and synthesizing results, it can also be used to develop scientific analy
 
 ### Introduction to IN-CORE platform
 
-On the IN-CORE platform, users can run analysis that model the impact of natural hazards and community resilience 
-and recovery. The platform includes among others IN-CORE Lab, pyIncore, Web tools and services. Resources such as Inventory datasets, Fragilities, 
+On the IN-CORE platform, users can run analyses that model the impact of natural hazards and community resilience 
+and recovery. The platform consists of IN-CORE Lab, pyIncore, Web tools, and Web services. Resources such as Inventory datasets, Fragilities, 
 Hazard files etc. provided by the research community are stored on NCSA's IN-CORE 
 servers, and they can be seamlessly integrated to allow users to optimize community disaster resilience planning and 
 post-disaster recovery strategies.
 
-IN-CORE platform utilizes the Jupyter Notebook as a workspace to allow users to develop scripts in Python and  
-allowing them to call hazard and community resilience analyses modules embedded in **pyIncore** library. Available is **IN-CORE Lab**, 
-an interactive environment with tabbed work area for working with code and data which is based on 
-[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#), and with pyIncore pre-installed on the IN-CORE Lab.
+IN-CORE platform utilizes the Jupyter Notebook as a workspace to allow users to develop scripts in Python and allowing them to call hazard and community resilience analyses modules embedded in **pyIncore** library. 
+**IN-CORE Lab**, which is based on [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/#) and comes pre-installed with pyIncore, is an interactive environment for working with Jupyter Notebooks 
+and can be used to run IN-CORE examples and create your own notebooks.
 
-In this Tutorial we will create a script for Building damage of specific testbed by calling pyIncore's 
-core analysis module **BuildingDamage**. We will be running the Notebook interactively, first in NCSA's [IN-CORE Lab](incore_lab)
-and then on user's local computer.
+In this Tutorial, we will create a Building damage script for a specific testbed by calling pyIncore’s core analysis module **BuildingDamage**. We will be running the Notebook interactively, first in NCSA's [IN-CORE Lab](incore_lab) and then on your local computer.
 
 A user must have an IN-CORE account recognized by the IN-CORE service. This account gives you access to all of the public data on
-the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for setting one.
+the system and allows you to create data that is only accessible by you. See [IN-CORE Account](account) section for creating one.
 
 ### Using pyIncore in IN-CORE Lab
 
@@ -49,7 +46,7 @@ Main Incore Lab's dashboard tab appears shortly:
 
 ![IN-CORE Lab dashboard tab](images/tutorials/tut1_2_juplab_dash.jpg "IN-CORE Lab dashboard tab.").
 
-1. Create an empty Jupyter Notebook by clicking the `Notebook > Python 3` tile. A new `.ipynb` file appears in the left panel. Rename it (Rigth Mouse click and Rename) to, for example **Tutorial_1.ipynb**  
+1. Create an empty Jupyter Notebook by clicking the `Notebook > Python 3` tile. A new `.ipynb` file appears in the left panel. Rename it (Right Mouse click and Rename) to, for example **Tutorial_1.ipynb**  
 
     ![IN-CORE Lab save notebook](images/tutorials/tut1_3_juplab_save.jpg "IN-CORE Lab save notebook.").
 
@@ -58,7 +55,7 @@ Main Incore Lab's dashboard tab appears shortly:
     from pyincore import IncoreClient
     from pyincore.analyses.buildingdamage import BuildingDamage
     ```
-    With these two lines, by importing the `IncoreClient` and `BuildingDamage` classes you just get "access" to codebase in **pyIncore** module. 
+    With these two lines you just get to these two classes from the **pyIncore** module. 
     
     You can already run the Notebook by clicking `Run the selected cells` arrow button. If pyIncore imports correctly a second, empty cell appears. 
     Otherwise <span style="color:red">ImportError</span> error message is shown.
@@ -94,7 +91,7 @@ Main Incore Lab's dashboard tab appears shortly:
    Users can see the files in [IN-CORE Web Tools](webtools) or in IN-CORE Lab under `INCORE Apps menu`.
    <br />
    <br />
-5. Create an instance of Building damage object specific to this Tutorial; your Notebook code. Load datasets and specify parameters necessary for running the analysis.
+5. Next, create an instance of Building damage object specific to this Tutorial in your Notebook. We need to specify the datasets and parameters necessary for running the analysis.    
     ```
     # Create building damage
     bldg_dmg = BuildingDamage(client)
@@ -102,7 +99,7 @@ Main Incore Lab's dashboard tab appears shortly:
     # Load input dataset
     bldg_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
 
-   # Specify the result name
+    # Specify the result name
     result_name = "memphis_bldg_dmg_result"
 
     # Set analysis parameters
@@ -131,9 +128,8 @@ Main Incore Lab's dashboard tab appears shortly:
     
     A **memphis_bldg_dmg_result.csv** file will appear after a short time in the left panel.
 
-    There is little indication that analysis is running except by either looking at the Notebook file and seeing the [*] for the  
+    Note - there is little indication that analysis is running except by either looking at the Notebook file and seeing the [*] for the  
     cell where that block of code is being executed.
-    <br />
     <br />
 8. You can view the resulting datataset directly in IN-CORE Lab by double clicking the csv file in the left panel 
     or by converting csv to Pandas DataFrame in the Notebook itself:
@@ -150,8 +146,8 @@ Main Incore Lab's dashboard tab appears shortly:
 
 ### Using pyIncore locally
 
-In this section we use the same Building Damage analysis but this time we run it locally, on user's computer. 
-Apart from already set IN-CORE Account we need
+In this section we use the same Building Damage analysis but this time we run it locally, on your computer. 
+Apart from your IN-CORE Account we need
 
 * Python virtual environment called **Miniconda**
 * **Jypyter Notebook** and
