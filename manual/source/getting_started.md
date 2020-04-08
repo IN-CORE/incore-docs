@@ -150,12 +150,12 @@ In this section we use the same Building Damage analysis but this time we run it
 Apart from your IN-CORE Account we need
 
 * Python virtual environment called **Miniconda**
-* **Jypyter Notebook** and
+* **Jupyter Notebook** and
 * **pyIncore** library
 
 Please note that for this **Getting started** example we use small Python environment manager Miniconda which
 includes just Python, conda, and a small number of other packages. We will install Jypyter Notebook separately. 
-For additional installation details see [prerequisits](prerequisites.md) page.
+For additional installation details see [prerequisites](prerequisites.md) page.
 
 #### Install Miniconda manager
 
