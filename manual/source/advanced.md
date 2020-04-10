@@ -1,15 +1,15 @@
-##Advanced
+## Advanced
 
 These tutorials cover advanced topics for experienced **IN-CORE** users and **pyIncore** developers.
 
-###Running files locally
+### Running files locally
 
 
 
-###Create mapping
+### Create mapping
 
 
-###Upload datasets to the IN-CORE service.
+### Upload datasets to the IN-CORE service.
 
 This tutorial describes how to use a [REST API](https://restfulapi.net/) (**RE**presentational **S**tate **T**ransfer and **A**pplication **P**rogramming **I**nterface) clients to upload datasets to IN-CORE service.
 
@@ -19,6 +19,6 @@ alone packaged applications as well. In any case the app should be able to
 
 - Perform HTTP requests with any method (`GET`, `POST` ...), URL, body and custom headers.
 - Create and save your authorization headers with Basic or OAuth2 authentication.
-- Save and organize requests foruser's convenience.
+- Save and organize requests for user's convenience.
 
 
