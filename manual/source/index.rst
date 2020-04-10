@@ -9,6 +9,7 @@ Introduction
 
     self
     account
+    getting_started
     pyIncore <pyincore>
     pyIncore-viz <pyincore_viz>
     incore_lab
