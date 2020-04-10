@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.6.1",
-    "title": "",
+    "version": "0.6.4",
+    "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
       "url": "https://incore.ncsa.illinois.edu",
@@ -47,9 +47,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -125,9 +126,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -161,9 +163,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -198,9 +201,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -242,9 +246,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -278,9 +283,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -311,9 +317,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -351,9 +358,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -396,9 +404,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -439,9 +448,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -479,9 +489,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -599,12 +610,6 @@
         "sourceDataset": {
           "type": "string"
         },
-        "spaces": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "boundingBox": {
           "type": "array",
           "items": {
@@ -614,9 +619,6 @@
         },
         "networkDataset": {
           "$ref": "#/definitions/NetworkDataset"
-        },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
         }
       }
     },
@@ -669,33 +671,6 @@
         },
         "graph": {
           "$ref": "#/definitions/NetworkData"
-        }
-      }
-    },
-    "Privileges": {
-      "type": "object",
-      "properties": {
-        "userPrivileges": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "enum": [
-              "READ",
-              "WRITE",
-              "ADMIN"
-            ]
-          }
-        },
-        "groupPrivileges": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "enum": [
-              "READ",
-              "WRITE",
-              "ADMIN"
-            ]
-          }
         }
       }
     },
@@ -803,17 +778,17 @@
         "providers": {
           "$ref": "#/definitions/Providers"
         },
-        "formDataContentDisposition": {
-          "$ref": "#/definitions/FormDataContentDisposition"
-        },
-        "simple": {
-          "type": "boolean"
-        },
         "name": {
           "type": "string"
         },
         "value": {
           "type": "string"
+        },
+        "formDataContentDisposition": {
+          "$ref": "#/definitions/FormDataContentDisposition"
+        },
+        "simple": {
+          "type": "boolean"
         },
         "parameterizedHeaders": {
           "type": "object",

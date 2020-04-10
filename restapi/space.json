@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Space Service for creating and accessing spaces",
-    "version": "0.6.1",
-    "title": "",
+    "version": "0.6.4",
+    "title": "Space Service",
     "contact": {
       "name": "IN-CORE Dev Team",
       "url": "https://incore.ncsa.illinois.edu",
@@ -47,9 +47,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -87,9 +88,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -123,9 +125,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -160,9 +163,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -213,9 +217,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -256,9 +261,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {
@@ -297,9 +303,10 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
-            "required": false,
+            "description": "User credentials.",
+            "required": true,
             "type": "string"
           },
           {

@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Service For Fragilities, Repairs, Restorations  and Inventory Mappings",
-    "version": "0.6.1",
-    "title": "",
+    "version": "0.6.4",
+    "title": "DFR3 Service",
     "contact": {
       "name": "IN-CORE Dev Team",
       "url": "https://incore.ncsa.illinois.edu",
@@ -56,7 +56,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -151,7 +151,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -189,7 +189,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -226,7 +226,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -273,6 +273,436 @@
         }
       }
     },
+    "/repairs": {
+      "get": {
+        "tags": [
+          "repairs"
+        ],
+        "summary": "Gets list of repairs",
+        "description": "Apply filters to get the desired set of repairs",
+        "operationId": "getRepairs",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hazard",
+            "in": "query",
+            "description": "hazard type  filter",
+            "required": false,
+            "type": "string",
+            "x-example": "earthquake"
+          },
+          {
+            "name": "inventory",
+            "in": "query",
+            "description": "Inventory type",
+            "required": false,
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "description": "Repair creator's username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "query",
+            "description": "Name of space",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RepairSet"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "repairs"
+        ],
+        "summary": "Create a repair set",
+        "description": "Post a repair set to the repair service",
+        "operationId": "uploadRepairSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "json representing the repair set",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/RepairSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RepairSet"
+            }
+          }
+        }
+      }
+    },
+    "/repairs/{repairId}": {
+      "get": {
+        "tags": [
+          "repairs"
+        ],
+        "summary": "Gets a repair by Id",
+        "description": "Get a particular repair based on the id provided",
+        "operationId": "getRepairSetById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "repairId",
+            "in": "path",
+            "description": "hexadecimal repair id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b47b2d8337d4a36187c6727"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RepairSet"
+            }
+          }
+        }
+      }
+    },
+    "/repairs/search": {
+      "get": {
+        "tags": [
+          "repairs"
+        ],
+        "summary": "Search for a text in all repairs",
+        "description": "Gets all repairs that contain a specific text",
+        "operationId": "findRepairs",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "Text to search by",
+            "required": false,
+            "type": "string",
+            "x-example": "steel"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RepairSet"
+              }
+            }
+          },
+          "404": {
+            "description": "No repairs found with the searched text"
+          }
+        }
+      }
+    },
+    "/restorations": {
+      "get": {
+        "tags": [
+          "restorations"
+        ],
+        "summary": "Gets list of restorations",
+        "description": "Apply filters to get the desired set of restorations",
+        "operationId": "getRestorations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hazard",
+            "in": "query",
+            "description": "hazard type  filter",
+            "required": false,
+            "type": "string",
+            "x-example": "earthquake"
+          },
+          {
+            "name": "inventory",
+            "in": "query",
+            "description": "Inventory type",
+            "required": false,
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "description": "Restoration creator's username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "query",
+            "description": "Name of space",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RestorationSet"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "restorations"
+        ],
+        "summary": "Create a restoration set",
+        "description": "Post a restoration set to the restoration service",
+        "operationId": "uploadRestorationSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "json representing the restoration set",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/RestorationSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RestorationSet"
+            }
+          }
+        }
+      }
+    },
+    "/restorations/{restorationId}": {
+      "get": {
+        "tags": [
+          "restorations"
+        ],
+        "summary": "Gets a restoration by Id",
+        "description": "Get a particular restoration based on the id provided",
+        "operationId": "getRestorationSetById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "restorationId",
+            "in": "path",
+            "description": "hexadecimal restoration id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b47b2d8337d4a36187c6727"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RestorationSet"
+            }
+          }
+        }
+      }
+    },
+    "/restorations/search": {
+      "get": {
+        "tags": [
+          "restorations"
+        ],
+        "summary": "Search for a text in all restorations",
+        "description": "Gets all restorations that contain a specific text",
+        "operationId": "findRestorations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "Text to search by",
+            "required": false,
+            "type": "string",
+            "x-example": "steel"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RestorationSet"
+              }
+            }
+          },
+          "404": {
+            "description": "No restorations found with the searched text"
+          }
+        }
+      }
+    },
     "/mappings": {
       "get": {
         "tags": [
@@ -286,7 +716,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -374,7 +804,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -412,7 +842,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -452,7 +882,7 @@
         ],
         "parameters": [
           {
-            "name": "X-Credential-Username",
+            "name": "x-auth-userinfo",
             "in": "header",
             "required": false,
             "type": "string"
@@ -478,436 +908,6 @@
             "schema": {
               "$ref": "#/definitions/MappingResponse"
             }
-          }
-        }
-      }
-    },
-    "/repairs": {
-      "get": {
-        "tags": [
-          "repairs"
-        ],
-        "summary": "Gets list of repairs",
-        "description": "Apply filters to get the desired set of repairs",
-        "operationId": "getRepairs",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "hazard",
-            "in": "query",
-            "description": "hazard type  filter",
-            "required": false,
-            "type": "string",
-            "x-example": "earthquake"
-          },
-          {
-            "name": "inventory",
-            "in": "query",
-            "description": "Inventory type",
-            "required": false,
-            "type": "string",
-            "x-example": "building"
-          },
-          {
-            "name": "creator",
-            "in": "query",
-            "description": "Repair creator's username",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "space",
-            "in": "query",
-            "description": "Name of space",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "skip",
-            "in": "query",
-            "description": "Skip the first n results",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit no of results to return",
-            "required": false,
-            "type": "integer",
-            "default": 100,
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RepairSet"
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "repairs"
-        ],
-        "summary": "Create a repair set",
-        "description": "Post a repair set to the repair service",
-        "operationId": "uploadRepairSet",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "json representing the repair set",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/RepairSet"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/RepairSet"
-            }
-          }
-        }
-      }
-    },
-    "/repairs/{repairId}": {
-      "get": {
-        "tags": [
-          "repairs"
-        ],
-        "summary": "Gets a repair by Id",
-        "description": "Get a particular repair based on the id provided",
-        "operationId": "getRepairSetById",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "repairId",
-            "in": "path",
-            "description": "hexadecimal repair id",
-            "required": true,
-            "type": "string",
-            "x-example": "5b47b2d8337d4a36187c6727"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/RepairSet"
-            }
-          }
-        }
-      }
-    },
-    "/repairs/search": {
-      "get": {
-        "tags": [
-          "repairs"
-        ],
-        "summary": "Search for a text in all repairs",
-        "description": "Gets all repairs that contain a specific text",
-        "operationId": "findRepairs",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "text",
-            "in": "query",
-            "description": "Text to search by",
-            "required": false,
-            "type": "string",
-            "x-example": "steel"
-          },
-          {
-            "name": "skip",
-            "in": "query",
-            "description": "Skip the first n results",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit no of results to return",
-            "required": false,
-            "type": "integer",
-            "default": 100,
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RepairSet"
-              }
-            }
-          },
-          "404": {
-            "description": "No repairs found with the searched text"
-          }
-        }
-      }
-    },
-    "/restorations": {
-      "get": {
-        "tags": [
-          "restorations"
-        ],
-        "summary": "Gets list of restorations",
-        "description": "Apply filters to get the desired set of restorations",
-        "operationId": "getRestorations",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "hazard",
-            "in": "query",
-            "description": "hazard type  filter",
-            "required": false,
-            "type": "string",
-            "x-example": "earthquake"
-          },
-          {
-            "name": "inventory",
-            "in": "query",
-            "description": "Inventory type",
-            "required": false,
-            "type": "string",
-            "x-example": "building"
-          },
-          {
-            "name": "creator",
-            "in": "query",
-            "description": "Restoration creator's username",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "space",
-            "in": "query",
-            "description": "Name of space",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "skip",
-            "in": "query",
-            "description": "Skip the first n results",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit no of results to return",
-            "required": false,
-            "type": "integer",
-            "default": 100,
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RestorationSet"
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "restorations"
-        ],
-        "summary": "Create a restoration set",
-        "description": "Post a restoration set to the restoration service",
-        "operationId": "uploadRestorationSet",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "json representing the restoration set",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/RestorationSet"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/RestorationSet"
-            }
-          }
-        }
-      }
-    },
-    "/restorations/{restorationId}": {
-      "get": {
-        "tags": [
-          "restorations"
-        ],
-        "summary": "Gets a restoration by Id",
-        "description": "Get a particular restoration based on the id provided",
-        "operationId": "getRestorationSetById",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "restorationId",
-            "in": "path",
-            "description": "hexadecimal restoration id",
-            "required": true,
-            "type": "string",
-            "x-example": "5b47b2d8337d4a36187c6727"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/RestorationSet"
-            }
-          }
-        }
-      }
-    },
-    "/restorations/search": {
-      "get": {
-        "tags": [
-          "restorations"
-        ],
-        "summary": "Search for a text in all restorations",
-        "description": "Gets all restorations that contain a specific text",
-        "operationId": "findRestorations",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "X-Credential-Username",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "text",
-            "in": "query",
-            "description": "Text to search by",
-            "required": false,
-            "type": "string",
-            "x-example": "steel"
-          },
-          {
-            "name": "skip",
-            "in": "query",
-            "description": "Skip the first n results",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit no of results to return",
-            "required": false,
-            "type": "integer",
-            "default": 100,
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RestorationSet"
-              }
-            }
-          },
-          "404": {
-            "description": "No restorations found with the searched text"
           }
         }
       }
@@ -980,9 +980,6 @@
         "inventoryType": {
           "type": "string"
         },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
-        },
         "creator": {
           "type": "string"
         },
@@ -1010,88 +1007,6 @@
           "type": "string"
         },
         "yearPublished": {
-          "type": "string"
-        }
-      }
-    },
-    "Privileges": {
-      "type": "object",
-      "properties": {
-        "userPrivileges": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "enum": [
-              "READ",
-              "WRITE",
-              "ADMIN"
-            ]
-          }
-        },
-        "groupPrivileges": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "enum": [
-              "READ",
-              "WRITE",
-              "ADMIN"
-            ]
-          }
-        }
-      }
-    },
-    "Mapping": {
-      "type": "object",
-      "properties": {
-        "legacyEntry": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "entry": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "rules": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
-    "MappingSet": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "hazardType": {
-          "type": "string"
-        },
-        "inventoryType": {
-          "type": "string"
-        },
-        "mappings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Mapping"
-          }
-        },
-        "creator": {
-          "type": "string"
-        },
-        "mappingType": {
           "type": "string"
         }
       }
@@ -1128,9 +1043,6 @@
         },
         "inventoryType": {
           "type": "string"
-        },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
         },
         "creator": {
           "type": "string"
@@ -1422,6 +1334,61 @@
         }
       ]
     },
+    "Mapping": {
+      "type": "object",
+      "properties": {
+        "legacyEntry": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "entry": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MappingSet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "hazardType": {
+          "type": "string"
+        },
+        "inventoryType": {
+          "type": "string"
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Mapping"
+          }
+        },
+        "creator": {
+          "type": "string"
+        },
+        "mappingType": {
+          "type": "string"
+        }
+      }
+    },
     "RepairCurve": {
       "type": "object",
       "properties": {
@@ -1462,9 +1429,6 @@
         },
         "inventoryType": {
           "type": "string"
-        },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
         },
         "creator": {
           "type": "string"
@@ -1520,9 +1484,6 @@
         },
         "inventoryType": {
           "type": "string"
-        },
-        "privileges": {
-          "$ref": "#/definitions/Privileges"
         },
         "creator": {
           "type": "string"

@@ -4,7 +4,7 @@ Example Notebooks
 ..  toctree::
     :maxdepth: 2
 
-    Joplin testbed <notebooks/Joplin Tornado Juypter Notebook Example>
+    Joplin testbed <notebooks/Joplin_Tornado_Juypter_Notebook_Example>
     Seaside testbed <notebooks/Notebook1_SeasideBuildingDamage>
     Other examples <notebooks_other>
 
