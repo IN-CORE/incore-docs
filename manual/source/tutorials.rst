@@ -1,11 +1,16 @@
 Tutorials and Tips
 ==================
 
-This page contains more in-depth guides for using **pyIncore**.
+**Introduction**
 
-It is broken up into beginner, intermediate,
+This page contains more in-depth guides for using **pyIncore** and IN-CORE system in general. It is broken up into beginner, intermediate,
 and advanced sections, as well as sections covering specific topics.
-For shorter examples, see our examples page. You can also find external resources and a FAQ in our user guide.
+
+You may use these tutorials as a self-paced course to learn the platform thoroughly. However, each section is fairly independent,
+so those already familiar with pyIncore can jump into any section.
+
+You can also check out IN-CORE resources for other materials to help you navigate through terminology and practices, and a `FAQ section <faq.md />`_ in this Manual.
+Extending and Contributing
 
 More tutorials and tips will be added here soon.
 
