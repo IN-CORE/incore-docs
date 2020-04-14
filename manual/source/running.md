@@ -43,7 +43,7 @@ with Anaconda:
 
 
 - Your web page should now show multiple cells of code. However, you are not actually running a notebook yet. Running 
-a cell means that you will execute the cellâ€™s contents. To execute cells in order you can just select the first 
+a cell means that you will execute its content. To execute cells in order you can just select the first 
 cell and click the **Run** button at the top.
 
     ![Building damage Jupyter notebook cells.](images/juplocal2_notebook.jpg "Building damage Jupyter notebook cells.")
