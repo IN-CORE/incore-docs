@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.3.1] - 2020-04-27
 
 ### Fixed
-- Joplin CGE notebook hotfix of pandas error, [INCORE1-557](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-557).
+- Hot fixes in pyincore-0.6.2 and web-0.4.3, [INCORE1-557](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-557).
 
 ## [1.3.0] - 2020-03-31
 
