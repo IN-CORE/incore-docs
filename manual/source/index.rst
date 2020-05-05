@@ -18,6 +18,7 @@ Introduction
     FAQ <faq>
     notebooks
     refs
+    links
     contact
     acknowledgement
 

@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.4.0] - Unreleased
 
 ### Added
+- Separate Useful Links page.
 
 ### Changed.
 - Separate Anaconda and Miniconda installation, [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
+
+## [1.3.1] - 2020-04-27
+
+### Fixed
+- Hot fixes in pyincore-0.6.2 and web-0.4.3.
 
 ## [1.3.0] - 2020-03-31
 
