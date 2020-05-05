@@ -10,7 +10,7 @@ You may use these tutorials as a self-paced course to learn the platform thoroug
 so those already familiar with pyIncore can jump into any section.
 
 You can also check out IN-CORE resources for other materials to help you navigate through terminology and practices, and a `FAQ section <faq.md />`_ in this Manual.
-Extending and Contributing
+We encourage IN-CORE users to contribute improve the knowledge base. contact us with suggestions for expanding and extending Tutorials.
 
 More tutorials and tips will be added here soon.
 
