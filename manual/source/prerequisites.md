@@ -65,7 +65,7 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
 
 4. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
     ```
-    conda create -n pyincoreEnv python=3
+    conda create -n pyincoreEnv python=3.7
     conda activate pyincoreEnv
     ```
 
@@ -94,7 +94,7 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
     
 4. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
     ```
-    conda create -n pyincoreEnv python=3
+    conda create -n pyincoreEnv python=3.7
     conda activate pyincoreEnv
     ```
     You should see `pyincoreEnv` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
