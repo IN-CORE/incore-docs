@@ -16,13 +16,13 @@
     and virtual environments with the Miniconda/Anaconda.
 
 - `Python 3.5+` <https://www.python.org/>
-    It is common to have more than one Python version installed on your computer. Since we recommend using virtual environment your
+    It is common to have more than one Python version installed on your computer. Since we recommend using virtual environment, your
     Python will be "encapsulated" by the environment with version specified at the environment creation. Deleting environment removes 
     that particular Python. 
     If you install Miniconda/Anaconda make sure you are running the correct version of Python, for example `/Users/<username>>/anaconda3/bin/python`.
     
-    The Python big picture: Most out-of-the-box [Windows installations](https://wiki.python.org/moin/BeginnersGuide/Download) do not come with Python pre-installed. On the other hand Macs and most 
-    modern Linux distributions do have Python installed however the version 2.7 pre-installed by Apple is no longer supported (MacOS after 10.15 Catalina
+    The Python big picture: Most out-of-the-box [Windows installations](https://wiki.python.org/moin/BeginnersGuide/Download) do not come with Python pre-installed. On the other hand Mac OS and most 
+    modern Linux distributions do have Python installed. However the version 2.7 pre-installed by Apple is no longer supported (MacOS after 10.15 Catalina
     will not include a default system Python at all). It is common that users [download](https://www.python.org/downloads) and install newer or additional version of Python. 
     Therefore it is always a good idea to check. Open Windows Powershell or Mac/Linux Terminal, and enter the following:
     ```

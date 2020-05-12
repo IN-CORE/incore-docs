@@ -19,7 +19,8 @@ If you have problems running Notebooks, check our [WIKI questions](https://opens
 
 ### IN-CORE related
 
-* IN-CORE Lab extends Jupyter Lab. See [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and [blog](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) for more information.
+* IN-CORE Lab extends from Jupyter Lab. To Learm more about Jupyter Lab, 
+see [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and [blog](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906).
 
 * IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
 

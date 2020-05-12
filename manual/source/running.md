@@ -12,8 +12,7 @@
 and verify the installation by running it from your project folder. For details on running and manipulating `ipynb` files refer 
 to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 
-- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**. Jupyter Notebook is already installed 
-with Anaconda:
+- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**. if you are using anaconda. If you are using Miniconda, please refer to the useful links section to install Jupyter Notebook:
     ```
     jupyter notebook
     ```
@@ -23,7 +22,7 @@ with Anaconda:
     jupyter -m notebook
     ```     
     A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
-    If the web browser doesn't open automatically, you can copy/paste a token into browser's navigation bar.
+    If the web browser doesn't open automatically, you can copy/paste the whole url with token into browser's navigation bar.
     
     ![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
 
