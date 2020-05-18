@@ -15,7 +15,6 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service 
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -28,6 +27,8 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | ID of the mapping dataset from the DFR3 service.
+
 
 **Output datasets**
 
@@ -45,15 +46,15 @@ code snipet:
     # Create bridge damage
     bridge_dmg = BridgeDamage(client)
 
-    # Load input dataset
+    # Load input datasets, infrastructure inventory and dfr3 mapping
     bridge_dmg.load_remote_input_dataset("bridges", bridge_dataset_id)
+    bridge_dmg.load_remote_input_dataset("dfr3_mapping_set", mapping_id)
 
     # Specify the result name
     result_name = "bridge_result"
 
     # Set analysis parameters
     bridge_dmg.set_parameter("result_name", result_name)
-    bridge_dmg.set_parameter("mapping_id", mapping_id)
     bridge_dmg.set_parameter("hazard_type", hazard_type)
     bridge_dmg.set_parameter("hazard_id", hazard_id)
     bridge_dmg.set_parameter("num_cpu", 4)

@@ -19,7 +19,6 @@ and complete) and creates an output CSV file.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key_as` | `str` | AS fragility | Fragility key used in mapping dataset.
@@ -34,6 +33,8 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4` | Building dataset |  A building dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | ID of the mapping dataset from the DFR3 service.
+
 **Output Datasets**
 
 key name | type | name | description
@@ -48,15 +49,15 @@ code snipet:
     # Create an instance
     non_structural_building_dmg = NonStructBuildingDamage(client)
 
-    # Load input datasets
-    non_structural_building_dmg.load_remote_input_dataset("buildings", building_dataset_id)
+    # Load input datasets, infrastructure inventory and dfr3 mapping
+    non_structural_building_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
+    non_structural_building_dmg.load_remote_input_dataset("dfr3_mapping_set", mapping_id)
 
     # Specify the result name
     result_name = "non_structural_building_dmg_result"
 
     # Set analysis parameters
     non_structural_building_dmg.set_parameter("result_name", result_name)
-    non_structural_building_dmg.set_parameter("mapping_id", mapping_id)
     non_structural_building_dmg.set_parameter("hazard_type", hazard_type)
     non_structural_building_dmg.set_parameter("hazard_id", hazard_id)
     non_structural_building_dmg.set_parameter("num_cpu", 4)

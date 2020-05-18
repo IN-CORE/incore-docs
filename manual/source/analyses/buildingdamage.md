@@ -27,7 +27,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | DFR3 Curve mapping dataset
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | ID of the mapping dataset from the DFR3 service.
                         
 **Output datasets**
 
