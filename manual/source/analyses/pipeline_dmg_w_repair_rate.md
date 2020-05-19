@@ -15,6 +15,7 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Earthquake hazard type.
 `hazard_id` <sup>*</sup> | `str` | Hazard ID | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -27,7 +28,6 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | ID of the mapping dataset from the DFR3 service.
 
 **Output Datasets**
 
@@ -44,15 +44,15 @@ code snipet:
     # Create pipeline damage with repair rate
     pipeline_dmg_w_rr = PipelineDamageRepairRate(client)
 
-    # Load input datasets, pipeline inventory and dfr3 mapping
+    # Load pipeline inventory as input datasets
     pipeline_dmg_w_rr.load_remote_input_dataset("pipeline", pipeline_dataset_id)
-    pipeline_dmg_w_rr.load_remote_input_dataset("dfr3_mapping_set", mapping_id)
 
     # Specify the result name
     result_name = "pipeline_result"
 
     # Set analysis parameters
     pipeline_dmg_w_rr.set_parameter("result_name", result_name)
+    pipeline_dmg_w_rr.set_parameter("mapping_id", mapping_id)
     pipeline_dmg_w_rr.set_parameter("hazard_type", hazard_type)
     pipeline_dmg_w_rr.set_parameter("hazard_id", hazard_id)
     pipeline_dmg_w_rr.set_parameter("liquefaction_fragility_key", liq_fragility_key)
