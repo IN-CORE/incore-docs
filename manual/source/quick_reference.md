@@ -1,4 +1,4 @@
-## Quick reference
+## Installation Quick Reference
 
 
 1. A user must have an **IN-CORE** account. If you do not have it, see [IN-CORE Account](account) section for setting one.
