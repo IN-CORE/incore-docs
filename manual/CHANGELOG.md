@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Quic pyincore installation reference, [INCORE1-622](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-622).
+- Quick pyIncore installation reference, [INCORE1-622](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-622).
 
 ## [1.3.1] - 2020-04-27
 
