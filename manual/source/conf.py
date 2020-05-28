@@ -21,6 +21,8 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
+
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../incore-lab'))
@@ -52,6 +54,7 @@ release = '1.3.1'
 # ones.
 extensions = ['sphinx.ext.intersphinx',
               #'sphinx.ext.viewcode',
+              'sphinx_rtd_theme',
               'sphinx.ext.ifconfig',
               'sphinx.ext.napoleon',
               'sphinx.ext.todo',

@@ -27,16 +27,16 @@ the system and allows you to create data that is only accessible by you. See [IN
 ### Using pyIncore locally
 
 In this section we will create and run our first analysis using Jupyter Notebook and pyIncore library, both run locally on your computer. 
-We will re-create Building Damage analysis.The result will be a comma-delimited (csv) text file with Building inventory and Damage states for each individual building.
+We will re-create Building Damage analysis. The result will be a comma-delimited (csv) text file with Building inventory and Damage states for each individual building.
 
-Apart from your IN-CORE Account we need
+Apart from your IN-CORE Account we need:
 
 * Python virtual environment called **Miniconda**
 * **Jupyter Notebook** and
 * **pyIncore** library
 
-Please note that for this **Getting started** example we use small Python environment manager Miniconda which
-includes just Python, conda, and a small number of other packages. We will install Jypyter Notebook separately. 
+For this **Getting started** example we use small Python environment manager Miniconda which
+includes just Python, conda, and a small number of other packages. We will install Jupyter Notebook separately. 
 For additional installation details see [prerequisites](prerequisites.md) page.
 
 #### Install pyIncore package - quick reference
@@ -174,6 +174,7 @@ If you don't have Miniconda installed, do the following steps.
     Note - there is little indication that analysis is running except by either looking at the Notebook file and seeing the [*] for the  
     cell where that block of code is being executed.
     You might also get warning *Matplotlib is building the font cache using fc-list. This may take a moment.*
+    <br />
     <br />
 9. You can view the resulting datataset directly by double clicking the csv file in the left panel 
     or by converting csv to Pandas DataFrame in the Notebook itself:
