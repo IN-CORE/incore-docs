@@ -47,6 +47,21 @@
     <br />
     <br />
     
+*   *Anaconda/Miniconda downgraded my Python version.*
+
+    Conda can downgrade Python to a lower version when it finds incompatible libraries in a specific environment. For example fresh conda 
+    environment created with command `conda create -n pyincoreEnv python=3`
+    
+    installs latest Python version supported by Anaconda which gets downgraded to `3.7.x` with `pyincore` installation. This is an expected behavior which can be remedied 
+    by using particular Python version
+    ```
+        conda create -n pyincoreEnv python=3.7
+    ```
+    General note for installing new packages or updating old ones, if you get notified that there will be downgrade or upgrade, 
+    you might consider creating a new environment to preview the change.
+    <br />
+    <br />    
+        
 *   *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
 
     We prefer **conda** installation over **pip** mainly because it handles Python packages dependencies and even library outside of 

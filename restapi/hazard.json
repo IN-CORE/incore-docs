@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami and Hurricane",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "title": "Hazard Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -122,6 +122,14 @@
             "description": "User credentials.",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "useWorkflow",
+            "in": "query",
+            "description": "Use workflow service.",
+            "required": false,
+            "type": "boolean",
+            "default": false
           },
           {
             "name": "earthquake",

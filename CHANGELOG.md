@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Tutorials and tips, document structure, [INCORE1-377](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-377).
+- More about Anaconda installation [INCORE1-566](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-566).
 
 ## [1.3.1] - 2020-04-27
 
@@ -19,8 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Getting started page, [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
-- More FAQ questions, [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
+- Getting started page [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
+- More FAQ questions [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
 
 ### Changed.
 - NCSA account link.
