@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Update House unit allocation notebook, [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
+- Update House unit allocation notebook [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
 
 ### Fixed
 - Link to Joplin notebook page from intro [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
