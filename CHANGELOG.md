@@ -6,12 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.4.0] - unreleased
 
+### Added
+- More about Anaconda installation [INCORE1-566](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-566).
+
 ### Changed
 
 - Update notebooks and Building damage specifications [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
-
-### Added
-- Separate Anaconda and Miniconda installation [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
+- Improve pyincore chapter [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
 
 ## [1.3.1] - 2020-04-27
 
