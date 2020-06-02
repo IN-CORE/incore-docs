@@ -15,6 +15,7 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -27,8 +28,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3Mapping`<br>`ergo:electricPowerPlantFragilityMapping`<br>`ergo:hzElectricPowerFacilityFragilityMapping`<br>`ergo:hzPipelineFragilityMapping`<br>`ergo:hzPotableWaterFacilityFragilityMapping`<br>`ergo:buriedPipeFragilityMapping`<br>`ergo:electricSubstationFragilityMapping`<br>`ergo:gasFacilityFragilityMapping`<br>`ergo:lifelineWaterTankFragilityMapping`<br>`ergo:bridgeFragilityMapping`<br>`ergo:buildingFragilityMapping` | DFR3 Curve mapping dataset | ID of the mapping dataset from the DFR3 service.
-                        
+
 **Output datasets**
 
 key name | type | name | description
@@ -45,15 +45,15 @@ code snipet:
     # Create building damage
     bldg_dmg = BuildingDamage(client)
 
-    # Load input datasets, building inventory and dfr3 mapping
+    # Load input dataset
     bldg_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
-    bldg_dmg.load_remote_input_dataset("dfr3_mapping_set", mapping_id)
 
     # Specify the result name
     result_name = "memphis_bldg_dmg_result"
 
     # Set analysis parameters
     bldg_dmg.set_parameter("result_name", result_name)
+    bldg_dmg.set_parameter("mapping_id", mapping_id)
     bldg_dmg.set_parameter("hazard_type", hazard_type)
     bldg_dmg.set_parameter("hazard_id", hazard_id)
     bldg_dmg.set_parameter("num_cpu", 10)
