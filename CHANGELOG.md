@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Semantics endpoints to swagger 0.6.5.
+- More about Anaconda installation [INCORE1-566](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-566).
 
 ### Changed
 
@@ -26,8 +27,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Getting started page, [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
-- More FAQ questions, [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
+- Getting started page [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
+- More FAQ questions [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
 
 ### Changed.
 - NCSA account link.
