@@ -21,3 +21,4 @@ FROM nginx
 
 RUN mkdir -p /usr/share/nginx/html/doc/incore
 COPY --from=builder /src/build/html/ /usr/share/nginx/html/doc/incore/
+

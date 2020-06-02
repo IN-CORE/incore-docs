@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.4.0] - unreleased
 
+### Added
+
+- Semantics endpoints to swagger 0.6.5.
+
 ### Changed
 
 - Update House unit allocation notebook, [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
