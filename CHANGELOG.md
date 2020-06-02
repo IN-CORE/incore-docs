@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Semantics endpoints to swagger 0.6.5.
 - More about Anaconda installation [INCORE1-566](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-566).
+- Update notebooks and Building damage specifications [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+- Improve pyincore chapter [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
 
 ### Changed
 
@@ -30,7 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Getting started page [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
 - More FAQ questions [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
 
-### Changed.
+### Changed
 - NCSA account link.
 
 ## [1.2.0] - 2020-03-02
@@ -50,7 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed.
 - Removed notebook installation from Prerequisites.
 
-### Fixed
+### Fixed oh OK so it has three parts they didn't change and whatever OK the same thing edit fixed and changed
 - Broken links to GitHub notebooks
 
 ## [1.0.0] - 2019-12-17
