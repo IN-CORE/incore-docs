@@ -1,0 +1,239 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "IN-CORE Semantics Services for type and data type",
+    "version": "0.6.5",
+    "title": "Space Service",
+    "contact": {
+      "name": "IN-CORE Dev Team",
+      "url": "https://incore.ncsa.illinois.edu",
+      "email": "incore-dev@lists.illinois.edu"
+    },
+    "license": {
+      "name": "Mozilla Public License 2.0 (MPL 2.0)",
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/"
+    }
+  },
+  "host": "incore.ncsa.illinois.edu",
+  "basePath": "/semantics/api",
+  "tags": [
+    {
+      "name": "types"
+    },
+    {
+      "name": "status"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/types": {
+      "get": {
+        "tags": [
+          "types"
+        ],
+        "summary": "list all types belong user has access to.",
+        "description": "",
+        "operationId": "listTypes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "types"
+        ],
+        "summary": "Publish new type.",
+        "description": "",
+        "operationId": "publishType",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Type uri (name).",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/types/{id}": {
+      "delete": {
+        "tags": [
+          "types"
+        ],
+        "summary": "Delete type by id.",
+        "description": "",
+        "operationId": "deleteType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Type id.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/types/{uri}": {
+      "get": {
+        "tags": [
+          "types"
+        ],
+        "summary": "Show specific types by uri.",
+        "description": "",
+        "operationId": "getType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uri",
+            "in": "path",
+            "description": "Type uri (name).",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "version number.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/types/search": {
+      "get": {
+        "tags": [
+          "types"
+        ],
+        "summary": "Search type by partial match of text.",
+        "description": "",
+        "operationId": "searchType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "Type uri (name).",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
