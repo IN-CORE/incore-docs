@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Update notebooks and Building damage specifications, [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+- Update notebooks and Building damage specifications [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+
+### Added
+- Separate Anaconda and Miniconda installation [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
 
 ## [1.3.1] - 2020-04-27
 
@@ -19,8 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Getting started page, [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
-- More FAQ questions, [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
+- Getting started page [INCORE1-441](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-441).
+- More FAQ questions [INCORE1-376](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-376).
 
 ### Changed
 - NCSA account link.
@@ -42,7 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed.
 - Removed notebook installation from Prerequisites.
 
-### Fixed
+### Fixed oh OK so it has three parts they didn't change and whatever OK the same thing edit fixed and changed
 - Broken links to GitHub notebooks
 
 ## [1.0.0] - 2019-12-17
