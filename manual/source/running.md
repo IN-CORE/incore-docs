@@ -12,28 +12,15 @@
 and verify the installation by running it from your project folder. For details on running and manipulating `ipynb` files refer 
 to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running). If you have problems running Notebooks, contact us at [incore-dev@lists.illinois.edu](mailto:incore-dev@lists.illinois.edu).
 
-
-- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**:
+- Start local **Jupyter Notebook** by running the following command at the terminal or command prompt from a **Project folder**. 
     ```
     jupyter notebook
     ```
-    
-    or if Jupyter Notebook is not recognized in Anaconda
-    ```
-    jupyter -m notebook
-    ```     
-   
-    A message *The Jupyter Notebook is running* appears in the terminal/prompt 
-    and you should see the notebook open in your browser. 
-    You will be asked to copy/paste a token into your browser when you connect 
-    for the first time.
+       
+    A message *The Jupyter Notebook is running* appears in the terminal/prompt and you should see the notebook open in your browser. 
+    If the web browser doesn't open automatically, you can copy/paste the whole url with token into browser's navigation bar.
     
     ![Jupyter Notebook token, running for the first time.](images/jupyter_token2.jpg "Jupyter Notebook token, running for the first time.")
-    
-    **Note** that the notebook is already installed with the Anaconda 
-    distribution; however, it has to be installed separately in your virtual environment 
-    on Miniconda by running `conda install jupyter`.
-    
     
 - Click on the `building_dmg.ipynb` in the Jupyter Notebook browser.
 
@@ -41,7 +28,7 @@ to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html
 
 
 - Your web page should now show multiple cells of code. However, you are not actually running a notebook yet. Running 
-a cell means that you will execute the cellâ€™s contents. To execute cells in order you can just select the first 
+a cell means that you will execute its content. To execute cells in order you can just select the first 
 cell and click the **Run** button at the top.
 
     ![Building damage Jupyter notebook cells.](images/juplocal2_notebook.jpg "Building damage Jupyter notebook cells.")
