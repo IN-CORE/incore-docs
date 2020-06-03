@@ -9,12 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Tutorials and tips, document structure [INCORE1-377](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-377).
+- Quick pyIncore installation reference, [INCORE1-622](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-622).
+- Semantics endpoints to swagger 0.6.5.
 - More about Anaconda installation [INCORE1-566](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-566).
+- Update notebooks and Building damage specifications [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+- Improve pyincore chapter [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
 
 ### Changed
 
-- Update notebooks and Building damage specifications [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
-- Improve pyincore chapter [INCORE1-543](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-543).
+- Update House unit allocation notebook [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
+
+### Fixed
+- Link to Joplin notebook page from intro [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
 
 ## [1.3.1] - 2020-04-27
 
