@@ -6,7 +6,7 @@ services in development of new analyses (see [Technical References](refs.md))
 
 (Coming soon)
 
-### Running files locally.
+### Loading input files locally.
 
 An analysis, by default downloads dataset, dfr3 and mapping files from IN-CORE service. This tutorial introduces users to the basic concept 
 of running the **pyIncore** analysis by loading datasets from local files (instead of remote datasets) as well as local support of 
