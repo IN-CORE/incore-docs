@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Update House unit allocation notebook [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
 
 ### Fixed
+- Clean notebooks, delete outputs [INCORE1-641](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-641).
 - Link to Joplin notebook page from intro [INCORE1-634](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-634).
 
 ## [1.3.1] - 2020-04-27
