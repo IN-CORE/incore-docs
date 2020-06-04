@@ -126,8 +126,7 @@
 *   *Can I use files locally?*
 
     Yes. Users can use datasets stored on their local computers. It is, however not possible to use certain resources such as dfr3 curves locally.
-    These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
-    section of this documentation.
+    These have to be uploaded to the IN-CORE services. For details see [Tutorials](advanced) section of this documentation.
     <br />
     <br />
     
@@ -170,8 +169,7 @@
 *   *What is a mapping and how do I create one?*
 
     We use mapping to associate each element of a given set such as Building inventory with one or more 
-    elements of a second set of Fragility curves. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
-    section of this documentation.
+    elements of a second set of Fragility curves. For details see [Tutorials](advanced) section of this documentation.
     <br />
     <br />
 
@@ -196,7 +194,7 @@
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
-    request with "attached" files directly to the service. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials).
+    request with "attached" files directly to the service. For details see [Tutorials](advanced).
     <br />
     <br />   
     
