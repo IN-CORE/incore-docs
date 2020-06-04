@@ -29,7 +29,7 @@ the system and allows you to create data that is only accessible by you. See [IN
 In this section we will create and run our first analysis using Jupyter Notebook and pyIncore library, both run locally on your computer. 
 We will re-create Building Damage analysis. The result will be a comma-delimited (csv) text file with Building inventory and Damage states for each individual building.
 
-Apart from your IN-CORE Account we need:
+Apart from your IN-CORE Account you need:
 
 * Python virtual environment called **Miniconda**
 * **Jupyter Notebook** and

@@ -1,8 +1,7 @@
 ## pyIncore viz
 
 Visualization package associated with pyIncore is called **pyIncore-viz**. It contains Python packages 
-required for visualizing and disseminating the IN-CORE results, mainly via the Jupyter Notebooks. The major 
-components of visualization package are 1) `matplotlib` for plotting the data, 2) **** for 
+required for visualizing and disseminating the IN-CORE results, mainly via the Jupyter Notebooks.
  
 ### Prerequisites
 
