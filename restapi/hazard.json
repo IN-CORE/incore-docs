@@ -197,6 +197,44 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "earthquakes"
+        ],
+        "summary": "Deletes an earthquake",
+        "description": "Also deletes attached dataset and related files",
+        "operationId": "deleteEarthquake",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "earthquake-id",
+            "in": "path",
+            "description": "Earthquake Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Earthquake"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/earthquakes/{earthquake-id}/values": {
@@ -869,6 +907,44 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "hurricaneWindfields"
+        ],
+        "summary": "Deletes a Hurricane Windfield",
+        "description": "Also deletes attached datasets and related files",
+        "operationId": "deleteHurricaneWindfields",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hurricaneId",
+            "in": "path",
+            "description": "Hurricane Windfield Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/HurricaneWindfields"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/hurricaneWindfields/{hurricaneId}/values": {
@@ -1160,6 +1236,44 @@
             "name": "tornado-id",
             "in": "path",
             "description": "Tornado dataset guid from data service.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Tornado"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tornadoes"
+        ],
+        "summary": "Deletes a tornado",
+        "description": "Also deletes attached dataset and related files",
+        "operationId": "deleteTornado",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tornado-id",
+            "in": "path",
+            "description": "Tornado Id",
             "required": true,
             "type": "string"
           }
@@ -1625,6 +1739,44 @@
               "items": {
                 "$ref": "#/definitions/TsunamiHazardResult"
               }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tsunamis"
+        ],
+        "summary": "Deletes a Tsunami",
+        "description": "Also deletes attached dataset and related files",
+        "operationId": "deleteTsunami",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tsunami-id",
+            "in": "path",
+            "description": "Tsunami Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Tsunami"
             }
           },
           "500": {
