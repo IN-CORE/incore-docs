@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "IN-CORE Semantics Services for type and data type",
+    "description": "IN-CORE Semantics Service for type and data type",
     "version": "0.6.6",
-    "title": "Space Service",
+    "title": "Semantics Service",
     "contact": {
       "name": "IN-CORE Dev Team",
       "url": "https://incore.ncsa.illinois.edu",
