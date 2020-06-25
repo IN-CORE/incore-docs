@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - change dfr3 format notebooks, change names of some notebooks [INCORE1-608](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-608).
+- Swagger specs for services 0.6.7
 
 ## [1.4.1] - 2020-06-16
 

@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami and Hurricane",
-    "version": "0.6.6",
+    "version": "0.6.7",
     "title": "Hazard Service",
     "contact": {
       "name": "IN-CORE Dev Team",
