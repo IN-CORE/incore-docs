@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.4.5] - Unreleased
 
+### Added
+- road damage, code snipets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+
 ### Changed
 - change dfr3 format; analyses input and parameter description, code snipets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
 
