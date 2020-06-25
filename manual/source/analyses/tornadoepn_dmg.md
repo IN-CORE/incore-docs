@@ -1,4 +1,4 @@
-### Tornado Electric Power Network (EPN) damage
+### Tornado electric power network (EPN) damage
 
 This analysis computes electric power network (EPN) damage based on tornado hazard.  
 
