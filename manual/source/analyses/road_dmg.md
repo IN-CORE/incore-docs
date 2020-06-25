@@ -54,7 +54,7 @@ code snipet:
     road_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
 
     # Set result name
-    pipeline_dmg.set_parameter("result_name", "seaside_earthquake_road_result")
+    road_dmg.set_parameter("result_name", "seaside_earthquake_road_result")
 
     # Set a hazard: Seaside Earthquake
     road_dmg.set_parameter("hazard_type", "earthquake")

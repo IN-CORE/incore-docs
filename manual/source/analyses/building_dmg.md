@@ -51,7 +51,7 @@ code snipet:
     # Load fragility mapping
     fragility_service = FragilityService(client)
     mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
-    bridge_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+    bldg_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
 
     # Specify the result name
     result_name = "memphis_bldg_dmg_result"
