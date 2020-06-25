@@ -55,4 +55,4 @@ code snipet:
     md.run_analysis()
 ```
 
-full analysis: [mean_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_damage.ipynb)
+full analysis: [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_dmg.ipynb)

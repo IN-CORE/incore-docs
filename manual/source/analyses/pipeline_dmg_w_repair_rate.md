@@ -15,7 +15,6 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Earthquake hazard type.
 `hazard_id` <sup>*</sup> | `str` | Hazard ID | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -28,6 +27,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**
 
@@ -47,12 +47,16 @@ code snipet:
     # Load pipeline inventory as input datasets
     pipeline_dmg_w_rr.load_remote_input_dataset("pipeline", pipeline_dataset_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    pipeline_dmg_w_rr.set_input_dataset('dfr3_mapping_set', mapping_set)
+
     # Specify the result name
     result_name = "pipeline_result"
 
     # Set analysis parameters
     pipeline_dmg_w_rr.set_parameter("result_name", result_name)
-    pipeline_dmg_w_rr.set_parameter("mapping_id", mapping_id)
     pipeline_dmg_w_rr.set_parameter("hazard_type", hazard_type)
     pipeline_dmg_w_rr.set_parameter("hazard_id", hazard_id)
     pipeline_dmg_w_rr.set_parameter("liquefaction_fragility_key", liq_fragility_key)

@@ -4,23 +4,24 @@ Analyses
 ..  toctree::
     :maxdepth: 2
 
-    analyses/bridgedamage
-    analyses/buildingdamage
+    analyses/bridge_dmg
+    analyses/building_dmg
     analyses/buildingfunctionality
-    analyses/cumulative_building_damage
-    analyses/epfdamage.md
+    analyses/cumulative_building_dmg
+    analyses/epf_dmg
     analyses/housingunitallocation
     analyses/joplin_cge
-    analyses/meandamage
+    analyses/mean_dmg
     analyses/montecarlofailureprobability
-    analyses/non_structural_building_damage
+    analyses/non_structural_building_dmg
     analyses/pipeline_dmg
     analyses/pipeline_dmg_w_repair_rate
     analyses/populationdislocation
     analyses/portfolio_recovery
-    analyses/tornadoepndamage
+    analyses/road_dmg
+    analyses/tornadoepn_dmg
     analyses/transportation_recovery
-    analyses/waterfacilitydamage
+    analyses/waterfacility_dmg
 
 
 

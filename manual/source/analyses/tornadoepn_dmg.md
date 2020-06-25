@@ -60,4 +60,4 @@ code snipet:
     ted.run_analysis()
 ```
 
-full analysis: [TornadoEpnDamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/TornadoEpnDamage.ipynb)
+full analysis: [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb)

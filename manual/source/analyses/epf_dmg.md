@@ -15,7 +15,6 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -28,6 +27,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `epfs` <sup>*</sup> | `incore:epf`<br>`ergo:epf` | Electric power dataset | An electric power facility dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets**
 
@@ -48,12 +48,16 @@ code snipet:
     # Load input datasets
     epf_dmg.load_remote_input_dataset("epfs", epf_dataset_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    epf_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+
     # Specify the result name
     result_name = "hazus_epf_dmg_result"
 
     # Set analysis parameters
     epf_dmg.set_parameter("result_name", result_name)
-    epf_dmg.set_parameter("mapping_id", mapping_id)
     epf_dmg.set_parameter("hazard_type", hazard_type)
     epf_dmg.set_parameter("hazard_id", hazard_id)
     epf_dmg.set_parameter("num_cpu", num_cpu)
@@ -62,4 +66,4 @@ code snipet:
     epf_dmg.run_analysis()
 ```
 
-full analysis: [epfdamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epfdamage.ipynb)
+full analysis: [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb)

@@ -19,7 +19,6 @@ and complete) and creates an output CSV file.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key_as` | `str` | AS fragility | Fragility key used in mapping dataset.
@@ -34,6 +33,8 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4` | Building dataset |  A building dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+
 **Output Datasets**
 
 key name | type | name | description
@@ -51,12 +52,16 @@ code snipet:
     # Load input datasets
     non_structural_building_dmg.load_remote_input_dataset("buildings", building_dataset_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    non_structural_building_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+
     # Specify the result name
     result_name = "non_structural_building_dmg_result"
 
     # Set analysis parameters
     non_structural_building_dmg.set_parameter("result_name", result_name)
-    non_structural_building_dmg.set_parameter("mapping_id", mapping_id)
     non_structural_building_dmg.set_parameter("hazard_type", hazard_type)
     non_structural_building_dmg.set_parameter("hazard_id", hazard_id)
     non_structural_building_dmg.set_parameter("num_cpu", 4)
@@ -71,4 +76,4 @@ code snipet:
     non_structural_building_dmg.run_analysis()
 ```
 
-full analysis: [non_structural_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_damage.ipynb)
+full analysis: [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_dmg.ipynb)
