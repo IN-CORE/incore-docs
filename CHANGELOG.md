@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.4.5] - Unreleased
 
 ### Added
-- road damage, code snipets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+- road damage, code snippets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
 
 ### Changed
-- change dfr3 format; analyses input and parameter description, code snipets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
+- change dfr3 format; analyses input and parameter description, code snippets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
 - Swagger specs for services 0.6.7
 
 ## [1.4.1] - 2020-06-16
