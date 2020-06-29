@@ -52,4 +52,4 @@ code snipet:
     cumulative_bldg_dmg.run_analysis()
 ```
 
-full analysis: [cumulative_building_damage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_damage.ipynb)
+full analysis: [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_dmg.ipynb)

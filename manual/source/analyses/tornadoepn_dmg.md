@@ -1,4 +1,4 @@
-### Tornado Electric Power Network (EPN) damage
+### Tornado electric power network (EPN) damage
 
 This analysis computes electric power network (EPN) damage based on tornado hazard.  
 
@@ -60,4 +60,4 @@ code snipet:
     ted.run_analysis()
 ```
 
-full analysis: [TornadoEpnDamage.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/TornadoEpnDamage.ipynb)
+full analysis: [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb)

@@ -93,7 +93,7 @@ If you don't have Miniconda installed, do the following steps.
     <br />
 3. In the Notebook's upper cell type, or copy and paste following code:
     ```
-    from pyincore import IncoreClient
+    from pyincore import IncoreClient, FragilityService, MappingSet
     from pyincore.analyses.buildingdamage import BuildingDamage
     ```
     With these two lines you just get to two classes from the **pyIncore** module.
@@ -132,7 +132,7 @@ If you don't have Miniconda installed, do the following steps.
    Users can see the files in [IN-CORE Web Tools](webtools) or in IN-CORE Lab under `INCORE Apps menu`.
    <br />
    <br />
-6. Next, create an instance of Building damage object specific to this Tutorial in your Notebook. We need to specify the datasets and parameters necessary for running the analysis.    
+6. Next, create an instance of Building damage object specific to this Tutorial in your Notebook. We need to specify the datasets, fragility mapping set and parameters necessary for running the analysis.    
     ```
     # Create building damage
     bldg_dmg = BuildingDamage(client)
@@ -140,12 +140,16 @@ If you don't have Miniconda installed, do the following steps.
     # Load input dataset
     bldg_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    bldg_dmg.set_input_dataset("dfr3_mapping_set", mapping_set)
+   
     # Specify the result name
     result_name = "memphis_bldg_dmg_result"
 
     # Set analysis parameters
     bldg_dmg.set_parameter("result_name", result_name)
-    bldg_dmg.set_parameter("mapping_id", mapping_id)
     bldg_dmg.set_parameter("hazard_type", hazard_type)
     bldg_dmg.set_parameter("hazard_id", hazard_id)
     bldg_dmg.set_parameter("num_cpu", 4)

@@ -15,7 +15,6 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -30,6 +29,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `water_facilities` <sup>*</sup> | `ergo:waterFacilityTopo` | Facility dataset |  A water facility dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets** 
 
@@ -50,6 +50,11 @@ code snipet:
     # Load water facility inventory dataset
     wf_dmg.load_remote_input_dataset("water_facilities", facility_dataset_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    wf_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+
     # Specify result name
     result_name = "wf-dmg-results"
 
@@ -57,7 +62,6 @@ code snipet:
     wf_dmg.set_parameter("result_name", result_name)
     wf_dmg.set_parameter("hazard_type", hazard_type)
     wf_dmg.set_parameter("hazard_id", hazard_id)
-    wf_dmg.set_parameter("mapping_id", mapping_id)
     wf_dmg.set_parameter("fragility_key", fragility_key)
     wf_dmg.set_parameter("use_liquefaction", liquefaction)
     wf_dmg.set_parameter("liquefaction_geology_dataset_id", liq_geology_dataset_id)
