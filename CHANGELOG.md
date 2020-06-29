@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - add road damage notebook [INCORE1-608](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-608).
 
 ### Changed
-- road damage, code snippets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
 - change dfr3 format notebooks, change names of some notebooks [INCORE1-608](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-608).
 - change dfr3 format; analyses input and parameter description, code snippets [INCORE1-607](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-607).
 - Swagger specs for services 0.6.7
