@@ -4,7 +4,7 @@
 
 *   *I want to try your IN-CORE services. Do I need to register?*
 
-    A user must have an account [registered](https://identity.ncsa.illinois.edu/register/UUMK36FU2M) with NCSA IN-CORE service. User credentials are required 
+    A user must have an account [registered](https://identity.ncsa.illinois.edu/register/BSKC2UKQPU) with NCSA IN-CORE service. User credentials are required 
     in accessing repositories such as hazard, fragility, restoration, geographic and other data sets. 
     They are also used for accessing documentation server and Jupyter Notebook files.
 
