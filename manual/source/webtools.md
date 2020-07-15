@@ -25,7 +25,7 @@ This section shows how to access IN-CORE Web Tools and documentations on IN-CORE
 
 ### Fragility Viewer
 
-The [Fragility Viewer](https://incore.ncsa.illinois.edu/FragilityViewer) shows a list of 
+The [Fragility Viewer](https://incore.ncsa.illinois.edu/DFR3Viewer) shows a list of 
 Fragility curves in the left panel. The list comes from **DFR3 service**.
 
 ![IN-CORE Web Tools DFR3 menu.](images/wt1_fragility_menu.jpg "IN-CORE Web Tools fragility menu.")
