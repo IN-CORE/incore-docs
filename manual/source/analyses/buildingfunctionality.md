@@ -34,3 +34,30 @@ key name | type | name | description
 `result` <sup>*</sup> | `incore:epfVer1` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
+
+**Execution**
+
+code snipet:
+
+```
+    # Create building functionality instance
+    bldg_dmg = BuildingFunctionality(client)
+
+    # Load input dataset
+    bldg_func.load_remote_input_dataset("building_damage_mcs_samples", building_dmg_mcs_id)
+    bldg_func.load_remote_input_dataset("substations_damage_mcs_samples", substation_dmg_mcs_id)
+    bldg_func.load_remote_input_dataset("poles_damage_mcs_samples", poles_dmg_mcs_id)
+    bldg_func.load_remote_input_dataset("interdependency_dictionary", interdependency_id)
+
+    # Specify the result name
+    result_name = "funcionality_result"
+
+    # Set analysis parameters
+    bldg_func.set_parameter("result_name", result_name)
+    bldg_func.set_parameter("num_samples", 3)
+    bldg_func.set_parameter("num_cpu", 10)
+
+    # Run building functionality analysis
+    bldg_func.run_analysis()
+```
+full analysis: [building_func.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_func.ipynb)
