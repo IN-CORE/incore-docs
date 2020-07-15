@@ -1,6 +1,6 @@
 ### Pipeline damage
 
-This analysis computes pipeline damage based on **earthquake** hazard.
+This analysis computes pipeline damage based on **earthquake** and **tsunami** hazard.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the pipeline. Based on the fragility, the hazard intensity at the 

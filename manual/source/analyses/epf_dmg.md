@@ -33,7 +33,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:epfVer1` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | `incore:epfDamage` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

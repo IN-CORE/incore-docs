@@ -20,7 +20,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:nsBuildingInventoryDamage`<br>`ergo:bridgeDamage`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:roadDamage`<br>`incore:epfVer1`<br>`incore:pipelineDamage`<br>`ergo:waterFacilityDamageVer4`| Infrastructure dataset |  An infrastructure dataset.
+`damage` <sup>*</sup> | `ergo:nsBuildingInventoryDamage`<br>`ergo:bridgeDamage`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:roadDamage`<br>`incore:epfDamage`<br>`incore:pipelineDamage`<br>`ergo:waterFacilityDamageVer4`| Infrastructure dataset |  An infrastructure dataset.
 `dmg_ratios` <sup>*</sup> | `ergo:buildingDamageRatios`<br>`ergo:bridgeDamageRatios`<br>`ergo:buildingContentDamageRatios`<br>`ergo:buildingASDamageRatios`<br>`ergo:buildingDSDamageRatios`<br>`ergo:roadDamageRatios` | Damage ratios |  A damage ratios dataset.
                              
 **Output datasets**
