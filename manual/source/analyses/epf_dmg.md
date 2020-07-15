@@ -1,6 +1,6 @@
 ### Electric power facility damage
 
-This analysis computes electric power facilities damage based on a particular hazard such as earthquake, tsunami, tornado, etc.
+This analysis computes electric power facilities damage based on a particular hazard; **earthquake**, **tsunami**, **tornado** and **hurricane**
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the electric power facility. Based on the fragility, the hazard intensity at the 

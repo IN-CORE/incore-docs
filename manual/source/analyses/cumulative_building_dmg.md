@@ -1,6 +1,6 @@
 ### Cummulative building damage
 
-This analysis computes building damage based on two hazards, an earthquake and a tsunami.
+This analysis computes building damage based on two hazards, an **earthquake** and a **tsunami**.
 
 The process for computing the structural damage is done externally and the results for earthquake and tsunami
 are imported to the analysis. The damage intervals are then calculated from combined limit states.

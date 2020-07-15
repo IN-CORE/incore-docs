@@ -1,6 +1,6 @@
 ### Road damage
 
-This analysis computes road damage based on earthquake or tsunami hazard.
+This analysis computes road damage based on **earthquake** or **tsunami** hazard.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the roads. Based on the fragility, the hazard intensity is computed. 
