@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - chaining of Building, House allocation analyses in Joplin example notebook [INCORE1-693](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-693).
+- chaining of EPF, Monte Carlo failure and Building functionality analyses in Joplin example notebook [INCORE1-694](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-694).
 
 ## [1.4.5] - 2020-06-30
 
