@@ -6,13 +6,13 @@ Analyses
 
     analyses/bridge_dmg
     analyses/building_dmg
-    analyses/buildingfunctionality
+    analyses/building_func
     analyses/cumulative_building_dmg
     analyses/epf_dmg
     analyses/housingunitallocation
     analyses/joplin_cge
     analyses/mean_dmg
-    analyses/montecarlofailureprobability
+    analyses/mc_failure_prob
     analyses/non_structural_building_dmg
     analyses/pipeline_dmg
     analyses/pipeline_dmg_w_repair_rate

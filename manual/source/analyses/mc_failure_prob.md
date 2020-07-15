@@ -14,14 +14,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`bridge-damage`, <br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
-
+`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`ergo:bridgeDamage`, <br>`incore:epfDamage`, <br>`ergo:nsBuildingInventoryDamage`, <br>`incore:pipelineDamage`, <br>`ergo:roadDamage`, <br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
+                        
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:failureProbability` | Results | A dataset containing results <br>(format: CSV).
-
+`result` | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
+`result` | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+                    
 <small>(* required)</small>
 
 **Execution**
@@ -46,4 +47,4 @@ code snipet:
     mc.run_analysis()
 ```
 
-full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/montecarlofailureprobability.ipynb)
+full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb)
