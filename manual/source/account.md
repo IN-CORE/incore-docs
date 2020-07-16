@@ -10,6 +10,6 @@ that you sign up with your institutional email. To register for an account, plea
 ![IN-CORE login window](images/register.jpg)
 
 After you register, you will receive an email to finish your registration process. 
-It requires you to use 2 Factor Authentication(2FA) using Duo for making sure that you are not a bot. 
+It requires you to use 2 Factor Authentication (2FA) using Duo for making sure that you are not a bot. 
 The 2FA is only needed during registration and when changing passwords, it's not required when logging 
 in to IN-CORE services or to use pyIncore.

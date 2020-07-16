@@ -15,7 +15,6 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`mapping_id` <sup>*</sup> | `str` | Mapping id | ID of the mapping dataset from the DFR3 service.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Eearthquake hazard type.
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the earthquake hazard from the Hazard service
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
@@ -27,6 +26,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
+`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**
 
@@ -47,14 +47,15 @@ code snipet:
     # Load pipeline inventory for Seaside, OR
     pipeline_dmg.load_remote_input_dataset("pipeline", pipeline_id)
 
+    # Load fragility mapping
+    fragility_service = FragilityService(client)
+    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
+    pipeline_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+
     # Set result name
     pipeline_dmg.set_parameter("result_name", "seaside_tsunami_pipeline_result")
 
-    # Set pipeline fragility mapping & fragility key
-    pipeline_dmg.set_parameter("mapping_id", mapping_id)
-    pipeline_dmg.set_parameter("fragility_key", "Non-Retrofit inundationDepth Fragility ID Code")
-
-    # Set a hzard: Seaside Tsunami
+    # Set a hazard: Seaside Tsunami
     pipeline_dmg.set_parameter("hazard_type", "tsunami")
     pipeline_dmg.set_parameter("hazard_id", hazard_id)
 

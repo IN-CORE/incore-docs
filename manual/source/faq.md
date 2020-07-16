@@ -47,6 +47,21 @@
     <br />
     <br />
     
+*   *Anaconda/Miniconda downgraded my Python version.*
+
+    Conda can downgrade Python to a lower version when it finds incompatible libraries in a specific environment. For example fresh conda 
+    environment created with command `conda create -n pyincoreEnv python=3`
+    
+    installs latest Python version supported by Anaconda which gets downgraded to `3.7.x` with `pyincore` installation. This is an expected behavior which can be remedied 
+    by using particular Python version
+    ```
+        conda create -n pyincoreEnv python=3.7
+    ```
+    General note for installing new packages or updating old ones, if you get notified that there will be downgrade or upgrade, 
+    you might consider creating a new environment to preview the change.
+    <br />
+    <br />    
+        
 *   *I would like to use pip. I have Python 3 installed but the pip3 command does not work.*
 
     We prefer **conda** installation over **pip** mainly because it handles Python packages dependencies and even library outside of 
@@ -111,8 +126,7 @@
 *   *Can I use files locally?*
 
     Yes. Users can use datasets stored on their local computers. It is, however not possible to use certain resources such as dfr3 curves locally.
-    These have to be uploaded to the IN-CORE services. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
-    section of this documentation.
+    These have to be uploaded to the IN-CORE services. For details see [Tutorials](advanced) section of this documentation.
     <br />
     <br />
     
@@ -155,8 +169,7 @@
 *   *What is a mapping and how do I create one?*
 
     We use mapping to associate each element of a given set such as Building inventory with one or more 
-    elements of a second set of Fragility curves. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials) 
-    section of this documentation.
+    elements of a second set of Fragility curves. For details see [Tutorials](advanced) section of this documentation.
     <br />
     <br />
 
@@ -181,7 +194,7 @@
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
-    request with "attached" files directly to the service. For details see [Tutorials](https://incore.ncsa.illinois.edu/tutorials).
+    request with "attached" files directly to the service. For details see [Tutorials](advanced).
     <br />
     <br />   
     
