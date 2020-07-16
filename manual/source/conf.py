@@ -25,11 +25,9 @@ import sphinx_rtd_theme
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('../incore-lab'))
 sys.path.insert(0, os.path.abspath('../notebooks'))
-sys.path.insert(0, os.path.abspath('../scientific-analyses'))
+sys.path.insert(0, os.path.abspath('../analyses'))
 sys.path.insert(0, os.path.abspath('../tutorials'))
-sys.path.insert(0, os.path.abspath('../web-tools'))
 
 # -- Project information -----------------------------------------------------
 
