@@ -17,8 +17,8 @@ More tutorials and tips will be added here soon.
 
     tutorials/use_local_file
     tutorials/create_dataset
-    tutorials/file_sources/example_create_DFR3_object
+    notebooks/example_create_dfr3_object
 
 Download the full Notebooks above:
 
-- Create DFR3 object Notebook :download:`zip <tutorials/file_sources/tutorial-create-dfr3-object.zip>`
+- Create DFR3 object Notebook :download:`zip <notebooks/example_create_dfr3_object.zip>`
