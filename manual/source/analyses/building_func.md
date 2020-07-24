@@ -31,7 +31,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:funcProbability` | Results | A dataset containing results <br>(format: CSV).
+`result` | `incore:funcProbability` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

@@ -20,8 +20,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
-`result` | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`failure_probability` | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 
