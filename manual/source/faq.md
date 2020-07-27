@@ -4,7 +4,7 @@
 
 *   *I want to try your IN-CORE services. Do I need to register?*
 
-    A user must have an account [registered](https://identity.ncsa.illinois.edu/register/UUMK36FU2M) with NCSA IN-CORE service. User credentials are required 
+    A user must have an account [registered](https://identity.ncsa.illinois.edu/register/BSKC2UKQPU) with NCSA IN-CORE service. User credentials are required 
     in accessing repositories such as hazard, fragility, restoration, geographic and other data sets. 
     They are also used for accessing documentation server and Jupyter Notebook files.
 
@@ -136,7 +136,7 @@
 *   *Can I use files locally?*
 
     Yes. Users can use datasets stored on their local computers. It is, however not possible to use certain resources such as dfr3 curves locally.
-    These have to be uploaded to the IN-CORE services. For details see [Tutorials](advanced) section of this documentation.
+    These have to be uploaded to the IN-CORE services. For details see [Tutorials](tutorials) section of this documentation.
     <br />
     <br />
     
@@ -179,7 +179,7 @@
 *   *What is a mapping and how do I create one?*
 
     We use mapping to associate each element of a given set such as Building inventory with one or more 
-    elements of a second set of Fragility curves. For details see [Tutorials](advanced) section of this documentation.
+    elements of a second set of Fragility curves. For details see [Tutorials](tutorials) section of this documentation.
     <br />
     <br />
 
@@ -204,7 +204,7 @@
 
     There are two ways of importing files such as inventory datasets to IN-CORE service. The first uses Python script calling 
     **pyIncore* for file upload, and the second describes how to use a web application (Postmen, RESTer) to send POST 
-    request with "attached" files directly to the service. For details see [Tutorials](advanced).
+    request with "attached" files directly to the service. For details see [Tutorials](tutorials).
     <br />
     <br />   
     
@@ -212,8 +212,8 @@
 
     Earthquakes and other hazards can be defined in various ways, there are data based earthquakes that actually require user to 
     provide the shapefiles in order to create an earthquake or tehre are simulated earthquakes. Yes, you can define your own simulated earthquake 
-    by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/test_hazardservice.py#L122), 
-    similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/eq-model.json). 
+    by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/pyincore/test_hazardservice.py#L117), 
+    similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/data/eq-model.json). 
     Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
     see IN-CORE [wiki](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) page.
     <br />
@@ -235,7 +235,7 @@
     The most common Image manipulation and processing packages are [Pillow](https://pillow.readthedocs.io/en/stable/) 
     which is a continuation of the PIL (Python Imaging Library), [scikit-image](https://scikit-image.org/), 
     a collection of algorithms for image processing, 
-    [scipy](https://docs.scipy.org/doc/scipy-0.14.0/reference/ndimage.html) which is already a dependency 
+    [scipy](https://docs.scipy.org/doc/scipy/reference/) which is already a dependency 
     of *pyIncore* and which provides a various image processing functions that can be operated with arrays 
     of any dimensionality.   
     <br />
