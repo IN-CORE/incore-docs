@@ -44,12 +44,12 @@ print('dataset is created with id ' + dataset_id)
 
 
 ```python
-files = ['./5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.shp',
-         './5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.shx',
-         './5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.prj',
-         './5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.dbf',
-         './5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.fix',
-         './5a284f0bc7d30d13bc081a28/all_bldgs_ver5_WGS1984.qix']
+files = ['all_bldgs_ver5_WGS1984.shp',
+         'all_bldgs_ver5_WGS1984.shx',
+         'all_bldgs_ver5_WGS1984.prj',
+         'all_bldgs_ver5_WGS1984.dbf',
+         'all_bldgs_ver5_WGS1984.fix',
+         'all_bldgs_ver5_WGS1984.qix']
 full_dataset = data_services.add_files_to_dataset(dataset_id, files)
 ```
 
