@@ -1,3 +1,8 @@
+# Create and Use Dataset Object In pyIncore
+Any analysis in pyIncore, by default uses Dataset Object, DFR3 CurveSet Object and DFR3 MappingSet Object. This
+ tutorial introduces users to the basic concept of creating and using **Dataset Object** via either loading from local
+  files, or connecting to remote IN-CORE Data Services.
+
 ```python
 import pandas as pd
 from pyincore import IncoreClient, DataService, SpaceService, Dataset, FragilityService, MappingSet
@@ -16,7 +21,10 @@ space_services = SpaceService(client)
 Note that this is completely optional. You can work with local datasets and we will cover that in section 2.
 
 ## write metadata
-
+- **Metadata** is a string describing the dataset. 
+- **dataType** needs to be align with the analyses in pyincore.
+- **format** is the file format of the dataset. Currently we support "shapefile", "table", "Network", "textFiles
+", "raster", "geotiff" and etc. Please consult with development team if you intend to post a new format.
 
 ```python
 # note you have to put the correct dataType as well as format
@@ -29,7 +37,7 @@ dataset_metadata = {
 ```
 
 ## upload metadata
-
+This will create the dataset in the service.
 
 ```python
 created_dataset = data_services.create_dataset(dataset_metadata)
@@ -41,7 +49,7 @@ print('dataset is created with id ' + dataset_id)
 
 
 ## attach files to metadata
-
+Using the dataset id we attach the files that contain the data for the dataset.
 
 ```python
 files = ['all_bldgs_ver5_WGS1984.shp',
@@ -123,7 +131,8 @@ full_dataset
 
 
 # Optional: Moving your dataset to INCORE space 
-- so it's public (accessible by other people)
+If you would like other people to access your data, you can move your dataset to a certain space. Otherwise it wil
+ be in your own space and not public accessible.
 
 
 ```python
@@ -152,9 +161,9 @@ buildings
 
 
 # 2. Load Dataset from Local Files
-- note you have to make sure you pass the right "data_type" when constructing Dataset Object from scratch
-- to look up what data_type it should be, please refer to the source code of the analyses
-- you want to look take a look at the "spec" section -> "input_datasets" -> "type"
+- note you have to make sure you pass the right **data_type** when constructing Dataset Object from scratch
+- to look up what **data_type** it should be, please refer to the **source code** of the analyses
+- you want to look take a look at the **spec** section -> **input_datasets** -> **type**
 
 
 ```python
