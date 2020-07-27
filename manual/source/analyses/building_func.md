@@ -1,6 +1,6 @@
 ### Building functionality
 
-The building functionality analysis can be used to calculate building functionality probabilities considering 
+The building functionality analysis calculates building functionality probabilities considering 
 two situations: buildings are in at least a damage state 2 or greater or buildings are not damaged but electric
 power is not available to the building. Whether buildings can receive electrical power is assumed to depend on 
 the interdependency between buildings and substations, and between buildings and poles in close proximity.
@@ -15,8 +15,6 @@ The output of this analysis is a CSV file with probabilities of functionality.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computation. <br>Default is *1*.
-`num_samples` | `int` | Number of CPUs | Number of iterations of running the probabilistic model.
 
 **Input datasets**
 
