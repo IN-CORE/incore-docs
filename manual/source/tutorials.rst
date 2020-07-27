@@ -17,6 +17,4 @@ More tutorials and tips will be added here soon.
 ..  toctree::
     :maxdepth: 2
 
-    tutorials/use_local_file
     tutorials/create_dataset
-    tutorials/create_mapping
