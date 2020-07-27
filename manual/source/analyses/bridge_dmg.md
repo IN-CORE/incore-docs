@@ -1,6 +1,7 @@
 ### Bridge damage
 
-This analysis computes bridge damage based on a particular hazard; **earthquake**, **tsunami**, **tornado** and **hurricane**.
+This analysis computes bridge damage based on a particular hazard. Currently supported hazards are: **earthquake**, 
+**tsunami**, **tornado** and **hurricane**.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the bridge. Based on the fragility, the hazard intensity at the 

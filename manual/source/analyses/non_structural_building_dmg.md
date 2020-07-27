@@ -1,7 +1,6 @@
 ### Nonstructural building damage
 
-This analysis computes the non-structural damage to buildings based on **earthquake** hazard by calling fragility and
-hazard services.
+This analysis computes the non-structural damage to buildings based on a particular hazard. Currently supported hazard is: **earthquake**.
 
 The process is similar to evaluating other structural damages. The probabilities for building damage
 state are obtained using fragility curves and a hazard definition, each building site will have

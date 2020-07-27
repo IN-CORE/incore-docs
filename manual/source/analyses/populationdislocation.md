@@ -1,8 +1,16 @@
 ### Population dislocation
 
-This analysis computes the population dislocation based on a particular hazard such as earthquake, tsunami, or tornado. First, housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing unit allocation analysis.
+This analysis computes population dislocation based on a particular hazard. Currently supported hazards are: **earthquake**, 
+**tsunami**, **tornado** and **hurricane**. 
 
-After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
+First, housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to 
+the address points (buildings). This is done by calling the Housing unit allocation analysis.
+After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine 
+the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated 
+from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. 
+These four damage factors correspond to value loss. The sum of the four probabilities multiplied by the four probabilities 
+of damage states is used as the probability for dislocation. Since the process to determine which households are dislocated 
+is probabilistic an integer value being imported to seed the random number generator determines if a household dislocates.
 
 Additionally, the Block Group characteristics, percentages of African-American and Hispanic population are taken into account. 
 

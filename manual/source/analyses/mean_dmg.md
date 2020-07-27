@@ -1,6 +1,7 @@
 ### Mean damage
 
-This analysis computes mean damage of infrastructure based on a particular hazard such as earthquake, tsunami, tornado, etc.
+This analysis computes mean damage of infrastructure based on a particular hazard. Currently supported hazards are: **earthquake**, 
+**tsunami**, **tornado** and **hurricane**.
 
 The process for computing the structural damage uses mean damage and standard deviation values from damage ratios tables. 
 The four damage state probabilities are multiplied by the mean damage and aggregated to get the Mean damage for 
