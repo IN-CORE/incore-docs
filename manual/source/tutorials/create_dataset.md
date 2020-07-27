@@ -227,6 +227,9 @@ bldg_dmg.get_output_dataset('result').get_dataframe_from_csv().head()
 
     output datasets: {'result': <pyincore.dataset.Dataset object at 0x1a245c17b8>}
 
+key name | type | name | description
+--- | --- | --- | ---
+`result` <sup>*</sup> | `ergo:buildingDamageVer4` | Results | A dataset containing results <br>(format: CSV).
 
 
 
