@@ -1,4 +1,4 @@
-# Create and Use Dataset Object In pyIncore
+# Create and Use Dataset Object
 Any analysis in pyIncore, by default uses Dataset Object, DFR3 CurveSet Object and DFR3 MappingSet Object. This
  tutorial introduces users to the basic concept of creating and using **Dataset Object** via either loading from local
   files, or connecting to remote IN-CORE Data Services.
@@ -20,7 +20,7 @@ space_services = SpaceService(client)
 # 0. Upload Dataset to Data Services
 Note that this is completely optional. You can work with local datasets and we will cover that in section 2.
 
-## write metadata
+## Write Metadata
 - **Metadata** is a string describing the dataset. 
 - **dataType** needs to be align with the analyses in pyincore.
 - **format** is the file format of the dataset. Currently we support "shapefile", "table", "Network", "textFiles
@@ -36,7 +36,7 @@ dataset_metadata = {
 }
 ```
 
-## upload metadata
+## Upload Metadata
 This will create the dataset in the service.
 
 ```python
@@ -48,7 +48,7 @@ print('dataset is created with id ' + dataset_id)
     dataset is created with id 5f1ef1c32fab4d660a9c32b2
 
 
-## attach files to metadata
+## Attach Files to the Dataset Created
 Using the dataset id we attach the files that contain the data for the dataset.
 
 ```python
@@ -161,9 +161,9 @@ buildings
 
 
 # 2. Load Dataset from Local Files
-- note you have to make sure you pass the right **data_type** when constructing Dataset Object from scratch
-- to look up what **data_type** it should be, please refer to the **source code** of the analyses
-- you want to look take a look at the **spec** section -> **input_datasets** -> **type**
+- Note you have to make sure you pass the right **data_type** when constructing Dataset Object from scratch
+- To look up what **data_type** it should be, please refer to the **source code** of the analyses
+- You want to look take a look at the **spec** section -> **input_datasets** -> **type**
 
 
 ```python
@@ -225,8 +225,7 @@ bldg_dmg.run_analysis()
 
 
 # 4. Chaining the output Dataset Object in subsequent Analyses
-
-## output is a dataset object as well, here is how to display
+Output is a dataset object as well, here is how to display
 
 
 ```python
@@ -351,7 +350,7 @@ key name | type | name | description
 
 
 
-## chaining with mean damage analysis
+## Chaining with Mean Damage Analysis
 
 
 ```python
@@ -386,7 +385,9 @@ md.get_output_dataset('result').get_dataframe_from_csv().head()[['meandamage', '
 
     output datasets: {'result': <pyincore.dataset.Dataset object at 0x1a24697518>}
 
-
+key name | type | name | description
+--- | --- | --- | ---
+`result` <sup>*</sup> | `ergo:meanDamage` | Results | A dataset containing results <br>(format: CSV).
 
 
 
