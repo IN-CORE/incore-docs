@@ -37,7 +37,7 @@ Apart from your IN-CORE Account you need:
 
 For this **Getting started** example we use small Python environment manager Miniconda which
 includes just Python, conda, and a small number of other packages. We will install Jupyter Notebook separately. 
-For additional installation details see [prerequisites](prerequisites.md) page.
+For additional installation details see [prerequisites](prerequisites) page.
 
 #### Install pyIncore package - quick reference
 
@@ -210,6 +210,6 @@ If you have problems running Notebooks, check our [WIKI questions](https://opens
 
 * IN-CORE Lab extends Jupyter Lab. See [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/) and [blog](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) for more information.
 
-* IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all)) for detail information. 
+* IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) for detail information. 
 
 * The Building analysis Jupyter Notebook is also available at [IN-CORE project](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb) on GitHub.
