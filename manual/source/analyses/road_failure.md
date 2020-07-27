@@ -1,6 +1,7 @@
 ### Road failure
 
 This analysis computes road damage and failure caused by **hurricane** inundation.
+This analysis computes road damage and failure based on a particular hazard. Currently supported hazard is: **hurricane**.
 
 The process for computing the road damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the roads. Based on the fragility and road distance to shore, the hazard intensity is computed. 
