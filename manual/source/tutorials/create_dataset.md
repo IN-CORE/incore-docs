@@ -15,7 +15,7 @@ space_services = SpaceService(client)
 # 0. Upload Dataset to Data Services
 Note that this is completely optional. You can work with local datasets and we will cover that in section 2.
 
-#### write metadata
+## write metadata
 
 
 ```python
@@ -28,7 +28,7 @@ dataset_metadata = {
 }
 ```
 
-#### upload metadata
+## upload metadata
 
 
 ```python
@@ -40,7 +40,7 @@ print('dataset is created with id ' + dataset_id)
     dataset is created with id 5f1ef1c32fab4d660a9c32b2
 
 
-#### attach files to metadata
+## attach files to metadata
 
 
 ```python
@@ -217,7 +217,7 @@ bldg_dmg.run_analysis()
 
 # 4. Chaining the output Dataset Object in subsequent Analyses
 
-### output is a dataset object as well, here is how to display
+## output is a dataset object as well, here is how to display
 
 
 ```python
@@ -339,7 +339,7 @@ bldg_dmg.get_output_dataset('result').get_dataframe_from_csv().head()
 
 
 
-### chaining with mean damage analysis
+## chaining with mean damage analysis
 
 
 ```python
