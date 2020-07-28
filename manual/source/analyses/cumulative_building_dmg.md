@@ -1,9 +1,7 @@
 ### Cumulative building damage
 
-This analysis computes building damage based on a particular hazard. Currently supported hazards are: **earthquake** and **tsunami**.
-
-The process for computing the structural damage is done externally and the results for earthquake and tsunami
-are imported to the analysis. The damage intervals are then calculated from combined limit states.
+This analysis computes building damage based on a particular hazard. The process for computing the structural damage 
+is done externally and the results for earthquake and tsunami are imported to the analysis. The damage intervals are then calculated from combined limit states.
 
 The output of this analysis is a CSV file with probabilities of damage.
 

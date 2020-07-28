@@ -1,10 +1,7 @@
 ### Population dislocation
 
-This analysis computes population dislocation based on a particular hazard. Currently supported hazards are: **earthquake**, 
-**tsunami**, **tornado** and **hurricane**. 
-
-First, housing units, with detailed characteristics (tenure, household size, occupied, or vacant) are allocated to 
-the address points (buildings). This is done by calling the Housing unit allocation analysis.
+This analysis computes population dislocation based on a particular hazard. First, housing units, with detailed characteristics 
+(tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing unit allocation analysis.
 After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine 
 the value loss for each structure which would be the input for the dislocation calculation. The dislocation is calculated 
 from four probabilities of dislocation based on a random beta distribution of the four damage factors presented by Bai et al. 2009. 
