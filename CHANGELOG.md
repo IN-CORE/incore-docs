@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - faq update section [INCORE1-575](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-575).
+- add road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
+- add notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
 
 ### Fixed
 - broken links to account page, dfr3 viewer etc. [INCORE1-687](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-687).
