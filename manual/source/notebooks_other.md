@@ -16,6 +16,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb) <br />
 [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb) <br />
 [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/road_dmg.ipynb) <br />
+[road_failure.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/road_failure.ipynb) <br />
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_dmg.ipynb)
