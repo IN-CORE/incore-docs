@@ -1,5 +1,13 @@
  ### Monte Carlo failure probability
 
+This analysis calculates a probability of failure using a stochastic process. Failure probability and Failure state are derived 
+using the dictionary of failed damage states in the input infrastructure dataset. Failure probability is calculated from all
+stochastic runs, failure state shows all infrastructure standings as a string of *failed* (0) and *not failed* (1) states 
+of each individual run.
+
+The output of this analysis are two CSV files; a failure proability *base_name*_failure_probability.csv with allocated house units
+and  *base_name*_failure_state.csv.
+                                
 **Input Parameters**
 
 key name | type | name | description
@@ -14,14 +22,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`bridge-damage`, <br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
-
+`damage` <sup>*</sup> | `ergo:buildingDamageVer4`, <br>`ergo:bridgeDamage`, <br>`incore:epfDamage`, <br>`ergo:nsBuildingInventoryDamage`, <br>`incore:pipelineDamage`, <br>`ergo:roadDamage`, <br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
+                        
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:failureProbability` | Results | A dataset containing results <br>(format: CSV).
-
+`failure_probability` | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+                    
 <small>(* required)</small>
 
 **Execution**
@@ -46,4 +55,4 @@ code snipet:
     mc.run_analysis()
 ```
 
-full analysis: [montecarlofailureprobability.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/montecarlofailureprobability.ipynb)
+full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb)
