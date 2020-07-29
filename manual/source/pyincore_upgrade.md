@@ -1,10 +1,10 @@
 ## pyIncore Upgrade Guide
 
-This page help you to upgrade/refactor your python code with the previous version of pyIncore/pyIncore-viz to the latest version because of API changes of pyIncore/pyIncore-viz
+This page will help you to upgrade/refactor your python code to be compatible with the latest version of pyIncore/pyIncore-viz API changes.
  
 ### Previous versions to pyIncore 0.6.4 (or beyond)
 
-From pyIncore 0.6.4 (and beyond), a local fragility mapping class and a local fragility class are introduced. In order to support this addition, how to input a fragility mapping to an analysis is changed. Instead of using ID of mapping, a mapping Set object is used. If you are using an analysis with fragility mapping as an input, please upgrade your code as below:
+From pyIncore 0.6.4 (and beyond), a local fragility mapping class and a local fragility class are introduced. In order to support this addition, how to input a fragility mapping to an analysis has changed. Instead of using the ID of the mapping, a mapping Set object is used. If you are using an analysis with a fragility mapping as an input, please upgrade your code using the example below:
 
 - Before
     ```
