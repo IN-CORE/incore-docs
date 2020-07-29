@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - list of hazards in analyses' description, updated epf types [INCORE1-684](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-684).
+- MC failure analysis notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
 
 ### Added
 - add upgrade guide for pyIncore [INCORE1-692](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-692).

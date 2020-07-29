@@ -90,7 +90,17 @@
         conda update -c in-core pyincore
         ```
     <br />
-    
+
+*   *pyIncore update failed or pyIncore cannot be updated to the latest version.*
+
+    - PyIncore update does not work for versions 0.5.3 and earlier. These versions were installed from 
+    the NCSA conda private channel. Unfortunately, a user must delete the corresponding environment and re-install 
+    pyIncore again from the official Anaconda `in-core` channel.
+    - It is possible that there are dependency conflicts in your environment which prevent a further upgrade. Conda usually warns 
+    very explicitly if they occur e.g. package X requires package Y version <5.0. We make sure that pyIncore works with 
+    fresh environment and in this case we recommend re-installing pyIncore.
+    <br />
+       
 *   *Should I use virtual environment for running the pyIncore?*
 
     We recommend using environment manager [Anaconda](https://www.anaconda.com/distribution/) 
