@@ -1,6 +1,6 @@
 ### Tornado electric power network (EPN) damage
 
-This analysis computes electric power network (EPN) damage based on tornado hazard.  
+This analysis computes electric power network (EPN) based on a particular hazard. Currently supported hazard is: **tornado**.
 
 The process for computing the structural damage is similar to other parts of the built environment. 
 First, fragilities are obtained based on the hazard type and attributes of the network tower and network pole. Based on the fragility, 

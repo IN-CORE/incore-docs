@@ -1,6 +1,7 @@
 ### Bridge damage
 
-This analysis computes bridge damage based on a particular hazard such as earthquake, tsunami, tornado, etc.
+This analysis computes bridge damage based on a particular hazard. Currently supported hazards are: **earthquake**, 
+**tsunami**, **tornado** and **hurricane**.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the bridge. Based on the fragility, the hazard intensity at the 
@@ -16,7 +17,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
-`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service 
+`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service. 
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
 `use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty.

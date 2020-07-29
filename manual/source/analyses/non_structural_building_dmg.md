@@ -1,7 +1,6 @@
 ### Nonstructural building damage
 
-This analysis computes the non-structural damage to buildings based on earthquake hazard by calling fragility and
-hazard services.
+This analysis computes the non-structural damage to buildings based on a particular hazard. Currently supported hazard is: **earthquake**.
 
 The process is similar to evaluating other structural damages. The probabilities for building damage
 state are obtained using fragility curves and a hazard definition, each building site will have
@@ -19,7 +18,7 @@ and complete) and creates an output CSV file.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).
+`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake).
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key_as` | `str` | AS fragility | Fragility key used in mapping dataset.
 `fragility_key_ds` | `str` | DS fragility | Fragility key used in mapping dataset.
