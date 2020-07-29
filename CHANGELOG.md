@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - tutorial, create and use dfr3 object [INCORE1-648](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-648).
+- road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
+- notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
+
+### Changed
+- list of hazards in analyses' description, updated epf types [INCORE1-684](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-684).
+
+### Fixed
+- broken links to account page, dfr3 viewer etc. [INCORE1-687](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-687).
 
 ## [1.4.5] - 2020-06-30
 
