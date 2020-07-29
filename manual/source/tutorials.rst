@@ -17,4 +17,10 @@ More tutorials and tips will be added here soon.
 ..  toctree::
     :maxdepth: 2
 
-    tutorials/create_dataset
+    notebooks/create_dataset
+
+Download the full Notebooks above:
+
+- Create DFR3 object Notebook :download:`zip <notebooks/create_dataset.zip>`
+
+
