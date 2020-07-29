@@ -1,6 +1,6 @@
 ### Pipeline damage with repair rate
 
-This analysis computes water pipeline (with topology dataset) damage for Memphis based on earthquake.
+This analysis computes water pipeline damage based on a particular hazard. Currently supported hazards is: **earthquake**.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the pipeline. Based on the fragility, the hazard intensity at the 

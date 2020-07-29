@@ -15,6 +15,7 @@ and run the initial test, and analyses descriptions.
     quick_reference
     prerequisites
     Installation <install_pyincore>
+    Upgrade Guide <pyincore_upgrade>
     running
     Analyses <analyses>
 
