@@ -34,7 +34,7 @@ key name | type | name | description
 `TAUFF` <sup>*</sup> | `incore:joplinCGEtauff` | Tax rates | Social security tax rates.
 `JOBCR` <sup>*</sup> | `incore:JoplinCGEjobcr` | Labor | A matrix of workers groups in the economy.
 `OUTCR` <sup>*</sup> | `incore:JoplinCGEoutcr` | Commuter laborers | A matrix of Joplin commuting workers.
-`sector_shocks` <sup>*</sup> | `incore:JoplinCGEshocks` | Capital shocks | Building states to capital <br>shocks per sector.
+`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
