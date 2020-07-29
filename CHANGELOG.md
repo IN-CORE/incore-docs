@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+### Changed
+- list of hazards in analyses' description, updated epf types [INCORE1-684](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-684).
+
 ### Added
 - faq update section [INCORE1-575](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-575).
 - add road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
