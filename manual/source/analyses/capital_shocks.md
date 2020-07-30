@@ -9,6 +9,12 @@ particular sector.
 
 The output of this analysis is a CSV file with aggregated building losses per sector and calculated total capital stock loss.
 
+**Input parameters**
+
+key name | type | name | description
+--- | --- | --- | ---
+`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+
 **Input datasets**
 
 key name | type | name | description
