@@ -9,7 +9,7 @@ From pyIncore 0.6.4 (and beyond), a local fragility mapping class and a local fr
 - Before
     ```
     mapping_id = "5b48fb1f337d4a478e7bd54d"
-    bldg_dmg.set_parameter(‘mapping_id', mapping_id
+    bldg_dmg.set_parameter(‘mapping_id', mapping_id)
     ```
 - After (pyIncore 0.6.4)
     ```
