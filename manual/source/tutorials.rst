@@ -19,8 +19,8 @@ More tutorials and tips will be added here soon.
 
     notebooks/create_dataset/create_dataset
 
-Download the full Notebooks above:
+Download the full Notebooks:
 
-- Create DFR3 object Notebook :download:`zip <notebooks/create_dataset.zip>`
+- Create Dataset object :download:`zip <notebooks/create_dataset.zip>`
 
 
