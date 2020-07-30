@@ -25,10 +25,7 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../notebooks'))
-<<<<<<< HEAD
-=======
 sys.path.insert(0, os.path.abspath('../analyses'))
->>>>>>> develop
 sys.path.insert(0, os.path.abspath('../tutorials'))
 
 # -- Project information -----------------------------------------------------
