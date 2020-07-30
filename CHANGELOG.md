@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Add tutorial about create and use Dataset Object in pyincore [INCORE1-558](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-558)
+- add road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
+- add notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
 - upgrade guide for pyIncore [INCORE1-692](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-692).
 - faq update section [INCORE1-575](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-575).
 - tutorial, create and use dfr3 object [INCORE1-648](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-648).
@@ -21,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - broken links to account page, dfr3 viewer etc. [INCORE1-687](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-687).
+
 
 ## [1.4.5] - 2020-06-30
 
