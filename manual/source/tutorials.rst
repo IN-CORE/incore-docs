@@ -17,6 +17,6 @@ More tutorials and tips will be added here soon.
 
     notebooks/create_dfr3_object/create_dfr3_object
 
-Download the full Notebooks above:
+Download the full Notebooks:
 
-- Create DFR3 object Notebook :download:`zip <notebooks/create_dfr3_object.zip>`
+- Create DFR3 object :download:`zip <notebooks/create_dfr3_object.zip>`
