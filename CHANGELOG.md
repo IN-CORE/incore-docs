@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - building functionality notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
 - road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
 - notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
-- Capital shocks documentation [INCORE1-721](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-721).
+- Hurricane endpoints of Galveston model to swagger specs [INCORE1-726](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-726).
 
 ### Fixed
 - broken links to account page, dfr3 viewer etc. [INCORE1-687](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-687).
