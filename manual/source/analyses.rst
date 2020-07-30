@@ -7,6 +7,7 @@ Analyses
     analyses/bridge_dmg
     analyses/building_dmg
     analyses/building_func
+    analyses/capital_shocks
     analyses/cumulative_building_dmg
     analyses/epf_dmg
     analyses/housingunitallocation

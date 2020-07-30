@@ -21,15 +21,11 @@
 #
 import os
 import sys
-import sphinx_rtd_theme
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('../incore-lab'))
 sys.path.insert(0, os.path.abspath('../notebooks'))
-sys.path.insert(0, os.path.abspath('../scientific-analyses'))
 sys.path.insert(0, os.path.abspath('../tutorials'))
-sys.path.insert(0, os.path.abspath('../web-tools'))
 
 # -- Project information -----------------------------------------------------
 
@@ -53,6 +49,7 @@ release = '1.4.5'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.intersphinx',
+              'recommonmark',
               #'sphinx.ext.viewcode',
               'sphinx_rtd_theme',
               'sphinx.ext.ifconfig',
@@ -68,11 +65,12 @@ templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-#
-from recommonmark.parser import CommonMarkParser
 
-source_parsers = {'.md': CommonMarkParser}
-source_suffix = ['.rst', '.md']
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 # The master toctree document.
 master_doc = 'index'
@@ -84,8 +82,8 @@ master_doc = 'index'
 # Usually you set "language" from the command line for these cases.
 language = None
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
+# List of patterns, relative to source directory, that match Results and
+# directories to ignore when looking for source Results.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', '**.ipynb_checkpoints']
 
@@ -145,8 +143,8 @@ html_theme_options = {
     'titles_only': False
 }
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
+# Add any paths that contain custom static Results (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static Results,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
@@ -187,7 +185,7 @@ latex_elements = {
     # 'figure_align': 'htbp',
 }
 
-# Grouping the document tree into LaTeX files. List of tuples
+# Grouping the document tree into LaTeX Results. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
@@ -211,7 +209,7 @@ man_pages = [
 
 # -- Options for Texinfo output ----------------------------------------------
 
-# Grouping the document tree into Texinfo files. List of tuples
+# Grouping the document tree into Texinfo Results. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
