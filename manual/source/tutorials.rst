@@ -17,7 +17,7 @@ More tutorials and tips will be added here soon.
 ..  toctree::
     :maxdepth: 2
 
-    notebooks/create_dataset
+    notebooks/create_dataset/create_dataset
 
 Download the full Notebooks above:
 
