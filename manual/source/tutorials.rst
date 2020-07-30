@@ -15,7 +15,7 @@ More tutorials and tips will be added here soon.
 ..  toctree::
     :maxdepth: 2
 
-    notebooks/create_dfr3_object
+    notebooks/create_dfr3_object/create_dfr3_object
 
 Download the full Notebooks above:
 
