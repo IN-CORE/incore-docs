@@ -1,8 +1,6 @@
 Tutorials and Tips
 ==================
 
-**Introduction**
-
 This page contains more in-depth guides for using **pyIncore** and IN-CORE system in general. It is broken up into introductory
 and advanced sections.
 
@@ -18,9 +16,10 @@ More tutorials and tips will be added here soon.
     :maxdepth: 2
 
     notebooks/create_dataset/create_dataset
+    notebooks/create_dfr3_object/create_dfr3_object
 
 Download the full Notebooks:
 
 - Create Dataset object :download:`zip <notebooks/create_dataset.zip>`
-
+- Create DFR3 object :download:`zip <notebooks/create_dfr3_object.zip>`
 

@@ -6,25 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- tutorial, create and use Dataset object [INCORE1-558](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-558)
+- faq update section [INCORE1-575](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-575).
+- tutorial, create and use dfr3 object [INCORE1-648](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-648).
+- upgrade guide for pyIncore [INCORE1-692](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-692).
+- building functionality notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
+- notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
+- road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
+- Hurricane endpoints of Galveston model to swagger specs [INCORE1-726](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-726).
+
 ### Changed
 - list of hazards in analyses' description, updated epf types [INCORE1-684](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-684).
 - chaining of Building damage with other analyses [INCORE1-693](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-693).
 - MC failure analysis notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
 
-### Added
-- Add tutorial about create and use Dataset Object in pyincore [INCORE1-558](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-558)
-- add road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
-- add notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
-- upgrade guide for pyIncore [INCORE1-692](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-692).
-- faq update section [INCORE1-575](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-575).
-- building functionality notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
-- road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
-- notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
-- Capital shocks documentation [INCORE1-721](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-721).
-
 ### Fixed
 - broken links to account page, dfr3 viewer etc. [INCORE1-687](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-687).
-
 
 ## [1.4.5] - 2020-06-30
 
