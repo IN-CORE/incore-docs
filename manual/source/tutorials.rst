@@ -10,13 +10,13 @@ so those already familiar with pyIncore can jump into any section.
 You can also check out IN-CORE resources for other materials to help you navigate through terminology and practices, and a `FAQ section <faq.html>`_ in this Manual.
 We encourage IN-CORE users to contribute improve the knowledge base. contact us with suggestions for expanding and extending Tutorials.
 
-More tutorials and tips will be added here soon.
-
 ..  toctree::
     :maxdepth: 2
 
     notebooks/create_dataset/create_dataset
     notebooks/create_dfr3_object/create_dfr3_object
+
+More tutorials will be added soon.
 
 Download the full Notebooks:
 
