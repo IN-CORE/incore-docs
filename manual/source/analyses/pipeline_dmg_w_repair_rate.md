@@ -34,6 +34,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `result` | `ergo:pipelineDamage` | Results | A dataset containing results (format: CSV).
+
 <small>(* required)</small>
 
 **Execution** 

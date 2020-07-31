@@ -40,6 +40,8 @@ key name | type | name | description
 --- | --- | --- | ---
 `result` | `ergo:nsBuildingInventoryDamage` | Results | A dataset containing results <br>(format: CSV).
 
+<small>(* required)</small>
+
 **Execution**
 
 code snipet:
