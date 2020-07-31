@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami and Hurricane",
-    "version": "0.6.7",
+    "version": "0.7.0",
     "title": "Hazard Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -19,6 +19,9 @@
   "tags": [
     {
       "name": "earthquakes"
+    },
+    {
+      "name": "hurricanes"
     },
     {
       "name": "hurricaneWindfields"
@@ -752,6 +755,324 @@
         }
       }
     },
+    "/hurricanes": {
+      "get": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Returns all hurricanes.",
+        "description": "",
+        "operationId": "getHurricanes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "query",
+            "description": "Name of space.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Hurricane"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Creates a new hurricane, the newly created hurricane is returned.",
+        "description": "Additionally, a GeoTiff (raster) is created by default and publish to data repository. User can create dataset-based hurricanes only.",
+        "operationId": "createHurricane",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hurricane",
+            "in": "formData",
+            "description": "Hurricane json.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "Hurricane files.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Hurricane"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/hurricanes/{hurricane-id}": {
+      "get": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Returns the hurricane with matching id.",
+        "description": "",
+        "operationId": "getHurricaneById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hurricane-id",
+            "in": "path",
+            "description": "Hurricane dataset guid from data service.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Hurricane"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Deletes a Hurricane",
+        "description": "Also deletes attached datasets and related files",
+        "operationId": "deleteHurricane",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hurricane-id",
+            "in": "path",
+            "description": "Hurricane Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Hurricane"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/hurricanes/{hurricane-id}/values": {
+      "get": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Returns the specified hurricane values.",
+        "description": "",
+        "operationId": "getHurricaneHazardValues",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hurricane-id",
+            "in": "path",
+            "description": "Hurricane dataset guid from data service.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "demandType",
+            "in": "query",
+            "description": "Hurricane demand type. Ex: 'waveHeight, surgeLevel, inundationDuration'.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "demandUnits",
+            "in": "query",
+            "description": "Hurricane demand unit. Ex: 'm'.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "point",
+            "in": "query",
+            "description": "List of points provided as lat,long. Ex: '46.01,-123.94'.",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HurricaneHazardResult"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/hurricanes/search": {
+      "get": {
+        "tags": [
+          "hurricanes"
+        ],
+        "summary": "Search for a text in all hurricanes",
+        "description": "Gets all hurricanes that contain a specific text",
+        "operationId": "findHurricanes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "Text to search by",
+            "required": false,
+            "type": "string",
+            "x-example": "building"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Skip the first n results",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit no of results to return",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Hurricane"
+              }
+            }
+          },
+          "404": {
+            "description": "No hurricanes found with the searched text"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/hurricaneWindfields": {
       "get": {
         "tags": [
@@ -1048,7 +1369,7 @@
         ],
         "summary": "Search for a text in all hurricanes",
         "description": "Gets all hurricanes that contain a specific text",
-        "operationId": "findHurricanes",
+        "operationId": "findHurricaneWindfields",
         "produces": [
           "application/json"
         ],
@@ -2114,7 +2435,7 @@
         }
       }
     },
-    "LiquefactionHazardResult": {
+    "VarianceResult": {
       "type": "object",
       "properties": {
         "latitude": {
@@ -2125,23 +2446,15 @@
           "type": "number",
           "format": "double"
         },
-        "pgdUnits": {
+        "demandType": {
           "type": "string"
         },
-        "pgd": {
+        "demandUnits": {
+          "type": "string"
+        },
+        "variance": {
           "type": "number",
           "format": "double"
-        },
-        "liqProbability": {
-          "type": "number",
-          "format": "double"
-        },
-        "groundFailureProb": {
-          "type": "array",
-          "items": {
-            "type": "number",
-            "format": "double"
-          }
         }
       }
     },
@@ -2182,7 +2495,7 @@
         }
       }
     },
-    "VarianceResult": {
+    "LiquefactionHazardResult": {
       "type": "object",
       "properties": {
         "latitude": {
@@ -2193,13 +2506,133 @@
           "type": "number",
           "format": "double"
         },
+        "pgdUnits": {
+          "type": "string"
+        },
+        "pgd": {
+          "type": "number",
+          "format": "double"
+        },
+        "liqProbability": {
+          "type": "number",
+          "format": "double"
+        },
+        "groundFailureProb": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    },
+    "DeterministicHurricaneHazard": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/HurricaneHazardDataset"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hurricaneParameters": {
+              "$ref": "#/definitions/HurricaneDeterministicParameters"
+            }
+          }
+        }
+      ]
+    },
+    "Hurricane": {
+      "type": "object",
+      "discriminator": "hurricaneType",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "creator": {
+          "type": "string"
+        }
+      }
+    },
+    "HurricaneDataset": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Hurricane"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hazardDatasets": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HurricaneHazardDataset"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HurricaneDeterministicParameters": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string"
+        }
+      }
+    },
+    "HurricaneHazardDataset": {
+      "type": "object",
+      "discriminator": "hazardType",
+      "properties": {
+        "datasetId": {
+          "type": "string"
+        },
         "demandType": {
           "type": "string"
         },
         "demandUnits": {
           "type": "string"
+        }
+      }
+    },
+    "ProbabilisticHurricaneHazard": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/HurricaneHazardDataset"
         },
-        "variance": {
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "HurricaneHazardResult": {
+      "type": "object",
+      "properties": {
+        "demand": {
+          "type": "string"
+        },
+        "units": {
+          "type": "string"
+        },
+        "hazardValue": {
+          "type": "number",
+          "format": "double"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
           "type": "number",
           "format": "double"
         }
@@ -2457,10 +2890,10 @@
     "WindHazardResult": {
       "type": "object",
       "properties": {
-        "demandType": {
+        "demand": {
           "type": "string"
         },
-        "demandUnits": {
+        "units": {
           "type": "string"
         },
         "hazardValue": {
