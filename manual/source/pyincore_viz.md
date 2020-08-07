@@ -35,4 +35,9 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
     ```
     conda list
     ```
-    It will again list all packages currently installed. You can check if pyincore-viz exists in the list.
+    It will again list all packages currently installed. You can check if **pyincore** and **pyincore-viz** exist in the list.
+
+### Example
+
+Example of Jupyter notebook code showing a shape file using **matplotlib** and **ipyleaflet**. The shapefile format is a geospatial vector 
+data format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
