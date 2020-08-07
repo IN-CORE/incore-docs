@@ -1,13 +1,18 @@
 ## pyIncore viz
 
-Visualization package associated with pyIncore is called **pyIncore-viz**. It contains Python packages 
-required for visualizing and disseminating the IN-CORE results, mainly via the Jupyter Notebooks.
+Visualization package associated with pyIncore is called **pyIncore-viz**. It contains advanced Python packages and code  
+required for visualizing and disseminating the IN-CORE results, mainly via Jupyter Notebooks. At least one powerful  
+library called [Matplotlib](https://matplotlib.org/) for creating static, animated, and interactive visualizations in Python 
+is already part of pyIncore (as a dependency). We decided however to keep 
+more interactive visualization in a separate package. An example would be for example geo-referenced mapping with 
+[ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
  
 ### Prerequisites
 
-- **pyIncore**: A user must have a pyIncore package installed. See [pyIncore section](pyincore) for details.
+- **pyIncore**: A user must have pyIncore package installed. See [pyIncore section](pyincore) for details.
 
-- **Virtual environment**: We recommend that users work with virtual environment managers called [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+- **Virtual environment**: We recommend that users work with virtual environment managers called [Anaconda](https://www.anaconda.com/) 
+or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 - Mac OS specific notes: There is a Mac specific `matplotlib` installation issue addressed 
   at StackOverflow [link 1](https://stackoverflow.com/questions/4130355/python-matplotlib-framework-under-macosx) and [link 2](https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python). In a nutshell, insert line:
