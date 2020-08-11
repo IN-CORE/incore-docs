@@ -10,5 +10,5 @@ Example Notebooks
 
 Download the full directory of the Notebooks above:
 
-- Joplin Notebook :download [Joplin_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip)
-- Seaside building damage Notebook :download [Seaside_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip)
+- Joplin Notebook :download `Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_
+- Seaside building damage Notebook :download `Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_
