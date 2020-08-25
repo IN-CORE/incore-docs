@@ -8,7 +8,9 @@ the interdependency between buildings and substations, and between buildings and
 If both the nearest pole to the building and the substation where buildings belong to its service area are 
 functional, buildings are considered to be able to receive electric power.
 
-The output of this analysis is a CSV file with probabilities of functionality.
+The outputs of this analysis are 1) a CSV file with probabilities of functionality samples 
+for direct comparison with [MC failure probability](mc_failure_prob) outputs and 
+2) a CSV file with probabilities of functionality.
 
 **Input parameters**
 
@@ -29,7 +31,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:funcProbability` | Results | A dataset containing results <br>(format: CSV).
+`functionality_samples` | `incore:funcSample` | Results | A dataset containing results of functionality samples<br>(format: CSV).
+`functionality_probability` | `incore:funcProbability` | Results | A dataset containing results of functionality probability<br>(format: CSV).
 
 <small>(* required)</small>
 
