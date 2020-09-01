@@ -6,6 +6,11 @@ library called [Matplotlib](https://matplotlib.org/) for creating static, animat
 is already part of pyIncore (as a dependency). We decided however to keep 
 more interactive visualization in a separate package. An example would be for example geo-referenced mapping with 
 [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
+
+### Features
+1. Geospatial visualization such as tornado path or earthquake raster data.
+2. Data visualization, graphs of data such as Fragility curves including pre-processing.
+3. Creates map window from inventory of multiple csv files stored in a folder.
  
 ### Prerequisites
 
@@ -39,5 +44,7 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 ### Example
 
-Example of Jupyter notebook code showing a shape file using **matplotlib** and **ipyleaflet**. The shapefile format is a geospatial vector 
+Jupyter notebook code showing a shape file using **matplotlib** and **ipyleaflet**. The shapefile format is a geospatial vector 
 data format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
+
+Example: [pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-example.ipynb)
