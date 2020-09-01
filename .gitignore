@@ -25,3 +25,9 @@ hs_err_pid*
 
 # Sphinx
 manual/build/
+
+# notebook checkpoints
+*.ipynb_checkpoints
+
+# output folder
+*output
