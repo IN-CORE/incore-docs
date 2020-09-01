@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - pyincore-viz-example notebook.  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
 - network dataset visualization in pyincore-viz-example notebook. [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
 
+### Changed
+-  Replace Fragility terms with DFR3 [INCORE1-701](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-701).
+
 ## [1.5.0] - 2020-07-31
 
 ### Added
