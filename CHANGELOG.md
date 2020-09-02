@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added 
-- pyincore-viz-example notebook.  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
+- pyincore-viz-example notebook. [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
+- Tutorials to create earthquakes & tornadoes [INCORE1-741](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-741).
 
 ## [1.5.0] - 2020-07-31
 
