@@ -6,12 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added 
-- pyincore-viz-example notebook.  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
-- network dataset visualization in pyincore-viz-example notebook. [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
+- tutorials to create earthquakes & tornadoes [INCORE1-741](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-741).
+- pyincore-viz-example notebook  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
+- network dataset visualization in pyincore-viz-example notebook [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
 
 ### Changed
-- replace Fragility terms with DFR3 [INCORE1-701](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-701).
+- expand description, add link to the notebook. [INCORE1-736](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-736).
 - move testbed zip files to Notebooks. [INCORE1-738](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-738).
+- replace Fragility terms with DFR3 [INCORE1-701](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-701).
 - swagger specs for services v0.8.0 [INCORE1-760](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-760)
 
 ## [1.5.0] - 2020-07-31
