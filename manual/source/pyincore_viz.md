@@ -43,7 +43,6 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 ### Example
 
-Jupyter notebook code showing a shape file using **matplotlib** and **ipyleaflet**. The shapefile format is a geospatial vector 
-data format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
+Jupyter notebook showing a visualization of shape files and other geographic information.
 
 Example: [pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-example.ipynb)
