@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - pyincore-viz-example notebook.  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
 - network dataset visualization in pyincore-viz-example notebook. [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
 
+### Changed
+- swagger specs for services v0.8.0 [INCORE1-760](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-760)
+
 ## [1.5.0] - 2020-07-31
 
 ### Added
