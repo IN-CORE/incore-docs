@@ -15,6 +15,8 @@ We encourage IN-CORE users to contribute improve the knowledge base. contact us 
 
     notebooks/create_dataset/create_dataset
     notebooks/create_dfr3_object/create_dfr3_object
+    notebooks/create_earthquake/create_earthquake
+    notebooks/create_tornado/create_tornado
 
 More tutorials will be added soon.
 
@@ -22,4 +24,6 @@ Download the full Notebooks:
 
 - Create Dataset object :download:`zip <notebooks/create_dataset.zip>`
 - Create DFR3 object :download:`zip <notebooks/create_dfr3_object.zip>`
+- Create Earthquake Hazard :download:`zip <notebooks/create_earthquake.zip>`
+- Create Tornado Hazard :download:`zip <notebooks/create_tornado.zip>`
 

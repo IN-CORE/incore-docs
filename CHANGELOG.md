@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added 
 - pyincore-viz-example notebook.  [INCORE1-749](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-749).
 - network dataset visualization in pyincore-viz-example notebook. [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
+- tutorials to create earthquakes & tornadoes [INCORE1-741](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-741).
 
 ### Changed
 - replace Fragility terms with DFR3 [INCORE1-701](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-701).
