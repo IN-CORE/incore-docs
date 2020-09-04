@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - network dataset visualization in pyincore-viz-example notebook. [INCORE1-752](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-752).
 
 ### Changed
-- Expand description, add link to the notebook. [INCORE1-736](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-736).
+- expand description, add link to the notebook. [INCORE1-736](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-736).
+- replace Fragility terms with DFR3 [INCORE1-701](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-701).
+- swagger specs for services v0.8.0 [INCORE1-760](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-760)
 
 ## [1.5.0] - 2020-07-31
 
@@ -22,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - building functionality notebook [INCORE1-702](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-702).
 - notebook for road damage analysis for hurricane inundation [INCORE1-705](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-705).
 - road failure page and notebook [INCORE1-710](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-710).
-- Hurricane endpoints of Galveston model to swagger specs [INCORE1-726](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-726).
+- hurricane endpoints of Galveston model to swagger specs [INCORE1-726](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-726).
 
 ### Changed
 - list of hazards in analyses' description, updated epf types [INCORE1-684](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-684).
