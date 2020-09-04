@@ -1,16 +1,15 @@
 ## pyIncore viz
 
-Visualization package associated with pyIncore is called **pyIncore-viz**. It contains advanced Python packages and code  
-required for visualizing and disseminating the IN-CORE results, mainly via Jupyter Notebooks. At least one powerful  
-library called [Matplotlib](https://matplotlib.org/) for creating static, animated, and interactive visualizations in Python 
-is already part of pyIncore (as a dependency). We decided however to keep 
-more interactive visualization in a separate package. An example would be for example geo-referenced mapping with 
-[ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
+Visualization package associated with pyIncore is called **pyIncore-viz**. It contains advanced Python packages 
+and methods required for visualizing and disseminating the IN-CORE results, mainly via Jupyter Notebooks. 
+A library called [Matplotlib](https://matplotlib.org/) for creating static visualizations in Python is already 
+part of pyIncore (as a dependency). We decided however to keep more interactive visualization in a separate package. 
+An example would be for example geo-referenced mapping with [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
 
 ### Features
-1. Geospatial visualization such as tornado path or earthquake raster data.
-2. Data visualization, graphs of data such as Fragility curves including pre-processing.
-3. Creates map window from inventory of multiple csv files stored in a folder.
+1. Geospatial visualization such as tornado path or earthquake raster data, vector data (shapfile) and network data.
+2. Data visualization, graphs of data such as statistical curves including pre-processing.
+3. Creates map window from inventory of multiple csv files stored in a folder (in progress).
  
 ### Prerequisites
 
