@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -191,7 +191,7 @@
           "datasets"
         ],
         "summary": "Updates the dataset's JSON associated with a dataset id",
-        "description": "This will not upload file content of the dataset to the server, they should be done separately using {id}/files endpoint",
+        "description": "Only allows updating string attributes of the dataset. This will not upload file content of the dataset to the server, they should be done separately using {id}/files endpoint",
         "operationId": "updateObject",
         "consumes": [
           "multipart/form-data"
