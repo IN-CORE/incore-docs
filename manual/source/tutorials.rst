@@ -24,8 +24,8 @@ Download the full Notebooks:
 
 - Create Dataset object :download `create_dataset.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dataset.zip>`_
 - Create DFR3 object :download `create_dfr3_object.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dfr3_object.zip>`_
-- Create Dataset object :download:`zip <notebooks/create_dataset.zip>`
-- Create DFR3 object :download:`zip <notebooks/create_dfr3_object.zip>`
-- Create Earthquake Hazard :download:`zip <notebooks/create_earthquake.zip>`
-- Create Tornado Hazard :download:`zip <notebooks/create_tornado.zip>`
+- Create Dataset object :download `<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dataset.zip>`_
+- Create DFR3 object :download `<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dfr3_object.zip>`_
+- Create Earthquake Hazard :download `<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_earthquake.zip>`_
+- Create Tornado Hazard :download `<https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_tornado.zip>`_
 
