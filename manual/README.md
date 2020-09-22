@@ -58,7 +58,7 @@ rendering of the tables and `nbsphinx` and `ipythony` installs extension that pr
     conda install recommonmark
     pip install sphinx-markdown-tables
     conda install -c conda-forge nbsphinx
-    conda install -c conda-forge ipythony
+    conda install -c conda-forge ipython
     ```
     or (global install for all users drop the --user flag)
     ```

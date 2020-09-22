@@ -59,8 +59,8 @@ Example Jupyter notebooks are provided with each pyincore analysis to help users
 understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
 
 Below you can find two Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
-1) `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ :download:`zip <notebooks/Joplin_testbed.zip>`,
-2) `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ :download:`zip <notebooks/Seaside_testbed.zip>`.
+1) `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ :download `Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_.
+2) `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ :download `Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_.
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
 .. |INCORE| raw:: html

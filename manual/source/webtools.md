@@ -4,7 +4,7 @@
 The viewers enable users to browse, search, preview, and download items, such as **Datasets**, **Hazards**, 
 and **Fragility** curves. Note that curves of Repairs, Restorations and Recoveries currently are not searchable. 
 A future version of Web Tools will enable those information.
-There are three web tools: 1) **Data viewer**, 2) **Hazard viewer**, and 3) **Fragility viewer**. 
+There are three web tools: 1) **Data viewer**, 2) **Hazard viewer**, and 3) **DFR3 viewer**. 
 Each viewer interacts with IN-CORE web services respectively: 1) Data service, 2) Hazard service, 
 and 3) DFR3 (Damage, Functionality, Repair, Restoration, Recovery) service. These viewers can be accessed 
 directly from the [IN-CORE](https://incore.ncsa.illinois.edu/) page
@@ -30,8 +30,10 @@ Fragility curves in the left panel. The list comes from **DFR3 service**.
 
 ![IN-CORE Web Tools DFR3 menu.](images/wt1_fragility_menu.jpg "IN-CORE Web Tools fragility menu.")
 
-Users can filter the list by selecting Hazards and types of structures in the drop down lists. 
-The curve can be viewed and the metadata of the curve can be downloaded in JSON format.
+A user must specify Curve type (Fragility, Restoration, Repair) and then filter the list by selecting 
+Hazards and types of structures in the drop down lists. Content of the **Curve Type** space can be searched 
+by id or keywords entered in the Search field on the upper right side.
+The curve can be viewed in Preview panel and the metadata of the curve can be downloaded in JSON format.
 
 ![IN-CORE Web Tools DFR3 viewer.](images/wt1_fragility.jpg "IN-CORE Web Tools fragility viewer.")
 
