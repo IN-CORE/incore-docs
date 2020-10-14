@@ -8,9 +8,8 @@ sector, with perfectly competitive, profit-maximizing firms using intermediate i
 to produce goods and services for both domestic consumption and export; (3) the government sector that collects 
 taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world. 
 
-The output of this analysis are CSV files with domestic supply, employment and household income.
-
-**Related publications**
+The output of this analysis are CSV files with domestic supply, gross income, ore- and post-disaster factor demand 
+and household count.
 
 **Input parameters**
 
@@ -40,9 +39,11 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`domestic-supply` <sup>*</sup> | `joplincgeanalysis` | Supply results | A dataset containing domestic <br>supply results (format: CSV).
-`employment` <sup>*</sup> | `joplincgeanalysis` | Employment results | A dataset  of employment. <br>(format: CSV).
-`household-income` <sup>*</sup> | `joplincgeanalysis` | Income results | A dataset of household income. <br>(format: CSV).
+`domestic-supply` <sup>*</sup> | `incore:Employment` | Supply results | A dataset containing domestic supply results (format: CSV).
+`gross-income` <sup>*</sup> | `incore:Employment` | Gross income | A dataset of resulting gross income (format: CSV).
+`pre-disaster-factor-demand` <sup>*</sup> | `incore:FactorDemand` | Factor demand | A dataset of factor demand before disaster (format: CSV).
+`post-disaster-factor-demand` <sup>*</sup> | `incore:FactorDemand` | Factor demand | A dataset of factor demand after disaster (format: CSV).
+`household-count` <sup>*</sup> | `incore:HouseholdCount` | Household count | A dataset of household count (format: CSV).
 
 <small>(* required)</small>
 
