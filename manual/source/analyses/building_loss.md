@@ -1,8 +1,6 @@
 ### Building structural loss
 
-This analysis computes building structural loss based on mean damage of the building.
-
-The economic loss damage calculates the building loss based on building appraisal value, mean damage 
+This analysis calculates the building loss based on building appraisal value, mean damage 
 and an inflation multiplier. A user must supply the inflation percentage between building appraisal year 
 and year of interest (current, date of hazard etc.)
 
