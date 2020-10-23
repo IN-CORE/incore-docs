@@ -5,6 +5,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb) <br />
 [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb) <br />
 [building_func.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_func.ipynb) <br />
+[building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_loss.ipynb) <br />
 [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/capital_shocks.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb) <br />
