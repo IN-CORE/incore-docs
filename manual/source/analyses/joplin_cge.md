@@ -16,7 +16,7 @@ and household count.
 key name | type | name | description
 --- | --- | --- | ---
 `model_iterations` <sup>*</sup> | `int` | Iterations | Number of dynamic model iterations.
-`solver_path` <sup>*</sup> | `str` | Solver path | Path to **ipopt** package.
+`solver_path` | `str` | Solver path | Path to **ipopt** package.
 
 **Input datasets**
 
