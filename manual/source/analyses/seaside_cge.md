@@ -1,15 +1,12 @@
 ### Seaside Computable General Equilibrium (CGE)
 
 A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple 
-data sources to reflect the interactions of households, firms and relevant government entities as they contribute 
+data sources to reflect the interactions of households, firms, and relevant government entities as they contribute 
 to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital, 
-using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) on investment (from 
-the Bureau of Economic Analysis (BEA)) and its transformation into functioning capital for commercial and residential 
-buildings, 3) employment and workers group data and 4) sector, with perfectly competitive, profit-maximizing firms 
-using intermediate inputs, capital, land and labor to produce goods and services for both domestic consumption and export; 
-(3) the government sector that collects taxes and uses tax revenues in order to finance the provision of public services; 
-and (4) the rest of the world. 
-
+using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production 
+sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land, and labor 
+to produce goods and services for both domestic consumption and export; (3) the government sector that collects 
+taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world. 
 The output of this analysis are CSV files with cge simulations, domestic supply and employment.
 
 **Related publications**

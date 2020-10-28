@@ -1,8 +1,8 @@
 ### Building structural loss
 
-This analysis calculates the building loss based on building appraisal value, mean damage 
-and an inflation multiplier. A user must supply the inflation percentage between building appraisal year 
-and year of interest (current, date of hazard etc.)
+This analysis calculates the building loss based on building appraisal value, mean damage, 
+and an inflation multiplier. A user must supply the inflation rate (as a percentage) 
+between building appraisal year and year of interest (current, date of hazard, etc.)
 
 The output of this analysis is a CSV file with structural losses based on damage.
 
