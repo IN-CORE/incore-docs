@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - building economic loss analysis documentation and notebook [INCORE1-771](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-771).
 - Seaside testbed notebook to have dataset list mapping [INCORE1-788](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-788).
-- aster visualization from local or from url added to pyincore-viz example notebook [INCORE1-798](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-798).
+- after visualization from local or from url added to pyincore-viz example notebook [INCORE1-798](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-798).
 - fragility visualization to Joplin testbed notebook [INCORE1-791](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-791).
 - raster visualization in pyincore-viz example notebook [INCORE1-798](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-798).
 
