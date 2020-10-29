@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -19,6 +19,9 @@
   "tags": [
     {
       "name": "datasets"
+    },
+    {
+      "name": "datatypes"
     },
     {
       "name": "status"
@@ -533,6 +536,46 @@
           },
           "404": {
             "description": "No datasets found with the searched text"
+          }
+        }
+      }
+    },
+    "/datatypes": {
+      "get": {
+        "tags": [
+          "datatypes"
+        ],
+        "summary": "Gets the list of unique datatypes associated with the datasets",
+        "description": "",
+        "operationId": "getDatatypes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "space",
+            "in": "query",
+            "description": "Filter by space name",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DatasetType"
+              }
+            }
           }
         }
       }
