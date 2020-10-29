@@ -22,13 +22,13 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`SAM` <sup>*</sup> | `incore:joplinCGEsam` | Social matrix | A social accounting matrix.
-`BB` <sup>*</sup> | `incore:JoplinCGEbb` | Capital composition | A matrix of functioning capital.
+`SAM` <sup>*</sup> | `incore:SeasideCGEsam` | Social matrix | A social accounting matrix.
+`BB` <sup>*</sup> | `incore:SeasideCGEbb` | Capital composition | A matrix of functioning capital.
 `HHTABLE` <sup>*</sup> | `incore:SeasideCGEhhtable` | HH Table | HH Table.
-`EMPLOY` <sup>*</sup> | `incore:JoplinCGEemploy` | Employment | Commercial sector employment data.
-`JOBCR` <sup>*</sup> | `incore:JoplinCGEjobcr` | Labor | A matrix of workers groups in the economy.
+`EMPLOY` <sup>*</sup> | `incore:SeasideCGEemploy` | Employment | Commercial sector employment data.
+`JOBCR` <sup>*</sup> | `incore:SeasideCGEjobcr` | Labor | A matrix of workers groups in the economy.
 `SIMS` <sup>*</sup> | `incore:SeasideCGEsim` | Capitol shocks random number | Random numbers for the change of capital stocks.
-`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
+`sector_shocks` <sup>*</sup> | `incore:SeasideCGEshocks` | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
