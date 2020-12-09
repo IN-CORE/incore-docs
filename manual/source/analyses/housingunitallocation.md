@@ -66,3 +66,4 @@ code snipet:
 ```
 
 full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb)
+Galveston, TX housing unit allocation: [HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)
