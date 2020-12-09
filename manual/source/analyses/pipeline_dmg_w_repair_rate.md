@@ -39,7 +39,7 @@ key name | type | name | description
 
 **Execution** 
 
-code snipet:
+code snippet:
 
 ```
     # Create pipeline damage with repair rate

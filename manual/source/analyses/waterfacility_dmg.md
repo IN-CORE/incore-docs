@@ -41,7 +41,7 @@ key name | type | name | description
 
 **Execution**
 
-code snipet:
+code snippet:
 
 ```
     # Create water facility damage analysis

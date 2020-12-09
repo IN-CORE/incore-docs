@@ -39,7 +39,7 @@ key name | type | name | description
 
 **Execution**
 
-code snipet:
+code snippet:
 
 ```
     # Create housing allocation

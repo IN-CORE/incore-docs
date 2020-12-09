@@ -35,7 +35,7 @@ key name | type | name | description
 
 **Execution**
 
-code snipet:
+code snippet:
 
 ```
     # Create instance
