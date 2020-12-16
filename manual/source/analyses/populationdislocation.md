@@ -32,7 +32,7 @@ key name | type | name | description
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building damage | A building damage dataset.
 `housing_unit_allocation` <sup>*</sup> | `incore:housingUnitAllocation` | Housing allocation | A housing unit allocation dataset.
 `block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A racial distribution dataset.
-`value_poss_param` <sup>*</sup> | `incore:valueLossParam` | Loss parameters | A table with value loss beta distribution parameters.
+`value_loss_param` <sup>*</sup> | `incore:valueLossParam` | Loss parameters | A table with value loss beta distribution parameters.
                     
 **Output Datasets** 
 
@@ -54,7 +54,7 @@ code snipet:
     pop_dis.load_remote_input_dataset("building_dmg", building_dmg)
     pop_dis.load_remote_input_dataset("housing_unit_allocation", housing_unit_alloc)
     pop_dis.load_remote_input_dataset("block_group_data", bg_data)
-    pop_dis.load_remote_input_dataset("value_poss_param", value_loss)
+    pop_dis.load_remote_input_dataset("value_loss_param", value_loss)
 
     # Specify the result name
     result_name = "IN-CORE_1bv6_population_dislocation"
