@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Semantics Service for type and data type",
-    "version": "0.9.1",
+    "version": "1.0.0",
     "title": "Semantics Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -34,6 +34,31 @@
     "application/json"
   ],
   "paths": {
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/types": {
       "get": {
         "tags": [
@@ -206,31 +231,6 @@
         "responses": {
           "default": {
             "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/status": {
-      "get": {
-        "tags": [
-          "status"
-        ],
-        "summary": "Gives the status of the service.",
-        "description": "This will provide the status of the service as a JSON.",
-        "operationId": "getStatus",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "string"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
