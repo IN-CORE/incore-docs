@@ -17,7 +17,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventory` | Building dataset |  A building inventory dataset.
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building inventory dataset.
 `building_mean_dmg` <sup>*</sup> | `ergo:meanDamage`<br>`ergo:buildingDamage` | Building mean damage | Building mean damage results CSV file.
 
 **Output datasets**

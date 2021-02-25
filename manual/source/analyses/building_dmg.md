@@ -9,7 +9,7 @@ location of the building is computed. Using this information, the probability of
 along with the probability of damage. For the case of an earthquake hazard, soil information can be used to
 modify the damage probabilities to include damage due to liquefaction.  
 
-The output of this analysis is a CSV file with probabilities of damage.
+The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.
 
 **Input parameters**
 
@@ -27,14 +27,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6` | Building dataset |  A building dataset.
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets**
 
-key name | type | name | description
+key name | type | parent key / name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:buildingDamageVer4` | Results | A dataset containing results <br>(format: CSV).
+`ds_result` <sup>*</sup> | `ergo:buildingDamageVer5` | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `ergo:buildingDamageVer5` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

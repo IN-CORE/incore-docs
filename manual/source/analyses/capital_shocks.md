@@ -19,7 +19,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6` | Building dataset | A building inventory dataset.
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset | A building inventory dataset.
 `buildings_to_sectors` <sup>*</sup> | `incore:buildingsToSectors` | Buildings to sectors | A file defining sectors of buildings.
 `failure_probability` <sup>*</sup> | `incore:failureProbability` | Failure probability | Failure probability of buildings..
 

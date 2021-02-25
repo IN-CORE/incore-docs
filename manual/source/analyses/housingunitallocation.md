@@ -25,9 +25,9 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
+`building_inventory` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building inventory | A building inventory dataset.
 `housing_unit_inventory` <sup>*</sup> | `incore:housingUnitInventory` | Housing inventory | A housing unit inventory dataset.
 `address_point_inventory` <sup>*</sup> | `incore:addressPoints` | Address inventory | An address locations dataset.
-`building_inventory` <sup>*</sup> | `ergo:buildingInventory` | Building inventory | A building inventory dataset.
 
 **Output datasets**
 

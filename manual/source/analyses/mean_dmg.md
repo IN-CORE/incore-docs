@@ -18,7 +18,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:nsBuildingInventoryDamage`<br>`ergo:bridgeDamage`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:roadDamage`<br>`incore:epfDamage`<br>`incore:pipelineDamage`<br>`ergo:waterFacilityDamageVer4`| Infrastructure dataset |  An infrastructure dataset.
+`damage` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:bridgeDamage`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:roadDamage`<br>`incore:epfDamage`<br>`incore:pipelineDamage`<br>`ergo:waterFacilityDamageVer4`| Infrastructure dataset |  An infrastructure dataset.
 `dmg_ratios` <sup>*</sup> | `ergo:buildingDamageRatios`<br>`ergo:bridgeDamageRatios`<br>`ergo:buildingContentDamageRatios`<br>`ergo:buildingASDamageRatios`<br>`ergo:buildingDSDamageRatios`<br>`ergo:roadDamageRatios` | Damage ratios |  A damage ratios dataset.
                              
 **Output datasets**
@@ -46,7 +46,7 @@ code snippet:
 
     # Set analysis parameters
     md.set_parameter("result_name", "bridge_mean_damage")
-    md.set_parameter("damage_interval_keys",["none", "ds-slight", "ds-moderat", "ds-extensi", "ds-complet"])
+    md.set_parameter("damage_interval_keys",["none", "ds-slight", "ds-moderate", "ds-extensive", "ds-complete"])
     md.set_parameter("num_cpu", 1)
 
     # Run mean damage analysis
