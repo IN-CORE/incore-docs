@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "0.9.1",
+    "version": "1.0.0",
     "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -241,9 +241,6 @@
         "summary": "Deletes a dataset",
         "description": "Also deletes attached information like files and geoserver layer",
         "operationId": "deleteDataset",
-        "consumes": [
-          "multipart/form-data"
-        ],
         "produces": [
           "application/json"
         ],
@@ -394,6 +391,47 @@
         }
       }
     },
+    "/datasets/{id}/files/{file_id}/blob": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Returns a file that is attached to a FileDescriptor of a dataset",
+        "description": "",
+        "operationId": "getFileByFileDescriptor",
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file_id",
+            "in": "path",
+            "description": "FileDescriptor Object Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/datasets/{id}/files/{file_id}": {
       "get": {
         "tags": [
@@ -434,47 +472,6 @@
             "schema": {
               "$ref": "#/definitions/FileDescriptor"
             }
-          }
-        }
-      }
-    },
-    "/datasets/{id}/files/{file_id}/blob": {
-      "get": {
-        "tags": [
-          "datasets"
-        ],
-        "summary": "Returns a file that is attached to a FileDescriptor of a dataset",
-        "description": "",
-        "operationId": "getFileByFileDescriptor",
-        "produces": [
-          "application/octet-stream"
-        ],
-        "parameters": [
-          {
-            "name": "x-auth-userinfo",
-            "in": "header",
-            "description": "User credentials.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Dataset Id from data service",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "file_id",
-            "in": "path",
-            "description": "FileDescriptor Object Id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
           }
         }
       }
@@ -607,6 +604,33 @@
     }
   },
   "definitions": {
+    "FileDescriptor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dataURL": {
+          "type": "string"
+        },
+        "md5sum": {
+          "type": "string"
+        }
+      }
+    },
     "Dataset": {
       "type": "object",
       "properties": {
@@ -628,6 +652,13 @@
         },
         "creator": {
           "type": "string"
+        },
+        "spaces": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "type": "string"
+          }
         },
         "contributors": {
           "type": "array",
@@ -662,33 +693,6 @@
         },
         "networkDataset": {
           "$ref": "#/definitions/NetworkDataset"
-        }
-      }
-    },
-    "FileDescriptor": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "deleted": {
-          "type": "boolean"
-        },
-        "filename": {
-          "type": "string"
-        },
-        "mimeType": {
-          "type": "string"
-        },
-        "size": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "dataURL": {
-          "type": "string"
-        },
-        "md5sum": {
-          "type": "string"
         }
       }
     },
@@ -821,17 +825,17 @@
         "providers": {
           "$ref": "#/definitions/Providers"
         },
-        "name": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
         "formDataContentDisposition": {
           "$ref": "#/definitions/FormDataContentDisposition"
         },
         "simple": {
           "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
         },
         "parameterizedHeaders": {
           "type": "object",
@@ -1025,6 +1029,17 @@
     },
     "Providers": {
       "type": "object"
+    },
+    "DatasetType": {
+      "type": "object",
+      "properties": {
+        "dataType": {
+          "type": "string"
+        },
+        "space": {
+          "type": "string"
+        }
+      }
     }
   }
 }
