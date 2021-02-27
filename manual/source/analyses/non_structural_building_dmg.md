@@ -31,7 +31,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4` | Building dataset |  A building dataset.
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**

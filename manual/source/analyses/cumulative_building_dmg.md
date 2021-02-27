@@ -16,14 +16,14 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`eq_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset | A building dataset with earthquake damage.
-`tsunami_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4` | Building dataset | A building dataset with tsunami damage.
+`eq_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5` | Building dataset | A building dataset with earthquake damage.
+`tsunami_bldg_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5` | Building dataset | A building dataset with tsunami damage.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`combined-result` <sup>*</sup> | `ergo:buildingDamageVer4` | Results | A dataset containing results <br>(format: CSV).
+`combined-result` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 
