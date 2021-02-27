@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [2.0.0] - 2021-02-28
+
+### Added
+
+- Galveston testbed notebook [INCORE1-988] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-988).
+- Multi format visualization method in pyincore-viz example notebook [INCORE1-843] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-843).
+
+### Changed
+
+- Update analyses and example notebooks reflecting new damage state definition [INCORE1-971] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-971).
+- Update  Seaside testbed notebooks reflecting new damage state definition [INCORE1-972] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-972).
+- Update Joplin testbed notebooks reflecting new damage state definition [INCORE1-993] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-993).
+
+### Fixed
+
 ## [1.8.0] - 2020-12-18
 
 ### Added
