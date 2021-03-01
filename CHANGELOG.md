@@ -11,8 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed dataset id in seaside_cge.ipynb
 - Fixed dataset type in mean_dmg.ipynb
 - Fixed datasets in cumulative_building_dmg.ipynb, linked with inventory damages
-- Fixed transportation_recovery.ipynb
-- Fixed tornadoepn_dmg.ipynb
+- Fixed type in transportation_recovery.ipynb
+- Fixed dataset id in tornadoepn_dmg.ipynb
+- Changed result dataset type in Getting started tutorial
 
 ## [2.0.0] - 2021-02-28
 
@@ -24,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Update analyses and example notebooks reflecting new damage state definition [INCORE1-971] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-971).
-- Update  Seaside testbed notebooks reflecting new damage state definition [INCORE1-972] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-972).
+- Update Seaside testbed notebooks reflecting new damage state definition [INCORE1-972] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-972).
 - Update Joplin testbed notebooks reflecting new damage state definition [INCORE1-993] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-993).
 
 ### Fixed

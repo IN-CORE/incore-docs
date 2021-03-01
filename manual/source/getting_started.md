@@ -184,7 +184,7 @@ If you don't have Miniconda installed, do the following steps.
     or by converting csv to Pandas DataFrame in the Notebook itself:
     ```
     # Retrieve result dataset
-    result = bldg_dmg.get_output_dataset("result")
+    result = bldg_dmg.get_output_dataset("ds_result")
 
     # Convert dataset to Pandas DataFrame
     df = result.get_dataframe_from_csv()
