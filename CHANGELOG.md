@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed type in transportation_recovery.ipynb
 - Fixed dataset id in tornadoepn_dmg.ipynb
 - Changed result dataset type in Getting started tutorial
+- Fixed create dataset tutorial
 
 ## [2.0.0] - 2021-02-28
 
