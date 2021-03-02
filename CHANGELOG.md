@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Create dataset tutorial [INCORE1-1022] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1022).
 - Links to Lab [INCORE1-1024] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1024).
 - Failing fragility in create_dfr3 object tutorial [INCORE1-1021] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1021).
+- Updated output cells of Galveston Testbed [INCORE1-1026] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1026).
 
 ## [2.0.0] - 2021-02-28
 
