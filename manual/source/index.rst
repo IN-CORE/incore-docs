@@ -56,7 +56,7 @@ to the `IN-CORE Web Tools section <webtools.html>`_.
 **IN-CORE Lab** is a customized Jupyter Lab with **pyIncore** installed and hosted on a NCSA cloud system.
 It allows users to develop/run/test their scientific model with pyIncore in their own workspace.
 Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
-understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
+understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.z
 
 Below you can find three Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
 
