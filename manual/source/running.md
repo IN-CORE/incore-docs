@@ -41,4 +41,4 @@ cell and click the **Run** button at the top.
 
 For details of running and manipulating ipynb files refer to [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/running.html#running).
 
-- Additionally, a user can run Jupyter Notebook interactively in NCSA's [IN-CORE Lab](https://incore.ncsa.illinois.edu/).
+- Additionally, a user can run Jupyter Notebook interactively in NCSA's [IN-CORE Lab](https://incore.ncsa.illinois.edu/hub/).
