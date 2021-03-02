@@ -8,14 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Dataset id in seaside_cge.ipynb
-- Dataset type in mean_dmg.ipynb
-- Datasets in cumulative_building_dmg.ipynb, linked with inventory damages
-- Type in transportation_recovery.ipynb
-- Dataset id in tornadoepn_dmg.ipynb
-- Result dataset type in Getting started tutorial
-- Create dataset tutorial
-- Links to Lab
+- Dataset id in seaside_cge.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Dataset type in mean_dmg.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Datasets in cumulative_building_dmg.ipynb, linked with inventory damages [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Type in transportation_recovery.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Dataset id in tornadoepn_dmg.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Result dataset type in Getting started tutorial [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
+- Create dataset tutorial [INCORE1-1022] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1022).
+- Links to Lab [INCORE1-1024] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1024).
+- Failing fragility in create_dfr3 object tutorial [INCORE1-1021] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1021).
 
 ## [2.0.0] - 2021-02-28
 
