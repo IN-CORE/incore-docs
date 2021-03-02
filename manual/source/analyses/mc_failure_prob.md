@@ -48,7 +48,7 @@ code snippet:
     mc.set_parameter("result_name", "mc_failure_probability")
     mc.set_parameter("num_cpu", 8)
     mc.set_parameter("num_samples", 10)
-    mc.set_parameter("damage_interval_keys", ["insignific", "moderate", "heavy", "complete"])
+    mc.set_parameter("damage_interval_keys", ["DS_0", "DS_1", "DS_2", "DS_3"])
     mc.set_parameter("failure_state_keys", ["moderate", "heavy", "complete"])
 
     # Run Monte Carlo failure

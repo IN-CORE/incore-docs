@@ -222,10 +222,10 @@
 *   *Is Geopandas (package x) part of pyIncore?*
 
     The full set of Python packages available in *pyIncore* is listed in the *setup.py* file. The basic set of 
-    packages is as follows: `fiona`, `folium`, `jsonpickle`, `matplotlib`, `networkx`, `numpy`, `owslib`, 
-    `pandas`, `plotly`, `pyproj`, `pyyaml`, `rasterio`, `requests`, `rtree`, `scipy`, `shapely`, `wntr`, 
+    packages is as follows: `fiona`, `jsonpickle`, `matplotlib`, `networkx`, `numpy`, `owslib`, 
+    `pandas`, `geopandas`, `plotly`, `pyproj`, `pyyaml`, `rasterio`, `requests`, `rtree`, `scipy`, `shapely`, `wntr`, 
     `seaborn`, `pyomo`. We are currently working on creating visualization package so some packages such as 
-    `folium`, `matplotlib`, `plotly` will be removed from future version of **pyIncore** core and they will 
+    `ipyleaflet`, `matplotlib`, `plotly` will be removed from future version of **pyIncore** core and they will 
     be moved to **pyIncore viz**.
     <br />
     <br />    

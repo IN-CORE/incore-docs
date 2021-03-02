@@ -11,7 +11,7 @@ directly from the [IN-CORE](https://incore.ncsa.illinois.edu/) page
 
 ![IN-CORE Web Tools.](images/incore_landing_page1.jpg "IN-CORE Web Tools menu.") 
  
- or from the [IN-CORE Lab](https://incore.ncsa.illinois.edu/lab).
+ or from the [IN-CORE Lab](https://incore.ncsa.illinois.edu/).
  
 <!-- ![Web Tools in Incore Lab.](images/incore_landing_page2.jpg "IN-CORE Web Tools menu in IN-CORE Lab.")-->
  

@@ -58,9 +58,12 @@ It allows users to develop/run/test their scientific model with pyIncore in thei
 Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
 understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
 
-Below you can find two Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
-1) `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ :download `Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_.
-2) `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ :download `Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_.
+Below you can find three Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
+
+1. `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ `Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_.
+2. `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ `Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_.
+3. `Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed.html>`_ `Galveston_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_.
+
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
 .. |INCORE| raw:: html
