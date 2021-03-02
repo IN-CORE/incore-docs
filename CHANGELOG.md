@@ -8,14 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Fixed dataset id in seaside_cge.ipynb
-- Fixed dataset type in mean_dmg.ipynb
-- Fixed datasets in cumulative_building_dmg.ipynb, linked with inventory damages
-- Fixed type in transportation_recovery.ipynb
-- Fixed dataset id in tornadoepn_dmg.ipynb
-- Changed result dataset type in Getting started tutorial
-- Fixed create dataset tutorial
-- Fixed links to Lab
+- Dataset id in seaside_cge.ipynb
+- Dataset type in mean_dmg.ipynb
+- Datasets in cumulative_building_dmg.ipynb, linked with inventory damages
+- Type in transportation_recovery.ipynb
+- Dataset id in tornadoepn_dmg.ipynb
+- Result dataset type in Getting started tutorial
+- Create dataset tutorial
+- Links to Lab
 
 ## [2.0.0] - 2021-02-28
 
