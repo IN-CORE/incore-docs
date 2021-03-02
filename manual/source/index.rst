@@ -56,13 +56,13 @@ to the `IN-CORE Web Tools section <webtools.html>`_.
 **IN-CORE Lab** is a customized Jupyter Lab with **pyIncore** installed and hosted on a NCSA cloud system.
 It allows users to develop/run/test their scientific model with pyIncore in their own workspace.
 Example Jupyter notebooks are provided with each pyincore analysis to help users get started and to help them
-understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.z
+understand how to use the pyIncore.  For detailed information, please refer to the `IN-CORE Lab section <incore_lab.html>`_.
 
 Below you can find three Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
 
-1. `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_).
-2. `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_).
-3. `Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_).
+1. `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_ file).
+2. `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_ file).
+3. `Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_ file).
 
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
