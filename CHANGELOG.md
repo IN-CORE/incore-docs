@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Delete output cells in HUA example notebook [INCORE1-1041] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1041).
-- Links to Lab and Services especially for unlogged user [INCORE1-1042] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1042).
 - Galveston notebook population dislocation chaining [INCORE1-1043] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1043).
 
 ## [2.0.1] - 2021-03-01
