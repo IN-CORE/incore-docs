@@ -8,36 +8,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Delete output cells in HUA example notebook [INCORE1-1041] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1041).
-- Galveston notebook population dislocation chaining [INCORE1-1043] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1043).
+- Delete output cells in HUA example notebook [INCORE1-1041](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1041).
+- Galveston notebook population dislocation chaining [INCORE1-1043](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1043).
 
 ## [2.0.1] - 2021-03-01
 
 ### Fixed
 
-- Dataset id in seaside_cge.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Dataset type in mean_dmg.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Datasets in cumulative_building_dmg.ipynb, linked with inventory damages [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Type in transportation_recovery.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Dataset id in tornadoepn_dmg.ipynb [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Result dataset type in Getting started tutorial [INCORE1-1025] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1025).
-- Create dataset tutorial [INCORE1-1022] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1022).
-- Links to Lab [INCORE1-1024] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1024).
-- Failing fragility in create_dfr3 object tutorial [INCORE1-1021] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1021).
-- Updated output cells of Galveston Testbed [INCORE1-1026] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-1026).
+- Dataset id in seaside_cge.ipynb [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Dataset type in mean_dmg.ipynb [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Datasets in cumulative_building_dmg.ipynb, linked with inventory damages [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Type in transportation_recovery.ipynb [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Dataset id in tornadoepn_dmg.ipynb [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Result dataset type in Getting started tutorial [INCORE1-1025](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1025).
+- Create dataset tutorial [INCORE1-1022](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1022).
+- Links to Lab [INCORE1-1024](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1024).
+- Failing fragility in create_dfr3 object tutorial [INCORE1-1021](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1021).
+- Updated output cells of Galveston Testbed [INCORE1-1026](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1026).
 
 ## [2.0.0] - 2021-02-28
 
 ### Added
 
-- Galveston testbed notebook [INCORE1-988] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-988).
-- Multi format visualization method in pyincore-viz example notebook [INCORE1-843] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-843).
+- Galveston testbed notebook [INCORE1-988](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-988).
+- Multi format visualization method in pyincore-viz example notebook [INCORE1-843](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-843).
 
 ### Changed
 
-- Update analyses and example notebooks reflecting new damage state definition [INCORE1-971] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-971).
-- Update Seaside testbed notebooks reflecting new damage state definition [INCORE1-972] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-972).
-- Update Joplin testbed notebooks reflecting new damage state definition [INCORE1-993] (https://opensource.ncsa.illinois.edu/jira/browse/INCORE-993).
+- Update analyses and example notebooks reflecting new damage state definition [INCORE1-971](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-971).
+- Update Seaside testbed notebooks reflecting new damage state definition [INCORE1-972](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-972).
+- Update Joplin testbed notebooks reflecting new damage state definition [INCORE1-993](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-993).
 
 ### Fixed
 
