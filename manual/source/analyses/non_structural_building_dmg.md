@@ -34,11 +34,12 @@ key name | type | name | description
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
-**Output Datasets**
+**Output datasets**
 
-key name | type | name | description
+key name | type | parent key / name | description
 --- | --- | --- | ---
-`result` | `ergo:nsBuildingInventoryDamage` | Results | A dataset containing results <br>(format: CSV).
+`ds_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamage` | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamage` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
