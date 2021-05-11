@@ -28,7 +28,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `epn_node` <sup>*</sup> | `incore:epnNodeVer1` | EPN node | A dataset with nodes of the electric power network.
 `epn_link` <sup>*</sup> | `incore:epnLinkeVer1` | EPN link | A dataset with links of the electric power network.
-`tornado` | `tornadowindfield` | Tornado dataset | A tornado winds dataset.
+`tornado` <sup>*</sup>| `incore:tornadoWindfield` | Tornado dataset | A tornado winds dataset.
 
 **Output Datasets** 
 
