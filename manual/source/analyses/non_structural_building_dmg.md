@@ -38,8 +38,8 @@ key name | type | name | description
 
 key name | type | parent key / name | description
 --- | --- | --- | ---
-`ds_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamage` | `buildings` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamage` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageVer2` | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageMetadata` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
