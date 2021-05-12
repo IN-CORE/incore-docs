@@ -1,6 +1,6 @@
 ### Nonstructural building damage
 
-This analysis computes the non-structural damage to buildings based on a particular hazard. Currently supported hazard is: **earthquake**.
+This analysis computes the non-structural damage to buildings based on a particular hazard. Currently, supported hazard is: **earthquake**.
 
 The process is similar to evaluating other structural damages. The probabilities for building damage
 state are obtained using fragility curves and a hazard definition, each building site will have
@@ -8,10 +8,11 @@ a specific PGA (Peak Ground Acceleration), a measurement of an earthquake hazard
 Liquefaction effect, which is defined as a change in stress condition, in which material that is ordinarily
 a solid behaves like a liquid can be considered as well. The LMF (Liquefaction Modification Factor)
 values are implemented as multiplication factors to the median fragility values and they must be present
-in the dataset.
+in the dataset. This analysis uses two types of fragility curves assigned to the building; acceleration-sensitive (AS) and 
+drift-sensitive (DS).
 
-The code covers Normal and LogNormal fragilities with 4 limit states (slight, moderate, extensive
-and complete) and creates an output CSV file.
+The code covers Normal and LogNormal fragilities with 3 limit states for AS and DS and creates an output CSV file 
+with corresponding damage states.
 
 **Input Parameters**
 
@@ -20,8 +21,8 @@ key name | type | name | description
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake).
 `hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
-`fragility_key_as` | `str` | AS fragility | Fragility key used in mapping dataset.
-`fragility_key_ds` | `str` | DS fragility | Fragility key used in mapping dataset.
+`fragility_key_as` | `str` | AS fragility | Acceleration-sensitive fragility key used in mapping dataset.
+`fragility_key_ds` | `str` | DS fragility | Drift-sensitive fragility key used in mapping dataset.
 `use_liquefation` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default *False*.
 `liq_geology_dataset_id` | `str` | Liquefaction id | A liquefaction susceptibility dataset.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. Default is <br>*False*.
@@ -38,7 +39,7 @@ key name | type | name | description
 
 key name | type | parent key / name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageVer2` | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageVer2` | `buildings` | Results | A dataset containing results <br>with both, acceleration sensitivy (AS) related <br>and drift sensitivity (DS) related damage states <br>(format: CSV).
 `damage_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageMetadata` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
