@@ -22,8 +22,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:bridgeDamage`<br>`incore:epfDamage`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2`<br>`incore:pipelineDamage`<br>`ergo:roadDamage`<br>`ergo:waterFacilityDamageVer4` | Infrastructure damage | A file with infrastructure damage intervals.
-                        
+`damage` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:bridgeDamage`<br>`ergo:bridgeDamageVer2`<br>`incore:epfDamage`<br>`incore:epfDamageVer2`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2`<br>`incore:pipelineDamage`<br>`incore:pipelineDamageVer2`<br>`ergo:roadDamage`<br>`ergo:roadDamageVer2`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:waterFacilityDamageVer5` | Infrastructure damage | A file with infrastructure damage intervals.
+
 **Output Datasets**
 
 key name | type | name | description

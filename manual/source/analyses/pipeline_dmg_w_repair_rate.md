@@ -8,7 +8,7 @@ location of the pipeline is computed. Using this information, the probability of
 along with the probability of damage. If the pipeline dataset contains soil information, the median value of the associated 
 fragility can be modified to account for liquefaction in the damage. 
 
-The output of this analysis is a CSV file with probabilities of damage.
+The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.
     
 **Input Parameters**
 
@@ -31,9 +31,10 @@ key name | type | name | description
 
 **Output Datasets**
 
-key name | type | name | description
---- | --- | --- | ---
-`result` | `ergo:pipelineDamage` | Results | A dataset containing results (format: CSV).
+key name | type | parent key | name | description
+--- | --- | --- | --- | ---
+`result` <sup>*</sup> | `ergo:pipelineDamageVer2` | `pipeline` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `incore:pipelineDamageSupplement` | `pipeline` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

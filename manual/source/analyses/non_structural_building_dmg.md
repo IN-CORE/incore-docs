@@ -12,7 +12,8 @@ in the dataset. This analysis uses two types of fragility curves assigned to the
 drift-sensitive (DS).
 
 The code covers Normal and LogNormal fragilities with 3 limit states for AS and DS and creates an output CSV file 
-with corresponding damage states.
+with corresponding damage states. The second output file is a JSON with information about hazard and fragilities.
+
 
 **Input Parameters**
 
@@ -37,10 +38,10 @@ key name | type | name | description
 
 **Output datasets**
 
-key name | type | parent key / name | description
---- | --- | --- | ---
+key name | type | parent key | name | description
+--- | --- | --- | --- | ---
 `result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageVer2` | `buildings` | Results | A dataset containing results <br>with both, acceleration sensitivy (AS) related <br>and drift sensitivity (DS) related damage states <br>(format: CSV).
-`damage_result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageMetadata` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`damage_result` <sup>*</sup> | `incore:nsBuildingInventoryDamageSupplement` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
