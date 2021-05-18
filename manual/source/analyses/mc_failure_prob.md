@@ -28,8 +28,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`failure_probability` | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
-`sample_failure_state` | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`failure_probability` <sup>*</sup> | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` <sup>*</sup> | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 
@@ -49,7 +49,7 @@ code snippet:
     mc.set_parameter("num_cpu", 8)
     mc.set_parameter("num_samples", 10)
     mc.set_parameter("damage_interval_keys", ["DS_0", "DS_1", "DS_2", "DS_3"])
-    mc.set_parameter("failure_state_keys", ["moderate", "heavy", "complete"])
+    mc.set_parameter("failure_state_keys", ["DS_1", "DS_2", "DS_3"])
 
     # Run Monte Carlo failure
     mc.run_analysis()

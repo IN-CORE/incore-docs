@@ -31,8 +31,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`functionality_samples` | `incore:funcSample` | Results | A dataset containing results of functionality samples<br>(format: CSV).
-`functionality_probability` | `incore:funcProbability` | Results | A dataset containing results of functionality probability<br>(format: CSV).
+`functionality_samples` <sup>*</sup> | `incore:funcSample` | Results | A dataset containing results of functionality samples<br>(format: CSV).
+`functionality_probability` <sup>*</sup> | `incore:funcProbability` | Results | A dataset containing results of functionality probability<br>(format: CSV).
 
 <small>(* required)</small>
 

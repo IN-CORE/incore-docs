@@ -38,7 +38,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` | `incore:popDislocation` | Results | A dataset containing results (format: CSV).
+`result` <sup>*</sup> | `incore:popDislocation` | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

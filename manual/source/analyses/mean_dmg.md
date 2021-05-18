@@ -46,7 +46,7 @@ code snippet:
 
     # Set analysis parameters
     md.set_parameter("result_name", "bridge_mean_damage")
-    md.set_parameter("damage_interval_keys",["none", "ds-slight", "ds-moderate", "ds-extensive", "ds-complete"])
+    md.set_parameter("damage_interval_keys",["DS_0", "DS_1", "DS_2", "DS_3", "DS_4"])
     md.set_parameter("num_cpu", 1)
 
     # Run mean damage analysis
