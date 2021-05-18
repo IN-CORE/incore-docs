@@ -7,7 +7,7 @@ First, fragilities are obtained based on the hazard type and attributes of the n
 the hazard intensity at the location of the infrastructure is computed. Using this information, the probability of exceeding 
 each limit state is computed, along with the probability of damage. 
 
-The output of this analysis is a CSV file. Depending on the input data the analysis this analysis also provides information on the number of damaged poles for each node, 
+The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities. Depending on the input data the analysis this analysis also provides information on the number of damaged poles for each node, 
 repair cost for each node, total repair cost for the network and total repair time for the network.
 
 **Related publications**
@@ -32,9 +32,10 @@ key name | type | name | description
 
 **Output Datasets** 
 
-key name | type | name | description
---- | --- | --- | ---
-`result` <sup>*</sup> | `incore:tornadoEPNDamageVer1` | Results | A dataset containing results (format: CSV).
+key name | type | parent key | name | description
+--- | --- | --- | --- | ---
+`result` <sup>*</sup> | `incore:tornadoEPNDamageVer2` | `epn_node` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | `epn_node` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

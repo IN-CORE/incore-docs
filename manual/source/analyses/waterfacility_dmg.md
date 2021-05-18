@@ -8,7 +8,7 @@ location of the building is computed. Using this information, the probability of
 along with the probability of damage. For the case of an earthquake hazard, soil information can be used to
 modify the damage probabilities to include damage due to liquefaction.  
 
-The output of this analysis is a CSV file with probabilities of damage.
+The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.
 
 **Input Parameters**
 
@@ -33,9 +33,10 @@ key name | type | name | description
 
 **Output datasets** 
 
-key name | type | name | description
---- | --- | --- | ---
-`result` | `ergo:waterFacilityDamageVer4` | Results | A dataset containing results (format: CSV).
+key name | type | parent key | name | description
+--- | --- | --- | --- | ---
+`result` <sup>*</sup> | `ergo:waterFacilityDamageVer5` | `water_facilities` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `incore:waterFacilityDamageSupplement` | `water_facilities` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

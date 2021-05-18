@@ -7,7 +7,7 @@ The process for computing the road damage is similar to other parts of the built
 is obtained based on the hazard type and attributes of the roads. Based on the fragility and road distance to shore, the hazard intensity is computed. 
 Using this information, the failure probability is computed. 
 
-The output of this analysis is a CSV file with failure probabilities.
+The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.
 
 **Input Parameters**
 
@@ -29,9 +29,10 @@ key name | type | name | description
 
 **Output Datasets**
 
-key name | type | name | description
---- | --- | --- | ---
-`result` | `incore:roadFailure` | Results | A dataset containing results (format: CSV).
+key name | type | parent key | name | description
+--- | --- | --- | --- | ---
+`result` <sup>*</sup> | `incore:roadFailureVer2` | `roads` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | `incore:roadFailureSupplement` | `roads` | Results | Information about applied hazard value and fragility<br>(format: JSON).
                   
 <small>(* required)</small>
 
