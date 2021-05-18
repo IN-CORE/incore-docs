@@ -11,6 +11,7 @@ Example Notebooks
 
 Download the full directory of the Notebooks above:
 
-- Galveston Notebook `Galveston_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_
-- Joplin Notebook `Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_
-- Seaside Notebook `Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_
+`Joplin_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_,
+`Seaside_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_,
+`Galveston_testbed.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_
+
