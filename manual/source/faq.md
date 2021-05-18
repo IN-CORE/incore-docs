@@ -150,7 +150,7 @@
     
 *   *I do not have full administrative privileges to my School/Company issued computer. The pyIncore or Jupyter Notebook does not work.*
 
-    Check what version of Python (3.5+) and Miniconda/Anaconda are installed. Try to install Anaconda rather than Miniconda. 
+    Check what version of Python (3.6-3.8) and Miniconda/Anaconda are installed. Try to install Anaconda rather than Miniconda. 
     If none of the above helps contact your System administrator and Contact us at <incore-dev@lists.illinois.edu>.
     <br />
     <br />

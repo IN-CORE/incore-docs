@@ -15,7 +15,7 @@
     so installing Python first is not needed. The `conda` is the preferred interface for managing installations 
     and virtual environments with the Miniconda/Anaconda.
 
-- `Python 3.5+` <https://www.python.org/>
+- `Python 3.6 through 3.8` <https://www.python.org/>
     It is common to have more than one Python version installed on your computer. Since we recommend using virtual environment, your
     Python will be "encapsulated" by the environment with version specified at the environment creation. Deleting environment removes 
     that particular Python. 
