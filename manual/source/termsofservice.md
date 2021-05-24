@@ -101,10 +101,8 @@ specific terms:
 ### General Conditions
 
 * Your use of the Service is at your sole risk. The service is provided on an "as is" and "as available" basis.
-  
 * You must not modify, adapt or hack the Service or modify another website so as to falsely imply that it is associated 
   with the Service, IN-CORE, or any other IN-CORE service.
-  
 * You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, 
   or access to the Service without the express written permission by IN-CORE.
 * IN-CORE may, but have no obligation to, remove Content and Accounts containing Content that we determine in our sole 
