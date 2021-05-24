@@ -19,8 +19,7 @@ YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SOFTWARE.
 If any changes are made to these Terms, we will require you to accept these new Terms of Service before you can continue 
 to use the Service. Any new features that augment or enhance the current Service, including the release of new tools 
 and resources, shall be subject to the Terms of Service. Continued use of the Service after any such changes 
-shall constitute your consent to such changes. You can review the most current version of the Terms of Service at any time 
-at the help menu.
+shall constitute your consent to such changes.
 
 Violation of any of the terms below will result in the termination of your Account. While IN-CORE prohibits such conduct 
 and Content on the Service, you understand and agree that IN-CORE cannot be responsible for the Content posted 
@@ -135,4 +134,4 @@ specific terms:
   and govern your use of the Service, superseding any prior agreements between you and IN-CORE (including, but not limited to, 
   any prior versions of the Terms of Service). You agree that these Terms of Service and Your use of the Service are governed 
   under California law.
-* Questions about the Terms of Service should be sent to administrators of this service (see the help menu for a link to send the email).
+* Questions about the Terms of Service should be sent to administrators of this service.
