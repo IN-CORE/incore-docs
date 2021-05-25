@@ -21,6 +21,7 @@ Introduction
     links
     contact
     acknowledgement
+    termsofservice
 
 
 The National Institute of Standards and Technology (NIST) funded the Center of Excellence for Risk-Based Community
