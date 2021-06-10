@@ -16,6 +16,7 @@ Introduction
     webtools
     tutorials
     FAQ <faq>
+    workshops
     notebooks
     refs
     links
