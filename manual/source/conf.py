@@ -35,9 +35,9 @@ project = 'IN-CORE Manual'
 author = ''
 
 # The short X.Y version
-version = '2.2.1'
+version = '2.3'
 # The full version, including alpha/beta/rc tags
-release = '2.2.1'
+release = '2.3.0'
 
 
 # -- General configuration ---------------------------------------------------
