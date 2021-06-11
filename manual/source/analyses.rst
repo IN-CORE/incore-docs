@@ -21,7 +21,6 @@ Analyses
     analyses/populationdislocation
     analyses/portfolio_recovery
     analyses/road_dmg
-    analyses/road_failure
     analyses/seaside_cge
     analyses/tornadoepn_dmg
     analyses/transportation_recovery
