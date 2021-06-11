@@ -26,7 +26,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`roads` <sup>*</sup> | `ergo:roadLinkTopo`, <br>`incore:roads` | Road  dataset | A road dataset.
+`roads` <sup>*</sup> | `ergo:roadLinkTopo`, <br>`incore:roads`, <br/> `ergo:roadLinkTopoVer2` | Road  dataset | A road dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**

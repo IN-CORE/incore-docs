@@ -1,7 +1,7 @@
 ### Building damage
 
 This analysis computes building damage based on a particular hazard. Currently supported hazards are: **earthquake**, 
-**tsunami**, **tornado** and **hurricane**.
+**tsunami**, **tornado**, **hurricane** and **flood**.
 
 The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
 is obtained based on the hazard type and attributes of the building. Based on the fragility, the hazard intensity at the 
@@ -29,6 +29,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`retrofit_strategy` | `incore:retrofitStrategy` | Retrofit Strategy | Building retrofit strategy that contains guid and retrofit method.
 
 **Output datasets**
 
