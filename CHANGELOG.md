@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - python 3.8 and sphinx libriries [INCORE1-1219](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1219).
 - Galveston testbed notebook updated with new raster visualization method [INCORE1-1237](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1237).
+- Updated specs for building and road damage [INCORE1-1234](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1234).
+- Removed road failure analysis [INCORE1-1234](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1234).
 
 ## [2.2.1] - 2021-05-25
 
