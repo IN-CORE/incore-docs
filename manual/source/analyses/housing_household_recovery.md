@@ -52,7 +52,7 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create housing recovery instance
+    # Create Housing recovery instance
     hrs = HousingRecoverySerial(client)
 
     # Load input dataset
@@ -64,16 +64,14 @@ code snippet:
     # Specify the result name
     result_name = "IN-CORE_housingrecovery"
 
-    seed = 1238
-
     # Set analysis parameters
     hrs.set_parameter("result_name", result_name)
-    hrs.set_parameter("seed", seed)
+    hrs.set_parameter("seed", 1238)
     hrs.set_parameter("t_delta", t_delta)
     hrs.set_parameter("t_final", t_final)
     hrs.set_parameter("bldgfunction_min", bldgfunction_min)
 
-    # Run Housing unit allocation analysis
+    # Run Housing recovery analysis
     hrs.run_analysis()
 ```
 
