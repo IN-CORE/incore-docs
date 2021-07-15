@@ -20,6 +20,7 @@ Analyses
     analyses/pipeline_dmg_w_repair_rate
     analyses/populationdislocation
     analyses/portfolio_recovery
+    analyses/residential_recovery
     analyses/road_dmg
     analyses/seaside_cge
     analyses/tornadoepn_dmg

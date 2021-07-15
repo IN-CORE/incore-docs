@@ -75,4 +75,4 @@ code snippet:
     res_recovery.run_analysis()
 ```
 
-full analysis: [joplin_residential_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/rjoplin_residential_recovery.ipynb)
+full analysis: [joplin_residential_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_residential_recovery.ipynb)
