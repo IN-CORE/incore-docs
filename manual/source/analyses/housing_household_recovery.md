@@ -37,7 +37,7 @@ key name | type | name | description
 `block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A block group racial distribution dataset.
 `population_dislocation_block` <sup>*</sup> | `incore:popDislocation` | Population dislocation | Population dislocation result aggregated to the block group level.
 `tpm` <sup>*</sup> | `incore:houseRecTransitionProbMatrix` | Probability matrix | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
-`initial_stage_probability` <sup>*</sup> | `incore:houseRecInitialStageFactors` | Initial mass probability function for stage 0 of the Markov Chain.
+`initial_stage_probability` <sup>*</sup> | `incore:houseRecInitialStageFactors` | Mass probability | Initial mass probability function for stage 0 of the Markov Chain.
 
 **Output datasets**
 
