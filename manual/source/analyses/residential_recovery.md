@@ -7,11 +7,27 @@
 
 **Description**
 
-This analysis computes the series of residential recovery states.
+This analysis focuses on the residential recovery in the aftermath of hazard events. The methodology incorporates the multi-layer 
+Monte Carlo simulation approach and determines the two-step recovery time: downtime due to delay and downtime due to repair. 
+The recovery time results could provide the time-stepping (e.g., monthly, quarterly, yearly) probabilistic recovery performance 
+throughout the entire community for hazard events and keep track of the recovery trajectory of a single building or a single sector 
+(e.g., household, business, healthcare, education). The analysis also shows the probabilities of housing units financed by different resources 
+using real-world socio-demographic data with household income groups. 
 
-The output of the computation is the residential recovery changes in percentages in CSV format.
+Several delays inevitably take place before the initiation of building repairs, which would consequently increase the time needed 
+for damaged buildings to reach any recovery states. The delay model was modified based on the REDi framework and calculated 
+the end-result outcomes resulted from delay impeding factors such as post-disaster inspection, insurance claim, and government permit. 
+
+The Jupyter notebook study presents the illustrated example of the Joplin testbed to explain the proposed methodology for wind events, 
+and quantitatively measure the residential recovery performance impacted by policies. 
+
+The output of the computation shows the functionality levels of residential buildings over the time in CSV format.
 
 **Related publications**
+
+- Sutley, Elaina J., and Sara Hamideh. "An interdisciplinary system dynamics model for post-disaster housing recovery." Sustainable and Resilient Infrastructure 3, no. 3 (2018): 109-127.
+- Smith, Daniel J., and Daniel Sutter. "Response and recovery after the Joplin tornado: Lessons applied and lessons learned." The Independent Review 18, no. 2 (2013): 165-188.
+- Lindell, Michael K., and Carla S. Prater. "Assessing community impacts of natural disasters." Natural hazards review 4, no. 4 (2003): 176-185.
 
 **Input parameters**
 
