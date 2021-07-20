@@ -12,6 +12,7 @@ Introduction
     getting_started
     pyIncore <pyincore>
     pyIncore-viz <pyincore_viz>
+    pyIncore-data <pyincore_data>
     incore_lab
     webtools
     tutorials
