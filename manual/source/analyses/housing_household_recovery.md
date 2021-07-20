@@ -2,7 +2,7 @@
 
 **Contributors**
 
-- Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU), Nathanael Rosenheim (Texas A&M)
+- Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU)
 - Implementation: Santiago Núñez-Corrales and Chris Navarro, Jong Sung Lee (NCSA, UIUC)
 
 **Description**
@@ -34,7 +34,6 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A block group racial distribution dataset.
 `population_dislocation_block` <sup>*</sup> | `incore:popDislocation` | Population dislocation | Population dislocation result aggregated to the block group level.
 `tpm` <sup>*</sup> | `incore:houseRecTransitionProbMatrix` | Probability matrix | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
 `initial_stage_probability` <sup>*</sup> | `incore:houseRecInitialStageFactors` | Mass probability | Initial mass probability function for stage 0 of the Markov Chain.
@@ -56,7 +55,6 @@ code snippet:
     hrs = HousingRecoverySerial(client)
 
     # Load input dataset
-    hrs.load_remote_input_dataset("block_group_data", block_group_data)
     hrs.load_remote_input_dataset("population_dislocation_block", population_dislocation_block)
     hrs.load_remote_input_dataset("tpm", tpm)
     hrs.load_remote_input_dataset("initial_stage_probability", initial_stage_probability)
