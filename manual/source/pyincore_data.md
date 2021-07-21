@@ -1,17 +1,17 @@
 ## pyIncore data
 
-Utility package for preparing and handling the data associated with pyIncore is called **pyIncore-data**. It contains advanced Python packages 
-and methods required for preparing and manipulating the IN-CORE result. 
+**pyIncore-data** is a utility package for preparing data for use in pyIncore. It contains advanced Python packages and 
+methods for acquiring data from different sources and preparing it for use in IN-CORE. 
 
 ### Features
-1. Acquiring the data, such as census data.
-2. Data manipulation including handling shapefile, dataframe, and others.
+1. Acquiring data from sources such as census data.
+2. Data manipulation including handling shapefiles, dataframes, etc.
 
 ### Prerequisites
 
-- **Virtual environment**: We recommend that users work with virtual environment managers called [Anaconda](https://www.anaconda.com/) 
+- **Virtual environment**: We recommend that users work with a virtual environment manager such as [Anaconda]
+  (https://www.anaconda.com/) 
 or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
-
 
 ### Installation
 
@@ -20,18 +20,19 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
     conda install -c in-core pyincore-data
     ```
    
-   For update replace `install` with `update`.
+   For updating pyIncore-data, replace `install` with `update` in the above command.
    
-2. To check that the package is installed run 
+2. To check that the pyIncore-data package is installed, run the following command:
     ```
     conda list
     ```
-    It will again list all packages currently installed.
+   
+    This will list all packages currently installed.
 
 ### Example
 
-Jupyter notebook showing the acquisition of the census block group data and convert it to various format, 
-such as shape files and other format. The shapefile format is a geospatial vector data 
+The Jupyter notebook below uses pyIncore-data to acquire census block group data and converts it 
+to different formats including shapefile and other formats. The shapefile format is a geospatial vector data 
 format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
 
 Example: [pyincore-data-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-data-example.ipynb)
