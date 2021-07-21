@@ -73,4 +73,4 @@ code snippet:
     hrs.run_analysis()
 ```
 
-full analysis: [housingrecovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingrecovery.ipynb)
+full analysis: [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_recovery.ipynb)
