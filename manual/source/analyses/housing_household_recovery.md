@@ -3,7 +3,7 @@
 **Contributors**
 
 - Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU)
-- Implementation: Nathanael Rosenheim (Texas A&M), Santiago Núñez-Corrales and Chris Navarro, Jong Sung Lee (NCSA, UIUC)
+- Implementation: Nathanael Rosenheim (Texas A&M), Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
 
 **Description**
 
