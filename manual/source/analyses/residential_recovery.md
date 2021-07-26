@@ -54,7 +54,7 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create Residential recovery instance
+    # Create Residential building recovery instance
     res_recovery = ResidentialRecovery(client)
     
     # Load input building infrastructure dataset
