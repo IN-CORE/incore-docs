@@ -1,10 +1,5 @@
 ### Household-level housing serial recovery
 
-**Contributors**
-
-- Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU)
-- Implementation: Nathanael Rosenheim (Texas A&M), Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
-
 **Description**
 
 This analysis computes the series of household recovery states given a population dislocation dataset, 
@@ -15,6 +10,11 @@ Using this vulnerability in conjunction with the TPM and the initial state vecto
 most probable states to generate a stage history of housing recovery changes for each household.
 
 The output of the computation is the history of housing recovery changes for all household units in CSV format.
+
+**Contributors**
+
+- Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU)
+- Implementation: Nathanael Rosenheim (Texas A&M), Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
 
 **Related publications**
 
