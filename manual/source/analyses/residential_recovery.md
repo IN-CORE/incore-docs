@@ -1,10 +1,5 @@
 ### Residential building recovery
 
-**Contributors**
-
-- Scientific: Lisa Wang (CSU), John W. van de Lindt (CSU)
-- Implementation: Gowtham Naraharisetty, and NCSA IN-CORE Dev Team
-
 **Description**
 
 This analysis computes the recovery time needed for each residential building from any damage states 
@@ -16,6 +11,11 @@ outcomes resulted from delay impeding factors such as post-disaster inspection, 
 The repair model followed the FEMA P-58 approach and was controlled by fragility functions.
 
 The outputs of this analysis is a CSV file with time-stepping recovery probabilities at the building level.
+
+**Contributors**
+
+- Scientific: Lisa Wang, John W. van de Lindt
+- Implementation: Gowtham Naraharisetty, and NCSA IN-CORE Dev Team
 
 **Related publications**
 
@@ -55,7 +55,7 @@ code snippet:
 
 ```
     # Create Residential building recovery instance
-    res_recovery = ResidentialRecovery(client)
+    res_recovery = ResidentialBuildingRecovery(client)
     
     # Load input building infrastructure dataset
     res_recovery.load_remote_input_dataset("buildings", buildings)
