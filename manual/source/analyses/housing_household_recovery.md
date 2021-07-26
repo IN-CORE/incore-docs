@@ -1,15 +1,16 @@
-### Household-level housing serial recovery
+### Household-level housing sequential recovery
 
 **Description**
 
-This analysis computes the series of household recovery states given a population dislocation dataset, 
-a transition probability matrix (TPM) and an initial state vector.
+This analysis computes the series of household recovery states given a population 
+dislocation dataset, a transition probability matrix (TPM) and an initial state vector.
 
-The computation operates by segregating household units into five zones as a way to assign social vulnerability. 
-Using this vulnerability in conjunction with the TPM and the initial state vector, a Markov chain computation simulates 
-most probable states to generate a stage history of housing recovery changes for each household.
+The computation operates by segregating household units into five zones as a way of 
+assigning social vulnerability. Using this vulnerability in conjunction with the TPM 
+and the initial state vector, a Markov chain computation simulates most probable 
+states to generate a stage history of housing recovery changes for each household.
 
-The output of the computation is the history of housing recovery changes for all household units in CSV format.
+The output of the computation is the history of housing recovery changes for each household unit in CSV format.
 
 **Contributors**
 
@@ -18,7 +19,7 @@ The output of the computation is the history of housing recovery changes for all
 
 **Related publications**
 
-* Sutley, E.J. and Hamideh, S., 2020. Postdisaster housing stages: a Markov chain approach to model sequences and duration based on social vulnerability. Risk Analysis, 40(12), pp.2675-2695.
+* Sutley, E.J. and Hamideh, S., 2020. Postdisaster housing stages: a Markov chain approach to model sequences and duration based on social vulnerability. *Risk Analysis*, **40(12)**, pp.2675-2695.
 
 **Input parameters**
 
@@ -51,8 +52,8 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create Housing recovery instance
-    hrs = HousingRecoverySerial(client)
+    # Create Housing recovery sequential analysis instance
+    hrs = HousingRecoverySequential(client)
 
     # Load input dataset
     hrs.load_remote_input_dataset("population_dislocation_block", population_dislocation_block)
