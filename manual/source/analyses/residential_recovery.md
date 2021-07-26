@@ -3,12 +3,15 @@
 **Description**
 
 This analysis computes the recovery time needed for each residential building from any damage states 
-to receive the full restoration. Currently, supported hazards are **tornadoes**.
+to achieve full restoration. Currently, supported hazards are **tornadoes**.
 
-The methodology incorporates the multi-layer Monte Carlo simulation approach and determines the two-step recovery time 
-that includes delay and repair. The delay model was modified based on the REDi framework and calculated the end-result 
-outcomes resulted from delay impeding factors such as post-disaster inspection, insurance claim, and government permit. 
-The repair model followed the FEMA P-58 approach and was controlled by fragility functions.
+The methodology incorporates a multi-layer Monte Carlo simulation approach and 
+determines the two-step recovery time which includes both the delay period and repair 
+period. The delay model was modified based on the REDi framework and calculated 
+the end-result outcomes resulting from delay impeding factors such as post-disaster 
+inspection, insurance claims, and building permit issuance. The repair model followed 
+the FEMA P-58 approach and ultimately utilized fragility functions from Koliou and 
+van de Lindt (2020)
 
 The outputs of this analysis is a CSV file with time-stepping recovery probabilities at the building level.
 
@@ -20,6 +23,7 @@ The outputs of this analysis is a CSV file with time-stepping recovery probabili
 **Related publications**
 
 - Wang, Wanting Lisa, and John W. van de Lindt. "Quantitative Modeling of Residential Building Disaster Recovery and Effects of Pre-and Post-event Policies." *International Journal of Disaster Risk Reduction* (2021): 102259.
+- Koliou, M. and J.W. van de Lindt. (2020). “Development of Building Restoration Functions for use in Community Recovery Planning to Tornadoes.”, *ASCE Natural Hazards Review*, Vol **21 (2)** doi.org10.1061/(ASCE)NH.1527-6996.0000361.
 
 **Input parameters**
 
