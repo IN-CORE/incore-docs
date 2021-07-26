@@ -1,33 +1,25 @@
-### Residential recovery
+### Residential building recovery
 
 **Contributors**
 
-- Scientific: Lisa Wang and John W. van de Lindt (CSU)
-- Implementation: Gowtham Naraharisetty and Chris Navarro, Jong Sung Lee (NCSA, UIUC)
+- Scientific: Lisa Wang (CSU), John W. van de Lindt (CSU)
+- Implementation: Gowtham Naraharisetty, and NCSA IN-CORE Dev Team
 
 **Description**
 
-This analysis focuses on the residential recovery in the aftermath of hazard events. The methodology incorporates the multi-layer 
-Monte Carlo simulation approach and determines the two-step recovery time: downtime due to delay and downtime due to repair. 
-The recovery time results could provide the time-stepping (e.g., monthly, quarterly, yearly) probabilistic recovery performance 
-throughout the entire community for hazard events and keep track of the recovery trajectory of a single building or a single sector 
-(e.g., household, business, healthcare, education). The analysis also shows the probabilities of housing units financed by different resources 
-using real-world socio-demographic data with household income groups. 
+This analysis computes the recovery time needed for each residential building from any damage states 
+to receive the full restoration. Currently, supported hazards are **tornadoes**.
 
-Several delays inevitably take place before the initiation of building repairs, which would consequently increase the time needed 
-for damaged buildings to reach any recovery states. The delay model was modified based on the REDi framework and calculated 
-the end-result outcomes resulted from delay impeding factors such as post-disaster inspection, insurance claim, and government permit. 
+The methodology incorporates the multi-layer Monte Carlo simulation approach and determines the two-step recovery time 
+that includes delay and repair. The delay model was modified based on the REDi framework and calculated the end-result 
+outcomes resulted from delay impeding factors such as post-disaster inspection, insurance claim, and government permit. 
+The repair model followed the FEMA P-58 approach and was controlled by fragility functions.
 
-The Jupyter notebook study presents the illustrated example of the Joplin testbed to explain the proposed methodology for wind events, 
-and quantitatively measure the residential recovery performance impacted by policies. 
-
-The output of the computation shows the functionality levels of residential buildings over the time in CSV format.
+The outputs of this analysis is a CSV file with time-stepping recovery probabilities at the building level.
 
 **Related publications**
 
-- Sutley, Elaina J., and Sara Hamideh. "An interdisciplinary system dynamics model for post-disaster housing recovery." Sustainable and Resilient Infrastructure 3, no. 3 (2018): 109-127.
-- Smith, Daniel J., and Daniel Sutter. "Response and recovery after the Joplin tornado: Lessons applied and lessons learned." The Independent Review 18, no. 2 (2013): 165-188.
-- Lindell, Michael K., and Carla S. Prater. "Assessing community impacts of natural disasters." Natural hazards review 4, no. 4 (2003): 176-185.
+- Wang, Wanting Lisa, and John W. van de Lindt. "Quantitative Modeling of Residential Building Disaster Recovery and Effects of Pre-and Post-event Policies." *International Journal of Disaster Risk Reduction* (2021): 102259.
 
 **Input parameters**
 
