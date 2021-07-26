@@ -1,4 +1,4 @@
-### Housing household recovery
+### Household-level housing serial recovery
 
 **Contributors**
 
