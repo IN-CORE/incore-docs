@@ -62,9 +62,10 @@ understand how to use the pyIncore.  For detailed information, please refer to t
 
 Below you can find three Jupyter notebook `research examples <notebooks.html>`_ that demonstrate IN-CORE:
 
-1. `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_ file).
-2. `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_ file).
-3. `Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_ file).
+1. `Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>`_ file).
+2. `Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>`_ file).
+3. `Lumberton testbed <notebooks/Lumberton_testbed/Lumberton_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Lumberton_testbed.zip>`_ file).
+4. `Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed.html>`_ (`zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>`_ file).
 
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
