@@ -11,6 +11,7 @@ Analyses
     analyses/capital_shocks
     analyses/cumulative_building_dmg
     analyses/epf_dmg
+    analyses/housing_household_recovery
     analyses/housingunitallocation
     analyses/joplin_cge
     analyses/mean_dmg

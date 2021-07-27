@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Residential recovery analysis documentation [INCORE1-1277](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1277).
+- Housing recovery analysis documentation [INCORE1-1278](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1278).
 
 ## [2.3.0] - 2021-06-16
 
