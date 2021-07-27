@@ -14,8 +14,8 @@ The output of the computation is the history of housing recovery changes for eac
 
 **Contributors**
 
-- Scientific: Elaina Sutley (UK), Sara Hamideh, (SBU)
-- Implementation: Nathanael Rosenheim (Texas A&M), Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
+- Science: Elaina Sutley, Sara Hamideh
+- Implementation: Nathanael Rosenheim, Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
 
 **Related publications**
 

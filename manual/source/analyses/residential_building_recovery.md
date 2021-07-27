@@ -17,8 +17,8 @@ The outputs of this analysis is a CSV file with time-stepping recovery probabili
 
 **Contributors**
 
-- Scientific: Lisa Wang, John W. van de Lindt
-- Implementation: Gowtham Naraharisetty, and NCSA IN-CORE Dev Team
+- Science: Wanting Lisa Wang, John W. van de Lindt
+- Implementation: Wanting Lisa Wang, Gowtham Naraharisetty, and NCSA IN-CORE Dev Team
 
 **Related publications**
 
