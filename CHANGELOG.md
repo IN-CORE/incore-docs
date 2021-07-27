@@ -16,7 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Hazard tutorials use POST values [INCORE1-1206](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1206).
-- New fragility curve format for creating DFR3 object notebook [INCORE1-1262](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1262).
+- New fragility curve format for creating DFR3 object notebook [INCORE1-1262](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1262). 
+- Swagger jsons for services 1.4.0
 
 ## [2.3.0] - 2021-06-16
 
