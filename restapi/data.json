@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -391,47 +391,6 @@
         }
       }
     },
-    "/datasets/{id}/files/{file_id}/blob": {
-      "get": {
-        "tags": [
-          "datasets"
-        ],
-        "summary": "Returns a file that is attached to a FileDescriptor of a dataset",
-        "description": "",
-        "operationId": "getFileByFileDescriptor",
-        "produces": [
-          "application/octet-stream"
-        ],
-        "parameters": [
-          {
-            "name": "x-auth-userinfo",
-            "in": "header",
-            "description": "User credentials.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Dataset Id from data service",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "file_id",
-            "in": "path",
-            "description": "FileDescriptor Object Id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
     "/datasets/{id}/files/{file_id}": {
       "get": {
         "tags": [
@@ -472,6 +431,47 @@
             "schema": {
               "$ref": "#/definitions/FileDescriptor"
             }
+          }
+        }
+      }
+    },
+    "/datasets/{id}/files/{file_id}/blob": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Returns a file that is attached to a FileDescriptor of a dataset",
+        "description": "",
+        "operationId": "getFileByFileDescriptor",
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file_id",
+            "in": "path",
+            "description": "FileDescriptor Object Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
           }
         }
       }
@@ -589,6 +589,70 @@
           "application/json"
         ],
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/status/usage/datasets": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the count and size of datasets.",
+        "description": "This excludes datasets created by hazard service.",
+        "operationId": "getUserStatusDataset",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/status/usage/hazards": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the count and size of datasets created by the hazard service.",
+        "description": "",
+        "operationId": "getUserStatusHazard",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "successful operation",

@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami, Hurricane and Flood",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "title": "Hazard Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -379,108 +379,6 @@
         }
       }
     },
-    "/earthquakes/{earthquake-id}/raster": {
-      "get": {
-        "tags": [
-          "earthquakes"
-        ],
-        "summary": "Returns SeismicHazardResults for a given attenuation model-based earthquake id, demand type and unit, coordinates and grid spacing.",
-        "description": " SeismicHazardResults contains the metadata about the raster data along with a list of HazardResults. Each HazardResult is a lat, long and hazard value.",
-        "operationId": "getEarthquakeHazardForBox",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "x-auth-userinfo",
-            "in": "header",
-            "description": "User credentials.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "earthquake-id",
-            "in": "path",
-            "description": "ID of the Earthquake.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "demandType",
-            "in": "query",
-            "description": "Ground motion demand type. Ex: PGA, PGV, 0.2 SA, etc",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "demandUnits",
-            "in": "query",
-            "description": "Ground motion demand unit. Ex: g, %g, cm/s, etc",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "minX",
-            "in": "query",
-            "description": "Bounding box of a raster. Min X.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "minY",
-            "in": "query",
-            "description": "Bounding box of a raster. Min Y.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "maxX",
-            "in": "query",
-            "description": "Bounding box of a raster. Max X.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "maxY",
-            "in": "query",
-            "description": "Bounding box of a raster. max Y.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "gridSpacing",
-            "in": "query",
-            "description": "Grid spacing.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "amplifyHazard",
-            "in": "query",
-            "description": "Amplify hazard.",
-            "required": false,
-            "type": "boolean",
-            "default": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/SeismicHazardResults"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/earthquakes/{earthquake-id}/aleatoryuncertainty": {
       "get": {
         "tags": [
@@ -726,6 +624,108 @@
               "items": {
                 "$ref": "#/definitions/LiquefactionValuesResponse"
               }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/earthquakes/{earthquake-id}/raster": {
+      "get": {
+        "tags": [
+          "earthquakes"
+        ],
+        "summary": "Returns SeismicHazardResults for a given attenuation model-based earthquake id, demand type and unit, coordinates and grid spacing.",
+        "description": " SeismicHazardResults contains the metadata about the raster data along with a list of HazardResults. Each HazardResult is a lat, long and hazard value.",
+        "operationId": "getEarthquakeHazardForBox",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "earthquake-id",
+            "in": "path",
+            "description": "ID of the Earthquake.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "demandType",
+            "in": "query",
+            "description": "Ground motion demand type. Ex: PGA, PGV, 0.2 SA, etc",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "demandUnits",
+            "in": "query",
+            "description": "Ground motion demand unit. Ex: g, %g, cm/s, etc",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "minX",
+            "in": "query",
+            "description": "Bounding box of a raster. Min X.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "minY",
+            "in": "query",
+            "description": "Bounding box of a raster. Min Y.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "maxX",
+            "in": "query",
+            "description": "Bounding box of a raster. Max X.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "maxY",
+            "in": "query",
+            "description": "Bounding box of a raster. max Y.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "gridSpacing",
+            "in": "query",
+            "description": "Grid spacing.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "amplifyHazard",
+            "in": "query",
+            "description": "Amplify hazard.",
+            "required": false,
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/SeismicHazardResults"
             }
           },
           "500": {
@@ -2040,31 +2040,6 @@
         }
       }
     },
-    "/status": {
-      "get": {
-        "tags": [
-          "status"
-        ],
-        "summary": "Gives the status of the service.",
-        "description": "This will provide the status of the service as a JSON.",
-        "operationId": "getStatus",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "string"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/tornadoes": {
       "get": {
         "tags": [
@@ -2308,6 +2283,15 @@
             "type": "integer",
             "default": 0,
             "format": "int32"
+          },
+          {
+            "name": "seed",
+            "in": "formData",
+            "description": "Seed value for random values. Ex: 1000",
+            "required": false,
+            "type": "integer",
+            "default": -1,
+            "format": "int32"
           }
         ],
         "responses": {
@@ -2320,7 +2304,8 @@
           "500": {
             "description": "Internal Server Error."
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/tornadoes/{tornado-id}/values": {
@@ -2374,6 +2359,15 @@
             "required": false,
             "type": "integer",
             "default": 0,
+            "format": "int32"
+          },
+          {
+            "name": "seed",
+            "in": "formData",
+            "description": "Seed value for random values. Ex: 1000",
+            "required": false,
+            "type": "integer",
+            "default": -1,
             "format": "int32"
           }
         ],
@@ -2435,6 +2429,15 @@
             "required": false,
             "type": "integer",
             "default": 0,
+            "format": "int32"
+          },
+          {
+            "name": "seed",
+            "in": "formData",
+            "description": "Seed value for random values. Ex: 1000",
+            "required": false,
+            "type": "integer",
+            "default": -1,
             "format": "int32"
           }
         ],
@@ -2918,6 +2921,63 @@
           },
           "500": {
             "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/status/usage": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "Gives the count for each hazard.",
+        "description": "",
+        "operationId": "getUserStatusHazards",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

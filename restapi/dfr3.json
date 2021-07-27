@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Service For Fragilities, Repairs, Restorations and Inventory Mappings",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "title": "DFR3 Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -441,7 +441,7 @@
         }
       }
     },
-    "/mappings/{mappingSetId}": {
+    "/mappings/{mappingId}": {
       "get": {
         "tags": [
           "mappings"
@@ -461,7 +461,7 @@
             "type": "string"
           },
           {
-            "name": "mappingSetId",
+            "name": "mappingId",
             "in": "path",
             "description": "mapping id",
             "required": true,
@@ -497,7 +497,7 @@
             "type": "string"
           },
           {
-            "name": "mappingSetId",
+            "name": "mappingId",
             "in": "path",
             "description": "mapping id",
             "required": true,
@@ -510,53 +510,6 @@
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/MappingSet"
-            }
-          }
-        }
-      }
-    },
-    "/mappings/{mappingSetId}/matched": {
-      "post": {
-        "tags": [
-          "mappings"
-        ],
-        "summary": "Map each inventory to a DFR3 object Id based on the input mapping Id",
-        "description": "Returns a json where key is the inventory id that is mapped to a DFR3 object id based on the input mapping id",
-        "operationId": "mapFragilities",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "x-auth-userinfo",
-            "in": "header",
-            "description": "User credentials.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "mappingSetId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/MappingRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/MappingResponse"
             }
           }
         }
