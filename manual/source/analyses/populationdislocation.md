@@ -31,7 +31,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5` | Building damage | A building damage dataset.
 `housing_unit_allocation` <sup>*</sup> | `incore:housingUnitAllocation` | Housing allocation | A housing unit allocation dataset.
-`block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A racial distribution dataset.
+`block_group_data` <sup>*</sup> | `incore:blockGroupData` | Block group data | A block group racial distribution dataset.
 `value_loss_param` <sup>*</sup> | `incore:valueLossParam` | Loss parameters | A table with value loss beta distribution parameters.
                     
 **Output Datasets** 
