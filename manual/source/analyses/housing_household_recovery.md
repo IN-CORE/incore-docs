@@ -29,7 +29,6 @@ key name | type | name | description
 `seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator to ensure replication of the Markov Chain path'<br>in connection with Population Dislocation.
 `t_delta` <sup>*</sup> | `float` | Time step | A size of the analysis time step.
 `t_final` <sup>*</sup> | `float` | Time duration | Total duration.
-`bldgfunction_min` <sup>*</sup> | `float` | Functionality threshold | Building functionality threshold.
 
 **Input datasets**
 
@@ -68,7 +67,6 @@ code snippet:
     hrs.set_parameter("seed", 1238)
     hrs.set_parameter("t_delta", t_delta)
     hrs.set_parameter("t_final", t_final)
-    hrs.set_parameter("bldgfunction_min", bldgfunction_min)
 
     # Run Housing recovery analysis
     hrs.run_analysis()
