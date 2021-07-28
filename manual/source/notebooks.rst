@@ -6,7 +6,7 @@ Example Notebooks
 
     Galveston testbed <notebooks/Galveston_testbed/Galveston_testbed>
     Joplin testbed <notebooks/Joplin_testbed/Joplin_testbed>
-    Lumberton testbed <notebooks/Seaside_testbed/Lumberton_testbed>
+    Lumberton testbed <notebooks/Lumberton_testbed/Lumberton_testbed>
     Seaside testbed <notebooks/Seaside_testbed/Seaside_testbed>
     Other examples <notebooks_other>
 

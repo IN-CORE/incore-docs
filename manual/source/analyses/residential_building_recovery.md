@@ -11,7 +11,7 @@ period. The delay model was modified based on the REDi framework and calculated
 the end-result outcomes resulting from delay impeding factors such as post-disaster 
 inspection, insurance claims, and building permit issuance. The repair model followed 
 the FEMA P-58 approach and ultimately utilized fragility functions from Koliou and 
-van de Lindt (2020)
+van de Lindt (2020).
 
 The outputs of this analysis is a CSV file with time-stepping recovery probabilities at the building level.
 

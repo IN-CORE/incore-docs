@@ -9,8 +9,7 @@ methods for acquiring data from different sources and preparing it for use in IN
 
 ### Prerequisites
 
-- **Virtual environment**: We recommend that users work with a virtual environment manager such as [Anaconda]
-  (https://www.anaconda.com/) 
+- **Virtual environment**: We recommend that users work with a virtual environment manager such as [Anaconda](https://www.anaconda.com/) 
 or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 ### Installation
