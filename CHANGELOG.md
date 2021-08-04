@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Deprecated methods were updated in Lumberton testbed notebook [INCORE1-1328](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1328).
+- Lumberton notebook with deprecated pyincore-viz [INCORE1-1331](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1331).
+
+### Fixed
+- Copy warnings inLumberton notebook [INCORE1-1332](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1332).
 
 ## [2.5.0] - 2021-07-28
 
