@@ -44,18 +44,18 @@ folder (called `incore_docs` here) and activate it:
     ```
     or  
     ```
-    virtualenv --python=python3.6 incore_docs
+    virtualenv --python=python3.7 incore_docs
     source venv/bin/activate
     ```
    
-3. Install required packages individually if necessary. Use `conda` again or you can also use `pip`. Packages `recommonmark` 
+3. Install required packages individually if necessary. Use `conda` again or you can also use `pip`. Packages `myst-parser` 
 and `sphinx-markdown-tables` are for correct 
 rendering of the tables and `nbsphinx` and `ipythony` installs extension that provides a source parser for Jupyter Notebook **ipynb files**:
 
     ```
     conda install sphinx
     conda install sphinx_rtd_theme
-    conda install recommonmark
+    conda install -c conda-forge myst-parser
     pip install sphinx-markdown-tables
     conda install -c conda-forge nbsphinx
     conda install -c conda-forge ipython
@@ -64,7 +64,7 @@ rendering of the tables and `nbsphinx` and `ipythony` installs extension that pr
     ```
     python3 -m pip install sphinx --user
     python3 -m pip install sphinx_rtd_theme --user
-    python3 -m pip install recommonmark --user
+    python3 -m pip install myst-parser --user
     python3 -m pip install sphinx-markdown-tables --user
     python3 -m pip install nbsphinx --user
     python3 -m pip install IPython --user
