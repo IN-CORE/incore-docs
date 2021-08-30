@@ -15,15 +15,19 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and change directo
     ```
     docker build -t doc_test .
     ```
+   or for fresh build
+    ```
+    docker build --no-cache -t doc_test .
+    ```
     The container's name is **doc_test** in this example.
     
-2. Run docker
+5. Run docker
     ```
     docker run --rm -p 80:80 --name doctest doc_test:latest
     ```
     Optional flag, `-name` sets container's name to **doctest** under which it appears in Docker Desktop.
    
-3. Run html pages in your local browser (you might see the nginx main page first)
+6. Run html pages in your local browser (you might see the nginx main page first)
     ```
     http://localhost/doc/incore/
     ```  
