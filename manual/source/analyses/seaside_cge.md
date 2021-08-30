@@ -28,7 +28,7 @@ key name | type | name | description
 `EMPLOY` <sup>*</sup> | `incore:SeasideCGEemploy` | Employment | Commercial sector employment data.
 `JOBCR` <sup>*</sup> | `incore:SeasideCGEjobcr` | Labor | A matrix of workers groups in the economy.
 `SIMS` <sup>*</sup> | `incore:SeasideCGEsim` | Capitol shocks random number | Random numbers for the change of capital stocks.
-`sector_shocks` <sup>*</sup> | `incore:SeasideCGEshocks` | Capital shocks | Building states to capital <br>shocks per sector.
+`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
