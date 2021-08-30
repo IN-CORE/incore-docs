@@ -15,6 +15,10 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and change directo
     ```
     docker build -t doc_test .
     ```
+   or for fresh build
+    ```
+    docker build --no-cache -t doc_test .
+    ```
     The container's name is **doc_test** in this example.
     
 2. Run docker
@@ -33,7 +37,7 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and change directo
 1. Install required packages. Currently `sphinx`, a Python package for building documentation and `sphinx_rtd_theme`, 
 a theme used in this documentation and other packages. See section 4. for the full list.
 
-2. We recommend using virtual environments, `conda` (preferred) or `virtualenv` for Python 3.6+. 
+2. We recommend using virtual environments, `conda` (preferred) or `virtualenv` for Python 3.7+. 
 for managing Python environments.  
 In case of `conda`, the package management and deployment tool 
 is called `anaconda`. Create the environment from the terminal at the project 
@@ -44,18 +48,18 @@ folder (called `incore_docs` here) and activate it:
     ```
     or  
     ```
-    virtualenv --python=python3.6 incore_docs
+    virtualenv --python=python3.7 incore_docs
     source venv/bin/activate
     ```
    
-3. Install required packages individually if necessary. Use `conda` again or you can also use `pip`. Packages `recommonmark` 
+3. Install required packages individually if necessary. Use `conda` again or you can also use `pip`. Packages `myst-parser` 
 and `sphinx-markdown-tables` are for correct 
 rendering of the tables and `nbsphinx` and `ipythony` installs extension that provides a source parser for Jupyter Notebook **ipynb files**:
 
     ```
     conda install sphinx
     conda install sphinx_rtd_theme
-    conda install recommonmark
+    conda install -c conda-forge myst-parser
     pip install sphinx-markdown-tables
     conda install -c conda-forge nbsphinx
     conda install -c conda-forge ipython
@@ -64,7 +68,7 @@ rendering of the tables and `nbsphinx` and `ipythony` installs extension that pr
     ```
     python3 -m pip install sphinx --user
     python3 -m pip install sphinx_rtd_theme --user
-    python3 -m pip install recommonmark --user
+    python3 -m pip install myst-parser --user
     python3 -m pip install sphinx-markdown-tables --user
     python3 -m pip install nbsphinx --user
     python3 -m pip install IPython --user
