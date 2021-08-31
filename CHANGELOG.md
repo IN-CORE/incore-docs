@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Myst parser for md rendering [INCORE1-1207](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1207).
+- Wokshop presentation No.2 [INCORE1-1392](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1392).
 
 ### Changed
 - Data type of Sector shocks in Seaside CGE [INCORE1-1389](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1389).
