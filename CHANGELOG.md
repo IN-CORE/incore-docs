@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Data type of Sector shocks in Seaside CGE [INCORE1-1389](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1389).
 - Swagger jsons for services 1.5.0
-- 
+
 ## [2.5.1] - 2021-08-04
 
 ### Changed
