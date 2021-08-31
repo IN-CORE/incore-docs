@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Deprecated methods were updated in Lumberton testbed notebook [INCORE1-1328](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1328).
 
+### Fixed
+- Panda's DataFrame copy warnings in Lumberton notebook [INCORE1-1332](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1332).
+
 ## [2.5.0] - 2021-07-28
 
 ### Added
