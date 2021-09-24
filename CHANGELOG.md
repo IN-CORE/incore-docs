@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.6.0] - 2021-09-01
 
+### Added
+- Myst parser for md rendering [INCORE1-1207](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1207).
+- Wokshop presentation No.2 [INCORE1-1392](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1392).
+
 ### Changed
 - Data type of Sector shocks in Seaside CGE [INCORE1-1389](https://opensource.ncsa.illinois.edu/jira/browse/INCORE1-1389).
+- Swagger jsons for services 1.5.0
 
 ## [2.5.1] - 2021-08-04
 

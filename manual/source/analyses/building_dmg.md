@@ -21,6 +21,7 @@ key name | type | name | description
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
 `use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. <br>Default is *False*.
+`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computation. <br>Default is *1*.
 
 **Input datasets**

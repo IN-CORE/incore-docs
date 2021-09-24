@@ -28,6 +28,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `epn_node` <sup>*</sup> | `incore:epnNodeVer1` | EPN node | A dataset with nodes of the electric power network.
 `epn_link` <sup>*</sup> | `incore:epnLinkeVer1` | EPN link | A dataset with links of the electric power network.
+`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 `tornado` <sup>*</sup>| `incore:tornadoWindfield` | Tornado dataset | A tornado winds dataset.
 
 **Output Datasets** 

@@ -44,7 +44,7 @@ Sessions
     * `Session 4 assignment answers <session4/session4-assignment-answer.ipynb>`_
 5. Use Case -How to do research with IN-CORE
     * Yousef Darestani (presentation file will be available in next release)
-    * Dylan Sanderson (presentation file will be available in next release)
+    * Dylan Sanderson *A Spatially Explicit Decision Support Framework for Parcel- and Community-Level Resilience Assessment using Bayesian Networks* (:download:`pdf <session5/20210526_Sanderson_shareable.pdf>`)
 
 Download the full directory of the files above:
 
