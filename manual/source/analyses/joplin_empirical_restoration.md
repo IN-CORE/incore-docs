@@ -1,9 +1,14 @@
 ### Joplin empirical restoration model
 
-
 **Description**
 
-This code generates a random realization for the restoration time of a building damaged in a tornado event to be restored to a certain functionality level. Functionality levels in this model are defined according to Koliou and van de Lindt (2020) and range from Functionality Level 4 (FL4, the lowest functionality) to Functionality Level 0 (FL0, full functionality). The distributions used in this code were generated using an empirical dataset collected in a longitudinal field study after the 2011 Joplin tornado in the city of Joplin, MO. Distributions were developed using this dataset for the recovery time of a building from an initial functionality level to a higher target functionality level (e.g., from FL3 to FL0). This model can be used only for Archetypes T1 to T5, which include only residential buildings per Memari et al. (2018).
+This code generates a random realization for the restoration time of a building damaged in a tornado event to be restored 
+to a certain functionality level. Functionality levels in this model are defined according to Koliou and van de Lindt (2020) 
+and range from Functionality Level 4 (FL4, the lowest functionality) to Functionality Level 0 (FL0, full functionality). 
+The distributions used in this code were generated using an empirical dataset collected in a longitudinal field study 
+after the 2011 Joplin tornado in the city of Joplin, MO. Distributions were developed using this dataset for the recovery time 
+of a building from an initial functionality level to a higher target functionality level (e.g., from FL3 to FL0). 
+This model can be used only for Archetypes T1 to T5, which include only residential buildings per Memari et al. (2018).
 
 The output of the model are values for the predicted restoration time of the building in CSV format.
 
@@ -28,8 +33,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | ergo:buildingDamageVer4, ergo:buildingDamageVer5, ergo:nsBuildingInventoryDamage, ergo:nsBuildingInventoryDamageVer2 | Infrastructure dataset | An infrastructure dataset.
-`functionality_level` <sup>*</sup> | `incore:TargetFunctionalityVer1` | Target functionality | Target functionality.
+`building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2` | Building damage | A building damage dataset.
+`functionality_level` <sup>*</sup> | `incore:TargetFunctionalityVer1` | Target functionality | Target functionality levels.
 
 **Output datasets**
 
@@ -44,21 +49,22 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create Business Operatio Cease analysis instance
-    bco = `BusinessCeaseOperation`(client)
+    # Create Joplin empirical restoration analysis instance
+    jer = `JoplinEmpiricalRestoration`(client)
 
     # Load input dataset
-    bco.load_remote_input_dataset("predictors", business_predictors)
+    jer.load_remote_input_dataset("building_dmg", building_damage)
+    jer.load_remote_input_dataset("functionality_level", functionality_level)
 
     # Specify the result name
-    result_name = "IN-CORE_BusinessCeaseOperation"
+    result_name = "IN-CORE_Joplin_empirical_restoration"
 
     # Set analysis parameters
-    bco.set_parameter("result_name", result_name)
-    bco.set_parameter("seed", 1238)
+    jer.set_parameter("result_name", result_name)
+    jer.set_parameter("seed", 1238)
 
-    # Run Business Operation Closure analysis
-    bco.run_analysis()
+    # Run Joplin empirical restoration analysis
+    jer.run_analysis()
 ```
 
 full analysis: [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
