@@ -35,7 +35,6 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2` | Building damage | A building damage dataset.
-`functionality_level` <sup>*</sup> | `incore:TargetFunctionalityVer1` | Target functionality | Target functionality levels.
 
 **Output datasets**
 
