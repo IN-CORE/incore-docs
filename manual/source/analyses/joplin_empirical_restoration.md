@@ -27,6 +27,7 @@ The output of the model are values for the predicted restoration time of the bui
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`target_functionality_level` | `int` | Target level | Target functionality level for all infrastructure.
 `seed` | `int` | Seed | Initial value to seed the random number generator.
 
 **Input datasets**
@@ -50,21 +51,21 @@ code snippet:
 
 ```
     # Create Joplin empirical restoration analysis instance
-    jer = `JoplinEmpiricalRestoration`(client)
+    restoration = `JoplinEmpiricalRestoration`(client)
 
     # Load input dataset
-    jer.load_remote_input_dataset("building_dmg", building_damage)
-    jer.load_remote_input_dataset("functionality_level", functionality_level)
+    restoration.load_remote_input_dataset("building_dmg", building_damage)
 
     # Specify the result name
     result_name = "IN-CORE_Joplin_empirical_restoration"
 
     # Set analysis parameters
-    jer.set_parameter("result_name", result_name)
-    jer.set_parameter("seed", 1238)
-
+    restoration.set_parameter("result_name", result_name)
+    restoration.set_parameter("target_functionality_level", 0)
+    restoration.set_parameter("seed", 1234)
+    
     # Run Joplin empirical restoration analysis
-    jer.run_analysis()
+    restoration.run_analysis()
 ```
 
 full analysis: [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
