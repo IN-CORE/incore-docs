@@ -91,3 +91,4 @@ jobs:
         password: ${{ secrets.HUB_PASSWORD }}
         tags: "${{ env.TAGS }}"
         buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
+        workdir: manual
