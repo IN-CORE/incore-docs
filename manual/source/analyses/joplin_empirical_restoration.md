@@ -34,6 +34,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
+`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2` | Building damage | A building damage dataset.
 
 **Output datasets**
@@ -53,6 +54,7 @@ code snippet:
     restoration = `JoplinEmpiricalRestoration`(client)
 
     # Load input dataset
+    restoration.load_remote_input_dataset("buildings", buildings)
     restoration.load_remote_input_dataset("building_dmg", building_damage)
 
     # Specify the result name
