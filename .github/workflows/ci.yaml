@@ -125,18 +125,19 @@ jobs:
         workdir: restapi
     # This will publish to NCSA image incore/doc/api
     - name: Publish swagger api image to NCSA Hub
-        if: github.repository == env.MAIN_REPO
-        uses: elgohr/Publish-Docker-Github-Action@3.04
-        env:
-          BRANCH: ${{ env.GITHUB_BRANCH }}
-          VERSION: ${{ env.API_VERSION }}
-          BUILDNUMBER: ${{ github.run_number }}
-          GITSHA1: ${{ github.sha }}
-        with:
-          registry: hub.ncsa.illinois.edu
-          name: incore/doc/api
-          username: ${{ secrets.HUB_USERNAME }}
-          password: ${{ secrets.HUB_PASSWORD }}
-          tags: "${{ env.API_TAGS }}"
-          buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
-          workdir: restapi
+      if: github.repository == env.MAIN_REPO
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      env:
+        BRANCH: ${{ env.GITHUB_BRANCH }}
+        VERSION: ${{ env.API_VERSION }}
+        BUILDNUMBER: ${{ github.run_number }}
+        GITSHA1: ${{ github.sha }}
+      with:
+        registry: hub.ncsa.illinois.edu
+        name: incore/doc/api
+        username: ${{ secrets.HUB_USERNAME }}
+        password: ${{ secrets.HUB_PASSWORD }}
+        tags: "${{ env.API_TAGS }}"
+        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
+        workdir: restapi
+
