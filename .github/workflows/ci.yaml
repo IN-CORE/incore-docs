@@ -39,49 +39,65 @@ jobs:
         echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
 
         if [ "$BRANCH" == "master" ]; then
-          PKG_VERSION=$(cat manual/source/conf.py | grep "release" | head -1 | awk -F= "{ print $2 }" | sed "s/[release =,',]//g")
+          VERSION=$(cat manual/source/conf.py | grep "release" | head -1 | awk -F= "{ print $2 }" | sed "s/[release =,',]//g")
           VERSIONS="latest"
           OLDVERSION=""
-          TMPVERSION=$PKG_VERSION
+          TMPVERSION=$VERSION
           while [ "$OLDVERSION" != "$TMPVERSION" ]; do
             VERSIONS="${VERSIONS} ${TMPVERSION}"
             OLDVERSION="${TMPVERSION}"
             TMPVERSION=$(echo ${OLDVERSION} | sed 's/\.[0-9]*$//')
           done
-          TAGS=$VERSIONS
-          echo "VERSION=${version}" >> $GITHUB_ENV
-          echo "TAGS=${tags}" >> $GITHUB_ENV
+          echo "DOC_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "DOC_TAGS=${VERSIONS}" >> $GITHUB_ENV
+
+          # Swagger API Version
+          VERSION=$(cat restapi/data.json | grep \"version\" | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,",]//g' | tr -d '[[:space:]]')
+          VERSIONS="latest"
+          OLDVERSION=""
+          TMPVERSION=$VERSION
+          while [ "$OLDVERSION" != "$TMPVERSION" ]; do
+            VERSIONS="${VERSIONS} ${TMPVERSION}"
+            OLDVERSION="${TMPVERSION}"
+            TMPVERSION=$(echo ${OLDVERSION} | sed 's/\.[0-9]*$//')
+          done
+          echo "API_VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "API_TAGS=${VERSIONS}" >> $GITHUB_ENV
         elif [ "$BRANCH" == "develop" ]; then
-          echo "VERSION=develop" >> $GITHUB_ENV
-          echo "TAGS=develop" >> $GITHUB_ENV
+          echo "DOC_VERSION=develop" >> $GITHUB_ENV
+          echo "API_VERSION=develop" >> $GITHUB_ENV
+          echo "DOC_TAGS=develop" >> $GITHUB_ENV
+          echo "API_TAGS=develop" >> $GITHUB_ENV
         else
-          echo "VERSION=testing" >> $GITHUB_ENV
-          echo "TAGS=${BRANCH}" >> $GITHUB_ENV
+          echo "DOC_VERSION=testing" >> $GITHUB_ENV
+          echo "API_VERSION=testing" >> $GITHUB_ENV
+          echo "DOC_TAGS=${BRANCH}" >> $GITHUB_ENV
+          echo "API_TAGS=${BRANCH}" >> $GITHUB_ENV
         fi
         
-    # build image
-    - name: Build image
+    # build image incore/doc/incore
+    - name: Build doc image
       uses: elgohr/Publish-Docker-Github-Action@3.04
       env:
         BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.VERSION }}
+        VERSION: ${{ env.DOC_VERSION }}
         BUILDNUMBER: ${{ github.run_number }}
         GITSHA1: ${{ github.sha }}
       with:
         registry: hub.ncsa.illinois.edu
         name: incore/doc/incore
-        tags: "${{ env.TAGS }}"
+        tags: "${{ env.DOC_TAGS }}"
         buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         no_push: true
         workdir: manual
-    # this will publish to NCSA
-    - name: Publish to NCSA Hub
+    # this will publish to NCSA image incore/doc/incore
+    - name: Publish doc image to NCSA Hub
       #if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
       if: github.repository == env.MAIN_REPO
       uses: elgohr/Publish-Docker-Github-Action@3.04
       env:
         BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.VERSION }}
+        VERSION: ${{ env.DOC_VERSION }}
         BUILDNUMBER: ${{ github.run_number }}
         GITSHA1: ${{ github.sha  }}
       with:
@@ -89,6 +105,38 @@ jobs:
         name: incore/doc/incore
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
-        tags: "${{ env.TAGS }}"
+        tags: "${{ env.DOC_TAGS }}"
         buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         workdir: manual
+    # build image incore/doc/incore
+    - name: Build swagger api image
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      env:
+        BRANCH: ${{ env.GITHUB_BRANCH }}
+        VERSION: ${{ env.API_VERSION }}
+        BUILDNUMBER: ${{ github.run_number }}
+        GITSHA1: ${{ github.sha }}
+      with:
+        registry: hub.ncsa.illinois.edu
+        name: incore/doc/api
+        tags: "${{ env.API_TAGS }}"
+        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
+        no_push: true
+        workdir: restapi
+    # This will publish to NCSA image incore/doc/api
+    - name: Publish swagger api image to NCSA Hub
+        if: github.repository == env.MAIN_REPO
+        uses: elgohr/Publish-Docker-Github-Action@3.04
+        env:
+          BRANCH: ${{ env.GITHUB_BRANCH }}
+          VERSION: ${{ env.API_VERSION }}
+          BUILDNUMBER: ${{ github.run_number }}
+          GITSHA1: ${{ github.sha }}
+        with:
+          registry: hub.ncsa.illinois.edu
+          name: incore/doc/api
+          username: ${{ secrets.HUB_USERNAME }}
+          password: ${{ secrets.HUB_PASSWORD }}
+          tags: "${{ env.API_TAGS }}"
+          buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
+          workdir: restapi
