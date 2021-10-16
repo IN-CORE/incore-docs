@@ -108,7 +108,7 @@ jobs:
         tags: "${{ env.DOC_TAGS }}"
         buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         workdir: manual
-    # build image incore/doc/incore
+    # build image incore/doc/api
     - name: Build swagger api image
       uses: elgohr/Publish-Docker-Github-Action@3.04
       env:
