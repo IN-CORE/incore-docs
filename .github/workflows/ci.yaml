@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - develop
+      - 'release/*'
 
     tags:
       - '*'
@@ -31,8 +32,8 @@ jobs:
       run: |
         if [ "${{ github.event.release.target_commitish }}" != "" ]; then
           BRANCH="${{ github.event.release.target_commitish }}"
-        elif [[ $GITHUB_REF =~ pull ]]; then
-          BRANCH="$(echo $GITHUB_REF | sed 's#refs/pull/\([0-9]*\)/merge#PR-\1#')"
+        elif [[ "${{github.event_name}}" == "pull_request" ]]; then
+            BRANCH="PR-${{github.event.pull_request.number}}"
         else
           BRANCH=${GITHUB_REF##*/}
         fi
@@ -78,16 +79,8 @@ jobs:
     # build image incore/doc/incore
     - name: Build doc image
       uses: elgohr/Publish-Docker-Github-Action@3.04
-      env:
-        BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.DOC_VERSION }}
-        BUILDNUMBER: ${{ github.run_number }}
-        GITSHA1: ${{ github.sha }}
       with:
-        registry: hub.ncsa.illinois.edu
         name: incore/doc/incore
-        tags: "${{ env.DOC_TAGS }}"
-        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         no_push: true
         workdir: manual
     # this will publish to NCSA image incore/doc/incore
@@ -95,49 +88,29 @@ jobs:
       #if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
       if: github.repository == env.MAIN_REPO
       uses: elgohr/Publish-Docker-Github-Action@3.04
-      env:
-        BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.DOC_VERSION }}
-        BUILDNUMBER: ${{ github.run_number }}
-        GITSHA1: ${{ github.sha  }}
       with:
         registry: hub.ncsa.illinois.edu
         name: incore/doc/incore
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
         tags: "${{ env.DOC_TAGS }}"
-        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         workdir: manual
     # build image incore/doc/api
     - name: Build swagger api image
       uses: elgohr/Publish-Docker-Github-Action@3.04
-      env:
-        BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.API_VERSION }}
-        BUILDNUMBER: ${{ github.run_number }}
-        GITSHA1: ${{ github.sha }}
       with:
-        registry: hub.ncsa.illinois.edu
         name: incore/doc/api
-        tags: "${{ env.API_TAGS }}"
-        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         no_push: true
         workdir: restapi
     # This will publish to NCSA image incore/doc/api
     - name: Publish swagger api image to NCSA Hub
       if: github.repository == env.MAIN_REPO
       uses: elgohr/Publish-Docker-Github-Action@3.04
-      env:
-        BRANCH: ${{ env.GITHUB_BRANCH }}
-        VERSION: ${{ env.API_VERSION }}
-        BUILDNUMBER: ${{ github.run_number }}
-        GITSHA1: ${{ github.sha }}
       with:
         registry: hub.ncsa.illinois.edu
         name: incore/doc/api
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
         tags: "${{ env.API_TAGS }}"
-        buildargs: BRANCH,VERSION,BUILDNUMBER,GITSHA1
         workdir: restapi
 
