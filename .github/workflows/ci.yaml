@@ -1,0 +1,116 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - 'release/*'
+
+    tags:
+      - '*'
+
+  pull_request:
+
+env:
+  MAIN_REPO: IN-CORE/incore-docs
+
+jobs:
+
+  # ----------------------------------------------------------------------
+  # DOCKER BUILD
+  # ----------------------------------------------------------------------
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout source code
+    - uses: actions/checkout@v2
+
+   # calculate some variables that are used later
+    - name: version information
+      run: |
+        if [ "${{ github.event.release.target_commitish }}" != "" ]; then
+          BRANCH="${{ github.event.release.target_commitish }}"
+        elif [[ "${{github.event_name}}" == "pull_request" ]]; then
+            BRANCH="PR-${{github.event.pull_request.number}}"
+        else
+          BRANCH=${GITHUB_REF##*/}
+        fi
+        echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
+
+        if [ "$BRANCH" == "master" ]; then
+          VERSION=$(cat manual/source/conf.py | grep "release" | head -1 | awk -F= "{ print $2 }" | sed "s/[release =,',]//g")
+          VERSIONS="latest"
+          OLDVERSION=""
+          TMPVERSION=$VERSION
+          while [ "$OLDVERSION" != "$TMPVERSION" ]; do
+            VERSIONS="${VERSIONS} ${TMPVERSION}"
+            OLDVERSION="${TMPVERSION}"
+            TMPVERSION=$(echo ${OLDVERSION} | sed 's/\.[0-9]*$//')
+          done
+          echo "DOC_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "DOC_TAGS=${VERSIONS}" >> $GITHUB_ENV
+
+          # Swagger API Version
+          VERSION=$(cat restapi/data.json | grep \"version\" | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,",]//g' | tr -d '[[:space:]]')
+          VERSIONS="latest"
+          OLDVERSION=""
+          TMPVERSION=$VERSION
+          while [ "$OLDVERSION" != "$TMPVERSION" ]; do
+            VERSIONS="${VERSIONS} ${TMPVERSION}"
+            OLDVERSION="${TMPVERSION}"
+            TMPVERSION=$(echo ${OLDVERSION} | sed 's/\.[0-9]*$//')
+          done
+          echo "API_VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "API_TAGS=${VERSIONS}" >> $GITHUB_ENV
+        elif [ "$BRANCH" == "develop" ]; then
+          echo "DOC_VERSION=develop" >> $GITHUB_ENV
+          echo "API_VERSION=develop" >> $GITHUB_ENV
+          echo "DOC_TAGS=develop" >> $GITHUB_ENV
+          echo "API_TAGS=develop" >> $GITHUB_ENV
+        else
+          echo "DOC_VERSION=testing" >> $GITHUB_ENV
+          echo "API_VERSION=testing" >> $GITHUB_ENV
+          echo "DOC_TAGS=${BRANCH}" >> $GITHUB_ENV
+          echo "API_TAGS=${BRANCH}" >> $GITHUB_ENV
+        fi
+        
+    # build image incore/doc/incore
+    - name: Build doc image
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      with:
+        name: incore/doc/incore
+        no_push: true
+        workdir: manual
+    # this will publish to NCSA image incore/doc/incore
+    - name: Publish doc image to NCSA Hub
+      #if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
+      if: github.repository == env.MAIN_REPO
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      with:
+        registry: hub.ncsa.illinois.edu
+        name: incore/doc/incore
+        username: ${{ secrets.HUB_USERNAME }}
+        password: ${{ secrets.HUB_PASSWORD }}
+        tags: "${{ env.DOC_TAGS }}"
+        workdir: manual
+    # build image incore/doc/api
+    - name: Build swagger api image
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      with:
+        name: incore/doc/api
+        no_push: true
+        workdir: restapi
+    # This will publish to NCSA image incore/doc/api
+    - name: Publish swagger api image to NCSA Hub
+      if: github.repository == env.MAIN_REPO
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      with:
+        registry: hub.ncsa.illinois.edu
+        name: incore/doc/api
+        username: ${{ secrets.HUB_USERNAME }}
+        password: ${{ secrets.HUB_PASSWORD }}
+        tags: "${{ env.API_TAGS }}"
+        workdir: restapi
+
