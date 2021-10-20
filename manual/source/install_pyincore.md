@@ -11,7 +11,11 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
     ```
     conda install -c in-core pyincore
     ```
-To check that the package is installed.  run 
+   A user can also install **pyIncore-viz** module for which **pyIncore** installs as a dependency
+    ```
+    conda install -c in-core pyincore-viz
+    ```
+To check that the package is installed run 
 ```
 conda list pyincore
 ```

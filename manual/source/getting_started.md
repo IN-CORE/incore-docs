@@ -67,8 +67,12 @@ If you don't have Miniconda installed, do the following steps.
     ```
     conda install -c in-core pyincore
     ```
+   A user can also install **pyIncore-viz** module for which **pyIncore** installs as a dependency
+    ```
+    conda install -c in-core pyincore-viz
+    ```
    
-6. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+7. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
     ```
     conda install jupyter
     ```
