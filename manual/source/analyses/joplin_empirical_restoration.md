@@ -19,7 +19,7 @@ The output of the model are values for the predicted restoration time of the bui
 
 **Related publications**
 
-* Aghababaei, M., Koliou, M., Pilkington, S., Mahmoud, H., van de Lindt, J.W., Curtis, A., Smith, S., Ajayakumar, J. and Watson, M., 2020. *Validation of time-dependent repair recovery of the building stock following the 2011 Joplin Tornado. Natural Hazards Review*, **21(4)**, p.04020038.
+* Aghababaei, M., Koliou, M., Pilkington, S., Mahmoud, H., van de Lindt, J.W., Curtis, A., Smith, S., Ajayakumar, J. and Watson, M., 2020. *Validation of time-dependent repair recovery of the building stock following the 2011 Joplin Tornado*. Natural Hazards Review, **21(4)**, p.04020038.
 * Koliou, M. and van de Lindt, J.W., 2020. *Development of building restoration functions for use in community recovery planning to tornadoes*. Natural Hazards Review, **21(2)**, p.04020004.
 
 **Input parameters**
