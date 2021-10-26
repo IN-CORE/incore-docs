@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Data Service for creating and accessing datasets",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "title": "Data Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -100,6 +100,14 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "excludeHazard",
+            "in": "query",
+            "description": "Exclusion of the hazard dataset",
+            "required": false,
+            "type": "boolean",
+            "default": true
           }
         ],
         "responses": {
@@ -519,6 +527,14 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "excludeHazard",
+            "in": "query",
+            "description": "Exclusion of the hazard dataset",
+            "required": false,
+            "type": "boolean",
+            "default": true
           }
         ],
         "responses": {
@@ -668,33 +684,6 @@
     }
   },
   "definitions": {
-    "FileDescriptor": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "deleted": {
-          "type": "boolean"
-        },
-        "filename": {
-          "type": "string"
-        },
-        "mimeType": {
-          "type": "string"
-        },
-        "size": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "dataURL": {
-          "type": "string"
-        },
-        "md5sum": {
-          "type": "string"
-        }
-      }
-    },
     "Dataset": {
       "type": "object",
       "properties": {
@@ -757,6 +746,33 @@
         },
         "networkDataset": {
           "$ref": "#/definitions/NetworkDataset"
+        }
+      }
+    },
+    "FileDescriptor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dataURL": {
+          "type": "string"
+        },
+        "md5sum": {
+          "type": "string"
         }
       }
     },
@@ -889,17 +905,17 @@
         "providers": {
           "$ref": "#/definitions/Providers"
         },
-        "formDataContentDisposition": {
-          "$ref": "#/definitions/FormDataContentDisposition"
-        },
-        "simple": {
-          "type": "boolean"
-        },
         "name": {
           "type": "string"
         },
         "value": {
           "type": "string"
+        },
+        "formDataContentDisposition": {
+          "$ref": "#/definitions/FormDataContentDisposition"
+        },
+        "simple": {
+          "type": "boolean"
         },
         "parameterizedHeaders": {
           "type": "object",

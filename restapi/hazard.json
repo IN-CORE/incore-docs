@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Hazard Service For Earthquake, Tornado, Tsunami, Hurricane and Flood",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "title": "Hazard Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -2817,6 +2817,10 @@
         "period": {
           "type": "number",
           "format": "double"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -2838,6 +2842,43 @@
           }
         }
       ]
+    },
+    "HazardResult": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "hazardValue": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "SeismicHazardResults": {
+      "type": "object",
+      "properties": {
+        "period": {
+          "type": "string"
+        },
+        "demandType": {
+          "type": "string"
+        },
+        "units": {
+          "type": "string"
+        },
+        "hazardResults": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HazardResult"
+          }
+        }
+      }
     },
     "ValuesResponse": {
       "type": "object",
@@ -2976,43 +3017,6 @@
         }
       }
     },
-    "HazardResult": {
-      "type": "object",
-      "properties": {
-        "latitude": {
-          "type": "number",
-          "format": "double"
-        },
-        "longitude": {
-          "type": "number",
-          "format": "double"
-        },
-        "hazardValue": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "SeismicHazardResults": {
-      "type": "object",
-      "properties": {
-        "period": {
-          "type": "string"
-        },
-        "demandType": {
-          "type": "string"
-        },
-        "units": {
-          "type": "string"
-        },
-        "hazardResults": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HazardResult"
-          }
-        }
-      }
-    },
     "DeterministicFloodHazard": {
       "allOf": [
         {
@@ -3095,6 +3099,10 @@
         },
         "demandUnits": {
           "type": "string"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -3191,6 +3199,10 @@
         },
         "demandUnits": {
           "type": "string"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -3335,6 +3347,13 @@
           "type": "string"
         },
         "creator": {
+          "type": "string"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
+        },
+        "thresholdUnit": {
           "type": "string"
         },
         "spaces": {
@@ -3549,6 +3568,10 @@
         },
         "demandUnits": {
           "type": "string"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
         }
       }
     }
