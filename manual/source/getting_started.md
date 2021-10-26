@@ -55,7 +55,7 @@ If you don't have Miniconda installed, do the following steps.
    
 3. Create the python environment (for this example we choose `pyincoreEnv`):
     ```
-    conda create -n pyincoreEnv python=3.7
+    conda create -n pyincoreEnv python=3.8
     ```
    
 4. Activate the environment:
@@ -67,8 +67,12 @@ If you don't have Miniconda installed, do the following steps.
     ```
     conda install -c in-core pyincore
     ```
+   A user can also install **pyIncore-viz** module for which **pyIncore** installs as a dependency:
+    ```
+    conda install -c in-core pyincore-viz
+    ```
    
-6. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+7. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
     ```
     conda install jupyter
     ```
