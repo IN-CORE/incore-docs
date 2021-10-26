@@ -14,6 +14,7 @@ Analyses
     analyses/housing_household_recovery
     analyses/housingunitallocation
     analyses/joplin_cge
+    analyses/joplin_empirical_restoration
     analyses/mean_dmg
     analyses/mc_failure_prob
     analyses/non_structural_building_dmg
