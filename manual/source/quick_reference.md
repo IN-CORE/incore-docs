@@ -15,7 +15,7 @@
    
 4. Create the python environment (for this example we choose `pyincoreEnv`):
     ```
-    conda create -n pyincoreEnv python=3.7
+    conda create -n pyincoreEnv python=3.8
     ```
    
 5. Activate the environment:
@@ -23,9 +23,9 @@
     conda activate pyincoreEnv
     ``` 
    
-6. To install pyIncore, navigate to the directory you want to use for running Jupyter Notebooks and run the following command:
+6. To install pyIncore, navigate to the directory you want to use for running Jupyter Notebooks and run the following command. This will install both, **pyIncore-viz** and **pyIncore** as a dependency.
     ```
-    conda install -c in-core pyincore
+    conda install -c in-core pyincore-viz
     ```
    
 7. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:

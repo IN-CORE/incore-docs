@@ -37,18 +37,18 @@ Install [Docker Desktop](https://www.docker.com/) for your OS and change directo
 1. Install required packages. Currently `sphinx`, a Python package for building documentation and `sphinx_rtd_theme`, 
 a theme used in this documentation and other packages. See section 4. for the full list.
 
-2. We recommend using virtual environments, `conda` (preferred) or `virtualenv` for Python 3.7+. 
+2. We recommend using virtual environments, `conda` (preferred) or `virtualenv` for Python 3.6-3.8. 
 for managing Python environments.  
 In case of `conda`, the package management and deployment tool 
 is called `anaconda`. Create the environment from the terminal at the project 
 folder (called `incore_docs` here) and activate it:
     ```
-    conda create -n incore_docs python=3.7 anaconda
+    conda create -n incore_docs python=3.8 anaconda
     source activate incore_docs
     ```
     or  
     ```
-    virtualenv --python=python3.7 incore_docs
+    virtualenv --python=python3.8 incore_docs
     source venv/bin/activate
     ```
    
