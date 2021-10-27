@@ -106,30 +106,6 @@ supported in the new format. Please clear browser cache.
               "expression": "scipy.stats.norm.cdf((math.log(point_two_sec_SA) - (-0.576))/(0.836))"
            }]
         },
-        {
-           "description": "legacy - PeriodStandardFragilityCurve",
-           "className": "FragilityCurveRefactored",
-           "returnType": {
-           "type": "Limit State",
-           "unit": "",
-           "description": "Extensive"
-           },
-           "rules": [{
-              "expression": "scipy.stats.norm.cdf((math.log(point_two_sec_SA) - (0.23))/(0.911))"
-           }]
-        },
-        {
-           "description": "legacy - PeriodStandardFragilityCurve",
-           "className": "FragilityCurveRefactored",
-           "returnType": {
-              "type": "Limit State",
-              "unit": "",
-              "description": "Complete"
-           },
-           "rules": [{
-              "expression": "scipy.stats.norm.cdf((math.log(point_two_sec_SA) - (1.197))/(1.05))"
-           }]
-        }
      ],
      "creator": "incore",
      "fragilityCurveParameters": [
