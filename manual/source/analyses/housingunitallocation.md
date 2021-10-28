@@ -66,4 +66,5 @@ code snippet:
 ```
 
 full analysis: [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb) <br />
-Galveston, TX housing unit allocation: [HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)
+Galveston, TX housing unit allocation: [HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb) <br />
+Visualization of Total Population by various categories: [pyincore-viz-analysis-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-analysis-example.ipynb)
