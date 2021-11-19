@@ -7,3 +7,6 @@ parse:
     - html_image
 execute:
   execute_notebooks: "off"
+sphinx:
+  config:
+    html_theme: sphinx_rtd_theme

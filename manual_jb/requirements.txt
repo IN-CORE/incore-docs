@@ -1,4 +1,4 @@
-jupyter-book==0.12.0
+jupyter-book>=0.12.0
+sphinx-rtd-theme>=1.0.0
 
 # sphinx-markdown-tables==0.0.15
-# sphinx-rtd-theme==0.5.2
