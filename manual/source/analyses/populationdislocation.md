@@ -1,5 +1,7 @@
 ### Population dislocation
 
+**Description**
+
 This analysis computes population dislocation based on a particular hazard. First, housing units, with detailed characteristics 
 (tenure, household size, occupied, or vacant) are allocated to the address points (buildings). This is done by calling the Housing unit allocation analysis.
 After the housing units are allocated, the hazard event defined by calling Fragility and Hazard services would determine 
@@ -13,10 +15,17 @@ Additionally, the Block Group characteristics, percentages of African-American a
 
 The output is a CSV file with dislocated households and related variables.
 
+**Contributors**
+
+- Science: Walter Gillis Peacock, Nathanael Rosenheim
+- Implementation: Nathanael Rosenheim, Yong Wook Kim, Gowtham Naraharisetty, Michal Ondrejcek, Chen Wang , and NCSA IN-CORE Dev Team
+
 **Related publications**
 
-* Probabilistic Assessment of Structural Damage due to Earthquakes for Buildings in Mid-America, J. Bai; M.B.D. Hueste and P. Gardoni, *Journal of Structural Engineering* **135(10)** 2009, doi: [10.1061/(ASCE)0733-9445(2009)135%3A10(1155)](https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9445%282009%29135%3A10%281155%29)
-* Integration of Physical Infrastructure and Social Systems in Communities Reliability and Resilience Analysis, R. Guidotti, P. Gardoni and N. Rosenheim, *Reliability Engineering & System Safety*, 2019: DOI [10.1016/j.ress.2019.01.008](https://app.dimensions.ai/details/publication/pub.1111322263?and_facet_journal=jour.1158471)
+* Lin, Y.S., Peacock, W.G., Lu, J.C., and Zhang, Y. (2008). Household dislocation algorithm 3: A logistic regression approach 08-05R. 
+Retrieved from [hrrc.arch.tamu.edu/publications/research reports/08-05R Dislocation Algorithm 3.pdf](https://hrrc.arch.tamu.edu/publications/research%20reports/08-05R%20Dislocation%20Algorithm%203.pdf)
+* Rosenheim, N., Guidotti, R., Gardoni, P., and Peacock, W.G. (2019). Integration of detailed household and housing unit characteristic data with critical infrastructure for post-hazard resilience modeling. *Sustainable and Resilient Infrastructure* DOI: [10.1080/23789689.2019.1681821](https://doi.org/10.1080/23789689.2019.1681821)
+* Bai, J., Hueste, M.B.D. and Gardoni, P. (2009), Probabilistic Assessment of Structural Damage due to Earthquakes for Buildings in Mid-America *Journal of Structural Engineering* **135(10)** DOI: [10.1061/(ASCE)0733-9445(2009)135:10(1155)](https://doi.org/10.1061/%28ASCE%290733-9445%282009%29135%3A10%281155%29)
 
 **Input Parameters**
 
