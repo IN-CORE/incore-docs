@@ -43,9 +43,11 @@ Sessions
     * `Session 4 assignment <session4/session4-assignment.ipynb>`_
     * `Session 4 assignment answers <session4/session4-assignment-answer.ipynb>`_
 5. Use Case -How to do research with IN-CORE
-    * Yousef Darestani (presentation file will be available in next release)
+    * Yousef Darestani *Galveston Island Socio-Physical Damage Analysis* (presentation starts at 3:33:45 of `Recording_1948x1096.mp4 <http://resilience.colostate.edu/files/IN-CORE/GMT20210526-170314_Recording_1948x1096.mp4>`_)
     * Dylan Sanderson *A Spatially Explicit Decision Support Framework for Parcel- and Community-Level Resilience Assessment using Bayesian Networks* (:download:`pdf <session5/20210526_Sanderson_shareable.pdf>`)
 
 Download the full directory of the files above:
 
 `workshop_2021-05-26.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/workshop_2021-05-26.zip>`_
+
+
