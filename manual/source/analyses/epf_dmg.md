@@ -17,9 +17,11 @@ key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
-`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
+`hazard_id` <sup>*</sup> | `str` | Hazard id | Hazard ID which defines the particular hazard (e.g. New Madrid <br>earthquake using Atkinson Boore 1995).
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
-`use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*.
+`liquefaction_fragility_key` | `str` | Liquefaction key | Use liquefaction, if applicable to the hazard. <br>Fragility key to use in liquefaction mapping dataset.
+`use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*. Use a ground liquefaction to modify damage interval.
+`liquefaction_geology_dataset_id` | `str` | Liquefaction id | Liquefaction geology/susceptibility dataset id. <br>If not provided, liquefaction will be ignored.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. <br>Default is *False*.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
@@ -34,7 +36,7 @@ key name | type | name | description
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:epfDamageVer2` |`epfs` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | `incore:epfDamageVer3` |`epfs` | Results | A dataset containing results <br>(format: CSV).
 `damage_result` <sup>*</sup> | `epfDamageSupplement` | `epfs` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
@@ -62,6 +64,9 @@ code snippet:
     epf_dmg.set_parameter("result_name", result_name)
     epf_dmg.set_parameter("hazard_type", hazard_type)
     epf_dmg.set_parameter("hazard_id", hazard_id)
+    epf_dmg.set_parameter("use_liquefaction", True)
+    epf_dmg.set_parameter("liquefaction_geology_dataset_id", liquefaction_dataset_id)
+    epf_dmg.set_parameter("use_hazard_uncertainty", False)
     epf_dmg.set_parameter("num_cpu", num_cpu)
 
     # Run epf damage analysis
