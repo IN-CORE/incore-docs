@@ -1,6 +1,8 @@
-## Example pyIncore Notebooks
+# Example pyIncore Notebooks
 
 Note that some Notebooks might not work with the latest version of pyIncore.
+
+## Analyses
 
 [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb) <br />
 [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb) <br />
@@ -11,7 +13,6 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_recovery.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb) <br />
-[HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)  <br />
 [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb) <br />
 [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
 [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb) <br />
@@ -27,3 +28,8 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_dmg.ipynb)
+
+## Testbed specific
+
+[HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)  <br />
+[Retrofit_plan_Joplin_2021_12_01.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Retrofit_plan_Joplin_2021_12_01.ipynb)  <br />

@@ -17,6 +17,7 @@ We encourage IN-CORE users to contribute improve the knowledge base. contact us 
     notebooks/create_dfr3_object/create_dfr3_object
     notebooks/create_earthquake/create_earthquake
     notebooks/create_tornado/create_tornado
+    notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01
 
 More tutorials will be added soon.
 
@@ -26,4 +27,4 @@ Download the full Notebooks:
 - Create DFR3 object: `create_dfr3_object.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dfr3_object.zip>`_
 - Create Earthquake Hazard: `create_earthquake.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_earthquake.zip>`_
 - Create Tornado Hazard: `create_tornado.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_tornado.zip>`_
-
+- Retrofit plan Joplin: `retrofit_plan_Joplin_2021_12_01.zip <https://github.com/IN-CORE/incore-docs/blob/master/notebooks/retrofit_plan_Joplin_2021_12_01.zip>`_
