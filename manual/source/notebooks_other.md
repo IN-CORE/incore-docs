@@ -17,6 +17,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
 [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb) <br />
 [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_dmg.ipynb) <br />
+[multiobjective_retrofit_optimization](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/multiobjective_retrofit_optimization.ipynb) <br />
 [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
