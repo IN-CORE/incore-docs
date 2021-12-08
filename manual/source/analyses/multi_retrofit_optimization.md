@@ -19,7 +19,7 @@ The computation proceeds by iteratively solving constrained linear models using 
 **Contributors**
 
 - Science: Charles Nicholson and Yunjie Wen
-- Implementation: Dale Cochran, Tarun Adluri, Jorge Duarte, Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
+- Implementation: Dale Cochran, Tarun Adluri, Jorge Duarte, Diego Calderon, Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
 
 **Related publications**
 
