@@ -36,6 +36,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
 `building_dmg` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2` | Building damage | A building damage dataset.
+`building_functionality_level` | `incore:buildingFuncTargetVer1` | Building functionality level | A building functionality level with individual functionality for each building.
 
 **Output datasets**
 
@@ -56,6 +57,7 @@ code snippet:
     # Load input dataset
     restoration.load_remote_input_dataset("buildings", buildings)
     restoration.load_remote_input_dataset("building_dmg", building_damage)
+    restoration.load_remote_input_dataset("building_functionality_level", building_fl_id)
 
     # Specify the result name
     result_name = "IN-CORE_Joplin_empirical_restoration"
