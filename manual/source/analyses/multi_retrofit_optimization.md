@@ -5,16 +5,21 @@
 This analysis computes a series of linear programming models for single- and multi-objective optimization related 
 to the effect of extreme weather on a community in terms of three objective functions. The three objectives used 
 in this program are to minimize **economic loss**, minimize **population dislocation**, and maximize **building functionality**. 
+
+This analysis computes a series of linear programming models for single- and multi-objective optimization related 
+to the effect of extreme weather on a community in terms of three objective functions. The three objectives used 
+in this program are to minimize **economic loss**, minimize **population dislocation**, and maximize **building functionality**. 
 The analysis uses the set of mitigation strategies, which is determined by the hazard type. For instance, seismic 
 mitigation on existing buildings includes reinforcing buildings with cross bracing, reinforcing buildings using 
-shear walls, install shear anchors, etc. For tsunami and flooding hazards, relocation is one of the mitigation strategies. 
-Various parameters represent, for example the starting and final retrofitting level of a building, the retrofitting 
-cost for buildings retrofitted from one level to another in groups of structural types or a coefficient of objective, 
-which represents a community resilience goal to measure the performance of a system; the total number of objectives 
-of the optimization model determined by the users. For example, if two objectives are determined, such as economic loss 
-and population dislocation, then the number of objectives is 2.
+shear walls, install shear anchors, etc. For tsunami and flooding hazards, relocation is one of the mitigation 
+strategies. Various parameters represent, for example, the starting and final retrofitting level of a building, 
+the retrofitting cost for buildings retrofitted from one level to another in groups of structural types, 
+or a coefficient of objective, which represents a community resilience goal to measure the performance of a system. 
+The total number of objectives of the optimization model implemented in **pyIncore** is currently three; 
+economic loss, population dislocation and building functionality constraints.
 
-The computation proceeds by iteratively solving constrained linear models using epsilon steps. The output of the computation is a collection of optimal resource allocations.
+The computation proceeds by iteratively solving constrained linear models using epsilon steps. The CSV outputs 
+of the computation are collections of optimal resource allocations.
 
 **Contributors**
 
@@ -40,16 +45,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_repairs_data` <sup>*</sup> | `incore:multiobjectiveBuildingFunctionality` | Building functionality |  A csv file with building functionality data.
+`building_related_data` <sup>*</sup> | `incore:multiobjectiveBuildingRelatedData` | Building-related data |  A csv file with building-related data.
 `strategy_costs_data` <sup>*</sup> | `incore:multiobjectiveStrategyCost` | Strategy cost | A csv file with strategy cost data per building.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`out1` <sup>*</sup> | `incore:multiobjective` |  | Results | Output file.
-`out2` <sup>*</sup> | `incore:multiobjective` |  | Results | Output file.
-`out3` <sup>*</sup> | `incore:multiobjective` |  | Results | Output file.
+`optimal_solution_dv_x` <sup>*</sup> | `incore:multiobjectiveOptimalSolutionX` |  | Results | A csv file with an optimal solution for decision variable x for Economic loss, Population dislocation and Building functionality values, results of objective function values.
+`optimal_solution_dv_y` <sup>*</sup> | `incore:multiobjectiveOptimalSolutionY` |  | Results | A csv file with an optimal solution for decision variable y with initial and final retrofitted strategies for Economic loss, Population dislocation and Building functionality values, results of objective function values.
 
 <small>(* required)</small>
 
