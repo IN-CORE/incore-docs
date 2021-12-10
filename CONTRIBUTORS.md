@@ -6,6 +6,7 @@ The following is a list of contributors in alphabetical order:
 - Jong Sung Lee
 - Gowtham Naraharisetty
 - Chris Navarro
+- Katie Naum
 - Santiago Núñez-Corrales
 - Michal Ondrejcek
 - Diego Rivera
