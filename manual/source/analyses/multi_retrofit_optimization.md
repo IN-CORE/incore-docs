@@ -66,7 +66,7 @@ code snippet:
     opt = `MultiObjectiveRetrofitOptimization`(client)
 
     # Load input dataset
-    opt.load_remote_input_dataset("building_repairs_data", building_repairs_data)
+    opt.load_remote_input_dataset("building_related_data", building_related_data)
     opt.load_remote_input_dataset("strategy_costs_data", strategy_costs_data)
 
     # Specify the result name
