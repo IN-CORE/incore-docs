@@ -457,6 +457,13 @@
             "type": "string"
           },
           {
+            "name": "siteClassId",
+            "in": "formData",
+            "description": "Site class dataset from data service.",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "amplifyHazard",
             "in": "formData",
             "description": "Amplify earthquake by soil type",
@@ -715,6 +722,13 @@
             "in": "formData",
             "description": "Geology dataset from data service.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteClassId",
+            "in": "formData",
+            "description": "Site class dataset from data service.",
+            "required": false,
             "type": "string"
           }
         ],
