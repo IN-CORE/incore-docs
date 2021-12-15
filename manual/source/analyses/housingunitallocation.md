@@ -1,17 +1,25 @@
 ### Housing unit allocation
 
+**Description**
+
 This analysis sets up a detailed critical infrastructure inventory with housing unit level characteristics.
 The process aligns the housing unit inventory with physical systems, such as the inventory of buildings
 and the demand nodes of a potable water network. The allocation of housing units to the address points
 (buildings) provides a framework to account for uncertainty in community structure that allows
 for the hazard impacts to be analyzed statistically.
 
-The output of this analysis is a CSV file with allocated house units.
+The output of this analysis is a CSV file with detailed household and housing unit characteristics 
+(number of persons, race, tenure, vacancy) allocated to individual house units assigned to individual buildings.
+
+**Contributors**
+
+- Science: Nathanael Rosenheim
+- Implementation: Nathanael Rosenheim, Michal Ondrejcek, and NCSA IN-CORE Dev Team
 
 **Related publications**
 
-* Integration of Detailed Household Characteristic Data with Critical Infrastructure and Its Implementation to Post-Hazard Resilience Modeling, N. Rosenheim, R. Guidotti and P. Gardoni, [pdf](https://www.researchgate.net/profile/Jose_Rodriguez-Llanes/publication/328233484_Food_security_resilience_to_shocks_in_Niger_preliminary_findings_on_potential_measurement_and_challenges_from_LSMS-ISA_data/links/5bc07b2fa6fdcc2c91f72ca2/Food-security-resilience-to-shocks-in-Niger-preliminary-findings-on-potential-measurement-and-challenges-from-LSMS-ISA-data.pdf#page=166)
-* Integration of Physical Infrastructure and Social Systems in Communities Reliability and Resilience Analysis, R. Guidotti, P. Gardoni and N. Rosenheim, *Reliability Engineering & System Safety*, 2019, doi: [10.1016/j.ress.2019.01.008](https://app.dimensions.ai/details/publication/pub.1111322263?and_facet_journal=jour.1158471)
+* Rosenheim, N., Guidotti, R., Gardoni, P. and Peacock, W.G. (2019). Integration of detailed household and housing unit characteristic data with critical infrastructure for post-hazard resilience modeling. *Sustainable and Resilient Infrastructure* DOI: [10.1080/23789689.2019.1681821](http://doi.org/10.1080/23789689.2019.1681821)
+* Rosenheim, Nathanael (2021). Detailed Household and Housing Unit Characteristics: Alpha Release of Housing Unit Inventories. *DesignSafe-CI* DOI: [10.17603/ds2-jwf6-s535](https://doi.org/10.17603/ds2-jwf6-s535)
 
 **Input parameters**
 
