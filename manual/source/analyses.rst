@@ -17,6 +17,7 @@ Analyses
     analyses/joplin_empirical_restoration
     analyses/mean_dmg
     analyses/mc_failure_prob
+    analyses/multi_retrofit_optimization
     analyses/non_structural_building_dmg
     analyses/pipeline_dmg
     analyses/pipeline_dmg_w_repair_rate
