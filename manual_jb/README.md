@@ -17,7 +17,7 @@ folder (called `incore_docs` here) and activate it:
    ```
     conda create -n incore_docs python=3.8 anaconda
     source activate incore_docs
-    ```
+   ```
    
 3. Use `conda` again for Jupyter book installation:
 
@@ -35,3 +35,29 @@ folder (called `incore_docs` here) and activate it:
     ```
 5. Locate folder with html files (**incore-docs/_build**) and view **index.html** in a browser.
 
+
+## Building and running Jupyter Book in Docker container
+
+Install [Docker Desktop](https://www.docker.com/) for your OS and change directory to your local branch 
+incore-docs/manual_jb folder (one with Dockerfile).
+
+1. Build container
+   ```
+   docker build -t doc_test .
+   ```
+   or for fresh build
+   ```
+   docker build --no-cache -t doc_test .
+   ```
+   The container's name is **doc_test** in this example.
+    
+2. Run docker
+   ```
+   docker run --rm -p 80:80 --name doctest doc_test:latest
+   ```
+   Optional flag, `-name` sets container's name to **doctest** under which it appears in Docker Desktop.
+   
+3. Run html pages in your local browser (you might see the nginx main page first)
+   ```
+   http://localhost/doc/incore/
+   ```  

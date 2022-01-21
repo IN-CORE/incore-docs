@@ -10,8 +10,9 @@ WORKDIR /src
 COPY requirements.txt /src/
 RUN python3 -m pip install -r requirements.txt
 
-COPY source_files/ /src/content/
-RUN jupyter-book build content
+COPY content/ /src/content/
+RUN jupyter-book build content/
+#RUN jupyter-book -M html "source" "build"
 
 # ----------------------------------------------------------------------
 # Building actual container
@@ -20,5 +21,5 @@ RUN jupyter-book build content
 FROM nginx
 
 RUN mkdir -p /usr/share/nginx/html/doc/incore
-COPY --from=builder /src/build/html/ /usr/share/nginx/html/doc/incore/
+COPY --from=builder /src/content/_build/html/ /usr/share/nginx/html/doc/incore/
 
