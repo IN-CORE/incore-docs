@@ -1,13 +1,15 @@
 format: jb-book
-root: introduction
+root: index
 defaults:
   numbered: false
 parts:
 # sphinx_rtd_theme does not put "introduction" page in Table of Contents
 # TO DO override css
-# for other themes such as sphinx_book_theme removecaption and whole "parts" part
+# for other themes such as sphinx_book_theme remove caption and whole "parts" part
 - caption: TABLE OF CONTENTS
   chapters:
+  # hack, introduction content is the same as index
+  - file: introduction
   - file: account
   - file: getting_started
   - file: pyincore
