@@ -1,0 +1,25 @@
+title: "IN-CORE Manual"
+project: "IN-CORE Manual"
+author: IN-CORE Community
+#logo: images/resilience-logo.png
+exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints"]
+
+repository:
+    path_to_book: "content"
+
+html:
+  home_page_in_navbar: true # Whether to include your home page in the left Navigation Bar
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled, including those that are enabled by default!
+    - html_image
+  myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+
+execute:
+  execute_notebooks: "off"
+
+sphinx:
+  config:
+    html_theme: sphinx_rtd_theme
+    version: "3.0.0"

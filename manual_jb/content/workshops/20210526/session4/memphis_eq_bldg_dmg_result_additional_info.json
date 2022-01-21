@@ -1,0 +1,156 @@
+[
+    {
+        "guid": "ac8b0b44-ae82-4c48-afb8-076e2d16c7e5",
+        "fragility_id": "5b47b350337d4a36290769c7",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.30999767
+    },
+    {
+        "guid": "154b0a62-cae6-456d-8d90-635e3e1c2dcb",
+        "fragility_id": "5b47b350337d4a36290769cd",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.30999767
+    },
+    {
+        "guid": "9f9b11f8-c25c-4760-b1d2-a63bbeec8e72",
+        "fragility_id": "5b47b34e337d4a3629075420",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3084245901
+    },
+    {
+        "guid": "28321416-e473-473b-ad0a-c3c38248acc7",
+        "fragility_id": "5b47b34f337d4a36290761be",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2995334422
+    },
+    {
+        "guid": "b5069250-7a2b-47b1-9754-290528a6d72d",
+        "fragility_id": "5b47b350337d4a36290769ff",
+        "demandtype": "1.0 SA",
+        "demandunits": "g",
+        "hazardval": 0.2376877771
+    },
+    {
+        "guid": "74bbfe02-4415-4487-94c3-14a6d8ff9fe9",
+        "fragility_id": "5b47b350337d4a36290769c7",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3157835781
+    },
+    {
+        "guid": "11395729-3727-449d-9848-778d68edd7d8",
+        "fragility_id": "5b47b34e337d4a362907541f",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3157835781
+    },
+    {
+        "guid": "86b1c8fa-5ad5-4659-8687-7948a9f1f060",
+        "fragility_id": "5b47b350337d4a3629076e3d",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3157835781
+    },
+    {
+        "guid": "6c0bc6d2-5c15-4972-9971-7e12910c7aae",
+        "fragility_id": "5b47b350337d4a36290769cd",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3157835781
+    },
+    {
+        "guid": "2775c640-18c1-4262-9376-f30a8abb457f",
+        "fragility_id": "5b47b34e337d4a362907541f",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2790513443
+    },
+    {
+        "guid": "223bebfc-a84b-40a5-816e-5833efdba419",
+        "fragility_id": "5b47b34f337d4a36290755c2",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2916834651
+    },
+    {
+        "guid": "d7603d04-6917-478c-8bb7-50cf9118f973",
+        "fragility_id": "5b47b34e337d4a3629075420",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2916834651
+    },
+    {
+        "guid": "f6b04530-cde0-421e-91cf-7e9029de94b6",
+        "fragility_id": "5b47b350337d4a3629076bee",
+        "demandtype": "1.0 SA",
+        "demandunits": "g",
+        "hazardval": 0.231617614
+    },
+    {
+        "guid": "e8894ecf-fc19-4415-8963-1d3431272072",
+        "fragility_id": "5b47b350337d4a36290769cd",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2638923279
+    },
+    {
+        "guid": "6dd342ef-498c-43a9-85cd-35ad76e4c279",
+        "fragility_id": "5b47b34f337d4a36290765fb",
+        "demandtype": "0.3 SA",
+        "demandunits": "g",
+        "hazardval": 0.4959018077
+    },
+    {
+        "guid": "0c1c089f-650e-4985-a3ce-8ff6287c7b0f",
+        "fragility_id": "5b47b34f337d4a36290763f5",
+        "demandtype": "0.2 SA",
+        "demandunits": "g",
+        "hazardval": 0.60845004
+    },
+    {
+        "guid": "9b5f1069-34c0-474f-a2a8-58e06244ff74",
+        "fragility_id": "5b47b34f337d4a36290755c2",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2657763712
+    },
+    {
+        "guid": "f6c6f3c7-198f-4e9e-a085-19ecd191b5dc",
+        "fragility_id": "5b47b350337d4a3629076bee",
+        "demandtype": "1.0 SA",
+        "demandunits": "g",
+        "hazardval": 0.2523511966
+    },
+    {
+        "guid": "e3a1d983-a809-4697-a766-91b1c2d88c4b",
+        "fragility_id": "5b47b350337d4a36290769d2",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.3450862243
+    },
+    {
+        "guid": "c6bc93cd-5fb8-482d-a556-89ad4a6779d9",
+        "fragility_id": "5b47b34f337d4a36290755c2",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2869283313
+    },
+    {
+        "guid": "f1ea81ca-4101-4e7a-afc8-990f1aea0100",
+        "fragility_id": "5b47b350337d4a36290769c7",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2869283313
+    },
+    {
+        "guid": "3ef119b1-6432-4875-aa26-9dbf571388f1",
+        "fragility_id": "5b47b34e337d4a362907541f",
+        "demandtype": "PGA",
+        "demandunits": "g",
+        "hazardval": 0.2876411646
+    }
+]
