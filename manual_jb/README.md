@@ -25,15 +25,15 @@ folder (called `incore_docs` here) and activate it:
     conda install -c conda-forge jupyter-book
     ``` 
 
-4. From the terminal at the project folder (**incore-docs/**) run: 
+4. From the terminal at the project folder (**incore-docs/manual_jb**) run: 
     ```
-    jupyter-book build manual_jb
+    jupyter-book build content
     ```
     after that you should be able to run (`clean` deletes content of the `build` folder) :
     ```
-    jupyter-book clean manual_jb
+    jupyter-book clean content
     ```
-5. Locate folder with html files (**incore-docs/_build**) and view **index.html** in a browser.
+5. Locate folder with html files (**incore-docs/content/_build**) and view **index.html** in a browser.
 
 
 ## Building and running Jupyter Book in Docker container
