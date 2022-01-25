@@ -1,0 +1,1 @@
+IN-CORE license
