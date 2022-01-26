@@ -1,0 +1,79 @@
+format: jb-book
+root: introduction
+defaults:
+  numbered: false
+chapters:
+# hack, introduction content is the same as index
+#  - file: introduction
+- file: account
+- file: getting_started
+- file: pyincore
+  sections:
+    - file: pyincore/quick_reference
+    - file: pyincore/prerequisites
+    - file: pyincore/install_pyincore
+    - file: pyincore_upgrade
+    - file: pyincore/running
+    - file: analyses
+      sections:
+      - file: analyses/bridge_dmg.md
+      - file: analyses/building_dmg
+      - file: analyses/building_func
+      - file: analyses/building_loss
+      - file: analyses/capital_shocks
+      - file: analyses/cumulative_building_dmg
+      - file: analyses/epf_dmg
+      - file: analyses/housing_household_recovery
+      - file: analyses/housingunitallocation
+      - file: analyses/joplin_cge
+      - file: analyses/joplin_empirical_restoration
+      - file: analyses/mean_dmg
+      - file: analyses/multi_retrofit_optimization
+      - file: analyses/mc_failure_prob
+      - file: analyses/non_structural_building_dmg
+      - file: analyses/pipeline_dmg
+      - file: analyses/pipeline_dmg_w_repair_rate
+      - file: analyses/populationdislocation
+      - file: analyses/portfolio_recovery
+      - file: analyses/residential_building_recovery
+      - file: analyses/road_dmg
+      - file: analyses/seaside_cge
+      - file: analyses/tornadoepn_dmg
+      - file: analyses/transportation_recovery
+      - file: analyses/waterfacility_dmg
+- file: pyincore_viz
+- file: pyincore_data
+- file: incore_lab
+- file: webtools
+- file: tutorials
+  sections:
+    - file: notebooks/create_dataset/create_dataset.ipynb
+    - file: notebooks/create_dfr3_object/create_dfr3_object.ipynb
+    - file: notebooks/create_earthquake/create_earthquake.ipynb
+    - file: notebooks/create_tornado/create_tornado.ipynb
+- file: faq
+- file: workshops
+  sections:
+    - file: workshops/20210526/agenda
+      sections:
+        - file: workshops/20210526/session2/session2-hazard.ipynb
+        - file: workshops/20210526/session2/session2-assignment.ipynb
+        - file: workshops/20210526/session2/session2-assignment-answer.ipynb
+        - file: workshops/20210526/session3/session3-damage-analysis.ipynb
+        - file: workshops/20210526/session3/session3-assignment.ipynb
+        - file: workshops/20210526/session3/session3-assignment-answer.ipynb
+        - file: workshops/20210526/session4/session4-viz.ipynb
+        - file: workshops/20210526/session4/session4-assignment.ipynb
+        - file: workshops/20210526/session4/session4-assignment-answer.ipynb
+- file: notebooks
+  sections:
+    - file: notebooks/Galveston_testbed/Galveston_testbed.ipynb
+    - file: notebooks/Joplin_testbed/Joplin_testbed.ipynb
+    - file: notebooks/Lumberton_testbed/Lumberton_testbed.ipynb
+    - file: notebooks/Seaside_testbed/Seaside_testbed.ipynb
+    - file: notebooks_other
+- file: refs
+- file: links
+- file: contact
+- file: acknowledgement
+- file: termsofservice
