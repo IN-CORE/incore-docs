@@ -13,6 +13,7 @@ The output of this analysis is a CSV file with structural losses based on damage
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
+`component_type`| `str` | Component type | Type of building component. This variable defines the structural and non-structural components of an inventory item (building) and the choice of corresponding occupancy multipliers. Values of the string are<br /> STR: structural,<br /> DS: drift-sensitive nonstructural,<br />AS: acceleration-sensitive nonstructural,<br /> CONTENT: contents,<br />default is STR.
 `inflation_factor`| `float` | Inflation factor | A factor to adjust the appraisal values of buildings. <br>Default is *0.0*.
 
 **Input datasets**
@@ -20,7 +21,8 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building inventory dataset.
-`building_mean_dmg` <sup>*</sup> | `ergo:meanDamage`<br>`ergo:buildingDamage` | Building mean damage | Building mean damage results CSV file.
+`building_mean_dmg` <sup>*</sup> | `ergo:meanDamage`<br>`ergo:buildingDamage` | Building mean damage | A CSV file with building mean damage results for either Structural, Drift-Sensitive Nonstructural, Acceleration-Sensitive Nonstructural or Contents Damage component.
+`occupancy_multiplier` | `incore:buildingOccupancyMultiplier` | Occupancy multiplier | Building occupancy damage multipliers. These multipliers account for the value associated with different types of components (structural, acceleration-sensitive nonstructural, drift-sensitive nonstructural, contents).
 
 **Output datasets**
 
