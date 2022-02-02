@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added 
 - Multiple dataset visualization for vector based dataset. [#54](https://github.com/IN-CORE/incore-docs/issues/54).
 
+### Changed
+- DFR3 visualization in pyincore-viz-example updated based on new dfr3 visualization. [#60](https://github.com/IN-CORE/incore-docs/issues/60).
+
 ## [2.8.0] - 2021-12-15
 
 ### Added
