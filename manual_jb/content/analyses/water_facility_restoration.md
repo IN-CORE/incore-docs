@@ -32,6 +32,7 @@ key name | type | parent key | name | description
 --- | --- | --- | --- | ---
 `time_results` <sup>*</sup> | `incore:waterFacilityRestorationTime` | `water_facilities` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
 `pf_results` <sup>*</sup> | `incore:waterFacilityRestorationFunc` | `water_facilities` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state
+
 <small>(* required)</small>
 
 **Execution**
