@@ -23,8 +23,8 @@
 ## Sessions
 
 1. Overview of IN-CORE & User Workshop Objectives
-    * Introduction ([pdf](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/workshop_2021-05-26/introduction.pdf))
-    * Platform introduction ([pdf](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/workshop_2021-05-26/intro_platform.pdf))
+    * Introduction ([pdf](https://github.com/IN-CORE/incore-workshop/user-workshop-2021-05-26/session1/introduction.pdf))
+    * Platform introduction ([pdf](https://github.com/IN-CORE/incore-workshop/user-workshop-2021-05-26/session1/intro_platform.pdf))
 2. Hazard (Earthquake, Tornado)
     * [Session 2 hazard](session2/session2-hazard.ipynb)
     * [Session 2 assignment](session2/session2-assignment.ipynb)
@@ -37,9 +37,9 @@
     * [Session 4 hazard](session4/session4-viz.ipynb)
     * [Session 4 assignment](session4/session4-assignment.ipynb)
     * [Session 4 assignment answers](session4/session4-assignment-answer.ipynb)
-5. Use Case -How to do research with IN-CORE
+5. Use Case - How to do research with IN-CORE
     * Yousef Darestani Yousef Darestani *Galveston Island Socio-Physical Damage Analysis* (presentation starts at 3:33:45 of [Recording_1948x1096.mp4](http://resilience.colostate.edu/files/IN-CORE/GMT20210526-170314_Recording_1948x1096.mp4)
-    * Dylan Sanderson *A Spatially Explicit Decision Support Framework for Parcel- and Community-Level Resilience Assessment using Bayesian Networks* ([pdf](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/workshop_2021-05-26/20210526_Sanderson_shareable.pdf))
+    * Dylan Sanderson *A Spatially Explicit Decision Support Framework for Parcel- and Community-Level Resilience Assessment using Bayesian Networks* ([pdf](https://github.com/IN-CORE/incore-workshop/user-workshop-2021-05-26/session5/20210526_Sanderson_shareable.pdf))
 
 Download the full directory of the files above:
 
