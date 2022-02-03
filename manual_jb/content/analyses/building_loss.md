@@ -10,6 +10,11 @@ Acceleration-Sensitive Nonstructural or Contents Damage component.
 
 The output of this analysis is a CSV file with structural losses based on damage.
 
+**Contributors**
+
+- Science: Ported from Ergo/MAEviz implementation
+- Implementation: Michal Ondrejcek, Gowtham Naraharisetty, Chris Navarro and NCSA IN-CORE Dev Team
+
 **Input parameters**
 
 key name | type | name | description
