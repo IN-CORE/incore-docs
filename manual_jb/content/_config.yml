@@ -3,6 +3,7 @@ project: "IN-CORE Manual"
 author: IN-CORE Community
 copyright: "2022"  # Copyright year to be placed in the footer
 logo: images/resilience-logo.png
+version: "3.0.0"  # Version is not part of JB config, we use it for autobuild of incore-docs
 exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints"]
 
 repository:

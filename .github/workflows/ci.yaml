@@ -40,7 +40,7 @@ jobs:
         echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
 
         if [ "$BRANCH" == "master" ]; then
-          VERSION=$(cat manual/source/conf.py | grep "release" | head -1 | awk -F= "{ print $2 }" | sed "s/[release =,',]//g")
+          VERSION=$(cat manual_jb/content/_config.yml | grep "version" | head -1 | awk -F= "{print $2 }" | sed "s/[[:alpha:]|,|-|\"|:|#|[:space:]]//g" | sed "s/-//g")
           VERSIONS="latest"
           OLDVERSION=""
           TMPVERSION=$VERSION
@@ -82,7 +82,7 @@ jobs:
       with:
         name: incore/doc/incore
         no_push: true
-        workdir: manual
+        workdir: manual_jb
     # this will publish to NCSA image incore/doc/incore
     - name: Publish doc image to NCSA Hub
       #if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
@@ -94,7 +94,7 @@ jobs:
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
         tags: "${{ env.DOC_TAGS }}"
-        workdir: manual
+        workdir: manual_jb
     # build image incore/doc/api
     - name: Build swagger api image
       uses: elgohr/Publish-Docker-Github-Action@3.04
