@@ -82,7 +82,7 @@ jobs:
       with:
         name: incore/doc/incore
         no_push: true
-        workdir: manual
+        workdir: manual_jb
     # this will publish to NCSA image incore/doc/incore
     - name: Publish doc image to NCSA Hub
       #if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
@@ -94,7 +94,7 @@ jobs:
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
         tags: "${{ env.DOC_TAGS }}"
-        workdir: manual
+        workdir: manual_jb
     # build image incore/doc/api
     - name: Build swagger api image
       uses: elgohr/Publish-Docker-Github-Action@3.04
