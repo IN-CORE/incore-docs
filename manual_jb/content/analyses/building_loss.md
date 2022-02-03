@@ -4,7 +4,9 @@
 
 This analysis calculates the building loss based on building appraisal value, mean damage, 
 and an inflation multiplier. A user must supply the inflation rate (as a percentage) 
-between building appraisal year and year of interest (current, date of hazard, etc.)
+between building appraisal year and year of interest (current, date of hazard, etc.) and optional Occupancy multiplier.
+The analysis can be used for with building mean damage results for either Structural, Drift-Sensitive Nonstructural, 
+Acceleration-Sensitive Nonstructural or Contents Damage component.
 
 The output of this analysis is a CSV file with structural losses based on damage.
 
@@ -13,7 +15,6 @@ The output of this analysis is a CSV file with structural losses based on damage
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`component_type`| `str` | Component type | Type of building component. This variable defines the structural and non-structural components of an inventory item (building) and the choice of corresponding occupancy multipliers. Values of the string are<br /> STR: structural,<br /> DS: drift-sensitive nonstructural,<br />AS: acceleration-sensitive nonstructural,<br /> CONTENT: contents,<br />default is STR.
 `inflation_factor`| `float` | Inflation factor | A factor to adjust the appraisal values of buildings. <br>Default is *0.0*.
 
 **Input datasets**
@@ -28,7 +29,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:buildingEconomicLoss` | Results | A CSV file with building economy losses <br>(format: CSV).
+`result` <sup>*</sup> | `ergo:buildingEconomicLoss` | Results | A CSV file with building economy losses.
 
 <small>(* required)</small>
 
@@ -43,6 +44,7 @@ code snippet:
     # Load input dataset
     bldg_econ_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
     bldg_econ_dmg.load_remote_input_dataset("building_mean_dmg", bldg_dmg_id)
+    bldg_econ_dmg.load_remote_input_dataset("occupancy_multiplier", bldg_occupancy_mult_id)
 
     # Specify the result name
     result_name = "seaside_bldg_econ_loss"
