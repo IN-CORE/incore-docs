@@ -17,6 +17,7 @@
 15. [Nonstructural building damage](analyses/non_structural_building_dmg)
 16. [Pipeline damage](analyses/pipeline_dmg)
 17. [Pipeline damage with repair rate](analyses/pipeline_dmg_w_repair_rate)
+17. [Pipeline restoration](analyses/pipeline_restoration)
 18. [Population dislocation](analyses/populationdislocation)
 19. [Portfolio recovery](analyses/portfolio_recovery)
 20. [Residential building recovery](analyses/residential_building_recovery)
