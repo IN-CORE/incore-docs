@@ -40,7 +40,7 @@ jobs:
         echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
 
         if [ "$BRANCH" == "master" ]; then
-          VERSION=$(cat manual/source/conf.py | grep "release" | head -1 | awk -F= "{ print $2 }" | sed "s/[release =,',]//g")
+          VERSION=$(cat manual_jb/content/_config.yml | grep "version" | head -1 | awk -F= "{print $2 }" | sed "s/[version: ,',]//g")
           VERSIONS="latest"
           OLDVERSION=""
           TMPVERSION=$VERSION
