@@ -3,7 +3,7 @@
 **Description**
 
 This analysis computes the repair time, and the percentage of functionality change with time for water facility 
-restoration based on a particular hazard. Currently supported hazard is: **earthquake**.
+restoration based on a particular hazard. Current supported hazards are: **earthquake** and **tsunami**.
 
 The restoration curves are obtained based on the hazard type and class of the water facility, e.g. Treatment 
 plant, pumping plant, water storage tank, and etc. Based on the restoration curve applicable, we can obtain the 
