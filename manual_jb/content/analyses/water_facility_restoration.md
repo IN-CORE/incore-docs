@@ -3,7 +3,7 @@
 **Description**
 
 This analysis computes the repair time, and the percentage of functionality change with time for water facility 
-restoration based the mapped restoration curves.
+restoration based the mapped restoration curves. 
 
 The restoration curves are obtained based on the hazard type and class of the water facility, e.g. Treatment 
 plant, pumping plant, water storage tank, and etc. Based on the restoration curve applicable, we can obtain the 
@@ -18,7 +18,7 @@ key name | type | name | description
 `restoration_key` | `str` | Restoration key | Restoration key used in mapping dataset. Default to "Restoration ID Code"
 `end_time` | `float` | End time | End repair time in days. Default to 365 days
 `time_interval` | `float` | Time interval | Incremental interval for time in days. Default to 1
-`pf_interval` | `float` | Percentage of functionality interval | Incremental interval for percentage of functionality. Default to 0.1
+`pf_interval` | `float` | Percentage of functionality interval | Incremental interval for percentage of functionality. Default to 0.05
 
 **Input Datasets**
 
