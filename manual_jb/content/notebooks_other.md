@@ -11,6 +11,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/capital_shocks.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb) <br />
+[epf_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/power_facility_restoration.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_recovery.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb) <br />
 [HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)  <br />
@@ -25,6 +26,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_restoration.ipynb) <br />
 [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb) <br />
 [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb) <br />
+[power_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/power_facility_restoration.ipynb) </br>
 [residential_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/residential_building_recovery.ipynb) <br />
 [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/road_dmg.ipynb) <br />
 [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/seaside_cge.ipynb) <br />
