@@ -3,7 +3,7 @@
 1. [Bridge damage](analyses/bridge_dmg.md)
 2. [Building damage](analyses/building_dmg)
 3. [Building functionality](analyses/building_func)
-4. [Building structural loss](analyses/building_loss)
+4. [Building economic loss](analyses/building_loss)
 5. [Capital shocks](analyses/capital_shocks)
 6. [Cumulative building damage](analyses/cumulative_building_dmg)
 7. [Electric power facility damage](analyses/epf_dmg)
