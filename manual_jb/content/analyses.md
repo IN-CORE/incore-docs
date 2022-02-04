@@ -25,3 +25,4 @@
 23. [Tornado electric power network (EPN) damage](analyses/tornadoepn_dmg)
 24. [Transportation recovery](analyses/transportation_recovery)
 25. [Water facility damage](analyses/waterfacility_dmg)
+26. [Water facility restoration](analyses/water_facility_restoration)
