@@ -43,4 +43,4 @@
 
 Download the full directory of the files above:
 
-[workshop_2021-05-26.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/workshop_2021-05-26/workshop_2021-05-26.zip)
+[workshop_2021-05-26.zip](https://github.com/IN-CORE/incore-docs/blob/master/workshops/20210526/workshop_2021-05-26.zip)

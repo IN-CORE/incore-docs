@@ -9,10 +9,10 @@
 
 Download the full directory of the Notebooks above:
 
-1. [Galveston_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip>)
-2. [Joplin_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip>)
+1. [Galveston_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip)
+2. [Joplin_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip)
 3. [Lumberton_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Lumberton_testbed.zip)
-4. [Seaside_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip>)
+4. [Seaside_testbed.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip)
 
 ## Other notebooks
 

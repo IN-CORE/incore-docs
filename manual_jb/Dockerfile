@@ -12,7 +12,6 @@ RUN python3 -m pip install -r requirements.txt
 
 COPY content/ /src/content/
 RUN jupyter-book build content/
-#RUN jupyter-book -M html "source" "build"
 
 # ----------------------------------------------------------------------
 # Building actual container

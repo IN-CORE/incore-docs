@@ -23,8 +23,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
-`pipeline_damage` <sup>*</sup> | `ergo:pipelineDamageVer2` | Pipeline damage with repair rates dataset | A pipeline damage with repair rates dataset.
+`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`<br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
+`pipeline_damage` <sup>*</sup> | `ergo:pipelineDamageVer2`<br>`ergo:pipelineDamageVer3` | Pipeline damage with repair rates dataset | A pipeline damage with repair rates dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**

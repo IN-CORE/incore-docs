@@ -3,8 +3,6 @@ root: introduction
 defaults:
   numbered: false
 chapters:
-# hack, introduction content is the same as index
-#  - file: introduction
 - file: account
 - file: getting_started
 - file: pyincore
@@ -16,7 +14,7 @@ chapters:
     - file: pyincore/running
     - file: analyses
       sections:
-      - file: analyses/bridge_dmg.md
+      - file: analyses/bridge_dmg
       - file: analyses/building_dmg
       - file: analyses/building_func
       - file: analyses/building_loss
