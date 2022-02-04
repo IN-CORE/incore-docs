@@ -7,7 +7,7 @@
 5. [Capital shocks](analyses/capital_shocks)
 6. [Cumulative building damage](analyses/cumulative_building_dmg)
 7. [Electric power facility damage](analyses/epf_dmg)
-8. [Electric power facility restoration](analyses/electric_power_facility_restoration)
+8. [Electric power facility restoration](analyses/epf_restoration)
 9. [Household-level housing sequential recovery](analyses/housing_household_recovery)
 10. [Housing unit allocation](analyses/housingunitallocation)
 11. [Joplin Computable General Equilibrium (CGE)](analyses/joplin_cge)

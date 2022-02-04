@@ -23,7 +23,7 @@ chapters:
       - file: analyses/capital_shocks
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
-      - file: analyses/electric_power_facility_restoration
+      - file: analyses/epf_restoration
       - file: analyses/housing_household_recovery
       - file: analyses/housingunitallocation
       - file: analyses/joplin_cge
