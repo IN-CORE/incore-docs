@@ -13,7 +13,6 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_recovery.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb) <br />
-[HUA_Galveston_2020-12-04.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/HUA_Galveston_2020-12-04.ipynb)  <br />
 [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb) <br />
 [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
 [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb) <br />
