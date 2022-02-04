@@ -1,4 +1,4 @@
-# Building structural loss
+# Building Economic Loss
 
 **Description**
 
