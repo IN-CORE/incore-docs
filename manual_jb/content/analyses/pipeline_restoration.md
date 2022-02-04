@@ -6,7 +6,7 @@ with the output of [Pipeline damage with repair rate analysis](pipeline_dmg_w_re
 The restoration curves are obtained based on the hazard type and diameter-specific class of the pipeline. 
 Based on the restoration curve applicable, we can obtain the time it takes to repair each of the pipelines. It considers
 the leak rate, break rate, pipe length and the number of available workers to calculate the repair times. One of the inputs of
-this analysis is the output of the [Pipeline damage with repair rate analysis](pipeline_dmg_w_repair_rate.md)
+this analysis is the output of the [Pipeline damage with repair rate analysis](pipeline_dmg_w_repair_rate.md).
 
 The output of this analysis is a CSV file with expected time taken to repair for each pipeline.
     
@@ -17,7 +17,7 @@ key name | type | name | description
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `num_available_workers` <sup>*</sup> | `str` | Number of available workers | Number of available workers to work on the repairs.
 `restoration_key` <sup>*</sup> | `str` | Restoration Key | Restoration key to use in mapping dataset.
-`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations.<br>Default *1*.
+`num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations.<br>Default 1.
 
 **Input Datasets**
 

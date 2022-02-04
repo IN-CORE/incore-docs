@@ -33,6 +33,7 @@ chapters:
       - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
+      - file: analyses/pipeline_restoration
       - file: analyses/populationdislocation
       - file: analyses/portfolio_recovery
       - file: analyses/residential_building_recovery
