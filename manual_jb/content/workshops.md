@@ -18,8 +18,8 @@ Download the full directory of the files:
 [Agenda](workshops/20220131/agenda.md)
 * Session 1 Overview of IN-CORE & User Workshop Objectives
 * Session 2 **[Hazard](workshops/20220131/session2/session2-hazard.ipynb)**
-* Session 3 **[Damage Analysis](workshops/20220131/session3/session3-building_damage_analysis.ipynb)**
-* Session 4 **[Visualization](workshops/20220131/session4/session4-damage-analyses-lifelines.ipynb)**
+* Session 3 **[Building Damage Analysis](workshops/20220131/session3/session3-building_damage_analysis.ipynb)**
+* Session 4 **[Damage Analysis on Lifelines](workshops/20220131/session4/session4-damage-analyses-lifelines.ipynb)**
 
 Download the full directory of the files:
 
