@@ -29,7 +29,8 @@ key name | type | name | description
 --- | --- | --- | ---
 `building_damage` <sup>*</sup> | `ergo:buildingDamageVer6` | Building damage |  A csv file with structural building damage.
 `population_dislocation` <sup>*</sup> | `incore:popDislocation` | Population Dislocation | A csv file with Population Dislocation aggregated to the block group level.
-`census_appraisal_data` | `incore:censusAppraisalData` | Census tax data | 2010 Decennial Census and Galveston County Appraisal District (GCAD) tax assessor data.
+`census_block_groups_data` <sup>*</sup> | `incore:censusBlockGroupsData` | Census block groups data | Census ACS data, 2010 5yr data for block groups available at IPUMS NHGIS web site.
+`census_appraisal_data` <sup>*</sup> | `incore:censusAppraisalData` | Census tax data | Census data, 2010 Decennial Census District (GCAD) Census data.
 
 **Output datasets**
 
@@ -48,8 +49,8 @@ code snippet:
     housing_rec = HousingRecovery(client)
     
     # Load input datasets
-    housing_rec.load_remote_input_dataset("building_damage", bldg_damage_id)
     housing_rec.load_remote_input_dataset("population_dislocation", pop_disl_id)
+    housing_rec.load_remote_input_dataset("census_appraisal_data", census_appr_id)
     housing_rec.load_remote_input_dataset("census_appraisal_data", census_appr_id)
 
     # Specify the result name
