@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
       - develop
       - 'release/*'
 
@@ -39,7 +39,7 @@ jobs:
         fi
         echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
 
-        if [ "$BRANCH" == "master" ]; then
+        if [ "$BRANCH" == "main" ]; then
           VERSION=$(cat manual_jb/content/_config.yml | grep "version" | head -1 | awk -F= "{print $2 }" | sed "s/[[:alpha:]|,|-|\"|:|#|[:space:]]//g" | sed "s/-//g")
           VERSIONS="latest"
           OLDVERSION=""
