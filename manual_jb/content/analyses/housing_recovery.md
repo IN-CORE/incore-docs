@@ -28,7 +28,6 @@ The CSV outputs of the building values for the 6 years following the disaster ev
 key name | type | name | description
 --- | --- | --- | ---
 `base_year` | `int` | Base year | Base year is used to calculate improvement age. It needs to be set to the tax assessment year representing pre-disaster building values. For example for GCAD data which represents improvement valuation before Hurricane Ike impacts. Deafult 2008.
-`fips` | `str` | County FIPS code | A county FIPS Code is a five-digit number used to designate a specific county.
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 
 **Input datasets**
@@ -38,7 +37,7 @@ key name | type | name | description
 `population_dislocation` <sup>*</sup> | `incore:popDislocation` | Population Dislocation | A csv file with Population Dislocation aggregated to the block group level.
 `building_area` <sup>*</sup> | `incore:buildingInventoryArea` | Building inventory area |  A csv file with Building square footage and damage. Damage is the actual building value loss in percentage terms observed through the County Appraisal District (GCAD) data. If damage column (dmg) is not available value loss is calculated from Population dislocation's rplosses and damage state (DS) values.
 `census_block_groups_data` <sup>*</sup> | `incore:censusBlockGroupsData` | Census block groups data | Census ACS data, 2010 5yr data for block groups available at IPUMS NHGIS web site.
-`census_appraisal_data` | `incore:censusAppraisalData` | Census appraisal data | Census data, 2010 Decennial Census District (GCAD) Census data. The json file is only used if FIPS parameter is not set, and must contain categories B25002_001E, B25002_001M, B25004_006E and B25004_006M.
+`census_appraisal_data` | `incore:censusAppraisalData` | Census appraisal data | Census data, 2010 Decennial Census District (GCAD) Census data. The json file must contain categories B25002_001E, B25002_001M, B25004_006E and B25004_006M.
 
 **Output datasets**
 
@@ -62,12 +61,10 @@ code snippet:
     housing_rec.load_remote_input_dataset("census_block_groups_data", census_bg_id)
 
     # Countty FIPS code
-    fips = "48167"
     # Specify the result name
     result_name = "building_values"
     
     # Set analysis parameters
-    housing_rec.set_parameter("fips", fips)
     housing_rec.set_parameter("result_name", result_name)
 
     # Run Analysis
