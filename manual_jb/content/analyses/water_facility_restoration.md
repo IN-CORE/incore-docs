@@ -25,13 +25,15 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`water_facilities` <sup>*</sup> | `ergo:waterFacilityTopo` | Water Facilities | Water Facilities.
 
 **Output datasets** 
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
 `time_results` <sup>*</sup> | `incore:waterFacilityRestorationTime` | `water_facilities` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
-`pf_results` <sup>*</sup> | `incore:waterFacilityRestorationFunc` | `water_facilities` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state
+`pf_results` <sup>*</sup> | `incore:waterFacilityRestorationFunc` | `water_facilities` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state.
+`inventory_restoration_map` <sup>*</sup> | `incore:inventoryRestorationMap` | `water_facilities` | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
 
 <small>(* required)</small>
 
@@ -47,6 +49,7 @@ code snippet:
     # Load restoration mapping
     restorationsvc = RestorationService(client)
     mapping_set = MappingSet(restorationsvc.get_mapping("61f075ee903e515036cee0a5"))  # new format of mapping
+    wf_rest.load_remote_input_dataset("water_facilities", "5a284f2ac7d30d13bc081e52")  # water facility
     wf_rest.set_input_dataset('dfr3_mapping_set', mapping_set)
     wf_rest.set_parameter("result_name", "wf_restoration")
     wf_rest.set_parameter("restoration_key", "Restoration ID Code")
