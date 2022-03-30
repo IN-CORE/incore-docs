@@ -23,6 +23,7 @@ chapters:
       - file: analyses/epf_dmg
       - file: analyses/epf_restoration
       - file: analyses/housing_household_recovery
+      - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
       - file: analyses/joplin_cge
       - file: analyses/joplin_empirical_restoration
@@ -38,6 +39,7 @@ chapters:
       - file: analyses/residential_building_recovery
       - file: analyses/road_dmg
       - file: analyses/seaside_cge
+      - file: analyses/social_vulnerability
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
