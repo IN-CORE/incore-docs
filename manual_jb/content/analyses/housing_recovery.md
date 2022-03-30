@@ -57,7 +57,7 @@ code snippet:
     
     # Load input datasets
     housing_rec.load_remote_input_dataset("population_dislocation", pop_disl_id)
-    housing_rec.load_remote_input_dataset("building_area", bldg_sqft_id)
+    housing_rec.load_remote_input_dataset("building_area", bldg_area_id)
     housing_rec.load_remote_input_dataset("census_block_groups_data", census_bg_id)
 
     # Countty FIPS code
