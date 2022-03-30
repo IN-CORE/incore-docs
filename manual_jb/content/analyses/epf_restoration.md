@@ -25,6 +25,7 @@ key name | type | name | description
 key name | type | name | description
 --- | --- | --- | ---
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`epfs` <sup>*</sup> | `incore:epf` <br> `ergo:epf` | Electric Power Facilities | Electric Power Facilities.
 
 **Output datasets** 
 
@@ -32,6 +33,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `pf_results` <sup>*</sup> | `incore:epfRestorationFunc` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state
 `time_results` <sup>*</sup> | `incore:epfRestorationTime` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
+`inventory_restoration_map` <sup>*</sup> | `incore:inventoryRestorationMap` | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
 
 <small>(* required)</small>
 
@@ -47,6 +49,7 @@ code snippet:
     # Load restoration mapping
     restorationsvc = RestorationService(client)
     mapping_set = MappingSet(restorationsvc.get_mapping("61f302e6e3a03e465500b3eb"))  # new format of mapping
+    epf_rest.load_remote_input_dataset('epfs', '5d92355bb9219c06ae7e386a')
     epf_rest.set_input_dataset('dfr3_mapping_set', mapping_set)
     epf_rest.set_parameter("result_name", "epf_restoration.csv")
     epf_rest.set_parameter("restoration_key", "Restoration ID Code")
