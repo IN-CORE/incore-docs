@@ -37,7 +37,7 @@ key name | type | name | description
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
 `result` <sup>*</sup> | `incore:tornadoEPNDamageVer3` | `epn_network` | Results | A dataset containing results <br>(format: CSV).
-`metadata` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`metadata` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | `epn_network` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
