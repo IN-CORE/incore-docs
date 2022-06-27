@@ -28,7 +28,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`epn_network_dataset` <sup>*</sup> | `incore:epnNodeVer1` | EPN network dataset | A network dataset of the electric power network.
+`epn_network` <sup>*</sup> | `incore:epnNetwork` | EPN network dataset | A network dataset of the electric power network.
 `seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 `tornado` <sup>*</sup>| `incore:tornadoWindfield` | Tornado dataset | A tornado winds dataset.
 
@@ -36,8 +36,8 @@ key name | type | name | description
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:tornadoEPNDamageVer2` | `epn_node` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | `epn_node` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | `incore:tornadoEPNDamageVer3` | `epn_network` | Results | A dataset containing results <br>(format: CSV).
+`metadata` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
