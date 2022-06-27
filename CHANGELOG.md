@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Changed
-- Swagger jsons for services 1.10.0
+- Swagger jsons for services 1.10.0 [#110](https://github.com/IN-CORE/incore-docs/issues/110).
 
 ## [3.1.0] - 2022-03-30
 
