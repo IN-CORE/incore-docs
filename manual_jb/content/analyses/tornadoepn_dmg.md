@@ -2,7 +2,7 @@
 
 **Description**
 
-This analysis computes electric power network (EPN) based on a particular hazard. Currently supported hazard is: **tornado**.
+This analysis computes electric power network (EPN) based on a particular hazard. Currently, supported hazard is: **tornado**.
 
 The process for computing the structural damage is similar to other parts of the built environment. 
 First, fragilities are obtained based on the hazard type and attributes of the network tower and network pole. Based on the fragility, 
@@ -28,8 +28,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`epn_node` <sup>*</sup> | `incore:epnNodeVer1` | EPN node | A dataset with nodes of the electric power network.
-`epn_link` <sup>*</sup> | `incore:epnLinkeVer1` | EPN link | A dataset with links of the electric power network.
+`epn_network_dataset` <sup>*</sup> | `incore:epnNodeVer1` | EPN network dataset | A network dataset of the electric power network.
 `seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 `tornado` <sup>*</sup>| `incore:tornadoWindfield` | Tornado dataset | A tornado winds dataset.
 
@@ -54,12 +53,12 @@ code snippet:
     result_name = "tornado_dmg_result"
 
     # Load datasets
-    ted.load_remote_input_dataset("epn_node", epn_node_id)
-    ted.load_remote_input_dataset("epn_link", epn_link_id)
+    ted.load_remote_input_dataset("epn_network", epn_network_id)
 
     # Set analysis parameters
     ted.set_parameter("result_name", result_name)
     ted.set_parameter('tornado_id', tornado_id)
+    ted.set_parameter('seed', 1001)
 
     ted.run_analysis()
 ```
