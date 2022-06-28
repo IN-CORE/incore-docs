@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - Tornado EPN damage notebook refactored based on new network dataset [#111](https://github.com/IN-CORE/incore-docs/issues/111).
+- Swagger jsons for services 1.10.0 [#110](https://github.com/IN-CORE/incore-docs/issues/110).
+
 
 ## [3.1.0] - 2022-03-30
 
