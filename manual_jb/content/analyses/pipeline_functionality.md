@@ -2,6 +2,11 @@
 
 **Description**
 
+This analysis computes pipeline functionality using repair rate calculations from pipeline damage analysis. 
+The computation operates by computing Monte Carlo samples derived from Poisson sample deviates from the damage analysis as input to Bernoulli experiments, later used to determine average functionality.
+
+The output of this analysis are two CSV files; a failure proability *base_name*_failure_probability.csv
+and *base_name*_failure_state.csv.
     
 **Input Parameters**
 
