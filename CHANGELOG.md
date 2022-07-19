@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Update housing recovery notebook to use csv format of appraisal dataset [#121](https://github.com/IN-CORE/incore-docs/issues/121)
-
+- Modify social vulnerability to query census data from CensusUtil instead of stored datasets [#107](https://github.com/IN-CORE/incore-docs/issues/107)
 
 ## [3.2.0] - 2022-06-29
 
