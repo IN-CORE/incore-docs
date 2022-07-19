@@ -14,6 +14,7 @@ We encourage IN-CORE users to contribute improve the knowledge base. contact us 
 3. [Create Earthquake](notebooks/create_earthquake/create_earthquake.ipynb)
 4. [Create Tornado](notebooks/create_tornado/create_tornado.ipynb)
 5. [Retrofit plan Joplin](notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.ipynb)
+6. [Create network dataset](notebooks/create_network_dataset/create_network_dataset.ipynb)
 
 More tutorials will be added soon.
 
