@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Space Service for creating and accessing spaces",
-    "version": "1.8.0",
+    "version": "1.10.0",
     "title": "Space Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -18,10 +18,13 @@
   "basePath": "/space/api",
   "tags": [
     {
+      "name": "allocations"
+    },
+    {
       "name": "spaces"
     },
     {
-      "name": "status"
+      "name": "usage"
     }
   ],
   "schemes": [
@@ -34,6 +37,121 @@
     "application/json"
   ],
   "paths": {
+    "/allocations": {
+      "get": {
+        "tags": [
+          "allocations"
+        ],
+        "summary": "Gives the status of the service.",
+        "description": "This will provide the status of the service as a JSON.",
+        "operationId": "getStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/allocations/groups/{groupname}": {
+      "get": {
+        "tags": [
+          "allocations"
+        ],
+        "summary": "Gives the allocation status of the given group name.",
+        "description": "This will only work for admin user group.",
+        "operationId": "getAllocationsByGroupname",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-auth-usergroup",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "groupname",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/allocations/users/{username}": {
+      "get": {
+        "tags": [
+          "allocations"
+        ],
+        "summary": "Gives the allocation status of the given username.",
+        "description": "This will only work for admin user group.",
+        "operationId": "getAllocationsByUsername",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-auth-usergroup",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/spaces": {
       "get": {
         "tags": [
@@ -201,53 +319,6 @@
         }
       }
     },
-    "/spaces/{id}/grant": {
-      "post": {
-        "tags": [
-          "spaces"
-        ],
-        "summary": "Grants new privileges to a space",
-        "description": "",
-        "operationId": "grantPrivilegesToSpace",
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "x-auth-userinfo",
-            "in": "header",
-            "description": "User credentials.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Space Id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "grant",
-            "in": "formData",
-            "description": "JSON representing a privilege block",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Space"
-            }
-          }
-        }
-      }
-    },
     "/spaces/{id}/members/{memberId}": {
       "post": {
         "tags": [
@@ -334,18 +405,117 @@
         }
       }
     },
-    "/status": {
-      "get": {
+    "/spaces/{id}/grant": {
+      "post": {
         "tags": [
-          "status"
+          "spaces"
         ],
-        "summary": "Gives the status of the service.",
-        "description": "This will provide the status of the service as a JSON.",
-        "operationId": "getStatus",
+        "summary": "Grants new privileges to a space",
+        "description": "",
+        "operationId": "grantPrivilegesToSpace",
+        "consumes": [
+          "multipart/form-data"
+        ],
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "description": "User credentials.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Space Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "grant",
+            "in": "formData",
+            "description": "JSON representing a privilege block",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Space"
+            }
+          }
+        }
+      }
+    },
+    "/usage": {
+      "get": {
+        "tags": [
+          "usage"
+        ],
+        "summary": "Gives the usage status and can be used as status check as well.",
+        "description": "This will provide the usage of the logged in user.",
+        "operationId": "getUsage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/usage/{username}": {
+      "get": {
+        "tags": [
+          "usage"
+        ],
+        "summary": "Gives the usage status of the given username.",
+        "description": "This will only work for admin user group.",
+        "operationId": "getUsageByUsername",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-userinfo",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-auth-usergroup",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Dataset Id from data service",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "successful operation",
