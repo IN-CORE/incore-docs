@@ -54,6 +54,7 @@ chapters:
     - file: notebooks/create_dfr3_object/create_dfr3_object.ipynb
     - file: notebooks/create_earthquake/create_earthquake.ipynb
     - file: notebooks/create_tornado/create_tornado.ipynb
+    - file: notebooks/create_network_dataset/create_network_dataset.ipynb
 - file: faq
 - file: workshops
   sections:
