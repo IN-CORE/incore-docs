@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+ ### Added
+ - Water facility nework functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
+
+
 ### Changed
 - Update network dataset visualization in pyincore-viz example notebook [#118](https://github.com/IN-CORE/incore-docs/issues/118)
 - Update housing recovery notebook to use csv format of appraisal dataset [#121](https://github.com/IN-CORE/incore-docs/issues/121)
