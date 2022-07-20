@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+ - Electric power network functionality [#138](https://github.com/IN-CORE/incore-docs/issues/138).
 
 ### Changed
 - Update network dataset visualization in pyincore-viz example notebook [#118](https://github.com/IN-CORE/incore-docs/issues/118)
