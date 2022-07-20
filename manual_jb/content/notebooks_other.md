@@ -22,6 +22,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
+[pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_functionality.ipynb) <br />
 [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_restoration.ipynb) <br />
 [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb) <br />
 [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb) <br />
