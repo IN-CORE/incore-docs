@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
  ### Added
- - Water facility nework functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
+ - Water facility network functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
 
 
 ### Changed
