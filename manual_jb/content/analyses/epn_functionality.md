@@ -1,6 +1,29 @@
 # EPN functionality analysis
 
-**Description**
+This analysis computes the functionality of electric power networks.
+
+The computation uses inputs from Monte Carlo failure analysis using electric power facility damage information, as 
+well as the network topology of electric power line to determine the functionality probability and failure states 
+for a corresponding electric power facility network by performing a reachability analysis.
+
+The output of the analysis consists of a CSV with functionality probabilities for water facilities, and a CSV 
+with functionality failure states.
+
+**Contributors**
+
+- Science: Neetesh Sharma, Armin Tabandeh, Paolo Gardoni
+- Implementation: Neetesh Sharma, Armin Tabandeh, Santiago Núñez-Corrales, and NCSA IN-CORE Dev Team
+
+**Related publications**
+
+* Sharma, N., Tabandeh, A., & Gardoni, P. (2019). Regional resilience analysis: A multi-scale approach to model the 
+  recovery of interdependent infrastructure. In P. Gardoni (Ed.), *Handbook of sustainable and resilient 
+  infrastructure* (pp. 521–544). New York, NY: Routledge.
+* Sharma, N., Tabandeh, A., & Gardoni, P. (2020). Regional resilience analysis: A multi-scale approach to optimize 
+  the resilience of interdependent infrastructure. *Computer‐Aided Civil and Infrastructure Engineering*, **35(12)**, 
+  1315-1330.
+* harma, N., & Gardoni, P. (2022). Mathematical modeling of interdependent infrastructure: An object-oriented 
+  approach for generalized network-system analysis. *Reliability Engineering & System Safety*, **217**, 108042.
     
 **Input Parameters**
 
