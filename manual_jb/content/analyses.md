@@ -30,4 +30,5 @@
 28. [Tornado electric power network (EPN) damage](analyses/tornadoepn_dmg)
 29. [Transportation recovery](analyses/transportation_recovery)
 30. [Water facility damage](analyses/waterfacility_dmg)
-31. [Water facility restoration](analyses/water_facility_restoration)
+31. [Water facility network functionality](analyses/wfn_functionality)
+32. [Water facility restoration](analyses/water_facility_restoration)

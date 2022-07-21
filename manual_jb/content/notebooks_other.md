@@ -34,6 +34,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_dmg.ipynb) <br />
+[wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb) <br />
 [water_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_restoration.ipynb)
 
 ## Testbed specific
