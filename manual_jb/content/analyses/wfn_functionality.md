@@ -75,4 +75,4 @@ code snippet:
     wfn_func.run_analysis()
 ```
 
-full analysis: [wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/wfn_functionality.ipynb)
+full analysis: [wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb)
