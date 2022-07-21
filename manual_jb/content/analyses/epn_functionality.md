@@ -65,4 +65,4 @@ code snippet:
     epn_func.run_analysis()
 ```
 
-full analysis: [epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epn_functionality.ipynb)
+full analysis: [epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epn_functionality.ipynb)
