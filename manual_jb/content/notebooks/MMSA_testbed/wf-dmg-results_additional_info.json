@@ -1,0 +1,819 @@
+[
+    {
+        "guid": "fa8f588c-1180-4033-ba6d-28660dcb7112",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2559825015
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            18.1951350106
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "7a78c727-bc47-4010-bed6-7775660dc6f6",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2548809229
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            17.9863118411
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "cced02f4-a461-44e5-9a31-3a6f9ee26738",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2746493785
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            21.7337628085
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "49c79885-9252-4618-9d91-6d0c1195e93e",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2904291706
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            24.7250939673
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "a699e027-f484-4d2b-960d-c1c2aa500724",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2999528596
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            26.5304731174
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "cc25194d-fac5-42bb-af5e-d454b8a77ce8",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4107334094
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            75.3144064935
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "f950b1cd-6be4-44c4-990f-d4356da5553c",
+        "fragility_id": "5b47c383337d4a387669d57d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.316566064
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57c",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            29.6797919335
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "e110e346-d795-43ed-9e0b-4f7356e6c93c",
+        "fragility_id": "5b47c383337d4a387669d58d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3337361919
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57b",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            32.9346851667
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "a86f719d-eeb2-4f6d-8337-3cb28cb0fd26",
+        "fragility_id": "5b47c383337d4a387669d58d",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3698478854
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d57b",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            126.37814
+        ],
+        "liqprobability": 0.25
+    },
+    {
+        "guid": "a68bd8f3-90ad-495f-9ad4-025d33a439d2",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2558871694
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            18.1770631799
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "4a1ceec5-2c8f-44b1-8503-4c4a8963f560",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3408495395
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            34.2831426291
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "5790e590-c4b6-4edb-a2ea-85a7536b2695",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3153663178
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            29.4523593967
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "158f57e0-fb99-4560-9f59-a0fa33052db3",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4529033985
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            106.4023677928
+        ],
+        "liqprobability": 0.2
+    },
+    {
+        "guid": "57fad280-fa2e-45fc-aeba-24b6052b45e1",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4642037168
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            126.37814
+        ],
+        "liqprobability": 0.25
+    },
+    {
+        "guid": "32412260-0f20-4299-8635-452702a9f816",
+        "fragility_id": "5b47c383337d4a387669d56c",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4273380354
+        ],
+        "liq_fragility_id": "5b47c383337d4a387669d56f",
+        "liqdemandtypes": [
+            "PGD"
+        ],
+        "liqdemandunits": [
+            "in"
+        ],
+        "liqhazval": [
+            126.37814
+        ],
+        "liqprobability": 0.25
+    },
+    {
+        "guid": "a007a9b0-c2ec-4bdc-beec-8c92e3b515dd",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "5a968e23-b0d3-4677-abd1-5767f3cad8ee",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "22206135-813f-4455-9f42-7cff7b21688c",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "e1bce78d-00a1-4605-95f3-3776ff907f73",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "ddadb420-6057-49f6-8d29-3467906a1452",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "509938d8-8dd1-4dde-8b60-3dc61043cf86",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "b3466a37-6286-4d07-b262-22d4428ccfb7",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "87e3d772-2826-49fd-ad8a-4db8ed9180ea",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "704f279b-3e99-4a8a-8c5c-64a2afc2cd73",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "9fd28492-e2bc-42d1-b7f3-5f47a475476d",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "a6ec3452-e2ad-422f-bc20-7304522fc001",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "cc2b2a0b-c6a1-4599-af1d-4816693d5327",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "da69af6f-a0f3-4ef6-af09-fef2282def95",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "81cfc0f9-89ad-48b7-ab02-781145458d22",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "f663522a-94e1-4c4d-ab60-f707398e6ec6",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "45f9a12b-556e-4b39-840e-4c1457788578",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "6cc6d1cb-7b10-420b-8e8d-35023d66e23e",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "bdce49b4-001d-418f-ba07-c855583ffec2",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "697dc510-5a8d-4ce5-aa03-d7c1b6247218",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "f76b16bf-ebaf-49fd-8205-8aa96c88c90d",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "f2c7b048-3d47-4d75-b5c4-e69e23125436",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "e36f8eb7-2ab9-40a7-bc60-f22e3c8c6d50",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "160bc01c-834d-4e26-bc1f-a60fa58b1bcf",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "b63eeee0-60de-4175-bffb-d9405b092342",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "110a378b-cd53-4429-83b2-9221d79340ad",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "da9246d9-1d9d-48bb-9adb-5222ea1a8d66",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "5a52dc74-4a8e-4181-83b7-3e8d9d7fb10a",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "0d5dc267-1f9f-4da0-abda-3785779e7bb2",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "938d7e98-656c-4e54-aded-860bcb3398d9",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "ffc82be0-9efe-4153-be58-92a020c03b2d",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "6e7917b0-4ec4-45b0-ac13-c59f4c277e21",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "60820263-9de6-474d-a2c6-cb33ad5d2efa",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "d28be28f-84b3-4ae9-985b-61423585fd5c",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    },
+    {
+        "guid": "d4599f71-07bd-4989-befb-aaa9c02bdffb",
+        "fragility_id": null,
+        "demandtypes": null,
+        "demandunits": null,
+        "hazardtype": null,
+        "hazardvals": null,
+        "liq_fragility_id": null,
+        "liqdemandtypes": null,
+        "liqdemandunits": null,
+        "liqhazval": null,
+        "liqprobability": null
+    }
+]

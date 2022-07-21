@@ -1,0 +1,828 @@
+[
+    {
+        "guid": "75941d02-93bf-4ef9-87d3-d882384f6c10",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3998787225
+        ]
+    },
+    {
+        "guid": "35909c93-4b29-4616-9cd3-989d8d604481",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3861233335
+        ]
+    },
+    {
+        "guid": "ce7d3164-ffda-4ac0-a9fa-d88c927897cc",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3709511594
+        ]
+    },
+    {
+        "guid": "b2bed3e1-f16c-483a-98e8-79dfd849d187",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3401085238
+        ]
+    },
+    {
+        "guid": "ab011d7c-0e34-4e5d-9734-34f7858d4b68",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.339058691
+        ]
+    },
+    {
+        "guid": "e0ec9dba-3dcb-47ac-be6a-57b900661115",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.338528558
+        ]
+    },
+    {
+        "guid": "94ee012e-876c-4d82-928d-4f02fa09c8c7",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2804796587
+        ]
+    },
+    {
+        "guid": "0b4d9def-545b-4037-a116-fa2eddc89835",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2785679532
+        ]
+    },
+    {
+        "guid": "7b0fba67-1a57-410d-9c68-6d28dc4c059d",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2763188367
+        ]
+    },
+    {
+        "guid": "4e67454b-b5c2-4cad-9ba4-70f2a076e1d0",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2821745885
+        ]
+    },
+    {
+        "guid": "0ad7747c-5c25-41db-8f58-4f384cf927ab",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2819306385
+        ]
+    },
+    {
+        "guid": "60748fbd-67c3-4f8d-beb9-26685a53d3c5",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2817287608
+        ]
+    },
+    {
+        "guid": "489e21bd-fe61-48ac-aec3-e0512f857df0",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2623679325
+        ]
+    },
+    {
+        "guid": "0bb27119-70e6-45a2-9664-64764ff13ce9",
+        "fragility_id": "5b47be62337d4a37b6197a20",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2506375517
+        ]
+    },
+    {
+        "guid": "5f5b4d4e-14c9-4d32-9327-81f1c37f5730",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4301828756
+        ]
+    },
+    {
+        "guid": "802ec43b-a7c0-4725-a434-0f29ef45812f",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3911345201
+        ]
+    },
+    {
+        "guid": "ef1891de-2aec-47bc-bc11-34f140f34d84",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3881269844
+        ]
+    },
+    {
+        "guid": "ecc76a15-9349-439b-a6ca-38701202b205",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3821417145
+        ]
+    },
+    {
+        "guid": "a0afa974-bb37-47a8-a25c-da34c03037ff",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3808395736
+        ]
+    },
+    {
+        "guid": "122d1115-2290-4d78-b35b-4f2fb5d5be92",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3659974988
+        ]
+    },
+    {
+        "guid": "b68e50d7-5875-45ab-bcbd-b80d6a791604",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3531894998
+        ]
+    },
+    {
+        "guid": "f0a7514c-ffcc-454f-bcd2-204383440128",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3435529531
+        ]
+    },
+    {
+        "guid": "748dc9d1-a442-440e-92d6-1b09b7a71f7c",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3240904698
+        ]
+    },
+    {
+        "guid": "6bd0f15f-152c-4a09-bc59-59a790ee6111",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3163562395
+        ]
+    },
+    {
+        "guid": "a109761e-d271-4f3c-b265-d093a6a7d380",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3072644229
+        ]
+    },
+    {
+        "guid": "eaecb77c-ffde-4e71-b05b-7659ecd2f99c",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3032341484
+        ]
+    },
+    {
+        "guid": "cc7e6e38-0ea4-4714-a76b-c81b8964f0ee",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3019487748
+        ]
+    },
+    {
+        "guid": "a8097d26-b810-494d-b7f9-0f1abf4c7301",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3001604974
+        ]
+    },
+    {
+        "guid": "d9a0b561-6a53-4655-8722-064cd4f6d360",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2954894341
+        ]
+    },
+    {
+        "guid": "bef45cd6-05a9-4e61-b5c1-c9de63323e81",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2870252511
+        ]
+    },
+    {
+        "guid": "3d5472e0-a41b-429d-8686-e93b19c6bc29",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2812718918
+        ]
+    },
+    {
+        "guid": "5b3d717f-01d1-400b-b0fb-f78585cafcc7",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2657272176
+        ]
+    },
+    {
+        "guid": "1cbe5a11-abb8-4ec3-b105-e9cc924a1cc3",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2632301055
+        ]
+    },
+    {
+        "guid": "eff04eaf-61a4-470f-89cd-266e61ab29e0",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2533140629
+        ]
+    },
+    {
+        "guid": "c4405689-1ace-4243-b453-f096ebe93821",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3759825025
+        ]
+    },
+    {
+        "guid": "b5de443b-4820-40fb-bbce-c13b706aaf87",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.354469586
+        ]
+    },
+    {
+        "guid": "4d4b4d68-0cc8-4d6a-bccc-b418d2f990b6",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3333383219
+        ]
+    },
+    {
+        "guid": "d08707c8-ab4e-4fcd-9e1c-d15f054e5ff5",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3295447368
+        ]
+    },
+    {
+        "guid": "cf54c211-c595-4eef-b3f0-cfdd1eeb9b87",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3304585961
+        ]
+    },
+    {
+        "guid": "a1a15d2b-91ee-4b2a-91cb-81c3f8fef67f",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3080905664
+        ]
+    },
+    {
+        "guid": "f7b55acf-a812-4ee6-bf11-b920ec803da0",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3087768993
+        ]
+    },
+    {
+        "guid": "3846247b-aee4-4ccf-bc3c-57f26dd49ff2",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2951580733
+        ]
+    },
+    {
+        "guid": "99e55c7b-9ebc-438d-9542-68c190dbf355",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2825595653
+        ]
+    },
+    {
+        "guid": "2f08558d-045b-4016-9fa4-df49c3ceadde",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2835854462
+        ]
+    },
+    {
+        "guid": "cc480689-ff3a-4919-bb8f-dd805511905f",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.277371007
+        ]
+    },
+    {
+        "guid": "059ef072-0910-4a33-86c6-9221e58e04bf",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2778129815
+        ]
+    },
+    {
+        "guid": "0174d606-3864-4d5d-acbe-4f7f10c36c8e",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2702923084
+        ]
+    },
+    {
+        "guid": "b3c6c503-417a-4d27-8fa0-db7837f7697c",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2712094568
+        ]
+    },
+    {
+        "guid": "2a5eff60-6cf3-4124-97fc-921fb9b73b6c",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2666165348
+        ]
+    },
+    {
+        "guid": "d658bb62-5b1e-4733-a53e-3805d4a2e2f4",
+        "fragility_id": "5b47be62337d4a37b6197a31",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2675297404
+        ]
+    },
+    {
+        "guid": "6a6edd82-02d8-4d5d-9089-9739ab9762ed",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2611874788
+        ]
+    },
+    {
+        "guid": "8f15ac63-3010-47f6-9fe7-0ae8542e81be",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.4601230227
+        ]
+    },
+    {
+        "guid": "2b0db69c-ff61-4769-b102-ecd78a43a1dc",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3841293672
+        ]
+    },
+    {
+        "guid": "da47a424-5851-4091-b853-c8f53aca1e84",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3359801352
+        ]
+    },
+    {
+        "guid": "c1a57527-2610-4b63-9686-fcedf95d7b52",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3282873105
+        ]
+    },
+    {
+        "guid": "1f4f2f5a-33d0-490b-9c05-722e3611c2e6",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.3275329025
+        ]
+    },
+    {
+        "guid": "cffe120d-28aa-40fd-9075-8c94799ccb2a",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2950356185
+        ]
+    },
+    {
+        "guid": "86a1f7fa-f8d8-476f-a1a1-45936e4c275a",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2827311902
+        ]
+    },
+    {
+        "guid": "e8b93894-53d0-4291-a4a1-d0b96f2969ed",
+        "fragility_id": "5b47be62337d4a37b6197a1f",
+        "demandtypes": [
+            "pga"
+        ],
+        "demandunits": [
+            "g"
+        ],
+        "hazardtype": "earthquake",
+        "hazardvals": [
+            0.2708182857
+        ]
+    }
+]
