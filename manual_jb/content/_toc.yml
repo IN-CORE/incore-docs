@@ -45,6 +45,7 @@ chapters:
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
+      - file: analyses/wfn_functionality
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
