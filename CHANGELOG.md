@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
- - Water facility network functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
+- Water facility network functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
 
 ### Changed
 - Update network dataset visualization in pyincore-viz example notebook [#118](https://github.com/IN-CORE/incore-docs/issues/118)
@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Modify social vulnerability to query census data from CensusUtil instead of stored datasets [#107](https://github.com/IN-CORE/incore-docs/issues/107)
 - Update housing recovery sequential notebook to use output of social vulnerability analysis [#129](https://github.com/IN-CORE/incore-docs/issues/129)
 - Updated electric power facility restoration notebook to use epf damage and output discretized restoration [#127](https://github.com/IN-CORE/incore-docs/issues/127).
+- Updated water facility restoration notebook to use water facility damage and output discretized restoration [#128](https://github.com/IN-CORE/incore-docs/issues/128).
 
 ## [3.2.0] - 2022-06-29
 
