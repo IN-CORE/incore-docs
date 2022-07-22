@@ -22,6 +22,7 @@ chapters:
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
       - file: analyses/epf_restoration
+      - file: analyses/epn_functionality
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
@@ -44,6 +45,7 @@ chapters:
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
+      - file: analyses/wfn_functionality
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
@@ -81,6 +83,7 @@ chapters:
     - file: notebooks/Joplin_testbed/Joplin_testbed.ipynb
     - file: notebooks/Lumberton_testbed/Lumberton_testbed.ipynb
     - file: notebooks/Seaside_testbed/Seaside_testbed.ipynb
+    - file: notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.ipynb
     - file: notebooks_other
 - file: refs
 - file: links
