@@ -33,6 +33,7 @@ chapters:
       - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
+      - file: analyses/pipeline_functionality
       - file: analyses/pipeline_restoration
       - file: analyses/populationdislocation
       - file: analyses/portfolio_recovery
@@ -43,6 +44,7 @@ chapters:
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
+      - file: analyses/wfn_functionality
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
