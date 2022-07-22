@@ -5,8 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
 ### Added
+- Electric power network functionality [#138](https://github.com/IN-CORE/incore-docs/issues/138).
 - Water facility network functionality [#139](https://github.com/IN-CORE/incore-docs/issues/139).
 
 ### Changed

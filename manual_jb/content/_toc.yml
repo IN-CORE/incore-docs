@@ -22,6 +22,7 @@ chapters:
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
       - file: analyses/epf_restoration
+      - file: analyses/epn_functionality
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
