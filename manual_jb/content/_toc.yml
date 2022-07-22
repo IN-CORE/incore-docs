@@ -81,6 +81,7 @@ chapters:
     - file: notebooks/Joplin_testbed/Joplin_testbed.ipynb
     - file: notebooks/Lumberton_testbed/Lumberton_testbed.ipynb
     - file: notebooks/Seaside_testbed/Seaside_testbed.ipynb
+    - file: notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.ipynb
     - file: notebooks_other
 - file: refs
 - file: links
