@@ -22,7 +22,7 @@ with functionality failure states.
 * Sharma, N., Tabandeh, A., & Gardoni, P. (2020). Regional resilience analysis: A multi-scale approach to optimize 
   the resilience of interdependent infrastructure. *Computer‐Aided Civil and Infrastructure Engineering*, **35(12)**, 
   1315-1330.
-* harma, N., & Gardoni, P. (2022). Mathematical modeling of interdependent infrastructure: An object-oriented 
+* Sharma, N., & Gardoni, P. (2022). Mathematical modeling of interdependent infrastructure: An object-oriented 
   approach for generalized network-system analysis. *Reliability Engineering & System Safety*, **217**, 108042.
     
 **Input Parameters**
