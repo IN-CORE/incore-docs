@@ -40,7 +40,7 @@ Below you can find six Jupyter notebook [research examples](notebooks.md) that d
 3. [Lumberton testbed](notebooks/Lumberton_testbed/Lumberton_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Lumberton_testbed.zip) file).
 4. [Seaside testbed](notebooks/Seaside_testbed/Seaside_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip) file).
 5. [MMSA testbed Example 1](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/MMSA_testbed_1.zip) file).
-6. [MMSA testbed Example 2](notebooks/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/MMSA_testbed_2.zip) file).
+6. [MMSA testbed Example 2](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/MMSA_testbed_2.zip) file).
 
 You can download and run each Jupyter notebook to see how IN-CORE is utilized and see the results from each testbed.
 
