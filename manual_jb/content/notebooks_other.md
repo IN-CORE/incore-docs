@@ -11,6 +11,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/capital_shocks.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb) <br />
+[epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epn_functionality.ipynb) <br />
 [housing household recovery](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_household_recovery.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housing_recovery.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/housingunitallocation.ipynb) <br />
@@ -22,6 +23,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
+[pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_functionality.ipynb) <br />
 [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_restoration.ipynb) <br />
 [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb) <br />
 [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb) <br />
@@ -33,6 +35,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_dmg.ipynb) <br />
+[wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb) <br />
 [water_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_restoration.ipynb)
 
 ## Testbed specific
