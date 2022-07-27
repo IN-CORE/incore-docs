@@ -1,8 +1,8 @@
-# Water facility network functionality
+# Water network functionality
 
 **Description**
 
-This analysis computes the functionality of water facility networks.
+This analysis computes the functionality of water networks.
 
 The computation uses inputs from Monte Carlo failure analysis using water facility damage information, as well as 
 pipeline functionality data to determine the functionality probability and failure states for a corresponding water 
@@ -57,11 +57,9 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create water facility restoration analysis
     client = IncoreClient()
-    wf_rest = WaterFacilityRestoration(client)
 
-    # Run Water Facility Functionality analysis
+    # Run Water Network Functionality analysis
     wfn_func = WfnFunctionality(client)
 
     wfn_func.load_remote_input_dataset("wfn_network", wfn_dataset_id)
