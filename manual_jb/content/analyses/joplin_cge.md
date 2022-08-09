@@ -79,4 +79,4 @@ code snippet:
     joplin_cge.run_analysis()
 ```
 
-full analysis: [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_cge.ipynb)
+full analysis: [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_cge.ipynb)

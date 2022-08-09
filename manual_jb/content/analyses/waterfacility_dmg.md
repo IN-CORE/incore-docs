@@ -76,4 +76,4 @@ code snippet:
     wf_dmg.run_analysis()
 ```
 
-full analysis: [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/water_facility_dmg.ipynb)
+full analysis: [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/water_facility_dmg.ipynb)

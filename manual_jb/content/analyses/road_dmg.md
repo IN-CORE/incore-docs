@@ -75,4 +75,4 @@ code snippet:
     result = road_dmg.run_analysis()
 ```
     
-full analysis: [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/road_dmg.ipynb)
+full analysis: [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/road_dmg.ipynb)

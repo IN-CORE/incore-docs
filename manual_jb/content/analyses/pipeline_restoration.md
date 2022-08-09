@@ -62,4 +62,4 @@ code snippet:
     pipeline_restoration.run_analysis()
 ```
 
-full analysis: [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_restoration.ipynb)
+full analysis: [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_restoration.ipynb)

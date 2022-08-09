@@ -55,4 +55,4 @@ code snippet:
     md.run_analysis()
 ```
 
-full analysis: [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_dmg.ipynb)
+full analysis: [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mean_dmg.ipynb)
