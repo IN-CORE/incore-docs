@@ -62,4 +62,4 @@ code snippet:
     bldg_econ_dmg.run_analysis()
 ```
 
-full analysis: [building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_loss.ipynb)
+full analysis: [building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_loss.ipynb)

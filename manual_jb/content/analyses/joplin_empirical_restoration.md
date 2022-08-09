@@ -69,4 +69,4 @@ code snippet:
     restoration.run_analysis()
 ```
 
-full analysis: [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/joplin_empirical_restoration.ipynb) <br />
+full analysis: [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_empirical_restoration.ipynb) <br />

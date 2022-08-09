@@ -34,4 +34,4 @@ The Jupyter notebook below uses pyIncore-data to acquire census block group data
 to different formats including shapefile and other formats. The shapefile format is a geospatial vector data 
 format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
 
-Example: [pyincore-data-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-data-example.ipynb)
+Example: [pyincore-data-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-data-example.ipynb)

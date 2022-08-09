@@ -57,4 +57,4 @@ code snippet:
     mc.run_analysis()
 ```
 
-full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb)
+full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_failure_prob.ipynb)

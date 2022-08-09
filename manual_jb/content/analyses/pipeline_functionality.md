@@ -50,4 +50,4 @@ code snippet:
     result = pipline_func.run_analysis()
 ```
 
-full analysis: [pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_functionality.ipynb)
+full analysis: [pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_functionality.ipynb)

@@ -20,10 +20,10 @@ More tutorials will be added soon.
 
 Download the full Notebooks:
 
-- Create Dataset object: [create_dataset.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dataset.zip)
-- Create DFR3 object: [create_dfr3_object.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_dfr3_object.zip)
-- Create Earthquake Hazard: [create_earthquake.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_earthquake.zip)
-- Create Tornado Hazard: [create_tornado.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_tornado.zip)
-- Retrofit plan Joplin: [retrofit_plan_Joplin_2021_12_01.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/retrofit_plan_Joplin_2021_12_01.zip)
-- Create network dataset: [create_network_dataset.zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/create_network_dataset.zip)
+- Create Dataset object: [create_dataset.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_dataset.zip)
+- Create DFR3 object: [create_dfr3_object.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_dfr3_object.zip)
+- Create Earthquake Hazard: [create_earthquake.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_earthquake.zip)
+- Create Tornado Hazard: [create_tornado.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_tornado.zip)
+- Retrofit plan Joplin: [retrofit_plan_Joplin_2021_12_01.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/retrofit_plan_Joplin_2021_12_01.zip)
+- Create network dataset: [create_network_dataset.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_network_dataset.zip)
 
