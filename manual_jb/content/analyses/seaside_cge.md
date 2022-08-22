@@ -70,4 +70,4 @@ code snippet:
     seaside_cge.run_analysis()
 ```
 
-full analysis: [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/seaside_cge.ipynb)
+full analysis: [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/seaside_cge.ipynb)

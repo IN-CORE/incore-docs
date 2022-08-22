@@ -86,4 +86,4 @@ code snippet:
     opt.run_analysis()
 ```
 
-full analysis: [multi_retrofit_optimization.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/multi_retrofit_optimization.ipynb) <br />
+full analysis: [multi_retrofit_optimization.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/multi_retrofit_optimization.ipynb) <br />

@@ -75,4 +75,4 @@ code snippet:
     epf_dmg.run_analysis()
 ```
 
-full analysis: [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/epf_dmg.ipynb)
+full analysis: [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epf_dmg.ipynb)

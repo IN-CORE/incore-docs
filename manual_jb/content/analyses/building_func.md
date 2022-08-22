@@ -63,4 +63,4 @@ code snippet:
     # Run building functionality analysis
     bldg_func.run_analysis()
 ```
-full analysis: [building_func.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_func.ipynb)
+full analysis: [building_func.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_func.ipynb)

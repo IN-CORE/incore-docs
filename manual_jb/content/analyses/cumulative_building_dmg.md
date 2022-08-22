@@ -52,4 +52,4 @@ code snippet:
     cumulative_bldg_dmg.run_analysis()
 ```
 
-full analysis: [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/cumulative_building_dmg.ipynb)
+full analysis: [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/cumulative_building_dmg.ipynb)

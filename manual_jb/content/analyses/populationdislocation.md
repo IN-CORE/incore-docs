@@ -78,4 +78,4 @@ code snippet:
     pop_dis.run_analysis()
 ```
 
-Jupyter notebook: [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/populationdislocation.ipynb)
+Jupyter notebook: [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/populationdislocation.ipynb)

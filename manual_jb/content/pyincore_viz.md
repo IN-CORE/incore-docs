@@ -49,5 +49,5 @@ format for geographic information system (GIS) software developed by Esri for in
 WMS is protocol for geo-referenced images developed by the OG Consortium.
 
 Examples: <br />
-[pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-example.ipynb) <br />
-[pyincore-viz-analysis-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-analysis-example.ipynb)
+[pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-viz-example.ipynb) <br />
+[pyincore-viz-analysis-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-viz-analysis-example.ipynb)

@@ -25,6 +25,7 @@ key name | type | name | description
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. <br>Default is *False*.
 `seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computation. <br>Default is *1*.
+`liquefaction_geology_dataset_id` | `str` | Liquefaction id | Liquefaction geology/susceptibility dataset id. <br>If not provided, liquefaction will be ignored.
 
 **Input datasets**
 
@@ -72,4 +73,4 @@ code snippet:
     bldg_dmg.run_analysis()
 ```
 
-full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/building_dmg.ipynb)
+full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_dmg.ipynb)

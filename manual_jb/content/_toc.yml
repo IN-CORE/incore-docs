@@ -22,6 +22,7 @@ chapters:
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
       - file: analyses/epf_restoration
+      - file: analyses/epn_functionality
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
@@ -33,6 +34,7 @@ chapters:
       - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
+      - file: analyses/pipeline_functionality
       - file: analyses/pipeline_restoration
       - file: analyses/populationdislocation
       - file: analyses/portfolio_recovery
@@ -43,6 +45,7 @@ chapters:
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
+      - file: analyses/wfn_functionality
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
@@ -54,6 +57,8 @@ chapters:
     - file: notebooks/create_dfr3_object/create_dfr3_object.ipynb
     - file: notebooks/create_earthquake/create_earthquake.ipynb
     - file: notebooks/create_tornado/create_tornado.ipynb
+    - file: notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.ipynb
+    - file: notebooks/create_network_dataset/create_network_dataset.ipynb
 - file: faq
 - file: workshops
   sections:
@@ -80,6 +85,8 @@ chapters:
     - file: notebooks/Joplin_testbed/Joplin_testbed.ipynb
     - file: notebooks/Lumberton_testbed/Lumberton_testbed.ipynb
     - file: notebooks/Seaside_testbed/Seaside_testbed.ipynb
+    - file: notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.ipynb
+    - file: notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.ipynb
     - file: notebooks_other
 - file: refs
 - file: links

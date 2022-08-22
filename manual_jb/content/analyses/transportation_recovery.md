@@ -70,4 +70,4 @@ code snippet:
     transportation_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/transportation_recovery.ipynb)
+full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb)

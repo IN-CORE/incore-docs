@@ -69,4 +69,4 @@ code snippet:
     result = pipeline_dmg.run_analysis()
 ```
 
-full analysis: [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pipeline_dmg.ipynb)
+full analysis: [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg.ipynb)

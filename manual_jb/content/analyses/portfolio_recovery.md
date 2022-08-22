@@ -62,4 +62,4 @@ code snippet:
     bldg_portfolio_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/portfolio_recovery.ipynb)
+full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/portfolio_recovery.ipynb)

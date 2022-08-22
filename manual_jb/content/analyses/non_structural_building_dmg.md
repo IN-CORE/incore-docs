@@ -82,4 +82,4 @@ code snippet:
     non_structural_building_dmg.run_analysis()
 ```
 
-full analysis: [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/non_structural_building_dmg.ipynb)
+full analysis: [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/non_structural_building_dmg.ipynb)
