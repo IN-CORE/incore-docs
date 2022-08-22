@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Updated branch name in links [#137](https://github.com/IN-CORE/incore-docs/issues/137).
-- Updated pyincore installation instruction with the version information [#122](https://github.com/IN-CORE/incore-docs/issues/122).
+- Updated pyincore installation instructions with the version information [#122](https://github.com/IN-CORE/incore-docs/issues/122).
 
 ## [3.5.0] - 2022-07-27
 
