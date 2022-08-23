@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Include Galveston Hurricane EPF damage example [#153](https://github.com/IN-CORE/incore-docs/issues/153)
 
-
 ## [3.5.0] - 2022-07-27
 
 ### Added
