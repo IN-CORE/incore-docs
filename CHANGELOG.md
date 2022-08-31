@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
 - Updated branch name in links [#137](https://github.com/IN-CORE/incore-docs/issues/137).
+
+### Added
+- Include Galveston Hurricane EPF damage example [#153](https://github.com/IN-CORE/incore-docs/issues/153)
 
 ## [3.5.0] - 2022-07-27
 
