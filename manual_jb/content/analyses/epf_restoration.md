@@ -19,7 +19,7 @@ key name | type | name | description
 `end_time` | `float` | End time | End repair time in days. Default to 365 days
 `time_interval` | `float` | Time interval | Incremental interval for time in days. Default to 1
 `pf_interval` | `float` | Percentage of functionality interval | Incremental interval for percentage of functionality. Default to 0.1
-`discretized_days` | `list`  | Discretized Days | Discretized days to compute functionality. Defaults to 1, 3, 7, 30, 90
+`discretized_days` | `List[int]`  | Discretized Days | Discretized days to compute functionality. Defaults to 1, 3, 7, 30, 90
 
 **Input Datasets**
 

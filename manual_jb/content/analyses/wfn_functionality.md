@@ -33,7 +33,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `tank_node_list` <sup>*</sup> | `list` | Tank node list | List of tank nodes within the network.
-`pumpstation_node_list` <sup>*</sup> | `list` | Pump station list | List of pump station nodes within the network.
+`pumpstation_node_list` <sup>*</sup> | `List[int]` | Pump station list | List of pump station nodes within the network.
 
 **Input Datasets**
 
