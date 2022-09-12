@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- Updated analysis specifications with new nested types specification [#164](https://github.com/IN-CORE/incore-docs/issues/164)
 - Updated branch name in links [#137](https://github.com/IN-CORE/incore-docs/issues/137).
 
 ### Added
