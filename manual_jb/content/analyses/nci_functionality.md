@@ -7,7 +7,7 @@ networks and  water distribution (WDS) networks.
 
 This analysis computes the output of the Leontief equation for functional dependencies between two
 interdependent networks having functionality information per node. These dependencies capture cascading
-dependencies on infrastructure functionality, expressed in terms of discrete points.
+dependencies on infrastructure functionality, expressed in terms of discretized times.
 
 The output of the computation consists of a dataset with EPN cascading functionality accompanying the original 
 discrete ones.
