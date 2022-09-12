@@ -31,6 +31,7 @@ chapters:
       - file: analyses/mean_dmg
       - file: analyses/multi_retrofit_optimization
       - file: analyses/mc_failure_prob
+      - file: analyses/nic_functionality
       - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate

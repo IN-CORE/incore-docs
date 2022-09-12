@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated pyincore installation instructions with the version information [#122](https://github.com/IN-CORE/incore-docs/issues/122).
 
 ### Added
+- Network cascading interdependecy functionality [#167](https://github.com/IN-CORE/incore-docs/issues/167)
 - Include Galveston Hurricane EPF damage example [#153](https://github.com/IN-CORE/incore-docs/issues/153)
 
 ## [3.5.0] - 2022-07-27
