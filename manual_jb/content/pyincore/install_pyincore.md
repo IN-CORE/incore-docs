@@ -15,6 +15,14 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
     ```
     conda install -c in-core pyincore-viz
     ```
+   If the installed pyincore version is not the latest or lower than the desired one, specify the version number in installation command.
+    ```
+    conda install -c in-core pyincore=1.5.0 (or your version of choice)
+    ```
+   Version information for pyincore and pyincore-viz can be found in
+   - https://anaconda.org/IN-CORE/pyincore
+   
+
 To check that the package is installed run 
 ```
 conda list pyincore
