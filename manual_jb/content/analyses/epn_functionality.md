@@ -30,7 +30,7 @@ with functionality failure states.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`gate_station_node_list` <sup>*</sup> | `list` | Gate Station Node list | List of node IDs that represents the gate station.
+`gate_station_node_list` <sup>*</sup> | `List[int]` | Gate Station Node list | List of node IDs that represents the gate station.
 
 **Input Datasets**
 
