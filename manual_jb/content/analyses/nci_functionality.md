@@ -82,4 +82,4 @@ code snippet:
     nic_func.run_analysis()
 ```
 
-full analysis: [wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb)
+full analysis: [nci_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/nci_functionality.ipynb)
