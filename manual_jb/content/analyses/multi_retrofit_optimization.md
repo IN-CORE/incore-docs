@@ -37,7 +37,7 @@ key name | type | name | description
 `num_epsilon_steps` <sup>*</sup> | `int` | Epsilon values | Number of epsilon values to evaluate.
 `max_budget` <sup>*</sup> | `str` | Maximum budget | Selection of maximum possible budget.
 `budget_available` | `float` | Budget value | Custom budget value.
-`inactive_submodels` | `[int]` | Identifier of submodels | Identifier of submodels to inactivate during analysis.
+`inactive_submodels` | `List[int]` | Identifier of submodels | Identifier of submodels to inactivate during analysis.
 `scale_data` <sup>*</sup>  | `bool` | Scaling data | Choice for scaling data.
 `scaling_factor` | `float` | Scaling factor | Custom scaling factor.
 
