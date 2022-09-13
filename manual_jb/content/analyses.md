@@ -18,7 +18,7 @@
 16. [Mean damage](analyses/mean_dmg)
 17. [Multi-objective retrofit optimization](analyses/multi_retrofit_optimization)
 18. [Monte Carlo failure probability](analyses/mc_failure_prob)
-19. 18. [Network cascading interdependency functionality](analyses/nci_functionality)
+19. [Network cascading interdependency functionality](analyses/nci_functionality)
 20. [Nonstructural building damage](analyses/non_structural_building_dmg)
 21. [Pipeline damage](analyses/pipeline_dmg)
 22. [Pipeline damage with repair rate](analyses/pipeline_dmg_w_repair_rate)
