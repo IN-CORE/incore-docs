@@ -19,6 +19,7 @@ chapters:
       - file: analyses/building_func
       - file: analyses/building_loss
       - file: analyses/capital_shocks
+      - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
       - file: analyses/epf_restoration
