@@ -8,7 +8,7 @@
 4. [Seaside testbed](notebooks/Seaside_testbed/Seaside_testbed.ipynb)
 5. MMSA testbed
    - [MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.ipynb)
-   - [MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves](notebooks/MMSA_testbed/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.ipynb)
+   - [MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.ipynb)
 
 Download the full directory of the Notebooks above:
 
