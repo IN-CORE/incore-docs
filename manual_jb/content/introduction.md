@@ -35,10 +35,10 @@ understand how to use the pyIncore.  For detailed information, please refer to t
 
 Below you can find six Jupyter notebook [research examples](notebooks.md) that demonstrate IN-CORE:
 
-1. [Galveston testbed](notebooks/Galveston_testbed/Galveston_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Galveston_testbed.zip) file).
-2. [Joplin testbed](notebooks/Joplin_testbed/Joplin_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Joplin_testbed.zip) file).
-3. [Lumberton testbed](notebooks/Lumberton_testbed/Lumberton_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Lumberton_testbed.zip) file).
-4. [Seaside testbed](notebooks/Seaside_testbed/Seaside_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/Seaside_testbed.zip) file).
+1. [Galveston testbed](notebooks/Galveston_testbed/Galveston_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/Galveston_testbed.zip) file).
+2. [Joplin testbed](notebooks/Joplin_testbed/Joplin_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/Joplin_testbed.zip) file).
+3. [Lumberton testbed](notebooks/Lumberton_testbed/Lumberton_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/Lumberton_testbed.zip) file).
+4. [Seaside testbed](notebooks/Seaside_testbed/Seaside_testbed.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/Seaside_testbed.zip) file).
 5. [MMSA testbed Example 1](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/MMSA_testbed_1.zip) file).
 6. [MMSA testbed Example 2](notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.md) ([zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/MMSA_testbed_2.zip) file).
 

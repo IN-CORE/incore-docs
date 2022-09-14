@@ -16,8 +16,8 @@ key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
 `num_samples` <sup>*</sup> | `int` | Samples | Number of Monte Carlo samples.
-`damage_interval_keys` <sup>*</sup> | `list` | Damage keys | Column names of the damage intervals.
-`failure_state_keys` <sup>*</sup> | `list` | Failure keys | Column names of damage intervals.
+`damage_interval_keys` <sup>*</sup> | `List[str]` | Damage keys | Column names of the damage intervals.
+`failure_state_keys` <sup>*</sup> | `List[str]` | Failure keys | Column names of damage intervals.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
 
 **Input Datasets**
@@ -57,4 +57,4 @@ code snippet:
     mc.run_analysis()
 ```
 
-full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mc_failure_prob.ipynb)
+full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_failure_prob.ipynb)

@@ -46,8 +46,8 @@ environments shared by both Miniconda and Anaconda, using `conda update conda` c
 If you don't have Miniconda installed, do the following steps. 
 
 1. Download the latest Miniconda3 installer from the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) web page. 
-    <br />
-    <br />
+
+
 2. From the Terminal (Mac/Linux) or Command Prompt (Windows) add [conda-forge](https://conda-forge.org/) package repository/channel to your environment:
     ```
     conda config --add channels conda-forge
@@ -71,8 +71,16 @@ If you don't have Miniconda installed, do the following steps.
     ```
     conda install -c in-core pyincore-viz
     ```
-   
-7. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
+   If the installed pyincore or pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
+    ```
+    conda install -c in-core pyincore=1.5.0 (or your version of choice)
+    ```
+   Version information for pyincore and pyincore-viz can be found in
+   - https://anaconda.org/IN-CORE/pyincore
+   - https://anaconda.org/IN-CORE/pyincore-viz
+
+
+6. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
     ```
     conda install jupyter
     ```
@@ -219,4 +227,4 @@ If you have problems running Notebooks, check our [WIKI questions](https://opens
 
 * IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) for detail information. 
 
-* The Building analysis Jupyter Notebook is also available at [IN-CORE project](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb) on GitHub.
+* The Building analysis Jupyter Notebook is also available at [IN-CORE project](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/bridge_dmg.ipynb) on GitHub.

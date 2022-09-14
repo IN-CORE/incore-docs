@@ -13,7 +13,7 @@ The output of this analysis is a CSV file with probabilities of damage.
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`damage_interval_keys` <sup>*</sup> | `list` | Damage ratio | Names of the four damage intervals.
+`damage_interval_keys` <sup>*</sup> | `List[str]` | Damage ratio | Names of the four damage intervals.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computation. <br>Default is *1*.
 
 **Input datasets**
@@ -55,4 +55,4 @@ code snippet:
     md.run_analysis()
 ```
 
-full analysis: [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/mean_dmg.ipynb)
+full analysis: [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mean_dmg.ipynb)

@@ -27,6 +27,14 @@
     ```
     conda install -c in-core pyincore-viz
     ```
+   If the installed pyincore or pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
+    ```
+    conda install -c in-core pyincore-viz=1.7.0 (or your version of choice)
+    ```
+   Version information for pyincore and pyincore-viz can be found in
+    - https://anaconda.org/IN-CORE/pyincore
+    - https://anaconda.org/IN-CORE/pyincore-viz
+    
    
 7. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
     ```

@@ -11,7 +11,7 @@
 
 Download the full directory of the files:
 
-[workshop_2021-05-26.zip](https://github.com/IN-CORE/incore-docs/blob/master/workshops/20210526/workshop_2021-05-26.zip)
+[workshop_2021-05-26.zip](https://github.com/IN-CORE/incore-docs/blob/main/workshops/20210526/workshop_2021-05-26.zip)
 
 ## 2022-01-31 Lifeline workshop
 
@@ -23,4 +23,4 @@ Download the full directory of the files:
 
 Download the full directory of the files:
 
-[workshop_2022-01-31.zip](https://github.com/IN-CORE/incore-docs/blob/master/workshops/20220131/workshop_2022-01-31.zip)
+[workshop_2022-01-31.zip](https://github.com/IN-CORE/incore-docs/blob/main/workshops/20220131/workshop_2022-01-31.zip)

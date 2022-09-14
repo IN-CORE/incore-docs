@@ -87,4 +87,4 @@ code snippet:
     res_recovery.run_analysis()
 ```
 
-full analysis: [residential_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/residential_building_recovery.ipynb)
+full analysis: [residential_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/residential_building_recovery.ipynb)

@@ -56,4 +56,4 @@ code snippet:
     joplin_capital_shocks.run_analysis()
 ```
 
-full analysis: [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/capital_shocks.ipynb)
+full analysis: [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/capital_shocks.ipynb)

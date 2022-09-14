@@ -63,4 +63,4 @@ code snippet:
     ted.run_analysis()
 ```
 
-full analysis: [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/tornadoepn_dmg.ipynb)
+full analysis: [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/tornadoepn_dmg.ipynb)

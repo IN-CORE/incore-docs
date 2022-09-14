@@ -32,8 +32,15 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
     ```
     conda install -c in-core pyincore-viz
     ```
-   
+   If the installed pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
+    ```
+    conda install -c in-core pyincore-viz=1.5.0 (or your version of choice)
+    ```
+   Version information for pyincore-viz can be found in
+    - https://anaconda.org/IN-CORE/pyincore-viz
+    
    For update replace `install` with `update`.
+
    
 2. To check that the package is installed run 
     ```
@@ -49,5 +56,5 @@ format for geographic information system (GIS) software developed by Esri for in
 WMS is protocol for geo-referenced images developed by the OG Consortium.
 
 Examples: <br />
-[pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-example.ipynb) <br />
-[pyincore-viz-analysis-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-viz-analysis-example.ipynb)
+[pyincore-viz-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-viz-example.ipynb) <br />
+[pyincore-viz-analysis-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-viz-analysis-example.ipynb)

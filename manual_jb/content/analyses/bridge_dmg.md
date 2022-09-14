@@ -70,4 +70,4 @@ code snippet:
     bridge_dmg.run_analysis()
 ```
 
-full analysis: [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/bridge_dmg.ipynb)
+full analysis: [bridge_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/bridge_dmg.ipynb)

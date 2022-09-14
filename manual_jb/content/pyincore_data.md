@@ -18,9 +18,16 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
     ```
     conda install -c in-core pyincore-data
     ```
+   If the installed pyincore-data version is not the latest or lower than the desired one, specify the version number in installation command.
+    ```
+    conda install -c in-core pyincore-data=0.5.0 (or your version of choice)
+    ```
+   Version information for pyincore-data can be found in
+   - https://anaconda.org/IN-CORE/pyincore-data
    
    For updating pyIncore-data, replace `install` with `update` in the above command.
    
+
 2. To check that the pyIncore-data package is installed, run the following command:
     ```
     conda list
@@ -34,4 +41,4 @@ The Jupyter notebook below uses pyIncore-data to acquire census block group data
 to different formats including shapefile and other formats. The shapefile format is a geospatial vector data 
 format for geographic information system (GIS) software developed by Esri for interoperability among GIS software products.
 
-Example: [pyincore-data-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/master/notebooks/pyincore-data-example.ipynb)
+Example: [pyincore-data-example.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pyincore-data-example.ipynb)

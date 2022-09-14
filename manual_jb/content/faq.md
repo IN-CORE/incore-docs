@@ -212,8 +212,8 @@
 
     Earthquakes and other hazards can be defined in various ways, there are data based earthquakes that actually require user to 
     provide the shapefiles in order to create an earthquake or tehre are simulated earthquakes. Yes, you can define your own simulated earthquake 
-    by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/master/tests/pyincore/test_hazardservice.py#L117), 
-    similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/master/tests/data/eq-model.json). 
+    by creating the (hazard) json file through [pyIncore](https://github.com/IN-CORE/pyincore/blob/main/tests/pyincore/test_hazardservice.py#L117), 
+    similar to the one provided in the [example](https://github.com/IN-CORE/pyincore/blob/main/tests/data/eq-model.json). 
     Currently you either run that pyincore method do need to upload your file to hazard service. For additional information 
     see IN-CORE [wiki](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) page.
     <br />
