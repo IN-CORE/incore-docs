@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Swagger API for services 1.11.0 [#159](https://github.com/IN-CORE/incore-docs/issues/159).
 
 ### Fixed
-- Multiple vector visualization using the torndao dataset [#106](https://github.com/IN-CORE/incore-docs/issues/106).
+- Multiple vector visualization using the tornado dataset [#106](https://github.com/IN-CORE/incore-docs/issues/106).
 - Some example notebooks were not displaying output [#155](https://github.com/IN-CORE/incore-docs/issues/155).
 - Missing MMSA testbed links [#170](https://github.com/IN-CORE/incore-docs/issues/170).
 
