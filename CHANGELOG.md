@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Multiple vector visualization using the torndao dataset [#106](https://github.com/IN-CORE/incore-docs/issues/106).
+- Some example notebooks were not displaying output [#155](https://github.com/IN-CORE/incore-docs/issues/155).
 
 ### Changed
 - Updated analysis specifications with new nested types specification [#164](https://github.com/IN-CORE/incore-docs/issues/164)
