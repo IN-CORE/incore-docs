@@ -21,6 +21,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_failure_prob.ipynb) <br />
 [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mean_dmg.ipynb) <br />
 [multi_retrofit_optimization.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/multi_retrofit_optimization.ipynb) <br />
+[nci_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/nci_functionality.ipynb) <br />
 [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/non_structural_building_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
