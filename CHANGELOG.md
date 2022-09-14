@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Include Galveston Hurricane EPF damage example [#153](https://github.com/IN-CORE/incore-docs/issues/153)
+- Gdf map overlay with raster hazard added to pyincore-viz example notebook [#105](https://github.com/IN-CORE/incore-docs/issues/105).
+
+### Fixed
+- Multiple vector visualization using the torndao dataset [#106](https://github.com/IN-CORE/incore-docs/issues/106).
+- Some example notebooks were not displaying output [#155](https://github.com/IN-CORE/incore-docs/issues/155).
+
 ### Changed
 - Updated analysis specifications with new nested types specification [#164](https://github.com/IN-CORE/incore-docs/issues/164)
 - Updated branch name in links [#137](https://github.com/IN-CORE/incore-docs/issues/137).
