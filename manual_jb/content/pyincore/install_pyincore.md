@@ -22,6 +22,11 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
    Version information for pyincore and pyincore-viz can be found in
    - https://anaconda.org/IN-CORE/pyincore
    
+   **Note:** When installing with Jupyter, there may be an error related to the Fiona package.
+   It is commonly caused by fiona being downgraded when installing jupyter.
+   In that case, try to install jupyter first then install pyincore.
+   Otherwise, you can upgrade fiona by using the `conda update fiona` command.
+   
 
 To check that the package is installed run 
 ```
