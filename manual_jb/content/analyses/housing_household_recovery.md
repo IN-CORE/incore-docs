@@ -34,7 +34,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`population_dislocation_block` <sup>*</sup> | `incore:popDislocation` | Population dislocation | Population dislocation result aggregated to the block group level.
+`population_dislocation_block` <sup>*</sup> | `incore:popDislocation` | Population dislocation | Population dislocation results.
 `tpm` <sup>*</sup> | `incore:houseRecTransitionProbMatrix` | Probability matrix | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
 `initial_stage_probability` <sup>*</sup> | `incore:houseRecInitialStageFactors` | Mass probability | Initial mass probability function for stage 0 of the Markov Chain.
 
