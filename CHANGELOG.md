@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 
+### Fixed 
+- Typo in Lumberton testbed notebook [189](https://github.com/IN-CORE/incore-docs/issues/189)
+
 
 ## [3.7.0] - 2022-11-16
 
