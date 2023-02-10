@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Remove broken images from mmsa notebook [156](https://github.com/IN-CORE/incore-docs/issues/156)
 
+
 ## [3.7.0] - 2022-11-16
 
 ### Added

@@ -24,6 +24,7 @@ key name | type | name | description
 `use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computation. <br>Default is *1*.
+`liquefaction_geology_dataset_id` | `str` | Liquefaction id | Liquefaction geology/susceptibility dataset id. <br>If not provided, liquefaction will be ignored.
 
 **Input datasets**
 
