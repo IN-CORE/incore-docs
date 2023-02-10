@@ -32,6 +32,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [power_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/power_facility_restoration.ipynb) </br>
 [residential_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/residential_building_recovery.ipynb) <br />
 [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/road_dmg.ipynb) <br />
+[slc_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_cge.ipynb) <br />
 [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/seaside_cge.ipynb) <br />
 [social_vulnerability.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/social_vulnerability.ipynb) <br />
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/tornadoepn_dmg.ipynb) <br />
