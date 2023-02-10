@@ -6,10 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Salt Lake City CGE [#190](https://github.com/IN-CORE/incore-docs/issues/190)
+
 ### Changed
 - Updated pyincore-data example with new census util [#183](https://github.com/IN-CORE/incore-docs/issues/183)
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 - Removed testbed name from CGE data type [#265](https://github.com/IN-CORE/pyincore/issues/265)
+
 
 ## [3.7.0] - 2022-11-16
 
