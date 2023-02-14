@@ -7,16 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- Updated pyincore-data example with new census util [#183](https://github.com/IN-CORE/incore-docs/issues/183)
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 
 ### Fixed 
 - Typo in Lumberton testbed notebook [189](https://github.com/IN-CORE/incore-docs/issues/189)
+- Removed testbed name from CGE data type [#265](https://github.com/IN-CORE/pyincore/issues/265)
 
 
 ## [3.7.0] - 2022-11-16
 
 ### Added
 - Explanation about fiona related problem in pyincore installation documentation [#176](https://github.com/IN-CORE/incore-docs/issues/176)
+
 ### Changed
 - Bridge damage analysis documentation to include new parameter for using liquefaction in damage calculation [#178](https://github.com/IN-CORE/incore-docs/issues/178)
 

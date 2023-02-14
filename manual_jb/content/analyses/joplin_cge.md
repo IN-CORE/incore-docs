@@ -24,17 +24,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`SAM` <sup>*</sup> | `incore:joplinCGEsam` | Social matrix | A social accounting matrix.
-`BB` <sup>*</sup> | `incore:JoplinCGEbb` | Capital composition | A matrix of functioning capital.
-`IOUT` <sup>*</sup> | `incore:JoplinCGEiout` | Government parameters | A matrix tax revenue transfer.
-`MISC` <sup>*</sup> | `incore:joplinCGEmisc` | Parameters | Data of employment, capital and households <br>in the economy.
-`MISCH` <sup>*</sup> | `incore:joplinCGEmisch` | Supply elasticity | Elasticities for the supply of labor.
-`LANDCAP` <sup>*</sup> | `incore:JoplinCGElandcap` | Land capital | Changes in the price of physical capital.
-`EMPLOY` <sup>*</sup> | `incore:JoplinCGEemploy` | Employment | Commercial sector employment data
-`IGTD` <sup>*</sup> | `incore:JoplinCGEigtd` | Exogenous payment | A matrix of exogenous transfer payment.
-`TAUFF` <sup>*</sup> | `incore:joplinCGEtauff` | Tax rates | Social security tax rates.
-`JOBCR` <sup>*</sup> | `incore:JoplinCGEjobcr` | Labor | A matrix of workers groups in the economy.
-`OUTCR` <sup>*</sup> | `incore:JoplinCGEoutcr` | Commuter laborers | A matrix of Joplin commuting workers.
+`SAM` <sup>*</sup> | `incore:CGEsam` | Social matrix | A social accounting matrix.
+`BB` <sup>*</sup> | `incore:CGEbb` | Capital composition | A matrix of functioning capital.
+`IOUT` <sup>*</sup> | `incore:CGEiout` | Government parameters | A matrix tax revenue transfer.
+`MISC` <sup>*</sup> | `incore:CGEmisc` | Parameters | Data of employment, capital and households <br>in the economy.
+`MISCH` <sup>*</sup> | `incore:CGEmisch` | Supply elasticity | Elasticities for the supply of labor.
+`LANDCAP` <sup>*</sup> | `incore:CGElandcap` | Land capital | Changes in the price of physical capital.
+`EMPLOY` <sup>*</sup> | `incore:CGEemploy` | Employment | Commercial sector employment data
+`IGTD` <sup>*</sup> | `incore:CGEigtd` | Exogenous payment | A matrix of exogenous transfer payment.
+`TAUFF` <sup>*</sup> | `incore:CGEtauff` | Tax rates | Social security tax rates.
+`JOBCR` <sup>*</sup> | `incore:CGEjobcr` | Labor | A matrix of workers groups in the economy.
+`OUTCR` <sup>*</sup> | `incore:CGEoutcr` | Commuter laborers | A matrix of Joplin commuting workers.
 `sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
