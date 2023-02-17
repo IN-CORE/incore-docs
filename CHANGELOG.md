@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
+
 ### Added
 - Include Galveston Hurricane EPF damage example [#153](https://github.com/IN-CORE/incore-docs/issues/153)
 - Gdf map overlay with raster hazard added to pyincore-viz example notebook [#105](https://github.com/IN-CORE/incore-docs/issues/105).
