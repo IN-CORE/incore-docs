@@ -177,6 +177,13 @@
             "description": "Member Id",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Space Name",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
