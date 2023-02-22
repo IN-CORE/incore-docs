@@ -4,7 +4,7 @@
 
 This analysis determines overall building maximum damage state from wind, flood and surge-wave damage 
 
-The outputs of this analysis are a CSV file with maximum damage state from each hazard and the overall maximum damage.
+The outputs of this analysis are a CSV file with maximum damage state from each hazard and the overall maximum damage and a CSV with the combined damage probabilities from the three hazards
 
 **Input parameters**
 
