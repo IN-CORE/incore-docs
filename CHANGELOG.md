@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated pyincore-data example with new census util [#183](https://github.com/IN-CORE/incore-docs/issues/183)
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 - Update combined damage analysis documentation [#194](https://github.com/IN-CORE/incore-docs/issues/194)
+
 ### Fixed
 - Remove broken images from mmsa notebook [156](https://github.com/IN-CORE/incore-docs/issues/156)
 - Typo in Lumberton testbed notebook [189](https://github.com/IN-CORE/incore-docs/issues/189)
