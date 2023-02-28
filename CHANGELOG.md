@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Update combined damage analysis documentation [#194](https://github.com/IN-CORE/incore-docs/issues/194)
 
 ### Fixed
+- Joplin retrofit plan example notebook to use public space hazards [#175](https://github.com/IN-CORE/pyincore/issues/175)
 - Remove broken images from mmsa notebook [156](https://github.com/IN-CORE/incore-docs/issues/156)
 - Typo in Lumberton testbed notebook [189](https://github.com/IN-CORE/incore-docs/issues/189)
 - Removed testbed name from CGE data type [#265](https://github.com/IN-CORE/pyincore/issues/265)
