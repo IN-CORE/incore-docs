@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Combined building wind, wave, surge loss analysis documentation and example notebook [#205](https://github.com/IN-CORE/incore-docs/issues/205)
+
 ### Changed
 - Updated pyincore-data example with new census util [#183](https://github.com/IN-CORE/incore-docs/issues/183)
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
