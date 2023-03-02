@@ -6,6 +6,7 @@
 4. [Building economic loss](analyses/building_loss)
 5. [Capital shocks](analyses/capital_shocks)
 6. [Combined wind wave surge building damage](analyses/combined_wind_wave_surge_building_dmg)
+7. [Combined wind wave surge building loss](analyses/combined_wind_wave_surge_building_loss)
 7. [Cumulative building damage](analyses/cumulative_building_dmg)
 8. [Electric power facility damage](analyses/epf_dmg)
 9. [Electric power facility restoration](analyses/epf_restoration)
