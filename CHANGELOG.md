@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
+
 ### Added
 - Combined building wind, wave, surge loss analysis documentation and example notebook [#205](https://github.com/IN-CORE/incore-docs/issues/205)
 
