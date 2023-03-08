@@ -4,7 +4,7 @@
 
 This analysis determines overall building maximum damage state from wind, flood and surge-wave damage 
 
-The outputs of this analysis are a CSV file with maximum damage state from each hazard and the overall maximum damage.
+The outputs of this analysis are a CSV file with maximum damage state from each hazard and the overall maximum damage and a CSV with the combined damage probabilities from the three hazards
 
 **Input parameters**
 
@@ -22,10 +22,10 @@ key name | type | name | description
 
 **Output datasets**
 
-key name | type | parent key | name | description
---- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:maxDamageState` | `buildings` | Results | A dataset containing maximum damage state for each building<br>(format: CSV).
-
+key name | type | parent key | name| description
+--- | --- | --- |---| ---
+`result` <sup>*</sup> | `incore:maxDamageState` | `buildings` | Results| A dataset containing maximum damage state for each building<br>(format: CSV).
+`ds_result` <sup>*</sup> | `ergo:buildingDamageVer6` | `buildings` | Damage State Results | A dataset containing damage states for building structural damage<br>(format: CSV).
 <small>(* required)</small>
 
 **Execution**
