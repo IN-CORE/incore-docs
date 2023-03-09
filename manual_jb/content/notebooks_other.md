@@ -10,6 +10,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_loss.ipynb) <br />
 [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/capital_shocks.ipynb) <br />
 [combined_wind_wave_surge_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/combined_wind_wave_surge_building_dmg.ipynb) <br />
+[combined_wind_wave_surge_building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/combined_wind_wave_surge_building_loss.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epf_dmg.ipynb) <br />
 [epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epn_functionality.ipynb) <br />

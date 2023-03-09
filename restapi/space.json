@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Space Service for creating and accessing spaces",
-    "version": "1.12.0",
+    "version": "1.13.0",
     "title": "Space Service",
     "contact": {
       "name": "IN-CORE Dev Team",
@@ -175,6 +175,13 @@
             "name": "member",
             "in": "query",
             "description": "Member Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Space Name",
             "required": false,
             "type": "string"
           }
