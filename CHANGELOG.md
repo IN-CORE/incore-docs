@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Salt Lake City CGE [#190](https://github.com/IN-CORE/incore-docs/issues/190)
 - New endpoint for getting space by space name in API [#203](https://github.com/IN-CORE/incore-docs/issues/203)
 - Combined building wind, wave, surge loss analysis documentation and example notebook [#205](https://github.com/IN-CORE/incore-docs/issues/205)
+- Salt Lake City community app example notebook [#187](https://github.com/IN-CORE/incore-docs/issues/187)
 
 ### Changed
 - Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
