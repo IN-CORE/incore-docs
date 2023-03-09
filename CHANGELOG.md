@@ -7,19 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Salt Lake City CGE [#190](https://github.com/IN-CORE/incore-docs/issues/190)
 - New endpoint for getting space by space name in API [#203](https://github.com/IN-CORE/incore-docs/issues/203)
-
-### Changed
-- Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
-- Lumberton testbed notebook updated with new pyincore-data update [#211](https://github.com/IN-CORE/pyincore/issues/211)
-
-### Added
 - Combined building wind, wave, surge loss analysis documentation and example notebook [#205](https://github.com/IN-CORE/incore-docs/issues/205)
 
 ### Changed
+- Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
 - Updated pyincore-data example with new census util [#183](https://github.com/IN-CORE/incore-docs/issues/183)
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 - Update combined damage analysis documentation [#194](https://github.com/IN-CORE/incore-docs/issues/194)
+- Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
+- Lumberton testbed notebook updated with new pyincore-data update [#211](https://github.com/IN-CORE/incore-docs/issues/211)
 
 ### Fixed
 - Joplin retrofit plan example notebook to use public space hazards [#175](https://github.com/IN-CORE/pyincore/issues/175)
