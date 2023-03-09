@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Remove incorrect characterization of population dislocation dataset [185](https://github.com/IN-CORE/incore-docs/issues/185)
 - Update combined damage analysis documentation [#194](https://github.com/IN-CORE/incore-docs/issues/194)
 - Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
+- Lumberton testbed notebook updated with new pyincore-data update [#211](https://github.com/IN-CORE/incore-docs/issues/211)
 
 ### Fixed
 - Joplin retrofit plan example notebook to use public space hazards [#175](https://github.com/IN-CORE/pyincore/issues/175)
