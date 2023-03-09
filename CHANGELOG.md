@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- New endpoint for getting space by space name in API [#203](https://github.com/IN-CORE/incore-docs/issues/203)
+
 ### Changed
 - Updated Housing Household Recovery notebook to use new CensusUtil functions [#269](https://github.com/IN-CORE/pyincore/issues/269)
 
