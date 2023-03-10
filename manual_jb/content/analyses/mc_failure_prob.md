@@ -19,6 +19,7 @@ key name | type | name | description
 `damage_interval_keys` <sup>*</sup> | `List[str]` | Damage keys | Column names of the damage intervals.
 `failure_state_keys` <sup>*</sup> | `List[str]` | Failure keys | Column names of damage intervals.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
+`seed` | `int` | Seed | Initial seed for the probabilistic model to ensure reproducibility.
 
 **Input Datasets**
 
@@ -52,6 +53,7 @@ code snippet:
     mc.set_parameter("num_samples", 10)
     mc.set_parameter("damage_interval_keys", ["DS_0", "DS_1", "DS_2", "DS_3"])
     mc.set_parameter("failure_state_keys", ["DS_1", "DS_2", "DS_3"])
+    mc.set_parameter("seed", 1111)
 
     # Run Monte Carlo failure
     mc.run_analysis()
