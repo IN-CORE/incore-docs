@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Remove broken images from mmsa notebook [156](https://github.com/IN-CORE/incore-docs/issues/156)
 - Typo in Lumberton testbed notebook [189](https://github.com/IN-CORE/incore-docs/issues/189)
 - Removed testbed name from CGE data type [#265](https://github.com/IN-CORE/pyincore/issues/265)
-
+- Add paramter seed to MCS documentation [#208](https://github.com/IN-CORE/pyincore/issues/208)
 
 ## [3.7.0] - 2022-11-16
 
