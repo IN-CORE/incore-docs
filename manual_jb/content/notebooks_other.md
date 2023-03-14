@@ -10,6 +10,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_loss.ipynb) <br />
 [capital_shocks.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/capital_shocks.ipynb) <br />
 [combined_wind_wave_surge_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/combined_wind_wave_surge_building_dmg.ipynb) <br />
+[combined_wind_wave_surge_building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/combined_wind_wave_surge_building_loss.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epf_dmg.ipynb) <br />
 [epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epn_functionality.ipynb) <br />
@@ -32,7 +33,9 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [power_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/power_facility_restoration.ipynb) </br>
 [residential_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/residential_building_recovery.ipynb) <br />
 [road_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/road_dmg.ipynb) <br />
+[slc_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_cge.ipynb) <br />
 [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/seaside_cge.ipynb) <br />
+[slc_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app.ipynb) <br />
 [social_vulnerability.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/social_vulnerability.ipynb) <br />
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb) <br />
