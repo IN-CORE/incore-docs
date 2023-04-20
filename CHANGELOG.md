@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - location to create earthquake notebook that give hazard output for the dataset example [#221](https://github.com/IN-CORE/incore-docs/issues/221)
 - Galveston Island CGE [#202](https://github.com/IN-CORE/incore-docs/issues/202)
 
+### Fixed
+
+- Added place holder variables for the `api_json` and `out_dataset` parameter returned by `CensusUtil.get_census_data` in Social Vulnerability example. [#220](https://github.com/IN-CORE/incore-docs/issues/220)
+
 ## [4.0.0] - 2023-03-15
 
 ### Added
