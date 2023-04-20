@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Galveston community app example notebook [#196](https://github.com/IN-CORE/incore-docs/issues/196)
 - Galveston Island CGE [#202](https://github.com/IN-CORE/incore-docs/issues/202)
 
+### Changed
+
+- Modified the faliure state keys for slc community app notebook [#226](https://github.com/IN-CORE/incore-docs/issues/226)
+
 ## [4.0.0] - 2023-03-15
 
 ### Added
