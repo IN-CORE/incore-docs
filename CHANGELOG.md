@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Galveston community app example notebook [#196](https://github.com/IN-CORE/incore-docs/issues/196)
+- location to create earthquake notebook that give hazard output for the dataset example [#221](https://github.com/IN-CORE/incore-docs/issues/221)
 - Galveston Island CGE [#202](https://github.com/IN-CORE/incore-docs/issues/202)
 
 ## [4.0.0] - 2023-03-15
