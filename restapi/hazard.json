@@ -91,6 +91,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -870,6 +886,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -933,6 +965,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -1173,6 +1221,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -1236,6 +1300,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -1476,6 +1556,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -1869,6 +1965,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+           {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -2243,6 +2355,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+           {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -2306,6 +2434,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
@@ -2546,6 +2690,22 @@
             "type": "integer",
             "default": 100,
             "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Specify the field or attribute on which the sorting is to be performed",
+            "required": false,
+            "type": "string",
+            "default": "date"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Specify the order of sorting, either ascending or descending",
+            "required": false,
+            "type": "string",
+            "default": "desc"
           }
         ],
         "responses": {
