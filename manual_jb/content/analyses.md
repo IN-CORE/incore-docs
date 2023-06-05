@@ -37,4 +37,5 @@
 35. [Transportation recovery](analyses/transportation_recovery)
 36. [Water facility damage](analyses/waterfacility_dmg)
 37. [Water network functionality](analyses/wfn_functionality)
-38. [Water facility restoration](analyses/water_facility_restoration)
+38. [Water facility repair cost](analyses/water_facility_repair_cost)
+39. [Water facility restoration](analyses/water_facility_restoration)
