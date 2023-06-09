@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add query parameter "sort" and "orderBy" to swagger docs for selected endpoints [#240](https://github.com/IN-CORE/incore-docs/issues/240)
 - Add documentation and notebook for electric power facility repair cost analysis [#242](https://github.com/IN-CORE/incore-docs/issues/242)
+- Add documentation and notebook for water facility repair cost analysis [#245](https://github.com/IN-CORE/incore-docs/issues/245)
+- Add documentation and notebook for water pipeline repair cost analysis [#244](https://github.com/IN-CORE/incore-docs/issues/244)
 
 ## [4.1.0] - 2023-04-24
 
