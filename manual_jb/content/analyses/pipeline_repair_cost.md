@@ -12,12 +12,13 @@ their damage states, replacement costs, and damage ratios.
 
 **Input Parameters**
 
-| key name                   | type  | name           | description                                                 |
-|----------------------------|-------|----------------|-------------------------------------------------------------|
-| `result_name` <sup>*</sup> | `str` | Result name    | Name of the result dataset.                                 |
-| `num_cpu`                  | `int` | Number of CPUs | If using parallel execution, the number of cpus to request. |
-| `diameter`                 | `int` | Diameter       | pipeline diameter cutoff for different damage ratio.        |
-| `segment_length`           | `int` | segment length | length of each segment in the pipeline. default to 20 ft.   |
+| key name                   | type  | name           | description                                                                            |
+|----------------------------|-------|----------------|----------------------------------------------------------------------------------------|
+| `result_name` <sup>*</sup> | `str` | Result name    | Name of the result dataset.                                                            |
+| `num_cpu`                  | `int` | Number of CPUs | If using parallel execution, the number of cpus to request.                            |
+| `diameter`                 | `int` | Diameter       | Pipeline diameter cutoff assumption for different damage ratios. Default is 20 inches. |
+| `segment_length`           | `int` | Segment length | Segment length assumption. Default is 20 feet                                          |
+
 
 **Input Datasets**
 
