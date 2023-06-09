@@ -9,7 +9,7 @@
 7. [Combined wind wave surge building loss](analyses/combined_wind_wave_surge_building_loss)
 8. [Cumulative building damage](analyses/cumulative_building_dmg)
 9. [Electric power facility damage](analyses/epf_dmg)
-10. [Electric power facility repair_cost](analyses/epf_repair_cost)
+10. [Electric power facility repair cost](analyses/epf_repair_cost)
 11. [Electric power facility restoration](analyses/epf_restoration)
 12. [Electric power network functionality](analyses/epn_functionality)
 13. [Household-level housing sequential recovery](analyses/housing_household_recovery)
