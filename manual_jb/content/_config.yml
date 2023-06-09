@@ -1,9 +1,9 @@
-title: "IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.1.0<span>"
+title: "IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.2.0<span>"
 project: "IN-CORE Manual"
 author: IN-CORE Community
 copyright: "2023"  # Copyright year to be placed in the footer
 logo: images/resilience-logo.png
-version: "4.1.0"  # Version is not part of JB config, we use it for autobuild of incore-docs
+version: "4.2.0"  # Version is not part of JB config, we use it for autobuild of incore-docs
 exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints"]
 
 repository:
