@@ -13,6 +13,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [combined_wind_wave_surge_building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/combined_wind_wave_surge_building_loss.ipynb) <br />
 [cumulative_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/cumulative_building_dmg.ipynb) <br />
 [epf_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epf_dmg.ipynb) <br />
+[epf_repair_cost.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epf_repair_cost.ipynb) <br />
 [epn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/epn_functionality.ipynb) <br />
 [galveston_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_community_app.ipynb) <br />
 [galveston_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_cge.ipynb) <br />
@@ -28,6 +29,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/non_structural_building_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
+[pipeline_repair_cost.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_repair_cost.ipynb) <br />
 [pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_functionality.ipynb) <br />
 [pipeline_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_restoration.ipynb) <br />
 [populationdislocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/populationdislocation.ipynb) <br />
@@ -43,6 +45,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/water_facility_dmg.ipynb) <br />
 [wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb) <br />
+[water_facility_repair_cost.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/water_facility_repair_cost.ipynb) <br />
 [water_facility_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/water_facility_restoration.ipynb)
 
 ## Testbed specific

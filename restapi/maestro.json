@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "IN-CORE Maestro Service For Playbook workflows",
-    "version": "1.13.0",
+    "version": "1.14.0",
     "title": "Maestro Service",
     "contact": {
       "name": "IN-CORE Dev Team",
