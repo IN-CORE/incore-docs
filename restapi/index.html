@@ -20,12 +20,11 @@
             // Build a system
             const ui = SwaggerUIBundle({
               urls: [
-                {url: "hazard.json", name: "Hazard"},
-                {url: "data.json", name: "Data"},
-                {url: "dfr3.json", name: "DFR3"},
-                {url: "semantics.json", name: "Semantics"},
-                {url: "maestro.json", name: "Maestro"},
-                {url: "space.json", name: "Space"}
+                  {url: window.location.protocol + '//' + window.location.host + "/hazard/api/openapi.json", name: "Hazard"},
+                  {url: window.location.protocol + '//' + window.location.host + "/data/api/openapi.json", name: "Data"},
+                  {url: window.location.protocol + '//' + window.location.host + "/dfr3/api/openapi.json", name: "DFR3"},
+                  {url: window.location.protocol + '//' + window.location.host + "/semantics/api/openapi.json", name: "Semantics"},
+                  {url: window.location.protocol + '//' + window.location.host + "/space/api/openapi.json", name: "Space"}
               ],
               dom_id: '#swagger-ui',
               deepLinking: true,
