@@ -48,6 +48,7 @@
                                 throw new
                                 Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
                             }
+                            return response.text();
                         })
                         .then(function (responseText) {
                             resolve({data: responseText, status: 200});
