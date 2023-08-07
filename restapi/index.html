@@ -39,25 +39,25 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
-                requestInterceptor: function (request) {
-                // Intercept requests and handle errors
-                return new Promise(function (resolve, reject) {
-                    fetch(request.url, request)
-                        .then(function (response) {
-                            if (!response.ok) {
-                                throw new
-                                Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
-                            }
-                            return response.text();
-                        })
-                        .then(function (responseText) {
-                            resolve({data: responseText, status: 200});
-                        })
-                        .catch(function (error) {
-                            reject(error);
-                        });
-                });
-            },
+                // requestInterceptor: function (request) {
+                // // Intercept requests and handle errors
+                // return new Promise(function (resolve, reject) {
+                //     fetch(request.url, request)
+                //         .then(function (response) {
+                //             if (!response.ok) {
+                //                 throw new
+                //                 Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
+                //             }
+                //             return response.text();
+                //         })
+                //         .then(function (responseText) {
+                //             resolve({data: responseText, status: 200});
+                //         })
+                //         .catch(function (error) {
+                //             reject(error);
+                //         });
+                // });
+            // },
             });
             window.ui = ui
           };
