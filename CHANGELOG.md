@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Interdependent Network Design Problem (INDP) [#250](https://github.com/IN-CORE/incore-docs/issues/250)
 
+### Fixed
+- Broken tornado visualization in pyincore-viz example notebook [#254](https://github.com/IN-CORE/incore-docs/issues/254)
+
 ## [4.2.0] - 2023-06-14
 
 ### Added
