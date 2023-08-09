@@ -34,11 +34,31 @@ key name | type    | name                  | description
 
 **Input datasets**
 
-key name | type | name | description
---- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
-`retrofit_strategy` | `incore:retrofitStrategy` | Retrofit Strategy | Building retrofit strategy that contains guid and retrofit method.
+key name | type                      | name                                      | description
+--- |---------------------------|-------------------------------------------| ---
+`wf_repair_cost` <sup>*</sup> | `incore:repairCost`       | Water Facility Repair Cost                |  Repair cost for each water facility.
+`wf_restoration_time` <sup>*</sup> | `incore:waterFacilityRepairTime`   | Water Facility Repair Time                |  Repair time at certain functionality recovery for each class and limit state.
+`epf_repair_cost` <sup>*</sup> | `incore:repairCost`   | Electric Power Facility Repair Cost       |  Repair cost for each electric power facility.
+`epf_restoration_time` <sup>*</sup> | `incore:epfRepairTime`   | Electric Power Facility Repair Time       |  Repair time at certain functionality recovery for each class and limit state.
+`pipeline_repair_cost` <sup>*</sup> | `incore:pipelineRepairCost`   | Water Pipeline Repair Cost                |  Repair cost for each water pipeline.
+`pipeline_restoration_time` <sup>*</sup> | `incore:pipelineRestorationVer1`   | Water Pipeline Resotarting Time           |  Pipeline restoration times.
+`power_network` <sup>*</sup> | `incore:epnNetwork`   | Electric Power Network Dataset            |  Electric power network dataset.
+`water_network` <sup>*</sup> | `incore:waterNetwork`   | Water Network Dataset                     |  Water network dataset.
+`powerline_supply_demand_info` <sup>*</sup> | `incore:powerLineSupplyDemandInfo`   | Powerline Supply Demand Info              |  Supply and demand information for powerlines.
+`epf_supply_demand_info` <sup>*</sup> | `incore:epfSupplyDemandInfo`   | Electric Power Facility Supply Demand Info |  Supply and demand information for electric power facilities.
+`wf_supply_demand_info` <sup>*</sup> | `incore:waterFacilitySupplyDemandInfo`   | Water Facility Supply Demand Info         |  Supply and demand information for water facilities.
+`pipeline_supply_demand_info` <sup>*</sup> | `incore:pipelineSupplyDemandInfo`   | Water Pipeline Supply Demand Info         |  Supply and demand information for water pipelines.
+`interdep` <sup>*</sup> | `incore:interdep`   | Interdependency                           | Interdepenency between water and electric power facilities.
+`wf_failure_state` <sup>*</sup> | `incore:sampleFailureState`   | Water Facility Failure State              | MCS failure state of water facilities.
+`wf_damage_state` <sup>*</sup> | `incore:sampleDamageState`   | Water Facility Damage State               | MCS damage state of water facilities.
+`pipeline_failure_state` <sup>*</sup> | `incore:sampleFailureState`   | Water Pipeline Failure State              | Failure state of pipeline from pipeline functionality analysis.
+`epf_failure_state` <sup>*</sup> | `incore:sampleFailureState`   | Electric Power Facility Failure State     | MCS failure state of electric power facilities.
+`epf_damage_state` <sup>*</sup> | `incore:sampleDamageState`   | Electric Power Facility Damage State      | MCS damage state of electric power facilities
+`pop_dislocation` <sup>*</sup> | `incore:popDislocation`   | Population Dislocation                    | Population dislocation.
+`bldgs2elec` | `incore:bldgs2elec`   | Building To Electric Power Facility       | Relation between building and electric power facility.
+`bldgs2wter` | `incore:bldgs2wter`   | Building To Water Facility  | Relation between building and water facility.
+
+
 
 **Output datasets**
 
