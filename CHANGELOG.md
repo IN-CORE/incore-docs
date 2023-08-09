@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Broken tornado visualization in pyincore-viz example notebook [#254](https://github.com/IN-CORE/incore-docs/issues/254)
 
+### Changed
+- Upgrade swagger ui to 5.3.1 and use auto generated openapi json [#253](https://github.com/IN-CORE/incore-docs/issues/253)
+
 ## [4.2.0] - 2023-06-14
 
 ### Added

@@ -6,26 +6,25 @@
         <meta name="description" content="IN-CORE RESTAPI Swagger Documentation - Data, Hazard & Fragility Services">
         <meta name="author" content="NCSA">
         <title>IN-CORE RESTAPI Documentation - Data, Hazard & Fragility Services</title>
-        <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.3.1/swagger-ui.css">
         <link rel="shortcut icon" type="image/png" href="../home/img/favicon.ico">
     </head>
 
     <body>
         <div id="swagger-ui"></div>
-        <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
-        <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
+        <script src="https://unpkg.com/swagger-ui-dist@5.3.1/swagger-ui-standalone-preset.js"></script>
+        <script src="https://unpkg.com/swagger-ui-dist@5.3.1/swagger-ui-bundle.js"></script>
 
         <script>
           window.onload = function() {
             // Build a system
             const ui = SwaggerUIBundle({
               urls: [
-                {url: "hazard.json", name: "Hazard"},
-                {url: "data.json", name: "Data"},
-                {url: "dfr3.json", name: "DFR3"},
-                {url: "semantics.json", name: "Semantics"},
-                {url: "maestro.json", name: "Maestro"},
-                {url: "space.json", name: "Space"}
+                  {url: window.location.protocol + '//' + window.location.host + "/hazard/api/openapi.json", name: "Hazard"},
+                  {url: window.location.protocol + '//' + window.location.host + "/data/api/openapi.json", name: "Data"},
+                  {url: window.location.protocol + '//' + window.location.host + "/dfr3/api/openapi.json", name: "DFR3"},
+                  {url: window.location.protocol + '//' + window.location.host + "/semantics/api/openapi.json", name: "Semantics"},
+                  {url: window.location.protocol + '//' + window.location.host + "/space/api/openapi.json", name: "Space"}
               ],
               dom_id: '#swagger-ui',
               deepLinking: true,
@@ -40,6 +39,25 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
+                // requestInterceptor: function (request) {
+                // // Intercept requests and handle errors
+                // return new Promise(function (resolve, reject) {
+                //     fetch(request.url, request)
+                //         .then(function (response) {
+                //             if (!response.ok) {
+                //                 throw new
+                //                 Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
+                //             }
+                //             return response.text();
+                //         })
+                //         .then(function (responseText) {
+                //             resolve({data: responseText, status: 200});
+                //         })
+                //         .catch(function (error) {
+                //             reject(error);
+                //         });
+                // });
+            // },
             });
             window.ui = ui
           };
