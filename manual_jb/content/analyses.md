@@ -16,7 +16,7 @@
 14. [Galveston Computable General Equilibrium (CGE)](analyses/galveston_cge.md)
 15. [Housing recovery](analyses/housing_recovery)
 16. [Housing unit allocation](analyses/housingunitallocation)
-17. [Interdependent Network Restoration Decision-making](analyses/indp)
+17. [Interdependent Network Design Problem](analyses/indp)
 18. [Joplin Computable General Equilibrium (CGE)](analyses/joplin_cge)
 19. [Joplin empirical restoration](analyses/joplin_empirical_restoration)
 20. [Mean damage](analyses/mean_dmg)
