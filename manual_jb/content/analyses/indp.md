@@ -62,10 +62,11 @@ key name | type                      | name                                     
 
 **Output datasets**
 
-key name | type | parent key | name | description
---- | --- | --- | --- | ---
-`ds_result` <sup>*</sup> | `ergo:buildingDamageVer5` | `buildings` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:buildingDamageSupplement` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+key name | type | parent key  | name     | description
+---| ---|-------------|----------| ---
+`action` <sup>*</sup> | `incore:indpAction` |           | Action   | Restoration action plans.
+`cost` <sup>*</sup> | `incore:indpCost` |           | Cost     | Restoration cost plans
+`runtime` <sup>*</sup> | `incore:indpRuntime` |           | Run Time | Run time duration (in second) to execute computations for each time step
 
 <small>(* required)</small>
 
@@ -74,28 +75,69 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create building damage
-    bldg_dmg = BuildingDamage(client)
+    indp_analysis = INDP(client)
+    indp_analysis.set_parameter("network_type", "from_csv")
+    indp_analysis.set_parameter("MAGS", [1000])
+    indp_analysis.set_parameter("sample_range", sample_range)
+    indp_analysis.set_parameter("dislocation_data_type", "incore")
+    indp_analysis.set_parameter("return_model", "step_function")
+    indp_analysis.set_parameter("testbed_name", "seaside")
+    indp_analysis.set_parameter("extra_commodity", {1: ["PW"], 3: []})
+    indp_analysis.set_parameter("RC", [{"budget": 240000, "time": 700}, {"budget": 300000, "time": 600}])
+    indp_analysis.set_parameter("layers", [1, 3])
+    
+    indp_analysis.set_parameter("method", "INDP")
+    # indp_analysis.set_parameter("method", "TDINDP")
+    
+    indp_analysis.set_parameter("t_steps", 10)
+    indp_analysis.set_parameter("time_resource", True)
+    
+    indp_analysis.set_parameter("save_model", False)
+    # indp_analysis.set_parameter("save_model", True)
+    
+     # scip
+    indp_analysis.set_parameter("solver_engine", "scip")
+    indp_analysis.set_parameter("solver_path", "/usr/local/bin/scip")
 
-    # Load input dataset
-    bldg_dmg.load_remote_input_dataset("buildings", bldg_dataset_id)
+    # glpk
+    # indp_analysis.set_parameter("solver_engine", "glpk")
+    # indp_analysis.set_parameter("solver_path", "/usr/local/bin/glpsol")
 
-    # Load fragility mapping
-    fragility_service = FragilityService(client)
-    mapping_set = MappingSet(fragility_service.get_mapping(mapping_id))
-    bldg_dmg.set_input_dataset('dfr3_mapping_set', mapping_set)
+    # cbc
+    # indp_analysis.set_parameter("solver_engine", "cbc")
+    # indp_analysis.set_parameter("solver_path", "/usr/local/bin/cbc")
 
-    # Specify the result name
-    result_name = "memphis_bldg_dmg_result"
+    # gurobi
+    # indp_analysis.set_parameter("solver_engine", "gurobi")
 
-    # Set analysis parameters
-    bldg_dmg.set_parameter("result_name", result_name)
-    bldg_dmg.set_parameter("hazard_type", hazard_type)
-    bldg_dmg.set_parameter("hazard_id", hazard_id)
-    bldg_dmg.set_parameter("num_cpu", 10)
+    indp_analysis.set_parameter("solver_time_limit", 3600)  # if not set default to never timeout
 
-    # Run building damage analysis
-    bldg_dmg.run_analysis()
+    indp_analysis.set_input_dataset("wf_restoration_time", wf_restoration_time)
+    indp_analysis.set_input_dataset("wf_repair_cost", wf_repair_cost_result)
+    indp_analysis.set_input_dataset("epf_restoration_time", epf_restoration_time)
+    indp_analysis.set_input_dataset("epf_repair_cost", epf_repair_cost_result)
+    indp_analysis.set_input_dataset("pipeline_restoration_time", pipeline_restoration_time)
+    indp_analysis.set_input_dataset("pipeline_repair_cost", pipeline_repair_cost_result)
+    indp_analysis.set_input_dataset("power_network", power_network_dataset)
+    indp_analysis.set_input_dataset("water_network", water_network_dataset)  # with distribution noes
+    indp_analysis.load_remote_input_dataset("powerline_supply_demand_info", powerline_supply_demand_info_id)
+    indp_analysis.load_remote_input_dataset("epf_supply_demand_info", epf_supply_demand_info_id)
+    indp_analysis.load_remote_input_dataset("wf_supply_demand_info", wf_supply_demand_info_id)
+    indp_analysis.load_remote_input_dataset("pipeline_supply_demand_info", pipeline_supply_demand_info_id)
+    indp_analysis.load_remote_input_dataset("interdep", interdep_id)
+    indp_analysis.set_input_dataset("wf_failure_state", wterfclty_sample_failure_state)
+    indp_analysis.set_input_dataset("wf_damage_state", wterfclty_sample_damage_states)
+    indp_analysis.set_input_dataset("pipeline_failure_state", pipeline_sample_failure_state)
+    indp_analysis.set_input_dataset("epf_failure_state", epf_sample_failure_state)
+    indp_analysis.set_input_dataset("epf_damage_state", epf_sample_damage_states)
+    indp_analysis.set_input_dataset("pop_dislocation", pop_dislocation_result)
+
+    # # optional inputs
+    # indp_analysis.load_remote_input_dataset("bldgs2elec", bldgs2elec_id)
+    # indp_analysis.load_remote_input_dataset("bldgs2wter", bldgs2wter_id)
+
+    # Run Analysis
+    indp_analysis.run_analysis()
 ```
 
-full analysis: [building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_dmg.ipynb)
+full analysis: [indp.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb)
