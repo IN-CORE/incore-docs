@@ -19,6 +19,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [galveston_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_cge.ipynb) <br />
 [housing household recovery](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_household_recovery.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_recovery.ipynb) <br />
+[indp.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housingunitallocation.ipynb) <br />
 [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_cge.ipynb) <br />
 [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_empirical_restoration.ipynb) <br />
