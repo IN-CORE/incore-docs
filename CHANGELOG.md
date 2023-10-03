@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Broken notebook using restoration util class [#260](https://github.com/IN-CORE/incore-docs/issues/260)
 
+### Added
+- Added commercial buildings markdown and notebook [#271](https://github.com/IN-CORE/incore-docs/issues/271)
+
 ## [4.5.0] - 2023-08-16
 
 ### Added
