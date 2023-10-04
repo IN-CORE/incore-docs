@@ -11,7 +11,7 @@ systems subject to budget and operational constraints.
 - Implementation: Hesam Talebiyan, Chen Wang, and NCSA IN-CORE Dev Team
 
 **Related publications**
-- Talebiyan, Hesam. "Interdependent Restoration of Infrastructure Networks with Humans in the Loop: decentralized and strategic decision processes." (2021) Diss., Rice University. https://hdl.handle.net/1911/111232.
+- Talebiyan, Hesam. "Interdependent Restoration of Infrastructure Networks with Humans in the Loop: decentralized and strategic decision processes." (2021) Diss., Rice University. [https://hdl.handle.net/1911/111232](https://hdl.handle.net/1911/111232)
 
 
 **Input parameters**
