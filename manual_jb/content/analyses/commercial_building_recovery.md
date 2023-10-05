@@ -46,9 +46,9 @@ key name | type | name | description
 
 key name | type | parent key              | name | description
 --- | --- |-------------------------| --- | ---
-`time_stepping_recovery` <sup>*</sup> | `incore:buildingRecovery` | Results                 | A dataset containing results (format: CSV)<br>with percentages of commerical building recovery.
-`recovery` <sup>*</sup> | `incore:buildingRecoveryTime` | Building Recovery Time  | A dataset containing results (format: CSV)<br>with commerical building recovery time.
-`total_delay` <sup>*</sup> | `incore:buildingRecoveryDelay` | Building Recovery Delay | A dataset containing results (format: CSV)<br>with commerical building delay time.
+`time_stepping_recovery` <sup>*</sup> | `incore:buildingRecovery` | Results                 | A dataset containing results (format: CSV)<br>with percentages of commercial building recovery.
+`recovery` <sup>*</sup> | `incore:buildingRecoveryTime` | Building Recovery Time  | A dataset containing results (format: CSV)<br>with commercial building recovery time.
+`total_delay` <sup>*</sup> | `incore:buildingRecoveryDelay` | Building Recovery Delay | A dataset containing results (format: CSV)<br>with commercial building delay time.
 
 <small>(* required)</small>
 
@@ -81,8 +81,8 @@ code snippet:
     comm_recovery.set_parameter("seed", seed)
     comm_recovery.set_parameter("num_samples", 10)
 
-    # Run commerical recovery analysis
+    # Run commercial recovery analysis
     comm_recovery.run_analysis()
 ```
 
-full analysis: [commerical_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/commerical_building_recovery.ipynb)
+full analysis: [commercial_building_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/commercial_building_recovery.ipynb)
