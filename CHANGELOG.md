@@ -6,11 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Added commercial buildings markdown and notebook [#271](https://github.com/IN-CORE/incore-docs/issues/271)
+
 ### Fixed
 - Broken notebook using restoration util class [#260](https://github.com/IN-CORE/incore-docs/issues/260)
 
-### Added
-- Added commercial buildings markdown and notebook [#271](https://github.com/IN-CORE/incore-docs/issues/271)
+### Changed
+- Add additional input dataset and citation to INDP [#274](https://github.com/IN-CORE/incore-docs/issues/274)
+
 
 ## [4.5.0] - 2023-08-16
 
