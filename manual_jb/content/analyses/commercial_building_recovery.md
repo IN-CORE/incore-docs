@@ -1,4 +1,4 @@
-# Commerical building recovery
+# Commercial building recovery
 
 **Description**
 
@@ -57,8 +57,8 @@ key name | type | parent key              | name | description
 code snippet:
 
 ```
-    # Create Commerical building recovery instance
-    comm_recovery = CommericalBuildingRecovery(client)
+    # Create Commercial building recovery instance
+    comm_recovery = CommercialBuildingRecovery(client)
     
     # Load input building infrastructure dataset
     comm_recovery.load_remote_input_dataset("buildings", buildings)
