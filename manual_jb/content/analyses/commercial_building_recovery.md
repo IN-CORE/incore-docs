@@ -46,9 +46,9 @@ key name | type | name | description
 
 key name | type | parent key              | name | description
 --- | --- |-------------------------| --- | ---
-`time_stepping_recovery` <sup>*</sup> | `incore:buildingRecovery` | Results                 | A dataset containing results (format: CSV)<br>with percentages of commercial building recovery.
-`recovery` <sup>*</sup> | `incore:buildingRecoveryTime` | Building Recovery Time  | A dataset containing results (format: CSV)<br>with commercial building recovery time.
-`total_delay` <sup>*</sup> | `incore:buildingRecoveryDelay` | Building Recovery Delay | A dataset containing results (format: CSV)<br>with commercial building delay time.
+`time_stepping_recovery` <sup>*</sup> | `incore:buildingRecovery` | `buildings` | Results                 | A dataset containing results (format: CSV)<br>with percentages of commercial building recovery.                 | A dataset containing results (format: CSV)<br>with percentages of commercial building recovery.
+`recovery` <sup>*</sup> | `incore:buildingRecoveryTime` | `buildings` |  Building Recovery Time  | A dataset containing results (format: CSV)<br>with commercial building recovery time.
+`total_delay` <sup>*</sup> | `incore:buildingRecoveryDelay` | `buildings` |  Building Recovery Delay | A dataset containing results (format: CSV)<br>with commercial building delay time.
 
 <small>(* required)</small>
 
