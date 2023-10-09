@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Added commercial buildings markdown and notebook [#271](https://github.com/IN-CORE/incore-docs/issues/271)
+- Local hazard tutorial [#272](https://github.com/IN-CORE/incore-docs/issues/272)
 
 ### Fixed
 - Broken notebook using restoration util class [#260](https://github.com/IN-CORE/incore-docs/issues/260)
