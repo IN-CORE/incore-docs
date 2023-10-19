@@ -33,7 +33,7 @@ key name | type | name | description
 `bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
-**Input hazards**
+**Input Hazards**
 
 key name | type                                                             | name          | description
 --- |------------------------------------------------------------------|---------------| ---
