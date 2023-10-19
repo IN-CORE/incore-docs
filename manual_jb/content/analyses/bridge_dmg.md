@@ -33,6 +33,12 @@ key name | type | name | description
 `bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
 `dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
 
+**Input hazards**
+
+key name | type                                                             | name          | description
+--- |------------------------------------------------------------------|---------------| ---
+`hazard` | `earthquake`<br>`tornado`<br>`hurricane`<br>`flood`<br>`tsunami` | Hazard | Supported hazard object.
+
 **Output datasets**
 
 key name | type | parent key | name | description
