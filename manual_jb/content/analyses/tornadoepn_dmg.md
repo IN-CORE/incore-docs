@@ -28,7 +28,7 @@ key name | type | name | description
 
 key name | type | name  | description
 --- |-------|--------| ---
-`hazard` | `tornado` | Hazard  | Supported hazard object.
+`hazard` | `tornado` | Hazard  | Supported hazard object for using local and remote hazards.
 
 **Input Datasets**
 

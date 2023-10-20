@@ -28,7 +28,7 @@ key name | type | name | description
 
 key name | type | name | description
 --- |---|---| ---
-`hazard` | `earthquake`<br>`tsunami` | Hazard | Supported hazard object.
+`hazard` | `earthquake`<br>`tsunami` | Hazard | Supported hazard object for using local and remote hazards.
 
 **Input Datasets**
 
