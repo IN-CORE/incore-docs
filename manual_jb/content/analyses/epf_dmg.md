@@ -18,14 +18,20 @@ The outputs of this analysis are CSV file with probabilities of damage and JSON 
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
-`hazard_id` <sup>*</sup> | `str` | Hazard id | Hazard ID which defines the particular hazard (e.g. New Madrid <br>earthquake using Atkinson Boore 1995).
+`hazard_type` | `str` | Hazard type | Hazard type (earthquake, tsunami, tornado, hurricaneWindfields). 
+`hazard_id` | `str` | Hazard id | Hazard ID which defines the particular hazard (e.g. New Madrid <br>earthquake using Atkinson Boore 1995).
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
 `use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default is *False*. Use a ground liquefaction to modify damage interval.
 `liquefaction_fragility_key` | `str` | Liquefaction key | Fragility key to use in liquefaction mapping dataset.
 `liquefaction_geology_dataset_id` | `str` | Liquefaction id | Liquefaction geology/susceptibility dataset id. <br>If not provided, liquefaction will be ignored.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. <br>Default is *False*.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
+
+**Input Hazards**
+
+key name | type                                                             | name          | description
+--- |------------------------------------------------------------------|---------------| ---
+`hazard` | `earthquake`<br>`tornado`<br>`hurricane`<br>`flood`<br>`tsunami` | Hazard | Supported hazard object for using local and remote hazards.
 
 **Input datasets**
 
