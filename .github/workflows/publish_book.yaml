@@ -18,9 +18,8 @@ jobs:
     - name: Install Python dependencies
       run: |
         sudo apt-get install python3-pip
-        pip install git+git://github.com/executablebookproject/cli.git#egg=master
         pip install ghp-import
-        PATH="${PATH}:${HOME}/.local/bin"
+        pip install -U jupyter-book
 
     - name: Build book TOC file
       run: |
@@ -28,14 +27,11 @@ jobs:
 
     - name: Build book HTML
       run: |
-        jupyter-book build ./content
+        jupyter-book build ./notebooks       
 
-    - name: Push _build/html to gh-pages
-      run: |
-        sudo chown -R $(whoami):$(whoami) .
-        git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        git config --global user.name "$GITHUB_ACTOR"
-        git remote set-url origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY"
-
-        ghp-import ./content/_build/html -f -p -n
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
       
