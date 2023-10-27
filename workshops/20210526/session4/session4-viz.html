@@ -1,0 +1,1311 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Session 4: Visualization of outputs &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/20210526/session4/session4-viz';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Session 4: Assignment" href="session4-assignment.html" />
+    <link rel="prev" title="Session 3: Assignment" href="../session3/session3-assignment-answer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../workshops.html">IN-CORE workshops</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../agenda.html">Workshop May 26, 2021</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/workshops/20210526/session4/session4-viz.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Session 4: Visualization of outputs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-dataset">1. Joining Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-running-building-dmg-analysis-tornado">Step 1: Running building dmg analysis (Tornado)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-joining-two-datasets">Step 2: Joining two datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pandas">2. Using Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyincore-viz">3. Using pyIncore-viz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-fragility-curves">3.1 Plotting Fragility curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-geospatial-map">3.2 Plot Geospatial Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-assignment">Hands-on Assignment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="session-4-visualization-of-outputs">
+<h1>Session 4: Visualization of outputs<a class="headerlink" href="#session-4-visualization-of-outputs" title="Permalink to this heading">#</a></h1>
+<p>You will learn how to visualize the input/output datasets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pyIncore modules</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">FragilityCurveSet</span><span class="p">,</span> <span class="n">MappingSet</span><span class="p">,</span> <span class="n">Dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to IN-CORE service</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 0.9.3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_services</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="joining-dataset">
+<h2>1. Joining Dataset<a class="headerlink" href="#joining-dataset" title="Permalink to this heading">#</a></h2>
+<p>Data preparation and data post-processing are common procedures. Prior to using pyIncore, users often encounter situation that they need to reshape their own dataset to make it compliant with the input dataset format of pyIncore.</p>
+<p>For example, adding GUID to inventory dataset. GUID (aka UUID) is an acronym for ‘Globally Unique Identifier’. It is a 128-bit integer number used to identify resources. In IN-CORE We <strong>require</strong> each individual row/item in an inventory to have its own GUID. If your dataset does not come with GUID, pyIncore has utility method to help you add it.</p>
+<p>After acquiring outputs from pyIncore analyses, often time user would need to perform data aggregation to gain statitical insights. The below tutorial gives a few examples on how to join datasets and generate some basic visualizations.</p>
+<section id="step-1-running-building-dmg-analysis-tornado">
+<h3>Step 1: Running building dmg analysis (Tornado)<a class="headerlink" href="#step-1-running-building-dmg-analysis-tornado" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a local dataset with buiding inventory data</span>
+<span class="n">local_buildings</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;sample_bldgs_w_guid.shp&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;ergo:buildingInventoryVer7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import building damage analysis class</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the variables to be used for input parameters</span>
+<span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5b902cb273c3371e1236b36b&quot;</span>
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;memphis_eq_bldg_dmg_result&quot;</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b350337d4a3629076f2c&quot;</span>
+
+<span class="c1"># create fragility mapping object with id</span>
+<span class="n">eq_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+
+<span class="c1"># Create building damage analysis object</span>
+<span class="n">eq_bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">local_buildings</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">eq_mapping_set</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Run building damage analysis</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ac8b0b44-ae82-4c48-afb8-076e2d16c7e5</td>
+      <td>0.848149</td>
+      <td>0.327322</td>
+      <td>2.722964e-02</td>
+      <td>0.151851</td>
+      <td>0.520827</td>
+      <td>0.300092</td>
+      <td>2.722964e-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>154b0a62-cae6-456d-8d90-635e3e1c2dcb</td>
+      <td>0.844343</td>
+      <td>0.328299</td>
+      <td>2.860543e-02</td>
+      <td>0.155657</td>
+      <td>0.516043</td>
+      <td>0.299694</td>
+      <td>2.860543e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9f9b11f8-c25c-4760-b1d2-a63bbeec8e72</td>
+      <td>0.896774</td>
+      <td>0.480925</td>
+      <td>8.756720e-02</td>
+      <td>0.103226</td>
+      <td>0.415849</td>
+      <td>0.393358</td>
+      <td>8.756720e-02</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>28321416-e473-473b-ad0a-c3c38248acc7</td>
+      <td>0.828098</td>
+      <td>0.293753</td>
+      <td>2.738378e-02</td>
+      <td>0.171902</td>
+      <td>0.534345</td>
+      <td>0.266369</td>
+      <td>2.738378e-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>b5069250-7a2b-47b1-9754-290528a6d72d</td>
+      <td>0.970343</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+      <td>0.029657</td>
+      <td>0.815666</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="step-2-joining-two-datasets">
+<h3>Step 2: Joining two datasets<a class="headerlink" href="#step-2-joining-two-datasets" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># getting dataframe of damage output</span>
+<span class="n">eq_bldg_dmg_df</span> <span class="o">=</span> <span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># getting geodataframe of building dataset </span>
+<span class="n">bldg_gdf</span> <span class="o">=</span> <span class="n">local_buildings</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+
+<span class="c1"># merge/join two dataframe</span>
+<span class="c1"># you can choose columns to be merged</span>
+<span class="n">bldg_dmg_gdf</span> <span class="o">=</span> <span class="n">bldg_gdf</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;struct_typ&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">eq_bldg_dmg_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span>
+<span class="n">bldg_dmg_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>struct_typ</th>
+      <th>geometry</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ac8b0b44-ae82-4c48-afb8-076e2d16c7e5</td>
+      <td>C1</td>
+      <td>POINT (-90.02585 35.14020)</td>
+      <td>0.848149</td>
+      <td>0.327322</td>
+      <td>2.722964e-02</td>
+      <td>0.151851</td>
+      <td>0.520827</td>
+      <td>0.300092</td>
+      <td>2.722964e-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>154b0a62-cae6-456d-8d90-635e3e1c2dcb</td>
+      <td>C1</td>
+      <td>POINT (-90.02585 35.14020)</td>
+      <td>0.844343</td>
+      <td>0.328299</td>
+      <td>2.860543e-02</td>
+      <td>0.155657</td>
+      <td>0.516043</td>
+      <td>0.299694</td>
+      <td>2.860543e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9f9b11f8-c25c-4760-b1d2-a63bbeec8e72</td>
+      <td>S1</td>
+      <td>POINT (-90.01928 35.13640)</td>
+      <td>0.896774</td>
+      <td>0.480925</td>
+      <td>8.756720e-02</td>
+      <td>0.103226</td>
+      <td>0.415849</td>
+      <td>0.393358</td>
+      <td>8.756720e-02</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>28321416-e473-473b-ad0a-c3c38248acc7</td>
+      <td>URM</td>
+      <td>POINT (-90.07377 35.12344)</td>
+      <td>0.828098</td>
+      <td>0.293753</td>
+      <td>2.738378e-02</td>
+      <td>0.171902</td>
+      <td>0.534345</td>
+      <td>0.266369</td>
+      <td>2.738378e-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>b5069250-7a2b-47b1-9754-290528a6d72d</td>
+      <td>S1</td>
+      <td>POINT (-90.04349 35.15360)</td>
+      <td>0.970343</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+      <td>0.029657</td>
+      <td>0.815666</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="using-pandas">
+<h2>2. Using Pandas<a class="headerlink" href="#using-pandas" title="Permalink to this heading">#</a></h2>
+<p>You can use Pandas and GeoPandas to dispaly tabular data and create charts.
+This secsion shows some examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stat summary on a column</span>
+<span class="n">bldg_dmg_gdf</span><span class="p">[</span><span class="s2">&quot;LS_0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    22.000000
+mean      0.828967
+std       0.106217
+min       0.590205
+25%       0.759679
+50%       0.850892
+75%       0.888729
+max       0.993698
+Name: LS_0, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show table sorted by DS_3 (decending) and struct_typ (ascending)</span>
+
+<span class="n">bldg_dmg_gdf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;DS_3&#39;</span><span class="p">,</span> <span class="s1">&#39;struct_typ&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>struct_typ</th>
+      <th>geometry</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14</th>
+      <td>6dd342ef-498c-43a9-85cd-35ad76e4c279</td>
+      <td>W2</td>
+      <td>POINT (-89.77456 35.20624)</td>
+      <td>0.856181</td>
+      <td>0.446936</td>
+      <td>0.094468</td>
+      <td>0.143819</td>
+      <td>0.409244</td>
+      <td>0.352468</td>
+      <td>0.094468</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9f9b11f8-c25c-4760-b1d2-a63bbeec8e72</td>
+      <td>S1</td>
+      <td>POINT (-90.01928 35.13640)</td>
+      <td>0.896774</td>
+      <td>0.480925</td>
+      <td>0.087567</td>
+      <td>0.103226</td>
+      <td>0.415849</td>
+      <td>0.393358</td>
+      <td>0.087567</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>d7603d04-6917-478c-8bb7-50cf9118f973</td>
+      <td>S1</td>
+      <td>POINT (-89.86438 35.09755)</td>
+      <td>0.880047</td>
+      <td>0.445912</td>
+      <td>0.074362</td>
+      <td>0.119953</td>
+      <td>0.434135</td>
+      <td>0.371550</td>
+      <td>0.074362</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>11395729-3727-449d-9848-778d68edd7d8</td>
+      <td>S1</td>
+      <td>POINT (-90.04349 35.15360)</td>
+      <td>0.923829</td>
+      <td>0.491034</td>
+      <td>0.070220</td>
+      <td>0.076171</td>
+      <td>0.432794</td>
+      <td>0.420815</td>
+      <td>0.070220</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>3ef119b1-6432-4875-aa26-9dbf571388f1</td>
+      <td>S1</td>
+      <td>POINT (-89.80149 35.09272)</td>
+      <td>0.891623</td>
+      <td>0.413491</td>
+      <td>0.047434</td>
+      <td>0.108377</td>
+      <td>0.478133</td>
+      <td>0.366056</td>
+      <td>0.047434</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show table group by Structure type</span>
+<span class="n">grouped_bldg_dmg</span> <span class="o">=</span> <span class="n">bldg_dmg_gdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;struct_typ&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>\
+<span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;DS_0&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;guid&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
+<span class="n">grouped_bldg_dmg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;guid&#39;</span><span class="p">:</span> <span class="s1">&#39;total_count&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">grouped_bldg_dmg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>total_count</th>
+    </tr>
+    <tr>
+      <th>struct_typ</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C1</th>
+      <td>0.188494</td>
+      <td>0.524856</td>
+      <td>0.264423</td>
+      <td>0.022226</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>C2</th>
+      <td>0.204050</td>
+      <td>0.519597</td>
+      <td>0.252735</td>
+      <td>0.023617</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>S1</th>
+      <td>0.137610</td>
+      <td>0.578995</td>
+      <td>0.249515</td>
+      <td>0.033880</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>URM</th>
+      <td>0.171902</td>
+      <td>0.534345</td>
+      <td>0.266369</td>
+      <td>0.027384</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>W2</th>
+      <td>0.276807</td>
+      <td>0.438296</td>
+      <td>0.234968</td>
+      <td>0.049929</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot Damage state by structure type</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">grouped_bldg_dmg</span><span class="p">[[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Stacked Bar Chart of Damage State Grouped by Structure Type&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;complete damage value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span> <span class="c1">#here is the magic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe4e16ed6d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/97e1e874c7aaf5d0ec456b59cb87139453cc2cd062b8e87232a2127c98d171c0.png" src="../../../_images/97e1e874c7aaf5d0ec456b59cb87139453cc2cd062b8e87232a2127c98d171c0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a histogram with DS_3</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">bldg_dmg_gdf</span><span class="p">[</span><span class="s1">&#39;DS_3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;complete damage distribution&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;complete damage value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;counts&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;counts&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/0bfb209fdf0345f712aa8ee7f59c86fd4a7aafe8d3e3cca989f714ca83ce0fa9.png" src="../../../_images/0bfb209fdf0345f712aa8ee7f59c86fd4a7aafe8d3e3cca989f714ca83ce0fa9.png" />
+</div>
+</div>
+</section>
+<section id="using-pyincore-viz">
+<h2>3. Using pyIncore-viz<a class="headerlink" href="#using-pyincore-viz" title="Permalink to this heading">#</a></h2>
+<p>pyIncore-viz is a Python visualization package for pyIncore module. It provides users with convenient methods to create image and graphic outputs of various hazard IN-CORE analyses.</p>
+<section id="plotting-fragility-curves">
+<h3>3.1 Plotting Fragility curves<a class="headerlink" href="#plotting-fragility-curves" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize this fragility curve using pyincore-viz package</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot fragility curves</span>
+
+<span class="n">fragility_set_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b2d7337d4a36187c61ce&quot;</span>
+
+<span class="c1"># Get local fragility curve set</span>
+<span class="n">fragility_curve_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="n">fragility_set_id</span><span class="p">))</span>
+<span class="n">fragility_curve_set</span><span class="o">.</span><span class="n">fragility_curves</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot</span><span class="p">(</span><span class="n">fragility_curve_set</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mid-Rise Steel Moment Frame&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/a34c4f485f8695c37be14f9a39b18ee2a840f68ca30977e984d04bf622b8c18d.png" src="../../../_images/a34c4f485f8695c37be14f9a39b18ee2a840f68ca30977e984d04bf622b8c18d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot fragility curves of tornado building by going through mapping</span>
+
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d8942dfb9219c068ea795ea&quot;</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+
+<span class="c1"># plot fragility for the first 3 archetypes using pyincore viz method</span>
+<span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="n">mapping_set</span><span class="o">.</span><span class="n">mappings</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="n">fragility_id</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Non-Retrofit Fragility ID Code&#39;</span><span class="p">]</span>
+    <span class="n">fragility_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="n">fragility_id</span><span class="p">))</span>
+    <span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot</span><span class="p">(</span><span class="n">fragility_set</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/34a395a2c031d84fd985bcfbd30363b0d7ae2ed9800bfa5fbdfce15768706fbd.png" src="../../../_images/34a395a2c031d84fd985bcfbd30363b0d7ae2ed9800bfa5fbdfce15768706fbd.png" />
+<img alt="../../../_images/cc5a95186b30a79824d82abc46f242d0ee3068979d93278d050e573feeb1a565.png" src="../../../_images/cc5a95186b30a79824d82abc46f242d0ee3068979d93278d050e573feeb1a565.png" />
+<img alt="../../../_images/0b9f89330b5903c95dc5716ed1e9f4d50d2540df7b4ba7cdc5549e698273c66f.png" src="../../../_images/0b9f89330b5903c95dc5716ed1e9f4d50d2540df7b4ba7cdc5549e698273c66f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot fragility curves (parametric curves)</span>
+
+<span class="c1"># use utility method of pyicore-viz package to visulaize the fragility</span>
+<span class="n">fragility_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="s2">&quot;5f6ccf67de7b566bb71b202d&quot;</span><span class="p">))</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot_3d_refactored</span><span class="p">(</span><span class="n">fragility_set</span><span class="p">,</span> 
+                                            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Galveston empirical fragility model developed &quot;</span>
+                                            <span class="s2">&quot;based on Hurricane Ike surveys&quot;</span><span class="p">,</span>
+                                            <span class="n">limit_state</span><span class="o">=</span><span class="s2">&quot;LS_0&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/f095b7b388d751e2950e35159049e05b3c24c07aa3085d8566881a5a5b19804e.png" src="../../../_images/f095b7b388d751e2950e35159049e05b3c24c07aa3085d8566881a5a5b19804e.png" />
+</div>
+</div>
+</section>
+<section id="plot-geospatial-map">
+<h3>3.2 Plot Geospatial Map<a class="headerlink" href="#plot-geospatial-map" title="Permalink to this heading">#</a></h3>
+<p>Plotting a geospatial map is generating static image of a map.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">geoviz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot tornado path</span>
+
+<span class="n">tornado_path_id</span> <span class="o">=</span> <span class="s2">&quot;5d07cbeab9219c065b080930&quot;</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">tornado_path_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<img alt="../../../_images/d30daffa44ccb3597a74c3d8c4ebc5519e633cdcc8b6a82cabf0104aea22ee19.png" src="../../../_images/d30daffa44ccb3597a74c3d8c4ebc5519e633cdcc8b6a82cabf0104aea22ee19.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot earthquake</span>
+
+<span class="n">eq_id</span> <span class="o">=</span> <span class="s2">&quot;5b902cb273c3371e1236b36b&quot;</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">eq_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<img alt="../../../_images/71dfaec2954bdc5a8df3631b22c1790d87b1e6ae2bdd2cfa121c73db55e12d58.png" src="../../../_images/71dfaec2954bdc5a8df3631b22c1790d87b1e6ae2bdd2cfa121c73db55e12d58.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a map with a Dataset </span>
+<span class="c1"># with local dataset (local_buildings)</span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_map</span><span class="p">(</span><span class="n">local_buildings</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;struct_typ&#39;</span><span class="p">,</span><span class="n">category</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/2b0a27a6a4efaaf4ca4d5a2528b6317a7e7feac82db7744ab185beb47aa30edd.png" src="../../../_images/2b0a27a6a4efaaf4ca4d5a2528b6317a7e7feac82db7744ab185beb47aa30edd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a map with GeoDataframe </span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_gdf_map</span><span class="p">(</span><span class="n">bldg_dmg_gdf</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/8ba05460fac98551532c8e4807c6dbd84d1bd1c3892aa873edc7e46e35a93400.png" src="../../../_images/8ba05460fac98551532c8e4807c6dbd84d1bd1c3892aa873edc7e46e35a93400.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a map with GeoDataframe </span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_gdf_map</span><span class="p">(</span><span class="n">bldg_dmg_gdf</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/793704a26e3306caa69757a111cd7f63582941c88ffe64ac99b0052d2db520cd.png" src="../../../_images/793704a26e3306caa69757a111cd7f63582941c88ffe64ac99b0052d2db520cd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive map with Dataset</span>
+<span class="c1"># addjust additional multiplier to increase the intensity of heatmap, e.g. multipler=1000 </span>
+<span class="nb">map</span> <span class="o">=</span> <span class="n">geoviz</span><span class="o">.</span><span class="n">plot_heatmap_from_gdf</span><span class="p">(</span><span class="n">bldg_dmg_gdf</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="n">multiplier</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> 
+<span class="nb">map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9d30d4aabe374d34ab47ef0dd824033a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="hands-on-assignment">
+<h2>Hands-on Assignment<a class="headerlink" href="#hands-on-assignment" title="Permalink to this heading">#</a></h2>
+<p>Please open <a class="reference internal" href="session4-assignment.html"><span class="doc std std-doc">session4-assignment.ipynb</span></a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./workshops/20210526/session4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../session3/session3-assignment-answer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 3: Assignment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="session4-assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Session 4: Assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-dataset">1. Joining Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-running-building-dmg-analysis-tornado">Step 1: Running building dmg analysis (Tornado)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-joining-two-datasets">Step 2: Joining two datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pandas">2. Using Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyincore-viz">3. Using pyIncore-viz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-fragility-curves">3.1 Plotting Fragility curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-geospatial-map">3.2 Plot Geospatial Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-assignment">Hands-on Assignment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

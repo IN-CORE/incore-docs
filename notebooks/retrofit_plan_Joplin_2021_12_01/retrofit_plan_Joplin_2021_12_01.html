@@ -1,0 +1,1455 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>An example of Joplin tornado scenario analysis with Joplin retrofit plan &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Create Network Dataset" href="../create_network_dataset/create_network_dataset.html" />
+    <link rel="prev" title="Create Tornadoes" href="../create_tornado/create_tornado.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tutorials.html">Tutorials and Tips</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>An example of Joplin tornado scenario analysis with Joplin retrofit plan</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dislocation-function">Population dislocation function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-without-retrofit-function">Building damage without retrofit function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-with-retrofit-function">Building damage with retrofit function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-building-damage-function">Monte Carlo building damage function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-retrofit-solutions-and-select-retrofit-plan">Read retrofit solutions and select retrofit plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incore-login-and-load-incore-module">INCORE Login and load INCORE module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-in-core-data-file-for-retrofit-plan-1">Create IN-CORE data file for retrofit plan 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-core-inputs">IN-CORE Inputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-information">Infrastructure information</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-information">Hazard information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-without-retrofit">Damage Analysis without retrofit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-selected-metric-with-retrofit">Compute the selected metric  with retrofit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-the-results">Compare the results</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="an-example-of-joplin-tornado-scenario-analysis-with-joplin-retrofit-plan">
+<h1>An example of Joplin tornado scenario analysis with Joplin retrofit plan<a class="headerlink" href="#an-example-of-joplin-tornado-scenario-analysis-with-joplin-retrofit-plan" title="Permalink to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h2>
+<p>The purpose of this notebook is to validate the efficiency of retrofit plan generated from multi-objective optimization. The retrofit plan is an optimal solution with given budget and other constraints. The first step is computing the building damage considering no retrofit effort implemented on the building inventory. Then we implement selected retrofit plan on the building inventory and compute the building damage. Using result from the building damage with and without retrofit effort, we can calculate population dislocation or other metric to see if the potential impact is reduced by the retrofit plan.</p>
+<p><img alt="Implementation" src="../../_images/retrofit_implementation.png" /></p>
+</section>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h2>
+<p>Yunjie Wen and Charles Nicholson, University of Oklahoma</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through <strong>conda</strong>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pyIncore</p></td>
+<td><p>=&gt;1.1.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/incore/install_pyincore.html</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyIncore_viz</p></td>
+<td><p>=&gt;1.5.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/pyincore_viz/index.html</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># This cell is used to import python libraries to visualize the analysis outputs.</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">Cursor</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plb</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">ctx</span>
+<span class="kn">import</span> <span class="nn">pyomo</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">mplcursors</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataService</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">HazardService</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">IncoreClient</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">FragilityService</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">pyincore.models.fragilitycurveset</span> <span class="kn">import</span> <span class="n">FragilityCurveSet</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">frag_plot</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">MappingSet</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.montecarlofailureprobability</span> <span class="kn">import</span> <span class="n">MonteCarloFailureProbability</span> 
+<span class="kn">from</span> <span class="nn">pyincore.analyses.populationdislocation</span> <span class="kn">import</span> <span class="n">PopulationDislocation</span><span class="p">,</span> <span class="n">PopulationDislocationUtil</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingfunctionality</span> <span class="kn">import</span> <span class="n">BuildingFunctionality</span>
+<span class="kn">import</span> <span class="nn">palettable.colorbrewer</span>
+
+<span class="n">parent_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">test_dir</span> <span class="o">=</span> <span class="s2">&quot;test_results&quot;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_dir</span><span class="p">,</span> <span class="n">test_dir</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Directory &#39;</span><span class="si">%s</span><span class="s2">&#39; created.&quot;</span> <span class="o">%</span><span class="k">test_dir</span>)
+<span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Directory &#39;</span><span class="si">%s</span><span class="s2">&#39; already exists.&quot;</span> <span class="o">%</span><span class="k">test_dir</span>)
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;test_results&quot;</span><span class="p">)</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Directory &#39;test_results&#39; already exists.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="population-dislocation-function">
+<h2>Population dislocation function<a class="headerlink" href="#population-dislocation-function" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">population_dislocation</span><span class="p">(</span><span class="n">building_dmg_result</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calcualte the population dislocation from a tornado event.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        building_dmg_result (obj): Infrastructure damage from building damage analysis.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Population dislocation results.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># data input</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+    <span class="n">housing_unit_alloc</span> <span class="o">=</span> <span class="s2">&quot;617319654746910107c77f88&quot;</span>
+    <span class="n">bg_data</span> <span class="o">=</span> <span class="s2">&quot;5d4c9545b9219c0689b2358a&quot;</span>
+    <span class="n">value_loss</span> <span class="o">=</span> <span class="s2">&quot;60354810e379f22e16560dbd&quot;</span>
+    
+    <span class="c1"># Create Population dislocation analysis</span>
+    <span class="n">pop_dis</span> <span class="o">=</span> <span class="n">PopulationDislocation</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+    
+    <span class="c1"># Load analysis input datasets</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;housing_unit_allocation&quot;</span><span class="p">,</span> <span class="n">housing_unit_alloc</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;block_group_data&quot;</span><span class="p">,</span> <span class="n">bg_data</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;value_loss_param&quot;</span><span class="p">,</span> <span class="n">value_loss</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_dmg&quot;</span><span class="p">,</span> <span class="n">building_dmg_result</span><span class="p">)</span>  <span class="c1"># Load the Joplin building damage results dataset</span>
+    
+    <span class="n">seed</span> <span class="o">=</span> <span class="mi">1111</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;pop-dislocation-results&quot;</span><span class="p">)</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+    
+    <span class="c1">#results:</span>
+    <span class="n">pop_dis</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+    <span class="c1"># Retrieve result dataset</span>
+    <span class="n">dislocation_result</span> <span class="o">=</span> <span class="n">pop_dis</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Convert dataset to Pandas DataFrame</span>
+    <span class="n">df_dislocation</span> <span class="o">=</span> <span class="n">dislocation_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">(</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="n">df_dislocation_res</span> <span class="o">=</span> <span class="n">df_dislocation</span><span class="p">[(</span><span class="n">df_dislocation</span><span class="p">[</span><span class="s2">&quot;archetype&quot;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_dislocation</span><span class="p">[</span><span class="s2">&quot;archetype&quot;</span><span class="p">]</span><span class="o">==</span><span class="mi">5</span><span class="p">)]</span>
+
+    <span class="c1"># Calculate the dislocated populaiton</span>
+    <span class="n">population_dislocation</span> <span class="o">=</span> <span class="n">df_dislocation_res</span><span class="p">[</span><span class="n">df_dislocation_res</span><span class="p">[</span><span class="s2">&quot;dislocated&quot;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">][</span><span class="s1">&#39;numprec&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="k">return</span>  <span class="n">population_dislocation</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-damage-without-retrofit-function">
+<h2>Building damage without retrofit function<a class="headerlink" href="#building-damage-without-retrofit-function" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">building_damage_without_retrofit</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">fragilityMappingSet</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculate the building damage without retrofitting implemented from a tornado event </span>
+<span class="sd">    by using INCORE service.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        hazard_id (str): Hazard ID.</span>
+<span class="sd">        fragilityMappingSet (obj): Fragility mapping data.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        obj: Building damage results.</span>
+<span class="sd">        pd.DataFrame: building damage results.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;tornado_dmg_result_no_retrofit&quot;</span> <span class="o">+</span> <span class="n">hazard_id</span>
+    <span class="c1"># building damage analysis through INCORE service</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s1">&#39;dfr3_mapping_set&#39;</span><span class="p">,</span> <span class="n">mapping_set_no_retrofit</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;Non-Retrofit Fragility ID Code&quot;</span><span class="p">)</span> <span class="c1"># without retrofitting, check the Mapping object</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+    <span class="n">building_dmg_result</span> <span class="o">=</span> <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span>
+    <span class="c1"># Convert dataset to Pandas DataFrame</span>
+    <span class="n">df_building_dmg</span> <span class="o">=</span> <span class="n">building_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    
+    <span class="k">return</span>  <span class="n">building_dmg_result</span><span class="p">,</span> <span class="n">df_building_dmg</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-damage-with-retrofit-function">
+<h2>Building damage with retrofit function<a class="headerlink" href="#building-damage-with-retrofit-function" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">building_damage_with_retrofit</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">fragilityMappingSet</span><span class="p">,</span> <span class="n">retrofit_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculate the building damage with retrofitting implemented from a tornado event </span>
+<span class="sd">    by using INCORE service.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        hazard_id (str): Hazard ID.</span>
+<span class="sd">        fragilityMappingSet (obj): Fragility mapping data.</span>
+<span class="sd">        retrofit_level (str): Retrofit level.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        obj: Building damage results.</span>
+<span class="sd">        pd.DataFrame: Building damage results.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;tornado_dmg_result_retrofit&quot;</span>
+    <span class="c1"># building damage analysis through INCORE service</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;retrofit_strategy&quot;</span><span class="p">,</span> <span class="n">retrofit_data</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set_with_retrofit</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;Fragility ID Code&quot;</span><span class="p">)</span> <span class="c1"># use it when use retrofit mapping</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+    <span class="c1">#results</span>
+    <span class="n">building_dmg_result</span> <span class="o">=</span> <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;ds_result&#39;</span><span class="p">)</span>
+    <span class="c1"># Convert dataset to Pandas DataFrame</span>
+    <span class="n">df_building_dmg</span> <span class="o">=</span> <span class="n">building_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    
+    <span class="k">return</span>  <span class="n">building_dmg_result</span><span class="p">,</span> <span class="n">df_building_dmg</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="monte-carlo-building-damage-function">
+<h2>Monte Carlo building damage function<a class="headerlink" href="#monte-carlo-building-damage-function" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MC_building_damage</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">building_dmg_result</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculate the building damage using Metro Carlo simulation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        num_samples (int): Number of samples.</span>
+<span class="sd">        building_dmg_result (obj): Building damage results.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        obj: Building failure probability.</span>
+<span class="sd">        pd.DataFrame: Building failure probability.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">mc_bldg</span> <span class="o">=</span> <span class="n">MonteCarloFailureProbability</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+    
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;tornado_mc_failure_probability_buildings&quot;</span>
+    
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">building_dmg_result</span><span class="p">)</span>                                                          
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">)</span>
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span> 
+    <span class="n">mc_bldg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+    <span class="n">building_failure_probability</span> <span class="o">=</span> <span class="n">mc_bldg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;failure_probability&quot;</span><span class="p">)</span>  <span class="c1"># get buildings failure probabilities</span>
+    <span class="n">df_bldg_fail</span> <span class="o">=</span> <span class="n">building_failure_probability</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">building_failure_probability</span><span class="p">,</span><span class="n">df_bldg_fail</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="read-retrofit-solutions-and-select-retrofit-plan">
+<h3>Read retrofit solutions and select retrofit plan<a class="headerlink" href="#read-retrofit-solutions-and-select-retrofit-plan" title="Permalink to this heading">#</a></h3>
+<p><font size="4"> This section demonstrates how to select retrofit solution from Pareto plot. The retrofit solutions are produced from the optimized model intergrating three objective functions: direct economic loss, population dislocation, building functionality for residential buildings in Joplin, MO. The retrofitting budget is $181M and the number of epsilon step is 20. The total number of solutions is 109.  <font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pareto objective function data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">pareto_solutions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../budget_20_0513_2021_objectives.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mo/dev/pyincore_110/retrofit_plan_Joplin_2021_12_01/test_results
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract objective values from the dataframe</span>
+<span class="n">eco_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">pareto_solutions</span><span class="p">[</span><span class="s2">&quot;Economic_loss&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1565</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">popu_dis</span> <span class="o">=</span> <span class="p">(</span><span class="n">pareto_solutions</span><span class="p">[</span><span class="s2">&quot;Dislocation&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1565</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">pareto_solutions</span><span class="p">[</span><span class="s2">&quot;Functionality&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">solutions_id</span> <span class="o">=</span> <span class="n">pareto_solutions</span><span class="p">[</span><span class="s2">&quot;Solution_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renders the figure in a notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7fe5301f4c70&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the Pareto objective values</span>
+<span class="n">cm1</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">scientific</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Nuuk_10</span><span class="o">.</span><span class="n">mpl_colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">,</span><span class="n">popu_dis</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># color bar setting</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">func</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">func</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">cm1</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cb1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ticks</span> <span class="o">=</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average community building functionality&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">func</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Average Direct Economic loss ($Million) per block group&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Average Population Dislocation per block group&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5c5285f5abffb8212c4d6fec8c732211f4d04f66b2d400328ab596214b2d8d80.png" src="../../_images/5c5285f5abffb8212c4d6fec8c732211f4d04f66b2d400328ab596214b2d8d80.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the Pareto objective values</span>
+<span class="n">cm1</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">scientific</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Nuuk_10</span><span class="o">.</span><span class="n">mpl_colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">,</span><span class="n">func</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">popu_dis</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># color bar setting</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">cm1</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cb1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ticks</span> <span class="o">=</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average Population Dislocation per block group&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Average Direct Economic loss ($Million) per block group&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Average community building functionality&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6bf0e3e0298000b363e5c1aec3cd49e11c58a8849dcf04a40af46e157eb3ece1.png" src="../../_images/6bf0e3e0298000b363e5c1aec3cd49e11c58a8849dcf04a40af46e157eb3ece1.png" />
+</div>
+</div>
+<p><font size="4">Each point in the Pareto plot represents an optimal solution. Users can use the Solution id to find the retrofit solution from all the solutions produced from the optimization model. </font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_popu</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">)</span>
+<span class="n">selected_func</span> <span class="o">=</span> <span class="n">func</span><span class="p">[</span><span class="n">popu_dis</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">selected_popu</span><span class="p">)]</span>
+<span class="n">solution_id_selected</span> <span class="o">=</span> <span class="n">solutions_id</span><span class="p">[</span><span class="n">popu_dis</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">selected_popu</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># color theme</span>
+<span class="n">cm1</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">scientific</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Nuuk_10</span><span class="o">.</span><span class="n">mpl_colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">popu_dis</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">eco_loss</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">selected_popu</span><span class="p">,</span><span class="n">selected_func</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Selected Plan&quot;</span><span class="p">)</span>
+<span class="c1"># color bar setting</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">cm1</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cb1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ticks</span> <span class="o">=</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average Direct Economic loss ($Million) per block group&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">cb1</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">eco_loss</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Average community building functionality&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Average Population Dislocation per block group&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c39c14afb210e8a97b937d18ad00444890599148d3af8ba4b01a1422c4ac5d1e.png" src="../../_images/c39c14afb210e8a97b937d18ad00444890599148d3af8ba4b01a1422c4ac5d1e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solutions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../decision_variable_B20.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution_id_selected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_plan</span> <span class="o">=</span> <span class="n">solutions</span><span class="p">[(</span><span class="n">solutions</span><span class="p">[</span><span class="s2">&quot;Solution_id&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">solution_id_selected</span><span class="p">)]</span>
+<span class="n">selected_plan</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Solution_id</th>
+      <th>Number_buildings</th>
+      <th>Z</th>
+      <th>S</th>
+      <th>K</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>19</td>
+      <td>0.0</td>
+      <td>290970101001000</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>19</td>
+      <td>0.0</td>
+      <td>290970101001000</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>19</td>
+      <td>0.0</td>
+      <td>290970101001000</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>19</td>
+      <td>5.0</td>
+      <td>290970101001000</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>19</td>
+      <td>0.0</td>
+      <td>290970101001001</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="incore-login-and-load-incore-module">
+<h3>INCORE Login and load INCORE module<a class="headerlink" href="#incore-login-and-load-incore-module" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">data_services</span> <span class="o">=</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter username: mondrejc
+Enter password: ········
+Connection successful to IN-CORE services. pyIncore version detected: 1.1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-in-core-data-file-for-retrofit-plan-1">
+<h3>Create IN-CORE data file for retrofit plan 1<a class="headerlink" href="#create-in-core-data-file-for-retrofit-plan-1" title="Permalink to this heading">#</a></h3>
+<p><font size="4"> This section provides steps for creating retorfitting data <font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read dataset from INCORE</span>
+<span class="n">building_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5dbc781db9219c06dd2429ca&quot;</span>
+<span class="n">building_Joplin</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">building_dataset_id</span><span class="p">,</span> <span class="n">data_services</span><span class="p">)</span>
+<span class="n">building_inv</span> <span class="o">=</span> <span class="n">building_Joplin</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><font size="4"> The decision level in this example is blockid. User also can define what decision level is needed. For example, individual building level, and parcel level can be used as decision levels. <font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The blockid from the dataset is not correct. Use blockidstr </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">building_inv</span><span class="p">)):</span>
+    <span class="n">building_inv</span><span class="p">[</span><span class="s2">&quot;blockidstr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">building_inv</span><span class="p">[</span><span class="s2">&quot;blockidstr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;CB&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace blockid with the blockidstr after removing the first two characters</span>
+<span class="n">building_inv</span><span class="p">[</span><span class="s2">&quot;blockid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">building_inv</span><span class="p">[</span><span class="s2">&quot;blockidstr&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read retrofit solution</span>
+<span class="n">plan1_df</span> <span class="o">=</span> <span class="n">selected_plan</span><span class="p">[[</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;Number_buildings&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sometime the blockid form does not show correctly, this cell just to make sure the blockids are correct</span>
+<span class="n">building_inv</span> <span class="o">=</span> <span class="n">building_inv</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;blockid&quot;</span><span class="p">:</span><span class="s2">&quot;int64&quot;</span><span class="p">})</span>
+<span class="n">plan1_df</span>  <span class="o">=</span> <span class="n">plan1_df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select the row with Number_buildings &gt; 0, becasue one blockid associated with 4 retrofit strategies in original dataset</span>
+<span class="n">plan1_df</span> <span class="o">=</span> <span class="n">plan1_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Z&quot;</span><span class="p">:</span><span class="s2">&quot;blockid&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">:</span><span class="s2">&quot;archetype&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">:</span><span class="s2">&quot;retrofit_method&quot;</span><span class="p">})</span>
+<span class="n">plan1_df</span> <span class="o">=</span> <span class="n">plan1_df</span><span class="p">[</span><span class="n">plan1_df</span><span class="p">[</span><span class="s2">&quot;Number_buildings&quot;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merge two data set to get guid for the building in retrofit plan</span>
+<span class="n">plan1_guid</span> <span class="o">=</span> <span class="n">plan1_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">building_inv</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blockid&quot;</span><span class="p">,</span> <span class="s2">&quot;archetype&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">plan1_guid</span> <span class="o">=</span> <span class="n">plan1_guid</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;guid&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only select the columns needed for retrofit plan data</span>
+<span class="n">plan1_final</span> <span class="o">=</span> <span class="n">plan1_guid</span><span class="p">[[</span><span class="s2">&quot;guid&quot;</span><span class="p">,</span> <span class="s2">&quot;retrofit_method&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plan1_final</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;retrofit_method&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>retrofit_method</th>
+      <th>guid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>10030</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>6358</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>8478</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Joplin retrofit plan only considers residential buildings, this cell is to define the missing retrofit strategis </span>
+<span class="c1"># for commercial buildings that are needed in MCS</span>
+<span class="k">for</span> <span class="n">guid</span> <span class="ow">in</span> <span class="n">building_inv</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">guid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plan1_final</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+        <span class="n">plan1_final</span> <span class="o">=</span> <span class="n">plan1_final</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;guid&quot;</span><span class="p">:</span> <span class="n">guid</span><span class="p">,</span>
+                                          <span class="s2">&quot;retrofit_method&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                                         <span class="p">},</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the column retrofit_method to integer</span>
+<span class="n">plan1_final</span><span class="o">.</span><span class="n">retrofit_method</span> <span class="o">=</span> <span class="n">plan1_final</span><span class="o">.</span><span class="n">retrofit_method</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the data type as str. In INCORE, retrofit plan data form is defined to use &quot;str&quot;, </span>
+<span class="c1"># make sure your final data form is correct</span>
+<span class="n">plan1_final</span><span class="o">.</span><span class="n">guid</span> <span class="o">=</span> <span class="n">plan1_final</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">plan1_final</span><span class="o">.</span><span class="n">retrofit_method</span> <span class="o">=</span> <span class="n">plan1_final</span><span class="o">.</span><span class="n">retrofit_method</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># guid and retrofit method are string defined by INCORE, adding quotation on both column to comply with the data form</span>
+<span class="n">plan1_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;plan1_strategy.csv&quot;</span><span class="p">,</span>
+                   <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_ALL</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;incore:retrofitStrategy&quot; is INCORE data type, you can find it in source code if you don&#39;t know</span>
+<span class="n">plan1</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;plan1_strategy.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;incore:retrofitStrategy&quot;</span><span class="p">)</span>
+<span class="n">plan1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.dataset.Dataset at 0x7fe548e70b20&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-core-inputs">
+<h3>IN-CORE Inputs<a class="headerlink" href="#in-core-inputs" title="Permalink to this heading">#</a></h3>
+<section id="infrastructure-information">
+<h4>Infrastructure information<a class="headerlink" href="#infrastructure-information" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load dataframe for optimization retrofit plan 1</span>
+<span class="n">bldg_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5dbc8478b9219c06dd242c0d&quot;</span>  <span class="c1"># Load the Joplin building dataset retrofit plan1</span>
+<span class="n">bldg_dataset</span><span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">bldg_dataset_id</span><span class="p">,</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># building mapping (with equation)</span>
+<span class="n">mapping_id_no_retrofit</span> <span class="o">=</span> <span class="s2">&quot;5d8942dfb9219c068ea795ea&quot;</span>  <span class="c1"># 19 archetype without retrofit</span>
+<span class="n">mapping_id_with_retrofit</span> <span class="o">=</span> <span class="s2">&quot;618eaad5c252b35b6384378c&quot;</span> <span class="c1"># 19 archetype with retrofit</span>
+<span class="c1"># mapping_id = &quot;60994a1906d63d5ded1d6dcc&quot; # 19 archetype with retrofit new format mapping</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set_no_retrofit</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id_no_retrofit</span><span class="p">))</span>
+<span class="n">mapping_set_with_retrofit</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id_with_retrofit</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># getting geodataframework of building dataset and merge with output</span>
+<span class="n">bldg_gdf</span> <span class="o">=</span> <span class="n">bldg_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">bldg_gdf</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="s2">&quot;EPSG:4326&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hazard-information">
+<h4>Hazard information<a class="headerlink" href="#hazard-information" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tornado&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;608c5b17150b5e17064030df&quot;</span> <span class="c1">#EF4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0e2c9ad4ccc165739b50b7de57d9100dfd19c5b5696196db26238080f1c40131.png" src="../../_images/0e2c9ad4ccc165739b50b7de57d9100dfd19c5b5696196db26238080f1c40131.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="damage-analysis-without-retrofit">
+<h2>Damage Analysis without retrofit<a class="headerlink" href="#damage-analysis-without-retrofit" title="Permalink to this heading">#</a></h2>
+<p><font size="4"> Building damage analysis without retrofitting plan on different tornado scenarios and compute the selected metric. Population dislocation is seleced as metric in this example. <font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import to clean the cache before the analysis</span>
+<span class="n">client</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of simulated tornado event in INCORE</span>
+<span class="n">hazards_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;63237dd25503e755037f4b04&quot;</span><span class="p">,</span><span class="s2">&quot;632373039ae7bb606e8adb68&quot;</span><span class="p">]</span>  
+
+<span class="c1"># the full list of simulated tornadoes.</span>
+<span class="c1"># hazards_list = [&quot;602709015b580037c0d40090&quot;,&quot;60270931cebd090981cbb66d&quot;,&quot;60270954b02d597160210968&quot;,</span>
+<span class="c1">#                &quot;6027096dcebd090981cbb694&quot;,&quot;602709a0487b8113aaaa3307&quot;,&quot;602709c8b02d59716021098f&quot;,</span>
+<span class="c1">#                &quot;602709f85b580037c0d400b7&quot;,&quot;60270a36b02d5971602109b6&quot;,&quot;60270a595b580037c0d400de&quot;,</span>
+<span class="c1">#                &quot;60270a825b580037c0d40105&quot;,&quot;60270db5cebd090981cbb6bb&quot;,&quot;60270de0cebd090981cbb6e2&quot;,</span>
+<span class="c1">#                &quot;60270e08cebd090981cbb709&quot;,&quot;60270e2db02d59716021163e&quot;,&quot;60270e48cebd090981cbb730&quot;,</span>
+<span class="c1">#                &quot;60270eb3b02d597160211665&quot;,&quot;60270edecebd090981cbb757&quot;,&quot;60270f0bb02d59716021168c&quot;,</span>
+<span class="c1">#                &quot;60270f2c5b580037c0d4012c&quot;,&quot;60270f59b02d5971602116b3&quot;,&quot;601da3ea487b8113aa32ea7a&quot;,</span>
+<span class="c1">#                &quot;6026e9f85b580037c0d3dc7e&quot;,&quot;6026f60e487b8113aaaa15b4&quot;,&quot;6026f6f0cebd090981cb9800&quot;,</span>
+<span class="c1">#                &quot;6026fb74487b8113aaaa15db&quot;,&quot;6026fffd487b8113aaaa257b&quot;,&quot;5d07cbeab9219c065b080930&quot;,</span>
+<span class="c1">#                &quot;607ef4629dc98f1caad9864a&quot;] </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dislocation_no_retrofit_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">hazard</span> <span class="ow">in</span> <span class="n">hazards_list</span><span class="p">:</span>
+    <span class="n">hazard_id</span> <span class="o">=</span> <span class="n">hazard</span>
+    <span class="c1"># building damage analysis</span>
+    <span class="n">building_dmg_result_no_retrofit</span><span class="p">,</span> <span class="n">df_no_retrofit</span> <span class="o">=</span> <span class="n">building_damage_without_retrofit</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> 
+                                                                                       <span class="n">mapping_set_no_retrofit</span><span class="p">)</span>
+    <span class="c1"># Population dislocation analysis</span>
+    <span class="n">popu_dis_no_retrofit</span> <span class="o">=</span> <span class="n">population_dislocation</span><span class="p">(</span><span class="n">building_dmg_result_no_retrofit</span><span class="p">)</span>
+    <span class="n">dislocation_no_retrofit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">popu_dis_no_retrofit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="compute-the-selected-metric-with-retrofit">
+<h2>Compute the selected metric  with retrofit<a class="headerlink" href="#compute-the-selected-metric-with-retrofit" title="Permalink to this heading">#</a></h2>
+<p><font size="4"> Building damage analysis with retrofitting plan on different tornado scenarios compute the selected metric. Population dislocation is seleced as the the metric in this example. <font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean the cache before the analysis</span>
+<span class="n">client</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dislocation_with_retrofit_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">hazard</span> <span class="ow">in</span> <span class="n">hazards_list</span><span class="p">:</span>
+    <span class="n">hazard_id</span> <span class="o">=</span> <span class="n">hazard</span>
+    <span class="c1"># building damage analysis</span>
+    <span class="n">building_dmg_result_plan1</span><span class="p">,</span> <span class="n">df_building_dmg_plan1</span> <span class="o">=</span> <span class="n">building_damage_with_retrofit</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span>
+                                                                                     <span class="n">mapping_set_with_retrofit</span><span class="p">,</span><span class="n">plan1</span><span class="p">)</span>
+    <span class="c1"># Population dislocation analysis</span>
+    <span class="n">popu_dis_plan1</span> <span class="o">=</span> <span class="n">population_dislocation</span><span class="p">(</span><span class="n">building_dmg_result_plan1</span><span class="p">)</span>
+    <span class="n">dislocation_with_retrofit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">popu_dis_plan1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="compare-the-results">
+<h3>Compare the results<a class="headerlink" href="#compare-the-results" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># take the results from result without retrofit and with retrofit to calculate the difference </span>
+<span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">diff_percent</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dislocation_no_retrofit_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dislocation_no_retrofit_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">dislocation_with_retrofit_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">diff_percent</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">dislocation_no_retrofit_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">dislocation_with_retrofit_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="n">dislocation_no_retrofit_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the average different across all tornado events</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">diff_percent</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dislocation_no_retrofit_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.02785352551616673
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/retrofit_plan_Joplin_2021_12_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../create_tornado/create_tornado.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Create Tornadoes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../create_network_dataset/create_network_dataset.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Create Network Dataset</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dislocation-function">Population dislocation function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-without-retrofit-function">Building damage without retrofit function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-with-retrofit-function">Building damage with retrofit function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-building-damage-function">Monte Carlo building damage function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-retrofit-solutions-and-select-retrofit-plan">Read retrofit solutions and select retrofit plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incore-login-and-load-incore-module">INCORE Login and load INCORE module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-in-core-data-file-for-retrofit-plan-1">Create IN-CORE data file for retrofit plan 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-core-inputs">IN-CORE Inputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-information">Infrastructure information</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-information">Hazard information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-without-retrofit">Damage Analysis without retrofit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-selected-metric-with-retrofit">Compute the selected metric  with retrofit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-the-results">Compare the results</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

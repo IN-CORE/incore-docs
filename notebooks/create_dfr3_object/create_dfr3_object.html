@@ -1,0 +1,1582 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Create DFR3 and Mapping Objects &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/create_dfr3_object/create_dfr3_object';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Create Earthquakes" href="../create_earthquake/create_earthquake.html" />
+    <link rel="prev" title="Create and Use Dataset Object" href="../create_dataset/create_dataset.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tutorials.html">Tutorials and Tips</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/create_dfr3_object/create_dfr3_object.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Create  DFR3 and Mapping Objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fragility-set-object">Fragility set object</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ids-from-in-core-dfr3-services">1. Using IDs from IN-CORE DFR3 services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-json-definition">2. Writing JSON definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-fragility-set-from-individual-curves">3. Constructing a fragility set from individual curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-fragility-set-from-a-json-file">4. Loading a fragility set from a JSON file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-fragility-set-and-curve-use">Examples of fragility set and curve use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-probability-calculation">Damage probability calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curve-visualization">Curve visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-functions-on-each-individual-curve">Computation functions on each individual curve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dfr3-mapping-set">DFR3 Mapping Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-mapping-ids-from-in-core-dfr3-services">1. Using mapping IDs from IN-CORE DFR3 services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-mapping-definition-file">2. Writing a mapping definition file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-mapping-set-from-individual-components">3. Constructing a mapping set from individual components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-dfr3-mapping-use">Examples of DFR3 mapping use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-load-mapping-from-in-core-services-using-set-ids">Method 1: Load mapping from IN-CORE services using set IDs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-load-locally-created-mapping-object">Method 2: Load locally created mapping object</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="create-dfr3-and-mapping-objects">
+<h1>Create  DFR3 and Mapping Objects<a class="headerlink" href="#create-dfr3-and-mapping-objects" title="Permalink to this heading">#</a></h1>
+<p>Analyses use DFR3 mapping sets from IN-CORE service to associate each element of a given set with one or more elements of a second set of DFR3 curves. In IN-CORE and pyIncore specifically, a building inventory (given set) is mapped to a (second) set of fragility curves.</p>
+<p>This tutorial shows examples of how to create <strong>DFR3</strong> and <strong>mapping</strong> objects for fragility, restoration and repair curves as well as how to use them in <strong>pyIncore</strong>.</p>
+<p>A user can upload a DFR3 or mapping set to the DFR3 services or use it locally. This tutorial covers both options.</p>
+<p><img alt="alt text" src="../../_images/lookup_fragility_id.png" /></p>
+<p>Please note that in this notebook we use term <em>function</em> in programming context as a class function and <em>curve</em> as a function in mathematical context (lognormal curve).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">IncoreClient</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">MappingSet</span><span class="p">,</span> <span class="n">FragilityCurveSet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IN-CORE client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+
+<span class="c1"># Initiate fragility service</span>
+<span class="n">fragility_services</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 1.2.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="fragility-set-object">
+<h2>Fragility set object<a class="headerlink" href="#fragility-set-object" title="Permalink to this heading">#</a></h2>
+<p>In this section we are going to explore the creation of <strong>fragility</strong> sets and curves used by the <strong>pyIncore</strong> library in hazard analyses. We provide examples of getting the curves into your project as well as basic use of pyIncore’s functions to print and visualize various attributes and variables.</p>
+<p>Below is an example of a fragility set with three curves and metadata defined as JSON object with key/value pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt; 5000 ft^2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Federal Emergency Management Agency (FEMA)&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;resultType&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span> <span class="s2">&quot;tsunami&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inventoryType&quot;</span><span class="p">:</span> <span class="s2">&quot;building&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="s2">&quot;incore&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;spaces&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;coe&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;demandTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Mmax&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;demandUnits&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;ft^3/s^2&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;fragilityCurves&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;legacy - StandardFragilityCurve - Immediate Occupancy&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;momentumFlux &gt; 0&quot;</span>
+                    <span class="p">],</span>
+                    <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_0&quot;</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;legacy - StandardFragilityCurve - Life Safety&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;momentumFlux &gt; 0&quot;</span>
+                    <span class="p">],</span>
+                    <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_1&quot;</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;legacy - StandardFragilityCurve - Collapse Prevention&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;momentumFlux &gt; 0&quot;</span>
+                    <span class="p">],</span>
+                    <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_2&quot;</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;curveParameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;momentumFlux&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;ft^3/s^2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;momentumFlux value from hazard service&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;momentumFlux&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">created_fragility</span> <span class="o">=</span> <span class="n">fragility_services</span><span class="o">.</span><span class="n">create_dfr3_set</span><span class="p">(</span><span class="n">fragility_data</span><span class="p">)</span>
+<span class="n">created_fragility</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;62014b17f8564f226303fa96&#39;,
+ &#39;description&#39;: &#39;&lt; 5000 ft^2&#39;,
+ &#39;authors&#39;: [&#39;Federal Emergency Management Agency (FEMA)&#39;],
+ &#39;paperReference&#39;: None,
+ &#39;resultUnit&#39;: None,
+ &#39;resultType&#39;: &#39;Limit State&#39;,
+ &#39;hazardType&#39;: &#39;tsunami&#39;,
+ &#39;inventoryType&#39;: &#39;building&#39;,
+ &#39;creator&#39;: &#39;cwang138&#39;,
+ &#39;curveParameters&#39;: [{&#39;name&#39;: &#39;momentumFlux&#39;,
+   &#39;unit&#39;: &#39;ft^3/s^2&#39;,
+   &#39;description&#39;: &#39;momentumFlux value from hazard service&#39;,
+   &#39;fullName&#39;: &#39;momentumFlux&#39;,
+   &#39;expression&#39;: None}],
+ &#39;spaces&#39;: [&#39;cwang138&#39;],
+ &#39;demandTypes&#39;: [&#39;Mmax&#39;],
+ &#39;demandUnits&#39;: [&#39;ft^3/s^2&#39;],
+ &#39;fragilityCurves&#39;: [{&#39;description&#39;: &#39;legacy - StandardFragilityCurve - Immediate Occupancy&#39;,
+   &#39;rules&#39;: [{&#39;condition&#39;: [&#39;momentumFlux &gt; 0&#39;],
+     &#39;expression&#39;: &#39;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&#39;}],
+   &#39;returnType&#39;: {&#39;type&#39;: &#39;Limit State&#39;, &#39;unit&#39;: &#39;&#39;, &#39;description&#39;: &#39;LS_0&#39;},
+   &#39;curveParameters&#39;: None},
+  {&#39;description&#39;: &#39;legacy - StandardFragilityCurve - Life Safety&#39;,
+   &#39;rules&#39;: [{&#39;condition&#39;: [&#39;momentumFlux &gt; 0&#39;],
+     &#39;expression&#39;: &#39;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&#39;}],
+   &#39;returnType&#39;: {&#39;type&#39;: &#39;Limit State&#39;, &#39;unit&#39;: &#39;&#39;, &#39;description&#39;: &#39;LS_1&#39;},
+   &#39;curveParameters&#39;: None},
+  {&#39;description&#39;: &#39;legacy - StandardFragilityCurve - Collapse Prevention&#39;,
+   &#39;rules&#39;: [{&#39;condition&#39;: [&#39;momentumFlux &gt; 0&#39;],
+     &#39;expression&#39;: &#39;scipy.stats.norm.cdf((math.log(momentumFlux) - math.log(247.0))/(0.74))&#39;}],
+   &#39;returnType&#39;: {&#39;type&#39;: &#39;Limit State&#39;, &#39;unit&#39;: &#39;&#39;, &#39;description&#39;: &#39;LS_2&#39;},
+   &#39;curveParameters&#39;: None}]}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="using-ids-from-in-core-dfr3-services">
+<h3>1. Using IDs from IN-CORE DFR3 services<a class="headerlink" href="#using-ids-from-in-core-dfr3-services" title="Permalink to this heading">#</a></h3>
+<p>In the first example we use IN-CORE’s DFR3 service to get fragility curves and to set a local DFR3 object. We need an ID number of a set in the service. A user can look up the fragility IDs in the DFR3 viewer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set fragility set id from the service</span>
+<span class="n">fragility_set_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b2d7337d4a36187c61ce&quot;</span>
+
+<span class="c1"># Get local fragility curve set</span>
+<span class="n">fragility_curve_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="n">fragility_set_id</span><span class="p">))</span>
+
+<span class="n">fragility_curve_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.models.fragilitycurveset.FragilityCurveSet at 0x7faed84e4110&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="writing-json-definition">
+<h3>2. Writing JSON definition<a class="headerlink" href="#writing-json-definition" title="Permalink to this heading">#</a></h3>
+<p>In the second example we define a fragility set as a text string with JSON type key/value pairs
+which will then be converted to a JSON object. <strong>Note</strong> It is necessary to use the specified types of quotes
+to create the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_set_json_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;{</span>
+<span class="s1">    &quot;id&quot;: &quot;5b47b2d7337d4a36187c61ce&quot;,</span>
+<span class="s1">    &quot;description&quot;: &quot;Mid-Rise Steel Moment Frame&quot;,</span>
+<span class="s1">    &quot;authors&quot;: [</span>
+<span class="s1">        &quot;Elnashai and Jeong&quot;</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;paperReference&quot;: null,</span>
+<span class="s1">    &quot;resultUnit&quot;: null,</span>
+<span class="s1">    &quot;resultType&quot;: &quot;Limit State&quot;,</span>
+<span class="s1">    &quot;hazardType&quot;: &quot;earthquake&quot;,</span>
+<span class="s1">    &quot;inventoryType&quot;: &quot;building&quot;,</span>
+<span class="s1">    &quot;creator&quot;: &quot;incore&quot;,</span>
+<span class="s1">    &quot;spaces&quot;: [</span>
+<span class="s1">        &quot;coe&quot;</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;demandTypes&quot;: [</span>
+<span class="s1">        &quot;PGA&quot;</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;demandUnits&quot;: [</span>
+<span class="s1">        &quot;g&quot;</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;fragilityCurves&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;description&quot;: &quot;legacy - PeriodStandardFragilityCurve - Moderate&quot;,</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;condition&quot;: [</span>
+<span class="s1">                        &quot;PGA &gt; 0&quot;</span>
+<span class="s1">                    ],</span>
+<span class="s1">                    &quot;expression&quot;: &quot;scipy.stats.norm.cdf((math.log(PGA) - (-0.571))/(0.665))&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            ],</span>
+<span class="s1">            &quot;returnType&quot;: {</span>
+<span class="s1">                &quot;type&quot;: &quot;Limit State&quot;,</span>
+<span class="s1">                &quot;unit&quot;: &quot;&quot;,</span>
+<span class="s1">                &quot;description&quot;: &quot;LS_0&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;fragilityCurveParameters&quot;: null</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;description&quot;: &quot;legacy - PeriodStandardFragilityCurve - Extensive&quot;,</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;condition&quot;: [</span>
+<span class="s1">                        &quot;PGA &gt; 0&quot;</span>
+<span class="s1">                    ],</span>
+<span class="s1">                    &quot;expression&quot;: &quot;scipy.stats.norm.cdf((math.log(PGA) - (0.352))/(0.675))&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            ],</span>
+<span class="s1">            &quot;returnType&quot;: {</span>
+<span class="s1">                &quot;type&quot;: &quot;Limit State&quot;,</span>
+<span class="s1">                &quot;unit&quot;: &quot;&quot;,</span>
+<span class="s1">                &quot;description&quot;: &quot;LS_1&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;fragilityCurveParameters&quot;: null</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;description&quot;: &quot;legacy - PeriodStandardFragilityCurve - Complete&quot;,</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;condition&quot;: [</span>
+<span class="s1">                        &quot;PGA &gt; 0&quot;</span>
+<span class="s1">                    ],</span>
+<span class="s1">                    &quot;expression&quot;: &quot;scipy.stats.norm.cdf((math.log(PGA) - (1.341))/(0.746))&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            ],</span>
+<span class="s1">            &quot;returnType&quot;: {</span>
+<span class="s1">                &quot;type&quot;: &quot;Limit State&quot;,</span>
+<span class="s1">                &quot;unit&quot;: &quot;&quot;,</span>
+<span class="s1">                &quot;description&quot;: &quot;LS_2&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;fragilityCurveParameters&quot;: null</span>
+<span class="s1">        }</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;curveParameters&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;name&quot;: &quot;PGA&quot;,</span>
+<span class="s1">            &quot;unit&quot;: &quot;g&quot;,</span>
+<span class="s1">            &quot;description&quot;: &quot;PGA value from hazard service&quot;,</span>
+<span class="s1">            &quot;fullName&quot;: &quot;PGA&quot;,</span>
+<span class="s1">            &quot;expression&quot;: null</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;name&quot;: &quot;num_stories&quot;,</span>
+<span class="s1">            &quot;unit&quot;: &quot;&quot;,</span>
+<span class="s1">            &quot;description&quot;: &quot;number of stories in building inventory&quot;,</span>
+<span class="s1">            &quot;fullName&quot;: null,</span>
+<span class="s1">            &quot;expression&quot;: &quot;1&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;name&quot;: &quot;period&quot;,</span>
+<span class="s1">            &quot;unit&quot;: &quot;&quot;,</span>
+<span class="s1">            &quot;description&quot;: &quot;default building period&quot;,</span>
+<span class="s1">            &quot;fullName&quot;: null,</span>
+<span class="s1">            &quot;expression&quot;: &quot;1.08&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">fragility_curve_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="o">.</span><span class="n">from_json_str</span><span class="p">(</span><span class="n">fragility_set_json_str</span><span class="p">)</span>
+<span class="n">fragility_curve_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.models.fragilitycurveset.FragilityCurveSet at 0x7faed851e690&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="constructing-a-fragility-set-from-individual-curves">
+<h3>3. Constructing a fragility set from individual curves<a class="headerlink" href="#constructing-a-fragility-set-from-individual-curves" title="Permalink to this heading">#</a></h3>
+<p>In the third example we define the fragility curves as JSON objects first and then combine them into a set. We define the proper set metadata as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a fragility curve set with three limit state</span>
+<span class="n">fragility_curve_LS_0</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Moderate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;PGA &gt; 0&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(PGA) - (-0.571))/(0.665))&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">fragility_curve_LS_1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Extensive&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;PGA &gt; 0&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(PGA) - (0.352))/(0.675))&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">fragility_curve_LS_2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Complete&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;PGA &gt; 0&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;scipy.stats.norm.cdf((math.log(PGA) - (1.341))/(0.746))&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;returnType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LS_2&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># place three curves into a set with extra metadata</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;local_fragility_curve_set&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Mid-Rise Steel Moment Frame&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;demandTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PGA&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;demandUnits&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;resultType&quot;</span><span class="p">:</span><span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span><span class="s2">&quot;earthquake&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inventoryType&quot;</span><span class="p">:</span><span class="s2">&quot;building&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fragilityCurves&quot;</span><span class="p">:[</span>
+        <span class="n">fragility_curve_LS_0</span><span class="p">,</span>
+        <span class="n">fragility_curve_LS_1</span><span class="p">,</span>
+        <span class="n">fragility_curve_LS_2</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;curveParameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA value from hazard service&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;num_stories&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;number of stories in building inventory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;default building period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1.08&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct the fragility curve object to use</span>
+<span class="n">fragility_curve_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+<span class="n">fragility_curve_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.models.fragilitycurveset.FragilityCurveSet at 0x7faf00625750&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-a-fragility-set-from-a-json-file">
+<h3>4. Loading a fragility set from a JSON file<a class="headerlink" href="#loading-a-fragility-set-from-a-json-file" title="Permalink to this heading">#</a></h3>
+<p>In the last example we load the fragility curves from a JSON file. This is similar to Example 2 because the file content is read as a text string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_curve_set2</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="o">.</span><span class="n">from_json_file</span><span class="p">(</span><span class="s2">&quot;files/periodStandardFragilityCurve.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="examples-of-fragility-set-and-curve-use">
+<h2>Examples of fragility set and curve use<a class="headerlink" href="#examples-of-fragility-set-and-curve-use" title="Permalink to this heading">#</a></h2>
+<section id="damage-probability-calculation">
+<h3>Damage probability calculation<a class="headerlink" href="#damage-probability-calculation" title="Permalink to this heading">#</a></h3>
+<p>We use the previously defined fragility set to calculate a limit state. We will use the fragility set object from Example 3 in <strong>Creation of a fragility curve set object</strong> section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">probabilities</span> <span class="o">=</span> <span class="n">fragility_curve_set</span><span class="o">.</span><span class="n">calculate_limit_state</span><span class="p">(</span><span class="n">hazard_values</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;PGA&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="n">period</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">probabilities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;LS_0&#39;: 0.9999922402, &#39;LS_1&#39;: 0.9980722934, &#39;LS_2&#39;: 0.9012988813}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="curve-visualization">
+<h3>Curve visualization<a class="headerlink" href="#curve-visualization" title="Permalink to this heading">#</a></h3>
+<p>Use pyincore-viz library to visualize fragility curve set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plot</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot</span><span class="p">(</span><span class="n">fragility_curve_set</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d988228a24020cd8c1c184fbb389970712c51901c435aab599049c9d51252ae3.png" src="../../_images/d988228a24020cd8c1c184fbb389970712c51901c435aab599049c9d51252ae3.png" />
+</div>
+</div>
+</section>
+<section id="computation-functions-on-each-individual-curve">
+<h3>Computation functions on each individual curve<a class="headerlink" href="#computation-functions-on-each-individual-curve" title="Permalink to this heading">#</a></h3>
+<p>In this example we define a fragility curve using a JSON object and then use different functions to print hazard,
+infrastructure and ground phenomenon variables; a limit state probability and liquefaction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use single fragility curve fragility_curve_LS_0 as example</span>
+<span class="c1"># get limit state probability</span>
+<span class="n">probability</span> <span class="o">=</span> <span class="n">fragility_curve_set</span><span class="o">.</span><span class="n">fragility_curves</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">solve_curve_expression</span><span class="p">(</span>
+    <span class="n">hazard_values</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;PGA&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span> <span class="n">curve_parameters</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA value from hazard service&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;num_stories&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;number of stories in building inventory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;default building period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1.08&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">num_stories</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">period</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;limit state probability is :&quot;</span> <span class="p">,</span> <span class="n">probability</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limit state probability is : 0.9983763310617616 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dfr3-mapping-set">
+<h2>DFR3 Mapping Set<a class="headerlink" href="#dfr3-mapping-set" title="Permalink to this heading">#</a></h2>
+<p>In this section we are going to explore creation of <strong>mapping</strong> rules used by the <strong>pyIncore</strong> library in hazard analyses. We again provide three examples of getting the mappings into your project as well as basic use of DFR3 mappings in pyIncore.</p>
+<p>Below is an example of a mapping set with three rules and metadata defined as a JSON object with key/value pairs. Fragility curves are defined by ID codes and structural types define units of infrastructure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pytest - Tsunami Building Fragility Mapping&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span> <span class="s2">&quot;tsunami&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;inventoryType&quot;</span><span class="p">:</span> <span class="s2">&quot;building&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;mappingType&quot;</span><span class="p">:</span> <span class="s2">&quot;fragility&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Non-Retrofit Inundation Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbaedfec2309046c2745c8&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Non-Retrofit MomentumFlux Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbae19ec2309046c2745c6&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                 <span class="s2">&quot;java.lang.String struct_typ EQUALS W1&quot;</span>
+              <span class="p">]</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Non-Retrofit Inundation Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbaf58ec2309046c2745c9&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Non-Retrofit MomentumFlux Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbae5eec2309046c2745c7&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="s2">&quot;java.lang.String struct_typ EQUALS W2&quot;</span>
+              <span class="p">]</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s2">&quot;Non-Retrofit Inundation Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbafcdec2309046c2745ca&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Non-Retrofit MomentumFlux Fragility ID Code&quot;</span><span class="p">:</span> <span class="s2">&quot;5bbbba6bec2309046c2745d8&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="s2">&quot;java.lang.String struct_typ EQUALS RC&quot;</span>
+              <span class="p">]</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">created_mapping</span> <span class="o">=</span> <span class="n">fragility_services</span><span class="o">.</span><span class="n">create_mapping</span><span class="p">(</span><span class="n">mapping_data</span><span class="p">)</span>
+<span class="n">created_mapping</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;62014b17f8564f226303fa97&#39;,
+ &#39;name&#39;: &#39;pytest - Tsunami Building Fragility Mapping&#39;,
+ &#39;hazardType&#39;: &#39;tsunami&#39;,
+ &#39;inventoryType&#39;: &#39;building&#39;,
+ &#39;mappings&#39;: [{&#39;legacyEntry&#39;: {},
+   &#39;entry&#39;: {&#39;Non-Retrofit Inundation Fragility ID Code&#39;: &#39;5bbbaedfec2309046c2745c8&#39;,
+    &#39;Non-Retrofit MomentumFlux Fragility ID Code&#39;: &#39;5bbbae19ec2309046c2745c6&#39;},
+   &#39;rules&#39;: [[&#39;java.lang.String struct_typ EQUALS W1&#39;]]},
+  {&#39;legacyEntry&#39;: {},
+   &#39;entry&#39;: {&#39;Non-Retrofit Inundation Fragility ID Code&#39;: &#39;5bbbaf58ec2309046c2745c9&#39;,
+    &#39;Non-Retrofit MomentumFlux Fragility ID Code&#39;: &#39;5bbbae5eec2309046c2745c7&#39;},
+   &#39;rules&#39;: [[&#39;java.lang.String struct_typ EQUALS W2&#39;]]},
+  {&#39;legacyEntry&#39;: {},
+   &#39;entry&#39;: {&#39;Non-Retrofit Inundation Fragility ID Code&#39;: &#39;5bbbafcdec2309046c2745ca&#39;,
+    &#39;Non-Retrofit MomentumFlux Fragility ID Code&#39;: &#39;5bbbba6bec2309046c2745d8&#39;},
+   &#39;rules&#39;: [[&#39;java.lang.String struct_typ EQUALS RC&#39;]]}],
+ &#39;creator&#39;: &#39;cwang138&#39;,
+ &#39;spaces&#39;: [&#39;cwang138&#39;],
+ &#39;mappingType&#39;: &#39;fragility&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="using-mapping-ids-from-in-core-dfr3-services">
+<h3>1. Using mapping IDs from IN-CORE DFR3 services<a class="headerlink" href="#using-mapping-ids-from-in-core-dfr3-services" title="Permalink to this heading">#</a></h3>
+<p>In the first example we use IN-CORE’s DFR3 service to get mappings and to set a local mapping set object.
+We need an ID number of the mapping set in the service. A user can look up the fragility mapping IDs in the DFR3 viewer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b8ec84fec2309047299581f&quot;</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">mapping_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.models.mappingset.MappingSet at 0x7faef05a54d0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="writing-a-mapping-definition-file">
+<h3>2. Writing a mapping definition file<a class="headerlink" href="#writing-a-mapping-definition-file" title="Permalink to this heading">#</a></h3>
+<p>In the second example we define a mapping set as a text string with JSON type key/value pairs
+which then will be converted into a JSON object. <strong>Note</strong> It is necessary to use the specified types of quotes
+to create the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping_set_json_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;id&quot;: &quot;5b8ec84fec2309047299581f&quot;,</span>
+<span class="s1">    &quot;name&quot;: &quot;Shelby Water Network MMSA&quot;,</span>
+<span class="s1">    &quot;hazardType&quot;: &quot;earthquake&quot;,</span>
+<span class="s1">    &quot;inventoryType&quot;: &quot;water_facility&quot;,</span>
+<span class="s1">    &quot;mappings&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d81ffec230904683d5073&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;tank&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d8284ec230904683d5074&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;pump&#39;&quot;,</span>
+<span class="s1">                    &quot;java.lang.String subtype EQUALS &#39;booster_pump&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d8284ec230904683d5074&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;pump&#39;&quot;,</span>
+<span class="s1">                    &quot;java.lang.String subtype EQUALS &#39;pump_0&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d829aec230904683d5075&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;pump&#39;&quot;,</span>
+<span class="s1">                    &quot;java.lang.String subtype EQUALS &#39;pump_1&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d82a6ec230904683d5076&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;pump&#39;&quot;,</span>
+<span class="s1">                    &quot;java.lang.String subtype EQUALS &#39;pump_2&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;legacyEntry&quot;: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">            &quot;entry&quot;: {</span>
+<span class="s1">                &quot;pga&quot;: &quot;5b7d82b3ec230904683d5077&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;rules&quot;: [</span>
+<span class="s1">                [</span>
+<span class="s1">                    &quot;java.lang.String data_type EQUALS &#39;pump&#39;&quot;,</span>
+<span class="s1">                    &quot;java.lang.String subtype EQUALS &#39;pump_3&#39;&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;mappingType&quot;: &quot;fragility&quot;</span>
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="o">.</span><span class="n">from_json_str</span><span class="p">(</span><span class="n">mapping_set_json_str</span><span class="p">)</span>
+<span class="n">mapping_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyincore.models.mappingset.MappingSet at 0x7faef069c190&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="constructing-a-mapping-set-from-individual-components">
+<h3>3. Constructing a mapping set from individual components<a class="headerlink" href="#constructing-a-mapping-set-from-individual-components" title="Permalink to this heading">#</a></h3>
+<p>In the last example we provide a full set of instructions for</p>
+<p>Creating a fragility object with curves required for mapping. You may either:</p>
+<ol class="arabic simple">
+<li><p>use curve objects (similar to example 3 in Fragility section)</p></li>
+<li><p>or load a fragility JSON file (example 4)</p></li>
+<li><p>creating a mapping set object by putting fragility sets into the mappings</p></li>
+<li><p>adding metadata to the mapping object</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Create a fragility set from curve objects (example 3 above).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_set</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;local_fragility_curve_set_1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;demandTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PGA&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;demandUnits&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;resultType&quot;</span><span class="p">:</span><span class="s2">&quot;Limit State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span><span class="s2">&quot;earthquake&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inventoryType&quot;</span><span class="p">:</span><span class="s2">&quot;building&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fragilityCurves&quot;</span><span class="p">:[</span>
+        <span class="n">fragility_curve_LS_0</span><span class="p">,</span>
+        <span class="n">fragility_curve_LS_1</span><span class="p">,</span>
+        <span class="n">fragility_curve_LS_2</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;curveParameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA value from hazard service&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;num_stories&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;number of stories in building inventory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;default building period&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;1.08&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">fragility_set_1</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">fragility_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a fragility set object directly from a JSON file (example 4 above).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_set_2</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="o">.</span><span class="n">from_json_file</span><span class="p">(</span><span class="s1">&#39;files/periodStandardFragilityCurve.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create mapping objects and put fragility curve sets into the mapping.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Non-Retrofit Fragility ID Code&quot;</span><span class="p">:</span> <span class="n">fragility_set_1</span><span class="p">}</span>
+<span class="n">rules_1</span> <span class="o">=</span> <span class="p">[[</span> <span class="s2">&quot;int no_stories GE 4&quot;</span><span class="p">,</span><span class="s2">&quot;int no_stories LE 7&quot;</span><span class="p">]]</span>
+<span class="n">mapping_1</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">(</span><span class="n">entry_1</span><span class="p">,</span> <span class="n">rules_1</span><span class="p">)</span>
+
+<span class="n">entry_2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Non-Retrofit Fragility ID Code&quot;</span><span class="p">:</span> <span class="n">fragility_set_2</span><span class="p">}</span>
+<span class="n">rules_2</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;int no_stories GE 1&quot;</span><span class="p">,</span> <span class="s2">&quot;int no_stories LE 3&quot;</span><span class="p">]]</span>
+<span class="n">mapping_2</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">(</span><span class="n">entry_2</span><span class="p">,</span> <span class="n">rules_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Add metadata and create the final mapping set object</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping_set</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;local placeholder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;testing local mapping object creation&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;hazardType&#39;</span><span class="p">:</span> <span class="s1">&#39;earthquake&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;inventoryType&#39;</span><span class="p">:</span> <span class="s1">&#39;building&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mappings&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">mapping_1</span><span class="p">,</span>
+        <span class="n">mapping_2</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;mappingType&#39;</span><span class="p">:</span> <span class="s1">&#39;fragility&#39;</span>
+<span class="p">}</span>
+<span class="n">local_building_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="examples-of-dfr3-mapping-use">
+<h2>Examples of DFR3 mapping use<a class="headerlink" href="#examples-of-dfr3-mapping-use" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+
+<span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="s1">&#39;5a284f0bc7d30d13bc081a28&#39;</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s1">&#39;local_mapping_fragility_memphis_eq_bldg_dmg_result&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<section id="method-1-load-mapping-from-in-core-services-using-set-ids">
+<h3>Method 1: Load mapping from IN-CORE services using set IDs<a class="headerlink" href="#method-1-load-mapping-from-in-core-services-using-set-ids" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="o">=</span><span class="s2">&quot;5b47b350337d4a3629076f2c&quot;</span><span class="p">))</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s1">&#39;dfr3_mapping_set&#39;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="method-2-load-locally-created-mapping-object">
+<h3>Method 2: Load locally created mapping object<a class="headerlink" href="#method-2-load-locally-created-mapping-object" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local_building_mapping_set is created in the previous section.</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">local_building_mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="s1">&#39;earthquake&#39;</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="s1">&#39;5b902cb273c3371e1236b36b&#39;</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Run Analysis</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">building_dmg_result</span> <span class="o">=</span> <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;ds_result&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">df_bldg_dmg</span> <span class="o">=</span> <span class="n">building_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">df_bldg_dmg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a41e7dcc-3b82-42f2-9dbd-a2ebdf39d453</td>
+      <td>0.504540</td>
+      <td>0.190978</td>
+      <td>0.046526</td>
+      <td>0.495460</td>
+      <td>0.313562</td>
+      <td>0.144451</td>
+      <td>0.046526</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>254d1dd8-5d2f-4737-909b-59cc64ca72d4</td>
+      <td>0.183383</td>
+      <td>0.012017</td>
+      <td>0.000379</td>
+      <td>0.816617</td>
+      <td>0.171366</td>
+      <td>0.011638</td>
+      <td>0.000379</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>b185d5b6-5bc0-43a3-800a-c046017372ab</td>
+      <td>0.169996</td>
+      <td>0.010515</td>
+      <td>0.000321</td>
+      <td>0.830004</td>
+      <td>0.159481</td>
+      <td>0.010194</td>
+      <td>0.000321</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7b5dc4f6-ef5e-4178-9836-f044b4b92f0d</td>
+      <td>0.510562</td>
+      <td>0.194772</td>
+      <td>0.047708</td>
+      <td>0.489438</td>
+      <td>0.315790</td>
+      <td>0.147064</td>
+      <td>0.047708</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4253802e-b3e5-4ed3-93b0-dda9ef6362b0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/create_dfr3_object"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../create_dataset/create_dataset.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Create and Use Dataset Object</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../create_earthquake/create_earthquake.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Create Earthquakes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fragility-set-object">Fragility set object</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ids-from-in-core-dfr3-services">1. Using IDs from IN-CORE DFR3 services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-json-definition">2. Writing JSON definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-fragility-set-from-individual-curves">3. Constructing a fragility set from individual curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-fragility-set-from-a-json-file">4. Loading a fragility set from a JSON file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-fragility-set-and-curve-use">Examples of fragility set and curve use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-probability-calculation">Damage probability calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curve-visualization">Curve visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-functions-on-each-individual-curve">Computation functions on each individual curve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dfr3-mapping-set">DFR3 Mapping Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-mapping-ids-from-in-core-dfr3-services">1. Using mapping IDs from IN-CORE DFR3 services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-mapping-definition-file">2. Writing a mapping definition file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-mapping-set-from-individual-components">3. Constructing a mapping set from individual components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-dfr3-mapping-use">Examples of DFR3 mapping use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-load-mapping-from-in-core-services-using-set-ids">Method 1: Load mapping from IN-CORE services using set IDs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-load-locally-created-mapping-object">Method 2: Load locally created mapping object</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

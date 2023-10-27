@@ -1,0 +1,1090 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Session 4: Damage Analyses on Lifelines &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/20220131/session4/session4-damage-analyses-lifelines';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Example Notebooks" href="../../../notebooks.html" />
+    <link rel="prev" title="Session 3: Building Damage Analysis" href="../session3/session3-building_damage_analysis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../workshops.html">IN-CORE workshops</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../agenda.html">Lifeline workshop January 31, 2022</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/workshops/20220131/session4/session4-damage-analyses-lifelines.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Session 4: Damage Analyses on Lifelines</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-tsunami">4.1 Hazard - Tsunami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-based-probabilistic-tsunami-500-yr">Dataset based probabilistic tsunami - 500 yr</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-facilities-epf-damage">4.2. Electric power facilities (EPF) damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-epf-dataset-with-poles-and-substations">Visualize input EPF dataset with poles and substations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-epf-damage-analysis">Configure and run EPF Damage analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-as-dataframe">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-on-map-for-a-single-damage-state">Visualize Damage Results - on map for a single damage state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-damage-states-by-structure-type">Show damage states by structure type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-damage-state-by-structure-type">Plot Damage state by structure type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-probability-distribution-for-a-particular-damage-state">Show probability distribution for a particular damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadway-damage">4.3. Roadway Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-roadway-dataset">Visualize input roadway dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-roadway-damage-analysis-with-repair-rate">Configure and run Roadway Damage analysis with repair rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Visualize Damage Results - on map for a single damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-earthquake">4.4. Hazard - Earthquake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-based-earthquake-using-atkinson-boore-1995">Model based earthquake using Atkinson Boore 1995</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-facility-damage-analysis">4.5 Water Facility Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-water-facilities-dataset">Visualize input water facilities dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-water-facility-damage-analysis">Configure and run Water Facility Damage analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Visualize Damage Results - on map for a single damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-pipeline-damage-with-repairs">4.6. Water Pipeline Damage with Repairs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-water-pipeline-dataset">Visualize input water pipeline dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-pipeline-damage-analysis-with-repair-rate">Configure and run Pipeline Damage analysis with repair rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-on-map-for-repairs-km">Visualize Damage Results - on map for repairs/km</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-links">Useful Links</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="session-4-damage-analyses-on-lifelines">
+<h1>Session 4: Damage Analyses on Lifelines<a class="headerlink" href="#session-4-damage-analyses-on-lifelines" title="Permalink to this heading">#</a></h1>
+<p>You will learn about damage analyses on Electric Power Facilities, Roadways, Water Facilities and Buried Pipelines in this session.</p>
+<section id="hazard-tsunami">
+<h2>4.1 Hazard - Tsunami<a class="headerlink" href="#hazard-tsunami" title="Permalink to this heading">#</a></h2>
+<p>We will use Tsunami hazard for damage analyses on Electric Power Facilities and Roadway.</p>
+<p>EPF damage analysis supports various hazards including earthquake, tsunami, tornado and hurricane. Roadway damage analysis supports earthquake and tsunami.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import modules</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">DataService</span><span class="p">,</span> <span class="n">HazardService</span><span class="p">,</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">MappingSet</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">geoviz</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plotviz</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.globals</span> <span class="kn">import</span> <span class="n">PACKAGE_VERSION</span> <span class="k">as</span> <span class="n">vizversion</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># connect to in-core services </span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pyIncore-viz version detected: &quot;</span> <span class="o">+</span> <span class="n">vizversion</span><span class="p">)</span>
+
+<span class="n">data_service</span> <span class="o">=</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">hazard_service</span> <span class="o">=</span> <span class="n">HazardService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dataset-based-probabilistic-tsunami-500-yr">
+<h3>Dataset based probabilistic tsunami - 500 yr<a class="headerlink" href="#dataset-based-probabilistic-tsunami-500-yr" title="Permalink to this heading">#</a></h3>
+<p>We will use a probabilistic Tsunami (500 years recurrence interval).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tsunami&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5df90e07b9219cd00ce971e7&quot;</span>
+<span class="n">demand_type</span> <span class="o">=</span> <span class="s2">&quot;Hmax&quot;</span>
+<span class="n">tsu_json</span> <span class="o">=</span> <span class="n">HazardService</span><span class="o">.</span><span class="n">get_tsunami_hazard_metadata</span><span class="p">(</span><span class="n">hazard_service</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">tsu_dataset</span> <span class="ow">in</span> <span class="n">tsu_json</span><span class="p">[</span><span class="s1">&#39;hazardDatasets&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">tsu_dataset</span><span class="p">[</span><span class="s2">&quot;demandType&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">demand_type</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">geoviz</span><span class="o">.</span><span class="n">plot_raster_dataset</span><span class="p">(</span><span class="n">tsu_dataset</span><span class="p">[</span><span class="s1">&#39;datasetId&#39;</span><span class="p">],</span> <span class="n">client</span><span class="p">)</span>  <span class="c1"># Visualize the Tsunami raster</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="electric-power-facilities-epf-damage">
+<h2>4.2. Electric power facilities (EPF) damage<a class="headerlink" href="#electric-power-facilities-epf-damage" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes electric power facility damage based on a particular hazard. In this secion, you will perform Electric Power Facility damage anlayis with a probablistic tsuanmi.</p>
+<p>The process for computing the structural damage is similar to other parts of the built environment. First, a fragility is obtained based on the hazard type and attributes of the electric power facility. Based on the fragility, the hazard intensity at the location of the electric power facility is computed. Using this information, the probability of exceeding each limit state is computed, along with the probability of damage. For the case of an earthquake hazard, soil information can be used to modify the damage probabilities to include damage due to liquefaction.</p>
+<p>The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.</p>
+<section id="visualize-input-epf-dataset-with-poles-and-substations">
+<h3>Visualize input EPF dataset with poles and substations<a class="headerlink" href="#visualize-input-epf-dataset-with-poles-and-substations" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epf_id</span> <span class="o">=</span> <span class="s2">&quot;5d263f08b9219cf93c056c68&quot;</span>     <span class="c1"># electric power poles and substation</span>
+<span class="n">epf_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">epf_id</span><span class="p">,</span> <span class="n">data_service</span><span class="p">)</span>
+
+<span class="n">epf_df</span> <span class="o">=</span> <span class="n">epf_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">epf_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">epf_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;utilfcltyc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>  
+<span class="c1"># EDC2: Electric Distribution Circuits</span>
+<span class="c1"># ESSL2: Electric Sub Station (Low Voltage)</span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_map</span><span class="p">(</span><span class="n">epf_dataset</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="configure-and-run-epf-damage-analysis">
+<h3>Configure and run EPF Damage analysis<a class="headerlink" href="#configure-and-run-epf-damage-analysis" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.epfdamage</span> <span class="kn">import</span> <span class="n">EpfDamage</span>
+
+<span class="n">epf_dmg</span> <span class="o">=</span> <span class="n">EpfDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epf_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epfs&quot;</span><span class="p">,</span> <span class="n">epf_id</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d31eb7fb9219c6d66398445&quot;</span> <span class="c1"># Mapping and the individual fragilities can be viewed on DFR3 Viewer</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s1">&#39;dfr3_mapping_set&#39;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s1">&#39;fragility_key&#39;</span><span class="p">,</span> <span class="s2">&quot;Non-Retrofit inundationDepth Fragility ID Code&quot;</span><span class="p">)</span>
+
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;seaside_tsu_epf_damage&quot;</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>  <span class="c1"># Run Analysis</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-damage-results-as-dataframe">
+<h3>Visualize Damage Results - as dataframe<a class="headerlink" href="#visualize-damage-results-as-dataframe" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># getting results from the analysis</span>
+<span class="n">epf_result</span> <span class="o">=</span> <span class="n">epf_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+<span class="n">epf_dmg_df</span> <span class="o">=</span> <span class="n">epf_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># join the output dataset and inventory dataset</span>
+<span class="n">epf_dmg_gdf</span> <span class="o">=</span> <span class="n">epf_df</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;utilfcltyc&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">epf_dmg_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span>
+<span class="n">epf_dmg_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">epf_dmg_gdf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-damage-results-on-map-for-a-single-damage-state">
+<h3>Visualize Damage Results - on map for a single damage state<a class="headerlink" href="#visualize-damage-results-on-map-for-a-single-damage-state" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Probability of an EPF to be in damage state 2 (Moderate)</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_join_map</span><span class="p">(</span><span class="n">epf_dataset</span><span class="p">,</span> <span class="n">epf_result</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;DS_2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="show-damage-states-by-structure-type">
+<h3>Show damage states by structure type<a class="headerlink" href="#show-damage-states-by-structure-type" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_epf_dmg</span> <span class="o">=</span> <span class="n">epf_dmg_gdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;utilfcltyc&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>\
+<span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;DS_0&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_4&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;guid&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
+<span class="n">grouped_epf_dmg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;guid&#39;</span><span class="p">:</span> <span class="s1">&#39;total_count&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">grouped_epf_dmg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-damage-state-by-structure-type">
+<h3>Plot Damage state by structure type<a class="headerlink" href="#plot-damage-state-by-structure-type" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">grouped_epf_dmg</span><span class="p">[[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_4&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Stacked Bar Chart of Damage State Grouped by Structure Type&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;complete damage value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="show-probability-distribution-for-a-particular-damage-state">
+<h3>Show probability distribution for a particular damage state<a class="headerlink" href="#show-probability-distribution-for-a-particular-damage-state" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">epf_dmg_gdf</span><span class="p">[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;no damage distribution&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;no damage probability&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;count of units&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="roadway-damage">
+<h2>4.3. Roadway Damage<a class="headerlink" href="#roadway-damage" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes roadway damage based on a particular hazard. In this secion, you will perform Road damage anlayis for a probablistic tsunami.</p>
+<p>The process for computing is very similar with EPF damage analysis.</p>
+<p>Same as EPF damage analysis, the outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.</p>
+<section id="visualize-input-roadway-dataset">
+<h3>Visualize input roadway dataset<a class="headerlink" href="#visualize-input-roadway-dataset" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">road_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;60e5e5cd544e944c3ce37d08&quot;</span>     <span class="c1"># electric power poles and substation</span>
+<span class="n">road_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">road_dataset_id</span><span class="p">,</span> <span class="n">data_service</span><span class="p">)</span>
+
+<span class="n">road_df</span> <span class="o">=</span> <span class="n">road_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">road_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">road_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;highway&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_map</span><span class="p">(</span><span class="n">road_dataset</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="configure-and-run-roadway-damage-analysis-with-repair-rate">
+<h3>Configure and run Roadway Damage analysis with repair rate<a class="headerlink" href="#configure-and-run-roadway-damage-analysis-with-repair-rate" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.roaddamage</span> <span class="kn">import</span> <span class="n">RoadDamage</span>
+
+<span class="n">road_dmg</span> <span class="o">=</span> <span class="n">RoadDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">road_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;roads&quot;</span><span class="p">,</span> <span class="n">road_dataset_id</span><span class="p">)</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d274fd8b9219c3c553c71ff&quot;</span> <span class="c1"># Mapping and the individual fragilities can be viewed on DFR3 Viewer</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s1">&#39;dfr3_mapping_set&#39;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s1">&#39;fragility_key&#39;</span><span class="p">,</span> <span class="s2">&quot;Non-Retrofit inundationDepth Fragility ID Code&quot;</span><span class="p">)</span>
+
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;seaside_road_damage&quot;</span><span class="p">)</span>
+<span class="n">road_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>  <span class="c1"># Run Analysis</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Visualize Damage Results - as dataframe<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># getting results</span>
+<span class="n">road_dmg_result</span> <span class="o">=</span> <span class="n">road_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+<span class="n">road_dmg_df</span> <span class="o">=</span> <span class="n">road_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># joining output dataset and inventory dataset</span>
+<span class="n">road_dmg_gdf</span> <span class="o">=</span> <span class="n">road_df</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;highway&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">road_dmg_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span>
+<span class="n">road_dmg_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">road_dmg_gdf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Visualize Damage Results - on map for a single damage state<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Probability of a road to be in damage state 3 (Extensive)</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_join_map</span><span class="p">(</span><span class="n">road_dataset</span><span class="p">,</span> <span class="n">road_dmg_result</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;DS_3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="hazard-earthquake">
+<h2>4.4. Hazard - Earthquake<a class="headerlink" href="#hazard-earthquake" title="Permalink to this heading">#</a></h2>
+<p>We will use an Earthquake hazard for damage analyses on water facilities and buried pipelines.</p>
+<p>The inventory datasets are from Memphis testbed.</p>
+<section id="model-based-earthquake-using-atkinson-boore-1995">
+<h3>Model based earthquake using Atkinson Boore 1995<a class="headerlink" href="#model-based-earthquake-using-atkinson-boore-1995" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5b902cb273c3371e1236b36b&quot;</span>
+<span class="n">demand_type</span> <span class="o">=</span> <span class="s2">&quot;PGA&quot;</span>
+<span class="n">eq_json</span> <span class="o">=</span> <span class="n">HazardService</span><span class="o">.</span><span class="n">get_earthquake_hazard_metadata</span><span class="p">(</span><span class="n">hazard_service</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+
+<span class="n">liq_geology_dataset_id</span> <span class="o">=</span>  <span class="s2">&quot;5a284f53c7d30d13bc08249c&quot;</span>
+<span class="n">liquefaction</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">liq_fragility_key</span> <span class="o">=</span> <span class="s2">&quot;pgd&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="water-facility-damage-analysis">
+<h2>4.5 Water Facility Damage Analysis<a class="headerlink" href="#water-facility-damage-analysis" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes water facility damage based on a particular hazard. In this section, you will perform water facility damage analysis for a probabilistic tsunami.</p>
+<p>The process for computing is very similar with previous damage analyses.</p>
+<p>Same as EPF damage analysis, the outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.</p>
+<section id="visualize-input-water-facilities-dataset">
+<h3>Visualize input water facilities dataset<a class="headerlink" href="#visualize-input-water-facilities-dataset" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f2ac7d30d13bc081e52&quot;</span>     <span class="c1"># water facilities of shelby county</span>
+<span class="n">wf_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">wf_dataset_id</span><span class="p">,</span> <span class="n">data_service</span><span class="p">)</span>
+
+<span class="n">wf_df</span> <span class="o">=</span> <span class="n">wf_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wf_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wf_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;utilfcltyc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="c1"># PPPL: Large Pumping Plant</span>
+<span class="c1"># PSTAS: Above Ground Steel Tank</span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_map</span><span class="p">(</span><span class="n">wf_dataset</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="configure-and-run-water-facility-damage-analysis">
+<h3>Configure and run Water Facility Damage analysis<a class="headerlink" href="#configure-and-run-water-facility-damage-analysis" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.waterfacilitydamage</span> <span class="kn">import</span> <span class="n">WaterFacilityDamage</span>
+
+<span class="n">wf_dmg</span> <span class="o">=</span> <span class="n">WaterFacilityDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;water_facilities&quot;</span><span class="p">,</span> <span class="n">wf_dataset_id</span><span class="p">)</span>
+
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">liquefaction</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_geology_dataset_id&quot;</span><span class="p">,</span> <span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_fragility_key&quot;</span><span class="p">,</span> <span class="n">liq_fragility_key</span><span class="p">)</span>
+
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47c383337d4a387669d592&quot;</span> <span class="c1">#Potable Water Facility Fragility Mapping for INA - Includes PGD curves</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;pga&quot;</span><span class="p">)</span>
+
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;shelby_wf_dmg&quot;</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Visualize Damage Results - as dataframe<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_result</span> <span class="o">=</span> <span class="n">wf_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+<span class="n">wf_dmg_df</span> <span class="o">=</span> <span class="n">wf_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="n">wf_dmg_gdf</span> <span class="o">=</span> <span class="n">wf_df</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;utilfcltyc&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wf_dmg_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span>
+<span class="n">wf_dmg_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wf_dmg_gdf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>Visualize Damage Results - on map for a single damage state<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Probability of a water facility to be in damage state 4 (Complete)</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_join_map</span><span class="p">(</span><span class="n">wf_dataset</span><span class="p">,</span> <span class="n">wf_result</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;DS_4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="water-pipeline-damage-with-repairs">
+<h2>4.6. Water Pipeline Damage with Repairs<a class="headerlink" href="#water-pipeline-damage-with-repairs" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes buried pipeline damage based on a particular hazard. In this section, you will perform buried pipeline damage analysis for a probabilistic tsunami.</p>
+<p>The process for computing is very similar with previous damage analyses.</p>
+<p>Same as EPF damage analysis, the outputs of this analysis are CSV file with probabilities of repair rate and break rate and JSON file with information about hazard and fragilities.</p>
+<section id="visualize-input-water-pipeline-dataset">
+<h3>Visualize input water pipeline dataset<a class="headerlink" href="#visualize-input-water-pipeline-dataset" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wp_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f28c7d30d13bc081d14&quot;</span>     <span class="c1"># buried water pipelines of shelby county</span>
+<span class="n">wp_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">wp_dataset_id</span><span class="p">,</span> <span class="n">data_service</span><span class="p">)</span>
+
+<span class="n">wp_df</span> <span class="o">=</span> <span class="n">wp_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wp_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_map</span><span class="p">(</span><span class="n">wp_dataset</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="configure-and-run-pipeline-damage-analysis-with-repair-rate">
+<h3>Configure and run Pipeline Damage analysis with repair rate<a class="headerlink" href="#configure-and-run-pipeline-damage-analysis-with-repair-rate" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.pipelinedamagerepairrate</span> <span class="kn">import</span> <span class="n">PipelineDamageRepairRate</span><span class="p">,</span> <span class="n">PipelineUtil</span>
+
+<span class="n">pipeline_dmg_w_rr</span> <span class="o">=</span> <span class="n">PipelineDamageRepairRate</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline&quot;</span><span class="p">,</span> <span class="n">wp_dataset_id</span><span class="p">)</span>
+
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_fragility_key&quot;</span><span class="p">,</span> <span class="n">liq_fragility_key</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_geology_dataset_id&quot;</span><span class="p">,</span><span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">liquefaction</span><span class="p">)</span>
+
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47c227337d4a38464efea8&quot;</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;pipeline_dmg_w_rr&quot;</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Visualize Damage Results - as dataframe<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wp_result</span> <span class="o">=</span> <span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+<span class="n">wp_dmg_df</span> <span class="o">=</span> <span class="n">wp_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="n">wp_dmg_gdf</span> <span class="o">=</span> <span class="n">wp_df</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;pipelinesc&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wp_dmg_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span>
+<span class="n">wp_dmg_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wp_dmg_gdf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-damage-results-on-map-for-repairs-km">
+<h3>Visualize Damage Results - on map for repairs/km<a class="headerlink" href="#visualize-damage-results-on-map-for-repairs-km" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repairs/km for water pipelines</span>
+<span class="n">geoviz</span><span class="o">.</span><span class="n">plot_join_map</span><span class="p">(</span><span class="n">wp_dataset</span><span class="p">,</span> <span class="n">wp_result</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;repairspkm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="useful-links">
+<h2>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Getting started with pyincore and pyincore-viz: https://incore.ncsa.illinois.edu/doc/incore/getting_started.html</p></li>
+<li><p>pyIncore Analyses documentation: https://incore.ncsa.illinois.edu/doc/incore/analyses.html</p></li>
+<li><p>Example notebooks: https://incore.ncsa.illinois.edu/doc/incore/notebooks.html</p></li>
+<li><p>Data Viewer to browse datasets: https://incore.ncsa.illinois.edu/DataViewer</p></li>
+<li><p>Hazard Viewer to browse hazards: https://incore.ncsa.illinois.edu/HazardViewer</p></li>
+<li><p>DFR3 viewer to browse Fragility, Repair, Restoration curves: https://incore.ncsa.illinois.edu/DFR3Viewer</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./workshops/20220131/session4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../session3/session3-building_damage_analysis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 3: Building Damage Analysis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Example Notebooks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-tsunami">4.1 Hazard - Tsunami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-based-probabilistic-tsunami-500-yr">Dataset based probabilistic tsunami - 500 yr</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-facilities-epf-damage">4.2. Electric power facilities (EPF) damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-epf-dataset-with-poles-and-substations">Visualize input EPF dataset with poles and substations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-epf-damage-analysis">Configure and run EPF Damage analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-as-dataframe">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-on-map-for-a-single-damage-state">Visualize Damage Results - on map for a single damage state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-damage-states-by-structure-type">Show damage states by structure type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-damage-state-by-structure-type">Plot Damage state by structure type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-probability-distribution-for-a-particular-damage-state">Show probability distribution for a particular damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadway-damage">4.3. Roadway Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-roadway-dataset">Visualize input roadway dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-roadway-damage-analysis-with-repair-rate">Configure and run Roadway Damage analysis with repair rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Visualize Damage Results - on map for a single damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-earthquake">4.4. Hazard - Earthquake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-based-earthquake-using-atkinson-boore-1995">Model based earthquake using Atkinson Boore 1995</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-facility-damage-analysis">4.5 Water Facility Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-water-facilities-dataset">Visualize input water facilities dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-water-facility-damage-analysis">Configure and run Water Facility Damage analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Visualize Damage Results - on map for a single damage state</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-pipeline-damage-with-repairs">4.6. Water Pipeline Damage with Repairs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-water-pipeline-dataset">Visualize input water pipeline dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-and-run-pipeline-damage-analysis-with-repair-rate">Configure and run Pipeline Damage analysis with repair rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Visualize Damage Results - as dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-damage-results-on-map-for-repairs-km">Visualize Damage Results - on map for repairs/km</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-links">Useful Links</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

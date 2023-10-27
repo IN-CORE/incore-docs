@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Interdependent Network Design Problem (INDP) &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analyses/indp';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/analyses/indp.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interdependent Network Design Problem (INDP)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="interdependent-network-design-problem-indp">
+<h1>Interdependent Network Design Problem (INDP)<a class="headerlink" href="#interdependent-network-design-problem-indp" title="Permalink to this heading">#</a></h1>
+<p><strong>Description</strong></p>
+<p>This analysis takes a decentralized approach to solve the Interdependent Network Design Problem (INDP), a family of
+centralized Mixed-Integer Programming (MIP) models, which find the optimal restoration strategy of disrupted networked
+systems subject to budget and operational constraints.</p>
+<p><strong>Contributors</strong></p>
+<ul class="simple">
+<li><p>Implementation: Hesam Talebiyan, Chen Wang, and NCSA IN-CORE Dev Team</p></li>
+</ul>
+<p><strong>Related publications</strong></p>
+<ul class="simple">
+<li><p>Talebiyan, Hesam. “Interdependent Restoration of Infrastructure Networks with Humans in the Loop: decentralized and strategic decision processes.” (2021) Diss., Rice University. <a class="reference external" href="https://hdl.handle.net/1911/111232">https://hdl.handle.net/1911/111232</a></p></li>
+</ul>
+<p><strong>Input parameters</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">network_type</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Network Type</p></td>
+<td><p>Type of the network, which is set to <code class="docutils literal notranslate"><span class="pre">from_csv</span></code> for Seaside networks. e.g. <em>from_csv</em>, <em>incore</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MAGS</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>MAGS</p></td>
+<td><p>The earthquake return period.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sample_range</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">range</span></code></p></td>
+<td><p>Sample Range</p></td>
+<td><p>The range of sample scenarios to be analyzed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dislocation_data_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Dislocation Data Type</p></td>
+<td><p>Dislocation Data Type.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">return_model</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Return Model</p></td>
+<td><p>Type of the model for the return of the dislocated population. Options: <em>step_function</em> and <em>linear</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">testbed_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Testbed Name</p></td>
+<td><p>Sets the name of the testbed in analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">extra_commodity</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></td>
+<td><p>Extra Commodity</p></td>
+<td><p>Multi-commodity parameters dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RC</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>Resource Caps</p></td>
+<td><p>List of resource caps or the number of available resources in each step of the analysis. Each item of the list is a dictionary whose items show the type of resource and the available number of that type of resource. For example: * If <code class="docutils literal notranslate"><span class="pre">network_type</span></code>=<em>from_csv</em>, you have two options:* if, for example, <code class="docutils literal notranslate"><span class="pre">R_c</span></code>= [{“budget”: 3}, {“budget”: 6}], then the analysis is done for the cases when there are 3 and 6 resources available of type “budget” (total resource assignment).* if, for example, <code class="docutils literal notranslate"><span class="pre">R_c</span></code>= [{“budget”: {1:1, 2:1}}, {“budget”: {1:1, 2:2}}, {“budget”: {1:3, 2:3}}] and given there are 2 layers, then the analysis is done for the case where each layer gets 1 resource of type “budget”, AND the case where layer 1 gets 1 and layer 2 gets 2 resources of type “budget”, AND the case where each layer gets 3 resources of type “budget” (Prescribed resource for each layer).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">layers</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>Layers</p></td>
+<td><p>List of layers in the analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">method</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Method</p></td>
+<td><p>There are two choices of method: 1. <code class="docutils literal notranslate"><span class="pre">INDP</span></code>: runs Interdependent Network Restoration Problem (INDP). 2. <code class="docutils literal notranslate"><span class="pre">TDINDP</span></code>: runs time-dependent INDP (td-INDP).  In both cases, if “time_resource” is True, then the repair time for each element is considered in devising the restoration plans.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t_steps</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Time steps</p></td>
+<td><p>Number of time steps of the analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">time_resource</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Time Resource</p></td>
+<td><p>If time resource is True, then the repair time for each element is considered in devising the restoration plans.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">save_model</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Save Model</p></td>
+<td><p>If the optimization model should be saved to file. The default is False.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">solver_engine</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Solver Engine</p></td>
+<td><p>Solver to use for optimization model. Default to use SCIP solver.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">solver_path</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Solver Engine Path</p></td>
+<td><p>Executable Path to the Solver to use for optimization model. Default to SCIP solver.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">solver_time_limit</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Solve Time Limit</p></td>
+<td><p>Solving time limit in seconds.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Input datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wf_repair_cost</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:repairCost</span></code></p></td>
+<td><p>Water Facility Repair Cost</p></td>
+<td><p>Repair cost for each water facility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wf_restoration_time</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:waterFacilityRepairTime</span></code></p></td>
+<td><p>Water Facility Repair Time</p></td>
+<td><p>Repair time at certain functionality recovery for each class and limit state.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">epf_repair_cost</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:repairCost</span></code></p></td>
+<td><p>Electric Power Facility Repair Cost</p></td>
+<td><p>Repair cost for each electric power facility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">epf_restoration_time</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:epfRepairTime</span></code></p></td>
+<td><p>Electric Power Facility Repair Time</p></td>
+<td><p>Repair time at certain functionality recovery for each class and limit state.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pipeline_repair_cost</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:pipelineRepairCost</span></code></p></td>
+<td><p>Water Pipeline Repair Cost</p></td>
+<td><p>Repair cost for each water pipeline.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pipeline_restoration_time</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:pipelineRestorationVer1</span></code></p></td>
+<td><p>Water Pipeline Resotarting Time</p></td>
+<td><p>Pipeline restoration times.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">power_network</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:epnNetwork</span></code></p></td>
+<td><p>Electric Power Network Dataset</p></td>
+<td><p>Electric power network dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">water_network</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:waterNetwork</span></code></p></td>
+<td><p>Water Network Dataset</p></td>
+<td><p>Water network dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">powerline_supply_demand_info</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:powerLineSupplyDemandInfo</span></code></p></td>
+<td><p>Powerline Supply Demand Info</p></td>
+<td><p>Supply and demand information for powerlines.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">epf_supply_demand_info</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:epfSupplyDemandInfo</span></code></p></td>
+<td><p>Electric Power Facility Supply Demand Info</p></td>
+<td><p>Supply and demand information for electric power facilities.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wf_supply_demand_info</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:waterFacilitySupplyDemandInfo</span></code></p></td>
+<td><p>Water Facility Supply Demand Info</p></td>
+<td><p>Supply and demand information for water facilities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pipeline_supply_demand_info</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:pipelineSupplyDemandInfo</span></code></p></td>
+<td><p>Water Pipeline Supply Demand Info</p></td>
+<td><p>Supply and demand information for water pipelines.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">interdep</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:interdep</span></code></p></td>
+<td><p>Interdependency</p></td>
+<td><p>Interdepenency between water and electric power facilities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wf_failure_state</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:sampleFailureState</span></code></p></td>
+<td><p>Water Facility Failure State</p></td>
+<td><p>MCS failure state of water facilities.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wf_damage_state</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:sampleDamageState</span></code></p></td>
+<td><p>Water Facility Damage State</p></td>
+<td><p>MCS damage state of water facilities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pipeline_failure_state</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:sampleFailureState</span></code></p></td>
+<td><p>Water Pipeline Failure State</p></td>
+<td><p>Failure state of pipeline from pipeline functionality analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">epf_failure_state</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:sampleFailureState</span></code></p></td>
+<td><p>Electric Power Facility Failure State</p></td>
+<td><p>MCS failure state of electric power facilities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">epf_damage_state</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:sampleDamageState</span></code></p></td>
+<td><p>Electric Power Facility Damage State</p></td>
+<td><p>MCS damage state of electric power facilities</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pop_dislocation</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:popDislocation</span></code></p></td>
+<td><p>Population Dislocation</p></td>
+<td><p>Population dislocation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dt_params</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:dTParams</span></code></p></td>
+<td><p>Dislocation time parameters</p></td>
+<td><p>Parameters for population dislocation time.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bldgs2elec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:bldgs2elec</span></code></p></td>
+<td><p>Building To Electric Power Facility</p></td>
+<td><p>Relation between building and electric power facility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bldgs2wter</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:bldgs2wter</span></code></p></td>
+<td><p>Building To Water Facility</p></td>
+<td><p>Relation between building and water facility.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>parent key</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">action</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:indpAction</span></code></p></td>
+<td><p></p></td>
+<td><p>Action</p></td>
+<td><p>Restoration action plans.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cost</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:indpCost</span></code></p></td>
+<td><p></p></td>
+<td><p>Cost</p></td>
+<td><p>Restoration cost plans</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">runtime</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:indpRuntime</span></code></p></td>
+<td><p></p></td>
+<td><p>Run Time</p></td>
+<td><p>Run time duration (in second) to execute computations for each time step</p></td>
+</tr>
+</tbody>
+</table>
+<p><small>(* required)</small></p>
+<p><strong>Execution</strong></p>
+<p>code snippet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">indp_analysis</span> <span class="o">=</span> <span class="n">INDP</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;network_type&quot;</span><span class="p">,</span> <span class="s2">&quot;from_csv&quot;</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;MAGS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1000</span><span class="p">])</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;sample_range&quot;</span><span class="p">,</span> <span class="n">sample_range</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;dislocation_data_type&quot;</span><span class="p">,</span> <span class="s2">&quot;incore&quot;</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;return_model&quot;</span><span class="p">,</span> <span class="s2">&quot;step_function&quot;</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;testbed_name&quot;</span><span class="p">,</span> <span class="s2">&quot;seaside&quot;</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;extra_commodity&quot;</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PW&quot;</span><span class="p">],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[]})</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;RC&quot;</span><span class="p">,</span> <span class="p">[{</span><span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="mi">240000</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="mi">700</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="mi">300000</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">}])</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;layers&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="s2">&quot;INDP&quot;</span><span class="p">)</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;method&quot;, &quot;TDINDP&quot;)</span>
+    
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;t_steps&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;time_resource&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;save_model&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;save_model&quot;, True)</span>
+    
+     <span class="c1"># scip</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_engine&quot;</span><span class="p">,</span> <span class="s2">&quot;scip&quot;</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_path&quot;</span><span class="p">,</span> <span class="s2">&quot;/usr/local/bin/scip&quot;</span><span class="p">)</span>
+
+    <span class="c1"># glpk</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;solver_engine&quot;, &quot;glpk&quot;)</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;solver_path&quot;, &quot;/usr/local/bin/glpsol&quot;)</span>
+
+    <span class="c1"># cbc</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;solver_engine&quot;, &quot;cbc&quot;)</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;solver_path&quot;, &quot;/usr/local/bin/cbc&quot;)</span>
+
+    <span class="c1"># gurobi</span>
+    <span class="c1"># indp_analysis.set_parameter(&quot;solver_engine&quot;, &quot;gurobi&quot;)</span>
+
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;solver_time_limit&quot;</span><span class="p">,</span> <span class="mi">3600</span><span class="p">)</span>  <span class="c1"># if not set default to never timeout</span>
+
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_restoration_time&quot;</span><span class="p">,</span> <span class="n">wf_restoration_time</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_repair_cost&quot;</span><span class="p">,</span> <span class="n">wf_repair_cost_result</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_restoration_time&quot;</span><span class="p">,</span> <span class="n">epf_restoration_time</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_repair_cost&quot;</span><span class="p">,</span> <span class="n">epf_repair_cost_result</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline_restoration_time&quot;</span><span class="p">,</span> <span class="n">pipeline_restoration_time</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline_repair_cost&quot;</span><span class="p">,</span> <span class="n">pipeline_repair_cost_result</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;power_network&quot;</span><span class="p">,</span> <span class="n">power_network_dataset</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;water_network&quot;</span><span class="p">,</span> <span class="n">water_network_dataset</span><span class="p">)</span>  <span class="c1"># with distribution noes</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;powerline_supply_demand_info&quot;</span><span class="p">,</span> <span class="n">powerline_supply_demand_info_id</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_supply_demand_info&quot;</span><span class="p">,</span> <span class="n">epf_supply_demand_info_id</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_supply_demand_info&quot;</span><span class="p">,</span> <span class="n">wf_supply_demand_info_id</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline_supply_demand_info&quot;</span><span class="p">,</span> <span class="n">pipeline_supply_demand_info_id</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;interdep&quot;</span><span class="p">,</span> <span class="n">interdep_id</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_failure_state&quot;</span><span class="p">,</span> <span class="n">wterfclty_sample_failure_state</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_damage_state&quot;</span><span class="p">,</span> <span class="n">wterfclty_sample_damage_states</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline_failure_state&quot;</span><span class="p">,</span> <span class="n">pipeline_sample_failure_state</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_failure_state&quot;</span><span class="p">,</span> <span class="n">epf_sample_failure_state</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_damage_state&quot;</span><span class="p">,</span> <span class="n">epf_sample_damage_states</span><span class="p">)</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pop_dislocation&quot;</span><span class="p">,</span> <span class="n">pop_dislocation_result</span><span class="p">)</span>
+
+    <span class="c1"># # optional inputs</span>
+    <span class="c1"># indp_analysis.load_remote_input_dataset(&quot;bldgs2elec&quot;, bldgs2elec_id)</span>
+    <span class="c1"># indp_analysis.load_remote_input_dataset(&quot;bldgs2wter&quot;, bldgs2wter_id)</span>
+
+    <span class="c1"># Run Analysis</span>
+    <span class="n">indp_analysis</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>full analysis: <a class="reference external" href="https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb">indp.ipynb</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./analyses"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

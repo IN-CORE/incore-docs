@@ -1,0 +1,1281 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Seaside Example Notebook 1: Multi-Hazard Building Damage &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Seaside_testbed/Seaside_testbed';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves" href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html" />
+    <link rel="prev" title="Lumberton Testbed" href="../Lumberton_testbed/Lumberton_testbed.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../notebooks.html">Example Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/Seaside_testbed/Seaside_testbed.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Seaside Example Notebook 1: Multi-Hazard Building Damage</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1. Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-infrastructure-and-damage-analysis">1.1. Hazards, Infrastructure, and Damage Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyincore">2. pyIncore</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">2.1. Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pyincore-modules">2.2. Importing pyIncore Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-earthquake-and-tsunami-building-damage">3. Performing Earthquake and Tsunami Building Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthquake-building-damage">3.1. Earthquake building damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tsunami-building-damage">3.2.Tsunami Building Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-hazard-building-damage">3.3. Multi-hazard Building Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-building-failure">3.4. Monte Carlo Building Failure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-results">4. Viewing results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-histograms-of-failure-probabilities">4.1. Plotting histograms of failure probabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-expected-economic-losses">4.2. Computing expected economic losses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-expected-economic-risks">4.3. Computing expected economic risks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-geospatial-results">5. Plotting Geospatial Results</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="seaside-example-notebook-1-multi-hazard-building-damage">
+<h1>Seaside Example Notebook 1: Multi-Hazard Building Damage<a class="headerlink" href="#seaside-example-notebook-1-multi-hazard-building-damage" title="Permalink to this heading">#</a></h1>
+<p>This notebook uses the pyIncore modeling framework to compute multi-hazard damages to buildings in Seaside, Oregon. pyIncore’s <strong>BuildingDamage</strong> and <strong>MonteCarloFailureProbability</strong> modules are implemented to compute damages resulting from both an earthquake and tsunami. pyIncore’s <strong>cumulativebuildingdamage</strong> module is used to compute cumulative damages.</p>
+<p>*Notebook created by Dylan R. Sanderson (OSU - sanderdy&#64;oregonstate.edu) and Gowtham Naraharisetty (NCSA)</p>
+<hr class="docutils" />
+<section id="background">
+<h2>1. Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<p>Communities around the world are subject to multiple natural hazards that often occur near simultaneously. For example, hurricanes often result in high wind speeds, as well as flooding from both rainfall and storm surge. Similarly, seismic events can result in earthquakes, tsunamis, and landslides. When considering multi-hazards, there is a consensus that the total expected damages are not the sum of the underlying single hazards. For example, in the case of seismic-tsunami events, a building completely destroyed by an earthquake cannot sustain any more damage from the tsunami. Subsequently, it is essential to consider this when performing a multi-hazard damage analysis.</p>
+<p>In this notebook, the seismic-tsunami hazard posed by the Cascadia Subduction Zone (CSZ) is considered to demonstrate the multi-hazard capabilities in pyIncore. The CSZ is an approximately 1,000 km long fault located between Cape Mendocino California and Vancouver Island, Canada, which separates the Juan de Fuca and North America plates. Rupture of the CSZ will result in a megathrust earthquake and lead to a subsequent tsunami. The city of Seaside is located along the northern Oregon coast, and has been selected as a testbed community for this analysis.</p>
+<p><img alt="title" src="../../_images/seaside.png" /><br></p>
+<section id="hazards-infrastructure-and-damage-analysis">
+<h3>1.1. Hazards, Infrastructure, and Damage Analysis<a class="headerlink" href="#hazards-infrastructure-and-damage-analysis" title="Permalink to this heading">#</a></h3>
+<p>The results of a Probabilistic Seismic-Tsunami Hazard Analysis (PSTHA; Park <em>et. al.</em> 2017) are utilized in this notebook. The PSTHA resulted in both earthquake and tsunami hazard maps for 7 recurrence intervals (100-, 250-, 500-, 1,000-, 2,500-, 5,000-, and 10,000-year). The damages to buildings are computed in pyIncore by overlaying the hazard maps on the buildings, and determining site-specific intensity measures. Intensity measures of spectral displacement and momentum flux are used for the earthquake and tsunami respectively. MAEVIS fragilities are then implemented to determine the probability that each building sustains: (1) insignificant, (2) moderate, (3) heavy, or (4) complete damage. These probabilities are then used to inform a Monte-Carlo simulation in which the probability of building failure is computed.</p>
+<p><img alt="Hazards" src="../../_images/hazards.png" /></p>
+<p><img alt="Buildings" src="../../_images/Buildings.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pyincore">
+<h2>2. pyIncore<a class="headerlink" href="#pyincore" title="Permalink to this heading">#</a></h2>
+<p>The remainder of this notebook uses pyIncore to compute multi-hazard damages to buildings in Seaside, Oregon.</p>
+<section id="prerequisites">
+<h3>2.1. Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
+<p>The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through <strong>conda</strong>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pyIncore</p></td>
+<td><p>=&gt;1.3.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/incore/install_pyincore.html</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyIncore_viz</p></td>
+<td><p>=&gt;1.5.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/pyincore_viz/index.html</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="importing-pyincore-modules">
+<h3>2.2. Importing pyIncore Modules<a class="headerlink" href="#importing-pyincore-modules" title="Permalink to this heading">#</a></h3>
+<p>All of the necessary pyIncore modules are being imported. In this analysis, the following pyIncore modules are utilized:</p>
+<ul class="simple">
+<li><p><strong>BuildingDamage</strong>: Computes probability of each building being in a damage state for both the earthquake and tsunami hazard.</p></li>
+<li><p><strong>CumulativeBuildingDamage</strong>: Combines the results of earthquake and tsunami building damage analysis to compute the multi-hazard damages</p></li>
+<li><p><strong>MonteCarloFailureProbability</strong>: Computes the failure probability of each building.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">MappingSet</span><span class="p">,</span> <span class="n">DataService</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.cumulativebuildingdamage</span> <span class="kn">import</span> <span class="n">CumulativeBuildingDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.montecarlofailureprobability</span> <span class="kn">import</span> <span class="n">MonteCarloFailureProbability</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 1.3.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="performing-earthquake-and-tsunami-building-damage">
+<h2>3. Performing Earthquake and Tsunami Building Damage<a class="headerlink" href="#performing-earthquake-and-tsunami-building-damage" title="Permalink to this heading">#</a></h2>
+<p>This section of the code computes both the earthquake and tsunami building damages using pyIncore’s <strong>BuildingDamage</strong> module. The earthquake damage for events corresponding to return periods of 100-2,500-year is first computed followed by the tsunami damage for the same recurrence intervals. pyIncore uses IDs to identify hazard datasets, infrastructure datasets, fragilities, <em>etc.</em>. The hazard IDs for these 5 recurrence intervals of both the earthquake and tsunami are:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Recurrence Interval</p></th>
+<th class="head"><p>Earthquake</p></th>
+<th class="head"><p>Tsunami</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100-yr</p></td>
+<td><p>5dfa4058b9219c934b64d495</p></td>
+<td><p>5bc9e25ef7b08533c7e610dc</p></td>
+</tr>
+<tr class="row-odd"><td><p>250-yr</p></td>
+<td><p>5dfa41aab9219c934b64d4b2</p></td>
+<td><p>5df910abb9219cd00cf5f0a5</p></td>
+</tr>
+<tr class="row-even"><td><p>500-yr</p></td>
+<td><p>5dfa4300b9219c934b64d4d0</p></td>
+<td><p>5df90e07b9219cd00ce971e7</p></td>
+</tr>
+<tr class="row-odd"><td><p>1,000-yr</p></td>
+<td><p>5dfa3e36b9219c934b64c231</p></td>
+<td><p>5df90137b9219cd00cb774ec</p></td>
+</tr>
+<tr class="row-even"><td><p>2,500-yr</p></td>
+<td><p>5dfa4417b9219c934b64d4d3</p></td>
+<td><p>5df90761b9219cd00ccff258</p></td>
+</tr>
+<tr class="row-odd"><td><p>5,000-yr</p></td>
+<td><p>5dfbca0cb9219c101fd8a58d</p></td>
+<td><p>5df90871b9219cd00ccff273</p></td>
+</tr>
+<tr class="row-even"><td><p>10,000-yr</p></td>
+<td><p>5dfa51bfb9219c934b68e6c2</p></td>
+<td><p>5d27b986b9219c3c55ad37d0</p></td>
+</tr>
+</tbody>
+</table>
+<section id="earthquake-building-damage">
+<h3>3.1. Earthquake building damage<a class="headerlink" href="#earthquake-building-damage" title="Permalink to this heading">#</a></h3>
+<p>Defining earthquake hazard IDs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">rt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="n">rt_hazard_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">100</span><span class="p">:</span> <span class="s2">&quot;5dfa4058b9219c934b64d495&quot;</span><span class="p">,</span> 
+                  <span class="mi">250</span><span class="p">:</span> <span class="s2">&quot;5dfa41aab9219c934b64d4b2&quot;</span><span class="p">,</span>
+                  <span class="mi">500</span><span class="p">:</span> <span class="s2">&quot;5dfa4300b9219c934b64d4d0&quot;</span><span class="p">,</span>
+                  <span class="mi">1000</span><span class="p">:</span> <span class="s2">&quot;5dfa3e36b9219c934b64c231&quot;</span><span class="p">,</span>
+                  <span class="mi">2500</span><span class="p">:</span> <span class="s2">&quot;5dfa4417b9219c934b64d4d3&quot;</span><span class="p">,</span> 
+                  <span class="mi">5000</span><span class="p">:</span> <span class="s2">&quot;5dfbca0cb9219c101fd8a58d&quot;</span><span class="p">,</span>
+                 <span class="mi">10000</span><span class="p">:</span> <span class="s2">&quot;5dfa51bfb9219c934b68e6c2&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looping through each recurrence interval to determine the probability of being in each damage state using pyIncore’s <strong>BuildingDamage</strong> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bldg_eq_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># place holder to saving earthquake building damage result iteration</span>
+<span class="n">bldg_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5df40388b9219c06cf8b0c80&quot;</span>        <span class="c1"># defining building dataset (GIS point layer)</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d2789dbb9219c3c553c7977&quot;</span>             <span class="c1"># specifiying mapping id from fragilites to building types</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>        <span class="c1"># loading fragility mapping</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="n">rt</span><span class="p">:</span>                                       <span class="c1"># loop through recurrence interval</span>
+    <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>                   <span class="c1"># initializing pyincore</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset_id</span><span class="p">)</span> <span class="c1"># loading in the above</span>
+    <span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;buildings_eq_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr_dmg_result&#39;</span> <span class="c1"># defining output name</span>
+   
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>  <span class="c1"># defining hazard type (e.g. earthquake vs. tsunami)</span>
+    <span class="n">hazard_id</span> <span class="o">=</span> <span class="n">rt_hazard_dict</span><span class="p">[</span><span class="n">rt_val</span><span class="p">]</span>                  <span class="c1"># specifying hazard id for specific recurrence interval</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>      <span class="c1"># loading above into pyincore</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;Non-Retrofit Fragility ID Code&quot;</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>                <span class="c1"># number of CPUs to use for parallel processing</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>  <span class="c1"># specifying output name in pyincore</span>
+
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>                             <span class="c1"># running the analysis with the above parameters</span>
+    <span class="n">bldg_eq_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;ds_result&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tsunami-building-damage">
+<h3>3.2.Tsunami Building Damage<a class="headerlink" href="#tsunami-building-damage" title="Permalink to this heading">#</a></h3>
+<p>Repeating the above analysis for the tsunami</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tsunami&quot;</span>
+<span class="n">rt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="n">rt_hazard_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">100</span><span class="p">:</span> <span class="s2">&quot;5bc9e25ef7b08533c7e610dc&quot;</span><span class="p">,</span> 
+                  <span class="mi">250</span><span class="p">:</span> <span class="s2">&quot;5df910abb9219cd00cf5f0a5&quot;</span><span class="p">,</span>
+                  <span class="mi">500</span><span class="p">:</span> <span class="s2">&quot;5df90e07b9219cd00ce971e7&quot;</span><span class="p">,</span>
+                  <span class="mi">1000</span><span class="p">:</span> <span class="s2">&quot;5df90137b9219cd00cb774ec&quot;</span><span class="p">,</span>
+                  <span class="mi">2500</span><span class="p">:</span> <span class="s2">&quot;5df90761b9219cd00ccff258&quot;</span><span class="p">,</span>
+                  <span class="mi">5000</span><span class="p">:</span> <span class="s2">&quot;5df90871b9219cd00ccff273&quot;</span><span class="p">,</span>
+                  <span class="mi">10000</span><span class="p">:</span> <span class="s2">&quot;5d27b986b9219c3c55ad37d0&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bldg_tsu_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># place holder to saving tsunami building damage result iteration</span>
+<span class="n">bldg_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5df40388b9219c06cf8b0c80&quot;</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d279bb9b9219c3c553c7fba&quot;</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="n">rt</span><span class="p">:</span>
+    <span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;buildings_tsu_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr_dmg_result&#39;</span>
+   
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+    <span class="n">hazard_id</span> <span class="o">=</span> <span class="n">rt_hazard_dict</span><span class="p">[</span><span class="n">rt_val</span><span class="p">]</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+
+    <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+    <span class="n">bldg_tsu_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;ds_result&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multi-hazard-building-damage">
+<h3>3.3. Multi-hazard Building Damage<a class="headerlink" href="#multi-hazard-building-damage" title="Permalink to this heading">#</a></h3>
+<p>This part of the notebook uses the output from the above earthquake and tsunami building damages to compute the multi-hazard building damages. The pyIncore module <strong>CumulativeBuildingDamage</strong> is utilized.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cumulative_bldg_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># place holder to saving cumulating building damage result iteration</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rt</span><span class="p">):</span>                                           <span class="c1"># looping through recurrence interval</span>
+    <span class="n">cumulative_bldg_dmg</span> <span class="o">=</span> <span class="n">CumulativeBuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>  <span class="c1"># initializing pyincore</span>
+    
+    <span class="n">eq_damage_dataset</span> <span class="o">=</span> <span class="n">bldg_eq_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">tsu_damage_dataset</span> <span class="o">=</span> <span class="n">bldg_tsu_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;eq_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">eq_damage_dataset</span><span class="p">)</span>
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;tsunami_bldg_dmg&quot;</span><span class="p">,</span> <span class="n">tsu_damage_dataset</span><span class="p">)</span>
+    
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;buildings_cumulative_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr_dmg_result&#39;</span>
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+
+    <span class="c1"># setting number of cpus for parallel processing</span>
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># running analysis</span>
+    <span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+    <span class="n">cumulative_bldg_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cumulative_bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;combined-result&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="monte-carlo-building-failure">
+<h3>3.4. Monte Carlo Building Failure<a class="headerlink" href="#monte-carlo-building-failure" title="Permalink to this heading">#</a></h3>
+<p>This part of the notebook uses the output from the: (1) earthquake, (2) tsunami, and (3) multi-hazard damage analysis to determine building failure. Monte Carlo sampling of the damage state probabilities are implemented to determine the probability of failure. Here, a building is considered failed if it has a damage state of moderate, heavy, or complete. The pyIncore module <strong>MonteCarloFailureProbability</strong> is utilized.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_bldg_eq_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># place holder to saving mc earthquake building damage result iteration</span>
+<span class="n">mc_bldg_tsu_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>       <span class="c1"># place holder to saving mc tsunami building damage result iteration</span>
+<span class="n">mc_bldg_cumul_dmg_result_list</span> <span class="o">=</span> <span class="p">[]</span>     <span class="c1"># place holder to saving mc cumulative building damage result iteration</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">MonteCarloFailureProbability</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>     <span class="c1"># initializing pyincore</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rt</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Recurrence Interval: </span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">))</span>
+    <span class="c1"># --- earthquake MC failure ---</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;mc_buildings_eq_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr&#39;</span>
+    
+    <span class="c1"># running mc sampling in pyincore</span>
+    <span class="n">damage_dataset</span> <span class="o">=</span> <span class="n">bldg_eq_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">damage_dataset</span><span class="p">)</span>           <span class="c1"># importing csv to pyincore</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>             <span class="c1"># defining result_name</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>                           <span class="c1"># number of CPUs for parallel processing</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>                     <span class="c1"># number of MC samples</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>  <span class="c1"># damage interval keys</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>   <span class="c1"># damage keys classified as &quot;failure&quot;</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>                                        <span class="c1"># running MC analysis</span>
+    <span class="n">mc_bldg_eq_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">))</span>
+    
+    <span class="c1"># --- tsunami MC failure ---</span>
+    <span class="c1"># repeating above analysis, but for tsunami</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;mc_buildings_tsu_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr&#39;</span>
+    <span class="c1"># running mc sampling in pyincore</span>
+    <span class="n">damage_dataset</span> <span class="o">=</span> <span class="n">bldg_tsu_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">damage_dataset</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+    <span class="n">mc_bldg_tsu_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">))</span>
+    
+    <span class="c1"># --- multi-hazard MC failure ---</span>
+    <span class="c1"># repeating above analysis, but for multi-hazard results</span>
+    <span class="n">result_name</span> <span class="o">=</span> <span class="s1">&#39;mc_buildings_cumulative_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;yr&#39;</span>
+
+    <span class="c1"># running mc sampling in pyincore</span>
+    <span class="n">damage_dataset</span> <span class="o">=</span> <span class="n">cumulative_bldg_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">damage_dataset</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">])</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+    <span class="n">mc_bldg_cumul_dmg_result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recurrence Interval: 100
+Recurrence Interval: 250
+Recurrence Interval: 500
+Recurrence Interval: 1000
+Recurrence Interval: 2500
+Recurrence Interval: 5000
+Recurrence Interval: 10000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="viewing-results">
+<h2>4. Viewing results<a class="headerlink" href="#viewing-results" title="Permalink to this heading">#</a></h2>
+<p>The results of the above analysis are presented in the following cells.</p>
+<p><strong>Reading in data to a pandas DataFrame</strong></p>
+<p>Each row corresponds to a building. The column “guid” is a unique identifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_eq_store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">data_tsu_store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">data_cumulative_store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="n">rt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rt</span><span class="p">):</span>
+    <span class="n">data_eq</span> <span class="o">=</span> <span class="n">mc_bldg_eq_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    <span class="n">data_tsu</span> <span class="o">=</span> <span class="n">mc_bldg_tsu_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    <span class="n">data_cumulative</span> <span class="o">=</span> <span class="n">mc_bldg_cumul_dmg_result_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span>
+        <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span>
+        <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span>
+        
+    <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">]</span>
+    <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">]</span>
+    <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;DS_1&#39;</span><span class="p">]</span>
+    <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;DS_2&#39;</span><span class="p">]</span>
+    <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_eq</span><span class="p">[</span><span class="s1">&#39;DS_3&#39;</span><span class="p">]</span>
+
+    <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">]</span>
+    <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">]</span>
+    <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;DS_1&#39;</span><span class="p">]</span>
+    <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;DS_2&#39;</span><span class="p">]</span>
+    <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_tsu</span><span class="p">[</span><span class="s1">&#39;DS_3&#39;</span><span class="p">]</span>
+
+    <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;failure_probability&#39;</span><span class="p">]</span>
+    <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">]</span>
+    <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;DS_1&#39;</span><span class="p">]</span>
+    <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;DS_2&#39;</span><span class="p">]</span>
+    <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span> <span class="o">=</span> <span class="n">data_cumulative</span><span class="p">[</span><span class="s1">&#39;DS_3&#39;</span><span class="p">]</span>
+
+<span class="n">data_eq_store</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_tsu_store</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_cumulative_store</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># --- printing sample of failure probability results ---</span>
+<span class="n">failure_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;failure_prob_100&#39;</span><span class="p">,</span> <span class="s1">&#39;failure_prob_250&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;failure_prob_500&#39;</span><span class="p">,</span> <span class="s1">&#39;failure_prob_1000&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;failure_prob_2500&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Multi-hazard MC failure probabilities:&#39;</span><span class="p">)</span>
+<span class="n">data_cumulative_store</span><span class="p">[</span><span class="n">failure_keys</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multi-hazard MC failure probabilities:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>failure_prob_100</th>
+      <th>failure_prob_250</th>
+      <th>failure_prob_500</th>
+      <th>failure_prob_1000</th>
+      <th>failure_prob_2500</th>
+    </tr>
+    <tr>
+      <th>guid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fba4c73f-9b1b-4942-b7fb-bc276a4e0a4e</th>
+      <td>0.076</td>
+      <td>0.563</td>
+      <td>0.686</td>
+      <td>0.723</td>
+      <td>0.947</td>
+    </tr>
+    <tr>
+      <th>65d6e370-c05b-4b2f-bd17-d914d1d056c7</th>
+      <td>0.042</td>
+      <td>0.453</td>
+      <td>0.586</td>
+      <td>0.665</td>
+      <td>0.738</td>
+    </tr>
+    <tr>
+      <th>dad76485-9694-409e-ac7f-c64c7bd5c32c</th>
+      <td>0.088</td>
+      <td>0.520</td>
+      <td>0.660</td>
+      <td>0.737</td>
+      <td>0.941</td>
+    </tr>
+    <tr>
+      <th>6f57cfb6-d244-40d5-96f5-03aeddd5e30a</th>
+      <td>0.036</td>
+      <td>0.450</td>
+      <td>0.611</td>
+      <td>0.695</td>
+      <td>0.921</td>
+    </tr>
+    <tr>
+      <th>929f1040-6224-409d-b4e3-58946daf3b91</th>
+      <td>0.100</td>
+      <td>0.535</td>
+      <td>0.696</td>
+      <td>0.734</td>
+      <td>0.828</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="plotting-histograms-of-failure-probabilities">
+<h3>4.1. Plotting histograms of failure probabilities<a class="headerlink" href="#plotting-histograms-of-failure-probabilities" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">rt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rt</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)],</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)],</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;failure_prob_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)],</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4500</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4500</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4500</span><span class="p">])</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;Earthquake&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Tsunami&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s1">&#39;Multi-Hazard&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-year&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-year&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-year&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Failure Probability&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Failure Probability&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Failure Probability&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Failure Probability&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/86d3a277c945677a689b3fb56e605204eb6a4fae96b5f949137bc29fc9257902.png" src="../../_images/86d3a277c945677a689b3fb56e605204eb6a4fae96b5f949137bc29fc9257902.png" />
+</div>
+</div>
+</section>
+<section id="computing-expected-economic-losses">
+<h3>4.2. Computing expected economic losses<a class="headerlink" href="#computing-expected-economic-losses" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">damage_factor_mean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.155</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">]</span>  <span class="c1"># from MAEVIS documentation</span>
+<span class="n">rt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+
+<span class="c1"># reading in rmv values of each building</span>
+<span class="c1">#bldg_dmg = BuildingDamage(client)                   # initializing pyincore</span>
+<span class="n">bldg_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5df40388b9219c06cf8b0c80&quot;</span>
+<span class="c1">#bldg_dmg.load_remote_input_dataset(&quot;buildings&quot;, bldg_dataset_id)</span>
+<span class="c1">#dataset = bldg_dmg.input_datasets[&#39;buildings&#39;][&#39;value&#39;]</span>
+<span class="n">data_service</span> <span class="o">=</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">bldg_dataset_id</span><span class="p">,</span> <span class="n">data_service</span><span class="p">)</span>
+<span class="n">rd</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_inventory_reader</span><span class="p">()</span>
+
+<span class="n">rmv</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rd</span><span class="p">:</span>
+    <span class="n">rmv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;rmv_improv&#39;</span><span class="p">])</span>
+
+<span class="c1"># storing rmv data in each dataframe</span>
+<span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rmv</span>
+<span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rmv</span>
+<span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rmv</span>
+
+<span class="n">loss_eq_tot</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">loss_tsu_tot</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">loss_cumulative_tot</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">rt_val</span> <span class="ow">in</span> <span class="n">rt</span><span class="p">:</span>
+    <span class="n">loss_insg</span> <span class="o">=</span> <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">loss_modr</span> <span class="o">=</span> <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">loss_heav</span> <span class="o">=</span> <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">loss_comp</span> <span class="o">=</span> <span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_eq_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">loss_eq</span> <span class="o">=</span> <span class="n">loss_insg</span> <span class="o">+</span> <span class="n">loss_modr</span> <span class="o">+</span> <span class="n">loss_heav</span> <span class="o">+</span> <span class="n">loss_comp</span>
+    
+    <span class="n">loss_insg</span> <span class="o">=</span> <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">loss_modr</span> <span class="o">=</span> <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">loss_heav</span> <span class="o">=</span> <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">loss_comp</span> <span class="o">=</span> <span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_tsu_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">loss_tsu</span> <span class="o">=</span> <span class="n">loss_insg</span> <span class="o">+</span> <span class="n">loss_modr</span> <span class="o">+</span> <span class="n">loss_heav</span> <span class="o">+</span> <span class="n">loss_comp</span>
+    
+    <span class="n">loss_insg</span> <span class="o">=</span> <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_0_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">loss_modr</span> <span class="o">=</span> <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_1_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">loss_heav</span> <span class="o">=</span> <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_2_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">loss_comp</span> <span class="o">=</span> <span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;rmv&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">data_cumulative_store</span><span class="p">[</span><span class="s1">&#39;DS_3_</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rt_val</span><span class="p">)]</span><span class="o">*</span><span class="n">damage_factor_mean</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">loss_cumulative</span> <span class="o">=</span> <span class="p">(</span><span class="n">loss_insg</span> <span class="o">+</span> <span class="n">loss_modr</span> <span class="o">+</span> <span class="n">loss_heav</span> <span class="o">+</span> <span class="n">loss_comp</span><span class="p">)</span>
+    
+    <span class="n">loss_eq_tot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_eq</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">loss_tsu_tot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_tsu</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">loss_cumulative_tot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_cumulative</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">loss_eq_tot</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">loss_tsu_tot</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">loss_cumulative_tot</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Return Period (years)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Economic Losses ($)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Economic Losses&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.40</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<img alt="../../_images/3e2223b6a5370e468a57ff32d05fb4b5a8efd4cbe2be7f31bb68a7ad1afa013c.png" src="../../_images/3e2223b6a5370e468a57ff32d05fb4b5a8efd4cbe2be7f31bb68a7ad1afa013c.png" />
+</div>
+</div>
+</section>
+<section id="computing-expected-economic-risks">
+<h3>4.3. Computing expected economic risks<a class="headerlink" href="#computing-expected-economic-risks" title="Permalink to this heading">#</a></h3>
+<p>Risks are defined as losses times probability of occurrence (or the inverserse of the return period). With economic risks, one can isolate events that result in both large economic losses, as well as have a high probability of occurrence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">risk_eq</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">/</span><span class="n">r</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">loss_eq_tot</span><span class="p">,</span> <span class="n">rt</span><span class="p">)]</span>
+<span class="n">risk_tsu</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">/</span><span class="n">r</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">loss_tsu_tot</span><span class="p">,</span> <span class="n">rt</span><span class="p">)]</span>
+<span class="n">risk_cumulative</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">/</span><span class="n">r</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">loss_cumulative_tot</span><span class="p">,</span> <span class="n">rt</span><span class="p">)]</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">risk_eq</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">risk_tsu</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt</span><span class="p">,</span> <span class="n">risk_cumulative</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Return Period (years)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Risk&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Economic Risks&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.40</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3684e9a8070606cffbc5aaa9b494537202c31a7fcbbae3191663533a4f1551f3.png" src="../../_images/3684e9a8070606cffbc5aaa9b494537202c31a7fcbbae3191663533a4f1551f3.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="plotting-geospatial-results">
+<h2>5. Plotting Geospatial Results<a class="headerlink" href="#plotting-geospatial-results" title="Permalink to this heading">#</a></h2>
+<p>The below shows the results of the failure probabilities geospatially. The user selects the output file that is viewed, then selects “Generate Map”. Each building is then color coded according to the failure probabilities from the MC results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># showing mc earthquake building damage result</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">plot_table_dataset_list_from_single_source</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">mc_bldg_eq_dmg_result_list</span><span class="p">,</span> <span class="s1">&#39;failure_probability&#39;</span><span class="p">,</span> <span class="s1">&#39;5d927ab2b9219c06ae8d313c&#39;</span><span class="p">)</span>
+<span class="n">m</span>            <span class="c1"># showing maps in notebook</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "144da5f9624c4b6ca8e6beae9d0c18d8", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># showing mc tsunami building damage result</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">plot_table_dataset_list_from_single_source</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">mc_bldg_tsu_dmg_result_list</span><span class="p">,</span> <span class="s1">&#39;failure_probability&#39;</span><span class="p">,</span> <span class="s1">&#39;5d927ab2b9219c06ae8d313c&#39;</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "55de2d6151d8487f8acd3d7351f4d75a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># showing mc cumulative building damage result</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">plot_table_dataset_list_from_single_source</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">mc_bldg_cumul_dmg_result_list</span><span class="p">,</span> <span class="s1">&#39;failure_probability&#39;</span><span class="p">,</span> <span class="s1">&#39;5d927ab2b9219c06ae8d313c&#39;</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "87f06316210144639921b72edb1fbe35", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/Seaside_testbed"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Lumberton_testbed/Lumberton_testbed.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lumberton Testbed</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1. Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-infrastructure-and-damage-analysis">1.1. Hazards, Infrastructure, and Damage Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyincore">2. pyIncore</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">2.1. Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pyincore-modules">2.2. Importing pyIncore Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-earthquake-and-tsunami-building-damage">3. Performing Earthquake and Tsunami Building Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthquake-building-damage">3.1. Earthquake building damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tsunami-building-damage">3.2.Tsunami Building Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-hazard-building-damage">3.3. Multi-hazard Building Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-building-failure">3.4. Monte Carlo Building Failure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-results">4. Viewing results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-histograms-of-failure-probabilities">4.1. Plotting histograms of failure probabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-expected-economic-losses">4.2. Computing expected economic losses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-expected-economic-risks">4.3. Computing expected economic risks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-geospatial-results">5. Plotting Geospatial Results</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

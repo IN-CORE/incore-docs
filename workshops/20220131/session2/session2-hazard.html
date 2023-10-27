@@ -1,0 +1,1293 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Session 2: Working with Hazards (Tornado and Earthquake) &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/20220131/session2/session2-hazard';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Session 3: Building Damage Analysis" href="../session3/session3-building_damage_analysis.html" />
+    <link rel="prev" title="Session 1: Introduction to Jupyter Notebook" href="../session1/session1-jupyter-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../workshops.html">IN-CORE workshops</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../agenda.html">Lifeline workshop January 31, 2022</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/workshops/20220131/session2/session2-hazard.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Session 2: Working with Hazards (Tornado and Earthquake)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-in-core-modules">1. Basics of IN-CORE modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tornado-hazards">2. Tornado hazards</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-an-existing-tornado">2.1 Working with an existing tornado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-model-based-tornado">2.2 Creating model-based tornado</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-seeds-about-the-computational-reproducibility-of-hazard-scenarios">Random Seeds: about the computational reproducibility of hazard scenarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-new-slightly-different-tornado">Defining a new (slightly different) tornado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataset-driven-tornado">2.3 Creating a dataset-driven tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earthquake-hazards">3. Earthquake hazards</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-existing-earthquake-hazards">3.1 Working with existing earthquake hazards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-model-based-earthquakes">3.2 Creating model-based earthquakes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataset-driven-earthquake-probabilistic-deterministic">3.3 Creating a dataset-driven earthquake (Probabilistic &amp; Deterministic)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-review">Session review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-exercise">Hands-on Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="session-2-working-with-hazards-tornado-and-earthquake">
+<h1>Session 2: Working with Hazards (Tornado and Earthquake)<a class="headerlink" href="#session-2-working-with-hazards-tornado-and-earthquake" title="Permalink to this heading">#</a></h1>
+<p>You will learn how to create earthquake and tornado hazards with IN-CORE in this session.</p>
+<section id="basics-of-in-core-modules">
+<h2>1. Basics of IN-CORE modules<a class="headerlink" href="#basics-of-in-core-modules" title="Permalink to this heading">#</a></h2>
+<p>IN-CORE via <code class="docutils literal notranslate"><span class="pre">pyincore</span></code> provides a collection of modules that implement functionalities required to access services
+that provide access to data, simulation models and their analysis. To use IN-CORE in Jupyter Notebooks, we start by
+importing various modules.</p>
+<p>We will first focus on how to effectively use the following modules within the IN-CORE architecture to
+request information about various hazards and :</p>
+<ul class="simple">
+<li><p><strong>IncoreClient:</strong> this entity provides access and authentication to IN-CORE services. To access the services, users
+require to have a valid <em>username</em> and <em>password</em>. Importing <code class="docutils literal notranslate"><span class="pre">IncoreClient</span></code> and creating a named instance of the
+client is the first step toward using IN-CORE by establishing a remote connection to various simulation and data
+access services. The variable containing that instance is used by various other services
+to validate the user’s identity, as well as provide access to pieces of information required across tasks. <em>This step
+only needs to be done once.</em></p></li>
+<li><p><strong>HazardService:</strong> once the <code class="docutils literal notranslate"><span class="pre">IncoreClient</span></code> has been initiated, the <code class="docutils literal notranslate"><span class="pre">HazardService</span></code> module uses the information
+from that client to administer existing information about known or new hazards. <code class="docutils literal notranslate"><span class="pre">HazardService</span></code> can:</p>
+<ul>
+<li><p>Retrieve existing metadata for various hazards</p></li>
+<li><p>Search hazards per specific information</p></li>
+<li><p>Request creation of a new hazard</p></li>
+<li><p>Request deletion of a new hazard</p></li>
+</ul>
+</li>
+</ul>
+<p>With the latter in mind, let’s start by importing these modules and creating our first IN-CORE objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">HazardService</span><span class="p">,</span> <span class="n">IncoreClient</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to IN-CORE serivce by creating IncoreClient</span>
+<span class="c1"># This only needs to be done once as indicated above</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+
+<span class="c1"># Create a HazardService instance that depends on the client defined in the previous step</span>
+<span class="n">hazardsvc</span> <span class="o">=</span> <span class="n">HazardService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 1.2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tornado-hazards">
+<h2>2. Tornado hazards<a class="headerlink" href="#tornado-hazards" title="Permalink to this heading">#</a></h2>
+<p>We will start by retrieving existing information about a specific tornado, and then using this information to create a slightly modified new tornado hazard scenario. These scenarios are representative of two most frequent tasks with IN-CORE: using prior data to perform post-analysis of hazards, and the creation of new hazards that will become later available. We later also construct an example with a database-driven tornado.</p>
+<p>These two tasks alone can enable decision makers to systematically construct, test and refine scenarios, later to be easily shared and discussed across response teams using Jupyter notebooks such as this.</p>
+<section id="working-with-an-existing-tornado">
+<h3>2.1 Working with an existing tornado<a class="headerlink" href="#working-with-an-existing-tornado" title="Permalink to this heading">#</a></h3>
+<p>As with any given hazard, IN-CORE operates by utilizing hazard identification strings (<em>hazard id</em>) that uniquely
+name existing scenarios and are associated with data and metadata useful for analysis and visualization purposes.
+Metadata describe properties of the scenario, such as location</p>
+<p>With this identifier, let’s perform two tasks:</p>
+<ul class="simple">
+<li><p>Obtain metadata about the tornado</p></li>
+<li><p>Obtain hazard values, often used by decision makers during emergency planning and preparation</p></li>
+</ul>
+<p>IN-CORE uses the <a class="reference external" href="https://www.json.org/json-en.html">JSON lightweight data-interchange format</a> to store and retrieve
+hazard information across its services as flexible way to share information in a standardized manner. We will use
+Python’s <code class="docutils literal notranslate"><span class="pre">json</span></code> module to expand that information in a human-readable format.</p>
+<p>Let’s start by using an identifier for one tornado in Memphis, TN stored as an IN-CORE dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example tornado in Memphis, TN (It&#39;s an imaginary tornado)</span>
+<span class="n">example_tornado_id</span> <span class="o">=</span> <span class="s1">&#39;60a44ae8605f0462bd4263ac&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, using the <code class="docutils literal notranslate"><span class="pre">HazardService</span></code> module, we retrieve the metadata and display it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tornado_model_metadata</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">get_tornado_hazard_metadata</span><span class="p">(</span><span class="n">example_tornado_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_model_metadata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;tornadoType&quot;: &quot;model&quot;,
+    &quot;id&quot;: &quot;60a44ae8605f0462bd4263ac&quot;,
+    &quot;name&quot;: &quot;Memphis Tornado model based tornado&quot;,
+    &quot;description&quot;: &quot;mean width tornado hazard&quot;,
+    &quot;creator&quot;: &quot;cwang138&quot;,
+    &quot;threshold&quot;: null,
+    &quot;thresholdUnit&quot;: &quot;mph&quot;,
+    &quot;spaces&quot;: [
+        &quot;cwang138&quot;,
+        &quot;incore&quot;
+    ],
+    &quot;date&quot;: &quot;2021-05-18T23:16:55+0000&quot;,
+    &quot;tornadoModel&quot;: &quot;MeanWidthTornado&quot;,
+    &quot;tornadoParameters&quot;: {
+        &quot;efRating&quot;: &quot;EF5&quot;,
+        &quot;maxWindSpeed&quot;: 250.0,
+        &quot;startLatitude&quot;: 35.135,
+        &quot;startLongitude&quot;: -90.032,
+        &quot;randomSeed&quot;: 1234,
+        &quot;windSpeedMethod&quot;: 1,
+        &quot;numSimulations&quot;: 1,
+        &quot;endLatitude&quot;: [
+            35.093
+        ],
+        &quot;endLongitude&quot;: [
+            -89.801
+        ]
+    },
+    &quot;tornadoWidth&quot;: [
+        815.9980909090909
+    ],
+    &quot;efBoxes&quot;: [
+        {
+            &quot;efBoxWidths&quot;: [
+                0.001002256638187928,
+                0.0017328393158413994,
+                0.0022321320000668874,
+                0.0027387672237662794,
+                0.003205018480359198,
+                0.003671269736952117
+            ]
+        }
+    ],
+    &quot;datasetId&quot;: &quot;60a44ae77da24b7b5ba0e86f&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will discuss below the meaning of each element in this JSON output. Using the same service, we can obtain specific
+data about the hazard, in this case, the hazard values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting hazard value from your model</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mph&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.134, -90.031&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">tornado_model_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_tornado_hazard_values</span><span class="p">(</span><span class="n">example_tornado_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_model_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+    {
+        &quot;hazardValues&quot;: [
+            67.38515213766605
+        ],
+        &quot;demands&quot;: [
+            &quot;Wind&quot;
+        ],
+        &quot;units&quot;: [
+            &quot;mph&quot;
+        ],
+        &quot;loc&quot;: &quot;35.134, -90.031&quot;
+    }
+]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">pyIncore_viz</span></code>, we can now visualize the tornado hazard:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">example_tornado_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/057ecf2a78671d6451ea22fcd4660c6989e9bccf643440316f32b0d84d03a1ea.png" src="../../../_images/057ecf2a78671d6451ea22fcd4660c6989e9bccf643440316f32b0d84d03a1ea.png" />
+</div>
+</div>
+<p>All geographic locations in IN-CORE are specified using the WGS84 coordinate system. Observe that the parameters of the
+<code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> function are as follows:</p>
+<ul class="simple">
+<li><p>the variable containing the resulting metadata</p></li>
+<li><p>the indentation used to display the information contained in the JSON format</p></li>
+<li><p>whether keys are sorted for convenient reading (no in our case).</p></li>
+</ul>
+</section>
+<section id="creating-model-based-tornado">
+<h3>2.2 Creating model-based tornado<a class="headerlink" href="#creating-model-based-tornado" title="Permalink to this heading">#</a></h3>
+<p>One of IN-CORE strengths is the ability to specify, execute and retrieve information about new hazard scenarios using
+the same metadata standard.</p>
+<p>As promised above, here is a description of each metadata (JSON) element representing a tornado hazard:</p>
+<ul class="simple">
+<li><p><strong>tornadoModel</strong> (required) - the tornado model (Mean width will create a tornado using the mean width from historical data for the EF rating)</p>
+<ul>
+<li><p><em>Mean width tornado (MeanWidthTornado)</em> - start/end points with a width equal to the average for that EF rating looking at historical tornado data</p></li>
+<li><p>*Random width tornado (RandomWidthTornado) - start/end points, random width selected use the historical data to determine the max width for that tornado rating</p></li>
+<li><p><em>Mean Length/Width/angle (MeanLengthWidthAngleTornado)</em> - start point, length/width and angle are based on the historical average for those attributes based on EF selected</p></li>
+<li><p><em>Random length/width/angle (RandomLengthWidthAngleTornado)</em> - start point, random length/width/angle selected for the ef rating using historical data</p></li>
+<li><p><em>Random angle (RandomAngleTornado)</em> - start point, random angle selected based on historical data.</p></li>
+</ul>
+</li>
+<li><p><em>efRating (required)</em> - a value in the Enhanced Fujita (EF) scale intensity of the tornado (EF0 - EF5)</p></li>
+<li><p><em>startLatitude/startLongitude (required)</em> - the starting location of the tornado</p></li>
+<li><p><em>endLatitude/endLongitude (optional)</em>- depending on the model, an end latitude/longitude value. Some tornado models (e.g. mean length width, and angle) calcuate endLat and endLon, others (e.g. random angle) will generate multiple endpoints programmatically so the input must be passed as an array</p></li>
+<li><p><em>windSpeedMethod(optional)</em> - computation of wind speed within an EF boundary, 0 indicates using linear interpolation, 1 indicates uniform random distribution. Default is Uniform random distribution.</p></li>
+</ul>
+<p>As you may already anticipate, the particular JSON elements vary per each hazard type. We call these <em>parameters</em>. Some
+parameters are required (i.e. the analysis cannot be performed without them) and others are</p>
+<section id="random-seeds-about-the-computational-reproducibility-of-hazard-scenarios">
+<h4>Random Seeds: about the computational reproducibility of hazard scenarios<a class="headerlink" href="#random-seeds-about-the-computational-reproducibility-of-hazard-scenarios" title="Permalink to this heading">#</a></h4>
+<p>Ensuring reproducibility of hazard scenarios is paramount for the IN-CORE team due to its scientific and decision-making
+consequences. Hence, care has been exercised to ensure that scenarios can be re-executed consistently in a standardized
+and simple manner.</p>
+<p>Several models (such as this one) require generating pseudo-random numbers to simulate unexpected natural or human
+effects, computational reproducibility of experiments can become somewhat challenging. IN-CORE harnesses the <em>random
+seed</em>, a special number that determines the exact sequence random number generators (RNGs) produce to ensure
+repeatability of that sequence independent of where the code is executed. The <code class="docutils literal notranslate"><span class="pre">randomSeed</span></code> parameter in IN-CORE
+takes care of this aspect via an integer value that fixes the random number generating process regardless of when the
+new analysis is requested or in which infrastructure it is executed.</p>
+<section id="defining-a-new-slightly-different-tornado">
+<h5>Defining a new (slightly different) tornado<a class="headerlink" href="#defining-a-new-slightly-different-tornado" title="Permalink to this heading">#</a></h5>
+<p>With this information in hand, let’s construct a slightly different version of the same tornado. Let us imagine a less
+intense scenario with a longer trajectory due to conditions that preserve its energy for a longer time. While path
+length have been reported to increase as their EF rating increases, the case we describe here is plausible (See
+<a class="reference external" href="https://journals.ametsoc.org/view/journals/wefo/19/2/1520-0434_2004_019_0310_otrotp_2_0_co_2.xml">On the Relationship of Tornado Path Length and Width to Intensity</a>).</p>
+<p>To do so, we will vary:</p>
+<ul class="simple">
+<li><p>the rating in the Enhanced Fujita (EF) rating from <code class="docutils literal notranslate"><span class="pre">&quot;EF5&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;EF4&quot;</span></code>,</p></li>
+<li><p>the start and end points to have a longer trajectory,</p></li>
+<li><p>and the  random number seed to ensure the RNG starts at values different from those in the original scenario.</p></li>
+</ul>
+<p>The result of this process is</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Centerville Model Tornado (modified)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Centerville mean width tornado hazard&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tornadoType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;model&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tornadoModel&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MeanWidthTornado&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tornadoParameters&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;efRating&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EF4&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;startLatitude&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;35.215&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;startLongitude&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-97.524&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;randomSeed&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3457&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;endLatitude&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">35.253</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;endLongitude&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-97.432</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;windSpeedMethod&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;numSimulations&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We now proceed to create the model-based tornado with what we have learned so far. We take care to serialize the Python
+dictionary structure into a JSON specification using <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a variable to store the new tornado hazard definition:</span>
+
+<span class="n">tornado_model_metadata</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Centerville Model Tornado (modified)&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Centerville mean width tornado hazard&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tornadoType&quot;</span><span class="p">:</span> <span class="s2">&quot;model&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tornadoModel&quot;</span> <span class="p">:</span> <span class="s2">&quot;MeanWidthTornado&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tornadoParameters&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;efRating&quot;</span> <span class="p">:</span> <span class="s2">&quot;EF4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;startLatitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;35.215&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;startLongitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;-97.524&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;randomSeed&quot;</span> <span class="p">:</span> <span class="s2">&quot;3457&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;endLatitude&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">35.253</span><span class="p">],</span>
+      <span class="s2">&quot;endLongitude&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">97.432</span><span class="p">],</span>
+      <span class="s2">&quot;windSpeedMethod&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;numSimulations&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">tornado_model_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_model_metadata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we create a tornado scenario, and retrieve the <em>model response</em> obtained from requesting IN-CORE to process it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tornado with the prior definition</span>
+<span class="n">model_response</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">create_tornado_scenario</span><span class="p">(</span><span class="n">tornado_model_json</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">model_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;tornadoType&quot;: &quot;model&quot;,
+    &quot;id&quot;: &quot;61f823aca000ce07df7e22fd&quot;,
+    &quot;name&quot;: &quot;Centerville Model Tornado (modified)&quot;,
+    &quot;description&quot;: &quot;Centerville mean width tornado hazard&quot;,
+    &quot;creator&quot;: &quot;mondrejc&quot;,
+    &quot;threshold&quot;: null,
+    &quot;thresholdUnit&quot;: &quot;mph&quot;,
+    &quot;spaces&quot;: [
+        &quot;mondrejc&quot;
+    ],
+    &quot;date&quot;: &quot;2022-01-31T18:00:12+0000&quot;,
+    &quot;tornadoModel&quot;: &quot;MeanWidthTornado&quot;,
+    &quot;tornadoParameters&quot;: {
+        &quot;efRating&quot;: &quot;EF4&quot;,
+        &quot;maxWindSpeed&quot;: 250.0,
+        &quot;startLatitude&quot;: 35.215,
+        &quot;startLongitude&quot;: -97.524,
+        &quot;randomSeed&quot;: 3457,
+        &quot;windSpeedMethod&quot;: 1,
+        &quot;numSimulations&quot;: 1,
+        &quot;endLatitude&quot;: [
+            35.253
+        ],
+        &quot;endLongitude&quot;: [
+            -97.432
+        ]
+    },
+    &quot;tornadoWidth&quot;: [
+        663.9219546174143
+    ],
+    &quot;efBoxes&quot;: [
+        {
+            &quot;efBoxWidths&quot;: [
+                0.0008154678223728115,
+                0.0013740483453900851,
+                0.0019415900532685987,
+                0.0024643258368409137,
+                0.0029870616204132287
+            ]
+        }
+    ],
+    &quot;datasetId&quot;: &quot;61f823ac8486b5517284ffd2&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with any analysis, we obtain the identifier of the specific response:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acquire hazard id you created</span>
+<span class="n">tornado_model_id</span> <span class="o">=</span> <span class="n">model_response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">tornado_model_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with the first case, we obtain the hazard values for this tornado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting hazard value from your model based tornado</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mph&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.215, -97.521&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mph&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.227, -97.471&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">tornado_model_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_tornado_hazard_values</span><span class="p">(</span><span class="n">tornado_model_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_model_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="creating-a-dataset-driven-tornado">
+<h3>2.3 Creating a dataset-driven tornado<a class="headerlink" href="#creating-a-dataset-driven-tornado" title="Permalink to this heading">#</a></h3>
+<p>In some situations, datasets are available outside IN-CORE that determine a hazard. IN-CORE also accepts dataset inputs
+to facilitate such analyses. We present here an example of how to do so.</p>
+<p>The first step is to construct a hazard dataset description using JSON. In this case, we do so for a tornado in Joplin:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tornado_dataset_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Joplin Dataset Tornado - workshop&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Joplin tornado hazard with shapefile&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tornadoType&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset&quot;</span>
+<span class="p">}</span>
+
+<span class="n">tornado_dataset_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_dataset_data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also specify where the dataset files can be located (in our case, they have been provided to you in the local
+directory):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># zip file containing tornado path</span>
+<span class="n">file_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;joplin_path_wgs84.shp&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;joplin_path_wgs84.dbf&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;joplin_path_wgs84.prj&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;joplin_path_wgs84.shx&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using both, we create a tornado <em>scenario</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tornado with definition and file</span>
+<span class="n">dataset_response</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">create_tornado_scenario</span><span class="p">(</span><span class="n">tornado_dataset_json</span><span class="p">,</span> <span class="n">file_paths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dataset_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we obtain the identifier of the output to the request (to <code class="docutils literal notranslate"><span class="pre">HazardService</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acquire hazard id you created</span>
+<span class="n">tornado_dataset_id</span> <span class="o">=</span> <span class="n">dataset_response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tornado_dataset_id</span><span class="p">)</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">tornado_dataset_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we obtain the hazard values as usual.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting hazard value from your dataset-based tornado</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mph&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;37.066, -94.502&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wind&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mph&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;37.032, -94.348&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">tornado_dataset_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_tornado_hazard_values</span><span class="p">(</span><span class="n">tornado_dataset_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">tornado_dataset_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="earthquake-hazards">
+<h2>3. Earthquake hazards<a class="headerlink" href="#earthquake-hazards" title="Permalink to this heading">#</a></h2>
+<p>We will now replicate these steps with a different type of hazards: earthquakes. This implies existing,
+model-based and database driven hazard scenarios (deterministic and probabilistic).</p>
+<section id="working-with-existing-earthquake-hazards">
+<h3>3.1 Working with existing earthquake hazards<a class="headerlink" href="#working-with-existing-earthquake-hazards" title="Permalink to this heading">#</a></h3>
+<p>For this case, we will obtain metadata and hazard values for a 7.9 earthquake in Memphis, TN. Since we already have started
+the <code class="docutils literal notranslate"><span class="pre">IncoreClient</span></code> and <code class="docutils literal notranslate"><span class="pre">HazardService</span> <span class="pre">objects</span></code>, we will not replicate the code here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example tornado in Memphis, TN</span>
+<span class="n">example_earthquake_id</span> <span class="o">=</span> <span class="s1">&#39;5b902cb273c3371e1236b36b&#39;</span>
+
+<span class="c1"># Obtain and display metadata</span>
+<span class="n">earthquake_model_metadata</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">get_earthquake_hazard_metadata</span><span class="p">(</span><span class="n">example_earthquake_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">earthquake_model_metadata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">example_earthquake_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get hazard values</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0.2 SA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.07899, -90.0178&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0.2 SA&quot;</span><span class="p">,</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span> <span class="s2">&quot;0.8 SA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.027, -90.077&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">earthquake_model_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_earthquake_hazard_values</span><span class="p">(</span><span class="n">example_earthquake_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">earthquake_model_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-model-based-earthquakes">
+<h3>3.2 Creating model-based earthquakes<a class="headerlink" href="#creating-model-based-earthquakes" title="Permalink to this heading">#</a></h3>
+<p>Similar to the case of tornadoes, it is possible to create new model-based earthquakes through JSON parameters.</p>
+<ul class="simple">
+<li><p><em>attenuations</em> - attenuation models capture how enery is lost as seismic waves propagate. At present, IN-CORE supports
+the following ones:</p>
+<ul>
+<li><p>AbrahamsonSilvaKamai2014</p></li>
+<li><p>AtkinsonBoore1995</p></li>
+<li><p>CampbellBozorgnia2014</p></li>
+<li><p>ChiouYoungs2014</p></li>
+</ul>
+</li>
+<li><p><em>earthquake position (lat, lon), depth and magnitude</em> - a description of the location and geophysical properties of
+the seismic event</p></li>
+<li><p><em>demand type and demand units</em> - a description of the quantity of interest and its units.</p></li>
+</ul>
+<p>Following known steps for model-based tornados, we request computation of a new Memphis earthquake. In this case,
+we decrease the depth to 7.0 km and increase the intensity to 8.1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the new earthquake</span>
+<span class="n">eq_model_metadata</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Memphis EQ Model (modified)&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Memphis model based hazard&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;eqType&quot;</span><span class="p">:</span> <span class="s2">&quot;model&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;attenuations&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;AtkinsonBoore1995&quot;</span> <span class="p">:</span> <span class="s2">&quot;1.0&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;eqParameters&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;srcLatitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;35.927&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;srcLongitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;-89.919&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;magnitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;8.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;depth&quot;</span> <span class="p">:</span> <span class="s2">&quot;7.0&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;visualizationParameters&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;demandType&quot;</span> <span class="p">:</span> <span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;demandUnits&quot;</span> <span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minX&quot;</span> <span class="p">:</span><span class="s2">&quot;-90.3099&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minY&quot;</span> <span class="p">:</span><span class="s2">&quot;34.9942&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;maxX&quot;</span> <span class="p">:</span> <span class="s2">&quot;-89.6231&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;maxY&quot;</span> <span class="p">:</span> <span class="s2">&quot;35.4129&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;numPoints&quot;</span> <span class="p">:</span> <span class="s2">&quot;1025&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amplifyHazard&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">eq_model_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_model_metadata</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Create an earthquake with definition</span>
+<span class="n">eq_model_response</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">create_earthquake</span><span class="p">(</span><span class="n">eq_model_json</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_model_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="c1"># Acquire hazard id you created</span>
+<span class="n">eq_model_id</span> <span class="o">=</span> <span class="n">eq_model_response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+<span class="c1"># Plot the earthquake</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">eq_model_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting hazard value from your model based earthquake</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0.2 SA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.07899, -90.0178&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0.2 SA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.027, -90.077&quot;</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">eq_model_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_earthquake_hazard_values</span><span class="p">(</span><span class="n">eq_model_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_model_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-dataset-driven-earthquake-probabilistic-deterministic">
+<h3>3.3 Creating a dataset-driven earthquake (Probabilistic &amp; Deterministic)<a class="headerlink" href="#creating-a-dataset-driven-earthquake-probabilistic-deterministic" title="Permalink to this heading">#</a></h3>
+<p>Finally, we show how datasets can drive earthquake scenarios. In this case, both deterministic and probabilistic
+alternatives are available. We concentrate here on a deterministic example.</p>
+<p>For the example below, the earthquake datasets are provided as TIFF files.</p>
+<p>As with the corresponding tornado example, specify the dataset(s) to be used:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq_dataset_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Memphis Deterministic EQ&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;Memphis dataset based deterministic hazard&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;eqType&quot;</span><span class="p">:</span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;hazardDatasets&quot;</span><span class="p">:[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span><span class="s2">&quot;deterministic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;demandType&quot;</span><span class="p">:</span><span class="s2">&quot;SA&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;demandUnits&quot;</span><span class="p">:</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;period&quot;</span><span class="p">:</span><span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;eqParameters&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;srcLatitude&quot;</span><span class="p">:</span><span class="s2">&quot;35.927&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srcLongitude&quot;</span><span class="p">:</span><span class="s2">&quot;-89.919&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;magnitude&quot;</span><span class="p">:</span><span class="s2">&quot;7.9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth&quot;</span><span class="p">:</span><span class="s2">&quot;10.0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;hazardType&quot;</span><span class="p">:</span><span class="s2">&quot;deterministic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;demandType&quot;</span><span class="p">:</span><span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;demandUnits&quot;</span><span class="p">:</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;period&quot;</span><span class="p">:</span><span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;eqParameters&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;srcLatitude&quot;</span><span class="p">:</span><span class="s2">&quot;35.927&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srcLongitude&quot;</span><span class="p">:</span><span class="s2">&quot;-89.919&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;magnitude&quot;</span><span class="p">:</span><span class="s2">&quot;7.9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth&quot;</span><span class="p">:</span><span class="s2">&quot;10.0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+
+<span class="n">eq_dataset_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_dataset_data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, specify where dataset files live:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eq-dataset-SA.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;eq-dataset-PGA.tif&quot;</span><span class="p">]</span> 
+<span class="c1"># order should be same as the hazardDatasets from above json</span>
+<span class="c1"># eq-dataset1.tif represents 0.2 SA &amp; eq-dataset2.tif represents PGA</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And finally, we create the earthquake and obtain hazard values from it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an dataset-based earthquake with definition and files</span>
+<span class="n">eq_dataset_response</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">create_earthquake</span><span class="p">(</span><span class="n">eq_dataset_json</span><span class="p">,</span> <span class="n">file_paths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_dataset_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="c1"># Acquire hazard id from recently created hazard</span>
+<span class="n">eq_dataset_id</span> <span class="o">=</span> <span class="n">eq_dataset_response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">eq_dataset_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="s2">&quot;0.2 SA&quot;</span><span class="p">)</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_earthquake</span><span class="p">(</span><span class="n">eq_dataset_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="s2">&quot;PGA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain hazard value from your dataset-based earthquakes</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0.2 SA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.07899, -90.0178&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;demands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PGA&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;35.027, -90.077&quot;</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+<span class="n">eq_dataset_vals</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">post_earthquake_hazard_values</span><span class="p">(</span><span class="n">eq_dataset_id</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">eq_dataset_vals</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="session-review">
+<h3>Session review<a class="headerlink" href="#session-review" title="Permalink to this heading">#</a></h3>
+<p>With the experience gained in this session, you should now be able to</p>
+<ul class="simple">
+<li><p>initialize <code class="docutils literal notranslate"><span class="pre">IncoreClient</span></code> and <code class="docutils literal notranslate"><span class="pre">HazardService</span></code> objects to authenticate to and access IN-CORE
+resources,</p></li>
+<li><p>understand the workflow required to use existing hazard data, create new ones and use external datasets to perform new
+hazard analyses</p></li>
+<li><p>apply these concepts to tornades and earthquakes within IN-CORE.</p></li>
+</ul>
+</section>
+<section id="hands-on-exercise">
+<h3>Hands-on Exercise<a class="headerlink" href="#hands-on-exercise" title="Permalink to this heading">#</a></h3>
+<p>For the next part of this session, please open “session2-hazard.ipynb”, and try it by yourself.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./workshops/20220131/session2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../session1/session1-jupyter-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 1: Introduction to Jupyter Notebook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../session3/session3-building_damage_analysis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Session 3: Building Damage Analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-in-core-modules">1. Basics of IN-CORE modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tornado-hazards">2. Tornado hazards</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-an-existing-tornado">2.1 Working with an existing tornado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-model-based-tornado">2.2 Creating model-based tornado</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-seeds-about-the-computational-reproducibility-of-hazard-scenarios">Random Seeds: about the computational reproducibility of hazard scenarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-new-slightly-different-tornado">Defining a new (slightly different) tornado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataset-driven-tornado">2.3 Creating a dataset-driven tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earthquake-hazards">3. Earthquake hazards</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-existing-earthquake-hazards">3.1 Working with existing earthquake hazards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-model-based-earthquakes">3.2 Creating model-based earthquakes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataset-driven-earthquake-probabilistic-deterministic">3.3 Creating a dataset-driven earthquake (Probabilistic &amp; Deterministic)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-review">Session review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-exercise">Hands-on Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1952 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Session 3: Damage analysis (buildings and electric power facilities) &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/20210526/session3/session3-damage-analysis';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Session 3: Assignment" href="session3-assignment.html" />
+    <link rel="prev" title="Session 2: Assignment Answer" href="../session2/session2-assignment-answer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../workshops.html">IN-CORE workshops</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../agenda.html">Workshop May 26, 2021</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../notebooks.html">Example Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks/MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/workshops/20210526/session3/session3-damage-analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Session 3: Damage analysis (buildings and electric power facilities)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fragility-curve-and-mapping">1. Fragility curve and Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buiding-inventory-data">2. Buiding Inventory Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataset-from-in-core-data-service">2.1. Create a dataset from IN-CORE Data Service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-dataset-of-building-inventory">2.2 Create a local dataset of building inventory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-csv-file-to-esri-shapefile">Step 1: Convert CSV file to ESRI Shapefile</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-guid">Step 2: Add GUID</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-local-dataset-for-in-core">Step 3: Create a local dataset for IN-CORE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-analysis">3. Building Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-with-earthquake">3.1 Damage analysis with earthquake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-with-tornado">3.2 Damage analysis with tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-facility-damage-analysis">4. Electric Power Facility Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1 Damage analysis with earthquake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2 Damage analysis with tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-compare-damage-output-with-different-hazard-types">5. Combine/compare damage output with different hazard types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-assignment">Hands-on Assignment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="session-3-damage-analysis-buildings-and-electric-power-facilities">
+<h1>Session 3: Damage analysis (buildings and electric power facilities)<a class="headerlink" href="#session-3-damage-analysis-buildings-and-electric-power-facilities" title="Permalink to this heading">#</a></h1>
+<p>You will learn how to create earthquake and tornado hazard by using IN-CORE in this session</p>
+<section id="fragility-curve-and-mapping">
+<h2>1. Fragility curve and Mapping<a class="headerlink" href="#fragility-curve-and-mapping" title="Permalink to this heading">#</a></h2>
+<p>Damage analyses use fragility curve sets to calculate the limit state and damage stsate. Mapping then determines which fragility curve set applying to which inventory. For example, a building that has certain number of stories could be mapped to a specific set of fragility curves.</p>
+<p>In IN-CORE, A user can both upload a set of fragility curves and mapping to the DFR3 services, or use local curve and mapping set objects.</p>
+<p>This section briefly shows how to access fragility curves. A detailed instrcution of how to create your own fragility entities and mapping entities will be covered in next workshop.</p>
+<p>User can easily browsing and searching Fragility Curves and Mappings via <a class="reference external" href="https://incore.ncsa.illinois.edu/DFR3Viewer">DFR3 Viewer</a>
+<img alt="dfr3_viewer" src="../../../_images/lookup_fragility_id1.png" /></p>
+<p>Analyses use DFR3 mapping sets from IN-CORE service to associate each element of a given set with one or more elements of a second set of DFR3 curves. In IN-CORE and pyIncore specifically, a building inventory (given set) is mapped to a (second) set of fragility curves.</p>
+<p>Please note that in this notebook we use term <em>function</em> in programming context as a class function and <em>curve</em> as a function in mathematical context (lognormal curve).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pyIncore modules</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">FragilityCurveSet</span><span class="p">,</span> <span class="n">MappingSet</span>
+
+<span class="c1"># Connect to IN-CORE service</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+
+<span class="c1"># Initalize a FragilityService</span>
+<span class="n">fragility_services</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 0.9.3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting a fragility curve and metadata</span>
+<span class="c1"># You can see the curve with this ID at DFR3 viewer</span>
+<span class="n">fragility_set_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b2d7337d4a36187c61ce&quot;</span>
+
+<span class="c1"># Get local fragility curve set</span>
+<span class="n">fragility_curve_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="n">fragility_set_id</span><span class="p">))</span>
+<span class="n">fragility_curve_set</span><span class="o">.</span><span class="n">fragility_curves</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;pyincore.models.periodstandardfragilitycurve.PeriodStandardFragilityCurve at 0x7fa3d9040e80&gt;,
+ &lt;pyincore.models.periodstandardfragilitycurve.PeriodStandardFragilityCurve at 0x7fa3d90406d0&gt;,
+ &lt;pyincore.models.periodstandardfragilitycurve.PeriodStandardFragilityCurve at 0x7fa3d9040730&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize this fragility curve using pyincore-viz package</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plot</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot</span><span class="p">(</span><span class="n">fragility_curve_set</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mid-Rise Steel Moment Frame&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/a34c4f485f8695c37be14f9a39b18ee2a840f68ca30977e984d04bf622b8c18d.png" src="../../../_images/a34c4f485f8695c37be14f9a39b18ee2a840f68ca30977e984d04bf622b8c18d.png" />
+</div>
+</div>
+</section>
+<section id="buiding-inventory-data">
+<h2>2. Buiding Inventory Data<a class="headerlink" href="#buiding-inventory-data" title="Permalink to this heading">#</a></h2>
+<p>The schema (columns) of building Inventory has been going through several iteration (v5, v6, v7), and here is a list of supported column names in version 6. Having a fully populated Building Inventory, with no additional columns, will hold all the data needed to perform all analyses that are compatible with that version of the Building Inventory.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>column name</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GUID</p></td>
+<td><p>added by IN-CORE</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARCHETYPE</p></td>
+<td><p>building structure archetype</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>OCC_TYPE</p></td>
+<td><p>Broad HAZUS Occupancy Category (e.g. RES3 - multi-family residential)</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>APPR_BLDG</p></td>
+<td><p>Appraised value for the building</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>SQ_FOOT</p></td>
+<td><p>total building area in square feet</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWELL_UNIT</p></td>
+<td><p>total number of dwelling units in the building</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>NO_STORIES</p></td>
+<td><p>total number of stories for the building</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONT_VAL</p></td>
+<td><p>value of building contents</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>STR_TYP2</p></td>
+<td><p>detailed structure type as per HAZUS MR-3 specifications</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>EFACILITY</p></td>
+<td><p>essential facility designation</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>PAR_ID</p></td>
+<td><p>parcel identifier</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARID_CARD</p></td>
+<td><p>improvement identifier</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>BLDG_ID</p></td>
+<td><p>building identifier (unique)</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>STR_PROB</p></td>
+<td><p>probability that the structure type specified is correct</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>YEAR_BUILT</p></td>
+<td><p>the year the structure was built</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>A_STORIES</p></td>
+<td><p>the number of above ground stories</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>B_STORIES</p></td>
+<td><p>the number of below ground stories</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSMT_TYPE</p></td>
+<td><p>the basement type</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>GSQ_FOOT</p></td>
+<td><p>total ground floor area of the building in square feet</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>OCC_DETAIL</p></td>
+<td><p>“specific occupancy category, describing the detailed use of the building”</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>MAJOR_OCC</p></td>
+<td><p>major occupancy category for the parcel in which the building is sited</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>BROAD_OCC</p></td>
+<td><p>general occupancy categories</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>REPL_CST</p></td>
+<td><p>replacement cost for the building from R.S. means square foot cost</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-odd"><td><p>STR_CST</p></td>
+<td><p>structural component of the replacement cost</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>NSTRA_CST</p></td>
+<td><p>acceleration sensitive component of replacement cost</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-odd"><td><p>NSTRD_CST</p></td>
+<td><p>drift sensitive component of replacement cost</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>DGN_LVL</p></td>
+<td><p>design level for the building as per HAZUS MR-3 specifications</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>OCC_TYP2</p></td>
+<td><p>detailed HAZUS occupancy category for the building</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>TRACT_ID</p></td>
+<td><p>census tract identifier</p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are many ways to create building inventory dataset; for example 1) using GIS software (e.g. ArcGIS, QGIS, etc), python code.</p>
+<p>In this exerercise, we will create a buiding inventory dataset in ESRI Shapefile from CSV file by using GeoPanda library.</p>
+<p>Any analysis in pyIncore, by default uses <strong>Dataset Object</strong> as an input. Hence we have to <u>convert building dataset into pyincore dataset object</u>, in order to use it as an input for damage analysis. We can either upload the dataset to IN-CORE data services, using existing dataset id from the services, or using local files. The below introduces the basic concept of creating and using Dataset Object via either loading from local files, or connecting to remote IN-CORE Data Services.</p>
+<section id="create-a-dataset-from-in-core-data-service">
+<h3>2.1. Create a dataset from IN-CORE Data Service<a class="headerlink" href="#create-a-dataset-from-in-core-data-service" title="Permalink to this heading">#</a></h3>
+<p>A dataset can be created from data service with an id. pyIncore has utility methods to download the files and metadata from the data service to create a dataset obejct in local.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a Data Serivce</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">DataService</span><span class="p">,</span> <span class="n">Dataset</span>
+
+<span class="n">data_services</span> <span class="o">=</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Loading dataset from Data Service</span>
+<span class="c1"># See Data browser</span>
+<span class="n">building_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f0bc7d30d13bc081a28&quot;</span>
+<span class="n">buildings</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">building_dataset_id</span><span class="p">,</span> <span class="n">data_services</span><span class="p">)</span>
+<span class="n">buildings</span><span class="o">.</span><span class="n">metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a28&#39;,
+ &#39;deleted&#39;: False,
+ &#39;title&#39;: &#39;Hospitals&#39;,
+ &#39;description&#39;: &#39;&#39;,
+ &#39;date&#39;: &#39;2017-12-06T20:11:55+0000&#39;,
+ &#39;creator&#39;: &#39;ergo&#39;,
+ &#39;spaces&#39;: [&#39;ergo&#39;],
+ &#39;contributors&#39;: [],
+ &#39;fileDescriptors&#39;: [{&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a2b&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.dbf&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 10859,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a2b/all_bldgs_ver5_WGS1984.dbf&#39;,
+   &#39;md5sum&#39;: &#39;7ea0a4c769ca254a6b4821f2e737eb35&#39;},
+  {&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a2e&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.fix&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 277,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a2e/all_bldgs_ver5_WGS1984.fix&#39;,
+   &#39;md5sum&#39;: &#39;15c08cc1fac086265cb57ceac0785acb&#39;},
+  {&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a31&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.prj&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 205,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a31/all_bldgs_ver5_WGS1984.prj&#39;,
+   &#39;md5sum&#39;: &#39;30e5566d68356bfc059d296c42c0480e&#39;},
+  {&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a34&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.qix&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 632,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a34/all_bldgs_ver5_WGS1984.qix&#39;,
+   &#39;md5sum&#39;: &#39;a1cba745192516c7e1cd0e4d4d13497c&#39;},
+  {&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a37&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.shp&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 716,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a37/all_bldgs_ver5_WGS1984.shp&#39;,
+   &#39;md5sum&#39;: &#39;6e1e96c4a6cf5762317054fe813d82bf&#39;},
+  {&#39;id&#39;: &#39;5a284f0bc7d30d13bc081a3a&#39;,
+   &#39;deleted&#39;: False,
+   &#39;filename&#39;: &#39;all_bldgs_ver5_WGS1984.shx&#39;,
+   &#39;mimeType&#39;: &#39;application/octet-stream&#39;,
+   &#39;size&#39;: 276,
+   &#39;dataURL&#39;: &#39;5a/28/5a284f0bc7d30d13bc081a3a/all_bldgs_ver5_WGS1984.shx&#39;,
+   &#39;md5sum&#39;: &#39;799965579a991f1f45afeb22c07c5ece&#39;}],
+ &#39;dataType&#39;: &#39;ergo:buildingInventoryVer5&#39;,
+ &#39;storedUrl&#39;: &#39;&#39;,
+ &#39;format&#39;: &#39;shapefile&#39;,
+ &#39;sourceDataset&#39;: &#39;&#39;,
+ &#39;boundingBox&#39;: [-90.07376669874641,
+  35.03298062856903,
+  -89.71464767735003,
+  35.207753220358086],
+ &#39;networkDataset&#39;: None}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-local-dataset-of-building-inventory">
+<h3>2.2 Create a local dataset of building inventory<a class="headerlink" href="#create-a-local-dataset-of-building-inventory" title="Permalink to this heading">#</a></h3>
+<p>A dataset can be created from local files. We will create a buidling inventory data in ESRI shapefile from CSV file according to building inventory schema. With the files, we will create a local dataset object.</p>
+<section id="step-1-convert-csv-file-to-esri-shapefile">
+<h4>Step 1: Convert CSV file to ESRI Shapefile<a class="headerlink" href="#step-1-convert-csv-file-to-esri-shapefile" title="Permalink to this heading">#</a></h4>
+<p>Open CSV file in the file browser to see the contents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load CSV file into GeoPandas, then export the GeoDataFrame to ESRI shapefile</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ergo_memphis_hospitals.csv&#39;</span><span class="p">)</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="p">))</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;sample_bldgs.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-add-guid">
+<h4>Step 2: Add GUID<a class="headerlink" href="#step-2-add-guid" title="Permalink to this heading">#</a></h4>
+<p>Each built-in infrastructure needs a GUID.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyincore has utility methods help user easily add GUID</span>
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">GeoUtil</span>
+
+<span class="n">GeoUtil</span><span class="o">.</span><span class="n">add_guid</span><span class="p">(</span><span class="s2">&quot;sample_bldgs.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_bldgs_w_guid.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-create-a-local-dataset-for-in-core">
+<h4>Step 3: Create a local dataset for IN-CORE<a class="headerlink" href="#step-3-create-a-local-dataset-for-in-core" title="Permalink to this heading">#</a></h4>
+<p>The following code create a local Dataset object with ESRI shapefile for buiding inventory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">local_buildings</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;sample_bldgs_w_guid.shp&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;ergo:buildingInventoryVer7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="building-damage-analysis">
+<h2>3. Building Damage Analysis<a class="headerlink" href="#building-damage-analysis" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes building damage based on a particular hazard. In this secion, you will perform building damage anlayis for both <strong>scenario earthquake</strong> and <strong>tornado</strong>.</p>
+<p>The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
+is obtained based on the hazard type and attributes of the building. Based on the fragility, the hazard intensity at the location of the building is computed. Using this information, the probability of exceeding each limit state is computed, along with the probability of damage. For the case of an earthquake hazard, soil information can be used to
+modify the damage probabilities to include damage due to liquefaction.</p>
+<p>The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.</p>
+<p><strong>Input parameters</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">result_name</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Result name</p></td>
+<td><p>Name of the result dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hazard_type</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Hazard type</p></td>
+<td><p>Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hazard_id</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Hazard id</p></td>
+<td><p>ID of the hazard from the Hazard service.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fragility_key</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Fragility key</p></td>
+<td><p>Fragility key used in mapping dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">use_liquefaction</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Liquefaction</p></td>
+<td><p>Use liquefaction, if applicable to the hazard. <br>Default is <em>False</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">use_hazard_uncertainty</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Uncertainty</p></td>
+<td><p>Use hazard uncertainty. <br>Default is <em>False</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">num_cpu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Number of CPUs</p></td>
+<td><p>Number of CPUs used for parallel computation. <br>Default is <em>1</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Input datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">buildings</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ergo:buildingInventoryVer4</span></code><br><code class="docutils literal notranslate"><span class="pre">ergo:buildingInventoryVer5</span></code><br><code class="docutils literal notranslate"><span class="pre">ergo:buildingInventoryVer6</span></code><br><code class="docutils literal notranslate"><span class="pre">ergo:buildingInventoryVer7</span></code></p></td>
+<td><p>Building dataset</p></td>
+<td><p>A building dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dfr3_mapping_set</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:dfr3MappingSet</span></code></p></td>
+<td><p>DFR3 Mapping Set</p></td>
+<td><p>DFR3 Mapping Set.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>parent key</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ds_result</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ergo:buildingDamageVer5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">buildings</span></code></p></td>
+<td><p>Results</p></td>
+<td><p>A dataset containing results <br>(format: CSV).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">damage_result</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:buildingDamageSupplement</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">buildings</span></code></p></td>
+<td><p>Results</p></td>
+<td><p>Information about applied hazard value and fragility<br>(format: JSON).</p></td>
+</tr>
+</tbody>
+</table>
+<p><small>(* required)</small></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import building damage analysis class</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="damage-analysis-with-earthquake">
+<h3>3.1 Damage analysis with earthquake<a class="headerlink" href="#damage-analysis-with-earthquake" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the variables to be used for input parameters</span>
+
+<span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5b902cb273c3371e1236b36b&quot;</span>
+
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;memphis_eq_bldg_dmg_result&quot;</span>
+
+<span class="c1"># Default Building Fragility mapping</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b350337d4a3629076f2c&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create fragility mapping object with id</span>
+<span class="n">eq_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create building damage analysis object</span>
+<span class="n">eq_bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Load local dataset (building inventory)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">local_buildings</span><span class="p">)</span>
+
+<span class="c1"># Load fragility mapping</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">eq_mapping_set</span><span class="p">)</span>
+
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run building damage analysis</span>
+<span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># more viz will be in next secsion</span>
+<span class="n">eq_bldg_dmg_table</span> <span class="o">=</span> <span class="n">eq_bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="n">eq_bldg_dmg_table</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9e306063-02db-4c2e-ad72-d9da2287cdb0</td>
+      <td>0.848149</td>
+      <td>0.327322</td>
+      <td>2.722964e-02</td>
+      <td>0.151851</td>
+      <td>0.520827</td>
+      <td>0.300092</td>
+      <td>2.722964e-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a4e29116-65d5-4f2a-8be8-92f6910f2454</td>
+      <td>0.844343</td>
+      <td>0.328299</td>
+      <td>2.860543e-02</td>
+      <td>0.155657</td>
+      <td>0.516043</td>
+      <td>0.299694</td>
+      <td>2.860543e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>16e1983d-43f9-4e0b-ba59-6ec0f108fba0</td>
+      <td>0.896774</td>
+      <td>0.480925</td>
+      <td>8.756720e-02</td>
+      <td>0.103226</td>
+      <td>0.415849</td>
+      <td>0.393358</td>
+      <td>8.756720e-02</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1b1c4c94-0c31-405d-9df5-84257debd204</td>
+      <td>0.828098</td>
+      <td>0.293753</td>
+      <td>2.738378e-02</td>
+      <td>0.171902</td>
+      <td>0.534345</td>
+      <td>0.266369</td>
+      <td>2.738378e-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dd7d8779-1f48-450f-9c27-3ab9d986c626</td>
+      <td>0.970343</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+      <td>0.029657</td>
+      <td>0.815666</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="damage-analysis-with-tornado">
+<h3>3.2 Damage analysis with tornado<a class="headerlink" href="#damage-analysis-with-tornado" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use tornado from IN-CORE Hazard Services</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;60a44ae8605f0462bd4263ac&quot;</span>
+
+<span class="c1"># visualize the tornado using pyincore-viz package</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<img alt="../../../_images/a43e975a474d040dd3a51dd15501821ad1107d1818272efef6130a07d0374b01.png" src="../../../_images/a43e975a474d040dd3a51dd15501821ad1107d1818272efef6130a07d0374b01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tornado&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;60a44ae8605f0462bd4263ac&quot;</span>
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;memphis_tornado_bldg_dmg_result&quot;</span>
+<span class="n">tornado_mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d8942dfb9219c068ea795ea&quot;</span> <span class="c1"># 19 archetype tornado mapping</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create fragility mapping object with id</span>
+<span class="n">tornado_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">tornado_mapping_id</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tornado_bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">local_buildings</span><span class="p">)</span>
+
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s1">&#39;dfr3_mapping_set&#39;</span><span class="p">,</span> <span class="n">tornado_mapping_set</span><span class="p">)</span>
+
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># more viz will be in next secsion</span>
+<span class="n">tornado_bldg_dmg_table</span> <span class="o">=</span> <span class="n">tornado_bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="n">tornado_bldg_dmg_table</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9e306063-02db-4c2e-ad72-d9da2287cdb0</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a4e29116-65d5-4f2a-8be8-92f6910f2454</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>16e1983d-43f9-4e0b-ba59-6ec0f108fba0</td>
+      <td>0.051066</td>
+      <td>2.400000e-09</td>
+      <td>0.0</td>
+      <td>0.948934</td>
+      <td>0.051066</td>
+      <td>2.400000e-09</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1b1c4c94-0c31-405d-9df5-84257debd204</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dd7d8779-1f48-450f-9c27-3ab9d986c626</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="electric-power-facility-damage-analysis">
+<h2>4. Electric Power Facility Damage Analysis<a class="headerlink" href="#electric-power-facility-damage-analysis" title="Permalink to this heading">#</a></h2>
+<p>This analysis computes electric power facility damage based on a particular hazard. In this secion, you will perform Electric Power Facility damage anlayis for both <strong>scenario earthquake and tornado</strong></p>
+<p>The process for computing the structural damage is similar to other parts of the built environment. First, a fragility
+is obtained based on the hazard type and attributes of the electric power facility. Based on the fragility, the hazard intensity at the location of the electric power facility is computed. Using this information, the probability of exceeding each limit state is computed, along with the probability of damage. For the case of an earthquake hazard, soil information can be used to modify the damage probabilities to include damage due to liquefaction.</p>
+<p>The outputs of this analysis are CSV file with probabilities of damage and JSON file with information about hazard and fragilities.</p>
+<p><strong>Input parameters</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">result_name</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Result name</p></td>
+<td><p>Name of the result dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hazard_type</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Hazard type</p></td>
+<td><p>Hazard type (earthquake, tsunami, tornado, hurricaneWindfields).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hazard_id</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Hazard id</p></td>
+<td><p>ID of the hazard from the Hazard service.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fragility_key</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Fragility key</p></td>
+<td><p>Fragility key used in mapping dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">use_liquefaction</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Liquefaction</p></td>
+<td><p>Use liquefaction, if applicable to the hazard. <br>Default is <em>False</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">use_hazard_uncertainty</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Uncertainty</p></td>
+<td><p>Use hazard uncertainty. <br>Default is <em>False</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">num_cpu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Number of CPUs</p></td>
+<td><p>Number of CPUs used for parallel computations. <br>Default <em>1</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Input datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">epfs</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:epf</span></code><br><code class="docutils literal notranslate"><span class="pre">ergo:epf</span></code></p></td>
+<td><p>Electric power dataset</p></td>
+<td><p>An electric power facility dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dfr3_mapping_set</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:dfr3MappingSet</span></code></p></td>
+<td><p>DFR3 Mapping Set</p></td>
+<td><p>DFR3 Mapping Set.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output datasets</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>key name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>parent key</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">result</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">incore:epfDamageVer2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">epfs</span></code></p></td>
+<td><p>Results</p></td>
+<td><p>A dataset containing results <br>(format: CSV).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">damage_result</span></code> <sup>*</sup></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">epfDamageSupplement</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">epfs</span></code></p></td>
+<td><p>Results</p></td>
+<td><p>Information about applied hazard value and fragility<br>(format: JSON).</p></td>
+</tr>
+</tbody>
+</table>
+<p><small>(* required)</small></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import EPF damage class</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.epfdamage</span> <span class="kn">import</span> <span class="n">EpfDamage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>3.1 Damage analysis with earthquake<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seaside earthquake AtkinsonBoore1995</span>
+<span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5d3b6a31b9219cf53284c73d&quot;</span>
+
+<span class="c1"># Seaside Electric power facility dataset; use remote dataset from INCORE services</span>
+<span class="n">epf_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5d263f08b9219cf93c056c68&quot;</span>
+
+<span class="c1"># Earthquake epf mapping</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d489aa1b9219c0689f1988e&quot;</span>
+
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;hazus_epf_dmg_result&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq_epf_dmg</span> <span class="o">=</span> <span class="n">EpfDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epfs&quot;</span><span class="p">,</span> <span class="n">epf_dataset_id</span><span class="p">)</span>
+
+<span class="c1"># Load fragility mapping</span>
+<span class="n">epf_eq_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">epf_eq_mapping_set</span><span class="p">)</span>
+
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Run Analysis</span>
+<span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># more viz will be in next secsion</span>
+<span class="n">eq_epf_bldg_dmg_table</span> <span class="o">=</span> <span class="n">eq_epf_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="n">eq_epf_bldg_dmg_table</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>LS_3</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>DS_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>c34c4207-d1e8-47d1-b29e-1ba11d951bce</td>
+      <td>0.999989</td>
+      <td>0.999982</td>
+      <td>0.999997</td>
+      <td>0.994662</td>
+      <td>0.005338</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.334768e-03</td>
+      <td>0.994662</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>402388b9-f14c-4402-9ad9-8b0965de0937</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.800000e-08</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1d244334-1aef-4ced-b5f5-6f886a9d0db6</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.700000e-09</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5a051ea9-a0b3-45ee-a283-82512e7b7cb6</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.300000e-09</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51a54596-597b-46f9-8c8b-bc58f1105853</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.500000e-09</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id2">
+<h3>3.2 Damage analysis with tornado<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tornado&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5d07cbeab9219c065b080930&quot;</span>  <span class="c1"># The simulated EF-5 tornado shows geographical locations and the range</span>
+                                        <span class="c1"># of wind speed of tornado hazard in Joplin.</span>
+
+<span class="c1"># visualize the tornado using pyincore-viz package</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">plot_tornado</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<img alt="../../../_images/d30daffa44ccb3597a74c3d8c4ebc5519e633cdcc8b6a82cabf0104aea22ee19.png" src="../../../_images/d30daffa44ccb3597a74c3d8c4ebc5519e633cdcc8b6a82cabf0104aea22ee19.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;tornado&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5d07cbeab9219c065b080930&quot;</span>  <span class="c1"># The simulated EF-5 tornado shows geographical locations and the range</span>
+                                        <span class="c1"># of wind speed of tornado hazard in Joplin.</span>
+    
+<span class="n">epf_substations_id</span> <span class="o">=</span> <span class="s2">&quot;5d92355bb9219c06ae7e386a&quot;</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5d8a326fb9219c068ea798e7&quot;</span>  <span class="c1"># Create a mapping to assign tornado fragilities to substations.</span>
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;Joplin_epf_substations_dmg_result&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tornado_epf_mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_services</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+<span class="n">epf_sub_dmg</span> <span class="o">=</span> <span class="n">EpfDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;epfs&quot;</span><span class="p">,</span> <span class="n">epf_substations_id</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">tornado_epf_mapping_set</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;substations&quot;</span><span class="p">)</span>
+<span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>  <span class="c1"># Run the EPF damage module to get substations damage results for Joplin in a .csv file format. The</span>
+                            <span class="c1"># substations damage results herein are referred to fragilities at four damage states (insignificant,</span>
+                            <span class="c1"># moderate, extensive, complete) for 18 substations located in Joplin that fall within the tornado</span>
+                            <span class="c1"># path or not.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># more viz will be in next secsion</span>
+<span class="n">substation_dmg_result</span> <span class="o">=</span> <span class="n">epf_sub_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">)</span>
+<span class="n">df_sub_dmg</span> <span class="o">=</span> <span class="n">substation_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="n">df_sub_dmg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>LS_3</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>DS_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7f426763-81c6-4cac-b98d-c37a5e439b90</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fc8add00-6760-4752-b1fb-7d6ca813f535</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>e8f4939d-763f-4743-bc61-c23e0b8e0f7a</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2cab48ff-c5ce-495e-9662-67c9a177efc4</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>eb4ce929-5164-4ebf-ace2-708096d89db5</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="combine-compare-damage-output-with-different-hazard-types">
+<h2>5. Combine/compare damage output with different hazard types<a class="headerlink" href="#combine-compare-damage-output-with-different-hazard-types" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison</span> <span class="o">=</span> <span class="n">eq_bldg_dmg_table</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tornado_bldg_dmg_table</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;guid&quot;</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_eq&#39;</span><span class="p">,</span> <span class="s1">&#39;_tornado&#39;</span><span class="p">))</span>
+<span class="n">comparison</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0_eq</th>
+      <th>LS_1_eq</th>
+      <th>LS_2_eq</th>
+      <th>DS_0_eq</th>
+      <th>DS_1_eq</th>
+      <th>DS_2_eq</th>
+      <th>DS_3_eq</th>
+      <th>LS_0_tornado</th>
+      <th>LS_1_tornado</th>
+      <th>LS_2_tornado</th>
+      <th>DS_0_tornado</th>
+      <th>DS_1_tornado</th>
+      <th>DS_2_tornado</th>
+      <th>DS_3_tornado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9e306063-02db-4c2e-ad72-d9da2287cdb0</td>
+      <td>0.848149</td>
+      <td>0.327322</td>
+      <td>2.722964e-02</td>
+      <td>0.151851</td>
+      <td>0.520827</td>
+      <td>0.300092</td>
+      <td>2.722964e-02</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a4e29116-65d5-4f2a-8be8-92f6910f2454</td>
+      <td>0.844343</td>
+      <td>0.328299</td>
+      <td>2.860543e-02</td>
+      <td>0.155657</td>
+      <td>0.516043</td>
+      <td>0.299694</td>
+      <td>2.860543e-02</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>16e1983d-43f9-4e0b-ba59-6ec0f108fba0</td>
+      <td>0.896774</td>
+      <td>0.480925</td>
+      <td>8.756720e-02</td>
+      <td>0.103226</td>
+      <td>0.415849</td>
+      <td>0.393358</td>
+      <td>8.756720e-02</td>
+      <td>0.051066</td>
+      <td>2.400000e-09</td>
+      <td>0.0</td>
+      <td>0.948934</td>
+      <td>0.051066</td>
+      <td>2.400000e-09</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1b1c4c94-0c31-405d-9df5-84257debd204</td>
+      <td>0.828098</td>
+      <td>0.293753</td>
+      <td>2.738378e-02</td>
+      <td>0.171902</td>
+      <td>0.534345</td>
+      <td>0.266369</td>
+      <td>2.738378e-02</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dd7d8779-1f48-450f-9c27-3ab9d986c626</td>
+      <td>0.970343</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+      <td>0.029657</td>
+      <td>0.815666</td>
+      <td>0.154677</td>
+      <td>1.000000e-10</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="hands-on-assignment">
+<h2>Hands-on Assignment<a class="headerlink" href="#hands-on-assignment" title="Permalink to this heading">#</a></h2>
+<p>Please open <a class="reference internal" href="session3-assignment.html"><span class="doc std std-doc">session3-assignment.ipynb</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./workshops/20210526/session3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../session2/session2-assignment-answer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 2: Assignment Answer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="session3-assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Session 3: Assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fragility-curve-and-mapping">1. Fragility curve and Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buiding-inventory-data">2. Buiding Inventory Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataset-from-in-core-data-service">2.1. Create a dataset from IN-CORE Data Service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-dataset-of-building-inventory">2.2 Create a local dataset of building inventory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-csv-file-to-esri-shapefile">Step 1: Convert CSV file to ESRI Shapefile</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-guid">Step 2: Add GUID</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-local-dataset-for-in-core">Step 3: Create a local dataset for IN-CORE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-analysis">3. Building Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-with-earthquake">3.1 Damage analysis with earthquake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-analysis-with-tornado">3.2 Damage analysis with tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-facility-damage-analysis">4. Electric Power Facility Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1 Damage analysis with earthquake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2 Damage analysis with tornado</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-compare-damage-output-with-different-hazard-types">5. Combine/compare damage output with different hazard types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-assignment">Hands-on Assignment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1724 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Galveston Testbed &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Galveston_testbed/Galveston_testbed';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Joplin Tornado Example" href="../Joplin_testbed/Joplin_testbed.html" />
+    <link rel="prev" title="Example Notebooks" href="../../notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../notebooks.html">Example Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.html">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MMSA_testbed/MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/Galveston_testbed/Galveston_testbed.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Galveston Testbed</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1 Background:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-surge-wave-and-inundation-models">2 Flood Surge, Wave, and Inundation Models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-building-damage">3 Galveston Building Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-inventory">3.1 Building Inventory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-fragility">3.2 Building Fragility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-building-damage-results">3.3 Explore Building Damage Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-housing-unit-allocation-hua">4 Galveston Housing Unit Allocation (HUA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-interdependent-community-description-galveston-texas">4.1 Initial Interdependent Community Description - Galveston, Texas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-and-run-housing-unit-allocation">4.2 Set Up and Run Housing Unit Allocation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-results-from-housing-unit-allocation">4.3 Explore results from Housing Unit Allocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-help-explore-data-create-a-new-variable-that-combines-race-and-ethnicity">To help explore data create a new variable that combines race and ethnicity.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-housing-unit-allocation-has-worked">4.4 Validate the Housing Unit Allocation has worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-heat-map">4.5 Visualize heat map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-population-dislocation">5 Galveston Population Dislocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-and-run-population-dislocation">5.1 Set Up and Run Population Dislocation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-population-dislocation-results">5.2 Explore Population Dislocation Results</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="galveston-testbed">
+<h1>Galveston Testbed<a class="headerlink" href="#galveston-testbed" title="Permalink to this heading">#</a></h1>
+<section id="background">
+<h2>1 Background:<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<p>Galveston Island is a barrier island located southeast of Houston, TX. The region has been repeatedly impacted by coastal storms and flood hazards, and has a population that is racially and ethnically diverse, with a wide income distribution. This testbed was created to provide an opportunity to:</p>
+<p>a) Investigate the multi-hazard surge, wave, inundation, and wind hazards in coastal settings.</p>
+<p>b) Consider interdependent infrastructure systems including buildings, transportation, and power.</p>
+<p>c) Leverage historical social-science data, informing population dislocation and recovery modeling.</p>
+<p>d) Evaluate hybrid metrics of community resilience, such as those that require coupled modeling between social and physical systems.</p>
+<p><img alt="Galveston" src="../../_images/Galveston.png" /></p>
+<p>The current notebook is a <strong>WORK-IN-PROGRESS</strong> that consists of the following modules:</p>
+<p>a)	Flood Surge, Wave, and Inundation Models</p>
+<p>b)	Galveston Building Damage Analysis</p>
+<p>c)	Galveston Household Unit Allocation</p>
+<p>d)	Galveston Population Dislocation Model based on Hurricane IKE</p>
+<p>Other modules such as road and bridge damage analysis, power system analysis, and network analysis to investigate the connectivity of building clusters to emergency services and power will be added to the Notebook in the near future, as associated models are deployed in INCORE.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through <strong>conda</strong>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pyIncore</p></td>
+<td><p>=&gt;1.3.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/incore/pyincore/install_pyincore.html</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyIncore_viz</p></td>
+<td><p>=&gt;1.5.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/pyincore_viz/index.html</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="flood-surge-wave-and-inundation-models">
+<h2>2 Flood Surge, Wave, and Inundation Models:<a class="headerlink" href="#flood-surge-wave-and-inundation-models" title="Permalink to this heading">#</a></h2>
+<p>Galveston Island was struck by Hurricane Ike in September, 2008, with maximum windspeeds of 49 m/s (95 kts) and storm surge elevations reaching at least +3.5 m (NAVD88) on Galveston Island. A full hindcast of Hurricane Ike’s water levels, and wave conditions along with 2%, 1%, and 0.2% Annual Exceedance Probabilities (AEP) were created using the dynamically coupled versions of the Advanced Circulation (ADCIRC) and Simulating Waves Nearshore (SWAN) models. The hindcast simulation was performed using a high-resolution unstructured mesh of the Texas coast, with coverage of the entire Gulf of Mexico basin, having more than 3.3 million nodes and 6.6 million mesh elements. The data are available in terms of 100-m rasterized files with the following IDs in INCORE:</p>
+<ul class="simple">
+<li><p>Hurricane Ike Hindcast: ID: <code class="docutils literal notranslate"><span class="pre">5fa5a228b6429615aeea4410</span></code></p></li>
+<li><p>2% Annual Exceedance Probability (50-yr return period): ID: <code class="docutils literal notranslate"><span class="pre">5fa5a83c7e5cdf51ebf1adae</span></code></p></li>
+<li><p>1% Annual Exceedance Probability (100-yr return period): ID: <code class="docutils literal notranslate"><span class="pre">5fa5a9497e5cdf51ebf1add2</span></code></p></li>
+<li><p>0.2% Annual Exceedance Probability  (500-yr return period): ID: <code class="docutils literal notranslate"><span class="pre">5fa5aa19b6429615aeea4476</span></code></p></li>
+</ul>
+<p>There is also a hazard scenario generated based on historical data with the following ID: <code class="docutils literal notranslate"><span class="pre">5f15cd627db08c2ccc4e3bab</span></code></p>
+</section>
+<section id="galveston-building-damage">
+<h2>3 Galveston Building Damage<a class="headerlink" href="#galveston-building-damage" title="Permalink to this heading">#</a></h2>
+<p>The following code is preparing the IN-CORE analysis by checking versions and connecting to IN-CORE web service.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span> <span class="c1"># For reading in shapefiles</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span> <span class="c1"># For displaying package versions</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="c1"># For managing directories and file paths if drive is mounted</span>
+
+<span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">MappingSet</span><span class="p">,</span> <span class="n">DataService</span><span class="p">,</span> <span class="n">FragilityCurveSet</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+
+<span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.plotutil</span> <span class="kn">import</span> <span class="n">PlotUtil</span> <span class="k">as</span> <span class="n">plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check package versions - good practice for replication</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python Version &quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pandas version: &quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numpy version: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python Version  3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+pandas version:  1.4.4
+numpy version:  1.23.3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check working directory - good practice for relative path access</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/incore/Galveston_testbed&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter username: incore
+Enter password: ········
+Connection successful to IN-CORE services. pyIncore version detected: 1.7.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="building-inventory">
+<h3>3.1 Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this heading">#</a></h3>
+<p>The building inventory for Galveston consists of 18,962 individual residential households. This inventory is also mappable to housing unit info of 32,501 individual households explained later in this notebook. It should be noted that the reason that the building and household data are different in terms of numbers is that each individual building can be composed of a few households. The building inventory consists of three major parameters that are used to estimate the fragility of buildings explained shortly later in this notebook. The three parameters are:</p>
+<p>a) Elevation of the lowest horizontal structural member</p>
+<p>b) Age group of the building (1, 2, 3, and 4 representing age group pre-1974, 1974–1987, 1987–1995, and 1995– 2008, respectively)</p>
+<p>c) Elevation of the building with respect to the ground</p>
+</section>
+<section id="building-fragility">
+<h3>3.2 Building Fragility<a class="headerlink" href="#building-fragility" title="Permalink to this heading">#</a></h3>
+<p>The fragility model used to estimate failure probability during storm surge events is extracted from:</p>
+<blockquote>
+<div><p>Tomiczek, T. Kennedy, A, and Rogers, S., 2013. Collapse limit state fragilities of wood-framed residences from storm surge and waves during Hurricane Ike. Journal of Waterway, Port, Coastal, and Ocean Engineering, 140(1), pp.43-55.</p>
+</div></blockquote>
+<p>This empirical fragility model was developed based on Hurricane Ike surveys of almost 2000 individual wood-frame buildings coupled with high resolution hindcast of the hurricane. For this study two states of damage, “Collapse” and “Survival” were considered.</p>
+<hr class="docutils" />
+<p>The input parameters to the fragility model are:</p>
+<ol class="arabic simple">
+<li><p>Surge: surge level (m) coming from hazard data</p></li>
+<li><p>Hs: Significant wave height (m) coming from hazard data</p></li>
+<li><p>LHSM: Elevation of the lowest horizontal structural member (ft) coming from building inventory</p></li>
+<li><p>age_group: Age group of the building (1, 2,3, and 4 representing age group pre-1974, 1974–1987, 1987–1995, and 1995– 2008, respectively) coming from building Inventory</p></li>
+<li><p>G_elev: Elevation of the building with respect to the ground (m) coming from building inventory</p></li>
+</ol>
+<hr class="docutils" />
+<p>Output:
+Pf: probability of failure</p>
+<hr class="docutils" />
+<p>In order to calculate the probability of failure, first we need to estimate the relative surge height compared to the ground level from:
+𝑑𝑠=𝑆𝑢𝑟𝑔𝑒−𝐺𝑒𝑙𝑒𝑣ds</p>
+<p>Subsequently, we need to calculate the following parameter</p>
+<p>𝐹𝐵ℎ𝑠=−(𝑑𝑠+0.7∗𝐻𝑠−𝐿𝐻𝑆𝑀∗0.3048)
+Note: 0.3048 is to convert ft to m as the inventory data are in ft.</p>
+<p>Then:</p>
+<p>For FB_hs&gt;= -2.79*Hs the probability of failure is calculated as:
+𝑃𝑓=Φ(−3.56+1.52∗𝐻𝑠−1.73∗𝐻𝑠∗𝐹𝐵ℎ𝑠−0.31∗𝐹𝐵2ℎ𝑠−0.141∗𝑎𝑔𝑒2𝑔𝑟𝑜𝑢𝑝)</p>
+<p>and for FB_hs&lt; -2.79*Hs
+𝑃𝑓=Φ(−3.56+1.52∗𝐻𝑠+2.42∗𝐹𝐵2ℎ𝑠−0.141∗𝑎𝑔𝑒2𝑔𝑟𝑜𝑢𝑝)
+Where Φ denotes the Cumulative Density Function (CDF) of standard normal distribution.</p>
+<hr class="docutils" />
+<p>Example:
+If Surge=3 m, Hs =2 m, LHSM=9 ft, age_group=4; G_elev =1 m
+Then Pf= 0.2620</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use utility method of pyicore-viz package to visulaize the fragility</span>
+<span class="n">fragility_set</span> <span class="o">=</span> <span class="n">FragilityCurveSet</span><span class="p">(</span><span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="o">.</span><span class="n">get_dfr3_set</span><span class="p">(</span><span class="s2">&quot;5f6ccf67de7b566bb71b202d&quot;</span><span class="p">))</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_fragility_plot_3d</span><span class="p">(</span><span class="n">fragility_set</span><span class="p">,</span> 
+                                            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Galveston empirical fragility model developed &quot;</span>
+                                            <span class="s2">&quot;based on Hurricane Ike surveys&quot;</span><span class="p">,</span>
+                                            <span class="n">limit_state</span><span class="o">=</span><span class="s2">&quot;LS_0&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fe06e510b5e6df4522dce73a8d5d0763c87689d461e6b2d2a48f0970b06f2136.png" src="../../_images/fe06e510b5e6df4522dce73a8d5d0763c87689d461e6b2d2a48f0970b06f2136.png" />
+</div>
+</div>
+<p>The following code sets up a buidling damage analysis with input datasets and parameters, then runs the analysis</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;hurricane&quot;</span>
+<span class="c1"># Galveston deterministic Hurricane, 3 datasets - Kriging</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5fa5a228b6429615aeea4410&quot;</span>
+<span class="c1"># visualization</span>
+<span class="n">wave_height_id</span> <span class="o">=</span> <span class="s2">&quot;5f15cd62c98cf43417c10a3f&quot;</span>
+<span class="n">surge_level_id</span> <span class="o">=</span> <span class="s2">&quot;5f15cd5ec98cf43417c10a3b&quot;</span>
+
+<span class="c1"># Galveston, TX Building inventory</span>
+<span class="n">bldg_inv_id</span> <span class="o">=</span> <span class="s2">&quot;60354b6c123b4036e6837ef7&quot;</span>
+
+<span class="c1"># Hurricane building mapping (with equation)</span>
+<span class="n">mapping_id</span> <span class="o">=</span> <span class="s2">&quot;602c381a1d85547cdc9f0675&quot;</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">mapping_id</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize wave height</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">wave_height_id</span><span class="p">,</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">))</span>
+<span class="nb">map</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">map_raster_overlay_from_file</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="s1">&#39;tif&#39;</span><span class="p">))</span>
+<span class="nb">map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b01e9f04944840c29606928e5b184818", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add opacity control - NOTE: It takes time before the opacity takes effect.</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "efe8d211749445cab44b5db0b9807f2e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize surge level</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">surge_level_id</span><span class="p">,</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">))</span>
+<span class="nb">map</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">map_raster_overlay_from_file</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="s1">&#39;tif&#39;</span><span class="p">))</span>
+<span class="nb">map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1f79fdf5eccb46e8addecf7631aaf848", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add opacity control - NOTE: It takes time before the opacity takes effect.</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "231cdefd9f3845409b92d9bc485fabbb", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_inv_id</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;Galveston_bldg_dmg_result&quot;</span>
+
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="s2">&quot;Hurricane SurgeLevel and WaveHeight Fragility ID Code&quot;</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-building-damage-results">
+<h3>3.3 Explore Building Damage Results<a class="headerlink" href="#explore-building-damage-results" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">building_dmg_result</span> <span class="o">=</span> <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s1">&#39;ds_result&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">bdmg_df</span> <span class="o">=</span> <span class="n">building_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">(</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">bdmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>b39dd67f-802e-402b-b7d5-51c4bbed3464</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000e+00</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>e7467617-6844-437e-a938-7300418facb8</td>
+      <td>8.600000e-08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.600000e-08</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>d7ce12df-660d-42fc-9786-f0f543c00002</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000e+00</td>
+      <td>partial</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>74aac543-8aae-4779-addf-754e307a772b</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000e+00</td>
+      <td>partial</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ed3147d3-b7b8-49da-96a9-ddedfccae60c</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000e+00</td>
+      <td>partial</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bdmg_df</span><span class="o">.</span><span class="n">DS_0</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    18962.000000
+mean         0.885130
+std          0.307711
+min          0.000000
+25%          0.999588
+50%          1.000000
+75%          1.000000
+max          1.000000
+Name: DS_0, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bdmg_df</span><span class="o">.</span><span class="n">DS_3</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    18962.000000
+mean         0.114870
+std          0.307711
+min          0.000000
+25%          0.000000
+50%          0.000000
+75%          0.000412
+max          1.000000
+Name: DS_3, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on hazard and damage analsyis 87% of structures would survive damage and 13% would have collapse from damage.</p>
+</section>
+</section>
+<section id="galveston-housing-unit-allocation-hua">
+<h2>4 Galveston Housing Unit Allocation (HUA)<a class="headerlink" href="#galveston-housing-unit-allocation-hua" title="Permalink to this heading">#</a></h2>
+<p>Housing Unit Allocation using Galveston, Texas Housing Unit Inventory</p>
+<p>Here we link high-resolution spatial data on 32501 individual household and housing unit characteristics to residential buildings. Critical for linking socio-economic data within IN-CORE. For evacuation example HUA is required to identify the people that may not evacuate after event.
+The models come from:</p>
+<blockquote>
+<div><p>Rosenheim, Nathanael, Roberto Guidotti, Paolo Gardoni &amp; Walter Gillis Peacock. (2019). Integration of detailed household and housing unit characteristic data with critical infrastructure for post-hazard resilience modeling. Sustainable and Resilient Infrastructure. doi.org/10.1080/23789689.2019.1681821</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.housingunitallocation</span> <span class="kn">import</span> <span class="n">HousingUnitAllocation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="initial-interdependent-community-description-galveston-texas">
+<h3>4.1 Initial Interdependent Community Description - Galveston, Texas<a class="headerlink" href="#initial-interdependent-community-description-galveston-texas" title="Permalink to this heading">#</a></h3>
+<p>Explore building inventory and social systems. Specifically look at how the building inventory connects with the housing unit inventory using the housing unit allocation.
+The housing unit allocation method will provide detail demographic characteristics for the community allocated to each structure.</p>
+<p>To run the HUA Algorithm, three input datasets are required:</p>
+<ol class="arabic simple">
+<li><p>Housing Unit Inventory - Based on 2010 US Census Block Level Data</p></li>
+<li><p>Address Point Inventory - A list of all possible residential/business address points in a community. Address points are the link between buildings and housing units.</p></li>
+<li><p>Building Inventory - A list of all buildings within a community.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Galveston, TX Housing unit inventory</span>
+<span class="n">housing_unit_inv</span> <span class="o">=</span> <span class="s2">&quot;5fc6ab1cd2066956f49e7a03&quot;</span>
+<span class="c1"># Galveston, TX Address point inventory</span>
+<span class="n">address_point_inv</span> <span class="o">=</span> <span class="s2">&quot;5fc6aadcc38a0722f563392e&quot;</span>
+<span class="c1"># Galveston, TX Building inventory</span>
+<span class="c1"># bldg_inv_id in chapter 3.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-up-and-run-housing-unit-allocation">
+<h3>4.2 Set Up and Run Housing Unit Allocation<a class="headerlink" href="#set-up-and-run-housing-unit-allocation" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create housing allocation </span>
+<span class="n">hua</span> <span class="o">=</span> <span class="n">HousingUnitAllocation</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Load input dataset</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;housing_unit_inventory&quot;</span><span class="p">,</span> <span class="n">housing_unit_inv</span><span class="p">)</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;address_point_inventory&quot;</span><span class="p">,</span> <span class="n">address_point_inv</span><span class="p">)</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_inv_id</span><span class="p">)</span>
+
+<span class="c1"># Specify the result name</span>
+<span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;Galveston_HUA&quot;</span>
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">1238</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Set analysis parameters</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;iterations&quot;</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run Housing unit allocation analysis</span>
+<span class="n">hua</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-results-from-housing-unit-allocation">
+<h3>4.3 Explore results from Housing Unit Allocation<a class="headerlink" href="#explore-results-from-housing-unit-allocation" title="Permalink to this heading">#</a></h3>
+<p>Keep observations that are matched to a building.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">hua_result</span> <span class="o">=</span> <span class="n">hua</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">hua_df</span> <span class="o">=</span> <span class="n">hua_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">(</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">hua_df</span><span class="p">[[</span><span class="s1">&#39;guid&#39;</span><span class="p">,</span><span class="s1">&#39;numprec&#39;</span><span class="p">,</span><span class="s1">&#39;incomegroup&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>numprec</th>
+      <th>incomegroup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>2</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>2</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>1</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>2</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>2</td>
+      <td>17.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hua_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;addrptid&#39;, &#39;strctid&#39;, &#39;archetype&#39;, &#39;struct_typ&#39;, &#39;year_built&#39;,
+       &#39;no_stories&#39;, &#39;a_stories&#39;, &#39;b_stories&#39;, &#39;bsmt_type&#39;, &#39;sq_foot&#39;,
+       &#39;gsq_foot&#39;, &#39;occ_type&#39;, &#39;occ_detail&#39;, &#39;major_occ&#39;, &#39;broad_occ&#39;,
+       &#39;appr_bldg&#39;, &#39;repl_cst&#39;, &#39;str_cst&#39;, &#39;nstra_cst&#39;, &#39;nstrd_cst&#39;, &#39;dgn_lvl&#39;,
+       &#39;cont_val&#39;, &#39;efacility&#39;, &#39;dwell_unit&#39;, &#39;str_typ2&#39;, &#39;occ_typ2&#39;,
+       &#39;appr_land&#39;, &#39;appr_tot&#39;, &#39;guid&#39;, &#39;ffe_elev&#39;, &#39;age_group&#39;, &#39;lhsm_elev&#39;,
+       &#39;g_elev&#39;, &#39;blockid&#39;, &#39;blockidstr&#39;, &#39;huestimate&#39;, &#39;residential&#39;,
+       &#39;bldgobs&#39;, &#39;yrblt&#39;, &#39;aprbldg&#39;, &#39;x&#39;, &#39;y&#39;, &#39;parid&#39;, &#39;randomap&#39;,
+       &#39;randommergeorder&#39;, &#39;huid&#39;, &#39;tractid&#39;, &#39;bgid&#39;, &#39;FIPScounty&#39;, &#39;serialno&#39;,
+       &#39;livetype&#39;, &#39;numprec&#39;, &#39;gqpop&#39;, &#39;ownershp&#39;, &#39;race&#39;, &#39;hispan&#39;,
+       &#39;hispan_flag&#39;, &#39;vacancy&#39;, &#39;gqtype&#39;, &#39;incomegroup&#39;, &#39;randincome&#39;,
+       &#39;randomhu&#39;, &#39;aphumerge&#39;, &#39;geometry&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="to-help-explore-data-create-a-new-variable-that-combines-race-and-ethnicity">
+<h4>To help explore data create a new variable that combines race and ethnicity.<a class="headerlink" href="#to-help-explore-data-create-a-new-variable-that-combines-race-and-ethnicity" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_race_ethnicity_to_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+   
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;aphumerge&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;both&#39;</span><span class="p">]</span>
+    
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0 Vacant HU No Race Ethnicity Data&quot;</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="s2">&quot;Identify Race and Ethnicity Housing Unit Characteristics.&quot;</span>
+
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hispan&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1 White alone, Not Hispanic&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hispan&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;2 Black alone, Not Hispanic&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hispan&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3 Other Race, Not Hispanic&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hispan&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;4 Any Race, Hispanic&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gqtype&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">),</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5 Group Quarters no Race Ethnicity Data&quot;</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hua_df</span> <span class="o">=</span> <span class="n">add_race_ethnicity_to_df</span><span class="p">(</span><span class="n">hua_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_title</span> <span class="o">=</span> <span class="s2">&quot;Table 1. Total Population by Race and Ethnicity&quot;</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">hua_df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;numprec&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="n">table_title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_61754">
+  <caption>Table 1. Total Population by Race and Ethnicity</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_61754_level0_col0" class="col_heading level0 col0" >numprec</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Race Ethnicity</th>
+      <th class="blank col0" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_61754_level0_row0" class="row_heading level0 row0" >0 Vacant HU No Race Ethnicity Data</th>
+      <td id="T_61754_row0_col0" class="data row0 col0" >0</td>
+    </tr>
+    <tr>
+      <th id="T_61754_level0_row1" class="row_heading level0 row1" >1 White alone, Not Hispanic</th>
+      <td id="T_61754_row1_col0" class="data row1 col0" >21220</td>
+    </tr>
+    <tr>
+      <th id="T_61754_level0_row2" class="row_heading level0 row2" >2 Black alone, Not Hispanic</th>
+      <td id="T_61754_row2_col0" class="data row2 col0" >8302</td>
+    </tr>
+    <tr>
+      <th id="T_61754_level0_row3" class="row_heading level0 row3" >3 Other Race, Not Hispanic</th>
+      <td id="T_61754_row3_col0" class="data row3 col0" >1698</td>
+    </tr>
+    <tr>
+      <th id="T_61754_level0_row4" class="row_heading level0 row4" >4 Any Race, Hispanic</th>
+      <td id="T_61754_row4_col0" class="data row4 col0" >13424</td>
+    </tr>
+    <tr>
+      <th id="T_61754_level0_row5" class="row_heading level0 row5" >5 Group Quarters no Race Ethnicity Data</th>
+      <td id="T_61754_row5_col0" class="data row5 col0" >240</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<section id="validate-the-housing-unit-allocation-has-worked">
+<h3>4.4 Validate the Housing Unit Allocation has worked<a class="headerlink" href="#validate-the-housing-unit-allocation-has-worked" title="Permalink to this heading">#</a></h3>
+<p>Notice that the population count totals for the community should match (pretty closely) data collected for the 2010 Decennial Census.
+This can be confirmed by going to data.census.gov</p>
+<p>https://data.census.gov/cedsci/table?q=DECENNIALPL2010.P5&amp;g=1600000US4828068,4837252&amp;tid=DECENNIALSF12010.P5</p>
+<p>Differences in the housing unit allocation and the Census count may be due to differences between political boundaries and the building inventory. See Rosenheim et al 2019 for more details.</p>
+<p>The housing unit allocation, plus the building dresults will become the input for the dislocation model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save cleaned HUA file as CSV</span>
+<span class="n">hua_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">result_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_cleaned.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-heat-map">
+<h3>4.5 Visualize heat map<a class="headerlink" href="#visualize-heat-map" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">plot_heatmap_from_gdf</span><span class="p">(</span><span class="n">hua_df</span><span class="p">,</span> <span class="s2">&quot;numprec&quot;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HUA Heatmap&quot;</span><span class="p">)</span>
+<span class="nb">map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "307272ae4b224f98abb424fac42b3942", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="galveston-population-dislocation">
+<h2>5 Galveston Population Dislocation<a class="headerlink" href="#galveston-population-dislocation" title="Permalink to this heading">#</a></h2>
+<p>Population dislocation refers to households that will be forced to leave their pre-event residence due to hazard related damages. Population dislocation is a function of structure value loss due to damage, neighborhood characteristics and structure type.</p>
+<section id="set-up-and-run-population-dislocation">
+<h3>5.1 Set Up and Run Population Dislocation<a class="headerlink" href="#set-up-and-run-population-dislocation" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore.analyses.populationdislocation</span> <span class="kn">import</span> <span class="n">PopulationDislocation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Galveston, TX Block group data, IN-CORE_BGMAP_2021-01-19_GalvestonTX</span>
+<span class="n">bg_data</span> <span class="o">=</span> <span class="s2">&quot;603545f2dcda03378087e708&quot;</span>
+<span class="c1"># Value loss parameters DS 0-3</span>
+<span class="n">value_loss</span> <span class="o">=</span> <span class="s2">&quot;60354810e379f22e16560dbd&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_dis</span> <span class="o">=</span> <span class="n">PopulationDislocation</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;block_group_data&quot;</span><span class="p">,</span> <span class="n">bg_data</span><span class="p">)</span>
+<span class="n">pop_dis</span><span class="o">.</span><span class="n">load_remote_input_dataset</span><span class="p">(</span><span class="s2">&quot;value_loss_param&quot;</span><span class="p">,</span> <span class="n">value_loss</span><span class="p">)</span>
+
+<span class="n">pop_dis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;building_dmg&quot;</span><span class="p">,</span> <span class="n">building_dmg_result</span><span class="p">)</span>
+<span class="n">pop_dis</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;housing_unit_allocation&quot;</span><span class="p">,</span> <span class="n">hua_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_name</span> <span class="o">=</span> <span class="s2">&quot;galveston-pop-disl-results&quot;</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">1111</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="n">result_name</span><span class="p">)</span>
+<span class="n">pop_dis</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_dis</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-population-dislocation-results">
+<h3>5.2 Explore Population Dislocation Results<a class="headerlink" href="#explore-population-dislocation-results" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pop_dis</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">pd_df</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">(</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">pd_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>haz_expose</th>
+      <th>addrptid</th>
+      <th>strctid</th>
+      <th>archetype</th>
+      <th>struct_typ</th>
+      <th>...</th>
+      <th>Survey</th>
+      <th>pblackbg</th>
+      <th>phispbg</th>
+      <th>d_sf</th>
+      <th>rploss_0</th>
+      <th>rploss_1</th>
+      <th>rploss_2</th>
+      <th>rploss_3</th>
+      <th>prdis</th>
+      <th>dislocated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>XREF0628-0065-0000-000AP014</td>
+      <td>XREF0628-0065-0000-000</td>
+      <td>NaN</td>
+      <td>W1</td>
+      <td>...</td>
+      <td>2010 dec/sf1</td>
+      <td>2.081362</td>
+      <td>13.528855</td>
+      <td>0</td>
+      <td>0.002914</td>
+      <td>0.100425</td>
+      <td>0.524702</td>
+      <td>0.889881</td>
+      <td>0.829430</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>XREF0628-0065-0000-000AP012</td>
+      <td>XREF0628-0065-0000-000</td>
+      <td>NaN</td>
+      <td>W1</td>
+      <td>...</td>
+      <td>2010 dec/sf1</td>
+      <td>2.081362</td>
+      <td>13.528855</td>
+      <td>0</td>
+      <td>0.006930</td>
+      <td>0.132025</td>
+      <td>0.677548</td>
+      <td>0.951019</td>
+      <td>0.849823</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>XREF0628-0065-0000-000AP004</td>
+      <td>XREF0628-0065-0000-000</td>
+      <td>NaN</td>
+      <td>W1</td>
+      <td>...</td>
+      <td>2010 dec/sf1</td>
+      <td>2.081362</td>
+      <td>13.528855</td>
+      <td>0</td>
+      <td>0.005776</td>
+      <td>0.100000</td>
+      <td>0.654935</td>
+      <td>0.941974</td>
+      <td>0.846938</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>XREF0628-0065-0000-000AP005</td>
+      <td>XREF0628-0065-0000-000</td>
+      <td>NaN</td>
+      <td>W1</td>
+      <td>...</td>
+      <td>2010 dec/sf1</td>
+      <td>2.081362</td>
+      <td>13.528855</td>
+      <td>0</td>
+      <td>0.002404</td>
+      <td>0.105851</td>
+      <td>0.436479</td>
+      <td>0.854591</td>
+      <td>0.816689</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>eca98323-d57f-4691-a340-b4e0e19c2346</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>XREF0628-0065-0000-000AP010</td>
+      <td>XREF0628-0065-0000-000</td>
+      <td>NaN</td>
+      <td>W1</td>
+      <td>...</td>
+      <td>2010 dec/sf1</td>
+      <td>2.081362</td>
+      <td>13.528855</td>
+      <td>0</td>
+      <td>0.003029</td>
+      <td>0.133077</td>
+      <td>0.438777</td>
+      <td>0.855511</td>
+      <td>0.817030</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 80 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To help explore data create a new variable that combines race and ethnicity.</span>
+<span class="n">pd_df</span> <span class="o">=</span> <span class="n">add_race_ethnicity_to_df</span><span class="p">(</span><span class="n">pd_df</span><span class="p">)</span>
+
+<span class="c1"># Save cleaned Pop Dislocation file as CSV</span>
+<span class="n">pd_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">result_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_cleaned.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">popdisresultstables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">pd_df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;numprec&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Race Ethnicity&#39;</span><span class="p">],</span>
+                                     <span class="n">margins</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span> <span class="o">=</span> <span class="s1">&#39;Total&#39;</span><span class="p">,</span>
+                                     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dislocated&#39;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sum&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Population&#39;</span><span class="p">,</span>
+             <span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;Does not dislocate&#39;</span><span class="p">,</span>
+             <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;Dislocates&#39;</span><span class="p">})</span>
+<span class="c1"># add percent dislocated to table</span>
+<span class="n">numerator</span> <span class="o">=</span> <span class="n">popdisresultstables</span><span class="p">[(</span><span class="s1">&#39;Total Population&#39;</span><span class="p">,</span><span class="s1">&#39;Dislocates&#39;</span><span class="p">)]</span>
+<span class="n">denomenator</span> <span class="o">=</span> <span class="n">popdisresultstables</span><span class="p">[(</span><span class="s1">&#39;Total Population&#39;</span><span class="p">,</span><span class="s1">&#39;Total&#39;</span><span class="p">)]</span>
+<span class="n">popdisresultstables</span><span class="p">[(</span><span class="s1">&#39;Total Population&#39;</span><span class="p">,</span><span class="s1">&#39;Percent Dislocation&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">numerator</span><span class="o">/</span><span class="n">denomenator</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_title</span> <span class="o">=</span> <span class="s2">&quot;Table 1. Population Dislocation for Galveston&quot;</span>
+<span class="n">popdisresultstables</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="n">table_title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_b5e38">
+  <caption>Table 1. Population Dislocation for Galveston</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_b5e38_level0_col0" class="col_heading level0 col0" colspan="4">Total Population</th>
+    </tr>
+    <tr>
+      <th class="index_name level1" >dislocated</th>
+      <th id="T_b5e38_level1_col0" class="col_heading level1 col0" >Does not dislocate</th>
+      <th id="T_b5e38_level1_col1" class="col_heading level1 col1" >Dislocates</th>
+      <th id="T_b5e38_level1_col2" class="col_heading level1 col2" >Total</th>
+      <th id="T_b5e38_level1_col3" class="col_heading level1 col3" >Percent Dislocation</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Race Ethnicity</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_b5e38_level0_row0" class="row_heading level0 row0" >0 Vacant HU No Race Ethnicity Data</th>
+      <td id="T_b5e38_row0_col0" class="data row0 col0" >0</td>
+      <td id="T_b5e38_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_b5e38_row0_col2" class="data row0 col2" >0</td>
+      <td id="T_b5e38_row0_col3" class="data row0 col3" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row1" class="row_heading level0 row1" >1 White alone, Not Hispanic</th>
+      <td id="T_b5e38_row1_col0" class="data row1 col0" >16606</td>
+      <td id="T_b5e38_row1_col1" class="data row1 col1" >4614</td>
+      <td id="T_b5e38_row1_col2" class="data row1 col2" >21220</td>
+      <td id="T_b5e38_row1_col3" class="data row1 col3" >21.743638</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row2" class="row_heading level0 row2" >2 Black alone, Not Hispanic</th>
+      <td id="T_b5e38_row2_col0" class="data row2 col0" >6970</td>
+      <td id="T_b5e38_row2_col1" class="data row2 col1" >1332</td>
+      <td id="T_b5e38_row2_col2" class="data row2 col2" >8302</td>
+      <td id="T_b5e38_row2_col3" class="data row2 col3" >16.044327</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row3" class="row_heading level0 row3" >3 Other Race, Not Hispanic</th>
+      <td id="T_b5e38_row3_col0" class="data row3 col0" >1295</td>
+      <td id="T_b5e38_row3_col1" class="data row3 col1" >403</td>
+      <td id="T_b5e38_row3_col2" class="data row3 col2" >1698</td>
+      <td id="T_b5e38_row3_col3" class="data row3 col3" >23.733804</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row4" class="row_heading level0 row4" >4 Any Race, Hispanic</th>
+      <td id="T_b5e38_row4_col0" class="data row4 col0" >11018</td>
+      <td id="T_b5e38_row4_col1" class="data row4 col1" >2406</td>
+      <td id="T_b5e38_row4_col2" class="data row4 col2" >13424</td>
+      <td id="T_b5e38_row4_col3" class="data row4 col3" >17.923123</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row5" class="row_heading level0 row5" >5 Group Quarters no Race Ethnicity Data</th>
+      <td id="T_b5e38_row5_col0" class="data row5 col0" >174</td>
+      <td id="T_b5e38_row5_col1" class="data row5 col1" >66</td>
+      <td id="T_b5e38_row5_col2" class="data row5 col2" >240</td>
+      <td id="T_b5e38_row5_col3" class="data row5 col3" >27.500000</td>
+    </tr>
+    <tr>
+      <th id="T_b5e38_level0_row6" class="row_heading level0 row6" >Total</th>
+      <td id="T_b5e38_row6_col0" class="data row6 col0" >36063</td>
+      <td id="T_b5e38_row6_col1" class="data row6 col1" >8821</td>
+      <td id="T_b5e38_row6_col2" class="data row6 col2" >44884</td>
+      <td id="T_b5e38_row6_col3" class="data row6 col3" >19.652883</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/Galveston_testbed"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example Notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Joplin_testbed/Joplin_testbed.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Joplin Tornado Example</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1 Background:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-surge-wave-and-inundation-models">2 Flood Surge, Wave, and Inundation Models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-building-damage">3 Galveston Building Damage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-inventory">3.1 Building Inventory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-fragility">3.2 Building Fragility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-building-damage-results">3.3 Explore Building Damage Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-housing-unit-allocation-hua">4 Galveston Housing Unit Allocation (HUA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-interdependent-community-description-galveston-texas">4.1 Initial Interdependent Community Description - Galveston, Texas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-and-run-housing-unit-allocation">4.2 Set Up and Run Housing Unit Allocation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-results-from-housing-unit-allocation">4.3 Explore results from Housing Unit Allocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-help-explore-data-create-a-new-variable-that-combines-race-and-ethnicity">To help explore data create a new variable that combines race and ethnicity.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-housing-unit-allocation-has-worked">4.4 Validate the Housing Unit Allocation has worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-heat-map">4.5 Visualize heat map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galveston-population-dislocation">5 Galveston Population Dislocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-and-run-population-dislocation">5.1 Set Up and Run Population Dislocation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-population-dislocation-results">5.2 Explore Population Dislocation Results</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

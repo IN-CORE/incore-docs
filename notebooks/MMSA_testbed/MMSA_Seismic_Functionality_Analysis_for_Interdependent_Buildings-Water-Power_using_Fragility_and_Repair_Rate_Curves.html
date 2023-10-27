@@ -1,0 +1,2899 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves &#8212; IN-CORE Manual&lt;br /&gt;&lt;span style=&#39;color:grey;font-size:smaller;&#39;&gt;4.6.0&lt;span&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves" href="MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html" />
+    <link rel="prev" title="Seaside Example Notebook 1: Multi-Hazard Building Damage" href="../Seaside_testbed/Seaside_testbed.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/resilience-logo.png" class="logo__image only-light" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>
+    <script>document.write(`<img src="../../_static/resilience-logo.png" class="logo__image only-dark" alt="IN-CORE Manual<br /><span style='color:grey;font-size:smaller;'>4.6.0<span> - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../account.html">IN-CORE Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pyincore.html">pyIncore</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/quick_reference.html">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/install_pyincore.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore_upgrade.html">pyIncore Upgrade Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyincore/running.html">Testing and Running</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../analyses.html">Analyses</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/bridge_dmg.html">Bridge damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_dmg.html">Building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_func.html">Building functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/building_loss.html">Building Economic Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/capital_shocks.html">Capital shocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/combined_wind_wave_surge_building_dmg.html">Combined wind, wave, surge building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/cumulative_building_dmg.html">Cumulative building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_dmg.html">Electric power facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epf_restoration.html">Electric power facility restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/epn_functionality.html">EPN functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_household_recovery.html">Household-level housing sequential recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housing_recovery.html">Housing recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/housingunitallocation.html">Housing unit allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_cge.html">Joplin Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/joplin_empirical_restoration.html">Joplin empirical restoration model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mean_dmg.html">Mean damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/multi_retrofit_optimization.html">Multi-objective retrofit optimization model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/mc_failure_prob.html">Monte Carlo failure probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/nci_functionality.html">Network cascading interdependency functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/non_structural_building_dmg.html">Nonstructural building damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg.html">Pipeline damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_dmg_w_repair_rate.html">Pipeline damage with repair rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_functionality.html">Pipeline functionality analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/pipeline_restoration.html">Pipeline restoration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/populationdislocation.html">Population dislocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/portfolio_recovery.html">Portfolio recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/residential_building_recovery.html">Residential building recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/road_dmg.html">Road damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/seaside_cge.html">Seaside Computable General Equilibrium (CGE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/social_vulnerability.html">Social vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/tornadoepn_dmg.html">Tornado electric power network (EPN) damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/transportation_recovery.html">Transportation recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/waterfacility_dmg.html">Water facility damage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/wfn_functionality.html">Water network functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../analyses/water_facility_restoration.html">Water facility restoration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_viz.html">pyIncore viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyincore_data.html">pyIncore data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incore_lab.html">IN-CORE Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webtools.html">IN-CORE Web Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials and Tips</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../create_dataset/create_dataset.html">Create and Use Dataset Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_dfr3_object/create_dfr3_object.html">Create  DFR3 and Mapping Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_earthquake/create_earthquake.html">Create Earthquakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_tornado/create_tornado.html">Create Tornadoes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.html">An example of Joplin tornado scenario analysis with Joplin retrofit plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_network_dataset/create_network_dataset.html">Create Network Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_local_hazard/create_local_hazard.html">Create Local Hazards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops.html">IN-CORE workshops</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20210526/agenda.html">Workshop May 26, 2021</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-hazard.html">Session 2: working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment.html">Session 2: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session2/session2-assignment-answer.html">Session 2: Assignment Answer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-damage-analysis.html">Session 3: Damage analysis (buildings and electric power facilities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session3/session3-assignment-answer.html">Session 3: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-viz.html">Session 4: Visualization of outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment.html">Session 4: Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20210526/session4/session4-assignment-answer.html">Session 4: Assignment explanation and answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../workshops/20220131/agenda.html">Lifeline workshop January 31, 2022</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session1/session1-jupyter-intro.html">Session 1: Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session2/session2-hazard.html">Session 2: Working with Hazards (Tornado and Earthquake)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session3/session3-building_damage_analysis.html">Session 3: Building Damage Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workshops/20220131/session4/session4-damage-analyses-lifelines.html">Session 4: Damage Analyses on Lifelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../notebooks.html">Example Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Galveston_testbed/Galveston_testbed.html">Galveston Testbed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Joplin_testbed/Joplin_testbed.html">Joplin Tornado Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lumberton_testbed/Lumberton_testbed.html">Lumberton Testbed</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Seaside_testbed/Seaside_testbed.html">Seaside Example Notebook 1: Multi-Hazard Building Damage</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks_other.html">Other Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../refs.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../termsofservice.html">IN-CORE Terms of Service</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/MMSA_testbed/MMSA_Seismic_Functionality_Analysis_for_Interdependent_Buildings-Water-Power_using_Fragility_and_Repair_Rate_Curves.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-buidings-and-infrastructure">2. Description of buidings and infrastructure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyincore">3. pyIncore</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">3.1 Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-python-modules">3.2 Importing Python Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-seismic-characteristics-of-the-scenario-earthquake">4. Defining the seismic characteristics of the scenario earthquake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-analysis">5. Building damage analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage">5.1 Building damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-chart">5.2 Creating a chart</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-damage-analysis">6. Infrastructure Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potable-water-pipelines-and-facilities">6.1 Potable water pipelines and facilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-water-network-and-its-components-in-shelby-county-tn">Load water network and its components in Shelby county, TN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-damage-repair-rate">6.1.1 Pipeline damage repair rate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-facility-damage">6.1.2 water facility damage</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-transmission-lines-and-facilities">6.2 Electric power transmission lines and facilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-electric-power-network-and-its-components-in-shelby-county-tn">Load Electric power network and its components in Shelby county, TN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#epf-damage">6.2.1 EPF damage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-functionality-analysis">7. Infrastructure Functionality Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potable-water-infrastructure">7.1 Potable Water Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-water-network">7.1.1 plot the water network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montecarlo-simulation-compute-water-facility-functionality">7.1.2 Montecarlo simulation compute water facility functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-functionality">7.1.3 Pipeline functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-network-functionality">7.1.4 Water network functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-convergence">7.1.4 Check for convergence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mean-functionality-dataframe">7.1.5 Creating mean functionality dataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-damage-to-water-pipelines-and-facilities-together-and-also-showing-the-junctions">7.1.6 Plotting the damage to water pipelines and facilities together and also showing the junctions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-infrastructure">7.2 Electric Power Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-eletric-power-infrastructure">7.2.1 Plot eletric power infrastructure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montecarlo-simulation-compute-electric-power-facility-functionality">7.2.2 Montecarlo simulation compute electric power facility functionality¶</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-network-functionality">7.2.3 Electric Power Network functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.4 Check for convergence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.5 Creating mean functionality dataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-damage-to-power-facilities-and-also-showing-the-powerlines">7.2.6 Plotting the damage to power facilities and also showing the powerlines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="mmsa-seismic-functionality-analysis-for-interdependent-buildings-water-power-using-fragility-and-repair-rate-curves">
+<h1>MMSA: Seismic Functionality Analysis for Interdependent Buildings-Water-Power using Fragility and Repair Rate Curves<a class="headerlink" href="#mmsa-seismic-functionality-analysis-for-interdependent-buildings-water-power-using-fragility-and-repair-rate-curves" title="Permalink to this heading">#</a></h1>
+<p>This notebook uses pyIncore to compute seismic damages to buildings, potable water infrastructure, and electric power infrastructure serving Shelby County, TN. We also conduct probabilistic functionality analysis for power and water infrastructure based on network connectivity.</p>
+<p>Notebook originally created by:</p>
+<ul class="simple">
+<li><p>Neetesh Sharma (UIUC - nsharm11&#64;illinois.edu)</p></li>
+<li><p>Armin Tabandeh (UIUC - tabande2&#64;illinois.edu)</p></li>
+<li><p>Paolo Gardoni (UIUC - gardoni&#64;illinois.edu)</p></li>
+</ul>
+<p>More information about the testbed and the field study can be found in these publications:</p>
+<ul class="simple">
+<li><p>Sharma, N., &amp; Gardoni, P. (2019). Modeling the time-varying performance of electrical infrastructure during post       disaster recovery using tensors. In P. Gardoni (Ed.), <em>Handbook of sustainable and resilient infrastructure</em> <strong>(pp.   259–276)</strong>. New York, NY: Routledge.</p></li>
+<li><p>Sharma, N., Tabandeh, A., &amp; Gardoni, P. (2019). Regional resilience analysis: A multi-scale approach to model the
+recovery of interdependent infrastructure. In P. Gardoni (Ed.), <em>Handbook of sustainable and resilient
+infrastructure</em> (pp. 521–544). New York, NY: Routledge.</p></li>
+<li><p>Sharma, N., Tabandeh, A., &amp; Gardoni, P. (2020). Regional resilience analysis: A multi-scale approach to optimize
+the resilience of interdependent infrastructure. <em>Computer‐Aided Civil and Infrastructure Engineering</em>, <strong>35(12)</strong>,
+1315-1330.</p></li>
+<li><p>Sharma, N., &amp; Gardoni, P. (2022). Mathematical modeling of interdependent infrastructure: An object-oriented
+approach for generalized network-system analysis. <em>Reliability Engineering &amp; System Safety</em>, <strong>217</strong>, 108042.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="background">
+<h2>1. Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<p>Shelby County has a population of approximately 1,000,000 people, and the region is subject to seismic hazards originating from the New Madrid Seismic Zone. As a disrupting event, we model a 7.9 magnitude earthquake with epicenter at 35.927N and 89.919W (i.e., North-West of ShelbyCounty).</p>
+</section>
+<section id="description-of-buidings-and-infrastructure">
+<h2>2. Description of buidings and infrastructure<a class="headerlink" href="#description-of-buidings-and-infrastructure" title="Permalink to this heading">#</a></h2>
+<p>Buildings, potable water infrastructure, and electric power infrastructure are the physical systems considered in this example. We have the required physical and demographic data for every building in Shelby County. The existing fragility functions of buildings require information about the structure type, occupancy type, and the number of stories. The details of the datasets and fragility functions are in the documentation of the risk assessment software MAEViz, developed by the Mid-America Earthquake (MAE) Center (http://mae.cee.illinois.edu/). The majority of the buildings in Shelby County are residential; however, the commercial and industrial buildings are critical to business operations and economic vitality of the county and place comparable demands on the infrastructure to those of the entire residential buildings.</p>
+<p>Memphis Light, Gas and Water (MLGW) division serves Shelby County with potable water and electric power. The potable water infrastructure is confined to Shelby County since water is locally drawn from the Memphis Aquifer in Shelby County. The power supplier to MLGW is the Tennessee Valley Authority (TVA) that constitutes balancing authority in the state of Tennessee. In this notebook, the infrastructure data are from MAEViz , which include the locations of potable water and electric power facilities and potable water pipelines within Shelby County.</p>
+<hr class="docutils" />
+</section>
+<section id="pyincore">
+<h2>3. pyIncore<a class="headerlink" href="#pyincore" title="Permalink to this heading">#</a></h2>
+<p>The remainder of this notebook uses pyIncore to compute damages to buildings and infrastructure in Shelby County, TN.</p>
+<section id="prerequisites">
+<h3>3.1 Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
+<p>The following modules are necessary to run this notebook. To ensure dependencies are correct, install all modules through <strong>conda</strong>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pyIncore</p></td>
+<td><p>=&gt;1.6.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/incore/install_pyincore.html</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyIncore_viz</p></td>
+<td><p>=&gt;1.7.0</p></td>
+<td><p>see: https://incore.ncsa.illinois.edu/doc/pyincore_viz/index.html</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="importing-python-modules">
+<h3>3.2 Importing Python Modules<a class="headerlink" href="#importing-python-modules" title="Permalink to this heading">#</a></h3>
+<p>In this analysis, we use the following models from pyIncore:</p>
+<ul class="simple">
+<li><p><strong>BuildingDamage</strong>: Computes the probability of each building being in a damage state given the seismic hazard model defined in incore.</p></li>
+<li><p><strong>PipelineDamageRepairRate</strong>: Computes the number of leaks and breaks per unit length of water pipelines given the seismic hazard model.</p></li>
+<li><p><strong>WaterFacilityDamage</strong>: Computes the probability of each water facility being in a damage state given the seismic hazard model.</p></li>
+<li><p><strong>EpfDamage</strong>: Computes the probability of each power substation being in a damage state given the seismic hazard model.</p></li>
+<li><p><strong>MonteCarloFailureProbability</strong>: Samples from damage state probability mass functions</p></li>
+<li><p><strong>PipelineFunctionality</strong>: Computes average pipeline functionality</p></li>
+<li><p><strong>EpnFunctionality</strong>: Computes functionality probability and failure states for a corresponding electric power network</p></li>
+<li><p><strong>WfnFunctionality</strong>: Computes functionality probability and failure states for a corresponding water network</p></li>
+</ul>
+<p>We also use other Python libraries and functions that are required for network connectivity analysis</p>
+<ul class="simple">
+<li><p><strong>networkx</strong>: Enables creating network datasets and running shortest path analyses.</p></li>
+<li><p><strong>copy</strong>: Enables creating copies of mutable objects such as dataframes and network objects.</p></li>
+<li><p><strong>scipy.stats</strong>: Provides probability distributions for random variables.</p></li>
+<li><p><strong>pandas</strong>: Provides functions for manipulating dataframe objects.</p></li>
+<li><p><strong>numpy</strong>: Provides functions for manipulating array objects.</p></li>
+<li><p><strong>matplotlib</strong>: Provides functions for plotting.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyincore</span> <span class="kn">import</span> <span class="n">HazardService</span><span class="p">,</span> <span class="n">IncoreClient</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">FragilityService</span><span class="p">,</span> <span class="n">MappingSet</span><span class="p">,</span> <span class="n">DataService</span><span class="p">,</span> <span class="n">SpaceService</span><span class="p">,</span> \
+<span class="n">NetworkDataset</span><span class="p">,</span> <span class="n">NetworkUtil</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.buildingdamage</span> <span class="kn">import</span> <span class="n">BuildingDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.pipelinedamagerepairrate</span> <span class="kn">import</span> <span class="n">PipelineDamageRepairRate</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.waterfacilitydamage</span> <span class="kn">import</span> <span class="n">WaterFacilityDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.epfdamage</span> <span class="kn">import</span> <span class="n">EpfDamage</span>
+<span class="kn">from</span> <span class="nn">pyincore_viz.geoutil</span> <span class="kn">import</span> <span class="n">GeoUtil</span> <span class="k">as</span> <span class="n">viz</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.montecarlofailureprobability</span> <span class="kn">import</span> <span class="n">MonteCarloFailureProbability</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.pipelinefunctionality</span> <span class="kn">import</span> <span class="n">PipelineFunctionality</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.epnfunctionality</span> <span class="kn">import</span> <span class="n">EpnFunctionality</span>
+<span class="kn">from</span> <span class="nn">pyincore.analyses.wfnfunctionality</span> <span class="kn">import</span> <span class="n">WfnFunctionality</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">ctx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">IncoreClient</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection successful to IN-CORE services. pyIncore version detected: 1.5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="defining-the-seismic-characteristics-of-the-scenario-earthquake">
+<h2>4. Defining the seismic characteristics of the scenario earthquake<a class="headerlink" href="#defining-the-seismic-characteristics-of-the-scenario-earthquake" title="Permalink to this heading">#</a></h2>
+<p>We use a predefined seismic event from the pyIncore repository, which corresponds to the characteristics of a historical event in the region. To model the spatial variation of the earthquake intensity measures, we use the ground motion prediction equation by Atkinson and Boore (1995). One can consult the Incore documentation to define other earthquake scenarios or use other ground motion prediction equations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hazardsvc</span> <span class="o">=</span> <span class="n">HazardService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="c1"># New Madrid earthquake using Atkinson Boore 1995</span>
+<span class="n">hazard_type</span> <span class="o">=</span> <span class="s2">&quot;earthquake&quot;</span>
+<span class="n">hazard_id</span> <span class="o">=</span> <span class="s2">&quot;5b902cb273c3371e1236b36b&quot;</span> <span class="c1">#Predefined id</span>
+
+<span class="c1"># Look at the eathquake scenario characteristics used in this example</span>
+<span class="n">earthquake_model_metadata</span> <span class="o">=</span> <span class="n">hazardsvc</span><span class="o">.</span><span class="n">get_earthquake_hazard_metadata</span><span class="p">(</span><span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">earthquake_model_metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqType&#39;: &#39;model&#39;,
+ &#39;id&#39;: &#39;5b902cb273c3371e1236b36b&#39;,
+ &#39;name&#39;: &#39;Memphis 7.9 AB-95&#39;,
+ &#39;description&#39;: &#39;Memphis new madrid atkinson and boore 1995 model based hazard&#39;,
+ &#39;date&#39;: &#39;2022-07-26T18:13:14+0000&#39;,
+ &#39;creator&#39;: &#39;cnavarro&#39;,
+ &#39;spaces&#39;: [&#39;ergo&#39;, &#39;cnavarro&#39;, &#39;coe&#39;, &#39;incore&#39;],
+ &#39;attenuations&#39;: {&#39;AtkinsonBoore1995&#39;: 1.0},
+ &#39;eqParameters&#39;: {&#39;srcLatitude&#39;: 35.927,
+  &#39;srcLongitude&#39;: -89.919,
+  &#39;magnitude&#39;: 7.9,
+  &#39;coseismicRuptureDepth&#39;: 0.0,
+  &#39;dipAngle&#39;: 0.0,
+  &#39;azimuthAngle&#39;: 0.0,
+  &#39;rakeAngle&#39;: 0.0,
+  &#39;seismogenicDepth&#39;: 0.0,
+  &#39;depth&#39;: 10.0,
+  &#39;depth2p5KmPerSecShearWaveVelocity&#39;: 2.0,
+  &#39;shearWaveDepth1p0&#39;: 0.0,
+  &#39;faultTypeMap&#39;: {},
+  &#39;region&#39;: &#39;Global&#39;},
+ &#39;visualizationParameters&#39;: {&#39;demandType&#39;: &#39;PGA&#39;,
+  &#39;demandUnits&#39;: &#39;g&#39;,
+  &#39;minX&#39;: -90.3099,
+  &#39;minY&#39;: 34.9942,
+  &#39;maxX&#39;: -89.6231,
+  &#39;maxY&#39;: 35.4129,
+  &#39;numPoints&#39;: 1025,
+  &#39;amplifyHazard&#39;: True},
+ &#39;defaultSiteClass&#39;: &#39;D&#39;,
+ &#39;siteAmplification&#39;: &#39;NEHRP&#39;,
+ &#39;rasterDataset&#39;: {&#39;hazardType&#39;: &#39;deterministic&#39;,
+  &#39;datasetId&#39;: &#39;5b902cb173c3371e12c0f0ea&#39;,
+  &#39;demandType&#39;: &#39;PGA&#39;,
+  &#39;demandUnits&#39;: &#39;g&#39;,
+  &#39;period&#39;: 0.0,
+  &#39;threshold&#39;: None,
+  &#39;eqParameters&#39;: {&#39;srcLatitude&#39;: 35.927,
+   &#39;srcLongitude&#39;: -89.919,
+   &#39;magnitude&#39;: 7.9,
+   &#39;coseismicRuptureDepth&#39;: 0.0,
+   &#39;dipAngle&#39;: 0.0,
+   &#39;azimuthAngle&#39;: 0.0,
+   &#39;rakeAngle&#39;: 0.0,
+   &#39;seismogenicDepth&#39;: 0.0,
+   &#39;depth&#39;: 10.0,
+   &#39;depth2p5KmPerSecShearWaveVelocity&#39;: 2.0,
+   &#39;shearWaveDepth1p0&#39;: 0.0,
+   &#39;faultTypeMap&#39;: {},
+   &#39;region&#39;: &#39;Global&#39;}}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-damage-analysis">
+<h2>5. Building damage analysis<a class="headerlink" href="#building-damage-analysis" title="Permalink to this heading">#</a></h2>
+<p>We use the building inventory available in the pyIncore. In case a new dataset needs to be defined, one can use the formatting of this dataset and create their own and ingest into Incore. The default fragilities in pyIncore are inhereted from MAEViz. For more information refer to MAE center reports at http://mae.cee.illinois.edu/publications/publications_reports.html</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Building inventory in Shelby county, TN</span>
+<span class="n">bldg_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f0bc7d30d13bc081a46&quot;</span>
+<span class="c1">#bldg_dataset_id = &quot;5a284f0bc7d30d13bc081a28&quot;</span>
+<span class="c1"># Default Building Fragility mapping</span>
+<span class="n">bldg_mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47b350337d4a3629076f2c&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Looking at the attribute table for the inventory</span>
+<span class="n">bldg_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">bldg_dataset_id</span><span class="p">,</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">))</span>
+<span class="n">bldg_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>parid</th>
+      <th>parid_card</th>
+      <th>bldg_id</th>
+      <th>struct_typ</th>
+      <th>str_prob</th>
+      <th>year_built</th>
+      <th>no_stories</th>
+      <th>a_stories</th>
+      <th>b_stories</th>
+      <th>bsmt_type</th>
+      <th>...</th>
+      <th>dgn_lvl</th>
+      <th>cont_val</th>
+      <th>efacility</th>
+      <th>dwell_unit</th>
+      <th>str_typ2</th>
+      <th>occ_typ2</th>
+      <th>tract_id</th>
+      <th>guid</th>
+      <th>IMPUTED</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>038035  00019</td>
+      <td>038035  00019_1</td>
+      <td>038035  00019_1_1</td>
+      <td>URM</td>
+      <td>0.02633</td>
+      <td>1920</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>CRAWL=0-24%</td>
+      <td>...</td>
+      <td>Pre - Code</td>
+      <td>46707</td>
+      <td>FALSE</td>
+      <td>1</td>
+      <td>URML</td>
+      <td>RES1</td>
+      <td>47157001300</td>
+      <td>64124791-1502-48ea-81b6-1992855f45d5</td>
+      <td>F</td>
+      <td>POINT (-89.94883 35.15122)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>038034  00040</td>
+      <td>038034  00040_1</td>
+      <td>038034  00040_1_1</td>
+      <td>W1</td>
+      <td>0.97366</td>
+      <td>1947</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>CRAWL=0-24%</td>
+      <td>...</td>
+      <td>Low - Code</td>
+      <td>39656</td>
+      <td>FALSE</td>
+      <td>1</td>
+      <td>W1</td>
+      <td>RES1</td>
+      <td>47157001300</td>
+      <td>d04da316-7cba-4964-8104-f0edfde18239</td>
+      <td>F</td>
+      <td>POINT (-89.95095 35.15284)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>038028  00023</td>
+      <td>038028  00023_1</td>
+      <td>038028  00023_1_1</td>
+      <td>W1</td>
+      <td>0.97366</td>
+      <td>1900</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>CRAWL=0-24%</td>
+      <td>...</td>
+      <td>Low - Code</td>
+      <td>37765</td>
+      <td>FALSE</td>
+      <td>1</td>
+      <td>W1</td>
+      <td>RES1</td>
+      <td>47157001300</td>
+      <td>c24d708d-a21b-416f-8772-965548407231</td>
+      <td>F</td>
+      <td>POINT (-89.95022 35.15976)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>034011  00008</td>
+      <td>034011  00008_1</td>
+      <td>034011  00008_1_1</td>
+      <td>W1</td>
+      <td>0.97366</td>
+      <td>1926</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>CRAWL=0-24%</td>
+      <td>...</td>
+      <td>Low - Code</td>
+      <td>59930</td>
+      <td>FALSE</td>
+      <td>1</td>
+      <td>W1</td>
+      <td>RES1</td>
+      <td>47157005700</td>
+      <td>6ff63801-3bf4-4bf3-b6e5-ff9d5fe6f0d0</td>
+      <td>F</td>
+      <td>POINT (-90.04844 35.10446)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>034011  00007</td>
+      <td>034011  00007_1</td>
+      <td>034011  00007_1_1</td>
+      <td>W1</td>
+      <td>0.97366</td>
+      <td>1926</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>CRAWL=0-24%</td>
+      <td>...</td>
+      <td>Low - Code</td>
+      <td>65276</td>
+      <td>FALSE</td>
+      <td>1</td>
+      <td>W1</td>
+      <td>RES1</td>
+      <td>47157005700</td>
+      <td>ef25f515-4109-408f-a3d4-3b79da49edd0</td>
+      <td>F</td>
+      <td>POINT (-90.04843 35.10459)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div></div></div>
+</div>
+<section id="building-damage">
+<h3>5.1 Building damage<a class="headerlink" href="#building-damage" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create building damage</span>
+<span class="n">bldg_dmg</span> <span class="o">=</span> <span class="n">BuildingDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Load input dataset</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;buildings&quot;</span><span class="p">,</span> <span class="n">bldg_dataset</span><span class="p">)</span>
+
+<span class="c1"># Load fragility mapping</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">bldg_mapping_id</span><span class="p">))</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set analysis parameters</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;memphis_bldg_dmg_result&quot;</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run building damage analysis</span>
+<span class="n">bldg_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">bldg_dmg_result</span> <span class="o">=</span> <span class="n">bldg_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;ds_result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">bldg_dmg_df</span> <span class="o">=</span> <span class="n">bldg_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">bldg_dmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>64124791-1502-48ea-81b6-1992855f45d5</td>
+      <td>0.765693</td>
+      <td>0.196848</td>
+      <td>0.010265</td>
+      <td>0.234307</td>
+      <td>0.568845</td>
+      <td>0.186583</td>
+      <td>0.010265</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>d04da316-7cba-4964-8104-f0edfde18239</td>
+      <td>0.553140</td>
+      <td>0.104687</td>
+      <td>0.004094</td>
+      <td>0.446860</td>
+      <td>0.448453</td>
+      <td>0.100592</td>
+      <td>0.004094</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c24d708d-a21b-416f-8772-965548407231</td>
+      <td>0.558730</td>
+      <td>0.107277</td>
+      <td>0.004269</td>
+      <td>0.441270</td>
+      <td>0.451453</td>
+      <td>0.103009</td>
+      <td>0.004269</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6ff63801-3bf4-4bf3-b6e5-ff9d5fe6f0d0</td>
+      <td>0.509678</td>
+      <td>0.086185</td>
+      <td>0.002948</td>
+      <td>0.490322</td>
+      <td>0.423493</td>
+      <td>0.083237</td>
+      <td>0.002948</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ef25f515-4109-408f-a3d4-3b79da49edd0</td>
+      <td>0.509779</td>
+      <td>0.086225</td>
+      <td>0.002950</td>
+      <td>0.490221</td>
+      <td>0.423554</td>
+      <td>0.083275</td>
+      <td>0.002950</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="creating-a-chart">
+<h3>5.2 Creating a chart<a class="headerlink" href="#creating-a-chart" title="Permalink to this heading">#</a></h3>
+<p>The results dataset is a pandas dataframe and various plotting libraries available in python can be used to visualize the data. For example, following is a barplot of the number of buildings in each of the damage states.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: will include this in the next pyincore-viz release</span>
+<span class="c1"># Code for creating the combined map </span>
+<span class="c1"># We create our own function by editing the existing code from pyincoreviz and add it to the pyincore viz class</span>
+<span class="k">def</span> <span class="nf">my_plot_gdf_map</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot Geopandas DataFrame.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        gdf (obj): Geopandas DataFrame object.</span>
+<span class="sd">        column (str): A column name to be plot.</span>
+<span class="sd">        category (bool): Turn on/off category option.</span>
+<span class="sd">        basemap (bool): Turn on/off base map (e.g. openstreetmap).</span>
+<span class="sd">        source(obj): source of the Map to be used. examples, ctx.providers.OpenStreetMap.Mapnik (default),</span>
+<span class="sd">            ctx.providers.Stamen.Terrain, ctx.providers.CartoDB.Positron etc.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
+                      <span class="n">categorical</span><span class="o">=</span><span class="n">category</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">legend</span> <span class="p">,</span> <span class="n">legend_kwds</span> <span class="o">=</span> <span class="n">legend_kwds</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">basemap</span><span class="p">:</span>
+            <span class="n">ctx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span>
+        <span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
+              <span class="n">categorical</span><span class="o">=</span><span class="n">category</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">legend</span> <span class="p">,</span> <span class="n">legend_kwds</span> <span class="o">=</span> <span class="n">legend_kwds</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span>
+<span class="nb">setattr</span><span class="p">(</span><span class="n">viz</span><span class="p">,</span> <span class="s2">&quot;my_plot_gdf_map&quot;</span><span class="p">,</span> <span class="n">my_plot_gdf_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DSlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">])</span>
+<span class="n">bldg_likelyDS</span> <span class="o">=</span> <span class="n">DSlist</span><span class="p">[</span><span class="n">bldg_dmg_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">bldg_dmg_df</span><span class="p">[</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bldg_likelyDS</span>
+<span class="n">keys</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">bldg_likelyDS</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Damage State Distribution&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Likely Damage State&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Counts&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Counts&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/70fd1805d81c17401e0c83091498fa1694c4b428fd11515a78c493e1b503cf0e.png" src="../../_images/70fd1805d81c17401e0c83091498fa1694c4b428fd11515a78c493e1b503cf0e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plotting the most likely damage state for buldings</span>
+<span class="n">building_gdf</span> <span class="o">=</span> <span class="n">bldg_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">joined_building_gdf</span> <span class="o">=</span> <span class="n">building_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bldg_dmg_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_building_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">)</span>
+<span class="n">orddict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DS_0&#39;</span><span class="p">:</span> <span class="s1">&#39;Insignificant&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">:</span> <span class="s1">&#39;Moderate&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">:</span> <span class="s1">&#39;Heavy&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">:</span> <span class="s1">&#39;Complete&#39;</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">replace_legend_items</span><span class="p">(</span><span class="n">legend</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="n">legend</span><span class="o">.</span><span class="n">texts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">txt</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">replace_legend_items</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">(),</span> <span class="n">orddict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/84dc3d256e23cf98e9547ac2fd5f8f23fe04b93dc5010e95078c2c188e7d346c.png" src="../../_images/84dc3d256e23cf98e9547ac2fd5f8f23fe04b93dc5010e95078c2c188e7d346c.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="infrastructure-damage-analysis">
+<h2>6. Infrastructure Damage Analysis<a class="headerlink" href="#infrastructure-damage-analysis" title="Permalink to this heading">#</a></h2>
+<p>We use the infrastructure data from MAEViz available in pyIncore. These data include the locations of potable water and electric power facilities and potable water pipelines within Shelby County.</p>
+<p>    The potable water pipeline repair rates and component fragilities are from ALA https://www.americanlifelinesalliance.com/pdf/Part_1_Guideline.pdf, and HAZUS https://www.fema.gov/sites/default/files/2020-09/fema_hazus_earthquake-model_technical-manual_2.1.pdf. The electrical power substation fragilities are also from HAZUS.</p>
+<section id="potable-water-pipelines-and-facilities">
+<h3>6.1 Potable water pipelines and facilities<a class="headerlink" href="#potable-water-pipelines-and-facilities" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_services</span> <span class="o">=</span> <span class="n">DataService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="load-water-network-and-its-components-in-shelby-county-tn">
+<h4>Load water network and its components in Shelby county, TN<a class="headerlink" href="#load-water-network-and-its-components-in-shelby-county-tn" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_network_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;62d586120b99e237881b0519&quot;</span>
+<span class="n">water_network_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">water_network_dataset_id</span><span class="p">,</span> <span class="n">data_services</span><span class="p">)</span>
+<span class="n">water_network</span> <span class="o">=</span> <span class="n">NetworkDataset</span><span class="o">.</span><span class="n">from_dataset</span><span class="p">(</span><span class="n">water_network_dataset</span><span class="p">)</span>
+<span class="n">pipeline_dataset</span> <span class="o">=</span> <span class="n">water_network</span><span class="o">.</span><span class="n">links</span>
+<span class="n">waterfacility_dataset</span> <span class="o">=</span> <span class="n">water_network</span><span class="o">.</span><span class="n">nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset already exists locally. Reading from local cached zip.
+Unzipped folder found in the local cache. Reading from it...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pipeline-damage-repair-rate">
+<h4>6.1.1 Pipeline damage repair rate<a class="headerlink" href="#pipeline-damage-repair-rate" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pipeline fragility mapping</span>
+<span class="n">pp_mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47c227337d4a38464efea8&quot;</span>
+
+<span class="c1"># Geology dataset</span>
+<span class="n">liq_geology_dataset_id</span> <span class="o">=</span> <span class="s2">&quot;5a284f53c7d30d13bc08249c&quot;</span>
+<span class="n">liq_fragility_key</span> <span class="o">=</span> <span class="s2">&quot;pgd&quot;</span>
+<span class="n">use_liq</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create pipeline damage with repair rate</span>
+<span class="n">pipeline_dmg_w_rr</span> <span class="o">=</span> <span class="n">PipelineDamageRepairRate</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Load pipeline inventory as input datasets</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline&quot;</span><span class="p">,</span> <span class="n">pipeline_dataset</span><span class="p">)</span>
+
+<span class="c1"># Load fragility mapping</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">pp_mapping_id</span><span class="p">))</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set analysis parameters</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;pipeline_result&quot;</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_fragility_key&quot;</span><span class="p">,</span> <span class="n">liq_fragility_key</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_geology_dataset_id&quot;</span><span class="p">,</span><span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">use_liq</span><span class="p">)</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run pipeline  damage analysis</span>
+<span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">pipeline_dmg_result</span> <span class="o">=</span> <span class="n">pipeline_dmg_w_rr</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">pipeline_dmg_df</span> <span class="o">=</span> <span class="n">pipeline_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">pipeline_dmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>pgvrepairs</th>
+      <th>pgdrepairs</th>
+      <th>repairspkm</th>
+      <th>breakrate</th>
+      <th>leakrate</th>
+      <th>failprob</th>
+      <th>numpgvrpr</th>
+      <th>numpgdrpr</th>
+      <th>numrepairs</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0a076a0d-54fa-4f82-a8af-ce3bd227fcfa</td>
+      <td>0.061053</td>
+      <td>9.017529</td>
+      <td>9.078582</td>
+      <td>7.226234</td>
+      <td>1.852348</td>
+      <td>1.000000</td>
+      <td>0.155686</td>
+      <td>22.994699</td>
+      <td>23.150385</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cee37f5e-6e62-40e6-be5a-485d5c78bd25</td>
+      <td>0.050801</td>
+      <td>7.048335</td>
+      <td>7.099136</td>
+      <td>5.648828</td>
+      <td>1.450307</td>
+      <td>0.999996</td>
+      <td>0.110745</td>
+      <td>15.365370</td>
+      <td>15.476116</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>77f5d8b6-ad73-4959-b357-0c512d8f2bcd</td>
+      <td>0.022929</td>
+      <td>3.041846</td>
+      <td>3.064775</td>
+      <td>2.438063</td>
+      <td>0.626713</td>
+      <td>1.000000</td>
+      <td>0.254516</td>
+      <td>33.764490</td>
+      <td>34.019006</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>07267d06-089e-4db7-a479-1794cdc23be3</td>
+      <td>0.035117</td>
+      <td>4.167356</td>
+      <td>4.202473</td>
+      <td>3.340908</td>
+      <td>0.861565</td>
+      <td>1.000000</td>
+      <td>0.184718</td>
+      <td>21.920291</td>
+      <td>22.105008</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ec3d4c41-ae4a-4489-9984-1d96e7f4ae06</td>
+      <td>0.040063</td>
+      <td>4.577325</td>
+      <td>4.617389</td>
+      <td>3.669873</td>
+      <td>0.947516</td>
+      <td>1.000000</td>
+      <td>0.488774</td>
+      <td>55.843367</td>
+      <td>56.332141</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="water-facility-damage">
+<h4>6.1.2 water facility damage<a class="headerlink" href="#water-facility-damage" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Water facility inventory for Shelby County, TN</span>
+<span class="c1"># Inaccurate attributes, needed to be changed in the following cell</span>
+
+<span class="c1"># Default water facility fragility mapping</span>
+<span class="c1"># wf_mapping_id = &quot;5b47c3b1337d4a387e85564b&quot;  # Hazus Potable Water Facility Fragility Mapping - Only PGA</span>
+<span class="n">wf_mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47c383337d4a387669d592&quot;</span> <span class="c1"># Potable Water Facility Fragility Mapping for INA - Has PGD</span>
+<span class="n">fragility_key</span> <span class="o">=</span> <span class="s2">&quot;pga&quot;</span>
+
+<span class="c1"># Liquefaction parameters</span>
+<span class="n">liq_geology_dataset_id</span> <span class="o">=</span>  <span class="s2">&quot;5a284f53c7d30d13bc08249c&quot;</span>
+<span class="n">liquefaction</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">liq_fragility_key</span> <span class="o">=</span> <span class="s2">&quot;pgd&quot;</span>
+
+<span class="c1"># Hazard uncertainty</span>
+<span class="n">uncertainty</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create water facility damage analysis</span>
+<span class="n">wf_dmg</span> <span class="o">=</span> <span class="n">WaterFacilityDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="c1"># Load water facility inventory dataset</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;water_facilities&quot;</span><span class="p">,</span> <span class="n">waterfacility_dataset</span><span class="p">)</span>
+
+<span class="c1"># Load fragility mapping</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">wf_mapping_id</span><span class="p">))</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set analysis parameters</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;wf-dmg-results&quot;</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;fragility_key&quot;</span><span class="p">,</span> <span class="n">fragility_key</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_liquefaction&quot;</span><span class="p">,</span> <span class="n">liquefaction</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_geology_dataset_id&quot;</span><span class="p">,</span> <span class="n">liq_geology_dataset_id</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;liquefaction_fragility_key&quot;</span><span class="p">,</span> <span class="n">liq_fragility_key</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;use_hazard_uncertainty&quot;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="p">)</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run water facility damage analysis</span>
+<span class="n">wf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">wf_dmg_result</span> <span class="o">=</span> <span class="n">wf_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">wf_dmg_df</span> <span class="o">=</span> <span class="n">wf_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">wf_dmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>LS_3</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>DS_4</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fa8f588c-1180-4033-ba6d-28660dcb7112</td>
+      <td>0.593220</td>
+      <td>0.351932</td>
+      <td>0.199350</td>
+      <td>0.164453</td>
+      <td>0.406780</td>
+      <td>0.241288</td>
+      <td>0.152582</td>
+      <td>0.034897</td>
+      <td>0.164453</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7a78c727-bc47-4010-bed6-7775660dc6f6</td>
+      <td>0.589678</td>
+      <td>0.348308</td>
+      <td>0.196541</td>
+      <td>0.162051</td>
+      <td>0.410322</td>
+      <td>0.241370</td>
+      <td>0.151767</td>
+      <td>0.034489</td>
+      <td>0.162051</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cced02f4-a461-44e5-9a31-3a6f9ee26738</td>
+      <td>0.649251</td>
+      <td>0.411418</td>
+      <td>0.246358</td>
+      <td>0.204439</td>
+      <td>0.350749</td>
+      <td>0.237833</td>
+      <td>0.165061</td>
+      <td>0.041919</td>
+      <td>0.204439</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49c79885-9252-4618-9d91-6d0c1195e93e</td>
+      <td>0.690963</td>
+      <td>0.458584</td>
+      <td>0.284920</td>
+      <td>0.236986</td>
+      <td>0.309037</td>
+      <td>0.232379</td>
+      <td>0.173664</td>
+      <td>0.047934</td>
+      <td>0.236986</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a699e027-f484-4d2b-960d-c1c2aa500724</td>
+      <td>0.713794</td>
+      <td>0.485577</td>
+      <td>0.307562</td>
+      <td>0.256003</td>
+      <td>0.286206</td>
+      <td>0.228218</td>
+      <td>0.178014</td>
+      <td>0.051559</td>
+      <td>0.256003</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: junctions are not mapped hence empty; which causes problem in MC simulation later</span>
+<span class="n">wf_dmg_df</span> <span class="o">=</span> <span class="n">wf_dmg_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">wf_dmg_result_modified</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">wf_dmg_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;wf_dmg_result_modified&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;ergo:waterFacilityDamageVer6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DSlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span><span class="s1">&#39;DS_3&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">])</span>
+<span class="n">wf_dmg_df</span><span class="p">[</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DSlist</span><span class="p">[</span><span class="n">wf_dmg_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the damage to water pipelines and facilities together and also showing the junctions</span>
+<span class="n">pipeline_gdf</span> <span class="o">=</span> <span class="n">pipeline_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">joined_pipeline_gdf</span> <span class="o">=</span> <span class="n">pipeline_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pipeline_dmg_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">))</span>
+
+<span class="n">waterfacility_gdf</span> <span class="o">=</span> <span class="n">waterfacility_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">joined_waterfacility_gdf</span> <span class="o">=</span> <span class="n">waterfacility_gdf</span><span class="p">[</span><span class="n">waterfacility_gdf</span><span class="p">[</span><span class="s2">&quot;utilfcltyc&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Junction&quot;</span><span class="p">]</span>
+<span class="n">joined_waterfacility_gdf</span> <span class="o">=</span> <span class="n">joined_waterfacility_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wf_dmg_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">))</span>
+
+<span class="n">waterjunctions_gdf</span> <span class="o">=</span> <span class="n">waterfacility_gdf</span><span class="p">[</span><span class="n">waterfacility_gdf</span><span class="p">[</span><span class="s2">&quot;utilfcltyc&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Junction&quot;</span><span class="p">]</span>
+<span class="n">joined_waterjunctions_gdf</span> <span class="o">=</span> <span class="n">waterjunctions_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wf_dmg_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">legend_kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Number of repairs per km&quot;</span><span class="p">,</span><span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">}</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_pipeline_gdf</span><span class="p">,</span><span class="s1">&#39;repairspkm&#39;</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">legend_kwds</span><span class="o">=</span><span class="n">legend_kwds</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">waterjunctions_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;utilfcltyc&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_waterfacility_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">)</span>
+
+<span class="n">orddict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DS_0&#39;</span><span class="p">:</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">:</span> <span class="s1">&#39;Slight&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">:</span> <span class="s1">&#39;Moderate&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">:</span> <span class="s1">&#39;Extensive&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">:</span> <span class="s1">&#39;Complete&#39;</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">replace_legend_items</span><span class="p">(</span><span class="n">legend</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="n">legend</span><span class="o">.</span><span class="n">texts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">txt</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">replace_legend_items</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">(),</span> <span class="n">orddict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/08e733cb20740ef47ab01e5b7d4e58d3805d498a60e1b2a90e980b56a07100fc.png" src="../../_images/08e733cb20740ef47ab01e5b7d4e58d3805d498a60e1b2a90e980b56a07100fc.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="electric-power-transmission-lines-and-facilities">
+<h3>6.2 Electric power transmission lines and facilities<a class="headerlink" href="#electric-power-transmission-lines-and-facilities" title="Permalink to this heading">#</a></h3>
+<section id="load-electric-power-network-and-its-components-in-shelby-county-tn">
+<h4>Load Electric power network and its components in Shelby county, TN<a class="headerlink" href="#load-electric-power-network-and-its-components-in-shelby-county-tn" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Electric power transmission lines dataset</span>
+<span class="n">epn_network_dataset_id</span> <span class="o">=</span> <span class="s1">&#39;62d85b399701070dbf8c65fe&#39;</span>
+<span class="n">epn_network_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_data_service</span><span class="p">(</span><span class="n">epn_network_dataset_id</span><span class="p">,</span> <span class="n">data_services</span><span class="p">)</span>
+<span class="n">epn_network</span> <span class="o">=</span> <span class="n">NetworkDataset</span><span class="o">.</span><span class="n">from_dataset</span><span class="p">(</span><span class="n">epn_network_dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">powerline_dataset</span> <span class="o">=</span> <span class="n">epn_network</span><span class="o">.</span><span class="n">links</span>
+<span class="n">powerline_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linknwid</th>
+      <th>fromnode</th>
+      <th>tonode</th>
+      <th>direction</th>
+      <th>pipetype</th>
+      <th>length_km</th>
+      <th>capacity</th>
+      <th>guid</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>64</td>
+      <td>40</td>
+      <td>57</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.170</td>
+      <td>2000.0</td>
+      <td>7989c607-13d3-4cdb-a870-b2b13077932e</td>
+      <td>LINESTRING (-89.98442 35.24436, -89.99402 35.2...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>12</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4.330</td>
+      <td>2000.0</td>
+      <td>4244d566-ce97-4043-bc4c-c8697c0b69c7</td>
+      <td>LINESTRING (-89.91818 35.04783, -89.88465 35.0...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>68</td>
+      <td>49</td>
+      <td>50</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.040</td>
+      <td>2000.0</td>
+      <td>91789e1d-7ccd-4fc9-8a9e-caa5e49cde58</td>
+      <td>LINESTRING (-89.94637 35.07423, -89.93492 35.0...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>67</td>
+      <td>48</td>
+      <td>49</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.749</td>
+      <td>2000.0</td>
+      <td>ed30b9f1-035a-4eec-bf8e-4b945b033814</td>
+      <td>LINESTRING (-89.95459 35.07395, -89.94637 35.0...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>69</td>
+      <td>51</td>
+      <td>52</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2.230</td>
+      <td>2000.0</td>
+      <td>4fa9327a-76fa-4b9d-8b8d-a681144e5225</td>
+      <td>LINESTRING (-90.07849 35.07034, -90.06731 35.0...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">powerfacility_dataset</span> <span class="o">=</span> <span class="n">epn_network</span><span class="o">.</span><span class="n">nodes</span>
+<span class="n">powerfacility_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nodenwid</th>
+      <th>fltytype</th>
+      <th>strctype</th>
+      <th>utilfcltyc</th>
+      <th>flow</th>
+      <th>guid</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>59</td>
+      <td>2</td>
+      <td>0</td>
+      <td>ESSL</td>
+      <td>0.0</td>
+      <td>75941d02-93bf-4ef9-87d3-d882384f6c10</td>
+      <td>POINT (-89.83611 35.28708)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>58</td>
+      <td>2</td>
+      <td>0</td>
+      <td>ESSL</td>
+      <td>0.0</td>
+      <td>35909c93-4b29-4616-9cd3-989d8d604481</td>
+      <td>POINT (-89.84449 35.26734)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>57</td>
+      <td>2</td>
+      <td>0</td>
+      <td>ESSL</td>
+      <td>0.0</td>
+      <td>ce7d3164-ffda-4ac0-a9fa-d88c927897cc</td>
+      <td>POINT (-89.98442 35.24436)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>56</td>
+      <td>2</td>
+      <td>0</td>
+      <td>ESSL</td>
+      <td>0.0</td>
+      <td>b2bed3e1-f16c-483a-98e8-79dfd849d187</td>
+      <td>POINT (-89.95621 35.19269)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>55</td>
+      <td>2</td>
+      <td>0</td>
+      <td>ESSL</td>
+      <td>0.0</td>
+      <td>ab011d7c-0e34-4e5d-9734-34f7858d4b68</td>
+      <td>POINT (-89.97992 35.19191)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="epf-damage">
+<h4>6.2.1 EPF damage<a class="headerlink" href="#epf-damage" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epf_mapping_id</span> <span class="o">=</span> <span class="s2">&quot;5b47be62337d4a37b6197a3a&quot;</span>
+<span class="c1"># Run epf damage </span>
+<span class="n">epf_dmg</span> <span class="o">=</span> <span class="n">EpfDamage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epfs&quot;</span><span class="p">,</span> <span class="n">powerfacility_dataset</span><span class="p">)</span>
+<span class="c1"># Load fragility mapping</span>
+<span class="n">fragility_service</span> <span class="o">=</span> <span class="n">FragilityService</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mapping_set</span> <span class="o">=</span> <span class="n">MappingSet</span><span class="p">(</span><span class="n">fragility_service</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">(</span><span class="n">epf_mapping_id</span><span class="p">))</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;dfr3_mapping_set&quot;</span><span class="p">,</span> <span class="n">mapping_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;hazus_epf_dmg_result&quot;</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_type&quot;</span><span class="p">,</span> <span class="n">hazard_type</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;hazard_id&quot;</span><span class="p">,</span> <span class="n">hazard_id</span><span class="p">)</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Run Analysis</span>
+<span class="n">epf_dmg</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve result dataset</span>
+<span class="n">epf_dmg_result</span> <span class="o">=</span> <span class="n">epf_dmg</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert dataset to Pandas DataFrame</span>
+<span class="n">epf_dmg_df</span> <span class="o">=</span> <span class="n">epf_dmg_result</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+
+<span class="c1"># Display top 5 rows of output data</span>
+<span class="n">epf_dmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>LS_3</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>DS_4</th>
+      <th>haz_expose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>75941d02-93bf-4ef9-87d3-d882384f6c10</td>
+      <td>0.948893</td>
+      <td>0.684018</td>
+      <td>0.249431</td>
+      <td>0.039763</td>
+      <td>0.051107</td>
+      <td>0.264875</td>
+      <td>0.434587</td>
+      <td>0.209668</td>
+      <td>0.039763</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>35909c93-4b29-4616-9cd3-989d8d604481</td>
+      <td>0.942472</td>
+      <td>0.662985</td>
+      <td>0.231285</td>
+      <td>0.035358</td>
+      <td>0.057528</td>
+      <td>0.279487</td>
+      <td>0.431700</td>
+      <td>0.195927</td>
+      <td>0.035358</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ce7d3164-ffda-4ac0-a9fa-d88c927897cc</td>
+      <td>0.934358</td>
+      <td>0.638261</td>
+      <td>0.211441</td>
+      <td>0.030814</td>
+      <td>0.065642</td>
+      <td>0.296098</td>
+      <td>0.426820</td>
+      <td>0.180627</td>
+      <td>0.030814</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b2bed3e1-f16c-483a-98e8-79dfd849d187</td>
+      <td>0.913776</td>
+      <td>0.582829</td>
+      <td>0.172047</td>
+      <td>0.022615</td>
+      <td>0.086224</td>
+      <td>0.330947</td>
+      <td>0.410783</td>
+      <td>0.149432</td>
+      <td>0.022615</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ab011d7c-0e34-4e5d-9734-34f7858d4b68</td>
+      <td>0.912963</td>
+      <td>0.580817</td>
+      <td>0.170736</td>
+      <td>0.022360</td>
+      <td>0.087037</td>
+      <td>0.332146</td>
+      <td>0.410081</td>
+      <td>0.148376</td>
+      <td>0.022360</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DSlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span><span class="s1">&#39;DS_3&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">])</span>
+<span class="n">epf_dmg_df</span><span class="p">[</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DSlist</span><span class="p">[</span><span class="n">epf_dmg_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;DS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">epf_dmg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>LS_0</th>
+      <th>LS_1</th>
+      <th>LS_2</th>
+      <th>LS_3</th>
+      <th>DS_0</th>
+      <th>DS_1</th>
+      <th>DS_2</th>
+      <th>DS_3</th>
+      <th>DS_4</th>
+      <th>haz_expose</th>
+      <th>likelyDS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>75941d02-93bf-4ef9-87d3-d882384f6c10</td>
+      <td>0.948893</td>
+      <td>0.684018</td>
+      <td>0.249431</td>
+      <td>0.039763</td>
+      <td>0.051107</td>
+      <td>0.264875</td>
+      <td>0.434587</td>
+      <td>0.209668</td>
+      <td>0.039763</td>
+      <td>yes</td>
+      <td>DS_2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>35909c93-4b29-4616-9cd3-989d8d604481</td>
+      <td>0.942472</td>
+      <td>0.662985</td>
+      <td>0.231285</td>
+      <td>0.035358</td>
+      <td>0.057528</td>
+      <td>0.279487</td>
+      <td>0.431700</td>
+      <td>0.195927</td>
+      <td>0.035358</td>
+      <td>yes</td>
+      <td>DS_2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ce7d3164-ffda-4ac0-a9fa-d88c927897cc</td>
+      <td>0.934358</td>
+      <td>0.638261</td>
+      <td>0.211441</td>
+      <td>0.030814</td>
+      <td>0.065642</td>
+      <td>0.296098</td>
+      <td>0.426820</td>
+      <td>0.180627</td>
+      <td>0.030814</td>
+      <td>yes</td>
+      <td>DS_2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b2bed3e1-f16c-483a-98e8-79dfd849d187</td>
+      <td>0.913776</td>
+      <td>0.582829</td>
+      <td>0.172047</td>
+      <td>0.022615</td>
+      <td>0.086224</td>
+      <td>0.330947</td>
+      <td>0.410783</td>
+      <td>0.149432</td>
+      <td>0.022615</td>
+      <td>yes</td>
+      <td>DS_2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ab011d7c-0e34-4e5d-9734-34f7858d4b68</td>
+      <td>0.912963</td>
+      <td>0.580817</td>
+      <td>0.170736</td>
+      <td>0.022360</td>
+      <td>0.087037</td>
+      <td>0.332146</td>
+      <td>0.410081</td>
+      <td>0.148376</td>
+      <td>0.022360</td>
+      <td>yes</td>
+      <td>DS_2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the damage to power facilities and also showing the powerlines</span>
+<span class="n">powerline_gdf</span> <span class="o">=</span> <span class="n">powerline_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+
+<span class="n">powerfacility_gdf</span> <span class="o">=</span> <span class="n">powerfacility_dataset</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">joined_powerfacility_gdf</span> <span class="o">=</span> <span class="n">powerfacility_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">epf_dmg_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">viz</span><span class="o">.</span><span class="n">get_gdf_map</span><span class="p">([</span><span class="n">powerline_gdf</span><span class="p">,</span> <span class="n">joined_powerfacility_gdf</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "128533dc1de14d5c8c8b957218a9b916", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">powerline_gdf</span><span class="p">,</span><span class="s1">&#39;pipetype&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_powerfacility_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;likelyDS&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">)</span>
+
+<span class="n">orddict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DS_0&#39;</span><span class="p">:</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_1&#39;</span><span class="p">:</span> <span class="s1">&#39;Slight&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_2&#39;</span><span class="p">:</span> <span class="s1">&#39;Moderate&#39;</span><span class="p">,</span> <span class="s1">&#39;DS_3&#39;</span><span class="p">:</span> <span class="s1">&#39;Extensive&#39;</span><span class="p">,</span><span class="s1">&#39;DS_4&#39;</span><span class="p">:</span> <span class="s1">&#39;Complete&#39;</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">replace_legend_items</span><span class="p">(</span><span class="n">legend</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="n">legend</span><span class="o">.</span><span class="n">texts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">txt</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">replace_legend_items</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">(),</span> <span class="n">orddict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/006fb6e947513ddb7af5b1e1557a8cecb9bf21ab2651829bf96f5b363c63fdc2.png" src="../../_images/006fb6e947513ddb7af5b1e1557a8cecb9bf21ab2651829bf96f5b363c63fdc2.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="infrastructure-functionality-analysis">
+<h2>7. Infrastructure Functionality Analysis<a class="headerlink" href="#infrastructure-functionality-analysis" title="Permalink to this heading">#</a></h2>
+<p>The next step in regional risk and resilience analysis is to estimate the impact of the damage in terms of loss of services. Here, we illustrate one of the typical methods to assess infrastructure functionality, using the connectivity analyses of damaged networks.</p>
+<section id="potable-water-infrastructure">
+<h3>7.1 Potable Water Infrastructure<a class="headerlink" href="#potable-water-infrastructure" title="Permalink to this heading">#</a></h3>
+<section id="plot-the-water-network">
+<h4>7.1.1 plot the water network<a class="headerlink" href="#plot-the-water-network" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_network_graph</span> <span class="o">=</span> <span class="n">water_network</span><span class="o">.</span><span class="n">get_graph_networkx</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # TODO: replace with our plot_network_graph in the next release</span>
+<span class="c1"># NetworkUtil.plot_network_graph(water_network_graph, pos)</span>
+<span class="n">water_network_geoms</span> <span class="o">=</span> <span class="n">waterfacility_gdf</span><span class="p">[[</span><span class="s2">&quot;nodenwid&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">water_network_geoms</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">pos</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;nodenwid&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">water_network_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">),</span><span class="n">water_network_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
+
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">water_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">water_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">water_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x7ff2793e5c40&gt;
+</pre></div>
+</div>
+<img alt="../../_images/1b77ed38320ad53e4b7c02940aec83aae9398b0042f9baab6ae120942fb12be8.png" src="../../_images/1b77ed38320ad53e4b7c02940aec83aae9398b0042f9baab6ae120942fb12be8.png" />
+</div>
+</div>
+</section>
+<section id="montecarlo-simulation-compute-water-facility-functionality">
+<h4>7.1.2 Montecarlo simulation compute water facility functionality<a class="headerlink" href="#montecarlo-simulation-compute-water-facility-functionality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">MonteCarloFailureProbability</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">wf_dmg_result_modified</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;wf_dmg_mc&quot;</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">nsamp</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="n">nsamp</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_4&quot;</span><span class="p">])</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_4&quot;</span><span class="p">])</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+<span class="n">wf_dmg_fs</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;sample_failure_state&quot;</span><span class="p">)</span>
+<span class="n">wf_dmg_fs</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>failure</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fa8f588c-1180-4033-ba6d-28660dcb7112</td>
+      <td>1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7a78c727-bc47-4010-bed6-7775660dc6f6</td>
+      <td>1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,0,0,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cced02f4-a461-44e5-9a31-3a6f9ee26738</td>
+      <td>0,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49c79885-9252-4618-9d91-6d0c1195e93e</td>
+      <td>1,0,1,0,0,1,0,1,0,0,1,0,1,1,1,0,1,1,0,1,0,1,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>a699e027-f484-4d2b-960d-c1c2aa500724</td>
+      <td>0,0,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,0,0,1,1,1,1,...</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pipeline-functionality">
+<h4>7.1.3 Pipeline functionality<a class="headerlink" href="#pipeline-functionality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp_func</span> <span class="o">=</span> <span class="n">PipelineFunctionality</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">pp_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;mmsa_pipeline_functionality&quot;</span><span class="p">)</span>
+<span class="n">pp_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="n">nsamp</span><span class="p">)</span>
+<span class="n">pp_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pipeline_repair_rate_damage&quot;</span><span class="p">,</span> <span class="n">pipeline_dmg_result</span><span class="p">)</span>
+
+<span class="n">pp_func</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+
+<span class="n">pp_dmg_fs</span> <span class="o">=</span> <span class="n">pp_func</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;sample_failure_state&quot;</span><span class="p">)</span>
+<span class="n">pp_dmg_fs</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>failure</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0a076a0d-54fa-4f82-a8af-ce3bd227fcfa</td>
+      <td>1,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cee37f5e-6e62-40e6-be5a-485d5c78bd25</td>
+      <td>1,1,0,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>77f5d8b6-ad73-4959-b357-0c512d8f2bcd</td>
+      <td>1,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>07267d06-089e-4db7-a479-1794cdc23be3</td>
+      <td>1,1,1,1,0,1,0,1,1,1,1,1,1,0,1,0,1,0,1,1,1,0,0,...</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ec3d4c41-ae4a-4489-9984-1d96e7f4ae06</td>
+      <td>1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,1,0,0,1,1,0,1,0,...</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="water-network-functionality">
+<h4>7.1.4 Water network functionality<a class="headerlink" href="#water-network-functionality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wfn_func</span> <span class="o">=</span> <span class="n">WfnFunctionality</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wfn_network&quot;</span><span class="p">,</span> <span class="n">water_network_dataset</span><span class="p">)</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;wf_sample_failure_state&quot;</span><span class="p">,</span> <span class="n">wf_dmg_fs</span><span class="p">)</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;pp_sample_failure_state&quot;</span><span class="p">,</span> <span class="n">pp_dmg_fs</span><span class="p">)</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;mmsa_wfn_functionality&quot;</span><span class="p">)</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;tank_node_list&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;pumpstation_node_list&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+
+<span class="c1"># Run Analysis</span>
+<span class="n">wfn_func</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+<span class="n">wfn_dmg_fs</span> <span class="o">=</span> <span class="n">wfn_func</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;sample_failure_state&quot;</span><span class="p">)</span>
+<span class="n">wfn_dmg_fs_df</span> <span class="o">=</span> <span class="n">wfn_dmg_fs</span><span class="o">.</span><span class="n">get_dataframe_from_shapefile</span><span class="p">()</span>
+<span class="n">wfn_dmg_fs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>failure</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>d4599f71-07bd-4989-befb-aaa9c02bdffb</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>d28be28f-84b3-4ae9-985b-61423585fd5c</td>
+      <td>1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1....</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>60820263-9de6-474d-a2c6-cb33ad5d2efa</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6e7917b0-4ec4-45b0-ac13-c59f4c277e21</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ffc82be0-9efe-4153-be58-92a020c03b2d</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="check-for-convergence">
+<h4>7.1.4 Check for convergence<a class="headerlink" href="#check-for-convergence" title="Permalink to this heading">#</a></h4>
+<p>cov of the estimator for every node should be less than 0.05</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_wfn_dmg_fs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">wfn_dmg_fs_df</span><span class="o">.</span><span class="n">failure</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">wfn_dmg_fs_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]),</span>
+            <span class="n">index</span><span class="o">=</span><span class="n">wfn_dmg_fs_df</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">cov</span> <span class="o">=</span> <span class="n">new_wfn_dmg_fs_df</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">new_wfn_dmg_fs_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">nsamp</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">cov</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d4599f71-07bd-4989-befb-aaa9c02bdffb    0.001195
+d28be28f-84b3-4ae9-985b-61423585fd5c    0.006199
+60820263-9de6-474d-a2c6-cb33ad5d2efa    0.000771
+6e7917b0-4ec4-45b0-ac13-c59f4c277e21    0.000787
+ffc82be0-9efe-4153-be58-92a020c03b2d    0.000826
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-mean-functionality-dataframe">
+<h4>7.1.5 Creating mean functionality dataframe<a class="headerlink" href="#creating-mean-functionality-dataframe" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_func_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_wfn_dmg_fs_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;functionality&#39;</span><span class="p">])</span>
+<span class="n">mean_func_df</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_func_df</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mean_func_df</span><span class="o">.</span><span class="n">functionality</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 7.,  5.,  2.,  5.,  4., 11.]),
+ array([0.008, 0.172, 0.335, 0.498, 0.662, 0.825, 0.988]),
+ &lt;BarContainer object of 6 artists&gt;)
+</pre></div>
+</div>
+<img alt="../../_images/2c15790a7d3b1830d14abe3f44dd77e70a0787d69001bec13a2fa150214ff754.png" src="../../_images/2c15790a7d3b1830d14abe3f44dd77e70a0787d69001bec13a2fa150214ff754.png" />
+</div>
+</div>
+</section>
+<section id="plotting-the-damage-to-water-pipelines-and-facilities-together-and-also-showing-the-junctions">
+<h4>7.1.6 Plotting the damage to water pipelines and facilities together and also showing the junctions<a class="headerlink" href="#plotting-the-damage-to-water-pipelines-and-facilities-together-and-also-showing-the-junctions" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joined_waterjunctions_gdf</span> <span class="o">=</span> <span class="n">waterjunctions_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mean_func_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">pipeline_gdf</span><span class="p">,</span><span class="s1">&#39;pipelinehz&#39;</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">category</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">legend_kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Probability of being functional&quot;</span><span class="p">,</span><span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">}</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_waterjunctions_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;functionality&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">legend_kwds</span><span class="o">=</span><span class="n">legend_kwds</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f2ad5fcccf2120c3ef8b2db29d037704708b4365e6f3cccee3fb20400dc178ec.png" src="../../_images/f2ad5fcccf2120c3ef8b2db29d037704708b4365e6f3cccee3fb20400dc178ec.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="electric-power-infrastructure">
+<h3>7.2 Electric Power Infrastructure<a class="headerlink" href="#electric-power-infrastructure" title="Permalink to this heading">#</a></h3>
+<section id="plot-eletric-power-infrastructure">
+<h4>7.2.1 Plot eletric power infrastructure<a class="headerlink" href="#plot-eletric-power-infrastructure" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epn_network_graph</span> <span class="o">=</span> <span class="n">epn_network</span><span class="o">.</span><span class="n">get_graph_networkx</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # TODO: replace with our plot_network_graph in the next release</span>
+<span class="c1"># NetworkUtil.plot_network_graph(epn_network_graph, pos)</span>
+<span class="n">epn_network_geoms</span> <span class="o">=</span> <span class="n">powerfacility_gdf</span><span class="p">[[</span><span class="s2">&quot;nodenwid&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">epn_network_geoms</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">pos</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;nodenwid&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">epn_network_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">),</span><span class="n">epn_network_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">epn_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">epn_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">epn_network_graph</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x7ff406435a60&gt;
+</pre></div>
+</div>
+<img alt="../../_images/db6258d8738f5ab30f6d612e5e2bb0e659b975b2595d203fadf2fe274188757c.png" src="../../_images/db6258d8738f5ab30f6d612e5e2bb0e659b975b2595d203fadf2fe274188757c.png" />
+</div>
+</div>
+</section>
+<section id="montecarlo-simulation-compute-electric-power-facility-functionality">
+<h4>7.2.2 Montecarlo simulation compute electric power facility functionality¶<a class="headerlink" href="#montecarlo-simulation-compute-electric-power-facility-functionality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_ep</span> <span class="o">=</span> <span class="n">MonteCarloFailureProbability</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;damage&quot;</span><span class="p">,</span> <span class="n">epf_dmg_result</span><span class="p">)</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;epf_dmg_mc&quot;</span><span class="p">)</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_cpu&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">nsamp</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="n">nsamp</span><span class="p">)</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;damage_interval_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_0&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_1&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_2&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_4&quot;</span><span class="p">])</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;failure_state_keys&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;DS_3&quot;</span><span class="p">,</span> <span class="s2">&quot;DS_4&quot;</span><span class="p">])</span>
+<span class="n">mc_ep</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epf_dmg_fs</span> <span class="o">=</span> <span class="n">mc_ep</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;sample_failure_state&quot;</span><span class="p">)</span>
+<span class="n">epf_dmg_fs</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>failure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>75941d02-93bf-4ef9-87d3-d882384f6c10</td>
+      <td>1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,0,1,1,...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>35909c93-4b29-4616-9cd3-989d8d604481</td>
+      <td>1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ce7d3164-ffda-4ac0-a9fa-d88c927897cc</td>
+      <td>1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b2bed3e1-f16c-483a-98e8-79dfd849d187</td>
+      <td>1,0,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,1,1,1,1,1,1,...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ab011d7c-0e34-4e5d-9734-34f7858d4b68</td>
+      <td>1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="electric-power-network-functionality">
+<h4>7.2.3 Electric Power Network functionality<a class="headerlink" href="#electric-power-network-functionality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epn_func</span> <span class="o">=</span> <span class="n">EpnFunctionality</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">epn_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epn_network&quot;</span><span class="p">,</span> <span class="n">epn_network_dataset</span><span class="p">)</span>
+<span class="n">epn_func</span><span class="o">.</span><span class="n">set_input_dataset</span><span class="p">(</span><span class="s2">&quot;epf_sample_failure_state&quot;</span><span class="p">,</span> <span class="n">epf_dmg_fs</span><span class="p">)</span>
+
+<span class="n">epn_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;result_name&quot;</span><span class="p">,</span> <span class="s2">&quot;mmsa_epn_functionality&quot;</span><span class="p">)</span>
+<span class="n">epn_func</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="s2">&quot;gate_station_node_list&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="c1"># Run Analysis</span>
+<span class="n">epn_func</span><span class="o">.</span><span class="n">run_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epn_dmg_fs</span> <span class="o">=</span> <span class="n">epn_func</span><span class="o">.</span><span class="n">get_output_dataset</span><span class="p">(</span><span class="s2">&quot;sample_failure_state&quot;</span><span class="p">)</span>
+<span class="n">epn_dmg_fs_df</span> <span class="o">=</span> <span class="n">epn_dmg_fs</span><span class="o">.</span><span class="n">get_dataframe_from_csv</span><span class="p">()</span>
+<span class="n">epn_dmg_fs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>guid</th>
+      <th>failure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>d658bb62-5b1e-4733-a53e-3805d4a2e2f4</td>
+      <td>1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2a5eff60-6cf3-4124-97fc-921fb9b73b6c</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>b3c6c503-417a-4d27-8fa0-db7837f7697c</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1....</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0174d606-3864-4d5d-acbe-4f7f10c36c8e</td>
+      <td>1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1....</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>059ef072-0910-4a33-86c6-9221e58e04bf</td>
+      <td>1.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0....</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id1">
+<h4>7.2.4 Check for convergence<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>cov of the estimator for every node should be less than 0.05</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_epn_dmg_fs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">epn_dmg_fs_df</span><span class="o">.</span><span class="n">failure</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">epn_dmg_fs_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]),</span>
+            <span class="n">index</span><span class="o">=</span><span class="n">epn_dmg_fs_df</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">cov</span> <span class="o">=</span> <span class="n">new_epn_dmg_fs_df</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">new_epn_dmg_fs_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">nsamp</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">cov</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d658bb62-5b1e-4733-a53e-3805d4a2e2f4    0.011293
+2a5eff60-6cf3-4124-97fc-921fb9b73b6c    0.010131
+b3c6c503-417a-4d27-8fa0-db7837f7697c    0.010251
+0174d606-3864-4d5d-acbe-4f7f10c36c8e    0.010191
+059ef072-0910-4a33-86c6-9221e58e04bf    0.015472
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h4>7.2.5 Creating mean functionality dataframe<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_func_ep_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_epn_dmg_fs_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;functionality&#39;</span><span class="p">])</span>
+<span class="n">mean_func_ep_df</span><span class="p">[</span><span class="s1">&#39;guid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_func_ep_df</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mean_func_ep_df</span><span class="o">.</span><span class="n">functionality</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 5.,  2.,  6., 10., 13., 14.]),
+ array([0.573, 0.633, 0.692, 0.752, 0.812, 0.871, 0.931]),
+ &lt;BarContainer object of 6 artists&gt;)
+</pre></div>
+</div>
+<img alt="../../_images/ef8c29748c0e4b1ee125e465d85e80737a34815e4fec662ba6248952b8d38b7a.png" src="../../_images/ef8c29748c0e4b1ee125e465d85e80737a34815e4fec662ba6248952b8d38b7a.png" />
+</div>
+</div>
+</section>
+<section id="plotting-the-damage-to-power-facilities-and-also-showing-the-powerlines">
+<h4>7.2.6 Plotting the damage to power facilities and also showing the powerlines<a class="headerlink" href="#plotting-the-damage-to-power-facilities-and-also-showing-the-powerlines" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joined_powerfacility_gdf</span> <span class="o">=</span> <span class="n">powerfacility_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mean_func_ep_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;guid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">powerline_gdf</span><span class="p">,</span><span class="s1">&#39;pipetype&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">)</span>
+<span class="n">legend_kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Probability of being functional&quot;</span><span class="p">,</span><span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">}</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">my_plot_gdf_map</span><span class="p">(</span><span class="n">joined_powerfacility_gdf</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;functionality&#39;</span><span class="p">,</span><span class="n">category</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">legend_kwds</span><span class="o">=</span><span class="n">legend_kwds</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/958606aa314f1a3f3022e16f07cc4fa9a6d0c597b71e2d7a74f2cb13dfbd13e7.png" src="../../_images/958606aa314f1a3f3022e16f07cc4fa9a6d0c597b71e2d7a74f2cb13dfbd13e7.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/MMSA_testbed"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Seaside_testbed/Seaside_testbed.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Seaside Example Notebook 1: Multi-Hazard Building Damage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MMSA_Seismic_Functionality_and_Restoration_Analysis_for_Interdependent_Buildings-Water-Power_using_Restoration_Curves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MMSA: Seismic Functionality and Restoration Analysis for Interdependent Buildings-Water-Power using Restoration Curves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-buidings-and-infrastructure">2. Description of buidings and infrastructure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyincore">3. pyIncore</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">3.1 Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-python-modules">3.2 Importing Python Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-seismic-characteristics-of-the-scenario-earthquake">4. Defining the seismic characteristics of the scenario earthquake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage-analysis">5. Building damage analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-damage">5.1 Building damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-chart">5.2 Creating a chart</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-damage-analysis">6. Infrastructure Damage Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potable-water-pipelines-and-facilities">6.1 Potable water pipelines and facilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-water-network-and-its-components-in-shelby-county-tn">Load water network and its components in Shelby county, TN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-damage-repair-rate">6.1.1 Pipeline damage repair rate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-facility-damage">6.1.2 water facility damage</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-transmission-lines-and-facilities">6.2 Electric power transmission lines and facilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-electric-power-network-and-its-components-in-shelby-county-tn">Load Electric power network and its components in Shelby county, TN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#epf-damage">6.2.1 EPF damage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-functionality-analysis">7. Infrastructure Functionality Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potable-water-infrastructure">7.1 Potable Water Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-water-network">7.1.1 plot the water network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montecarlo-simulation-compute-water-facility-functionality">7.1.2 Montecarlo simulation compute water facility functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-functionality">7.1.3 Pipeline functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-network-functionality">7.1.4 Water network functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-convergence">7.1.4 Check for convergence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mean-functionality-dataframe">7.1.5 Creating mean functionality dataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-damage-to-water-pipelines-and-facilities-together-and-also-showing-the-junctions">7.1.6 Plotting the damage to water pipelines and facilities together and also showing the junctions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-infrastructure">7.2 Electric Power Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-eletric-power-infrastructure">7.2.1 Plot eletric power infrastructure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montecarlo-simulation-compute-electric-power-facility-functionality">7.2.2 Montecarlo simulation compute electric power facility functionality¶</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-power-network-functionality">7.2.3 Electric Power Network functionality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.4 Check for convergence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.5 Creating mean functionality dataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-damage-to-power-facilities-and-also-showing-the-powerlines">7.2.6 Plotting the damage to power facilities and also showing the powerlines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By IN-CORE Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
