@@ -228,3 +228,6 @@ If you have problems running Notebooks, check our [WIKI questions](https://opens
 * IN-CORE's Frequently Asked Questions ([FAQ](faq)) and [WIKI Questions](https://opensource.ncsa.illinois.edu/confluence/display/INCORE1/questions/all) for detail information. 
 
 * The Building analysis Jupyter Notebook is also available at [IN-CORE project](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/bridge_dmg.ipynb) on GitHub.
+* Our Slack channel is now open to the community. To get started, go to
+  [https://in-core.slack.com/](https://in-core.slack.com/). Or, you can grab an invitation here:
+[https://join.slack.com/t/in-core/shared_invite/zt-25zffgnae-h0v8uGjpSli1YYp0Ypr68Q](https://join.slack.com/t/in-core/shared_invite/zt-25zffgnae-h0v8uGjpSli1YYp0Ypr68Q)

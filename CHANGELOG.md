@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [Unreleased]
+### Added
+- Slack channel information to getting started and contact page [#289](https://github.com/IN-CORE/incore-docs/issues/289)
 
 ### Changed
 - Update damage analysis documentations with hazard object input [#282](https://github.com/IN-CORE/incore-docs/issues/282)
