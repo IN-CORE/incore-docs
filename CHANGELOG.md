@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - The notebook create_network_dataset.ipynb fails on nx.info [#284](https://github.com/IN-CORE/incore-docs/issues/284)
+- Table of contents list of analyses to include all analyses [#293](https://github.com/IN-CORE/incore-docs/issues/293)
 - Local hazard tutorial tornado example x,y values [#291](https://github.com/IN-CORE/incore-docs/issues/291)
 
 ## [4.6.0] - 2023-10-11
