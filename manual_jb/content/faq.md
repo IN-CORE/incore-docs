@@ -22,6 +22,11 @@
 
 ## pyIncore
 
+*   *What is the minimum version of Python I need?*
+
+    The current minimum version of Python for running the latest pyincore is 3.9 or higher.
+    <br>
+    <br>
 
 *   *What’s the difference between Anaconda, conda, and Miniconda?*
     
