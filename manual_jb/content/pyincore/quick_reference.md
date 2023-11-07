@@ -15,7 +15,7 @@
    
 4. Create the python environment (for this example we choose `pyincoreEnv`):
     ```
-    conda create -n pyincoreEnv python=3.8
+    conda create -n pyincoreEnv python=3.9
     ```
    
 5. Activate the environment:
@@ -29,7 +29,7 @@
     ```
    If the installed pyincore or pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
     ```
-    conda install -c in-core pyincore-viz=1.7.0 (or your version of choice)
+    conda install -c in-core pyincore-viz=1.8.3 (or your version of choice)
     ```
    Version information for pyincore and pyincore-viz can be found in
     - https://anaconda.org/IN-CORE/pyincore

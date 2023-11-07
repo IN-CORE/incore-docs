@@ -55,7 +55,7 @@ If you don't have Miniconda installed, do the following steps.
    
 3. Create the python environment (for this example we choose `pyincoreEnv`):
     ```
-    conda create -n pyincoreEnv python=3.8
+    conda create -n pyincoreEnv python=3.9
     ```
    
 4. Activate the environment:
@@ -73,7 +73,7 @@ If you don't have Miniconda installed, do the following steps.
     ```
    If the installed pyincore or pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
     ```
-    conda install -c in-core pyincore=1.5.0 (or your version of choice)
+    conda install -c in-core pyincore=1.14.0 (or your version of choice)
     ```
    Version information for pyincore and pyincore-viz can be found in
    - https://anaconda.org/IN-CORE/pyincore

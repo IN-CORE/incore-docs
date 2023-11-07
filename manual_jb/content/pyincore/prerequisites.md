@@ -15,16 +15,16 @@
     so installing Python first is not needed. The `conda` is the preferred interface for managing installations 
     and virtual environments with the Miniconda/Anaconda.
 
-- `Python 3.6 through 3.8` <https://www.python.org/>
-    It is common to have more than one Python version installed on your computer. Since we recommend using virtual environment, your
-    Python will be "encapsulated" by the environment with version specified at the environment creation. Deleting environment removes 
+- `Python 3.9 or higher` <https://www.python.org/>
+    It is common to have more than one Python version installed on your computer. Since we recommend using a virtual environment, your
+    Python will be "encapsulated" by the environment with the version specified at the environment creation. Deleting the environment removes
     that particular Python. 
-    If you install Miniconda/Anaconda make sure you are running the correct version of Python, for example `/Users/<username>>/anaconda3/bin/python`.
+    If you install Miniconda/Anaconda, make sure you are running the correct version of Python, for example `/Users/<username>/anaconda3/bin/python`.
     
     The Python big picture: Most out-of-the-box [Windows installations](https://wiki.python.org/moin/BeginnersGuide/Download) do not come with Python pre-installed. On the other hand Mac OS and most 
-    modern Linux distributions do have Python installed. However the version 2.7 pre-installed by Apple is no longer supported (MacOS after 10.15 Catalina
+    modern Linux distributions do have Python installed. However, the version 2.7 pre-installed by Apple is no longer supported (MacOS after 10.15 Catalina
     will not include a default system Python at all). It is common that users [download](https://www.python.org/downloads) and install newer or additional version of Python. 
-    Therefore it is always a good idea to check. Open Windows Powershell or Mac/Linux Terminal, and enter the following:
+    Therefore, it is always a good idea to check. Open Windows Powershell or Mac/Linux Terminal, and enter the following:
     ```
     python --version
     python3 --version
@@ -41,7 +41,7 @@
     Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately 
     in your virtual environment on Miniconda.
 
-In the Installation section we provide instructions for both environment managers starting with [Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
+In the Installation section, we provide instructions for both environment managers starting with [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 Similar instructions apply to full [Anaconda](https://docs.anaconda.com/anaconda/install/) manager. Python 3.x is installed with both versions. 
 The following instructions were tested for Mac, Windows and Linux 64-bit OS.
 
@@ -65,7 +65,7 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
 
 4. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
     ```
-    conda create -n pyincoreEnv python=3.7
+    conda create -n pyincoreEnv python=3.9
     conda activate pyincoreEnv
     ```
 
@@ -94,10 +94,10 @@ The following instructions were tested for Mac, Windows and Linux 64-bit OS.
     
 4. Create the python environment (for this example we choose `pyincoreEnv`) and activate it (or stay in the `base`):
     ```
-    conda create -n pyincoreEnv python=3.8
+    conda create -n pyincoreEnv python=3.9
     conda activate pyincoreEnv
     ```
-    You should see `pyincoreEnv` in parenthesis before the command prompt, meaning you set up the new virtual environment and are now using it.
+    You should see `pyincoreEnv` in parentheses before the command prompt, meaning you set up the new virtual environment and are now using it.
 
 5. Add [conda-forge](https://conda-forge.org/) package repository to your environment:
     ```

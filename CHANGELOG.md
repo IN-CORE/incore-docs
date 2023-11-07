@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Update damage analysis documentations with hazard object input [#282](https://github.com/IN-CORE/incore-docs/issues/282)
-- Building Portfolio Recovery analysis notebook [286](https://github.com/IN-CORE/incore-docs/issues/286)
+- Building Portfolio Recovery analysis notebook [#286](https://github.com/IN-CORE/incore-docs/issues/286)
+- Minimum version of python references to 3.9 [#295](https://github.com/IN-CORE/incore-docs/issues/295)
 
 ### Fixed
 - The notebook create_network_dataset.ipynb fails on nx.info [#284](https://github.com/IN-CORE/incore-docs/issues/284)
