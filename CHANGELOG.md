@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [Unreleased]
+## [4.7.0] - 2023-11-08
+
 ### Added
 - Slack channel information to getting started and contact page [#289](https://github.com/IN-CORE/incore-docs/issues/289)
 
