@@ -22,14 +22,21 @@ with corresponding damage states. The second output file is a JSON with informat
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Hazard type (earthquake).
-`hazard_id` <sup>*</sup> | `str` | Hazard id | ID of the hazard from the Hazard service.
+`hazard_type` | `str` | Hazard type | Hazard type (earthquake).
+`hazard_id` | `str` | Hazard id | ID of the hazard from the Hazard service.
 `fragility_key_as` | `str` | AS fragility | Acceleration-sensitive fragility key used in mapping dataset.
 `fragility_key_ds` | `str` | DS fragility | Drift-sensitive fragility key used in mapping dataset.
 `use_liquefation` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard. <br>Default *False*.
 `liq_geology_dataset_id` | `str` | Liquefaction id | A liquefaction susceptibility dataset.
 `use_hazard_uncertainty` | `bool` | Uncertainty | Use hazard uncertainty. Default is <br>*False*.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations. <br>Default *1*.
+
+**Input Hazards**
+
+key name | type          | name          | description
+--- |---------------|---------------| ---
+`hazard` | `earthquake`  | Hazard | Supported hazard object for using local and remote hazards.
+
 
 **Input Datasets**
 

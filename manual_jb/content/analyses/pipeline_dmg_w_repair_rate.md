@@ -17,12 +17,18 @@ The outputs of this analysis are CSV file with probabilities of damage and JSON 
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`hazard_type` <sup>*</sup> | `str` | Hazard type | Earthquake hazard type.
-`hazard_id` <sup>*</sup> | `str` | Hazard ID | ID of the hazard from the Hazard service.
+`hazard_type` | `str` | Hazard type | Earthquake hazard type.
+`hazard_id` | `str` | Hazard ID | ID of the hazard from the Hazard service.
 `fragility_key` | `str` | Fragility key | Fragility key used in mapping dataset.
 `use_liquefaction` | `bool` | Liquefaction | Use liquefaction, if applicable to the hazard.<br>Default is *False*.
 `liquefaction_fragility_key` | `str` | Liquefaction key | Fragility key used in mapping dataset.
 `num_cpu` | `int` | Number of CPUs | Number of CPUs used for parallel computations.<br>Default *1*.
+
+**Input Hazards**
+
+key name | type | name | description
+--- |---|---| ---
+`hazard` | `earthquake`<br>`tsunami` | Hazard | Supported hazard object for using local and remote hazards.
 
 **Input Datasets**
 

@@ -20,34 +20,42 @@ chapters:
       - file: analyses/building_loss
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
+      - file: analyses/combined_wind_wave_surge_building_loss
+      - file: analyses/commercial_building_recovery
       - file: analyses/cumulative_building_dmg
       - file: analyses/epf_dmg
+      - file: analyses/epf_repair_cost
       - file: analyses/epf_restoration
       - file: analyses/epn_functionality
+      - file: analyses/galveston_cge
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
+      - file: analyses/indp
       - file: analyses/joplin_cge
       - file: analyses/joplin_empirical_restoration
       - file: analyses/mean_dmg
-      - file: analyses/multi_retrofit_optimization
       - file: analyses/mc_failure_prob
+      - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
       - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
       - file: analyses/pipeline_functionality
+      - file: analyses/pipeline_repair_cost
       - file: analyses/pipeline_restoration
       - file: analyses/populationdislocation
       - file: analyses/portfolio_recovery
       - file: analyses/residential_building_recovery
       - file: analyses/road_dmg
+      - file: analyses/slc_cge
       - file: analyses/seaside_cge
       - file: analyses/social_vulnerability
       - file: analyses/tornadoepn_dmg
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
       - file: analyses/wfn_functionality
+      - file: analyses/water_facility_repair_cost
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data

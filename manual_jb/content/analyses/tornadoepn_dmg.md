@@ -22,7 +22,13 @@ repair cost for each node, total repair cost for the network and total repair ti
 key name | type | name | description
 --- | --- | --- | ---
 `result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`tornado_id` <sup>*</sup> | `str` | Tornado id | ID of the tornado dataset from the Hazard service.
+`tornado_id` | `str` | Tornado id | ID of the tornado dataset from the Hazard service.
+
+**Input Hazards**
+
+key name | type | name  | description
+--- |-------|--------| ---
+`hazard` | `tornado` | Hazard  | Supported hazard object for using local and remote hazards.
 
 **Input Datasets**
 
