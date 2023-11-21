@@ -1,0 +1,90 @@
+{
+    "description": "Mean structural repair cost probabilities for archetype T7",
+    "authors": [
+        "Maria Koliou",
+        "John W. van de Lindt"
+    ],
+    "paperReference": {
+        "name": "Development of Building Restoration Functions for Use inCommunity Recovery Planning to Tornadoes",
+        "doi": "https://doi.org/10.1061/(ASCE)NH.1527-6996.0000361",
+        "yearPublished": "2020"
+    },
+    "resultUnit": null,
+    "resultType": "Percent of Functionality",
+    "hazardType": "tornado",
+    "inventoryType": "building",
+    "creator": "vnarah2",
+    "owner": "vnarah2",
+    "curveParameters": [
+        {
+            "name": "repair_time",
+            "unit": "days",
+            "description": "Can be a numpy ndarray or a numeric value.",
+            "fullName": "repair_time",
+            "expression": null
+        }
+    ],
+    "timeUnits": "days",
+    "repairCurves": [
+        {
+            "description": "Slight",
+            "rules": [
+                {
+                    "condition": null,
+                    "expression": "scipy.stats.lognorm.cdf(repair_time, s=0.58, scale=numpy.exp(2.15))"
+                }
+            ],
+            "returnType": {
+                "type": "Percent of Functionality",
+                "unit": "",
+                "description": "PF_0"
+            },
+            "curveParameters": null
+        },
+        {
+            "description": "Moderate",
+            "rules": [
+                {
+                    "condition": null,
+                    "expression": "scipy.stats.lognorm.cdf(repair_time, s=0.54, scale=numpy.exp(3.28))"
+                }
+            ],
+            "returnType": {
+                "type": "Percent of Functionality",
+                "unit": "",
+                "description": "PF_1"
+            },
+            "curveParameters": null
+        },
+        {
+            "description": "Extensive",
+            "rules": [
+                {
+                    "condition": null,
+                    "expression": "scipy.stats.lognorm.cdf(repair_time, s=0.51, scale=numpy.exp(4.69))"
+                }
+            ],
+            "returnType": {
+                "type": "Percent of Functionality",
+                "unit": "",
+                "description": "PF_2"
+            },
+            "curveParameters": null
+        },
+        {
+            "description": "Complete",
+            "rules": [
+                {
+                    "condition": null,
+                    "expression": "scipy.stats.lognorm.cdf(repair_time, s=0.51, scale=numpy.exp(5.51))"
+                }
+            ],
+            "returnType": {
+                "type": "Percent of Functionality",
+                "unit": "",
+                "description": "PF_3"
+            },
+            "curveParameters": null
+        }
+    ]
+}
