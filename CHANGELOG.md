@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [Unreleased]
+
+### Added
+- Add ASCE 2023 INSPIRE workshop material [#303](https://github.com/IN-CORE/incore-docs/issues/303)
+
 ## [4.7.0] - 2023-11-08
 
 ### Added
