@@ -90,6 +90,14 @@ chapters:
         - file: workshops/20220131/session2/session2-hazard.ipynb
         - file: workshops/20220131/session3/session3-building_damage_analysis.ipynb
         - file: workshops/20220131/session4/session4-damage-analyses-lifelines.ipynb
+    - file: workshops/20231115/agenda
+      sections:
+        - file: workshops/20231115/session1/session1-jupyter-intro.ipynb
+        - file: workshops/20231115/session2/session2-remote-and-local-hazards.ipynb
+        - file: workshops/20231115/session2/session2-assignment.ipynb
+        - file: workshops/20231115/session2/session2-assignment-answers.ipynb
+        - file: workshops/20231115/session3/session3-bldg-dmg-recv.ipynb
+        - file: workshops/20231115/session4/session4-building-dmg-recovery-local-data.ipynb
 - file: notebooks
   sections:
     - file: notebooks/Galveston_testbed/Galveston_testbed.ipynb
