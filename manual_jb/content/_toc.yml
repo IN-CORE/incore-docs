@@ -97,7 +97,7 @@ chapters:
         - file: workshops/20231115/session2/session2-assignment.ipynb
         - file: workshops/20231115/session2/session2-assignment-answers.ipynb
         - file: workshops/20231115/session3/session3-bldg-dmg-recv.ipynb
-        - file: workshops/20231115/session4/session4-building-dmg-recovery-local-data.ipynb
+        - file: workshops/20231115/session4/session4-building-damage-recovery-local-data.ipynb
 - file: notebooks
   sections:
     - file: notebooks/Galveston_testbed/Galveston_testbed.ipynb

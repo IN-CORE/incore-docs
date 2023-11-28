@@ -12,7 +12,7 @@
 3. Building Damage and Recovery Analyses with IN-CORE Web Services
     * [Session 3: Building Damage and Recovery Analyses with IN-CORE Web Services](session3/session3-bldg-dmg-recv.ipynb)
 4. Building Damage and Recovery Analyses with Local Data
-    * [Session 4: Building Damage and Recovery Analyses with Local Data](session4/session4-building-dmg-recovery-local-data.ipynb)
+    * [Session 4: Building Damage and Recovery Analyses with Local Data](session4/session4-building-damage-recovery-local-data.ipynb)
 
 Download the full directory of the files above:
 
