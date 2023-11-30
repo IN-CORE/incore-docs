@@ -36,15 +36,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`water_facilities` <sup>*</sup> | `ergo:waterFacilityTopo` | Facility dataset |  A water facility dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`water_facilities` <sup>*</sup> | [`ergo:waterFacilityTopo`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityTopo) | Facility dataset |  A water facility dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets** 
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:waterFacilityDamageVer5` | `water_facilities` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:waterFacilityDamageSupplement` | `water_facilities` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | [`ergo:waterFacilityDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityDamageVer5) | `water_facilities` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | [`incore:waterFacilityDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityDamageSupplement) | `water_facilities` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

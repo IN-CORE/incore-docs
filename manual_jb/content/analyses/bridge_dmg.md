@@ -30,8 +30,8 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`bridges` <sup>*</sup> | `ergo:bridges` | Bridge dataset | A bridge dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`bridges` <sup>*</sup> | [`ergo:bridges`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:bridges) | Bridge dataset | A bridge dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Input Hazards**
 
@@ -43,8 +43,8 @@ key name | type                                                             | na
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:bridgeDamageVer2` | `bridges` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:bridgeDamageSupplement` | `bridges` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | [`ergo:bridgeDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:bridgeDamageVer2) | `bridges` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | [`incore:bridgeDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:bridgeDamageSupplement) | `bridges` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

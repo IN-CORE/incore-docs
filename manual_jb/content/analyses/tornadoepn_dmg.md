@@ -34,16 +34,16 @@ key name | type | name  | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`epn_network` <sup>*</sup> | `incore:epnNetwork` | EPN network dataset | A network dataset of the electric power network.
+`epn_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | EPN network dataset | A network dataset of the electric power network.
 `seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
-`tornado` <sup>*</sup>| `incore:tornadoWindfield` | Tornado dataset | A tornado winds dataset.
+`tornado` <sup>*</sup>| [`incore:tornadoWindfield`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:tornadoWindfield) | Tornado dataset | A tornado winds dataset.
 
 **Output Datasets** 
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:tornadoEPNDamageVer3` | `epn_network` | Results | A dataset containing results <br>(format: CSV).
-`metadata` <sup>*</sup> | `incore:tornadoEPNDamageSupplement` | `epn_network` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | [`incore:tornadoEPNDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:tornadoEPNDamageVer3) | `epn_network` | Results | A dataset containing results <br>(format: CSV).
+`metadata` <sup>*</sup> | [`incore:tornadoEPNDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:tornadoEPNDamageSupplement) | `epn_network` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

@@ -42,15 +42,15 @@ key name | type          | name          | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:nsBuildingInventoryDamageVer2` | `buildings` | Results | A dataset containing results <br>with both, acceleration sensitivy (AS) related <br>and drift sensitivity (DS) related damage states <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:nsBuildingInventoryDamageSupplement` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamageVer2) | `buildings` | Results | A dataset containing results <br>with both, acceleration sensitivy (AS) related <br>and drift sensitivity (DS) related damage states <br>(format: CSV).
+`damage_result` <sup>*</sup> | [`incore:nsBuildingInventoryDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:nsBuildingInventoryDamageSupplement) | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 
