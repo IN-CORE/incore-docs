@@ -31,9 +31,9 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
-`retrofit_strategy` | `incore:retrofitStrategy` | Retrofit Strategy | Building retrofit strategy that contains guid and retrofit method.
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`retrofit_strategy` | [`incore:retrofitStrategy`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:retrofitStrategy) | Retrofit Strategy | Building retrofit strategy that contains guid and retrofit method.
 
 **Input Hazards**
 
@@ -46,8 +46,8 @@ key name | type                                                             | na
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`ds_result` <sup>*</sup> | `ergo:buildingDamageVer5` | `buildings` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:buildingDamageSupplement` | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`ds_result` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | [`incore:buildingDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingDamageSupplement) | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

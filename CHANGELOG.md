@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added 
 - Update building damage analysis documentations with hazard object input [#300](https://github.com/IN-CORE/incore-docs/issues/300)
+- Add requestHandler in swagger docs to redirect to login page if any of the urls passed returns 401 [#306](https://github.com/IN-CORE/incore-docs/issues/306)
+
+### Changed
+- Added semantic data type url linking for the data type in the analyses markdowns [#299](https://github.com/IN-CORE/incore-docs/issues/299)
 
 ## [4.7.0] - 2023-11-08
 

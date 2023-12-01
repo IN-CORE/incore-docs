@@ -24,20 +24,20 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`SAM` <sup>*</sup> | `incore:SeasideCGEsam` | Social matrix | A social accounting matrix.
-`BB` <sup>*</sup> | `incore:SeasideCGEbb` | Capital composition | A matrix of functioning capital.
-`HHTABLE` <sup>*</sup> | `incore:SeasideCGEhhtable` | HH Table | HH Table.
-`EMPLOY` <sup>*</sup> | `incore:SeasideCGEemploy` | Employment | Commercial sector employment data.
-`JOBCR` <sup>*</sup> | `incore:SeasideCGEjobcr` | Labor | A matrix of workers groups in the economy.
-`SIMS` <sup>*</sup> | `incore:SeasideCGEsim` | Capitol shocks random number | Random numbers for the change of capital stocks.
-`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
+`SAM` <sup>*</sup> | [`incore:SeasideCGEsam`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEsam) | Social matrix | A social accounting matrix.
+`BB` <sup>*</sup> | [`incore:SeasideCGEbb`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEbb) | Capital composition | A matrix of functioning capital.
+`HHTABLE` <sup>*</sup> | [`incore:SeasideCGEhhtable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEhhtable) | HH Table | HH Table.
+`EMPLOY` <sup>*</sup> | [`incore:SeasideCGEemploy`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEemploy) | Employment | Commercial sector employment data.
+`JOBCR` <sup>*</sup> | [`incore:SeasideCGEjobcr`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEjobcr) | Labor | A matrix of workers groups in the economy.
+`SIMS` <sup>*</sup> | [`incore:SeasideCGEsim`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEsim) | Capitol shocks random number | Random numbers for the change of capital stocks.
+`sector_shocks` <sup>*</sup> | [`incore:capitalShocks`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:capitalShocks) | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`Seaside_Sims` <sup>*</sup> | `incore:SeasideCGEsims` | Cge simulations | A dataset containing Seaside cge simulations (format: CSV).
-`Seaside_output` <sup>*</sup> | `incore:SeasideCGEEmployDS` | Employment supply results | A dataset  of changes in employment and supply. <br>(format: CSV).
+`Seaside_Sims` <sup>*</sup> | [`incore:SeasideCGEsims`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEsims) | Cge simulations | A dataset containing Seaside cge simulations (format: CSV).
+`Seaside_output` <sup>*</sup> | [`incore:SeasideCGEEmployDS`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:SeasideCGEEmployDS) | Employment supply results | A dataset  of changes in employment and supply. <br>(format: CSV).
 
 <small>(* required)</small>
 

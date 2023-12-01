@@ -33,14 +33,14 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline` <sup>*</sup> | `ergo:buriedPipelineTopology`, <br>`ergo:pipeline` | Pipeline  dataset | A pipeline dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`pipeline` <sup>*</sup> | [`ergo:buriedPipelineTopology`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buriedPipelineTopology), <br>[`ergo:pipeline`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipeline) | Pipeline  dataset | A pipeline dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:pipelineDamageVer2` |`pipeline` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | [`incore:pipelineDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineDamageVer2) |`pipeline` | Results | A dataset containing results <br>(format: CSV).
 `damage_result` <sup>*</sup> | `pipelineDamageSupplement` | `pipeline` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>

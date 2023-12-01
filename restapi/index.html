@@ -17,6 +17,14 @@
 
         <script>
           window.onload = function() {
+
+
+            // Function to handle 401 Unauthorized errors
+            function handleUnauthorizedError(response) {
+                console.error("Unauthorized error. Redirecting to login page:", response);
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/login");
+            }
+
             // Build a system
             const ui = SwaggerUIBundle({
               urls: [
@@ -39,25 +47,12 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
-                // requestInterceptor: function (request) {
-                // // Intercept requests and handle errors
-                // return new Promise(function (resolve, reject) {
-                //     fetch(request.url, request)
-                //         .then(function (response) {
-                //             if (!response.ok) {
-                //                 throw new
-                //                 Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
-                //             }
-                //             return response.text();
-                //         })
-                //         .then(function (responseText) {
-                //             resolve({data: responseText, status: 200});
-                //         })
-                //         .catch(function (error) {
-                //             reject(error);
-                //         });
-                // });
-            // },
+              responseInterceptor: (response) => {
+                if (response.status === 401) {
+                    handleUnauthorizedError(response);
+                }
+                return response;
+              }
             });
             window.ui = ui
           };

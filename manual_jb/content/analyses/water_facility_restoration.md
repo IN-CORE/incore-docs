@@ -25,17 +25,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
-`water_facilities` <sup>*</sup> | `ergo:waterFacilityTopo` | Water Facilities | Water Facilities.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`water_facilities` <sup>*</sup> | [`ergo:waterFacilityTopo`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityTopo) | Water Facilities | Water Facilities.
 
 **Output datasets** 
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`time_results` <sup>*</sup> | `incore:waterFacilityRestorationTime` | `water_facilities` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
-`pf_results` <sup>*</sup> | `incore:waterFacilityRestorationFunc` | `water_facilities` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state.
-`inventory_restoration_map` <sup>*</sup> | `incore:inventoryRestorationMap` | `water_facilities` | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
-`func_results` <sup>*</sup> | `incore:waterFacilityDiscretizedRestorationFunc` | Discretized restoration functionality | A csv file recording discretized functionality over time.
+`time_results` <sup>*</sup> | [`incore:waterFacilityRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityRestorationTime) | `water_facilities` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
+`pf_results` <sup>*</sup> | [`incore:waterFacilityRestorationFunc`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityRestorationFunc) | `water_facilities` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state.
+`inventory_restoration_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | `water_facilities` | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
+`func_results` <sup>*</sup> | [`incore:waterFacilityDiscretizedRestorationFunc`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityDiscretizedRestorationFunc) | Discretized restoration functionality | A csv file recording discretized functionality over time.
 
 <small>(* required)</small>
 

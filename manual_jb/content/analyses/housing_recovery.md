@@ -34,16 +34,16 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`population_dislocation` <sup>*</sup> | `incore:popDislocation` | Population Dislocation | A csv file with Population Dislocation aggregated to the block group level.
-`building_area` <sup>*</sup> | `incore:buildingInventoryArea` | Building inventory area |  A csv file with Building square footage and damage. Damage is the actual building value loss in percentage terms observed through the County Appraisal District (GCAD) data. If damage column (dmg) is not available value loss is calculated from Population dislocation's rplosses and damage state (DS) values.
-`census_block_groups_data` <sup>*</sup> | `incore:censusBlockGroupsData` | Census block groups data | Census ACS data, 2010 5yr data for block groups available at IPUMS NHGIS web site.
-`census_appraisal_data` | `incore:censusAppraisalData` | Census appraisal data | Census data, 2010 Decennial Census District (GCAD) Census data. The json file must contain categories B25002_001E, B25002_001M, B25004_006E and B25004_006M.
+`population_dislocation` <sup>*</sup> | [`incore:popDislocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:popDislocation) | Population Dislocation | A csv file with Population Dislocation aggregated to the block group level.
+`building_area` <sup>*</sup> | [`incore:buildingInventoryArea`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingInventoryArea) | Building inventory area |  A csv file with Building square footage and damage. Damage is the actual building value loss in percentage terms observed through the County Appraisal District (GCAD) data. If damage column (dmg) is not available value loss is calculated from Population dislocation's rplosses and damage state (DS) values.
+`census_block_groups_data` <sup>*</sup> | [`incore:censusBlockGroupsData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:censusBlockGroupsData) | Census block groups data | Census ACS data, 2010 5yr data for block groups available at IPUMS NHGIS web site.
+`census_appraisal_data` | [`incore:censusAppraisalData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:censusAppraisalData) | Census appraisal data | Census data, 2010 Decennial Census District (GCAD) Census data. The json file must contain categories B25002_001E, B25002_001M, B25004_006E and B25004_006M.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:buildingValues` | | Results | A csv file with building values for the 6 years following the disaster event (with year 0 being the impact year). A csv file with the building values for the 6 years following the disaster event (year -1 denotes pre-impact conditions and 0 being the impact year). Index year values represent building values against a base, pre-impact value.
+`result` <sup>*</sup> | [`incore:buildingValues`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingValues) | | Results | A csv file with building values for the 6 years following the disaster event (with year 0 being the impact year). A csv file with the building values for the 6 years following the disaster event (year -1 denotes pre-impact conditions and 0 being the impact year). Index year values represent building values against a base, pre-impact value.
 
 <small>(* required)</small>
 
