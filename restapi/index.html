@@ -20,8 +20,8 @@
 
 
             // Function to handle 401 Unauthorized errors
-            function handleUnauthorizedError(request) {
-                console.error("Unauthorized error. Redirecting to login page:", request);
+            function handleUnauthorizedError(response) {
+                console.error("Unauthorized error. Redirecting to login page:", response);
                 window.location.replace(window.location.protocol + "//" + window.location.host + "/login");
             }
 
@@ -47,11 +47,11 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
-              responseInterceptor: (request) => {
+              responseInterceptor: (response) => {
                 if (response.status === 401) {
-                    handleUnauthorizedError(request);
+                    handleUnauthorizedError(response);
                 }
-                return request;
+                return response;
               }
             });
             window.ui = ui
