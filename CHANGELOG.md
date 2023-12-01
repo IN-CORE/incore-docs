@@ -6,11 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Add requestHandler in swagger docs to redirect to login page if any of the urls passed returns 401 [#306](https://github.com/IN-CORE/incore-docs/issues/306)
+
 ### Changed
 - Added semantic data type url linking for the data type in the analyses markdowns [#299](https://github.com/IN-CORE/incore-docs/issues/299)
-
-### Added
-- Add requestHandler in swagger docs to redirect to login page if any of the urls passed returns 401 #306
 
 ## [4.7.0] - 2023-11-08
 
