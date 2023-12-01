@@ -48,8 +48,8 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
-              requestInterceptor: (request) => {
-                if (request.response.status === 401) {
+              responseInterceptor: (request) => {
+                if (response.status === 401) {
                     handleUnauthorizedError(request);
                 }
                 return request;
