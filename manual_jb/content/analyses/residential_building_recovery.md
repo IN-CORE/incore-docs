@@ -38,18 +38,18 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset |  A building dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
-`sample_damage_states` <sup>*</sup> | `incore:sampleDamageState` | Damage states | Sample damage states.
-`socio_demographic_data` <sup>*</sup> | `incore:socioDemograhicData` | Socio demographic | Socio-demographic data with household income group predictions.
-`financial_resources` <sup>*</sup> | `incore:householdFinancialResources` | Financial resources | Financial resources by household income groups.
-`delay_factors` <sup>*</sup> | `incore:buildingRecoveryFactors` | Delay factors | Delay impeding factors such as post-disaster inspection, insurance claim,<br>and government permit based on building's damage state. Provided by REDi framework.
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`sample_damage_states` <sup>*</sup> | [`incore:sampleDamageState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleDamageState) | Damage states | Sample damage states.
+`socio_demographic_data` <sup>*</sup> | [`incore:socioDemograhicData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:socioDemograhicData) | Socio demographic | Socio-demographic data with household income group predictions.
+`financial_resources` <sup>*</sup> | [`incore:householdFinancialResources`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:householdFinancialResources) | Financial resources | Financial resources by household income groups.
+`delay_factors` <sup>*</sup> | [`incore:buildingRecoveryFactors`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecoveryFactors) | Delay factors | Delay impeding factors such as post-disaster inspection, insurance claim,<br>and government permit based on building's damage state. Provided by REDi framework.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`residential_building_recovery` <sup>*</sup> | `incore:buildingRecovery` | Results | A dataset containing results (format: CSV)<br>with percentages of residential building recovery.
+`residential_building_recovery` <sup>*</sup> | [`incore:buildingRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecovery) | Results | A dataset containing results (format: CSV)<br>with percentages of residential building recovery.
 
 <small>(* required)</small>
 

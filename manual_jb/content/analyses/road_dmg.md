@@ -34,15 +34,15 @@ key name | type  | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`roads` <sup>*</sup> | `ergo:roadLinkTopo`, <br>`incore:roads`, <br/> `ergo:roadLinkTopoVer2` | Road  dataset | A road dataset.
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
+`roads` <sup>*</sup> | [`ergo:roadLinkTopo`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadLinkTopo), <br>[`incore:roads`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:roads), <br/> [`ergo:roadLinkTopoVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadLinkTopoVer2) | Road  dataset | A road dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `ergo:roadDamageVer2` | `roads` | Results | A dataset containing results <br>(format: CSV).
-`damage_result` <sup>*</sup> | `incore:roadDamageSupplement` | `roads` | Results | Information about applied hazard value and fragility<br>(format: JSON).
+`result` <sup>*</sup> | [`ergo:roadDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadDamageVer2) | `roads` | Results | A dataset containing results <br>(format: CSV).
+`damage_result` <sup>*</sup> | [`incore:roadDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:roadDamageSupplement) | `roads` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
 

@@ -25,14 +25,14 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`damage` <sup>*</sup> | `ergo:buildingDamageVer4`<br>`ergo:buildingDamageVer5`<br>`ergo:bridgeDamage`<br>`ergo:bridgeDamageVer2`<br>`incore:epfDamage`<br>`incore:epfDamageVer2`<br>`ergo:nsBuildingInventoryDamage`<br>`ergo:nsBuildingInventoryDamageVer2`<br>`incore:pipelineDamage`<br>`incore:pipelineDamageVer2`<br>`ergo:roadDamage`<br>`ergo:roadDamageVer2`<br>`ergo:waterFacilityDamageVer4`<br>`ergo:waterFacilityDamageVer5` | Infrastructure damage | A file with infrastructure damage intervals.
+`damage` <sup>*</sup> | [`ergo:buildingDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer4)<br>[`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5)<br>[`ergo:bridgeDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:bridgeDamage)<br>[`ergo:bridgeDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:bridgeDamageVer2)<br>[`incore:epfDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDamage)<br>[`incore:epfDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDamageVer2)<br>[`ergo:nsBuildingInventoryDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamage)<br>[`ergo:nsBuildingInventoryDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamageVer2)<br>[`incore:pipelineDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineDamage)<br>[`incore:pipelineDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineDamageVer2)<br>[`ergo:roadDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadDamage)<br>[`ergo:roadDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadDamageVer2)<br>[`ergo:waterFacilityDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityDamageVer4)<br>[`ergo:waterFacilityDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityDamageVer5) | Infrastructure damage | A file with infrastructure damage intervals.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`failure_probability` <sup>*</sup> | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
-`sample_failure_state` <sup>*</sup> | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Results | A dataset containing failure state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 
