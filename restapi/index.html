@@ -14,9 +14,18 @@
         <div id="swagger-ui"></div>
         <script src="https://unpkg.com/swagger-ui-dist@5.3.1/swagger-ui-standalone-preset.js"></script>
         <script src="https://unpkg.com/swagger-ui-dist@5.3.1/swagger-ui-bundle.js"></script>
+        <script crossorigin src="https://unpkg.com/universal-cookie@6/umd/universalCookie.min.js"></script>
 
         <script>
           window.onload = function() {
+
+
+            // Function to handle 401 Unauthorized errors
+            function handleUnauthorizedError(request) {
+                console.error("Unauthorized error. Redirecting to login page:", request);
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/login");
+            }
+
             // Build a system
             const ui = SwaggerUIBundle({
               urls: [
@@ -39,25 +48,12 @@
                 DisableTryItOutPlugin
               ],
               layout: "StandaloneLayout",
-                // requestInterceptor: function (request) {
-                // // Intercept requests and handle errors
-                // return new Promise(function (resolve, reject) {
-                //     fetch(request.url, request)
-                //         .then(function (response) {
-                //             if (!response.ok) {
-                //                 throw new
-                //                 Error(`Please make sure you login at ${window.location.protocol}//${window.location.host}/login first.`);
-                //             }
-                //             return response.text();
-                //         })
-                //         .then(function (responseText) {
-                //             resolve({data: responseText, status: 200});
-                //         })
-                //         .catch(function (error) {
-                //             reject(error);
-                //         });
-                // });
-            // },
+              requestInterceptor: (request) => {
+                if (request.response.status === 401) {
+                    handleUnauthorizedError(request);
+                }
+                return request;
+              }
             });
             window.ui = ui
           };

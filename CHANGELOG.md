@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Slack channel information to getting started and contact page [#289](https://github.com/IN-CORE/incore-docs/issues/289)
+- Add requestHandler in swagger docs to redirect to login page if any of the urls passed returns 401 [#306](https://github.com/IN-CORE/incore-docs/issues/306)
 
 ### Changed
 - Update damage analysis documentations with hazard object input [#282](https://github.com/IN-CORE/incore-docs/issues/282)
