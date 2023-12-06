@@ -35,6 +35,13 @@ key name | type | name | description
 `dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 `retrofit_strategy` | [`incore:retrofitStrategy`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:retrofitStrategy) | Retrofit Strategy | Building retrofit strategy that contains guid and retrofit method.
 
+**Input Hazards**
+
+key name | type                                                             | name          | description
+--- |------------------------------------------------------------------|---------------| ---
+`hazard` | `earthquake`<br>`tornado`<br>`hurricane`<br>`flood`<br>`tsunami` | Hazard | Supported hazard object for using local and remote hazards.
+
+
 **Output datasets**
 
 key name | type | parent key | name | description
