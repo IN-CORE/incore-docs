@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added semantic data type url linking for the data type in the analyses markdowns [#299](https://github.com/IN-CORE/incore-docs/issues/299)
 - Updated docs and notebook to reflect input changes to Commercial Building Recovery analysis [#310](https://github.com/IN-CORE/incore-docs/issues/310)
 
+### Fixed
+- Seaside testbed notebook to use building damage from building analysis output instead of MCS output [#314](https://github.com/IN-CORE/incore-docs/issues/314)
+
 ## [4.7.0] - 2023-11-08
 
 ### Added
