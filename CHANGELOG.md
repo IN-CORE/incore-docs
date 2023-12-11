@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Added semantic data type url linking for the data type in the analyses markdowns [#299](https://github.com/IN-CORE/incore-docs/issues/299)
+- Updated docs and notebook to reflect input changes to Commercial Building Recovery analysis [#310](https://github.com/IN-CORE/incore-docs/issues/310)
 
 ## [Unreleased]
 
