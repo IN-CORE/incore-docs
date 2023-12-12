@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Seaside testbed notebook to use building damage from building analysis output instead of MCS output [#314](https://github.com/IN-CORE/incore-docs/issues/314)
+- Attribute info issue in the notebook create_network_dataset.zip [#316](https://github.com/IN-CORE/incore-docs/issues/316)
 
 ## [4.7.0] - 2023-11-08
 
