@@ -24,3 +24,15 @@ Download the full directory of the files:
 Download the full directory of the files:
 
 [workshop_2022-01-31.zip](https://github.com/IN-CORE/incore-docs/blob/main/workshops/20220131/workshop_2022-01-31.zip)
+
+## 2023-11-15 INSPIRE workshop
+
+[Agenda](workshops/20231115/agenda.md)
+* Session 1 Overview of IN-CORE & User Workshop Objectives
+* Session 2 **[Working with Remote and Local Hazards (Tornado and Earthquake)](workshops/20231115/session2/session2-remote-and-local-hazards.ipynb)**, [Assignments](workshops/20231115/session2/session2-assignment.ipynb), [Answers](workshops/20231115/session2/session2-assignment-answers.ipynb)
+* Session 3 **[Building Damage and Recovery Analyses with IN-CORE Web Services](workshops/20231115/session3/session3-bldg-dmg-recv.ipynb)**
+* Session 4 **[Building Damage and Recovery Analyses with Local Data](workshops/20231115/session4/session4-building-dmg-recovery-local-data.ipynb)**
+
+* Download the full directory of the files above:
+
+[workshop_2023-11-15.zip](https://github.com/IN-CORE/incore-docs/blob/main/workshops/20231115/workshop_2023-11-15.zip)

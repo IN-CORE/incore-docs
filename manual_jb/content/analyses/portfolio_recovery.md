@@ -19,19 +19,19 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_data` <sup>*</sup> | `incore:portfolioBuildingInventory` | Building dataset | A building dataset.
-`occupancy_mapping` <sup>*</sup> | `incore:portfolioOccupancyMapping` | Occupancy mapping | An occupancy of buildings dataset.
-`building_damage` <sup>*</sup> | `incore:portfolioBuildingDamage` | Building damage | A building damage.
-`dmg_ratios` <sup>*</sup> | `incore:portfolioDamageRatios` | Damage ratios | Mean repair by occupancy and building type.
-`utility` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility availability | Utility availability at utility service area.
-`utility_partial` <sup>*</sup> | `incore:portfolioUtilityAvailability` | Utility availability | Partial utility availability at utility service area.
-`coefFL` <sup>*</sup> | `incore:portfolioCoefficients` | Initial coefficients | Correlation coefficient of initial functionality.
+`building_data` <sup>*</sup> | [`incore:portfolioBuildingInventory`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioBuildingInventory) | Building dataset | A building dataset.
+`occupancy_mapping` <sup>*</sup> | [`incore:portfolioOccupancyMapping`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioOccupancyMapping) | Occupancy mapping | An occupancy of buildings dataset.
+`building_damage` <sup>*</sup> | [`incore:portfolioBuildingDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioBuildingDamage) | Building damage | A building damage.
+`dmg_ratios` <sup>*</sup> | [`incore:portfolioDamageRatios`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioDamageRatios) | Damage ratios | Mean repair by occupancy and building type.
+`utility` <sup>*</sup> | [`incore:portfolioUtilityAvailability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioUtilityAvailability) | Utility availability | Utility availability at utility service area.
+`utility_partial` <sup>*</sup> | [`incore:portfolioUtilityAvailability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioUtilityAvailability) | Utility availability | Partial utility availability at utility service area.
+`coefFL` <sup>*</sup> | [`incore:portfolioCoefficients`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioCoefficients) | Initial coefficients | Correlation coefficient of initial functionality.
 
 **Output Datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:portfolioRecovery` | Results | A dataset containing results (format: CSV).
+`result` <sup>*</sup> | [`incore:portfolioRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioRecovery) | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

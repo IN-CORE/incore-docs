@@ -33,15 +33,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_inventory` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building inventory | A building inventory dataset.
-`housing_unit_inventory` <sup>*</sup> | `incore:housingUnitInventory` | Housing inventory | A housing unit inventory dataset.
-`address_point_inventory` <sup>*</sup> | `incore:addressPoints` | Address inventory | An address locations dataset.
+`building_inventory` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building inventory | A building inventory dataset.
+`housing_unit_inventory` <sup>*</sup> | [`incore:housingUnitInventory`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitInventory) | Housing inventory | A housing unit inventory dataset.
+`address_point_inventory` <sup>*</sup> | [`incore:addressPoints`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:addressPoints) | Address inventory | An address locations dataset.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:housingUnitAllocation` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | [`incore:housingUnitAllocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitAllocation) | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

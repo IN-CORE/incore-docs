@@ -34,15 +34,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`population_dislocation_block` <sup>*</sup> | `incore:popDislocation` | Population dislocation | Population dislocation results.
-`tpm` <sup>*</sup> | `incore:houseRecTransitionProbMatrix` | Probability matrix | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
-`initial_stage_probability` <sup>*</sup> | `incore:houseRecInitialStageFactors` | Mass probability | Initial mass probability function for stage 0 of the Markov Chain.
+`population_dislocation_block` <sup>*</sup> | [`incore:popDislocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:popDislocation) | Population dislocation | Population dislocation results.
+`tpm` <sup>*</sup> | [`incore:houseRecTransitionProbMatrix`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecTransitionProbMatrix) | Probability matrix | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
+`initial_stage_probability` <sup>*</sup> | [`incore:houseRecInitialStageFactors`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecInitialStageFactors) | Mass probability | Initial mass probability function for stage 0 of the Markov Chain.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | `incore:housingRecoveryHistory` | `housing_recovery_block` | Results | A dataset containing results (format: CSV)<br>with housing recovery sequences at the individual household level.
+`result` <sup>*</sup> | [`incore:housingRecoveryHistory`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingRecoveryHistory) | `housing_recovery_block` | Results | A dataset containing results (format: CSV)<br>with housing recovery sequences at the individual household level.
 
 <small>(* required)</small>
 

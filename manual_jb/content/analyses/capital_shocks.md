@@ -21,15 +21,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | `ergo:buildingInventoryVer4`<br>`ergo:buildingInventoryVer5`<br>`ergo:buildingInventoryVer6`<br>`ergo:buildingInventoryVer7` | Building dataset | A building inventory dataset.
-`buildings_to_sectors` <sup>*</sup> | `incore:buildingsToSectors` | Buildings to sectors | A file defining sectors of buildings.
-`failure_probability` <sup>*</sup> | `incore:failureProbability` | Failure probability | Failure probability of buildings..
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset | A building inventory dataset.
+`buildings_to_sectors` <sup>*</sup> | [`incore:buildingsToSectors`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingsToSectors) | Buildings to sectors | A file defining sectors of buildings.
+`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Failure probability | Failure probability of buildings..
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Results | A dataset containing aggregated building functionality to capital shocks<br>(format: CSV).
+`sector_shocks` <sup>*</sup> | [`incore:capitalShocks`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:capitalShocks) | Results | A dataset containing aggregated building functionality to capital shocks<br>(format: CSV).
 
 <small>(* required)</small>
 

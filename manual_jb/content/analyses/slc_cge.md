@@ -24,25 +24,25 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`SAM` <sup>*</sup> | `incore:CGEsam` | Social matrix | A social accounting matrix.
-`BB` <sup>*</sup> | `incore:CGEbb` | Capital composition | A matrix of functioning capital.
-`IOUT` | `incore:CGEiout` | Government parameters | A matrix tax revenue transfer.
-`MISC` | `incore:CGEmisc` | Parameters | Data of employment, capital and households <br>in the economy.
-`MISCH` <sup>*</sup> | `incore:CGEmisch` | Supply elasticity | Elasticities for the supply of labor.
-`EMPLOY` <sup>*</sup> | `incore:CGEemploy` | Employment | Commercial sector employment data
-`JOBCR` <sup>*</sup> | `incore:CGEjobcr` | Labor | A matrix of workers groups in the economy.
-`OUTCR` <sup>*</sup> | `incore:CGEoutcr` | Commuter laborers | A matrix of Salt Lake City commuting workers.
-`sector_shocks` <sup>*</sup> | `incore:capitalShocks` | Capital shocks | Building states to capital <br>shocks per sector.
+`SAM` <sup>*</sup> | [`incore:CGEsam`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEsam) | Social matrix | A social accounting matrix.
+`BB` <sup>*</sup> | [`incore:CGEbb`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEbb) | Capital composition | A matrix of functioning capital.
+`IOUT` | [`incore:CGEiout`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEiout) | Government parameters | A matrix tax revenue transfer.
+`MISC` | [`incore:CGEmisc`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEmisc) | Parameters | Data of employment, capital and households <br>in the economy.
+`MISCH` <sup>*</sup> | [`incore:CGEmisch`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEmisch) | Supply elasticity | Elasticities for the supply of labor.
+`EMPLOY` <sup>*</sup> | [`incore:CGEemploy`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEemploy) | Employment | Commercial sector employment data
+`JOBCR` <sup>*</sup> | [`incore:CGEjobcr`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEjobcr) | Labor | A matrix of workers groups in the economy.
+`OUTCR` <sup>*</sup> | [`incore:CGEoutcr`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:CGEoutcr) | Commuter laborers | A matrix of Salt Lake City commuting workers.
+`sector_shocks` <sup>*</sup> | [`incore:capitalShocks`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:capitalShocks) | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`domestic-supply` <sup>*</sup> | `incore:Employment` | Supply results | A dataset containing domestic supply results (format: CSV).
-`gross-income` <sup>*</sup> | `incore:Employment` | Gross income | A dataset of resulting gross income (format: CSV).
-`pre-disaster-factor-demand` <sup>*</sup> | `incore:FactorDemand` | Factor demand | A dataset of factor demand before disaster (format: CSV).
-`post-disaster-factor-demand` <sup>*</sup> | `incore:FactorDemand` | Factor demand | A dataset of factor demand after disaster (format: CSV).
-`household-count` <sup>*</sup> | `incore:HouseholdCount` | Household count | A dataset of household count (format: CSV).
+`domestic-supply` <sup>*</sup> | [`incore:Employment`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:Employment) | Supply results | A dataset containing domestic supply results (format: CSV).
+`gross-income` <sup>*</sup> | [`incore:Employment`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:Employment) | Gross income | A dataset of resulting gross income (format: CSV).
+`pre-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand before disaster (format: CSV).
+`post-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand after disaster (format: CSV).
+`household-count` <sup>*</sup> | [`incore:HouseholdCount`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:HouseholdCount) | Household count | A dataset of household count (format: CSV).
 
 <small>(* required)</small>
 

@@ -21,16 +21,16 @@ key name | type  | name | description
 
 key name | type | name | description
 ---|---|---|---
-`water_facilities` <sup>*</sup> | `ergo:waterFacilityTopo` | Water Facilities | Water Facilities.
-`replacement_cost` <sup>*</sup> | `incore:replacementCost` | Replacement Cost | Repair cost of the node in the complete damage state (= Replacement cost).
-`sample_damage_states` <sup>*</sup> | `incore:sampleDamageState` | Sample Damage States | Sample damage states from Monte Carlo Simulation.
-`wf_dmg_ratios` <sup>*</sup> | `incore:waterFacilityDamageRatios` | Damage Ratios Table | Damage Ratios Table.
+`water_facilities` <sup>*</sup> | [`ergo:waterFacilityTopo`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityTopo) | Water Facilities | Water Facilities.
+`replacement_cost` <sup>*</sup> | [`incore:replacementCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:replacementCost) | Replacement Cost | Repair cost of the node in the complete damage state (= Replacement cost).
+`sample_damage_states` <sup>*</sup> | [`incore:sampleDamageState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleDamageState) | Sample Damage States | Sample damage states from Monte Carlo Simulation.
+`wf_dmg_ratios` <sup>*</sup> | [`incore:waterFacilityDamageRatios`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityDamageRatios) | Damage Ratios Table | Damage Ratios Table.
 
 **Output datasets** 
 
 key name | type | name | description
 ---|---|---|---
-`result` <sup>*</sup> | `incore:repairCost` | Repair Cost | A csv file with repair cost and budget for each water facility.
+`result` <sup>*</sup> | [`incore:repairCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:repairCost) | Repair Cost | A csv file with repair cost and budget for each water facility.
 
 <small>(* required)</small>
 

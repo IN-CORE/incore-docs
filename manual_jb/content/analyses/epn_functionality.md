@@ -36,15 +36,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`epn_network` <sup>*</sup> | `incore:epnNetwork` | EPN Network | EPN network dataset
-`epf_sample_failure_state` <sup>*</sup> | `incore:sampleFailureState` | EPF sample failure state | CSV file of failure state for each sample. Output from MCS analysis.
+`epn_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | EPN Network | EPN network dataset
+`epf_sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | EPF sample failure state | CSV file of failure state for each sample. Output from MCS analysis.
 
 **Output Datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`failure_probability` <sup>*</sup> | `incore:failureProbability` | Results | A dataset containing failure probability results <br>(format: CSV).
-`sample_failure_state` <sup>*</sup> | `incore:sampleFailureState` | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Results | A dataset containing failure state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 

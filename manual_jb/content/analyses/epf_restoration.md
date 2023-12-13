@@ -25,17 +25,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`dfr3_mapping_set` <sup>*</sup> | `incore:dfr3MappingSet` | DFR3 Mapping Set | DFR3 Mapping Set.
-`epfs` <sup>*</sup> | `incore:epf` <br> `ergo:epf` | Electric Power Facilities | Electric Power Facilities.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`epfs` <sup>*</sup> | [`incore:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epf) <br> [`ergo:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:epf) | Electric Power Facilities | Electric Power Facilities.
 
 **Output datasets** 
 
 key name | type | name | description
 --- | --- | --- | ---
-`pf_results` <sup>*</sup> | `incore:epfRestorationFunc` | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state
-`time_results` <sup>*</sup> | `incore:epfRestorationTime` | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
-`inventory_restoration_map` <sup>*</sup> | `incore:inventoryRestorationMap` | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
-`func_results` <sup>*</sup> | `incore:epfDiscretizedRestorationFunc` | Discretized restoration functionality | A csv file recording discretized functionality over time.
+`pf_results` <sup>*</sup> | [`incore:epfRestorationFunc`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfRestorationFunc) | Percentage of functionality results | A csv file recording functionality change with time for each class and limit state
+`time_results` <sup>*</sup> | [`incore:epfRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfRestorationTime) | Time results | A csv file recording repair time at certain functionality recovery for each class and limit state.
+`inventory_restoration_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | Mapping of inventory and restoration | A csv file recording the mapping relationship between GUID and restoration id applicable.
+`func_results` <sup>*</sup> | [`incore:epfDiscretizedRestorationFunc`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDiscretizedRestorationFunc) | Discretized restoration functionality | A csv file recording discretized functionality over time.
 
 <small>(* required)</small>
 
