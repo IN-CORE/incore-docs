@@ -36,10 +36,9 @@ key name | type | name | description
 
 **Input Datasets**
 
-key name | type | name                                | description
---- | --- |-------------------------------------| ---
-`epf_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | Electric Power Facility Network     | Electric Power Facility Network Dataset.
-`wds_network` <sup>*</sup> | [`incore:waterNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterNetwork) | Water Distribution Facility Network | Water Distribution Facility Network Dataset.
+key name | type | name | description
+--- | --- | --- | ---
+`epf_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | Electric Power Facility Network | Electric Power Facility Network Dataset.<br/>`wds_network` <sup>*</sup> | [`incore:waterNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterNetwork) | Water Distribution Facility Network | Water Distribution Facility Network Dataset.
 `epf_wds_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | EPN-to-WDS Interdependency          | EPN-to-WDS Interdependency Table.
 `wds_epf_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | WDS-to-EPN Interdependency          | WDS-to-EPN Interdependency Table.
 `epf_subst_failure_results` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Substation failure probability      | Substation failure probability Dataset.
