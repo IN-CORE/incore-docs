@@ -78,6 +78,7 @@ code snippet:
     nic_func.set_input_dataset("wds_dmg_results", wds_dmg_results)
     nic_func.set_input_dataset("wds_inventory_rest_map", wds_inventory_rest_map)
     nic_func.set_input_dataset("wds_time_results", wds_time_results)
+    nic_func.set_input_dataset("epf_damage", epf_damage)
 
     # Run Analysis
     nic_func.run_analysis()
