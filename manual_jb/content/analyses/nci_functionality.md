@@ -38,16 +38,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`epf_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | Electric Power Facility Network | Electric Power Facility Network Dataset.
-`wds_network` <sup>*</sup> | [`incore:waterNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterNetwork) | Water Distribution Facility Network | Water Distribution Facility Network Dataset.
-`epf_wds_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | EPN-to-WDS Interdependency | EPN-to-WDS Interdependency Table.
-`wds_epf_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | WDS-to-EPN Interdependency | WDS-to-EPN Interdependency Table.
-`epf_subst_failure_results` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Substation failure probability | Substation failure probability Dataset.
-`epf_inventory_rest_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | EPN inventory restoration map | EPN inventory restoration Map.
-`epf_time_results` <sup>*</sup> | [`incore:epfRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfRestorationTime) | EP facility restoration time | EP facility  restoration time Dataset.
-`wds_dmg_results` <sup>*</sup> | [`ergo:waterFacilityDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityDamageVer6) | Water facility damage | Water Facility Damage Dataset.
-`wds_inventory_rest_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | WDS inventory restoration map | WDS inventory restoration Map.
-`wds_time_results` <sup>*</sup> | [`incore:waterFacilityRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityRestorationTime) | Water facility restoration time | Water facility restoration time Dataset.
+`epf_network` <sup>*</sup> | [`incore:epnNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epnNetwork) | Electric Power Facility Network | Electric Power Facility Network Dataset.<br/>`wds_network` <sup>*</sup> | [`incore:waterNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterNetwork) | Water Distribution Facility Network | Water Distribution Facility Network Dataset.
+`epf_wds_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | EPN-to-WDS Interdependency          | EPN-to-WDS Interdependency Table.
+`wds_epf_intdp_table` <sup>*</sup> | [`incore:networkInterdependencyTable`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:networkInterdependencyTable) | WDS-to-EPN Interdependency          | WDS-to-EPN Interdependency Table.
+`epf_subst_failure_results` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Substation failure probability      | Substation failure probability Dataset.
+`epf_inventory_rest_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | EPN inventory restoration map       | EPN inventory restoration Map.
+`epf_time_results` <sup>*</sup> | [`incore:epfRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfRestorationTime) | EP facility restoration time        | EP facility  restoration time Dataset.
+`wds_dmg_results` <sup>*</sup> | [`ergo:waterFacilityDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:waterFacilityDamageVer6) | Water facility damage               | Water Facility Damage Dataset.
+`wds_inventory_rest_map` <sup>*</sup> | [`incore:inventoryRestorationMap`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:inventoryRestorationMap) | WDS inventory restoration map       | WDS inventory restoration Map.
+`wds_time_results` <sup>*</sup> | [`incore:waterFacilityRestorationTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterFacilityRestorationTime) | Water facility restoration time     | Water facility restoration time Dataset.
+`epf_damage` <sup>*</sup> | [`incore:epfDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDamageVer3) | Electric Power Facility Damage      | Electric Power Facility Damage Dataset.
+
 
 **Output datasets** 
 
@@ -77,6 +78,7 @@ code snippet:
     nic_func.set_input_dataset("wds_dmg_results", wds_dmg_results)
     nic_func.set_input_dataset("wds_inventory_rest_map", wds_inventory_rest_map)
     nic_func.set_input_dataset("wds_time_results", wds_time_results)
+    nic_func.set_input_dataset("epf_damage", epf_damage)
 
     # Run Analysis
     nic_func.run_analysis()
