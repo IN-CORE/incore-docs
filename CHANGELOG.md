@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [Unreleased]
+## [4.8.2] - 2024-02-07
 
 ### Fixed
 - Inspire workshop zip file is not available [#329](https://github.com/IN-CORE/incore-docs/issues/329)
