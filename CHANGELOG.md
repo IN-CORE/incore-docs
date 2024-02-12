@@ -5,11 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [Unreleased]
+### Changed
+- PyIncore-viz example notebook updated with new hazard dataset update [#335](https://github.com/IN-CORE/incore-docs/issues/335)
+
 ## [4.8.2] - 2024-02-07
 
 ### Fixed
 - Inspire workshop zip file is not available [#329](https://github.com/IN-CORE/incore-docs/issues/329)
-- Removed future warnings by passing string 'sum' instead of a function [#328](https://github.com/IN-CORE/incore-docs/pull/328)
+- Removed future warnings by passing string 'sum' instead of a function [#328](https://github.com/IN-CORE/incore-docs/issues/328)
 
 
 ## [4.8.1] - 2023-12-20
