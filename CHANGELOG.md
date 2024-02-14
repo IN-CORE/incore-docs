@@ -5,12 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [Unreleased]
+
+### Fixed
+- Hazard Datasets related bug fixed in Inspire workshop and create hazard notebooks [#336](https://github.com/IN-CORE/incore-docs/issues/336)
+
 ## [4.8.2] - 2024-02-07
 
 ### Fixed
 - Inspire workshop zip file is not available [#329](https://github.com/IN-CORE/incore-docs/issues/329)
 - Removed future warnings by passing string 'sum' instead of a function [#328](https://github.com/IN-CORE/incore-docs/pull/328)
-
 
 ## [4.8.1] - 2023-12-20
 
