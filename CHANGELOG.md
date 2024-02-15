@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [Unreleased]
+
+### Changed
+- Changed the mapping function used to generate the FEMA table [#343](https://github.com/IN-CORE/incore-docs/issues/343)
+
 ## [4.8.2] - 2024-02-07
 
 ### Fixed
