@@ -1,0 +1,210 @@
+{
+    "name": "Galveston Hurricane flood fragility mappings for buildings",
+    "hazardType": "hurricane",
+    "inventoryType": "building",
+    "mappingEntryKeys": [
+    {
+      "name": "elevation",
+      "description": "Apply elevation of the lowest horizontal structural member (ft) coming from building inventory.",
+      "defaultKey": false,
+      "config": {
+        "unit": "feet",
+        "type": "number",
+        "targetColumn": "ffe_elev",
+        "expression": "+ retrofit_value"
+      }
+    },
+    {
+      "name": "Non-Retrofit Fragility ID Code",
+      "description": "Non-Retrofit Fragility ID Code",
+      "defaultKey": true,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    }
+  ],
+    "mappings": [
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa98cef2881193f2261e",
+                "elevation":"62fefa98cef2881193f2261e"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 1"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9ad76c6d0e1f6bdfe7",
+                "elevation":"62fefa9ad76c6d0e1f6bdfe7"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 2"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9acef2881193f2261f",
+                "elevation":"62fefa9acef2881193f2261f"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 3"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9bd76c6d0e1f6bdfe8",
+                "elevation":"62fefa9bd76c6d0e1f6bdfe8"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 4"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9bcef2881193f22620",
+                "elevation":"62fefa9bcef2881193f22620"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 5"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9bd76c6d0e1f6bdfe9",
+                "elevation":"62fefa9bd76c6d0e1f6bdfe9"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 6"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9ccef2881193f22621",
+                "elevation":"62fefa9ccef2881193f22621"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 7"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9cd76c6d0e1f6bdfea",
+                "elevation":"62fefa9cd76c6d0e1f6bdfea"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 8"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9ccef2881193f22622",
+                "elevation":"62fefa9ccef2881193f22622"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 9"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9dd76c6d0e1f6bdfeb",
+                "elevation":"62fefa9dd76c6d0e1f6bdfeb"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 10"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9dcef2881193f22623",
+                "elevation":"62fefa9dcef2881193f22623"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 11"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9dd76c6d0e1f6bdfec",
+                "elevation":"62fefa9dd76c6d0e1f6bdfec"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 12"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9ecef2881193f22624",
+                "elevation":"62fefa9ecef2881193f22624"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 13"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9ed76c6d0e1f6bdfed",
+                "elevation":"62fefa9ed76c6d0e1f6bdfed"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 14"
+                ]
+            }
+        },
+        {
+            "legacyEntry": {},
+            "entry": {
+                "Non-Retrofit Fragility ID Code": "62fefa9fcef2881193f22625",
+                "elevation":"62fefa9fcef2881193f22625"
+            },
+            "rules": {
+                "AND": [
+                    "int arch_flood EQUALS 15"
+                ]
+            }
+        }
+    ],
+    "mappingType": "fragility"
+}
