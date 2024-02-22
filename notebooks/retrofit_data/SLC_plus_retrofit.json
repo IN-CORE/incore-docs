@@ -1,0 +1,2952 @@
+{
+    "id": "6309005ad76c6d0e1f6be081",
+    "name": "Salt Lake Building EQ Fragility Mapping",
+    "hazardType": "earthquake",
+    "inventoryType": "building",
+    "mappingEntryKeys": [
+    {
+      "name": "Drift-Sensitive Fragility ID Code",
+      "description": "Apply to drift-sensitive components.",
+      "defaultKey": false,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    },
+    {
+      "name": "Acceleration-Sensitive Fragility ID Code",
+      "description": "Apply to acceleration-sensitive components.",
+      "defaultKey": false,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    },
+    {
+      "name": "Parametric Non-Retrofit Fragility ID Code",
+      "description": "Parametric Non-Retrofit Fragility",
+      "defaultKey": false,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    },
+    {
+      "name": "Non-Retrofit Fragility ID Code",
+      "description": "Non-Retrofit Fragility",
+      "defaultKey": true,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    },
+    {
+      "name": "Wood or Metal Deck Diaphragms Retrofitted",
+      "description": "Retrofitted by applying Wood or Metal Deck Diaphragms",
+      "defaultKey": false,
+      "config": {
+        "unit": "unitless",
+        "type": null
+      }
+    }
+  ],
+    "mappings": [
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W1_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W1_115",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W1_1",
+                "Non-Retrofit Fragility ID Code": "SF_W1_115"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6a6a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffd",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffd"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS W1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W1_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W1_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W1_2",
+                "Non-Retrofit Fragility ID Code": "SF_W1_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6a66",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffe",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e6",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffe"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS W1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W1_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W1_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W1_3",
+                "Non-Retrofit Fragility ID Code": "SF_W1_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6a32",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffb",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e7",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffb"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS W1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W1_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W1_118",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W1_4",
+                "Non-Retrofit Fragility ID Code": "SF_W1_118"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6a2e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ffc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS W1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W2_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W2_115",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W2_1",
+                "Non-Retrofit Fragility ID Code": "SF_W2_115"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c630a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d7e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d2f",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d7e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS W2"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W2_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W2_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W2_2",
+                "Non-Retrofit Fragility ID Code": "SF_W2_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c62ff",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d7f",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d30",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d7f"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS W2"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W2_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W2_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W2_3",
+                "Non-Retrofit Fragility ID Code": "SF_W2_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c62fd",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d80",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d2d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6d80"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS W2"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_W2_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_W2_118",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_W2_4",
+                "Non-Retrofit Fragility ID Code": "SF_W2_118"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6302",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6c4a",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d2e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6c4a"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS W2"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_340",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_1",
+                "Non-Retrofit Fragility ID Code": "SF_S1_340"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7496",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e2",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6690",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e2"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_343",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_4",
+                "Non-Retrofit Fragility ID Code": "SF_S1_343"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c748e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63ec",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66de",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63ec"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_346",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_7",
+                "Non-Retrofit Fragility ID Code": "SF_S1_346"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7489",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d8",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66d5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d8"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_349",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_10",
+                "Non-Retrofit Fragility ID Code": "SF_S1_349"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c753f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c70b3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_341",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_2",
+                "Non-Retrofit Fragility ID Code": "SF_S1_341"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7493",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e4",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66da",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e4"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_344",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_5",
+                "Non-Retrofit Fragility ID Code": "SF_S1_344"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c748d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66e0",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_347",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_8",
+                "Non-Retrofit Fragility ID Code": "SF_S1_347"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7487",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d9",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66d7",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d9"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_350",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_11",
+                "Non-Retrofit Fragility ID Code": "SF_S1_350"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c753e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63cd",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c70b2",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63cd"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_342",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_3",
+                "Non-Retrofit Fragility ID Code": "SF_S1_342"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7490",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63ea",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66dc",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63ea"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_345",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_6",
+                "Non-Retrofit Fragility ID Code": "SF_S1_345"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c748b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e8",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66d3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63e8"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_348",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_9",
+                "Non-Retrofit Fragility ID Code": "SF_S1_348"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7485",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d6",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66d8",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63d6"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S1_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S1_351",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S1_12",
+                "Non-Retrofit Fragility ID Code": "SF_S1_351"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c753d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63c8",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c70b1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c63c8"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_338",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_1",
+                "Non-Retrofit Fragility ID Code": "SF_S2_338"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c18",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6845",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c7",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6845"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_341",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_4",
+                "Non-Retrofit Fragility ID Code": "SF_S2_341"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c13",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6852",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68ce",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6852"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_344",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_7",
+                "Non-Retrofit Fragility ID Code": "SF_S2_344"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c0d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6853",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c4",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6853"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_347",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_10",
+                "Non-Retrofit Fragility ID Code": "SF_S2_347"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6858",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c63e3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6858"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_339",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_2",
+                "Non-Retrofit Fragility ID Code": "SF_S2_339"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c17",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6843",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6843"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_342",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_5",
+                "Non-Retrofit Fragility ID Code": "SF_S2_342"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c11",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6851",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c2",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6851"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_345",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_8",
+                "Non-Retrofit Fragility ID Code": "SF_S2_345"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c0b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6856",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6856"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_348",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_11",
+                "Non-Retrofit Fragility ID Code": "SF_S2_348"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6857",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c63e5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6857"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_340",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_3",
+                "Non-Retrofit Fragility ID Code": "SF_S2_340"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c15",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c684f",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68cb",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c684f"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_343",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_6",
+                "Non-Retrofit Fragility ID Code": "SF_S2_343"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c0f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6854",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68c3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6854"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_346",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_9",
+                "Non-Retrofit Fragility ID Code": "SF_S2_346"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c09",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6855",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c68bd",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6855"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S2_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S2_349",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S2_12",
+                "Non-Retrofit Fragility ID Code": "SF_S2_349"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6799",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6859",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c63e6",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6859"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S3_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S3_113",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S3_1",
+                "Non-Retrofit Fragility ID Code": "SF_S3_113"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dd1",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7361",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6244",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7361"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S3"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S3_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S3_114",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S3_2",
+                "Non-Retrofit Fragility ID Code": "SF_S3_114"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dd0",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7360",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6245",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7360"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S3"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S3_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S3_115",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S3_3",
+                "Non-Retrofit Fragility ID Code": "SF_S3_115"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dcf",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c735f",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6246",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c735f"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S3"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S3_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S3_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S3_4",
+                "Non-Retrofit Fragility ID Code": "SF_S3_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dce",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c735e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6243",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c735e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S3"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_337",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_1",
+                "Non-Retrofit Fragility ID Code": "SF_S4_337"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6675",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741a",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6430",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741a"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S4L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_340",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_4",
+                "Non-Retrofit Fragility ID Code": "SF_S4_340"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6672",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73fb",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c642c",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73fb"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S4L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_343",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_7",
+                "Non-Retrofit Fragility ID Code": "SF_S4_343"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c666d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744a",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6427",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744a"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S4L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_346",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_10",
+                "Non-Retrofit Fragility ID Code": "SF_S4_346"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7348",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c735a",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S4L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_338",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_2",
+                "Non-Retrofit Fragility ID Code": "SF_S4_338"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6674",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6431",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S4M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_341",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_5",
+                "Non-Retrofit Fragility ID Code": "SF_S4_341"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6671",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7403",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c642d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7403"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S4M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_344",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_8",
+                "Non-Retrofit Fragility ID Code": "SF_S4_344"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c666b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7449",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6428",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7449"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S4M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_347",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_11",
+                "Non-Retrofit Fragility ID Code": "SF_S4_347"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c733d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7446",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7359",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7446"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S4M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_339",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_3",
+                "Non-Retrofit Fragility ID Code": "SF_S4_339"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6673",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741d",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c642b",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c741d"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S4H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_342",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_6",
+                "Non-Retrofit Fragility ID Code": "SF_S4_342"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c666f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7400",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c642e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7400"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S4H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_345",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_9",
+                "Non-Retrofit Fragility ID Code": "SF_S4_345"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6669",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744c",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c642a",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c744c"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S4H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S4_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S4_348",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S4_12",
+                "Non-Retrofit Fragility ID Code": "SF_S4_348"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c733f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7444",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7355",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c7444"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S4H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_169",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_1",
+                "Non-Retrofit Fragility ID Code": "SF_S5_169"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6886",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68d7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f56",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68d7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S5L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_4",
+                "Non-Retrofit Fragility ID Code": "SF_S5_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6881",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f50",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S5L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_4",
+                "Non-Retrofit Fragility ID Code": "SF_S5_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6881",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f50",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S5L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_4",
+                "Non-Retrofit Fragility ID Code": "SF_S5_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6881",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f50",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68db"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S5L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_170",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_2",
+                "Non-Retrofit Fragility ID Code": "SF_S5_170"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6884",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68dd",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f4e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68dd"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S5M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_5",
+                "Non-Retrofit Fragility ID Code": "SF_S5_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f51",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S5M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_5",
+                "Non-Retrofit Fragility ID Code": "SF_S5_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f51",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S5M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_5",
+                "Non-Retrofit Fragility ID Code": "SF_S5_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f51",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e1"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S5M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_171",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_3",
+                "Non-Retrofit Fragility ID Code": "SF_S5_171"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6882",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68dc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f4f",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68dc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS S5H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_6",
+                "Non-Retrofit Fragility ID Code": "SF_S5_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f48",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS S5H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_6",
+                "Non-Retrofit Fragility ID Code": "SF_S5_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f48",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS S5H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_S5_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_S5_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_S5_6",
+                "Non-Retrofit Fragility ID Code": "SF_S5_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c687d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f48",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68e0"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS S5H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_354",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_1",
+                "Non-Retrofit Fragility ID Code": "SF_C1_354"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e48",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ea9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e48"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_357",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_4",
+                "Non-Retrofit Fragility ID Code": "SF_C1_357"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e50",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ea5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e50"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_360",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_7",
+                "Non-Retrofit Fragility ID Code": "SF_C1_360"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6625",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e43",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6e97",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e43"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_363",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_10",
+                "Non-Retrofit Fragility ID Code": "SF_C1_363"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c65d9",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e44",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c64",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e44"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_355",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_2",
+                "Non-Retrofit Fragility ID Code": "SF_C1_355"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ea0",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_358",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_5",
+                "Non-Retrofit Fragility ID Code": "SF_C1_358"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4f",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ea2",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4f"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_361",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_8",
+                "Non-Retrofit Fragility ID Code": "SF_C1_361"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6626",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e42",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6e9c",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e42"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_364",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_11",
+                "Non-Retrofit Fragility ID Code": "SF_C1_364"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c65d8",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e3f",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c61",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e3f"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_356",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_3",
+                "Non-Retrofit Fragility ID Code": "SF_C1_356"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662c",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4a",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6e9e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e4a"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_359",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_6",
+                "Non-Retrofit Fragility ID Code": "SF_C1_359"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c662f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e51",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6e99",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e51"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_362",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_9",
+                "Non-Retrofit Fragility ID Code": "SF_C1_362"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6628",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e45",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6e9a",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e45"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C1_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C1_365",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C1_12",
+                "Non-Retrofit Fragility ID Code": "SF_C1_365"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c65f0",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e3e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6c63",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e3e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C1H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_337",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_1",
+                "Non-Retrofit Fragility ID Code": "SF_C2_337"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c711e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6795",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_340",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_4",
+                "Non-Retrofit Fragility ID Code": "SF_C2_340"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7121",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a0",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6796",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a0"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_343",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_7",
+                "Non-Retrofit Fragility ID Code": "SF_C2_343"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7116",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a3",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6793",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a3"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_346",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_10",
+                "Non-Retrofit Fragility ID Code": "SF_C2_346"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d95",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6893",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c73d3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6893"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_338",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_2",
+                "Non-Retrofit Fragility ID Code": "SF_C2_338"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c711f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68b3",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6794",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68b3"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_341",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_5",
+                "Non-Retrofit Fragility ID Code": "SF_C2_341"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7122",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a6",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6791",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a6"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_344",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_8",
+                "Non-Retrofit Fragility ID Code": "SF_C2_344"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7118",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6792",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a1"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_347",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_11",
+                "Non-Retrofit Fragility ID Code": "SF_C2_347"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d93",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6892",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c73d4",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6892"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_339",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_3",
+                "Non-Retrofit Fragility ID Code": "SF_C2_339"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7120",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68b1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6797",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68b1"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_342",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_6",
+                "Non-Retrofit Fragility ID Code": "SF_C2_342"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7114",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a4",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6790",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c68a4"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_345",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_9",
+                "Non-Retrofit Fragility ID Code": "SF_C2_345"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c711a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6894",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6798",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6894"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C2_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C2_348",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C2_12",
+                "Non-Retrofit Fragility ID Code": "SF_C2_348"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d94",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6891",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c73d2",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6891"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_169",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_1",
+                "Non-Retrofit Fragility ID Code": "SF_C3_169"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e1",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73bc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73bc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C3L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_4",
+                "Non-Retrofit Fragility ID Code": "SF_C3_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e4",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C3L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_4",
+                "Non-Retrofit Fragility ID Code": "SF_C3_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e4",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C3L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_172",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_4",
+                "Non-Retrofit Fragility ID Code": "SF_C3_172"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e4",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c9"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C3L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_170",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_2",
+                "Non-Retrofit Fragility ID Code": "SF_C3_170"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e2",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6afa",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73c7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C3M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_5",
+                "Non-Retrofit Fragility ID Code": "SF_C3_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74de",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af0",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C3M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_5",
+                "Non-Retrofit Fragility ID Code": "SF_C3_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74de",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af0",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C3M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_173",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_5",
+                "Non-Retrofit Fragility ID Code": "SF_C3_173"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74de",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af0",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C3M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_171",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_3",
+                "Non-Retrofit Fragility ID Code": "SF_C3_171"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74e3",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73ca",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af8",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73ca"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS C3H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_6",
+                "Non-Retrofit Fragility ID Code": "SF_C3_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74df",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS C3H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_6",
+                "Non-Retrofit Fragility ID Code": "SF_C3_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74df",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS C3H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_C3_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_C3_174",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_C3_6",
+                "Non-Retrofit Fragility ID Code": "SF_C3_174"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c74df",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6af3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d9337d4a36187c73cb"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS C3H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC1_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC1_113",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC1_1",
+                "Non-Retrofit Fragility ID Code": "SF_PC1_113"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f7d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7047",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6fb8",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7047"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS PC1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC1_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC1_114",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC1_2",
+                "Non-Retrofit Fragility ID Code": "SF_PC1_114"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f7e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7045",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6fbe",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7045"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS PC1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC1_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC1_115",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC1_3",
+                "Non-Retrofit Fragility ID Code": "SF_PC1_115"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f2b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c703c",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6fbb",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c703c"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS PC1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC1_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC1_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC1_4",
+                "Non-Retrofit Fragility ID Code": "SF_PC1_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6f2c",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c703a",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6fb1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c703a"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS PC1"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_337",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_1",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_337"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c645d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed4",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dde",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed4"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS PC2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_340",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_4",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_340"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6407",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6efc",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dd8",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6efc"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS PC2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_343",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_7",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_343"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c640b",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f08",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6de5",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f08"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS PC2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_346",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_10",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_346"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6cef",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef4",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c636d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef4"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS PC2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_338",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_2",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_338"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6405",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ddd",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS PC2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_341",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_5",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_341"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6408",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f02",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ddc",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f02"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS PC2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_8",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_344",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_8",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_344"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c640d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f05",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6de3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6f05"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS PC2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_347",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_11",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_347"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6cf1",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef7",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c636e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef7"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS PC2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_339",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_3",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_339"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6406",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed6",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dd9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ed6"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS PC2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_342",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_6",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_342"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6409",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6eff",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6ddb",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6eff"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS PC2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_9",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_345",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_9",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_345"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c640e",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef5",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6dea",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef5"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS PC2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_PC2_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_PC2_348",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_PC2_12",
+                "Non-Retrofit Fragility ID Code": "SF_PC2_348"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6cf0",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef6",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6384",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ef6"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS PC2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_561",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_1",
+                "Non-Retrofit Fragility ID Code": "SF_RM_561"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6289",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7159",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c744e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7159"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS RM1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_566",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_6",
+                "Non-Retrofit Fragility ID Code": "SF_RM_566"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c626d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7162",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d28",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7162"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS RM1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_571",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_11",
+                "Non-Retrofit Fragility ID Code": "SF_RM_571"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7180",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71d9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS RM1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_16",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_576",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_16",
+                "Non-Retrofit Fragility ID Code": "SF_RM_576"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7187",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7193",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71e6",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7193"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS RM1L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_562",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_2",
+                "Non-Retrofit Fragility ID Code": "SF_RM_562"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6275",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c715b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7450",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c715b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS RM1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_567",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_7",
+                "Non-Retrofit Fragility ID Code": "SF_RM_567"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c626a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7164",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d2a",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7164"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS RM1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_572",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_12",
+                "Non-Retrofit Fragility ID Code": "SF_RM_572"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c717d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c718b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71d3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c718b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS RM1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_17",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_577",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_17",
+                "Non-Retrofit Fragility ID Code": "SF_RM_577"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c716f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7195",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71e9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7195"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS RM1M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_561",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_1",
+                "Non-Retrofit Fragility ID Code": "SF_RM_561"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6289",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7159",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c744e",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7159"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS RM2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_6",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_566",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_6",
+                "Non-Retrofit Fragility ID Code": "SF_RM_566"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c626d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7162",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d28",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7162"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS RM2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_11",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_571",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_11",
+                "Non-Retrofit Fragility ID Code": "SF_RM_571"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7180",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719e",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71d9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719e"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS RM2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_16",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_576",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_16",
+                "Non-Retrofit Fragility ID Code": "SF_RM_576"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7187",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7193",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71e6",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7193"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS RM2L"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_562",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_2",
+                "Non-Retrofit Fragility ID Code": "SF_RM_562"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6275",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c715b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d9337d4a36187c7450",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c715b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS RM2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_7",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_567",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_7",
+                "Non-Retrofit Fragility ID Code": "SF_RM_567"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c626a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7164",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d2a",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7164"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS RM2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_12",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_572",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_12",
+                "Non-Retrofit Fragility ID Code": "SF_RM_572"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c717d",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c718b",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71d3",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c718b"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS RM2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_17",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_577",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_17",
+                "Non-Retrofit Fragility ID Code": "SF_RM_577"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c716f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7195",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71e9",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7195"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS RM2M"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_5",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_565",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_5",
+                "Non-Retrofit Fragility ID Code": "SF_RM_565"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d7337d4a36187c6270",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7160",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c6d26",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7160"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS RM2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_10",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_570",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_10",
+                "Non-Retrofit Fragility ID Code": "SF_RM_570"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7179",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719d",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71d7",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c719d"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS RM2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_15",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_575",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_15",
+                "Non-Retrofit Fragility ID Code": "SF_RM_575"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c718a",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7191",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c71f1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c7191"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS RM2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_RM_20",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_RM_580",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_RM_20",
+                "Non-Retrofit Fragility ID Code": "SF_RM_580"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c714f",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c71cd",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c7147",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c71cd"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS RM2H"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_1",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_114",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_1",
+                "Non-Retrofit Fragility ID Code": "SF_URM_114"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66eb",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e9d",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679c",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e9d",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a4f2f50391ff0d023"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS URML"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_3",
+                "Non-Retrofit Fragility ID Code": "SF_URM_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66e8",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c67a1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a4f2f50391ff0d023"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS URML"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_3",
+                "Non-Retrofit Fragility ID Code": "SF_URM_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66e8",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c67a1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a4f2f50391ff0d023"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS URML"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_3",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_116",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_3",
+                "Non-Retrofit Fragility ID Code": "SF_URM_116"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66e8",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c67a1",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea1",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a4f2f50391ff0d023"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS URML"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_2",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_115",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_2",
+                "Non-Retrofit Fragility ID Code": "SF_URM_115"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66ec",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea4",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679f",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6ea4",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a2ad95b57a1563361"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS URMM"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_4",
+                "Non-Retrofit Fragility ID Code": "SF_URM_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66ea",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a2ad95b57a1563361"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS URMM"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_4",
+                "Non-Retrofit Fragility ID Code": "SF_URM_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66ea",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a2ad95b57a1563361"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS URMM"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_URM_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_URM_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_URM_4",
+                "Non-Retrofit Fragility ID Code": "SF_URM_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c66ea",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b2d8337d4a36187c679d",
+                "Non-Retrofit Fragility ID Code": "5b47b2d8337d4a36187c6e98",
+                "Wood or Metal Deck Diaphragms Retrofitted": "65c3a37a2ad95b57a1563361"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS URMM"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_MH_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_MH_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_MH_4",
+                "Non-Retrofit Fragility ID Code": "SF_MH_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b34e337d4a3629075485",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075790",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b350337d4a3629076e02",
+                "Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075790"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS HC",
+                    "java.lang.String struct_typ EQUALS MH"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_MH_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_MH_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_MH_4",
+                "Non-Retrofit Fragility ID Code": "SF_MH_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b34e337d4a3629075485",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b350337d4a3629076e02",
+                "Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS MC",
+                    "java.lang.String struct_typ EQUALS MH"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_MH_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_MH_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_MH_4",
+                "Non-Retrofit Fragility ID Code": "SF_MH_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b34e337d4a3629075485",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b350337d4a3629076e02",
+                "Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS LC",
+                    "java.lang.String struct_typ EQUALS MH"
+                ]
+            ]
+        },
+        {
+            "legacyEntry": {
+                "Drift-Sensitive Fragility ID Code": "NSF_DS_MH_4",
+                "Parametric Non-Retrofit Fragility ID Code": "SF_MH_117",
+                "Acceleration-Sensitive Fragility ID Code": "NSF_AS_MH_4",
+                "Non-Retrofit Fragility ID Code": "SF_MH_117"
+            },
+            "entry": {
+                "Drift-Sensitive Fragility ID Code": "5b47b34e337d4a3629075485",
+                "Parametric Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791",
+                "Acceleration-Sensitive Fragility ID Code": "5b47b350337d4a3629076e02",
+                "Non-Retrofit Fragility ID Code": "5b47b34f337d4a3629075791"
+            },
+            "rules": [
+                [
+                    "java.lang.String dlevel EQUALS PC",
+                    "java.lang.String struct_typ EQUALS MH"
+                ]
+            ]
+        }
+    ],
+    "creator": "nttu",
+    "owner": "nttu",
+    "spaces": [
+        "coe",
+        "incore",
+        "nttu",
+        "slc-app"
+    ],
+    "mappingType": "fragility"
+}
