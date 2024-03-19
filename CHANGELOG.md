@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [Unreleased]
+
+### Added
+
+- Add 2 notebooks for Machine Learning Enabled SLC CGE [#354](https://github.com/IN-CORE/incore-docs/issues/354)
+
+
 ## [4.9.0] - 2024-02-21
 
 ### Fixed
