@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Changed the mapping function used to generate the FEMA table [#343](https://github.com/IN-CORE/incore-docs/issues/343)
 - PyIncore-viz example notebook updated with new hazard dataset update [#335](https://github.com/IN-CORE/incore-docs/issues/335)
-
+- Added Galveston community notebook with retrofit [#337](https://github.com/IN-CORE/incore-docs/issues/337)
 
 ## [4.8.2] - 2024-02-07
 
