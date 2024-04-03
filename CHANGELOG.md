@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add citation to social vulnerability documentation [#351](https://github.com/IN-CORE/incore-docs/issues/351)
 
+### Fixed
+- lxml 5.2.0 removed lxml-html-clean as a dependency [#365](https://github.com/IN-CORE/incore-docs/issues/365)
+
 ## [4.9.0] - 2024-02-21
 
 ### Fixed
