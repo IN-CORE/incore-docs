@@ -24,6 +24,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [indp.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb) <br />
 [housingunitallocation.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housingunitallocation.ipynb) <br />
 [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_cge.ipynb) <br />
+[joplin_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_community_app.ipynb) <br />
 [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_empirical_restoration.ipynb) <br />
 [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_failure_prob.ipynb) <br />
 [ml_enabled_slc_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/ml_enabled_slc_cge.ipynb) <br />
