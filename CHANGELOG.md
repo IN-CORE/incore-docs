@@ -7,14 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Add citation to social vulnerability documentation [#351](https://github.com/IN-CORE/incore-docs/issues/351)
+- SLC community notebook with retrofit [#338](https://github.com/IN-CORE/incore-docs/issues/338)
+- Two notebooks for Machine Learning Enabled SLC CGE [#354](https://github.com/IN-CORE/incore-docs/issues/354)
+- Add Joplin community app notebook [#340](https://github.com/IN-CORE/incore-docs/issues/340)
+
 ### Fixed
 - lxml 5.2.0 removed lxml-html-clean as a dependency [#365](https://github.com/IN-CORE/incore-docs/issues/365)
-
-### Added
-- Add 2 notebooks for Machine Learning Enabled SLC CGE [#354](https://github.com/IN-CORE/incore-docs/issues/354)
-- Add Joplin community app notebook [#340](https://github.com/IN-CORE/incore-docs/issues/340)
-- Add citation to social vulnerability documentation [#351](https://github.com/IN-CORE/incore-docs/issues/351)
-
 
 ## [4.9.0] - 2024-02-21
 
@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Changed the mapping function used to generate the FEMA table [#343](https://github.com/IN-CORE/incore-docs/issues/343)
 - PyIncore-viz example notebook updated with new hazard dataset update [#335](https://github.com/IN-CORE/incore-docs/issues/335)
+- Added Galveston community notebook with retrofit [#337](https://github.com/IN-CORE/incore-docs/issues/337)
 
 ## [4.8.2] - 2024-02-07
 
