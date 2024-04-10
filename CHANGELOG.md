@@ -6,16 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] 
 
-### Changed
-- Update notebooks related to the functionality column naming change [#510](https://github.com/IN-CORE/pyincore/issues/510)
-
-## [Unreleased]
-
 ### Added
 - Add citation to social vulnerability documentation [#351](https://github.com/IN-CORE/incore-docs/issues/351)
 - SLC community notebook with retrofit [#338](https://github.com/IN-CORE/incore-docs/issues/338)
 - Two notebooks for Machine Learning Enabled SLC CGE [#354](https://github.com/IN-CORE/incore-docs/issues/354)
 - Add Joplin community app notebook [#340](https://github.com/IN-CORE/incore-docs/issues/340)
+
+### Changed
+- Update notebooks related to the functionality column naming change [#510](https://github.com/IN-CORE/pyincore/issues/510)
 
 ### Fixed
 - lxml 5.2.0 removed lxml-html-clean as a dependency [#365](https://github.com/IN-CORE/incore-docs/issues/365)
