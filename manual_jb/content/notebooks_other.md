@@ -45,6 +45,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/seaside_cge.ipynb) <br />
 [slc_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app.ipynb) <br />
 [slc_community_app_ml_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app_ml_cge.ipynb) <br />
+[slc_community_app_retrofit.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app_retrofit.ipynb) <br />
 [social_vulnerability.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/social_vulnerability.ipynb) <br />
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/tornadoepn_dmg.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb) <br />
