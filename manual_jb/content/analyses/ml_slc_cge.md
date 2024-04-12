@@ -4,25 +4,17 @@
 
 The "Machine Learning Enabled Computable General Equilibrium (CGE) - Salt Lake City" analysis merges advanced machine learning with traditional CGE models to offer unprecedented insights into the economic impacts of disaster scenarios on Salt Lake City. Trained on a comprehensive dataset of numerous simulated disasters and their economic effects, this hybrid approach excels in predicting the intricate dynamics of the city's economy under various crises.
 
-A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple 
-data sources to reflect the interactions of households, firms, and relevant government entities as they contribute 
-to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital, 
-using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production 
-sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land, and labor 
-to produce goods and services for both domestic consumption and export; (3) the government sector that collects 
-taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world. 
+A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple data sources to reflect the interactions of households, firms, and relevant government entities as they contribute to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital, using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land, and labor 
+to produce goods and services for both domestic consumption and export; (3) the government sector that collects taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world.
 
-The output of this analysis are CSV files with domestic supply, gross income, ore- and post-disaster factor demand 
-and household count.
+
+The output of this analysis are CSV files with domestic supply, gross income, before- and post-disaster factor demand and household count.
 
 **Contributors**
 
-- Science: 
-- Implementation:  and NCSA IN-CORE Dev Team
+- Science: Charles Nicholson, Nushra Zannat, Hwayoung Jeon, Tao Lu, Harvey Cutler, Anita Pena
+- Implementation: NCSA IN-CORE Dev Team
 
-**Related publications**
-
-- Hamideh, S., Peacock, W. G., & Van Zandt, S. (2018). Housing recovery after disasters: Primary versus seasonal/vacation housing markets in coastal communities. *Natural Hazards Review*.
 
 **Input parameters**
 
