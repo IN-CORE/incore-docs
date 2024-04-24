@@ -19,7 +19,7 @@
 17. [Housing unit allocation](analyses/housingunitallocation)
 18. [Interdependent Network Design Problem](analyses/indp)
 19. [Joplin Computable General Equilibrium (CGE)](analyses/joplin_cge)
-20. [Joplin empirical restoration](analyses/joplin_empirical_restoration)
+20. [Joplin empirical building restoration](analyses/joplin_empirical_building_restoration)
 21. [Machine Learning Enabled Computable General Equilibrium (CGE) - Salt Lake City](analyses/ml_slc_cge.md)
 22. [Mean damage](analyses/mean_dmg)
 23. [Monte Carlo failure probability](analyses/mc_failure_prob)
