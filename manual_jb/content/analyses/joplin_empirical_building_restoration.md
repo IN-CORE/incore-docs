@@ -58,7 +58,7 @@ code snippet:
     restoration.load_remote_input_dataset("building_dmg", building_damage)
 
     # Specify the result name
-    result_name = "IN-CORE_Joplin_empirical_restoration"
+    result_name = "IN-CORE_Joplin_empirical_building_restoration"
 
     # Set analysis parameters
     restoration.set_parameter("result_name", result_name)
