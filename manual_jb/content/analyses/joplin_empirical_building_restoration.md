@@ -1,4 +1,4 @@
-# Joplin empirical restoration model
+# Joplin empirical building restoration model
 
 **Description**
 
@@ -50,8 +50,8 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create Joplin empirical restoration analysis instance
-    restoration = `JoplinEmpiricalRestoration`(client)
+    # Create Joplin empirical building restoration analysis instance
+    restoration = `JoplinEmpiricalBuildingRestoration`(client)
 
     # Load input dataset
     restoration.load_remote_input_dataset("buildings", buildings)
@@ -65,8 +65,8 @@ code snippet:
     restoration.set_parameter("target_functionality_level", 0)
     restoration.set_parameter("seed", 1234)
     
-    # Run Joplin empirical restoration analysis
+    # Run Joplin empirical building restoration analysis
     restoration.run_analysis()
 ```
 
-full analysis: [joplin_empirical_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_empirical_restoration.ipynb) <br />
+full analysis: [joplin_empirical_building_restoration.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_empirical_building_restoration.ipynb) <br />
