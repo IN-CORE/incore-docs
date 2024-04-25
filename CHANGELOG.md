@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - The analysis name from Joplin Empirical Restoration to Joplin Empirical Building Restoration analysis [#367](https://github.com/IN-CORE/incore-docs/issues/367)
+- Replace IN-CORE logo [#377](https://github.com/IN-CORE/incore-docs/issues/377)
 
 ## [4.10.0] - 2024-04-12
 
