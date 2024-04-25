@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Version of Jupyter Book to 0.15.1 [#380](https://github.com/IN-CORE/incore-docs/issues/380)
+- Replace IN-CORE logo [#377](https://github.com/IN-CORE/incore-docs/issues/377)
 
 ## [4.10.0] - 2024-04-12
 
