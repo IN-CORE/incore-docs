@@ -29,10 +29,17 @@ Retrieved from [hrrc.arch.tamu.edu/publications/research reports/08-05R Dislocat
 
 **Input Parameters**
 
-key name | type | name | description
---- | --- | --- | ---
-`result_name` | `str` | Result name |  Name of the result dataset.
-`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
+key name | type    | name                            | description
+--- |---------|---------------------------------| ---
+`result_name` | `str`   | Result name                     |  Name of the result dataset.
+`seed` <sup>*</sup> | `int`   | Seed                            | Initial value to seed the random number generator.
+`choice_dislocation`| `bool`  | Choice Dislocation Flag         | Flag to calculate choice dislocation.
+`choice_dislocation_cutoff`| `float` | Choice Dislocation cutoff            | Damage state Probability cutoff for choice dislocation.
+`choice_dislocation_ds`| `str`   | Choice Dislocation Damage State           | Damage state for choice dislocation.
+`unsafe_occupancy` | `bool`  | Unsafe Occupancy Flag           | Flag to calculate unsafe occupancy.
+`unsafe_occupancy_cutoff` | `float` | Unsafe Occupancy cutoff         | Damage state Probability cutoff for unsafe occupancy.
+`unsafe_occupancy_ds` | `str`   | Unsafe Occupancy Damage State   | Damage state for unsafe occupancy.
+
 
 **Input Datasets**
 
