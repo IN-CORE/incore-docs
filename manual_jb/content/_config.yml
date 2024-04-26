@@ -11,6 +11,7 @@ repository:
 
 html:
   home_page_in_navbar: true # Whether to include your home page in the left Navigation Bar
+  favicon : "images/favicon.ico"
 
 parse:
   myst_enable_extensions:

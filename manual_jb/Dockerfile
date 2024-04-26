@@ -2,7 +2,7 @@
 # Compiling documentation
 # ----------------------------------------------------------------------
 
-FROM python:3.7-slim AS builder
+FROM python:3.9-slim AS builder
 
 RUN apt-get -y update
 
