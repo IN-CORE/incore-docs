@@ -10,12 +10,12 @@ Clone the code from INCORE docs [GitHub](https://github.com/IN-CORE/incore-docs.
 
 1. Install `jupyter-book` package.
 
-2. We recommend using virtual environment `conda` with Python 3.6-3.8. The package management and deployment tool 
+2. We recommend using virtual environment `conda` with Python version 3.9 or later. The package management and deployment tool 
 is called `miniconda` or `anaconda`. Create the environment from the terminal at the project 
 folder (called `incore_docs` here) and activate it:
     
    ```
-    conda create -n incore_docs python=3.8 anaconda
+    conda create -n incore_docs python=3.9 anaconda
     source activate incore_docs
    ```
    
