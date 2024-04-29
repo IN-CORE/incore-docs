@@ -29,19 +29,26 @@ Retrieved from [hrrc.arch.tamu.edu/publications/research reports/08-05R Dislocat
 
 **Input Parameters**
 
-key name | type | name | description
---- | --- | --- | ---
-`result_name` | `str` | Result name |  Name of the result dataset.
-`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator.
+key name | type    | name                            | description
+--- |---------|---------------------------------| ---
+`result_name` | `str`   | Result name                     |  Name of the result dataset.
+`seed` <sup>*</sup> | `int`   | Seed                            | Initial value to seed the random number generator.
+`choice_dislocation`| `bool`  | Choice Dislocation Flag         | Flag to calculate choice dislocation.
+`choice_dislocation_cutoff`| `float` | Choice Dislocation cutoff            | Damage state Probability cutoff for choice dislocation.
+`choice_dislocation_ds`| `str`   | Choice Dislocation Damage State           | Damage state for choice dislocation.
+`unsafe_occupancy` | `bool`  | Unsafe Occupancy Flag           | Flag to calculate unsafe occupancy.
+`unsafe_occupancy_cutoff` | `float` | Unsafe Occupancy cutoff         | Damage state Probability cutoff for unsafe occupancy.
+`unsafe_occupancy_ds` | `str`   | Unsafe Occupancy Damage State   | Damage state for unsafe occupancy.
+
 
 **Input Datasets**
 
-key name | type | name | description
---- | --- | --- | ---
-`building_dmg` <sup>*</sup> | [`ergo:buildingDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer4)<br>[`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | Building damage | A building damage dataset.
-`housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitAllocation) | Housing allocation | A housing unit allocation dataset.
-`block_group_data` <sup>*</sup> | [`incore:blockGroupData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:blockGroupData) | Block group data | A block group racial distribution dataset.
-`value_loss_param` <sup>*</sup> | [`incore:valueLossParam`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:valueLossParam) | Loss parameters | A table with value loss beta distribution parameters.
+key name | type                                                                                                                                                                                                                                                                                                                                                                                                                                             | name | description
+--- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- | ---
+`building_dmg` <sup>*</sup> | [`ergo:buildingDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer4)<br>[`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5)<br>[`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6)<br>[`ergo:buildingDamageVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer7) | Building damage | A building damage dataset.
+`housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitAllocation)                                                                                                                                                                                                                                                                                                                              | Housing allocation | A housing unit allocation dataset.
+`block_group_data` <sup>*</sup> | [`incore:blockGroupData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:blockGroupData)                                                                                                                                                                                                                                                                                                                                            | Block group data | A block group racial distribution dataset.
+`value_loss_param` <sup>*</sup> | [`incore:valueLossParam`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:valueLossParam)                                                                                                                                                                                                                                                                                                                                            | Loss parameters | A table with value loss beta distribution parameters.
                     
 **Output Datasets** 
 
