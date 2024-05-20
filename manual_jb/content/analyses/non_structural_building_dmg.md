@@ -49,7 +49,7 @@ key name | type | name | description
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | `buildings` | Results | A dataset containing results <br>(format: CSV).
 `damage_result` <sup>*</sup> | [`incore:buildingDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingDamageSupplement) | `buildings` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
