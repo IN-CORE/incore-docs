@@ -34,10 +34,10 @@ key name | type | name | description
 
 **Output Datasets**
 
-key name | type | name | description
---- | --- | --- | ---
+key name | type                                                                                                                              | name | description
+--- |-----------------------------------------------------------------------------------------------------------------------------------| --- | ---
 `optimal_solution_of_bridge_repair_schedule` <sup>*</sup> | [`incore:transportationRepairSchedule`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRepairSchedule) | Repair schedule | A dataset containing results (format: CSV).
-`overall_transportation_recovery_trajectory` <sup>*</sup> | [`incore:transportationRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRecovery) | Recovery trajectory | A dataset containing results (format: CSV).
+`overall_traffic_flow_recovery_trajectory` <sup>*</sup> | [`incore:trafficFlowRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRecovery)                | Recovery trajectory | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 
