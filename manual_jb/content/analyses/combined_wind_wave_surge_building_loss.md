@@ -49,7 +49,7 @@ code snippet:
     w_bldg_dmg.run_analysis()    
 
     # Create flood building damage
-    f_bldg_dmg = BuildingDamage(client)
+    f_bldg_dmg = NonStructBuildingDamage(client)
 
     # Run building damage analysis
     f_bldg_dmg.run_analysis()    
