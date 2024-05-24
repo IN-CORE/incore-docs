@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Social vulnerability score analysis documentation and example notebook [#392](https://github.com/IN-CORE/incore-docs/issues/392)
 
+### Changed
+- Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)
+
 ## [4.11.0] - 2024-04-30
 
 ### Changed
