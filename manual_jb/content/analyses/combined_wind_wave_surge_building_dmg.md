@@ -18,7 +18,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `wind_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building wind damage |  A building wind damage dataset.
 `surge_wave_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building surge-wave damage |  A building surge-wave damage dataset.
-`flood_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building flood damage |  A building flood damage dataset.
+`flood_damage` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamageVer4) | Building flood damage |  A building flood damage dataset.
 
 **Output datasets**
 
@@ -46,7 +46,7 @@ code snippet:
     w_bldg_dmg.run_analysis()    
 
     # Create flood building damage
-    f_bldg_dmg = BuildingDamage(client)
+    f_bldg_dmg = NonStructBuildingDamage(client)
 
     # Run building damage analysis
     f_bldg_dmg.run_analysis()    
