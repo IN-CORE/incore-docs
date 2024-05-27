@@ -53,6 +53,7 @@ chapters:
       - file: analyses/social_vulnerability
       - file: analyses/social_vulnerability_score
       - file: analyses/tornadoepn_dmg
+      - file: analyses/traffic_flow_recovery
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
       - file: analyses/wfn_functionality
