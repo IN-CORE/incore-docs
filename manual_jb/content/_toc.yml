@@ -15,6 +15,7 @@ chapters:
     - file: analyses
       sections:
       - file: analyses/bridge_dmg
+      - file: analyses/building_cluster_recovery
       - file: analyses/building_dmg
       - file: analyses/building_func
       - file: analyses/building_loss
