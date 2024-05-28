@@ -1,4 +1,4 @@
-# Building Cluster recovery
+# Building Cluster Recovery
 
 **Description**
 
