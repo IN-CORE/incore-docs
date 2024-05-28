@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Traffic flow recovery analysis documentation and example notebook [#389](https://github.com/IN-CORE/incore-docs/issues/389)
+- Social vulnerability score analysis documentation and example notebook [#392](https://github.com/IN-CORE/incore-docs/issues/392)
+
 ### Changed
 - Update docs to reflect Non-structural Building Damage change [#562](https://github.com/IN-CORE/pyincore/issues/562)
 - Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)

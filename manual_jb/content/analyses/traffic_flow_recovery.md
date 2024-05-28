@@ -1,9 +1,9 @@
-# Transportation recovery
+# Traffic flow recovery
 
 **Description**
 
 This analysis computes the damage to bridges, first calling the bridge damage analysis. It then uses nodes and links 
-in transportation path and Average Daily Traffic (ADT) data of bridges to calculate a transportation network post-disaster recovery.
+in traffic flow path and Average Daily Traffic (ADT) data of bridges to calculate a traffic flow network post-disaster recovery.
 Additionally, the analysis can be used in stochastic calculations with an integer value being imported 
 to seed the random number generator.
 
@@ -37,7 +37,7 @@ key name | type | name | description
 key name | type                                                                                                                              | name | description
 --- |-----------------------------------------------------------------------------------------------------------------------------------| --- | ---
 `optimal_solution_of_bridge_repair_schedule` <sup>*</sup> | [`incore:transportationRepairSchedule`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRepairSchedule) | Repair schedule | A dataset containing results (format: CSV).
-`overall_traffic_flow_recovery_trajectory` <sup>*</sup> | [`incore:trafficFlowRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRecovery)                | Recovery trajectory | A dataset containing results (format: CSV).
+`overall_traffic_flow_recovery_trajectory` <sup>*</sup> | [`incore:trafficFlowRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:trafficFlowRecovery)                   | Recovery trajectory | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 
@@ -46,28 +46,28 @@ key name | type                                                                 
 code snippet:
 
 ```
-    # Create transportation recovery instance
-    transportation_recovery = TransportationRecovery(client)
+    # Create traffic flow recovery instance
+    traffic_flow_recovery = TrafficFlowRecovery(client)
 
     # Load input datasets
-    transportation_recovery.load_remote_input_dataset("nodes", nodes)
-    transportation_recovery.load_remote_input_dataset("links", links)
-    transportation_recovery.load_remote_input_dataset('bridges', bridges)
-    transportation_recovery.load_remote_input_dataset('bridge_damage_value', bridge_damage)
-    transportation_recovsery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
-    transportation_recovery.load_remote_input_dataset('ADT', ADT_data)
+    traffic_flow_recovery.load_remote_input_dataset("nodes", nodes)
+    traffic_flow_recovery.load_remote_input_dataset("links", links)
+    traffic_flow_recovery.load_remote_input_dataset('bridges', bridges)
+    traffic_flow_recovery.load_remote_input_dataset('bridge_damage_value', bridge_damage)
+    traffic_flow_recovery.load_remote_input_dataset('unrepaired_bridge', unrepaired)
+    traffic_flow_recovery.load_remote_input_dataset('ADT', ADT_data)
 
     # Set analysis parameters
-    transportation_recovery.set_parameter("num_cpu", 4)
-    transportation_recovery.set_parameter("pm", 1)
-    transportation_recovery.set_parameter('ini_num_population', 5)
-    transportation_recovery.set_parameter("population_size", 3)
-    transportation_recovery.set_parameter("num_generation", 2)
-    transportation_recovery.set_parameter("mutation_rate", 0.1)
-    transportation_recovery.set_parameter("crossover_rate", 1.0)
+    traffic_flow_recovery.set_parameter("num_cpu", 4)
+    traffic_flow_recovery.set_parameter("pm", 1)
+    traffic_flow_recovery.set_parameter('ini_num_population', 5)
+    traffic_flow_recovery.set_parameter("population_size", 3)
+    traffic_flow_recovery.set_parameter("num_generation", 2)
+    traffic_flow_recovery.set_parameter("mutation_rate", 0.1)
+    traffic_flow_recovery.set_parameter("crossover_rate", 1.0)
 
-    # Run transportation recovery analysis
-    transportation_recovery.run_analysis()
+    # Run traffic flow recovery analysis
+    traffic_flow_recovery.run_analysis()
 ```
 
-full analysis: [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb)
+full analysis: [traffic_flow_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/traffic_flow_recovery.ipynb)
