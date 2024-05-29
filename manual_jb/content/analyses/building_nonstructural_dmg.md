@@ -89,4 +89,4 @@ code snippet:
 ```
 
 full
-analysis: [non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/non_structural_building_dmg.ipynb)
+analysis: [building_nonstructural_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_nonstructural_dmg.ipynb)
