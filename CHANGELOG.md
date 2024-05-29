@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)
 
 ### Added
+- Gas facility damage analysis documentation and example notebook [#387](https://github.com/IN-CORE/incore-docs/issues/387)
 - Traffic flow recovery analysis documentation and example notebook [#389](https://github.com/IN-CORE/incore-docs/issues/389)
 - Social vulnerability score analysis documentation and example notebook [#392](https://github.com/IN-CORE/incore-docs/issues/392)
 
