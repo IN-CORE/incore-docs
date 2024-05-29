@@ -14,6 +14,7 @@
 12. [Electric power facility restoration](analyses/epf_restoration)
 13. [Electric power network functionality](analyses/epn_functionality)
 14. [Galveston Computable General Equilibrium (CGE)](analyses/galveston_cge.md)
+15. [Gas facility damage](analyses/gas_facility_damage)
 15. [Household-level housing sequential recovery](analyses/housing_household_recovery)
 16. [Housing recovery](analyses/housing_recovery)
 17. [Housing unit allocation](analyses/housingunitallocation)

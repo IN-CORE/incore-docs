@@ -19,6 +19,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [galveston_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_community_app.ipynb) <br />
 [galveston_community_app_retrofit.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_community_app_retrofit.ipynb) <br />
 [galveston_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_cge.ipynb) <br />
+[gas_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/gas_facility_dmg.ipynb) <br />
 [housing household recovery](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_household_recovery.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_recovery.ipynb) <br />
 [indp.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb) <br />
