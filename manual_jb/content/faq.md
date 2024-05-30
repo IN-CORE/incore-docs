@@ -105,6 +105,7 @@
     very explicitly if they occur e.g. package X requires package Y version <5.0. We make sure that pyIncore works with 
     fresh environment and in this case we recommend re-installing pyIncore.
     <br />
+    <br />
        
 *   *Should I use virtual environment for running the pyIncore?*
 
@@ -118,6 +119,18 @@
     Note: Use Anaconda if you do not have full administrative privileges on your computer. It has been reported that 
     Jupyter Notebook can't be subsequently installed in Miniconda environment. With Anaconda **Jupyter Notebook** is already 
     pre-installed.
+    <br />
+    <br />
+
+*   *When installing pyIncore, it takes a long time to resolve dependencies. Is there anything I can do?*
+
+    We recommend trying the libmamba solver to improve dependency resolution. When installing pyIncore, use the
+    following command:
+
+    ```
+    conda install -c in-core pyincore --solver=libmamba
+    ```
+    <br />
     
 
 ### Running pyIncore

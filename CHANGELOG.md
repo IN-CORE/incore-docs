@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Rename Building Portfolio Analysis to Building Cluster Recovery Analysis [#559](https://github.com/IN-CORE/pyincore/issues/559)
 - Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)
+- pyincore, pyincore-viz and pyincore-data installation instructions to include how to use libmamba solver [#375](https://github.com/IN-CORE/incore-docs/issues/375)
 - Update docs to reflect Non-structural Building Damage change [#562](https://github.com/IN-CORE/pyincore/issues/562)
 
 ### Added
