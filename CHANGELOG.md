@@ -7,13 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Rename Building Portfolio Analysis to Building Cluster Recovery Analysis [#559](https://github.com/IN-CORE/pyincore/issues/559)
+- Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)
+- Update docs to reflect Non-structural Building Damage change [#562](https://github.com/IN-CORE/pyincore/issues/562)
+
 ### Added
+- Gas facility damage analysis documentation and example notebook [#387](https://github.com/IN-CORE/incore-docs/issues/387)
 - Traffic flow recovery analysis documentation and example notebook [#389](https://github.com/IN-CORE/incore-docs/issues/389)
 - Social vulnerability score analysis documentation and example notebook [#392](https://github.com/IN-CORE/incore-docs/issues/392)
-
-### Changed
-- Update docs to reflect Non-structural Building Damage change [#562](https://github.com/IN-CORE/pyincore/issues/562)
-- Update flood input to nonstructural damage output for combined wind-wave-surge building damage [#566](https://github.com/IN-CORE/incore-docs/issues/566)
 
 ## [4.11.0] - 2024-04-30
 

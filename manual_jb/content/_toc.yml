@@ -15,6 +15,7 @@ chapters:
     - file: analyses
       sections:
       - file: analyses/bridge_dmg
+      - file: analyses/building_cluster_recovery
       - file: analyses/building_dmg
       - file: analyses/building_func
       - file: analyses/building_loss
@@ -29,6 +30,7 @@ chapters:
       - file: analyses/epf_restoration
       - file: analyses/epn_functionality
       - file: analyses/galveston_cge
+      - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
