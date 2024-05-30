@@ -19,6 +19,7 @@ chapters:
       - file: analyses/building_dmg
       - file: analyses/building_func
       - file: analyses/building_loss
+      - file: analyses/building_nonstructural_dmg
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/combined_wind_wave_surge_building_loss
@@ -40,7 +41,6 @@ chapters:
       - file: analyses/mc_failure_prob
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
-      - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
       - file: analyses/pipeline_functionality
