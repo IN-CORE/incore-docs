@@ -17,7 +17,7 @@ RUN jupyter-book build content/
 
 # Run the insert_ga_to_header.py script to insert Google Analytics code
 RUN python3 -m pip install beautifulsoup4
-RUN python3 /src/docs/source/insert_ga_to_header.py
+RUN python3 insert_ga_to_header.py
 
 # ----------------------------------------------------------------------
 # Building actual container
