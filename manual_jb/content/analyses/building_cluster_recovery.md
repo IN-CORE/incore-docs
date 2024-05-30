@@ -1,8 +1,8 @@
-# Portfolio recovery
+# Building Cluster Recovery
 
 **Description**
 
-The code creates two output files *building-recovery.csv* and *portfolio-recovery.csv*
+The code creates two output files *building-recovery.csv* and *cluster-recovery.csv*
    
 **Input Parameters**
 
@@ -29,9 +29,9 @@ key name | type | name | description
 
 **Output Datasets**
 
-key name | type | name | description
---- | --- | --- | ---
-`result` <sup>*</sup> | [`incore:portfolioRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:portfolioRecovery) | Results | A dataset containing results (format: CSV).
+key name | type                                                                                                         | name | description
+--- |--------------------------------------------------------------------------------------------------------------| --- | ---
+`result` <sup>*</sup> | [`incore:clusterRecovery`](https://incore.ncsa.illinois.<br/>edu/semantics/api/types/incore:clusterRecovery) | Results | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 
@@ -41,25 +41,25 @@ code snippet:
 
 ```
     # Create instance
-    bldg_portfolio_recovery = BuildingPortfolioRecoveryAnalysis(client)
+    bldg_cluster_recovery = BuildingClusterRecovery(client)
 
     # Load input datasets
-    bldg_portfolio_recovery.load_remote_input_dataset("building_data", bldg_data_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("occupancy_mapping", occupancy_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("building_damage", bldg_damage_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("dmg_ratios", mean_repair_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("utility", utility_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("utility_partial", utility_partial_dataset)
-    bldg_portfolio_recovery.load_remote_input_dataset("coefFL", coefFL_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("building_data", bldg_data_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("occupancy_mapping", occupancy_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("building_damage", bldg_damage_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("dmg_ratios", mean_repair_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("utility", utility_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("utility_partial", utility_partial_dataset)
+    bldg_cluster_recovery.load_remote_input_dataset("coefFL", coefFL_dataset)
 
     # Set parameters
-    bldg_portfolio_recovery.set_parameter("uncertainty", True)
-    bldg_portfolio_recovery.set_parameter("sample_size", 35)  # default none. Gets size form input dataset
-    bldg_portfolio_recovery.set_parameter("random_sample_size", 50)  # default 10000
-    bldg_portfolio_recovery.set_parameter("no_of_weeks", 100)  # default 250
+    bldg_cluster_recovery.set_parameter("uncertainty", True)
+    bldg_cluster_recovery.set_parameter("sample_size", 35)  # default none. Gets size form input dataset
+    bldg_cluster_recovery.set_parameter("random_sample_size", 50)  # default 10000
+    bldg_cluster_recovery.set_parameter("no_of_weeks", 100)  # default 250
 
-    # Creates two output files building-recovery.csv and portfolio-recovery.csv
-    bldg_portfolio_recovery.run_analysis()
+    # Creates two output files building-recovery.csv and cluster-recovery.csv
+    bldg_cluster_recovery.run_analysis()
 ```
 
-full analysis: [portfolio_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/portfolio_recovery.ipynb)
+full analysis: [building_cluster_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_cluster_recovery.ipynb)
