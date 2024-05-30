@@ -15,9 +15,11 @@ chapters:
     - file: analyses
       sections:
       - file: analyses/bridge_dmg
+      - file: analyses/building_cluster_recovery
       - file: analyses/building_dmg
       - file: analyses/building_func
       - file: analyses/building_loss
+      - file: analyses/building_nonstructural_dmg
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/combined_wind_wave_surge_building_loss
@@ -28,6 +30,7 @@ chapters:
       - file: analyses/epf_restoration
       - file: analyses/epn_functionality
       - file: analyses/galveston_cge
+      - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
       - file: analyses/housing_recovery
       - file: analyses/housingunitallocation
@@ -38,7 +41,6 @@ chapters:
       - file: analyses/mc_failure_prob
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
-      - file: analyses/non_structural_building_dmg
       - file: analyses/pipeline_dmg
       - file: analyses/pipeline_dmg_w_repair_rate
       - file: analyses/pipeline_functionality
@@ -51,7 +53,9 @@ chapters:
       - file: analyses/slc_cge
       - file: analyses/seaside_cge
       - file: analyses/social_vulnerability
+      - file: analyses/social_vulnerability_score
       - file: analyses/tornadoepn_dmg
+      - file: analyses/traffic_flow_recovery
       - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
       - file: analyses/wfn_functionality

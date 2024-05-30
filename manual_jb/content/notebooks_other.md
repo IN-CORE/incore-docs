@@ -19,6 +19,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [galveston_community_app.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_community_app.ipynb) <br />
 [galveston_community_app_retrofit.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_community_app_retrofit.ipynb) <br />
 [galveston_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/galveston_cge.ipynb) <br />
+[gas_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/gas_facility_dmg.ipynb) <br />
 [housing household recovery](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_household_recovery.ipynb) <br />
 [housing_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/housing_recovery.ipynb) <br />
 [indp.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/indp.ipynb) <br />
@@ -31,7 +32,7 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [mean_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mean_dmg.ipynb) <br />
 [multi_retrofit_optimization.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/multi_retrofit_optimization.ipynb) <br />
 [nci_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/nci_functionality.ipynb) <br />
-[non_structural_building_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/non_structural_building_dmg.ipynb) <br />
+[building_nonstructural_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_nonstructural_dmg.ipynb) <br />
 [pipeline_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg.ipynb) <br />
 [pipeline_dmg_w_repair_rate.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_dmg_w_repair_rate.ipynb) <br />
 [pipeline_repair_cost.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_repair_cost.ipynb) <br />
@@ -48,7 +49,9 @@ Note that some Notebooks might not work with the latest version of pyIncore.
 [slc_community_app_ml_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app_ml_cge.ipynb) <br />
 [slc_community_app_retrofit.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/slc_community_app_retrofit.ipynb) <br />
 [social_vulnerability.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/social_vulnerability.ipynb) <br />
+[social_vulnerability_score.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/social_vulnerability_score.ipynb) <br />
 [tornadoepn_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/tornadoepn_dmg.ipynb) <br />
+[traffic_flow_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/traffic_flow_recovery.ipynb) <br />
 [transportation_recovery.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/transportation_recovery.ipynb) <br />
 [water_facility_dmg.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/water_facility_dmg.ipynb) <br />
 [wfn_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/wfn_functionality.ipynb) <br />
