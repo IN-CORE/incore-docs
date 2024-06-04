@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <script>
+            // Fetch and execute the analytics script
+            fetch('config/googleAnalytics.js')
+            .then(response => response.text())
+            .then(scriptContent => {
+                const scriptTag = document.createElement('script');
+                scriptTag.textContent = scriptContent;
+                document.head.appendChild(scriptTag);
+            })
+            .catch(error => console.error('Failed to load analytics script:', error));
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="IN-CORE RESTAPI Swagger Documentation - Data, Hazard & Fragility Services">
