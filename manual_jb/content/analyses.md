@@ -25,7 +25,7 @@
 22. [Joplin empirical building restoration](analyses/joplin_empirical_building_restoration)
 23. [Machine Learning Enabled Computable General Equilibrium (CGE) - Salt Lake City](analyses/ml_slc_cge.md)
 24. [Mean damage](analyses/mean_dmg)
-25. [Monte Carlo failure probability](analyses/mc_failure_prob)
+25. [Monte Carlo limit state probability](analyses/mc_lmit_state_prob)
 26. [Multi-objective retrofit optimization](analyses/multi_retrofit_optimization)
 27. [Network cascading interdependency functionality](analyses/nci_functionality)
 28. [Nonstructural building damage](analyses/non_structural_building_dmg)

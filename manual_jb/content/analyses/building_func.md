@@ -11,7 +11,7 @@ If both the nearest pole to the building and the substation where buildings belo
 functional, buildings are considered to be able to receive electric power.
 
 The outputs of this analysis are 1) a CSV file with probabilities of functionality samples 
-for direct comparison with [MC failure probability](mc_failure_prob) outputs and 
+for direct comparison with [MC failure probability](mc_lmit_state_prob) outputs and 
 2) a CSV file with probabilities of functionality.
 
 **Input parameters**
