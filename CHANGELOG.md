@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Social vulnerability score analysis documentation and example notebook [#392](https://github.com/IN-CORE/incore-docs/issues/392)
 - Google Analytics to the main documentation [#399](https://github.com/IN-CORE/incore-docs/issues/399)
 - Google Analytics to the api sphinx documentation [#396](https://github.com/IN-CORE/incore-docs/issues/396)
+- Buyout decision analysis documentation and example notebook [#401](https://github.com/IN-CORE/incore-docs/issues/401)
 
 ## [4.11.0] - 2024-04-30
 
