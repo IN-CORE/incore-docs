@@ -28,7 +28,7 @@
 25. [Monte Carlo limit state probability](analyses/mc_limit_state_prob)
 26. [Multi-objective retrofit optimization](analyses/multi_retrofit_optimization)
 27. [Network cascading interdependency functionality](analyses/nci_functionality)
-28. [Nonstructural building damage](analyses/non_structural_building_dmg)
+28. [Nonstructural building damage](analyses/building_nonstructural_dmg.md)
 29. [Pipeline damage](analyses/pipeline_dmg)
 30. [Pipeline damage with repair rate](analyses/pipeline_dmg_w_repair_rate)
 31. [Pipeline functionality](analyses/pipeline_functionality)
