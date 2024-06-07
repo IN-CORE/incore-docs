@@ -3,7 +3,7 @@
 1. [Bridge damage](analyses/bridge_dmg.md)
 2. [Building cluster recovery](analyses/building_cluster_recovery)
 3. [Building damage](analyses/building_dmg)
-4. [Building Structural Damage](analyses/building_structural_dmg)
+4. [Building structural damage](analyses/building_structural_dmg)
 4. [Building functionality](analyses/building_func)
 5. [Building economic loss](analyses/building_loss)
 6. [Building nonstructural damage](analyses/building_nonstructural_dmg)

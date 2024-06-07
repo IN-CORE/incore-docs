@@ -1,4 +1,4 @@
-# Building Structural Damage
+# Building structural damage
 
 **Description**
 
