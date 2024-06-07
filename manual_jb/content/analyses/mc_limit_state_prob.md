@@ -1,13 +1,13 @@
-# Monte Carlo failure probability
+# Monte Carlo Limit State Probability
 
 **Description**
 
-This analysis calculates a probability of failure using a stochastic process. Failure probability and Failure state are derived 
-using the dictionary of failed damage states in the input infrastructure dataset. Failure probability is calculated from all
-stochastic runs, failure state shows all infrastructure standings as a string of *failed* (0) and *not failed* (1) states 
+This analysis calculates a probability of limit state using a stochastic process. Limit state probability and 
+damage state are derived using the dictionary of failed damage states in the input infrastructure dataset. Limit state 
+probability is calculated from all stochastic runs, limit state shows all infrastructure standings as a string of *failed* (0) and *not failed* (1) states 
 of each individual run.
 
-The output of this analysis are two CSV files; a failure proability *base_name*_failure_probability.csv with allocated house units
+The output of this analysis are two CSV files; a limit state proability *base_name*_failure_probability.csv with allocated house units
 and  *base_name*_failure_state.csv.
                                 
 **Input Parameters**
@@ -33,6 +33,7 @@ key name | type | name | description
 --- | --- | --- | ---
 `failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Results | A dataset containing failure probability results <br>(format: CSV).
 `sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`sample_damage_states` <sup>*</sup> | [`incore:sampleDamageState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleDamageState) | Results | A dataset containing damage state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 
@@ -42,21 +43,21 @@ code snippet:
 
 ```
     # Create instance
-    mc = MonteCarloFailureProbability(client)
+    mc = MonteCarloLimitStateProbability(client)
 
     # Load remote datasets
     mc.load_remote_input_dataset("damage", damage_id)
 
     # Set analysis parameters
-    mc.set_parameter("result_name", "mc_failure_probability")
+    mc.set_parameter("result_name", "mc_limit_state_probability")
     mc.set_parameter("num_cpu", 8)
     mc.set_parameter("num_samples", 10)
     mc.set_parameter("damage_interval_keys", ["DS_0", "DS_1", "DS_2", "DS_3"])
     mc.set_parameter("failure_state_keys", ["DS_1", "DS_2", "DS_3"])
     mc.set_parameter("seed", 1111)
 
-    # Run Monte Carlo failure
+    # Run Monte Carlo limit state analysis
     mc.run_analysis()
 ```
 
-full analysis: [mc_failure_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_failure_prob.ipynb)
+full analysis: [mc_limit_state_prob.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/mc_limit_state_prob.ipynb)

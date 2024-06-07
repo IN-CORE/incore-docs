@@ -21,6 +21,7 @@ chapters:
       - file: analyses/building_loss
       - file: analyses/building_nonstructural_dmg
       - file: analyses/buyout_decision
+      - file: analyses/building_structural_dmg
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/combined_wind_wave_surge_building_loss
@@ -39,7 +40,7 @@ chapters:
       - file: analyses/joplin_cge
       - file: analyses/joplin_empirical_restoration
       - file: analyses/mean_dmg
-      - file: analyses/mc_failure_prob
+      - file: analyses/mc_limit_state_prob
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
       - file: analyses/pipeline_dmg
