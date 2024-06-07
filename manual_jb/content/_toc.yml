@@ -20,6 +20,7 @@ chapters:
       - file: analyses/building_func
       - file: analyses/building_loss
       - file: analyses/building_nonstructural_dmg
+      - file: analyses/building_structural_dmg
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/combined_wind_wave_surge_building_loss

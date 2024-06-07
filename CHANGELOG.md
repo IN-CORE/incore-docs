@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - pyincore, pyincore-viz and pyincore-data installation instructions to include how to use libmamba solver [#375](https://github.com/IN-CORE/incore-docs/issues/375)
 - Update docs to reflect Non-structural Building Damage change [#562](https://github.com/IN-CORE/pyincore/issues/562)
 - Rename Monte Carlo failure probability analysis to Monte Carlo limit state Probability Analysis [#557](https://github.com/IN-CORE/pyincore/issues/557)
+- Add building structural damage documentation and notebook [#402](https://github.com/IN-CORE/incore-docs/issues/402)
 
 ### Added
 - Gas facility damage analysis documentation and example notebook [#387](https://github.com/IN-CORE/incore-docs/issues/387)
