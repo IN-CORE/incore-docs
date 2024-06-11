@@ -32,6 +32,13 @@ or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
     ```
     conda install -c in-core pyincore-viz
     ```
+   If you have trouble installing pyincore-viz or it is taking a long time to resolve the dependencies, try using the
+   libmamba solver by running the following command:
+
+    ```
+    conda install -c in-core pyincore-viz --solver=libmamba
+    ```
+
    If the installed pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
     ```
     conda install -c in-core pyincore-viz=1.5.0 (or your version of choice)

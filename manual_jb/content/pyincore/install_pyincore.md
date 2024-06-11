@@ -11,10 +11,25 @@ These steps guides you on how to install both pyIncore and Jupyter Notebooks on 
     ```
     conda install -c in-core pyincore
     ```
+   If you have trouble installing pyincore or it is taking a long time to resolve the dependencies, try using the
+   libmamba solver by running the following command:
+
+    ```
+    conda install -c in-core pyincore --solver=libmamba
+    ```
+
    A user can also install **pyIncore-viz** module for which **pyIncore** installs as a dependency:
     ```
     conda install -c in-core pyincore-viz
     ```
+
+   Similarly, if you have issues installing pyincore-viz, you can use the libmamba solver flag to resolve the
+   dependencies by running the following command:
+
+    ```
+    conda install -c in-core pyincore-viz --solver=libmamba
+    ```
+
    If the installed pyincore version is not the latest or lower than the desired one, specify the version number in installation command.
     ```
     conda install -c in-core pyincore=1.14.0 (or your version of choice)
