@@ -86,8 +86,7 @@ If you don't have Miniconda installed, do the following steps.
     ```
 
    The **pyIncore-data** package, available in the in-core conda channel, assists in preparing data for use in 
-   **pyIncore**. When a user installs the **pyIncore-data** module, the **pyIncore** package is also installed as a 
-   dependency.
+   **pyIncore**.
     ```
     conda install -c in-core pyincore-data
     ```
