@@ -65,6 +65,7 @@ chapters:
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
+- file: pyincore_incubator
 - file: incore_lab
 - file: webtools
 - file: tutorials
