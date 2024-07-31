@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Fixed
-- Getting start screenshot with wrong output key [#411](https://github.com/IN-CORE/pyincore/issues/411)
+- Getting start screenshot with wrong output key [#411](https://github.com/IN-CORE/incore-docs/issues/411)
 
 ## [4.12.0] - 2024-06-12
 
