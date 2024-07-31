@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Instruction to install pyincore-data [#412](https://github.com/IN-CORE/pyincore/issues/412)
+- Instruction to install pyincore-data [#412](https://github.com/IN-CORE/incore-docs/issues/412)
 
 ## [4.12.0] - 2024-06-12
 

@@ -101,10 +101,8 @@ If you don't have Miniconda installed, do the following steps.
     ```
     conda install -c in-core pyincore=1.14.0 (or your version of choice)
     ```
-   Version information for pyincore, pyincore-viz, and pyincore-data can be found in
-   - https://anaconda.org/IN-CORE/pyincore
-   - https://anaconda.org/IN-CORE/pyincore-viz
-   - https://anaconda.org/IN-CORE/pyincore-data
+   Version information for [pyincore](https://anaconda.org/IN-CORE/pyincore), [pyincore-viz](https://anaconda.org/IN-CORE/pyincore-viz), and [pyincore-data](https://anaconda.org/IN-CORE/pyincore-data) can 
+   be found in [Anaconda IN-CORE space](https://anaconda.org/IN-CORE/repo).
 
 
 6. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
