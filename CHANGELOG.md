@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Instruction to install pyincore-data [#412](https://github.com/IN-CORE/incore-docs/issues/412)
+
 ### Fixed
 - Getting start screenshot with wrong output key [#411](https://github.com/IN-CORE/incore-docs/issues/411)
 

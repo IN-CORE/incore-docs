@@ -85,13 +85,24 @@ If you don't have Miniconda installed, do the following steps.
     conda install -c in-core pyincore-viz --solver=libmamba
     ```
 
-   If the installed pyincore or pyincore-viz version is not the latest or lower than the desired one, specify the version number in installation command.
+   The **pyIncore-data** package, available in the in-core conda channel, assists in preparing data for use in 
+   **pyIncore**.
+    ```
+    conda install -c in-core pyincore-data
+    ```
+   Similarly, you can use the libmamba solver flag to resolve the dependencies by running the following command:
+
+    ```
+    conda install -c in-core pyincore-data --solver=libmamba
+    ```
+   
+   If the installed pyincore, pyincore-viz, pyincore-data version is not the latest or lower than the desired one, 
+   specify the version number in installation command. e.g.
     ```
     conda install -c in-core pyincore=1.14.0 (or your version of choice)
     ```
-   Version information for pyincore and pyincore-viz can be found in
-   - https://anaconda.org/IN-CORE/pyincore
-   - https://anaconda.org/IN-CORE/pyincore-viz
+   Version information for [pyincore](https://anaconda.org/IN-CORE/pyincore), [pyincore-viz](https://anaconda.org/IN-CORE/pyincore-viz), and [pyincore-data](https://anaconda.org/IN-CORE/pyincore-data) can 
+   be found in [Anaconda IN-CORE space](https://anaconda.org/IN-CORE/repo).
 
 
 6. Install Jupyter Notebook. Jupyter Notebook is already installed with Anaconda distribution; it has to be installed separately in your virtual environment on Miniconda:
