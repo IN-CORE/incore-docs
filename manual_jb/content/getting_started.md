@@ -201,7 +201,7 @@ If you don't have Miniconda installed, do the following steps.
     ```
     bldg_dmg.run_analysis()
     ```
-    ![Building damage Jupyter notebook cells.](images/tutorials/tut1_11_juploc_build_dmg.jpg "Building damage Jupyter notebook cells.")
+    ![Building damage Jupyter notebook cells.](images/tutorials/tut1_11_juploc_build_dmg.png "Building damage Jupyter notebook cells.")
     <br />
     <br />
 8. Save your Tutorial notebook by clicking `Save` button in the top bar. Your web page now shows multiple cells of code. 
