@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Account instructions for registering with keycloak [#559](https://github.com/IN-CORE/incore-docs/issues/416)
+
 ### Added
 - Instruction to install pyincore-data [#412](https://github.com/IN-CORE/incore-docs/issues/412)
 
