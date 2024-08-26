@@ -47,9 +47,11 @@ key name | type | name | description
 
 **Output datasets**
 
-key name | type | parent key | name | description
---- | --- | --- | --- | ---
-`residential_building_recovery` <sup>*</sup> | [`incore:buildingRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecovery) | Results | A dataset containing results (format: CSV)<br>with percentages of residential building recovery.
+key name | type | parent key | name                   | description
+--- | --- | --- |------------------------| ---
+`time_stepping_recovery` <sup>*</sup> | [`incore:buildingRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecovery) | Results | Time Stepping Recovery | A dataset containing results (format: CSV)<br>with percentages of residential building recovery.
+`total_delay` <sup>*</sup> | [`incore:buildingRecoveryDelay`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecovery) | Results | Total Delay            | A dataset containing results (format: CSV)<br>with delay time of residential building recovery. 
+`recovery` <sup>*</sup> | [`incore:buildingRecoveryTime`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingRecovery) | Results | Recovery               | A dataset containing results (format: CSV)<br>with delay time of residential building recovery. 
 
 <small>(* required)</small>
 
