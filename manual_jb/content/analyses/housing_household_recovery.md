@@ -36,7 +36,7 @@ key name | type | name                        | description
 --- | --- |-----------------------------| ---
 `population_dislocation_block` <sup>*</sup> | [`incore:popDislocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:popDislocation) | Population dislocation      | Population dislocation results.
 `tpm` <sup>*</sup> | [`incore:houseRecTransitionProbMatrix`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecTransitionProbMatrix) | Probability matrix          | A transition probability matrix that specifies<br>the corresponding Markov chain per social vulnerability level.
-`initial_stage_probability` <sup>*</sup> | [`incore:houseRecInitialStageFactors`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecInitialStageFactors) | Mass probability            | Initial mass probability function for stage 0 of the Markov Chain.
+`initial_stage_probabilities` <sup>*</sup> | [`incore:houseRecInitialStageFactors`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecInitialStageFactors) | Mass probability            | Initial mass probability function for stage 0 of the Markov Chain.
 `sv_result` | [`incore:socialVulnerabilityScore`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:popDislocation) | Social vulnerability result | A csv file with zones containing demographic factors.
 `zone_def_sv` | [`incore:zoneDefinitionsSocialVulnerability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecTransitionProbMatrix) | Zone Definition: social vulnerability           | A json file with thresholds and definitions per zone based on social vulnerability analysis.
 `zone_def_hhinc` | [`incore:zoneDefinitionsHouseholdIncome`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:houseRecInitialStageFactors) | Zone Definition: household income           | A json file with thresholds and definitions per zone based on household income.
@@ -45,7 +45,7 @@ key name | type | name                        | description
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | [`incore:housingRecoveryHistory`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingRecoveryHistory) | `housing_recovery_block` | Results | A dataset containing results (format: CSV)<br>with housing recovery sequences at the individual household level.
+`ds_result` <sup>*</sup> | [`incore:housingRecoveryHistory`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingRecoveryHistory) | `housing_recovery_block` | Results | A dataset containing results (format: CSV)<br>with housing recovery sequences at the individual household level.
 
 <small>(* required)</small>
 
