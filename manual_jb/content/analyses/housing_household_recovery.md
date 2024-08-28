@@ -23,12 +23,13 @@ The output of the computation is the history of housing recovery changes for eac
 
 **Input parameters**
 
-key name | type | name | description
---- | --- | --- | ---
-`result_name` <sup>*</sup> | `str` | Result name | Name of the result dataset.
-`seed` <sup>*</sup> | `int` | Seed | Initial value to seed the random number generator to ensure replication of the Markov Chain path'<br>in connection with Population Dislocation.
-`t_delta` <sup>*</sup> | `float` | Time step | A size of the analysis time step.
-`t_final` <sup>*</sup> | `float` | Time duration | Total duration.
+key name | type | name           | description
+--- | --- |----------------| ---
+`result_name` <sup>*</sup> | `str` | Result name    | Name of the result dataset.
+`seed` <sup>*</sup> | `int` | Seed           | Initial value to seed the random number generator to ensure replication of the Markov Chain path'<br>in connection with Population Dislocation.
+`t_delta` <sup>*</sup> | `float` | Time step      | A size of the analysis time step.
+`t_final` <sup>*</sup> | `float` | Time duration  | Total duration.
+`num_cpu` | `int` | Number of CPUs | If using parallel execution, the number of cpus to request.
 
 **Input datasets**
 
