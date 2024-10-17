@@ -7,7 +7,7 @@ part of pyIncore (as a dependency). We decided however to keep more interactive 
 An example would be for example geo-referenced mapping with [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
 
 ## Features
-1. Geospatial visualization such as tornado path or earthquake raster data, vector data (shapfile) and network data.
+1. Geospatial visualization such as tornado path or earthquake raster data, vector data (shapefile) and network data.
 2. Data visualization, graphs of data such as statistical curves including pre-processing.
 3. Creates map window from inventory of multiple csv files stored in a folder (in progress).
  
