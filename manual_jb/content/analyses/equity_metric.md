@@ -14,7 +14,7 @@ The equity metric allows for an equity assessment of the current infrastructure 
 assessment of equity gains for a given retrofit plan and can be integrated into an overall decision-making process.
 
 This analysis calculates the inequity metric, and we've included a companion utility class where we define and prepare
-repair time as a scarce resource. Other scarce resources can and could be explored if provided by the user.
+recovery time as a scarce resource. Other scarce resources can and could be explored if provided by the user.
 
 **Contributors**
 

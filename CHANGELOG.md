@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - API documentation for project service [#423](https://github.com/IN-CORE/incore-docs/issues/423)
+- Documentation for Equity Metric Analysis [#425](https://github.com/IN-CORE/incore-docs/issues/425)
 
 ### Changed
 - Update docs according to support Interdependent recovery analysis [#417](https://github.com/IN-CORE/incore-docs/issues/417)

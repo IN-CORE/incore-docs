@@ -31,6 +31,7 @@ chapters:
       - file: analyses/epf_repair_cost
       - file: analyses/epf_restoration
       - file: analyses/epn_functionality
+      - file: analyses/equity_metric
       - file: analyses/galveston_cge
       - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
