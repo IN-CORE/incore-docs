@@ -1,4 +1,4 @@
-# Equity Metric Analysis
+# Equity Metric
 
 **Description**
 
