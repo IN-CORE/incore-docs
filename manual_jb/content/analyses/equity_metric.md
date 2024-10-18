@@ -2,23 +2,27 @@
 
 **Description**
 
-The algorithm computes an equity metric for the inequity present in the infrastructure service provision between two
-groups of concerns’ (e.g., low income vs. non-low income, minority vs non-minority, etc.). The metric is built upon
-Theil’s T, which is a common metric to compute the inequality present in the dispersion of a scarce resource (e.g.,
-income).
+The algorithm computes equity metrics to characterize the inequity present in the infrastructure service provision
+between two groups of concerns’ (e.g., low income vs. non-low income, minority vs non-minority, etc.). The metrics are
+built upon Theil’s T, which is a common metric to compute the inequality present in the dispersion of a scarce
+resource (e.g., income). The metrics could also be implemented to assess inequity in different scenarios with other
+scarce resources of concern.
 
-To compute the metric, a scarce resource has been formulated and calculated for an infrastructure application.
-The scarce resource for infrastructure is defined as its resilience score (i.e., probability of service provision). The
-probability of service is calculated for each household and is influenced by infrastructure quality (e.g., age).
+To compute the metrics, a scarce resource should be formulated and calculated for an infrastructure application. The
+scarce resource for infrastructure can be taken as any user defined relevant values, such as a resilience score (i.e.,
+probability of service provision) or recovery time. We've included a companion utility class where we define and
+prepare recovery time as a scarce resource. Other scarce resources can and could be explored if provided by the user.
+
 The equity metric allows for an equity assessment of the current infrastructure service provision. It also enables the
-assessment of equity gains for a given retrofit plan and can be integrated into an overall decision-making process.
-
-This analysis calculates the inequity metric, and we've included a companion utility class where we define and prepare
-recovery time as a scarce resource. Other scarce resources can and could be explored if provided by the user.
+assessment of equity gains for a given retrofit plan and can be integrated into an overall decision-making process..
+The output metrics tell the following information 1) Theil's T - overall amount of inequality in scarce resource's
+dispersion across a community (distributional inequity)  2) Between Zone Inequality (BZI) - amount of inequality
+attributed to scarce resource differences between groups (restorative inequity), and 3) Within Zone Inequality (WZI) -
+amount of inequality due to resource differences among singular groups.
 
 **Contributors**
 
-- Science: Abigail L. Beck, Ph.D.
+- Science: Abigail L. Beck, Ph.D, Eun Jeong Cha, Ph.D, Walter Peacock, Ph.D
 - Implementation: NCSA IN-CORE Dev Team
 
 **Related publications**
@@ -77,5 +81,4 @@ code snippet:
     equity_metric.run_analysis()
 ```
 
-full
-analysis: [equity_metric.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/equity_metric.ipynb)
+full analysis: [equity_metric.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/equity_metric.ipynb)
