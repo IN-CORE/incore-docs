@@ -54,7 +54,7 @@ recovery time as a scarce resource. Other scarce resources can and could be expl
 code snippet:
 
 ```
-    client = IncoreClient(pyglobals.INCORE_API_DEV_URL)
+    client = IncoreClient()
     datasvc = DataService(client)
 
     # Example of preparing scarce resource
