@@ -31,6 +31,7 @@ chapters:
       - file: analyses/epf_repair_cost
       - file: analyses/epf_restoration
       - file: analyses/epn_functionality
+      - file: analyses/equity_metric
       - file: analyses/galveston_cge
       - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
@@ -41,6 +42,8 @@ chapters:
       - file: analyses/joplin_empirical_restoration
       - file: analyses/mean_dmg
       - file: analyses/mc_limit_state_prob
+      - file: analyses/ml_joplin_cge
+      - file: analyses/ml_slc_cge
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
       - file: analyses/pipeline_dmg
