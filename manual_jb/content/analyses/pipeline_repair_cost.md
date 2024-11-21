@@ -24,16 +24,16 @@ their damage states, replacement costs, and damage ratios.
 
 | key name                           | type                                              | name                                                    | description                                                                |
 |------------------------------------|---------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------------|
-| `pipeline` <sup>*</sup>            | [`ergo:buriedPipelineTopology`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buriedPipelineTopology)<br/>[`ergo:pipeline`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipeline) | Water Pipeline                                          | Water Pipeline.                                                            |
-| `replacement_cost` <sup>*</sup>    | [`incore:replacementCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:replacementCost)                          | Replacement Cost                                        | Repair cost of the node in the complete damage state (= Replacement cost). |
-| `pipeline_dmg` <sup>*</sup>        | [`ergo:pipelineDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipelineDamageVer3)                         | Pipeline damage from PipelineDamageRepairRate Analysis. |
-| `pipeline_dmg_ratios` <sup>*</sup> | [`incore:pipelineDamageRatios`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineDamageRatios)                     | Damage Ratios Table                                     | Damage Ratios Table.                                                       |
+| `pipeline` <sup>*</sup>            | [`ergo:buriedPipelineTopology`](https://tools.in-core.org/semantics/api/types/ergo:buriedPipelineTopology)<br/>[`ergo:pipeline`](https://tools.in-core.org/semantics/api/types/ergo:pipeline) | Water Pipeline                                          | Water Pipeline.                                                            |
+| `replacement_cost` <sup>*</sup>    | [`incore:replacementCost`](https://tools.in-core.org/semantics/api/types/incore:replacementCost)                          | Replacement Cost                                        | Repair cost of the node in the complete damage state (= Replacement cost). |
+| `pipeline_dmg` <sup>*</sup>        | [`ergo:pipelineDamageVer3`](https://tools.in-core.org/semantics/api/types/ergo:pipelineDamageVer3)                         | Pipeline damage from PipelineDamageRepairRate Analysis. |
+| `pipeline_dmg_ratios` <sup>*</sup> | [`incore:pipelineDamageRatios`](https://tools.in-core.org/semantics/api/types/incore:pipelineDamageRatios)                     | Damage Ratios Table                                     | Damage Ratios Table.                                                       |
 
 **Output datasets** 
 
 | key name              | type                        | name        | description                                                     |
 |-----------------------|-----------------------------|-------------|-----------------------------------------------------------------|
-| `result` <sup>*</sup> | [`incore:pipelineRepairCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineRepairCost) | Repair Cost | A csv file with repair cost and budget for each water pipeline. |
+| `result` <sup>*</sup> | [`incore:pipelineRepairCost`](https://tools.in-core.org/semantics/api/types/incore:pipelineRepairCost) | Repair Cost | A csv file with repair cost and budget for each water pipeline. |
 
 <small>(* required)</small>
 

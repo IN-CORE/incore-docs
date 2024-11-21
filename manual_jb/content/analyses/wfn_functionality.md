@@ -39,16 +39,16 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`wfn_network` <sup>*</sup> | [`incore:waterNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:waterNetwork) | Water Facility Network | Water Facility Network Dataset.
-`wf_sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Water Facilities Failure Sample States | Water Facilities Failure Sample States.
-`pp_sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Pipeline Functionality Failure Sample States | Pipeline Functionality Failure Sample States.
+`wfn_network` <sup>*</sup> | [`incore:waterNetwork`](https://tools.in-core.org/semantics/api/types/incore:waterNetwork) | Water Facility Network | Water Facility Network Dataset.
+`wf_sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://tools.in-core.org/semantics/api/types/incore:sampleFailureState) | Water Facilities Failure Sample States | Water Facilities Failure Sample States.
+`pp_sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://tools.in-core.org/semantics/api/types/incore:sampleFailureState) | Pipeline Functionality Failure Sample States | Pipeline Functionality Failure Sample States.
 
 **Output datasets** 
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | `water_facilities` | Probability of functionality results | A csv file recording the probability of functionality for water facilities.
-`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | `water_facilities` | Sample failure state results | A csv file recording sample failure states for water facilities.
+`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://tools.in-core.org/semantics/api/types/incore:failureProbability) | `water_facilities` | Probability of functionality results | A csv file recording the probability of functionality for water facilities.
+`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://tools.in-core.org/semantics/api/types/incore:sampleFailureState) | `water_facilities` | Sample failure state results | A csv file recording sample failure states for water facilities.
 
 <small>(* required)</small>
 

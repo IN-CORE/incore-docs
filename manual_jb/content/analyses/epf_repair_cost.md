@@ -21,16 +21,16 @@ key name | type  | name | description
 
 key name | type | name | description
 ---|---|---|---
-`epfs` <sup>*</sup> | [`incore:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epf) <br> [`ergo:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:epf) <br> [`incore:epfVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfVer2) | Electric Power Facilities | Electric Power Facilities.
-`replacement_cost` <sup>*</sup> | [`incore:replacementCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:replacementCost) | Replacement Cost | Repair cost of the node in the complete damage state (= Replacement cost).
-`sample_damage_states` <sup>*</sup> | [`incore:sampleDamageState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleDamageState) | Sample Damage States | Sample damage states from Monte Carlo Simulation.
-`epf_dmg_ratios` <sup>*</sup> | [`incore:epfDamageRatios`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDamageRatios) | Damage Ratios Table | Damage Ratios Table.
+`epfs` <sup>*</sup> | [`incore:epf`](https://tools.in-core.org/semantics/api/types/incore:epf) <br> [`ergo:epf`](https://tools.in-core.org/semantics/api/types/ergo:epf) <br> [`incore:epfVer2`](https://tools.in-core.org/semantics/api/types/incore:epfVer2) | Electric Power Facilities | Electric Power Facilities.
+`replacement_cost` <sup>*</sup> | [`incore:replacementCost`](https://tools.in-core.org/semantics/api/types/incore:replacementCost) | Replacement Cost | Repair cost of the node in the complete damage state (= Replacement cost).
+`sample_damage_states` <sup>*</sup> | [`incore:sampleDamageState`](https://tools.in-core.org/semantics/api/types/incore:sampleDamageState) | Sample Damage States | Sample damage states from Monte Carlo Simulation.
+`epf_dmg_ratios` <sup>*</sup> | [`incore:epfDamageRatios`](https://tools.in-core.org/semantics/api/types/incore:epfDamageRatios) | Damage Ratios Table | Damage Ratios Table.
 
 **Output datasets** 
 
 key name | type | name | description
 ---|---|---|---
-`result` <sup>*</sup> | [`incore:repairCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:repairCost) | Repair Cost | A csv file with repair cost and budget for each electric power facility.
+`result` <sup>*</sup> | [`incore:repairCost`](https://tools.in-core.org/semantics/api/types/incore:repairCost) | Repair Cost | A csv file with repair cost and budget for each electric power facility.
 
 <small>(* required)</small>
 

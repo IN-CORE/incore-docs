@@ -37,15 +37,15 @@ key name | type | name | description
 
 key name | type                                                                                                          | name | description
 --- |---------------------------------------------------------------------------------------------------------------| --- | ---
-`gas_facilities` <sup>*</sup> | [`ergo:gasFacilityInventory`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:gasFacilityInventory) | Facility dataset |  A gas facility dataset.
-`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet)         | DFR3 Mapping Set | DFR3 Mapping Set.
+`gas_facilities` <sup>*</sup> | [`ergo:gasFacilityInventory`](https://tools.in-core.org/semantics/api/types/ergo:gasFacilityInventory) | Facility dataset |  A gas facility dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://tools.in-core.org/semantics/api/types/incore:dfr3MappingSet)         | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets** 
 
 key name | type                                                                                                                            | parent key       | name | description
 --- |---------------------------------------------------------------------------------------------------------------------------------|------------------| --- | ---
-`result` <sup>*</sup> | [`ergo:gasFacilityInventoryDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:gasFacilityInventoryDamage)       | `gas_facilities` | Results | A dataset containing limit state and damage state probabilities <br>(format: CSV).
-`metadata` <sup>*</sup> | [`incore:gasFacilityDamageSupplement`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:gasFacilityDamageSupplement) | `gas_facilities` | Results | Information about applied hazard value and fragility for each facility<br>(format: JSON).
+`result` <sup>*</sup> | [`ergo:gasFacilityInventoryDamage`](https://tools.in-core.org/semantics/api/types/ergo:gasFacilityInventoryDamage)       | `gas_facilities` | Results | A dataset containing limit state and damage state probabilities <br>(format: CSV).
+`metadata` <sup>*</sup> | [`incore:gasFacilityDamageSupplement`](https://tools.in-core.org/semantics/api/types/incore:gasFacilityDamageSupplement) | `gas_facilities` | Results | Information about applied hazard value and fragility for each facility<br>(format: JSON).
 
 <small>(* required)</small>
 

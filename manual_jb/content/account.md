@@ -5,7 +5,7 @@ This account gives you access to all of the public data on the system and allows
 accessible by you. If applicable, it is recommended that you sign up with your institutional email.
 To register for an account, please go to:
 
-[Registration Link](https://incore.ncsa.illinois.edu/auth/realms/In-core/protocol/openid-connect/registrations?client_id=react-auth&response_type=code&scope=openid&redirect_uri=https://incore.ncsa.illinois.edu/)
+[Registration Link](https://tools.in-core.org/auth/realms/In-core/protocol/openid-connect/registrations?client_id=react-auth&response_type=code&scope=openid&redirect_uri=https://tools.in-core.org/)
 
 ![IN-CORE login window](images/register.png)
 

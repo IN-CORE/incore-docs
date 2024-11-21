@@ -26,17 +26,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`sector_shocks` <sup>*</sup> | [`incore:capitalShocks`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:capitalShocks) | Capital shocks | Building states to capital <br>shocks per sector.
+`sector_shocks` <sup>*</sup> | [`incore:capitalShocks`](https://tools.in-core.org/semantics/api/types/incore:capitalShocks) | Capital shocks | Building states to capital <br>shocks per sector.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`domestic-supply` <sup>*</sup> | [`incore:Employment`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:Employment) | Supply results | A dataset containing domestic supply results (format: CSV).
-`gross-income` <sup>*</sup> | [`incore:Employment`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:Employment) | Gross income | A dataset of resulting gross income (format: CSV).
-`pre-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand before disaster (format: CSV).
-`post-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand after disaster (format: CSV).
-`household-count` <sup>*</sup> | [`incore:HouseholdCount`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:HouseholdCount) | Household count | A dataset of household count (format: CSV).
+`domestic-supply` <sup>*</sup> | [`incore:Employment`](https://tools.in-core.org/semantics/api/types/incore:Employment) | Supply results | A dataset containing domestic supply results (format: CSV).
+`gross-income` <sup>*</sup> | [`incore:Employment`](https://tools.in-core.org/semantics/api/types/incore:Employment) | Gross income | A dataset of resulting gross income (format: CSV).
+`pre-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://tools.in-core.org/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand before disaster (format: CSV).
+`post-disaster-factor-demand` <sup>*</sup> | [`incore:FactorDemand`](https://tools.in-core.org/semantics/api/types/incore:FactorDemand) | Factor demand | A dataset of factor demand after disaster (format: CSV).
+`household-count` <sup>*</sup> | [`incore:HouseholdCount`](https://tools.in-core.org/semantics/api/types/incore:HouseholdCount) | Household count | A dataset of household count (format: CSV).
 
 <small>(* required)</small>
 

@@ -16,16 +16,16 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`wind_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building wind damage |  A building wind damage dataset.
-`surge_wave_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building surge-wave damage |  A building surge-wave damage dataset.
-`flood_damage` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamageVer4) | Building flood damage |  A building flood damage dataset.
+`wind_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer6) | Building wind damage |  A building wind damage dataset.
+`surge_wave_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer6) | Building surge-wave damage |  A building surge-wave damage dataset.
+`flood_damage` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://tools.in-core.org/semantics/api/types/ergo:nsBuildingInventoryDamageVer4) | Building flood damage |  A building flood damage dataset.
 
 **Output datasets**
 
 key name | type | parent key | name| description
 --- | --- | --- |---| ---
-`result` <sup>*</sup> | [`incore:maxDamageState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:maxDamageState) | `buildings` | Results| A dataset containing maximum damage state for each building<br>(format: CSV).
-`ds_result` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | `buildings` | Damage State Results | A dataset containing damage states for building structural damage<br>(format: CSV).
+`result` <sup>*</sup> | [`incore:maxDamageState`](https://tools.in-core.org/semantics/api/types/incore:maxDamageState) | `buildings` | Results| A dataset containing maximum damage state for each building<br>(format: CSV).
+`ds_result` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer6) | `buildings` | Damage State Results | A dataset containing damage states for building structural damage<br>(format: CSV).
 <small>(* required)</small>
 
 **Execution**
