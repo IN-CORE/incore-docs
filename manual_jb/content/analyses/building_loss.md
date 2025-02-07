@@ -26,15 +26,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building inventory dataset.
-`building_mean_dmg` <sup>*</sup> | [`ergo:meanDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:meanDamage)<br>[`ergo:buildingDamage`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamage) | Building mean damage | A CSV file with building mean damage results for either Structural, Drift-Sensitive Nonstructural, Acceleration-Sensitive Nonstructural or Contents Damage component.
-`occupancy_multiplier` | [`incore:buildingOccupancyMultiplier`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingOccupancyMultiplier) | Occupancy multiplier | Building occupancy damage multipliers. These multipliers account for the value associated with different types of components (structural, acceleration-sensitive nonstructural, drift-sensitive nonstructural, contents).
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building inventory dataset.
+`building_mean_dmg` <sup>*</sup> | [`ergo:meanDamage`](https://tools.in-core.org/semantics/api/types/ergo:meanDamage)<br>[`ergo:buildingDamage`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamage) | Building mean damage | A CSV file with building mean damage results for either Structural, Drift-Sensitive Nonstructural, Acceleration-Sensitive Nonstructural or Contents Damage component.
+`occupancy_multiplier` | [`incore:buildingOccupancyMultiplier`](https://tools.in-core.org/semantics/api/types/incore:buildingOccupancyMultiplier) | Occupancy multiplier | Building occupancy damage multipliers. These multipliers account for the value associated with different types of components (structural, acceleration-sensitive nonstructural, drift-sensitive nonstructural, contents).
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`result` <sup>*</sup> | [`ergo:buildingEconomicLoss`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingEconomicLoss) | Results | A CSV file with building economy losses.
+`result` <sup>*</sup> | [`ergo:buildingEconomicLoss`](https://tools.in-core.org/semantics/api/types/ergo:buildingEconomicLoss) | Results | A CSV file with building economy losses.
 
 <small>(* required)</small>
 

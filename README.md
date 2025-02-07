@@ -6,4 +6,4 @@ This repository contains the source code of the following documentation:
 * Technical reference of IN-CORE Web Services 
 * IN-CORE workshops files
 
-You can see the documentation at https://incore.ncsa.illinois.edu 
+You can see the documentation at https://tools.in-core.org

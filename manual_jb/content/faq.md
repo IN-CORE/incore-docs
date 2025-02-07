@@ -4,11 +4,11 @@
 
 *   *I want to try your IN-CORE services. Do I need to register?*
 
-    A user must have an account [registered](https://incore.ncsa.illinois.edu/auth/realms/In-core/protocol/openid-connect/registrations?client_id=react-auth&response_type=code&scope=openid&redirect_uri=https://incore.ncsa.illinois.edu/) with NCSA's IN-CORE service.
+    A user must have an account [registered](https://tools.in-core.org/auth/realms/In-core/protocol/openid-connect/registrations?client_id=react-auth&response_type=code&scope=openid&redirect_uri=https://tools.in-core.org/) with NCSA's IN-CORE service.
     User credentials are required for accessing repositories such as hazard, fragility, restoration, geographic and
     other data sets. They are also used for accessing IN-CORE when running example Jupyter Notebook files.
 
-    You can test your registration credentials by accessing [IN-CORE](http://incore.ncsa.illinois.edu/).
+    You can test your registration credentials by accessing [IN-CORE](http://tools.in-core.org/).
     <br />
     <br />
     

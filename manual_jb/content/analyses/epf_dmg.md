@@ -37,14 +37,14 @@ key name | type                                                             | na
 
 key name | type | name | description
 --- | --- | --- | ---
-`epfs` <sup>*</sup> | [`incore:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epf)<br>[`ergo:epf`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:epf) | Electric power dataset | An electric power facility dataset.
-`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`epfs` <sup>*</sup> | [`incore:epf`](https://tools.in-core.org/semantics/api/types/incore:epf)<br>[`ergo:epf`](https://tools.in-core.org/semantics/api/types/ergo:epf) | Electric power dataset | An electric power facility dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://tools.in-core.org/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`result` <sup>*</sup> | [`incore:epfDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:epfDamageVer3) |`epfs` | Results | A dataset containing results <br>(format: CSV).
+`result` <sup>*</sup> | [`incore:epfDamageVer3`](https://tools.in-core.org/semantics/api/types/incore:epfDamageVer3) |`epfs` | Results | A dataset containing results <br>(format: CSV).
 `damage_result` <sup>*</sup> | `epfDamageSupplement` | `epfs` | Results | Information about applied hazard value and fragility<br>(format: JSON).
 
 <small>(* required)</small>
