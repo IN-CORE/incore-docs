@@ -23,15 +23,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline` <sup>*</sup> | [`ergo:buriedPipelineTopology`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buriedPipelineTopology)<br>[`ergo:pipeline`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipeline) | Pipeline  dataset | A pipeline dataset.
-`pipeline_damage` <sup>*</sup> | [`ergo:pipelineDamageVer2`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipelineDamageVer2)<br>[`ergo:pipelineDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipelineDamageVer3) | Pipeline damage with repair rates dataset | A pipeline damage with repair rates dataset.
-`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
+`pipeline` <sup>*</sup> | [`ergo:buriedPipelineTopology`](https://tools.in-core.org/semantics/api/types/ergo:buriedPipelineTopology)<br>[`ergo:pipeline`](https://tools.in-core.org/semantics/api/types/ergo:pipeline) | Pipeline  dataset | A pipeline dataset.
+`pipeline_damage` <sup>*</sup> | [`ergo:pipelineDamageVer2`](https://tools.in-core.org/semantics/api/types/ergo:pipelineDamageVer2)<br>[`ergo:pipelineDamageVer3`](https://tools.in-core.org/semantics/api/types/ergo:pipelineDamageVer3) | Pipeline damage with repair rates dataset | A pipeline damage with repair rates dataset.
+`dfr3_mapping_set` <sup>*</sup> | [`incore:dfr3MappingSet`](https://tools.in-core.org/semantics/api/types/incore:dfr3MappingSet) | DFR3 Mapping Set | DFR3 Mapping Set.
 
 **Output Datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`pipeline_restoration` <sup>*</sup> | [`incore:pipelineRestorationVer1`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:pipelineRestorationVer1) | `pipeline` | Results | Repair time for each pipeline<br>(format: CSV).
+`pipeline_restoration` <sup>*</sup> | [`incore:pipelineRestorationVer1`](https://tools.in-core.org/semantics/api/types/incore:pipelineRestorationVer1) | `pipeline` | Results | Repair time for each pipeline<br>(format: CSV).
 
 <small>(* required)</small>
 

@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Mobile testbed and Mobile testbed port notebooks [#435](https://github.com/IN-CORE/incore-docs/issues/435)
 
+### Changed
+- Update production URL references to tools.in-core.org [#433](https://github.com/IN-CORE/incore-docs/issues/433)
+
 ## [4.14.0] - 2024-10-23
 
 ### Added

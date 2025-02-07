@@ -21,7 +21,7 @@ damage and loss of functionality to social and economic impacts. Refer to [pyInc
 DFR3 (Damage, Functionality, Repair, Recovery, Restoration) Service, Data Service, Geospatial Visualization
 Service, Semantic Service, and Space Service. These services allow users to create and access hazards, fragilities
 and data. Users can access and utilize these services via pyIncore and IN-CORE Web Tools. For detailed information,
-please refer to the [technical reference document](https://incore.ncsa.illinois.edu/doc/api/).
+please refer to the [technical reference document](https://tools.in-core.org/doc/api/).
 
 **IN-CORE Web Tools** is a set of web viewers for interacting with the different IN-CORE web services.
 The viewers enable users to browse, search **Datasets**, **Hazards**, **Fragility curves**, **Repair curves**, etc.,
