@@ -21,18 +21,18 @@ key name | type | name | description
 
 key name | type | name | description
 --- |-------------------------|-------------------------| ---
-`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset         |  A building dataset.
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset         |  A building dataset.
 `past_building_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.<br/>edu/semantics/api/types/ergo:buildingDamageVer6) | Previous Building damage |  Building damage from a previous event.
 `future_building_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.<br/>edu/semantics/api/types/ergo:buildingDamageVer6) | Future/predicted Building damage |  Building damage from a future/predicted event.
-`housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitAllocation) | Housing unit allocation | Housing unit allocation.
-`population_dislocation` <sup>*</sup> | [`incore:popDislocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:popDislocation) | Population dislocation   | Population dislocation results.
+`housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://tools.in-core.org/semantics/api/types/incore:housingUnitAllocation) | Housing unit allocation | Housing unit allocation.
+`population_dislocation` <sup>*</sup> | [`incore:popDislocation`](https://tools.in-core.org/semantics/api/types/incore:popDislocation) | Population dislocation   | Population dislocation results.
 
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- |-------------------------------------------------------------------------------------------------------| --- | --- | ---
-`result` <sup>*</sup> | [`incore:buyoutDecision`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buyoutDecision) | `buildings` | Results | A dataset containing buyout decision results <br>(format: CSV).
+`result` <sup>*</sup> | [`incore:buyoutDecision`](https://tools.in-core.org/semantics/api/types/incore:buyoutDecision) | `buildings` | Results | A dataset containing buyout decision results <br>(format: CSV).
 
 <small>(* required)</small>
 

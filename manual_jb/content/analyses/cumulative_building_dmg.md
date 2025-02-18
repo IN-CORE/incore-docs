@@ -18,14 +18,14 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`eq_bldg_dmg` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | Building dataset | A building dataset with earthquake damage.
-`tsunami_bldg_dmg` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | Building dataset | A building dataset with tsunami damage.
+`eq_bldg_dmg` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer5) | Building dataset | A building dataset with earthquake damage.
+`tsunami_bldg_dmg` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer5) | Building dataset | A building dataset with tsunami damage.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`combined-result` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer5) | `buildings` | Results | A dataset containing results <br>(format: CSV).
+`combined-result` <sup>*</sup> | [`ergo:buildingDamageVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer5) | `buildings` | Results | A dataset containing results <br>(format: CSV).
 
 <small>(* required)</small>
 

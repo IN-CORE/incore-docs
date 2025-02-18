@@ -45,15 +45,15 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_related_data` <sup>*</sup> | [`incore:multiobjectiveBuildingRelatedData`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:multiobjectiveBuildingRelatedData) | Building-related data |  A csv file with building-related data.
-`strategy_costs_data` <sup>*</sup> | [`incore:multiobjectiveStrategyCost`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:multiobjectiveStrategyCost) | Strategy cost | A csv file with strategy cost data per building.
+`building_related_data` <sup>*</sup> | [`incore:multiobjectiveBuildingRelatedData`](https://tools.in-core.org/semantics/api/types/incore:multiobjectiveBuildingRelatedData) | Building-related data |  A csv file with building-related data.
+`strategy_costs_data` <sup>*</sup> | [`incore:multiobjectiveStrategyCost`](https://tools.in-core.org/semantics/api/types/incore:multiobjectiveStrategyCost) | Strategy cost | A csv file with strategy cost data per building.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`optimal_solution_dv_x` <sup>*</sup> | [`incore:multiobjectiveOptimalSolutionX`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:multiobjectiveOptimalSolutionX) |  | Results | A csv file with an optimal solution for decision variable x for Economic loss, Population dislocation and Building functionality values, results of objective function values.
-`optimal_solution_dv_y` <sup>*</sup> | [`incore:multiobjectiveOptimalSolutionY`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:multiobjectiveOptimalSolutionY) |  | Results | A csv file with an optimal solution for decision variable y with initial and final retrofitted strategies for Economic loss, Population dislocation and Building functionality values, results of objective function values.
+`optimal_solution_dv_x` <sup>*</sup> | [`incore:multiobjectiveOptimalSolutionX`](https://tools.in-core.org/semantics/api/types/incore:multiobjectiveOptimalSolutionX) |  | Results | A csv file with an optimal solution for decision variable x for Economic loss, Population dislocation and Building functionality values, results of objective function values.
+`optimal_solution_dv_y` <sup>*</sup> | [`incore:multiobjectiveOptimalSolutionY`](https://tools.in-core.org/semantics/api/types/incore:multiobjectiveOptimalSolutionY) |  | Results | A csv file with an optimal solution for decision variable y with initial and final retrofitted strategies for Economic loss, Population dislocation and Building functionality values, results of objective function values.
 
 <small>(* required)</small>
 

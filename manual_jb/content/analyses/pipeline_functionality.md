@@ -19,14 +19,14 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`pipeline_repair_rate_damage` <sup>*</sup> | [`ergo:pipelineDamageVer3`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:pipelineDamageVer3) | pipeline Damage | Output of the pipeline damage repair rate analysis
+`pipeline_repair_rate_damage` <sup>*</sup> | [`ergo:pipelineDamageVer3`](https://tools.in-core.org/semantics/api/types/ergo:pipelineDamageVer3) | pipeline Damage | Output of the pipeline damage repair rate analysis
 
 **Output Datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- | --- | ---
-`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:failureProbability) | Results | A dataset containing failure probability results <br>(format: CSV).
-`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:sampleFailureState) | Results | A dataset containing failure state for each sample <br>(format: CSV).
+`failure_probability` <sup>*</sup> | [`incore:failureProbability`](https://tools.in-core.org/semantics/api/types/incore:failureProbability) | Results | A dataset containing failure probability results <br>(format: CSV).
+`sample_failure_state` <sup>*</sup> | [`incore:sampleFailureState`](https://tools.in-core.org/semantics/api/types/incore:sampleFailureState) | Results | A dataset containing failure state for each sample <br>(format: CSV).
                     
 <small>(* required)</small>
 

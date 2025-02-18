@@ -24,17 +24,17 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`building_damage_mcs_samples` <sup>*</sup> | [`incore:buildingDamageMcSamples`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingDamageMcSamples) | Building dataset |  Buildings damage dataset.
-`substations_damage_mcs_samples` <sup>*</sup> | [`incore:substationsDamageMcSamples`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:substationsDamageMcSamples) | Substation dataset |  Substations damage dataset.
-`poles_damage_mcs_samples` <sup>*</sup> | [`incore:polesDamageMcSamples`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:polesDamageMcSamples) | Pole dataset |  Electric poles dataset.
-`interdependency_dictionary` <sup>*</sup> | [`incore:buildingInterdependencyDict`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingInterdependencyDict) | Interdependency dataset |  A dataset of interdependency between buildings and substations and poles.
+`building_damage_mcs_samples` <sup>*</sup> | [`incore:buildingDamageMcSamples`](https://tools.in-core.org/semantics/api/types/incore:buildingDamageMcSamples) | Building dataset |  Buildings damage dataset.
+`substations_damage_mcs_samples` <sup>*</sup> | [`incore:substationsDamageMcSamples`](https://tools.in-core.org/semantics/api/types/incore:substationsDamageMcSamples) | Substation dataset |  Substations damage dataset.
+`poles_damage_mcs_samples` <sup>*</sup> | [`incore:polesDamageMcSamples`](https://tools.in-core.org/semantics/api/types/incore:polesDamageMcSamples) | Pole dataset |  Electric poles dataset.
+`interdependency_dictionary` <sup>*</sup> | [`incore:buildingInterdependencyDict`](https://tools.in-core.org/semantics/api/types/incore:buildingInterdependencyDict) | Interdependency dataset |  A dataset of interdependency between buildings and substations and poles.
 
 **Output datasets**
 
 key name | type | name | description
 --- | --- | --- | ---
-`functionality_samples` <sup>*</sup> | [`incore:funcSample`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:funcSample) | Results | A dataset containing results of functionality samples<br>(format: CSV).
-`functionality_probability` <sup>*</sup> | [`incore:funcProbability`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:funcProbability) | Results | A dataset containing results of functionality probability<br>(format: CSV).
+`functionality_samples` <sup>*</sup> | [`incore:funcSample`](https://tools.in-core.org/semantics/api/types/incore:funcSample) | Results | A dataset containing results of functionality samples<br>(format: CSV).
+`functionality_probability` <sup>*</sup> | [`incore:funcProbability`](https://tools.in-core.org/semantics/api/types/incore:funcProbability) | Results | A dataset containing results of functionality probability<br>(format: CSV).
 
 <small>(* required)</small>
 
