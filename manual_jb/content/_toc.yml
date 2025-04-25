@@ -42,8 +42,9 @@ chapters:
       - file: analyses/joplin_empirical_restoration
       - file: analyses/mean_dmg
       - file: analyses/mc_limit_state_prob
-      - file: analyses/ml_joplin_cge
-      - file: analyses/ml_slc_cge
+      - file: analyses/ml_enabled_joplin_cge
+      - file: analyses/ml_enabled_lumberton_cge
+      - file: analyses/ml_enabled_slc_cge
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
       - file: analyses/pipeline_dmg
