@@ -42,14 +42,14 @@ amount of inequality due to resource differences among singular groups.
 
  key name                               | type                                                                                                                | name               | description                                                            
 ----------------------------------------|---------------------------------------------------------------------------------------------------------------------|--------------------|------------------------------------------------------------------------
- `housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:housingUnitAllocation) | Housing allocation | A housing unit allocation dataset.                                     
- `scarce_resource` <sup>*</sup>         | [`incore:scarceResource`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:scarceResource)               | Scarce resource    | Scarce resource dataset e.g. probability of service, return time, etc. 
+ `housing_unit_allocation` <sup>*</sup> | [`incore:housingUnitAllocation`](https://tools.in-core.org/semantics/api/types/incore:housingUnitAllocation) | Housing allocation | A housing unit allocation dataset.
+ `scarce_resource` <sup>*</sup>         | [`incore:scarceResource`](https://tools.in-core.org/semantics/api/types/incore:scarceResource)               | Scarce resource    | Scarce resource dataset e.g. probability of service, return time, etc.
 
 **Output datasets**
 
  key name                     | type                                                                                              | parent key | name          | description                                                                                           
 ------------------------------|---------------------------------------------------------------------------------------------------|------------|---------------|-------------------------------------------------------------------------------------------------------
- `equity_metric` <sup>*</sup> | [`incore:equityMetric`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:equityMetric) |            | Equity Metric | CSV file of equity metric, including Theil’s T Value, Between Zone Inequality, Within Zone Inequality 
+ `equity_metric` <sup>*</sup> | [`incore:equityMetric`](https://tools.in-core.org/semantics/api/types/incore:equityMetric) |            | Equity Metric | CSV file of equity metric, including Theil’s T Value, Between Zone Inequality, Within Zone Inequality
 
 <small>(* required)</small>
 

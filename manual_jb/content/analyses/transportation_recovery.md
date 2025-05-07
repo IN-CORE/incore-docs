@@ -25,19 +25,19 @@ key name | type | name | description
 
 key name | type | name | description
 --- | --- | --- | ---
-`bridges` <sup>*</sup> | [`ergo:bridges`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:bridges) | Bridge dataset | A bridge dataset.
-`nodes` <sup>*</sup> | [`ergo:roadNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadNetwork) | Rad nodes | A road network dataset.
-`links` <sup>*</sup> | [`ergo:roadNetwork`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:roadNetwork) | Road links | A road network dataset.
-`bridge_damage_value` <sup>*</sup> | [`incore:bridgeDamageValue`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:bridgeDamageValue) | Bridge damages | A bridge dataset.
-`unrepaired_bridge` <sup>*</sup> | [`incore:unrepairedBridge`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:unrepairedBridge) | Unrepaired bridges | An unrepaired bridge dataset.
-`ADT` <sup>*</sup> | [`incore:ADT`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:ADT) | Bridge traffic | A dataset of daily traffic.
+`bridges` <sup>*</sup> | [`ergo:bridges`](https://tools.in-core.org/semantics/api/types/ergo:bridges) | Bridge dataset | A bridge dataset.
+`nodes` <sup>*</sup> | [`ergo:roadNetwork`](https://tools.in-core.org/semantics/api/types/ergo:roadNetwork) | Rad nodes | A road network dataset.
+`links` <sup>*</sup> | [`ergo:roadNetwork`](https://tools.in-core.org/semantics/api/types/ergo:roadNetwork) | Road links | A road network dataset.
+`bridge_damage_value` <sup>*</sup> | [`incore:bridgeDamageValue`](https://tools.in-core.org/semantics/api/types/incore:bridgeDamageValue) | Bridge damages | A bridge dataset.
+`unrepaired_bridge` <sup>*</sup> | [`incore:unrepairedBridge`](https://tools.in-core.org/semantics/api/types/incore:unrepairedBridge) | Unrepaired bridges | An unrepaired bridge dataset.
+`ADT` <sup>*</sup> | [`incore:ADT`](https://tools.in-core.org/semantics/api/types/incore:ADT) | Bridge traffic | A dataset of daily traffic.
 
 **Output Datasets**
 
 key name | type                                                                                                                              | name | description
 --- |-----------------------------------------------------------------------------------------------------------------------------------| --- | ---
-`optimal_solution_of_bridge_repair_schedule` <sup>*</sup> | [`incore:transportationRepairSchedule`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRepairSchedule) | Repair schedule | A dataset containing results (format: CSV).
-`overall_traffic_flow_recovery_trajectory` <sup>*</sup> | [`incore:trafficFlowRecovery`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:transportationRecovery)                | Recovery trajectory | A dataset containing results (format: CSV).
+`optimal_solution_of_bridge_repair_schedule` <sup>*</sup> | [`incore:transportationRepairSchedule`](https://tools.in-core.org/semantics/api/types/incore:transportationRepairSchedule) | Repair schedule | A dataset containing results (format: CSV).
+`overall_traffic_flow_recovery_trajectory` <sup>*</sup> | [`incore:trafficFlowRecovery`](https://tools.in-core.org/semantics/api/types/incore:transportationRecovery)                | Recovery trajectory | A dataset containing results (format: CSV).
 
 <small>(* required)</small>
 

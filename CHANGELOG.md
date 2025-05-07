@@ -10,6 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - ML enabled Galveston CGE notebook [#437](https://github.com/IN-CORE/incore-docs/issues/437)
 
+## [4.15.0] - 2025-02-20
+
+### Added
+- Mobile testbed and Mobile testbed port notebooks [#435](https://github.com/IN-CORE/incore-docs/issues/435)
+
+### Changed
+- Update production URL references to tools.in-core.org [#433](https://github.com/IN-CORE/incore-docs/issues/433)
+
 ## [4.14.0] - 2024-10-23
 
 ### Added

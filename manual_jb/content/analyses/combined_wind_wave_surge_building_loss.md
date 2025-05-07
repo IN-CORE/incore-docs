@@ -17,18 +17,18 @@ key name | type | name | description
 
 key name | type | name                           | description
 --- | --- |--------------------------------| ---
-`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building dataset.
-`wind_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building wind damage | A building wind damage dataset.
-`surge_wave_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:buildingDamageVer6) | Building surge-wave damage | A building surge-wave damage dataset.
-`flood_damage` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://incore.ncsa.illinois.edu/semantics/api/types/ergo:nsBuildingInventoryDamageVer4) | Building flood damage | A building flood damage dataset.
-`structural_cost` <sup>*</sup> | [`incore:structuralCostRatio`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:structuralCostRatio) | Building structural cost ratios | A dataset with building structural cost ratios for each archetype.
-`content_cost` <sup>*</sup> | [`incore:contentCostRatio`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:contentCostRatio) | Building content cost ratios | A dataset with building content cost ratios for each damage state.
+`buildings` <sup>*</sup> | [`ergo:buildingInventoryVer4`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer4)<br>[`ergo:buildingInventoryVer5`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer5)<br>[`ergo:buildingInventoryVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer6)<br>[`ergo:buildingInventoryVer7`](https://tools.in-core.org/semantics/api/types/ergo:buildingInventoryVer7) | Building dataset |  A building dataset.
+`wind_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer6) | Building wind damage | A building wind damage dataset.
+`surge_wave_damage` <sup>*</sup> | [`ergo:buildingDamageVer6`](https://tools.in-core.org/semantics/api/types/ergo:buildingDamageVer6) | Building surge-wave damage | A building surge-wave damage dataset.
+`flood_damage` <sup>*</sup> | [`ergo:nsBuildingInventoryDamageVer4`](https://tools.in-core.org/semantics/api/types/ergo:nsBuildingInventoryDamageVer4) | Building flood damage | A building flood damage dataset.
+`structural_cost` <sup>*</sup> | [`incore:structuralCostRatio`](https://tools.in-core.org/semantics/api/types/incore:structuralCostRatio) | Building structural cost ratios | A dataset with building structural cost ratios for each archetype.
+`content_cost` <sup>*</sup> | [`incore:contentCostRatio`](https://tools.in-core.org/semantics/api/types/incore:contentCostRatio) | Building content cost ratios | A dataset with building content cost ratios for each damage state.
 
 **Output datasets**
 
 key name | type | parent key | name | description
 --- | --- | --- |---------| ---
-`result` <sup>*</sup> | [`incore:buildingLoss`](https://incore.ncsa.illinois.edu/semantics/api/types/incore:buildingLoss) | `buildings` | Results | A dataset containing structural, content and total loss for each building<br>(format: CSV).
+`result` <sup>*</sup> | [`incore:buildingLoss`](https://tools.in-core.org/semantics/api/types/incore:buildingLoss) | `buildings` | Results | A dataset containing structural, content and total loss for each building<br>(format: CSV).
 <small>(* required)</small>
 
 **Execution**
