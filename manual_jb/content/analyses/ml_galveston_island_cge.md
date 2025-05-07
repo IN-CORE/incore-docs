@@ -1,8 +1,8 @@
-# Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston
+# Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston Island
 
 **Description**
 
-The "Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston" analysis merges advanced machine learning with traditional CGE models to offer unprecedented insights into the economic impacts of disaster scenarios on Joplin. Trained on a comprehensive dataset of numerous simulated disasters and their economic effects, this hybrid approach excels in predicting the intricate dynamics of the city's economy under various crises.
+The "Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston" analysis merges advanced machine learning with traditional CGE models to offer unprecedented insights into the economic impacts of disaster scenarios on Galveston Island. Trained on a comprehensive dataset of numerous simulated disasters and their economic effects, this hybrid approach excels in predicting the intricate dynamics of the city's economy under various crises.
 
 A computable general equilibrium (CGE) model is based on fundamental economic principles. A CGE model uses multiple data sources to reflect the interactions of households, firms, and relevant government entities as they contribute to economic activity. The model is based on (1) utility-maximizing households that supply labor and capital, using the proceeds to pay for goods and services (both locally produced and imported) and taxes; (2) the production sector, with perfectly competitive, profit-maximizing firms using intermediate inputs, capital, land, and labor to produce goods and services for both domestic consumption and export; (3) the government sector that collects taxes and uses tax revenues in order to finance the provision of public services; and (4) the rest of the world.
 
@@ -44,7 +44,7 @@ code snippet:
 
 ```
     # Create Machine Learning Enabled CGE Galveston Model
-    mlcgegalveston = MlEnabledCgeGalveston(client)
+    mlcgegalveston = MlEnabledCgeGalvestonIsland(client)
     
     # Set analysis input datasets
     mlcgegalveston.load_remote_input_dataset("sector_shocks", sector_shocks)
@@ -56,4 +56,4 @@ code snippet:
     mlcgegalveston.run_analysis()
 ```
 
-full analysis: [ml_enabled_jgalveston_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/ml_enabled_galveston_cge.ipynb)
+full analysis: [ml_enabled_galveston_island_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/ml_enabled_galveston_island_cge.ipynb)

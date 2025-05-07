@@ -26,7 +26,7 @@
 24. [Interdependent Network Design Problem](analyses/indp)
 25. [Joplin Computable General Equilibrium (CGE)](analyses/joplin_cge)
 26. [Joplin empirical building restoration](analyses/joplin_empirical_building_restoration)
-27. [Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston](analyses/ml_galveston_cge.md)
+27. [Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston Island](analyses/ml_galveston_island_cge.md)
 28. [Machine Learning Enabled Computable General Equilibrium (CGE) - Joplin](analyses/ml_joplin_cge.md)
 29. [Machine Learning Enabled Computable General Equilibrium (CGE) - Salt Lake City](analyses/ml_slc_cge.md)
 30. [Mean damage](analyses/mean_dmg)
