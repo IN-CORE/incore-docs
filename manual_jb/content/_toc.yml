@@ -42,6 +42,7 @@ chapters:
       - file: analyses/joplin_empirical_restoration
       - file: analyses/mean_dmg
       - file: analyses/mc_limit_state_prob
+      - file: analyses/ml_galveston_island_cge
       - file: analyses/ml_joplin_cge
       - file: analyses/ml_slc_cge
       - file: analyses/multi_retrofit_optimization
@@ -68,6 +69,7 @@ chapters:
       - file: analyses/water_facility_restoration
 - file: pyincore_viz
 - file: pyincore_data
+- file: pyincore_incubator
 - file: incore_lab
 - file: webtools
 - file: tutorials
