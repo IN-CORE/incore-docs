@@ -34,8 +34,8 @@ chapters:
       - file: analyses/galveston_cge
       - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
-      - file: analyses/housing_valuation_recovery
       - file: analyses/housingunitallocation
+      - file: analyses/housing_valuation_recovery
       - file: analyses/indp
       - file: analyses/joplin_cge
       - file: analyses/joplin_empirical_building_restoration
