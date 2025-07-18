@@ -1,4 +1,4 @@
-# Buyout Decision
+# Buyout decision
 
 **Description**
 

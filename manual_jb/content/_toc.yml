@@ -16,12 +16,11 @@ chapters:
       sections:
       - file: analyses/bridge_dmg
       - file: analyses/building_cluster_recovery
-      - file: analyses/building_dmg
-      - file: analyses/building_func
       - file: analyses/building_loss
+      - file: analyses/building_func
       - file: analyses/building_nonstructural_dmg
-      - file: analyses/buyout_decision
       - file: analyses/building_structural_dmg
+      - file: analyses/buyout_decision
       - file: analyses/capital_shocks
       - file: analyses/combined_wind_wave_surge_building_dmg
       - file: analyses/combined_wind_wave_surge_building_loss
@@ -35,16 +34,16 @@ chapters:
       - file: analyses/galveston_cge
       - file: analyses/gas_facility_damage
       - file: analyses/housing_household_recovery
-      - file: analyses/housing_recovery
+      - file: analyses/housing_valuation_recovery
       - file: analyses/housingunitallocation
       - file: analyses/indp
       - file: analyses/joplin_cge
-      - file: analyses/joplin_empirical_restoration
-      - file: analyses/mean_dmg
-      - file: analyses/mc_limit_state_prob
+      - file: analyses/joplin_empirical_building_restoration
       - file: analyses/ml_galveston_island_cge
       - file: analyses/ml_joplin_cge
       - file: analyses/ml_slc_cge
+      - file: analyses/mean_dmg
+      - file: analyses/mc_limit_state_prob
       - file: analyses/multi_retrofit_optimization
       - file: analyses/nci_functionality
       - file: analyses/pipeline_dmg
@@ -53,16 +52,13 @@ chapters:
       - file: analyses/pipeline_repair_cost
       - file: analyses/pipeline_restoration
       - file: analyses/populationdislocation
-      - file: analyses/portfolio_recovery
       - file: analyses/residential_building_recovery
       - file: analyses/road_dmg
       - file: analyses/slc_cge
       - file: analyses/seaside_cge
-      - file: analyses/social_vulnerability
       - file: analyses/social_vulnerability_score
       - file: analyses/tornadoepn_dmg
       - file: analyses/traffic_flow_recovery
-      - file: analyses/transportation_recovery
       - file: analyses/waterfacility_dmg
       - file: analyses/wfn_functionality
       - file: analyses/water_facility_repair_cost

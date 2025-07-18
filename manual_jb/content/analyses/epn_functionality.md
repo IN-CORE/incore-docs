@@ -1,4 +1,4 @@
-# EPN functionality analysis
+# Electric power network functionality
 
 This analysis computes the functionality of electric power networks.
 
