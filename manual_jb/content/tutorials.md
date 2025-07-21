@@ -16,6 +16,7 @@ We encourage IN-CORE users to contribute improve the knowledge base. contact us 
 5. [Retrofit Plan Joplin](notebooks/retrofit_plan_Joplin_2021_12_01/retrofit_plan_Joplin_2021_12_01.ipynb)
 6. [Create Network Dataset](notebooks/create_network_dataset/create_network_dataset.ipynb)
 7. [Create Local Hazard](notebooks/create_local_hazard/create_local_hazard.ipynb)
+8. [Create Building Inventory from NSI data](notebooks/create_building_inventory_from_nsi_data/create_building_inventory_from_nsi_data.ipynb)
 
 More tutorials will be added soon.
 
@@ -28,4 +29,4 @@ Download the full Notebooks:
 - Retrofit Plan Joplin: [retrofit_plan_Joplin_2021_12_01.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/retrofit_plan_Joplin_2021_12_01.zip)
 - Create Network Dataset: [create_network_dataset.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_network_dataset.zip)
 - Create Local Hazard: [create_local_hazard.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_local_hazard.zip)
-
+- Create Building Inventory from NSI data: [create_building_inventory_from_nsi.zip](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/create_building_inventory_from_nsi.zip)
