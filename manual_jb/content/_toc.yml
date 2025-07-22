@@ -42,6 +42,7 @@ chapters:
       - file: analyses/ml_galveston_island_cge
       - file: analyses/ml_joplin_cge
       - file: analyses/ml_slc_cge
+      - file: analyses/ml_seaside_cge
       - file: analyses/mean_dmg
       - file: analyses/mc_limit_state_prob
       - file: analyses/multi_retrofit_optimization
