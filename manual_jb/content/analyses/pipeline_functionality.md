@@ -1,4 +1,4 @@
-# Pipeline functionality analysis
+# Pipeline functionality
 
 **Description**
 
@@ -51,3 +51,4 @@ code snippet:
 ```
 
 full analysis: [pipeline_functionality.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/pipeline_functionality.ipynb)
+

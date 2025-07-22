@@ -1,4 +1,4 @@
-# Housing recovery
+# Housing valuation recovery
 
 **Description**
 
@@ -52,8 +52,8 @@ key name | type | parent key | name | description
 code snippet:
 
 ```
-    # Create housing recovery
-    housing_rec = HousingRecovery(client)
+    # Create housing valuation recovery
+    housing_rec = HousingValuationRecovery(client)
     
     # Load input datasets
     housing_rec.load_remote_input_dataset("population_dislocation", pop_disl_id)

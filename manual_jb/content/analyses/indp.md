@@ -1,4 +1,4 @@
-# Interdependent Network Design Problem (INDP)
+# Interdependent network design problem (INDP)
 
 **Description**
 

@@ -1,4 +1,4 @@
-# Machine Learning Enabled Computable General Equilibrium (CGE) - Galveston Island
+# Machine learning enabled computable general equilibrium (CGE) - Galveston Island
 
 **Description**
 

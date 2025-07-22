@@ -1,4 +1,4 @@
-# Machine Learning Enabled Computable General Equilibrium (CGE) - Joplin
+# Machine learning enabled computable general equilibrium (CGE) - Joplin
 
 **Description**
 
