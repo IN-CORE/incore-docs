@@ -1,4 +1,4 @@
-# Galveston Computable General Equilibrium (CGE)
+# Galveston computable general equilibrium (CGE)
 
 **Description**
 
