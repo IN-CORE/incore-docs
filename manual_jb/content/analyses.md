@@ -27,7 +27,7 @@
 25. [Joplin empirical building restoration](analyses/joplin_empirical_building_restoration)
 26. [Machine learning enabled computable general equilibrium (CGE) - Galveston Island](analyses/ml_galveston_island_cge.md)
 27. [Machine learning enabled computable general equilibrium (CGE) - Joplin](analyses/ml_joplin_cge.md)
-28. [Machine Learning Enabled Computable General Equilibrium (CGE) - Mobile](analyses/ml_mobile_cge.md)
+28. [Machine Learning Enabled Computable General Equilibrium (CGE) - Mobile](analyses/ml_enabled_mobile_cge.md)
 29. [Machine learning enabled computable general equilibrium (CGE) - Salt Lake City](analyses/ml_slc_cge.md)
 30. [Machine Learning Enabled Computable General Equilibrium (CGE) - Seaside](analyses/ml_seaside_cge.md)
 31. [Mean damage](analyses/mean_dmg)
