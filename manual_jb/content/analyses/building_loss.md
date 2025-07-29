@@ -1,4 +1,4 @@
-# Building Economic Loss
+# Building economic loss
 
 **Description**
 
@@ -63,3 +63,4 @@ code snippet:
 ```
 
 full analysis: [building_loss.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/building_loss.ipynb)
+

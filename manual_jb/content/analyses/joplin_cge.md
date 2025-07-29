@@ -1,4 +1,4 @@
-# Joplin Computable General Equilibrium (CGE)
+# Joplin computable general equilibrium (CGE)
 
 **Description**
 
@@ -80,3 +80,4 @@ code snippet:
 ```
 
 full analysis: [joplin_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/joplin_cge.ipynb)
+
