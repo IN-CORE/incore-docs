@@ -41,6 +41,7 @@ chapters:
       - file: analyses/joplin_empirical_building_restoration
       - file: analyses/ml_galveston_island_cge
       - file: analyses/ml_joplin_cge
+      - file: analyses/ml_enabled_mobile_cge
       - file: analyses/ml_slc_cge
       - file: analyses/ml_seaside_cge
       - file: analyses/mean_dmg
