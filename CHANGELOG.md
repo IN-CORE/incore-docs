@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Pyincore data NSI example notebook [#444](https://github.com/IN-CORE/incore-docs/issues/444)
 - ML enabled Galveston CGE notebook [#437](https://github.com/IN-CORE/incore-docs/issues/437)
+- ML enabled Mobile CGE notebook [#454](https://github.com/IN-CORE/incore-docs/issues/454)
 - ML enabled Seaside CGE notebook [#452](https://github.com/IN-CORE/incore-docs/issues/452)
 
 ### Changed
