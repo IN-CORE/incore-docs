@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - ML enabled Galveston CGE notebook [#437](https://github.com/IN-CORE/incore-docs/issues/437)
 - ML enabled Mobile CGE notebook [#454](https://github.com/IN-CORE/incore-docs/issues/454)
 - ML enabled Seaside CGE notebook [#452](https://github.com/IN-CORE/incore-docs/issues/452)
+- ML enabled Lumberton CGE notebook [#447](https://github.com/IN-CORE/incore-docs/issues/447)
 
 ### Changed
 - Removed deprecated WMS related cells from pyincore-viz example notebook [#448](https://github.com/IN-CORE/incore-docs/issues/448)
