@@ -1,4 +1,4 @@
-# Salt Lake City Computable General Equilibrium (CGE)
+# Salt Lake City computable general equilibrium (CGE)
 
 **Description**
 

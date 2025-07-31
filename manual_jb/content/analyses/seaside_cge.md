@@ -1,4 +1,4 @@
-# Seaside Computable General Equilibrium (CGE)
+# Seaside computable general equilibrium (CGE)
 
 **Description**
 
@@ -71,3 +71,4 @@ code snippet:
 ```
 
 full analysis: [seaside_cge.ipynb](https://github.com/IN-CORE/incore-docs/blob/main/notebooks/seaside_cge.ipynb)
+

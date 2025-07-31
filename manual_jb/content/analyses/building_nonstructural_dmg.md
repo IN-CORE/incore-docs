@@ -1,4 +1,4 @@
-# Building Nonstructural Damage
+# Building nonstructural damage
 
 **Description**
 

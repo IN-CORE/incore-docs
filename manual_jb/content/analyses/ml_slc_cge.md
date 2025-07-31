@@ -1,4 +1,4 @@
-# Machine Learning Enabled Computable General Equilibrium (CGE) - Salt Lake City
+# Machine learning enabled computable general equilibrium (CGE) - Salt Lake City
 
 **Description**
 
