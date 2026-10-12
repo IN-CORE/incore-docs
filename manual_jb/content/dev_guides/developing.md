@@ -4,13 +4,9 @@ For developers working on IN-CORE code (web clients, pyincore, services) or buil
 
 | What | Where |
 |------|-------|
-| Overview: pick a client/backend, dev access, building your own client, CORS policy | [IN-CORE developer guide](https://github.com/IN-CORE/.github/blob/main/DEVELOPING.md) |
-| Web services (Java) | [incore-services CONTRIBUTING](https://github.com/IN-CORE/incore-services/blob/develop/CONTRIBUTING.md) |
-| Web tools UI | [incore-ui CONTRIBUTING](https://github.com/IN-CORE/incore-ui/blob/develop/CONTRIBUTING.md) |
-| Studio | [incore-studio CONTRIBUTING](https://github.com/IN-CORE/incore-studio/blob/develop/CONTRIBUTING.md) |
-| Playbook | [incore-playbook CONTRIBUTING](https://github.com/IN-CORE/incore-playbook/blob/develop/CONTRIBUTING.md) |
-| pyincore | [pyincore README](https://github.com/IN-CORE/pyincore) |
-| This manual | [incore-docs README](https://github.com/IN-CORE/incore-docs/tree/main/manual_jb) |
+| Overview: dev access, backends, CORS policy, building your own client, local services | [IN-CORE Developer Guide](https://github.com/IN-CORE/IN-CORE/wiki/IN%E2%80%90CORE-Developer-Guide) (wiki) |
+| Per-repo setup, run and test | [IN-CORE Developer Setup](https://github.com/IN-CORE/IN-CORE/wiki/IN%E2%80%90CORE-Developer-Setup) (wiki) |
+| Process: GitFlow, branches, PRs | [CONTRIBUTING.md](https://github.com/IN-CORE/IN-CORE/blob/main/CONTRIBUTING.md) |
 
 ## Before you start
 
