@@ -81,6 +81,13 @@ chapters:
     - file: notebooks/create_network_dataset/create_network_dataset.ipynb
     - file: notebooks/create_local_hazard/create_local_hazard.ipynb
     - file: notebooks/create_building_inventory_from_NSI/create_building_inventory_from_NSI.ipynb
+- file: dev_guides
+  sections:
+    - file: dev_guides/notebook
+    - file: dev_guides/algorithm
+    - file: dev_guides/clients
+    - file: dev_guides/services
+    - file: dev_guides/other
 - file: faq
 - file: workshops
   sections:
