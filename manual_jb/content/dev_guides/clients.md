@@ -16,7 +16,7 @@ Pick a backend:
 
 | Option | Backend | Auth | When |
 |--------|---------|------|------|
-| 3a | `https://dev.in-core.org` (shared) | Keycloak, admin-approved account | Default for client work |
+| 3a | `https://dev.in-core.org` (shared) | Keycloak, approved account | Default for client work |
 | 3b | Your machine, pointing at dev/prod | Keycloak | Same as 3a, your own tooling |
 | 3c | `http://localhost:8080` (local services) | Headers, no Keycloak | Client + service changes together, offline |
 
@@ -30,7 +30,7 @@ A browser app on `localhost` calling a remote IN-CORE service will be blocked un
 | Backend | What to do |
 |---------|------------|
 | **Prod** (`tools.in-core.org`) | Not available — prod does not allow external origins. Use dev, or call prod from your own backend/proxy (server-to-server has no CORS). |
-| **Dev** (`dev.in-core.org`) | `http://localhost:3000` and `:5000` are allowed. Need another origin? Contact us: incore-dev@lists.illinois.edu |
+| **Dev** (`dev.in-core.org`) | `http://localhost:3000` and `:5000` are allowed. Need another origin? See {ref}`3a <dev-guides-dev-access>`. |
 | **Your own services** | Configure it yourself (below). |
 
 Configure CORS on services you host (env vars on every service):
@@ -48,11 +48,12 @@ Helm deploy: set `cors.origin` (list), `cors.methods`, `cors.headers` in your va
 ---
 
 (dev-guides-dev-access)=
-## 3a. Remote dev service (admin approval)
+## 3a. Remote dev service (approval required)
 
-1. Create a normal IN-CORE account: [IN-CORE Account](../account.md)
-2. Email incore-dev@lists.illinois.edu asking for access to **dev.in-core.org** (give your username + which client you're working on).
-3. Once approved, log in at https://dev.in-core.org to confirm.
+1. Have an IN-CORE account: [IN-CORE Account](../account.md)
+2. Discuss your idea/contribution with the community on [Slack](https://in-core.slack.com) (`#developer`) or [GitHub Discussions](https://github.com/orgs/IN-CORE/discussions).
+   Can't? Email incore-dev@lists.illinois.edu — we'll tell you the next steps.
+3. Once approved, log in at https://dev.in-core.org.
 
 Dev data is shared and may be reset — don't rely on it persisting.
 
@@ -180,9 +181,9 @@ curl -H "Authorization: Bearer $TOKEN" "https://dev.in-core.org/data/api/dataset
 | Client type | How to authenticate |
 |-------------|---------------------|
 | Script / backend service | Password grant above, or reuse pyincore (`IncoreClient` + `DataService`, `HazardService`, …) as an SDK |
-| Browser app (SPA) | OIDC auth-code + PKCE (e.g. `keycloak-js`, `oidc-client-ts`; see `incore-studio/src/app.config.js`). Ask admins to register your redirect URI. |
+| Browser app (SPA) | OIDC auth-code + PKCE (e.g. `keycloak-js`, `oidc-client-ts`; see `incore-studio/src/app.config.js`). Redirect URI must be registered — see {ref}`3a <dev-guides-dev-access>`. |
 
-**CORS** — see {ref}`CORS <dev-guides-cors>`. In short: dev allows `localhost:3000/5000` (ask us for more); prod won't allow your origin, so call prod from your own backend/proxy; your own services — configure it yourself.
+**CORS** — see {ref}`CORS <dev-guides-cors>`. In short: dev allows `localhost:3000/5000` (more: {ref}`3a <dev-guides-dev-access>`); prod won't allow your origin, so call prod from your own backend/proxy; your own services — configure it yourself.
 
 **Steps**
 
