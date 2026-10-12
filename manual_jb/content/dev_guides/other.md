@@ -1,4 +1,4 @@
-# 5. Other scenarios
+# 3. Other scenarios
 
 (dev-guides-incubator)=
 ## Contribute to pyincore-incubator
@@ -42,17 +42,6 @@ IN-CORE Lab (hosted JupyterLab, pyincore preinstalled): [IN-CORE Lab](../incore_
 
 - Swagger: https://tools.in-core.org/doc/api/
 - Token: `POST https://tools.in-core.org/auth/realms/In-core/protocol/openid-connect/token` (client `react-auth`), then `Authorization: Bearer <token>`.
-
-## Edit the docs (incore-docs)
-
-```bash
-git clone https://github.com/IN-CORE/incore-docs.git && cd incore-docs/manual_jb
-conda create -n incore_docs -c conda-forge python=3.11 jupyter-book && conda activate incore_docs
-jupyter-book build content      # open content/_build/html/index.html
-```
-
-- Pages: `manual_jb/content/*.md`, TOC: `manual_jb/content/_toc.yml`
-- New analysis page: add `content/analyses/<name>.md` + notebook, register in `_toc.yml`.
 
 ## Upgrade old pyincore code
 

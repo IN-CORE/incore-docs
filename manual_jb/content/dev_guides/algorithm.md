@@ -93,7 +93,7 @@ Requires a logged-in client (not offline). Uploads are private to your account b
 | Tornado | `HazardService.create_tornado_scenario(json, files)` | [create_tornado](../notebooks/create_tornado/create_tornado.ipynb) |
 | Flood / hurricane / tsunami | `create_flood` / `create_hurricane` / `create_tsunami_hazard` | [API ref](https://tools.in-core.org/doc/pyincore/index.html) |
 
-Tip: develop against **dev** first (`IncoreClient("https://dev.in-core.org")`) so test uploads don't clutter prod.
+Tip: with [dev access](developing.md), develop against **dev** first (`IncoreClient("https://dev.in-core.org")`) so test uploads don't clutter prod.
 To share with a group (space), contact incore-dev@lists.illinois.edu.
 
 ---

@@ -85,9 +85,8 @@ chapters:
   sections:
     - file: dev_guides/notebook
     - file: dev_guides/algorithm
-    - file: dev_guides/clients
-    - file: dev_guides/services
     - file: dev_guides/other
+    - file: dev_guides/developing
 - file: faq
 - file: workshops
   sections:
