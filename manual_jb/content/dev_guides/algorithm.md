@@ -1,4 +1,4 @@
-# 2. Scientist: develop a new pyincore / pyincore-viz algorithm
+# 2. Develop a new pyincore / pyincore-viz algorithm
 
 ## Setup (all cases)
 

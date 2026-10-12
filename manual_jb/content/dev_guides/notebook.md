@@ -1,4 +1,4 @@
-# 1. Scientist: build a notebook from existing analyses and data
+# 1. Build a notebook from existing analyses and data
 
 No code changes to pyincore. You chain existing analyses with existing (or your own) data.
 

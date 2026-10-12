@@ -1,6 +1,6 @@
 # 4. Developing for IN-CORE
 
-For developers working on IN-CORE code (web clients, pyincore, services) or building their own client against the IN-CORE services.
+Working on IN-CORE code (web clients, pyincore, services) or building your own client against the IN-CORE services.
 
 | What | Where |
 |------|-------|

@@ -1,13 +1,13 @@
 # Development Guides
 
-Pick the row that matches what you're doing. Ordered from easiest to hardest.
+Pick the row that matches what you're doing.
 
-| # | Level | Who | Doing what | Guide |
-|---|-------|-----|-----------|-------|
-| 1 | Beginner | Scientist | Writing a notebook with existing analyses + data | [Notebooks](dev_guides/notebook.md) |
-| 2 | Intermediate | Scientist | Writing a new pyincore / pyincore-viz algorithm | [Algorithms](dev_guides/algorithm.md) |
-| 3 | Varies | Anyone | Incubator contributions, data prep, no-install, REST API | [Other](dev_guides/other.md) |
-| 4 | Advanced | Developer | IN-CORE clients, services, or your own client | [Developing for IN-CORE](dev_guides/developing.md) |
+| # | Scope | Doing what | Guide |
+|---|-------|-----------|-------|
+| 1 | Use existing analyses | Writing a notebook with existing analyses + data | [Notebooks](dev_guides/notebook.md) |
+| 2 | Extend pyincore | Writing a new pyincore / pyincore-viz algorithm | [Algorithms](dev_guides/algorithm.md) |
+| 3 | Varies | Incubator contributions, data prep, no-install, REST API | [Other](dev_guides/other.md) |
+| 4 | Change the platform | IN-CORE clients, services, or your own client | [Developing for IN-CORE](dev_guides/developing.md) |
 
 ## Environments
 
