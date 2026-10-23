@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Development guides for scientists and developers (notebooks, algorithms, clients, services)
+- IN-CORE Contributor Guide [#464](https://github.com/IN-CORE/incore-docs/issues/464)
 
 ## [4.16.0] - 2025-07-31
 
